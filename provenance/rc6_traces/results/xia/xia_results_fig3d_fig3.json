@@ -1,0 +1,421 @@
+{
+ "name": "xia_fig3d__fig3",
+ "raster": "xia5-000.png",
+ "raster_sha256": "e9fb7fbb348567d3ab7606479c83342bcf2f5ee3d6b4c162f7c345e5ef339991",
+ "mask": "xia2016_rs7_depicted_fig3.dxf",
+ "mask_sha256": "280a04edaa54dcf736af80de049c37329cb1db0f85e3ae0e39dd53f22f111c64",
+ "crop": [
+  1,
+  796,
+  748,
+  1542
+ ],
+ "px_per_um": 0.5561735261401557,
+ "pitch_um": 51.8,
+ "map_feature": {
+  "origin_px": [
+   1589.4036906558374,
+   3588.049095284386
+  ],
+  "ex_px_per_um": [
+   -0.003368582916854149,
+   0.5561633247781687
+  ],
+  "ey_px_per_um": [
+   0.5561633247781687,
+   0.003368582916854149
+  ]
+ },
+ "map_chamfer": {
+  "origin_px": [
+   1590.1157403258883,
+   3588.329093536533
+  ],
+  "ex_px_per_um": [
+   -0.003368582916854149,
+   0.5561633247781687
+  ],
+  "ey_px_per_um": [
+   0.5561633247781687,
+   0.003368582916854149
+  ]
+ },
+ "V1_feature_vs_chamfer_px": {
+  "along": 0.2756804365639411,
+  "across": -0.7137324783984584,
+  "agree": true
+ },
+ "V2_chamfer": {
+  "points": 14468,
+  "best_px": 1.9850325259491082,
+  "one_pitch_along_px": [
+   3.6984629005007656,
+   3.3917218138208316
+  ],
+  "half_pitch_along_px": [
+   3.655750925731977,
+   3.539384096232432
+  ],
+  "five_um_across_px": [
+   2.498169875254294,
+   2.494322071117905
+  ],
+  "landscape_median_px": 3.530249711830775,
+  "ratio_landscape_median_to_best": 1.7784341897082259,
+  "ratio_one_pitch_to_best": 1.7086479790547209
+ },
+ "metric": {
+  "n": 6747,
+  "median_abs_um": 2.8848697358611846,
+  "p90_abs_um": 9.95881187164993,
+  "mean_signed_um": 1.552493228803489
+ },
+ "metric_null": {
+  "half_pitch_along": {
+   "n": 6101,
+   "median_abs_um": 7.453299000872938,
+   "p90_abs_um": 12.671505114306157,
+   "mean_signed_um": -2.6340114506004997
+  },
+  "5um_across": {
+   "n": 5921,
+   "median_abs_um": 5.139445789079041,
+   "p90_abs_um": 8.88437810025234,
+   "mean_signed_um": 2.0784328850212472
+  },
+  "one_pitch_along": {
+   "n": 4233,
+   "median_abs_um": 4.981510847129875,
+   "p90_abs_um": 12.401203408179772,
+   "mean_signed_um": 1.697184615944921
+  },
+  "registered_same_points": {
+   "n": 6192,
+   "median_abs_um": 2.854662519441302,
+   "p90_abs_um": 10.06071213062879,
+   "mean_signed_um": 1.5489461306711794
+  }
+ },
+ "V3_by_class": {
+  "channel_across_C": {
+   "n": 321,
+   "total": 1305,
+   "mean_signed_um": -5.584848132930141,
+   "sd_um": 2.7998299908069395,
+   "median_abs_um": 4.204264473252843,
+   "systematic": true
+  },
+  "channel_across_L": {
+   "n": 74,
+   "total": 472,
+   "mean_signed_um": -3.2679596443310093,
+   "sd_um": 2.9424758947669085,
+   "median_abs_um": 3.7357305365297533,
+   "systematic": true
+  },
+  "channel_across_R": {
+   "n": 153,
+   "total": 394,
+   "mean_signed_um": -9.487723300317898,
+   "sd_um": 0.657386850625474,
+   "median_abs_um": 9.442130398814129,
+   "systematic": true
+  },
+  "island_across_C": {
+   "n": 252,
+   "total": 452,
+   "mean_signed_um": 2.026078457282731,
+   "sd_um": 0.9455783892390129,
+   "median_abs_um": 1.830833248284843,
+   "systematic": true
+  },
+  "island_across_L": {
+   "n": 931,
+   "total": 1990,
+   "mean_signed_um": 2.2476645123300547,
+   "sd_um": 1.0090282218655129,
+   "median_abs_um": 2.1122651678522795,
+   "systematic": true
+  },
+  "island_across_R": {
+   "n": 748,
+   "total": 1927,
+   "mean_signed_um": 3.197340906884171,
+   "sd_um": 4.150391759782094,
+   "median_abs_um": 1.5489153164024945,
+   "systematic": true
+  },
+  "island_along_L": {
+   "n": 29,
+   "total": 70,
+   "mean_signed_um": 3.640986275101372,
+   "sd_um": 5.520186230159795,
+   "median_abs_um": 1.9404109127664018,
+   "systematic": true
+  },
+  "island_along_R": {
+   "n": 21,
+   "total": 71,
+   "mean_signed_um": 1.4540520977819178,
+   "sd_um": 2.574744952395248,
+   "median_abs_um": 1.8250430582996477,
+   "systematic": false
+  },
+  "post_across_L": {
+   "n": 189,
+   "total": 489,
+   "mean_signed_um": 3.1202188169296594,
+   "sd_um": 0.989999611663784,
+   "median_abs_um": 3.1216285859530766,
+   "systematic": true
+  },
+  "post_across_R": {
+   "n": 123,
+   "total": 482,
+   "mean_signed_um": 4.423123243879851,
+   "sd_um": 4.791743855343025,
+   "median_abs_um": 5.819507037625283,
+   "systematic": true
+  },
+  "post_along_L": {
+   "n": 344,
+   "total": 1057,
+   "mean_signed_um": 4.549536528465825,
+   "sd_um": 3.513783969699795,
+   "median_abs_um": 4.0614808822857205,
+   "systematic": true
+  },
+  "post_along_R": {
+   "n": 196,
+   "total": 1064,
+   "mean_signed_um": 4.415788243279425,
+   "sd_um": 4.165383565406882,
+   "median_abs_um": 2.573519942469516,
+   "systematic": true
+  }
+ },
+ "outline_threshold": 4.0,
+ "claim_edges": 40,
+ "other_edges": 0,
+ "region_um": [
+  -5070.849334781247,
+  -3601.431130777141,
+  -2946.302778045481,
+  -1475.0974969887056
+ ],
+ "along_px": [
+  -0.0060567120845037604,
+  0.9999816579511474
+ ],
+ "exclude_px": [
+  [
+   2,
+   800,
+   65,
+   870
+  ],
+  [
+   355,
+   1170,
+   420,
+   1325
+  ]
+ ],
+ "metric_search_px": 8.0,
+ "measured": {
+  "px_per_um": 0.5561735261401557,
+  "scale_note": "the rc6 scale 1.798 \u00b5m/px: the mean of the printed widths, the post columns' separations and the loop curvature (data/r6/rc6_values.json)",
+  "rotation_deg": -0.3470261618941464,
+  "rotation_fit_sd_px": 0.14005131248359784,
+  "legs": [
+   {
+    "leg": 5,
+    "Y_um": -2650.0,
+    "period_px": 28.78959515180361,
+    "pitch_image_um": 51.763692082942896,
+    "column_separation_px": 123.04624726457027,
+    "centre_um_image": 150.33715258169735,
+    "located": {
+     "by": "the first pill below the non-periodic feature = the leg's first post"
+    },
+    "n_pills": [
+     6,
+     6
+    ],
+    "first_post_x_um": [
+     -3971.3,
+     -3971.3
+    ]
+   },
+   {
+    "leg": 3,
+    "Y_um": -1745.0,
+    "period_px": 28.72441125655837,
+    "pitch_image_um": 51.64649143929195,
+    "column_separation_px": 161.6638485089842,
+    "centre_um_image": 219.7715996191536,
+    "located": {
+     "by": "the first pill below the non-periodic feature = the leg's first post"
+    },
+    "n_pills": [
+     6,
+     6
+    ],
+    "first_post_x_um": [
+     -3971.3,
+     -3971.3
+    ]
+   }
+  ],
+  "pitch_um": {
+   "image": 51.70509176111742,
+   "mask": 51.8
+  },
+  "feature_fit_residual_um": {
+   "along": [
+    -1.09187734166902,
+    -1.4546931740455378,
+    -1.394939281938325,
+    -1.5259577454635307,
+    -1.4039277592883639,
+    -1.8080705854965502,
+    -0.8309483773831369,
+    -0.7668305300654206,
+    -1.1365873270336446,
+    -1.021206088484843,
+    -0.7844555430781106,
+    -1.1472052082925257,
+    1.3986660282880483,
+    0.8586630750699641,
+    0.5342470656554862,
+    0.7104839183628999,
+    0.438474420641022,
+    0.5537787273743313,
+    2.004895598160043,
+    1.887819225429624,
+    1.698164452594415,
+    1.2138621267743128,
+    1.332596134708627,
+    1.7350481891884795
+   ],
+   "across": [
+    -1.0908489954802334,
+    -1.354505050163372,
+    -1.254985943058413,
+    -1.4449281078722203,
+    -1.3510603695847097,
+    -1.5182511593676493,
+    -1.5336474563376645,
+    -1.8153967850187884,
+    -1.7069127491350635,
+    -1.680044483021426,
+    -1.977405705352901,
+    -1.107989218825124,
+    -4.817053699497246,
+    -3.8567250053475313,
+    -4.405680055750942,
+    -3.589894429189538,
+    -4.096403790256711,
+    -4.0948234145183315,
+    7.3898592813654,
+    7.240095055838098,
+    7.086303969857685,
+    6.993283677652211,
+    7.1120497973699965,
+    6.874964635705591
+   ]
+  },
+  "mask": {
+   "post_across": 70.9,
+   "post_along": 35.8
+  },
+  "leg_axis_separation_um": {
+   "image": 901.9797453467593,
+   "mask": 905.0
+  }
+ },
+ "panel": "d",
+ "caption": "Xia et al. 2016 Sci. Rep. 6:35943, Fig. 3d (legs 5 and 3 leaving the loops at the device's top) at 1.798 \u00b5m/px (the rc6 scale 1.798 \u00b5m/px: the mean of the printed widths, the post columns' separations and the loop curvature (data/r6/rc6_values.json); rotation -0.35\u00b0) with the variant mask xia2016_rs7_depicted_fig3 (F 0.94072, D 6.5705 um, read off Figs. 3g and 3a).  Registration: scale from the printed widths, column separations and loop curvature, rotation measured on the image; translation fitted on features and, independently, by chamfer matching (they agree within 0.3 / 0.7 px along / across).  Nearest-outline offset: median 2.88 \u00b5m, 90th percentile 9.96 \u00b5m (n 6747); for comparison 7.45 \u00b5m with the mask shifted half a pitch along and 5.14 \u00b5m with it shifted 5 \u00b5m across.  On the image at this scale: pitch 51.71 \u00b5m (mask 51.80); leg 5 centre 150.3 \u00b5m (first post below the feature); leg 3 centre 219.8 \u00b5m (first post below the feature); leg axes 902.0 \u00b5m apart (mask 905.0).",
+ "micrograph_box": [
+  1,
+  796,
+  747,
+  1542
+ ],
+ "V5_scale_scan": {
+  "best_along": 1.0063207309690136,
+  "best_across": 1.0084420260775357,
+  "score_best": 1.886483536654078,
+  "score_at_bar": 1.9818926090181914,
+  "factors": [
+   0.95,
+   0.955,
+   0.96,
+   0.965,
+   0.97,
+   0.975,
+   0.98,
+   0.985,
+   0.99,
+   0.995,
+   1.0,
+   1.005,
+   1.01,
+   1.015,
+   1.02,
+   1.025,
+   1.03,
+   1.035,
+   1.04,
+   1.045,
+   1.05
+  ],
+  "profile_along_at_across_1": [
+   3.0049985633164686,
+   2.9859507125565683,
+   2.8962770230827233,
+   2.771682259198637,
+   2.6506341372828333,
+   2.4960972423877306,
+   2.255874040151561,
+   2.0417597768113818,
+   1.9715799079610883,
+   1.9601642761109976,
+   1.9818926090181914,
+   2.02776736643492,
+   2.1002054249048236,
+   2.22258886362803,
+   2.438568079968481,
+   2.6225108551767136,
+   2.726043124401673,
+   2.820411259343228,
+   2.918014486997006,
+   2.9542596521538513,
+   2.96890012316415
+  ],
+  "profile_across_at_along_1": [
+   4.138616775668343,
+   4.035400327965997,
+   3.8838761050539006,
+   3.689370453996293,
+   3.4720119279566366,
+   3.2072079152170354,
+   2.875909482148627,
+   2.518901706031938,
+   2.265758827864013,
+   2.085684071268071,
+   1.9818926090181914,
+   1.9245036042714199,
+   1.9316685394583375,
+   2.1270846932637135,
+   2.3977719147387186,
+   2.7092090154387067,
+   3.0381023008054546,
+   3.3270037203213345,
+   3.553976384538477,
+   3.735142122529492,
+   3.8649513416364067
+  ],
+  "on_grid_edge": false
+ }
+}

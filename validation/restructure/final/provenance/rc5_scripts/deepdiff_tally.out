@@ -1,0 +1,226 @@
+ 46 CHANGED  /assessment/checks/CHK:1-D model band (reported, not a pass c/requirement   
+ 46 REMOVED  /assessment/checks/CHK:1-D model band (reported, not a pass c/value/junction band (bend and head T-junction terms, depth weight at both ends)   
+ 46 ADDED    /assessment/checks/CHK:1-D model band (reported, not a pass c/value/junction band (bend, head T-junction and outlet stretch-end terms at both ends of    
+ 46 CHANGED  /assessment/checks/CHK:1-D model band (reported, not a pass c/value/outlet balance (both side outlets +-1 %)/rows   
+ 46 CHANGED  /assessment/checks/CHK:aspect ratio of the narrowest CIF chan/check   
+ 46 ADDED    /assessment/status/drawn_mask_assessment   
+ 46 CHANGED  /assessment/status/physics_auditor_P8   
+ 46 ADDED    /design/outlet   
+ 46 ADDED    /design/spec/flare_deg   
+ 46 ADDED    /design/spec/flare_start   
+ 46 CHANGED  /log   
+ 46 CHANGED  /seconds   
+ 46 CHANGED  /seconds_total   
+ 46 ADDED    /validation/drawn_parameters/G_meas_min   
+ 46 CHANGED  /validation/drc/seconds   
+ 46 CHANGED  /validation/gates/P8/status   
+ 46 ADDED    /validation/length_budget/definition   
+ 46 CHANGED  /validation/model_scenarios/bend_correction_off/F   
+ 46 CHANGED  /validation/model_scenarios/junction_band_hi/F   
+ 46 CHANGED  /validation/model_scenarios/junction_band_lo/F   
+ 46 CHANGED  /validation/model_scenarios/junction_band_lo/cutoff_over_D_range   
+ 46 CHANGED  /validation/model_scenarios/junctions_ignored/F   
+ 46 ADDED    /validation/outlet_measured/lead_width_min_um   
+ 46 ADDED    /validation/outlet_measured/stretch_end   
+ 45 CHANGED  /validation/model_scenarios/junction_band_hi/cutoff_over_D_range   
+ 44 CHANGED  /validation/model_scenarios/junctions_ignored/cutoff_over_D_range   
+ 42 CHANGED  /validation/model_scenarios/bend_correction_off/cutoff_over_D_range   
+ 41 CHANGED  /validation/model_scenarios/bend_correction_off/share_of_F_in_those_rows   
+ 40 CHANGED  /validation/model_scenarios/bend_correction_off/newly_outside_rows   
+ 40 CHANGED  /validation/model_scenarios/bend_correction_off/rows_moved_over_half_tol   
+ 40 CHANGED  /validation/model_scenarios/bend_correction_off/rows_outside_tol   
+ 40 CHANGED  /validation/model_scenarios/junctions_ignored/newly_outside_rows   
+ 39 CHANGED  /validation/model_scenarios/junction_band_lo/max_cutoff_change   
+ 38 CHANGED  /validation/model_scenarios/junctions_ignored/max_cutoff_change   
+ 37 CHANGED  /assessment/checks/CHK:1-D model band (reported, not a pass c/value/bend_correction_off/rows_newly_outside_tol   
+ 37 CHANGED  /validation/model_scenarios/bend_correction_off/rows_newly_outside_tol   
+ 36 CHANGED  /validation/model_scenarios/junction_band_hi/max_cutoff_change   
+ 35 CHANGED  /validation/model_scenarios/bend_correction_off/max_cutoff_change   
+ 35 CHANGED  /validation/model_scenarios/junctions_ignored/rows_moved_over_half_tol   
+ 31 CHANGED  /assessment/checks/CHK:1-D model band (reported, not a pass c/value/junctions_ignored/max_cutoff_change_over_D   
+ 31 CHANGED  /validation/model_scenarios/junction_band_hi/max_change_row   
+ 31 CHANGED  /validation/model_scenarios/junction_band_lo/max_change_row   
+ 31 CHANGED  /validation/model_scenarios/junctions_ignored/max_change_row   
+ 30 CHANGED  /assessment/checks/CHK:1-D model band (reported, not a pass c/value/junctions_ignored/rows_newly_outside_tol   
+ 30 CHANGED  /validation/model_scenarios/junction_band_lo/rows_moved_over_half_tol   
+ 30 CHANGED  /validation/model_scenarios/junctions_ignored/rows_newly_outside_tol   
+ 30 CHANGED  /validation/model_scenarios/junctions_ignored/rows_outside_tol   
+ 30 CHANGED  /validation/model_scenarios/junctions_ignored/share_of_F_in_those_rows   
+ 29 CHANGED  /assessment/verdict   
+ 29 CHANGED  /title   
+ 29 CHANGED  /validation/model_scenarios/junction_band_lo/rows_outside_tol   
+ 26 CHANGED  /validation/model_scenarios/junction_band_hi/rows_moved_over_half_tol   
+ 26 CHANGED  /validation/model_scenarios/junction_band_lo/newly_outside_rows   
+ 26 CHANGED  /validation/model_scenarios/junction_band_lo/rows_newly_outside_tol   
+ 26 CHANGED  /validation/model_scenarios/junction_band_lo/share_of_F_in_those_rows   
+ 25 CHANGED  /validation/model_scenarios/t_junction_ignored/newly_outside_rows   
+ 21 CHANGED  /validation/drawing_fidelity/F_abs_dev   
+ 21 CHANGED  /validation/drawing_fidelity/F_drawn   
+ 21 CHANGED  /validation/drawn_parameters/footprint_mm   
+ 21 CHANGED  /validation/drc/bounds   
+ 21 CHANGED  /validation/drc/fluid_area   
+ 21 CHANGED  /validation/fidelity/outlet_R_rel_max   
+ 21 CHANGED  /validation/model_scenarios/dDlast_dlnRside_out   
+ 21 CHANGED  /validation/model_scenarios/junction_band_hi/newly_outside_rows   
+ 21 CHANGED  /validation/model_scenarios/junction_band_hi/rows_newly_outside_tol   
+ 21 CHANGED  /validation/model_scenarios/junction_band_hi/rows_outside_tol   
+ 21 CHANGED  /validation/model_scenarios/junction_band_hi/share_of_F_in_those_rows   
+ 21 CHANGED  /validation/model_scenarios/outlet_side_resistance_+1%/F   
+ 21 CHANGED  /validation/model_scenarios/outlet_side_resistance_+1%/cutoff_over_D_range   
+ 21 CHANGED  /validation/model_scenarios/outlet_side_resistance_+1%/max_cutoff_change   
+ 21 CHANGED  /validation/model_scenarios/outlet_side_resistance_-1%/F   
+ 21 CHANGED  /validation/model_scenarios/outlet_side_resistance_-1%/max_cutoff_change   
+ 21 CHANGED  /validation/model_scenarios/t_junction_ignored/F   
+ 21 CHANGED  /validation/network/F_as_drawn   
+ 21 CHANGED  /validation/network/F_rel_to_design   
+ 21 CHANGED  /validation/network/F_rel_to_target   
+ 21 CHANGED  /validation/outlet_measured/RsA_out   
+ 21 CHANGED  /validation/outlet_measured/RsA_out_rel   
+ 21 CHANGED  /validation/outlet_measured/RsB_out   
+ 21 CHANGED  /validation/outlet_measured/RsB_out_rel   
+ 21 CHANGED  /validation/realised_cutoff/F_net   
+ 20 CHANGED  /validation/model_scenarios/outlet_side_resistance_-1%/cutoff_over_D_range   
+ 20 CHANGED  /validation/model_scenarios/t_junction_ignored/cutoff_over_D_range   
+ 19 CHANGED  /assessment/checks/CHK:1-D model band (reported, not a pass c/value/outlet balance (both side outlets +-1 %)/share_of_F_in_those_rows   
+ 19 CHANGED  /validation/model_scenarios/outlet_side_resistance_-1%/share_of_F_in_those_rows   
+ 18 CHANGED  /assessment/checks/CHK:1-D model band (reported, not a pass c/value/bend_correction_off/max_cutoff_change_over_D   
+ 18 CHANGED  /assessment/checks/CHK:1-D model band (reported, not a pass c/value/outlet balance (both side outlets +-1 %)/dDlast_dlnRside_out   
+ 18 CHANGED  /design/R_element_SI   
+ 18 CHANGED  /validation/model_scenarios/bend_correction_off/max_change_row   
+ 18 CHANGED  /validation/model_scenarios/outlet_side_resistance_+1%/share_of_F_in_those_rows   
+ 18 CHANGED  /validation/outlet_measured/Rc_out   
+ 18 CHANGED  /validation/robustness_design_network/bias +0.5 um/cutoff_lastrow_over_Dstar   
+ 18 CHANGED  /validation/robustness_design_network/bias +0.5 um/cutoff_row1_over_Dstar   
+ 18 CHANGED  /validation/robustness_design_network/bias -0.5 um/cutoff_lastrow_over_Dstar   
+ 18 CHANGED  /validation/robustness_design_network/bias -0.5 um/cutoff_row1_over_Dstar   
+ 18 CHANGED  /validation/robustness_design_network/noise 0.010 um/cutoff_lastrow_over_Dstar   
+ 17 CHANGED  /assessment/checks/CHK:inlet and outlet ports apart/value   
+ 17 CHANGED  /validation/port_spacing/inlet_to_nearest_outlet_port_um   
+ 17 CHANGED  /validation/robustness_design_network/bias +0.5 um/cutoff_min_over_Dstar   
+ 17 CHANGED  /validation/robustness_design_network/bias -0.5 um/cutoff_min_over_Dstar   
+ 17 CHANGED  /validation/robustness_design_network/noise 0.010 um/cutoff_row1_over_Dstar   
+ 16 CHANGED  /validation/drawing_fidelity/own_cutoff_rel_dev_max   
+ 16 CHANGED  /validation/robustness_design_network/bias +0.5 um/cutoff_max_over_Dstar   
+ 16 CHANGED  /validation/rounding/at   
+ 15 CHANGED  /assessment/checks/CHK:1-D model band (reported, not a pass c/value/outlet balance (both side outlets +-1 %)/max_cutoff_change_over_D   
+ 15 CHANGED  /validation/drawing_fidelity/cutoff_dev_max   
+ 15 CHANGED  /validation/robustness_design_network/bias -0.5 um/cutoff_max_over_Dstar   
+ 15 CHANGED  /validation/robustness_design_network/noise 0.010 um/cutoff_min_over_Dstar   
+ 15 CHANGED  /validation/rounding/min_local_radius_um   
+ 14 CHANGED  /validation/model_scenarios/t_junction_ignored/max_cutoff_change   
+ 14 CHANGED  /validation/model_scenarios/t_junction_ignored/share_of_F_in_those_rows   
+ 14 CHANGED  /validation/robustness_design_network/junction +1 w/2/cutoff_row1_over_Dstar   
+ 14 CHANGED  /validation/robustness_design_network/junction -1 w/2/cutoff_max_over_Dstar   
+ 14 CHANGED  /validation/robustness_design_network/junction -1 w/2/cutoff_row1_over_Dstar   
+ 14 CHANGED  /validation/robustness_design_network/mouth R_gap +20%/cutoff_row1_over_Dstar   
+ 14 CHANGED  /validation/robustness_design_network/mouth R_gap -20%/cutoff_row1_over_Dstar   
+ 14 CHANGED  /validation/robustness_design_network/noise 0.010 um/cutoff_max_over_Dstar   
+ 13 CHANGED  /assessment/checks/CHK:fits the chip area (reported, not a pa/value   
+ 13 CHANGED  /validation/network/row_f_ratio_max_dev   
+ 13 CHANGED  /validation/realised_cutoff/D_realised_max_um   
+ 13 CHANGED  /validation/realised_cutoff/D_realised_min_um   
+ 13 CHANGED  /validation/robustness_design_network/junction +1 w/2/cutoff_min_over_Dstar   
+ 13 CHANGED  /validation/robustness_design_network/junction -1 w/2/cutoff_min_over_Dstar   
+ 13 CHANGED  /validation/robustness_design_network/mouth R_gap +20%/cutoff_max_over_Dstar   
+ 13 CHANGED  /validation/robustness_design_network/mouth R_gap -20%/cutoff_min_over_Dstar   
+ 12 CHANGED  /validation/robustness_design_network/junction +1 w/2/cutoff_max_over_Dstar   
+ 12 CHANGED  /validation/robustness_design_network/mouth R_gap +20%/cutoff_min_over_Dstar   
+ 12 CHANGED  /validation/robustness_design_network/mouth R_gap -20%/cutoff_max_over_Dstar   
+ 10 CHANGED  /validation/intended_cutoff/D_realised_min_um   
+ 10 CHANGED  /validation/intended_cutoff/row1_cutoff_over_D   
+  9 CHANGED  /validation/model_scenarios/junction_band_lo/rows_losing_their_cutoff   
+  8 CHANGED  /validation/drc/corner_artefacts_open   dinh2024_v1_depicted, dinh2024_v1_specified, dinh_targets_sealed_head, gifford2014_fig6_as_fabricated_15um, m03_linear_const_hairpins_filter_ring, m12_paperclip_shear_arms_plain_ring, platelet_serpentine_chip, wbc_paperclip_teardrop
+  8 CHANGED  /validation/realised_cutoff/declared_share_of_F_oversize   dinh2024_v1_depicted, dinh2024_v1_specified, gifford2014_fig6_as_fabricated_15um, m03_linear_const_hairpins_filter_ring, m08_serpentine_shear_hairpins_plain_teardrop, xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  8 CHANGED  /validation/realised_cutoff/row1_cutoff_over_D   m02_linear_shear_arms_filter_teardrop, m06_serpentine_shear_pack_filter_teardrop, m08_serpentine_shear_hairpins_plain_teardrop, m09_paperclip_const_narrow_plain_teardrop, m15_linear_shear_nomeander_filter_teardrop, m17_paperclip_shear_nomeander_filter_ring, platelet_serpentine_chip, xia2016_rs7_depicted_pullR
+  8 CHANGED  /validation/realised_cutoff/share_of_F_oversize_1%   dinh2024_v1_depicted, dinh2024_v1_specified, gifford2014_fig6_as_fabricated_15um, m03_linear_const_hairpins_filter_ring, m08_serpentine_shear_hairpins_plain_teardrop, xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  8 CHANGED  /validation/realised_cutoff/share_of_F_oversize_2%   dinh2024_v1_depicted, dinh2024_v1_specified, gifford2014_fig6_as_fabricated_15um, m03_linear_const_hairpins_filter_ring, m08_serpentine_shear_hairpins_plain_teardrop, xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  8 CHANGED  /validation/realised_cutoff/share_of_F_oversize_5%   dinh2024_v1_depicted, dinh2024_v1_specified, gifford2014_fig6_as_fabricated_15um, m03_linear_const_hairpins_filter_ring, m08_serpentine_shear_hairpins_plain_teardrop, xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  8 CHANGED  /validation/realised_cutoff/share_of_F_within_1%   dinh2024_v1_depicted, dinh2024_v1_specified, gifford2014_fig6_as_fabricated_15um, m03_linear_const_hairpins_filter_ring, m08_serpentine_shear_hairpins_plain_teardrop, xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  8 CHANGED  /validation/realised_cutoff/share_of_F_within_2%   dinh2024_v1_depicted, dinh2024_v1_specified, gifford2014_fig6_as_fabricated_15um, m03_linear_const_hairpins_filter_ring, m08_serpentine_shear_hairpins_plain_teardrop, xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  8 CHANGED  /validation/realised_cutoff/share_of_F_within_5%   dinh2024_v1_depicted, dinh2024_v1_specified, gifford2014_fig6_as_fabricated_15um, m03_linear_const_hairpins_filter_ring, m08_serpentine_shear_hairpins_plain_teardrop, xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  7 CHANGED  /assessment/notes   m05_serpentine_const_arms_plain_teardrop, m06_serpentine_shear_pack_filter_teardrop, m08_serpentine_shear_hairpins_plain_teardrop, m09_paperclip_const_narrow_plain_teardrop, m11_paperclip_const_pack_filter_ring, platelet_serpentine_chip, wbc_paperclip_teardrop
+  6 CHANGED  /validation/intended_cutoff/D_realised_max_um   dinh_targets_sealed_head, m08_serpentine_shear_hairpins_plain_teardrop, m09_paperclip_const_narrow_plain_teardrop, m11_paperclip_const_pack_filter_ring, m12_paperclip_shear_arms_plain_ring, m17_paperclip_shear_nomeander_filter_ring
+  5 CHANGED  /assessment/checks/CHK:corner radius/value   gifford2014_fig6_as_fabricated_15um, m04_linear_shear_pack_plain_ring, m05_serpentine_const_arms_plain_teardrop, m09_paperclip_const_narrow_plain_teardrop, m12_paperclip_shear_arms_plain_ring
+  4 CHANGED  /assessment/checks/CHK:declared departures (reported, not a p/value/by_option/papers' rectilinear transition/worst_under   dinh2024_v1_depicted, dinh2024_v1_specified, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  4 CHANGED  /assessment/checks/CHK:declared departures (reported, not a p/value/by_option/seed: gap 1 above f*/share_of_F_oversize   dinh2024_v1_depicted, dinh2024_v1_specified, m03_linear_const_hairpins_filter_ring, m08_serpentine_shear_hairpins_plain_teardrop
+  4 CHANGED  /validation/drawing_fidelity/f_dev_max_where_no_cutoff   dinh2024_v1_depicted, dinh2024_v1_specified, xia2016_rs7_depicted, xia2016_rs7_depicted_pullR
+  4 CHANGED  /validation/drawing_fidelity/f_dev_over_fstar_max_where_no_cutoff   dinh2024_v1_depicted, dinh2024_v1_specified, xia2016_rs7_depicted, xia2016_rs7_depicted_pullR
+  4 CHANGED  /validation/drc/corner_artefacts_solid   dinh2024_v1_depicted, dinh2024_v1_specified, m05_serpentine_const_arms_plain_teardrop, m08_serpentine_shear_hairpins_plain_teardrop
+  4 CHANGED  /validation/length_budget/leg_path_lengths_mm   dinh2024_v1_depicted, dinh2024_v1_specified, gifford2014_fig6_as_fabricated_15um, gifford2014_fig6_design
+  4 CHANGED  /validation/length_budget/total_mm   dinh2024_v1_depicted, dinh2024_v1_specified, gifford2014_fig6_as_fabricated_15um, gifford2014_fig6_design
+  4 CHANGED  /validation/loops_measured   gifford2014_fig6_as_fabricated_15um, gifford2014_fig6_design, m11_paperclip_const_pack_filter_ring, m17_paperclip_shear_nomeander_filter_ring
+  4 CHANGED  /validation/realised_cutoff/declared_by_option/papers' rectilinear transition/worst_under   dinh2024_v1_depicted, dinh2024_v1_specified, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  4 CHANGED  /validation/realised_cutoff/declared_by_option/seed: gap 1 above f*/share_of_F_oversize   dinh2024_v1_depicted, dinh2024_v1_specified, m03_linear_const_hairpins_filter_ring, m08_serpentine_shear_hairpins_plain_teardrop
+  3 CHANGED  /assessment/checks/CHK:Q1 drawing realises its design (every /value/F_drawn   dinh2024_v1_specified, m11_paperclip_const_pack_filter_ring, m15_linear_shear_nomeander_filter_teardrop
+  3 CHANGED  /assessment/checks/CHK:Q2 filtrate fraction F/value   dinh2024_v1_specified, m11_paperclip_const_pack_filter_ring, m15_linear_shear_nomeander_filter_teardrop
+  3 CHANGED  /assessment/checks/CHK:declared departures (reported, not a p/value/by_option/loop pull-in/share_of_F_oversize   xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  3 CHANGED  /assessment/checks/CHK:declared departures (reported, not a p/value/by_option/loop pull-in/worst_over   xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  3 CHANGED  /assessment/checks/CHK:declared departures (reported, not a p/value/by_option/loop pull-in/worst_under   xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  3 CHANGED  /assessment/checks/CHK:no intersections: parts keep the floor/value   m11_paperclip_const_pack_filter_ring, m12_paperclip_shear_arms_plain_ring, m17_paperclip_shear_nomeander_filter_ring
+  3 CHANGED  /validation/model_scenarios/dDlast_dlnRextc   xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  3 CHANGED  /validation/model_scenarios/tubing_centre_id_minus_0.025mm/F   xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  3 CHANGED  /validation/model_scenarios/tubing_centre_id_minus_0.025mm/cutoff_over_D_range   xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  3 CHANGED  /validation/model_scenarios/tubing_centre_id_minus_0.025mm/max_cutoff_change   xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  3 CHANGED  /validation/model_scenarios/tubing_centre_id_minus_0.025mm/newly_outside_rows   xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  3 CHANGED  /validation/model_scenarios/tubing_centre_id_plus_0.025mm/F   xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  3 CHANGED  /validation/model_scenarios/tubing_centre_id_plus_0.025mm/cutoff_over_D_range   xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  3 CHANGED  /validation/model_scenarios/tubing_centre_id_plus_0.025mm/max_cutoff_change   xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  3 CHANGED  /validation/model_scenarios/tubing_centre_id_plus_0.025mm/newly_outside_rows   xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  3 CHANGED  /validation/model_scenarios/tubing_length_x0.5/F   xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  3 CHANGED  /validation/model_scenarios/tubing_length_x0.5/cutoff_over_D_range   xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  3 CHANGED  /validation/model_scenarios/tubing_length_x0.5/max_cutoff_change   xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  3 CHANGED  /validation/model_scenarios/tubing_length_x0.5/newly_outside_rows   xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  3 CHANGED  /validation/model_scenarios/tubing_length_x2/F   xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  3 CHANGED  /validation/model_scenarios/tubing_length_x2/cutoff_over_D_range   xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  3 CHANGED  /validation/model_scenarios/tubing_length_x2/max_cutoff_change   xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  3 CHANGED  /validation/model_scenarios/tubing_length_x2/newly_outside_rows   xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  3 CHANGED  /validation/part_clearance/closest   m11_paperclip_const_pack_filter_ring, m12_paperclip_shear_arms_plain_ring, m17_paperclip_shear_nomeander_filter_ring
+  3 CHANGED  /validation/realised_cutoff/declared_by_option/loop pull-in/share_of_F_oversize   xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  3 CHANGED  /validation/realised_cutoff/declared_by_option/loop pull-in/worst_over   xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  3 CHANGED  /validation/realised_cutoff/declared_by_option/loop pull-in/worst_under   xia2016_rs7_depicted, xia2016_rs7_depicted_pullR, xia2016_rs7_specified
+  2 CHANGED  /assessment/checks/CHK:1-D model band (reported, not a pass c/value/bend_correction_off/rows_losing_their_cutoff   gifford_targets_meander_head_19um, wbc_paperclip_teardrop
+  2 CHANGED  /assessment/checks/CHK:declared departures (reported, not a p/value/by_option/head drawn as depicted/undefined_rows   xia2016_rs7_depicted, xia2016_rs7_depicted_pullR
+  2 CHANGED  /assessment/checks/CHK:declared departures (reported, not a p/value/by_option/papers' rectilinear transition/share_of_F_oversize   dinh2024_v1_depicted, dinh2024_v1_specified
+  2 CHANGED  /assessment/checks/CHK:declared departures (reported, not a p/value/by_option/seed: gap 1 above f*/worst_over   m08_serpentine_shear_hairpins_plain_teardrop, xia2016_rs7_depicted_pullR
+  2 ADDED    /input/outlet/flare_deg   dinh2024_v1_depicted, dinh2024_v1_specified
+  2 ADDED    /input/outlet/flare_start_um   dinh2024_v1_depicted, dinh2024_v1_specified
+  2 ADDED    /input/paper/length_bound   dinh2024_v1_depicted, dinh2024_v1_specified
+  2 CHANGED  /input/paper/note   dinh2024_v1_depicted, dinh2024_v1_specified
+  2 CHANGED  /validation/model_scenarios/bend_correction_off/rows_losing_their_cutoff   gifford_targets_meander_head_19um, wbc_paperclip_teardrop
+  2 CHANGED  /validation/model_scenarios/outlet_side_resistance_+1%/newly_outside_rows   gifford2014_fig6_as_fabricated_15um, gifford2014_fig6_design
+  2 CHANGED  /validation/model_scenarios/outlet_side_resistance_-1%/newly_outside_rows   gifford2014_fig6_as_fabricated_15um, gifford2014_fig6_design
+  2 CHANGED  /validation/model_scenarios/t_junction_ignored/max_change_row   xia2016_rs7_depicted, xia2016_rs7_depicted_pullR
+  2 CHANGED  /validation/realised_cutoff/declared_by_option/head drawn as depicted/undefined_rows   xia2016_rs7_depicted, xia2016_rs7_depicted_pullR
+  2 CHANGED  /validation/realised_cutoff/declared_by_option/papers' rectilinear transition/share_of_F_oversize   dinh2024_v1_depicted, dinh2024_v1_specified
+  2 CHANGED  /validation/realised_cutoff/declared_by_option/seed: gap 1 above f*/worst_over   m08_serpentine_shear_hairpins_plain_teardrop, xia2016_rs7_depicted_pullR
+  2 CHANGED  /validation/realised_cutoff/declared_worst_over   m08_serpentine_shear_hairpins_plain_teardrop, xia2016_rs7_depicted
+  1 CHANGED  /assessment/checks/CHK:Q1 drawing realises its design (every /value/cutoff_dev_max   m15_linear_shear_nomeander_filter_teardrop
+  1 CHANGED  /assessment/checks/CHK:Q2 cutoff D at every gap (undeclared r/value/D_range_um   m15_linear_shear_nomeander_filter_teardrop
+  1 CHANGED  /assessment/checks/CHK:declared departures (reported, not a p/value/by_option/floor start/share_of_F_oversize   gifford2014_fig6_as_fabricated_15um
+  1 CHANGED  /assessment/checks/CHK:declared departures (reported, not a p/value/by_option/head drawn as depicted/share_of_F_oversize   dinh2024_v1_depicted
+  1 CHANGED  /assessment/checks/CHK:declared departures (reported, not a p/value/by_option/head drawn as depicted/worst_over   xia2016_rs7_depicted
+  1 CHANGED  /assessment/checks/CHK:declared departures (reported, not a p/value/by_option/papers' rectilinear transition/worst_over   xia2016_rs7_depicted_pullR
+  1 CHANGED  /assessment/checks/CHK:declared departures (reported, not a p/value/by_option/seed: gap 1 above f*/worst_under   xia2016_rs7_depicted_pullR
+  1 CHANGED  /refused/gates/P8/status   wbc_xia_process_refused
+  1 CHANGED  /validation/drc/tiling_artefacts_dropped   m15_linear_shear_nomeander_filter_teardrop
+  1 CHANGED  /validation/fidelity/loop_R_rel_max   m11_paperclip_const_pack_filter_ring
+  1 CHANGED  /validation/intended_cutoff/declared_by_option/floor start/worst_under   gifford2014_fig6_as_fabricated_15um
+  1 CHANGED  /validation/intended_cutoff/declared_by_option/head drawn as depicted/worst_under   dinh2024_v1_depicted
+  1 CHANGED  /validation/intended_cutoff/declared_by_option/papers' rectilinear transition/worst_under   dinh2024_v1_depicted
+  1 CHANGED  /validation/intended_cutoff/declared_by_option/seed: gap 1 above f*/worst_over   m08_serpentine_shear_hairpins_plain_teardrop
+  1 CHANGED  /validation/intended_cutoff/declared_by_option/seed: gap 1 above f*/worst_under   m08_serpentine_shear_hairpins_plain_teardrop
+  1 CHANGED  /validation/intended_cutoff/declared_worst_over   m08_serpentine_shear_hairpins_plain_teardrop
+  1 CHANGED  /validation/model_scenarios/tubing_centre_id_minus_0.025mm/share_of_F_in_those_rows   xia2016_rs7_specified
+  1 CHANGED  /validation/model_scenarios/tubing_centre_id_plus_0.025mm/share_of_F_in_those_rows   xia2016_rs7_specified
+  1 CHANGED  /validation/model_scenarios/tubing_length_x0.5/share_of_F_in_those_rows   xia2016_rs7_specified
+  1 CHANGED  /validation/model_scenarios/tubing_length_x2/share_of_F_in_those_rows   xia2016_rs7_specified
+  1 CHANGED  /validation/realised_cutoff/declared_by_option/floor start/share_of_F_oversize   gifford2014_fig6_as_fabricated_15um
+  1 CHANGED  /validation/realised_cutoff/declared_by_option/head drawn as depicted/share_of_F_oversize   dinh2024_v1_depicted
+  1 CHANGED  /validation/realised_cutoff/declared_by_option/head drawn as depicted/worst_over   xia2016_rs7_depicted
+  1 CHANGED  /validation/realised_cutoff/declared_by_option/papers' rectilinear transition/worst_over   xia2016_rs7_depicted_pullR
+  1 CHANGED  /validation/realised_cutoff/declared_by_option/seed: gap 1 above f*/worst_under   xia2016_rs7_depicted_pullR
+  1 CHANGED  /validation/realised_cutoff/reverse_flow_rows   xia2016_rs7_depicted_pullR
+  1 CHANGED  /validation/robustness_design_network/junction +1 w/2/cutoff_lastrow_over_Dstar   wbc_paperclip_teardrop
+  1 CHANGED  /validation/robustness_design_network/mouth R_gap +20%/cutoff_lastrow_over_Dstar   m05_serpentine_const_arms_plain_teardrop
+  1 CHANGED  /validation/rounding/vertices_with_radius_below/3.0   gifford2014_fig6_design
+  1 CHANGED  /validation/rounding/vertices_with_radius_below/4.5   gifford2014_fig6_design

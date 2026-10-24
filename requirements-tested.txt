@@ -1,0 +1,10 @@
+# the exact versions every record of opencif 1.0.0 was produced with (Python 3.11.17); requirements.txt gives the
+# minimums.  Under Python 3.13.16 with these versions, an independent reviewer's run of RC8's tutorial gave the same
+# printed numbers and the same photomask bytes.
+numpy==2.4.4
+scipy==1.17.1
+shapely==2.1.2
+matplotlib==3.10.9
+pyyaml==6.0.3
+ezdxf==1.4.4
+pillow==12.2.0

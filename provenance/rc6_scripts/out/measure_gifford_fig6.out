@@ -1,0 +1,6 @@
+rows direction 49.806 deg; line sigma observed 0.565 px, matched 0.437 px; 3 legs; bar >= 54.577 px -> <= 4.5807 um/px
+leg 1: centre 27.594 px (raw 27.777, bias +0.183, closure +0.0026) -> 4.5299 um/px; pitch 11.3485 px = 51.41 um; l_g 70.72 um; a 34.28 um; G_read 17.13 um
+leg 2: centre 27.609 px (raw 27.792, bias +0.183, closure +0.0020) -> 4.5276 um/px; pitch 11.3525 px = 51.40 um; l_g 70.88 um; a 34.45 um; G_read 16.95 um
+leg 3: centre 27.674 px (raw 27.858, bias +0.185, closure +0.0032) -> 4.5169 um/px; pitch 11.3622 px = 51.32 um; l_g 70.81 um; a 34.16 um; G_read 17.17 um
+end blocks: the channel between each leg's two end blocks (straight edges, no tip estimator): 27.79-27.97 px, against 27.59-27.67 px between the corrected tip lines; reported, not used (the blocks need not be flush with the tips)
+scale 4.5248 um/px (4.5143-4.5302); pitch 51.38 um (51.29-51.41; <= 52.01 by the bar); l_g 70.80 um (70.6-70.9); G_read 17.08; g_p = pitch - 20.5 = 30.88

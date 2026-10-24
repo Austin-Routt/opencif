@@ -1,0 +1,355 @@
+ok     L1 code stamp  9e4eb55a0affeef3 (anchors 593d977fc83ec217; the release draws RC8's photomasks byte for byte)
+ok     L2 raster dinh5-000.png  a21e2e3ce0710e32
+ok     L2 raster gif5-001.png  e70a8b38b87f9639
+ok     L2 raster gif7-000.png  182826e7aaccf14c
+ok     L2 raster xia5-000.png  e9fb7fbb348567d3
+ok     L2 Dinh Fig. 2B bar rows 470-490  46.906 px (full pixels 46)
+ok     L2 Dinh Fig. 2B bar rows 952-972  46.906 px (full pixels 46)
+ok     L2 Dinh Fig. 2B bar rows 1436-1456  46.906 px (full pixels 46)
+ok     L2 Dinh Fig. 2B bar rows 1920-1940  46.906 px (full pixels 46)
+ok     L2 Gifford Fig. 4 inset bar  107.520 px
+ok     L2 Xia panel-i bar (not the scale of panels b-g)  129.113 px (1.9363 µm/px)
+ok     L2 Xia Fig. 3a bar  178.318 px
+ok     L2 Xia printed-width scale (panels c and g)  1.8028 µm/px (anchored 1.8028)
+ok     L2 Xia leg spacing (Fig. 3a 901 ± 28 µm) at the rc6 scale  902.0 µm
+ok     L2 Xia scale from the loop arcs' curvature (panel d vs the mask's loop radii)  1.7922 ± 0.0044 µm/px over 7 arcs (anchored 1.7922)
+ok     L2 Xia rc6 scale = the mean of its three determinations (data/r6/rc6_values.json)  1.7980 µm/px
+ok     L2 Gifford Fig. 6 measured again from its raster = the presets' measurement (142 s)  pitch 51.377 µm, l_g 70.80 µm, 4.5248 µm/px, rows 49.806°
+ok     L2 Gifford Fig. 6: the 250 µm bar (cut by the raster) bounds the scale from above  4.5248 <= 4.5807 µm/px
+ok     L2 Gifford Fig. 6 turns measured again: 16 walls about one centre (residual SD 0.13 px), 1745.7 µm beyond leg 1; the presets' leg axes follow  leg_Y [0.0, 3491.4, -587.8, 4079.3, -1175.4, 4666.8, -1764.3]
+ok     L3 dinh_fig2B_p4_outlet__rc7 reproduces its anchors  V1 -0.18 / -0.09 px, median 0.566 µm, chamfer 0.954 px (anchored -0.18 / -0.09, 0.566, 0.954)
+ok     L3 dinh_fig2B_p4_outlet__rc7 window rule  half-window 8.53 µm, half the gap 9.50 µm
+ok     L3 dinh_fig2B_p4_outlet__rc7 (claim) V1 the two registrations agree  along -0.18, across -0.09 px
+ok     L3 dinh_fig2B_p4_outlet__rc7 (claim) median / p90  0.57 / 1.57 µm (limits 0.7 / 2.0)
+ok     L3 dinh_fig2B_p4_outlet__rc7 (claim) V2 metric nulls, censored  half a pitch 3.5402333376838144, 5 µm across 7.189475901304194 (both >= 2.00 x)
+ok     L3 dinh_fig2B_p4_outlet__rc7 coverage reproduces its anchor  0.9947 (anchored 0.9947)
+ok     L3 dinh_fig2B_p4_outlet__rc7 (claim) coverage  0.995 of the eligible samples found an outline (>= 0.50)
+ok     L3 dinh_fig2B_p4_outlet__rc7 (claim) V5 scale  along 0.9958 (0.990-1.010), across 1.0014 (0.990-1.010)
+ok     L3 dinh_fig2B_p4_outlet__rc7 (claim) centre width (printed 52)  52.443 (51.500-53.000)
+ok     L3 dinh_fig2B_p4_outlet__rc7 (claim) left side width (printed 44)  44.084 (43.500-44.500)
+ok     L3 dinh_fig2B_p4_outlet__rc7 (claim) row pitch (mask 45.1)  45.079 (44.900-45.300)
+ok     L3 dinh_fig2B_p3_linear__rc7 reproduces its anchors  V1 0.00 / 0.11 px, median 0.439 µm, chamfer 0.570 px (anchored 0.00 / 0.11, 0.439, 0.570)
+ok     L3 dinh_fig2B_p3_linear__rc7 window rule  half-window 8.53 µm, half the gap 9.50 µm
+ok     L3 dinh_fig2B_p3_linear__rc7 (claim) V1 the two registrations agree  along 0.00, across 0.11 px
+ok     L3 dinh_fig2B_p3_linear__rc7 (claim) median / p90  0.44 / 0.89 µm (limits 0.6 / 1.2)
+ok     L3 dinh_fig2B_p3_linear__rc7 (claim) V2 metric nulls, censored  half a pitch 6.819991572196549, 5 µm across 8.76391004315958 (both >= 2.00 x)
+ok     L3 dinh_fig2B_p3_linear__rc7 coverage reproduces its anchor  0.9970 (anchored 0.9970)
+ok     L3 dinh_fig2B_p3_linear__rc7 (claim) coverage  0.997 of the eligible samples found an outline (>= 0.50)
+ok     L3 dinh_fig2B_p3_linear__rc7 (claim) V5 scale  along 0.9997 (0.990-1.010), across 0.9955 (0.990-1.010)
+ok     L3 dinh_fig2B_p3_linear__rc7 (claim) centre width (mask 68.1 at its row)  68.830 (68.000-69.500)
+ok     L3 dinh_fig2B_p2_transition__rc7 reproduces its anchors  V1 0.01 / -0.14 px, median 0.817 µm, chamfer 1.183 px (anchored 0.01 / -0.14, 0.817, 1.183)
+ok     L3 dinh_fig2B_p2_transition__rc7 window rule  half-window 8.53 µm, half the gap 9.50 µm
+ok     L3 dinh_fig2B_p2_transition__rc7 (claim) V1 the two registrations agree  along 0.01, across -0.14 px
+ok     L3 dinh_fig2B_p2_transition__rc7 (claim) median / p90  0.82 / 2.55 µm (limits 1.0 / 3.0)
+ok     L3 dinh_fig2B_p2_transition__rc7 (claim) V2 metric nulls, censored  half a pitch 3.6612804934765704, 5 µm across 5.393929058880982 (both >= 2.00 x)
+ok     L3 dinh_fig2B_p2_transition__rc7 coverage reproduces its anchor  0.9505 (anchored 0.9505)
+ok     L3 dinh_fig2B_p2_transition__rc7 (claim) coverage  0.951 of the eligible samples found an outline (>= 0.50)
+ok     L3 dinh_fig2B_p2_transition__rc7 (claim) V5 scale  along 0.9873 (0.980-1.000), across 1.0057 (0.995-1.015)
+ok     L3 dinh_fig2B_p1_head__rc7 reproduces its anchors  V1 -0.87 / 0.23 px, median 1.405 µm, chamfer 1.311 px (anchored -0.87 / 0.23, 1.405, 1.311)
+ok     L3 dinh_fig2B_p1_head__rc7 window rule  half-window 8.53 µm, half the gap 9.50 µm
+ok     L3 dinh_fig2B_p1_head__rc7 (claim) V1 the two registrations agree  along -0.87, across 0.23 px
+ok     L3 dinh_fig2B_p1_head__rc7 (claim) median / p90  1.40 / 2.66 µm (limits 1.6 / 3.2)
+ok     L3 dinh_fig2B_p1_head__rc7 coverage reproduces its anchor  0.9156 (anchored 0.9156)
+ok     L3 dinh_fig2B_p1_head__rc7 (claim) coverage  0.916 of the eligible samples found an outline (>= 0.50)
+ok     L3 dinh_fig2B_p1_head__rc7 (claim) V2 chamfer nulls  best 1.311 px; half a pitch [3.427 3.323], 5 µm across [2.224 2.321] (both >= 1.30 x)
+ok     L3 dinh_fig2B_p1_head__rc7 (claim) V5 scale (rc7: the square-turn head prefers about 1.011 across (rc6's arc-turn head 0.988); the range widened from rc6's (0.975, 1.0) with the result in view)  along 0.9799 (0.970-1.000), across 1.0106 (0.975-1.015)
+   (dinh rc7: 161 s)
+ok     L3 dinh_fig2B_p4_outlet__fa reproduces its anchors  V1 -0.19 / -0.10 px, median 0.574 µm, chamfer 0.954 px (anchored -0.19 / -0.10, 0.574, 0.954)
+ok     L3 dinh_fig2B_p4_outlet__fa window rule  half-window 8.53 µm, half the gap 9.50 µm
+ok     L3 dinh_fig2B_p4_outlet__fa (claim) V1 the two registrations agree  along -0.19, across -0.10 px
+ok     L3 dinh_fig2B_p4_outlet__fa (claim) median / p90  0.57 / 1.58 µm (limits 0.7 / 2.0)
+ok     L3 dinh_fig2B_p4_outlet__fa (claim) V2 metric nulls, censored  half a pitch 3.4641019030397557, 5 µm across 7.027513440547619 (both >= 2.00 x)
+ok     L3 dinh_fig2B_p4_outlet__fa coverage reproduces its anchor  0.9947 (anchored 0.9947)
+ok     L3 dinh_fig2B_p4_outlet__fa (claim) coverage  0.995 of the eligible samples found an outline (>= 0.50)
+ok     L3 dinh_fig2B_p4_outlet__fa (claim) V5 scale  along 0.9958 (0.990-1.010), across 1.0017 (0.990-1.010)
+ok     L3 dinh_fig2B_p4_outlet__fa (claim) centre width (printed 52)  52.443 (51.500-53.000)
+ok     L3 dinh_fig2B_p4_outlet__fa (claim) left side width (printed 44)  44.084 (43.500-44.500)
+ok     L3 dinh_fig2B_p4_outlet__fa (claim) row pitch (mask 45.1)  45.079 (44.900-45.300)
+ok     L3 dinh_fig2B_p3_linear__fa reproduces its anchors  V1 0.01 / 0.10 px, median 0.438 µm, chamfer 0.571 px (anchored 0.01 / 0.10, 0.438, 0.571)
+ok     L3 dinh_fig2B_p3_linear__fa window rule  half-window 8.53 µm, half the gap 9.50 µm
+ok     L3 dinh_fig2B_p3_linear__fa (claim) V1 the two registrations agree  along 0.01, across 0.10 px
+ok     L3 dinh_fig2B_p3_linear__fa (claim) median / p90  0.44 / 0.89 µm (limits 0.6 / 1.2)
+ok     L3 dinh_fig2B_p3_linear__fa (claim) V2 metric nulls, censored  half a pitch 6.78734952979106, 5 µm across 8.707808526115663 (both >= 2.00 x)
+ok     L3 dinh_fig2B_p3_linear__fa coverage reproduces its anchor  0.9970 (anchored 0.9970)
+ok     L3 dinh_fig2B_p3_linear__fa (claim) coverage  0.997 of the eligible samples found an outline (>= 0.50)
+ok     L3 dinh_fig2B_p3_linear__fa (claim) V5 scale  along 0.9997 (0.990-1.010), across 0.9955 (0.990-1.010)
+ok     L3 dinh_fig2B_p3_linear__fa (claim) centre width (mask 68.1 at its row)  68.830 (68.000-69.500)
+ok     L3 dinh_fig2B_p2_transition__fa reproduces its anchors  V1 0.01 / -0.15 px, median 0.744 µm, chamfer 1.161 px (anchored 0.01 / -0.15, 0.744, 1.161)
+ok     L3 dinh_fig2B_p2_transition__fa window rule  half-window 8.53 µm, half the gap 9.50 µm
+ok     L3 dinh_fig2B_p2_transition__fa (claim) V1 the two registrations agree  along 0.01, across -0.15 px
+ok     L3 dinh_fig2B_p2_transition__fa (claim) median / p90  0.74 / 2.55 µm (limits 1.0 / 3.0)
+ok     L3 dinh_fig2B_p2_transition__fa (claim) V2 metric nulls, censored  half a pitch 4.108723910585639, 5 µm across 6.0709338598648666 (both >= 2.00 x)
+ok     L3 dinh_fig2B_p2_transition__fa coverage reproduces its anchor  0.9500 (anchored 0.9500)
+ok     L3 dinh_fig2B_p2_transition__fa (claim) coverage  0.950 of the eligible samples found an outline (>= 0.50)
+ok     L3 dinh_fig2B_p2_transition__fa (claim) V5 scale  along 0.9874 (0.980-1.000), across 1.0043 (0.995-1.015)
+ok     L3 dinh_fig2B_p1_head__fa reproduces its anchors  V1 -0.87 / 0.23 px, median 1.405 µm, chamfer 1.311 px (anchored -0.87 / 0.23, 1.405, 1.311)
+ok     L3 dinh_fig2B_p1_head__fa window rule  half-window 8.53 µm, half the gap 9.50 µm
+ok     L3 dinh_fig2B_p1_head__fa (claim) V1 the two registrations agree  along -0.87, across 0.23 px
+ok     L3 dinh_fig2B_p1_head__fa (claim) median / p90  1.40 / 2.66 µm (limits 1.6 / 3.2)
+ok     L3 dinh_fig2B_p1_head__fa coverage reproduces its anchor  0.9156 (anchored 0.9156)
+ok     L3 dinh_fig2B_p1_head__fa (claim) coverage  0.916 of the eligible samples found an outline (>= 0.50)
+ok     L3 dinh_fig2B_p1_head__fa (claim) V2 chamfer nulls  best 1.311 px; half a pitch [3.427 3.323], 5 µm across [2.224 2.321] (both >= 1.30 x)
+ok     L3 dinh_fig2B_p1_head__fa (claim) V5 scale (rc7: the square-turn head prefers about 1.011 across (rc6's arc-turn head 0.988); the range widened from rc6's (0.975, 1.0) with the result in view)  along 0.9799 (0.970-1.000), across 1.0106 (0.975-1.015)
+   (dinh fa: 157 s)
+ok     L3 gifford_fig4_inset_leg4__rc7 reproduces its anchors  V1 -0.09 / 0.04 px, median 1.098 µm, chamfer 0.670 px (anchored -0.09 / 0.04, 1.098, 0.670)
+ok     L3 gifford_fig4_inset_leg4__rc7 window rule  half-window 9.77 µm, half the gap 10.25 µm
+ok     L3 gifford_fig4_inset_leg4__rc7 (claim) V1 the two registrations agree  along -0.09, across 0.04 px
+ok     L3 gifford_fig4_inset_leg4__rc7 (claim) median / p90  1.10 / 2.51 µm (limits 1.5 / 3.5)
+ok     L3 gifford_fig4_inset_leg4__rc7 (claim) V2 metric nulls, censored  half a pitch 3.4501873459374033, 5 µm across 3.5928391589873088 (both >= 2.50 x)
+ok     L3 gifford_fig4_inset_leg4__rc7 coverage reproduces its anchor  0.9993 (anchored 0.9993)
+ok     L3 gifford_fig4_inset_leg4__rc7 (claim) coverage  0.999 of the eligible samples found an outline (>= 0.50)
+ok     L3 gifford_fig4_inset_leg4__rc7 (claim) V5 scale  along 1.0007 (0.990-1.010), across 1.0012 (0.990-1.010)
+ok     L3 gifford_fig4_inset_leg4__rc7 (claim) row pitch (mask 45.8)  45.826 (45.600-46.000)
+ok     L3 gifford_fig4_inset_leg4__rc7 (claim) the mask's leg spacing against the inset's 817.9 µm (consistency)  818.000 (813.000-823.000)
+   (gifford4 rc7: 53 s)
+ok     L3 gifford_fig4_inset_leg4__aligned reproduces its anchors  V1 -0.09 / 0.03 px, median 0.610 µm, chamfer 0.513 px (anchored -0.09 / 0.03, 0.610, 0.513)
+ok     L3 gifford_fig4_inset_leg4__aligned window rule  half-window 8.37 µm, half the gap 8.60 µm
+ok     L3 gifford_fig4_inset_leg4__aligned (claim) V1 the two registrations agree  along -0.09, across 0.03 px
+ok     L3 gifford_fig4_inset_leg4__aligned (claim) median / p90  0.61 / 1.40 µm (limits 1.0 / 2.0)
+ok     L3 gifford_fig4_inset_leg4__aligned (claim) V2 metric nulls, censored  half a pitch 8.661054327348843, 5 µm across 6.461029896928484 (both >= 2.50 x)
+ok     L3 gifford_fig4_inset_leg4__aligned coverage reproduces its anchor  0.9995 (anchored 0.9995)
+ok     L3 gifford_fig4_inset_leg4__aligned (claim) coverage  0.999 of the eligible samples found an outline (>= 0.50)
+ok     L3 gifford_fig4_inset_leg4__aligned (claim) V5 scale  along 1.0006 (0.990-1.010), across 1.0011 (0.990-1.010)
+ok     L3 gifford_fig4_inset_leg4__aligned (claim) row pitch (mask 45.8)  45.826 (45.600-46.000)
+ok     L3 gifford_fig4_inset_leg4__aligned (claim) the mask's leg spacing against the inset's 817.9 µm (consistency)  818.000 (813.000-823.000)
+ok     L3 gifford_fig4_inset_leg4__aligned (claim) the inset's neighbouring leg (nested, RC8: leg 2)  2.000 (2.000-2.000)
+   (gifford4 aligned: 55 s)
+<repo>/provenance/rc7_traces/code/panels_gifford6.py:93: RuntimeWarning: Mean of empty slice
+  s = np.nanmean(D[m_], axis=0)
+<repo>/provenance/rc7_traces/code/panels_gifford6.py:128: RuntimeWarning: Mean of empty slice
+  s = np.nanmean(D[m_], axis=0)
+ok     L3 Gifford Fig. 6 (design): END_CHECK -- on every row the last pill (image) and the last post (mask) stand one gap before the divider wall, no further post beyond (the along-flow pairing)  image gaps 16.7 / 17.9 / 17.4 / 17.3 / 17.3 / 17.9 / 16.8 µm, mask [np.float64(20.5)] µm
+ok     L3 Gifford Fig. 6 (design): the legs identified as 7, 5, 3, 1 (flow direction and side widths)  offset SD 1.70 µm (mirrored order: 60.1)
+ok     L3 gifford_fig6_leg7__design reproduces its anchors  V1 -0.02 / -0.36 px, median 1.873 µm, chamfer 0.737 px (anchored -0.02 / -0.36, 1.873, 0.737)
+ok     L3 gifford_fig6_leg7__design window rule  half-window 9.05 µm, half the gap 10.25 µm
+ok     L3 gifford_fig6_leg7__design (claim) V1 the two registrations agree  along -0.02, across -0.36 px
+ok     L3 gifford_fig6_leg7__design (claim) median / p90  1.87 / 4.26 µm (limits 2.0 / 10.0)
+ok     L3 gifford_fig6_leg7__design coverage reproduces its anchor  0.8731 (anchored 0.8731)
+ok     L3 gifford_fig6_leg7__design (claim) coverage  0.873 of the eligible samples found an outline (>= 0.50)
+ok     L3 gifford_fig6_leg7__design (claim) V2 chamfer nulls  best 0.737 px; half a pitch [1.329 1.421], 5 µm across [0.892 0.96 ] (both >= 1.15 x)
+ok     L3 gifford_fig6_leg7__design (claim) V5 scale (along: consistency, the pitch was measured on this image; across: the side channels read wider)  along 0.9996 (0.995-1.005), across 1.0183 (1.000-1.050)
+ok     L3 gifford_fig6_leg5__design reproduces its anchors  V1 0.07 / -0.01 px, median 1.550 µm, chamfer 0.692 px (anchored 0.07 / -0.01, 1.550, 0.692)
+ok     L3 gifford_fig6_leg5__design window rule  half-window 9.05 µm, half the gap 10.25 µm
+ok     L3 gifford_fig6_leg5__design (claim) V1 the two registrations agree  along 0.07, across -0.01 px
+ok     L3 gifford_fig6_leg5__design (claim) median / p90  1.55 / 5.47 µm (limits 2.0 / 10.0)
+ok     L3 gifford_fig6_leg5__design coverage reproduces its anchor  0.9616 (anchored 0.9616)
+ok     L3 gifford_fig6_leg5__design (claim) coverage  0.962 of the eligible samples found an outline (>= 0.50)
+ok     L3 gifford_fig6_leg5__design (claim) V2 chamfer nulls  best 0.692 px; half a pitch [1.367 1.38 ], 5 µm across [0.889 0.906] (both >= 1.15 x)
+ok     L3 gifford_fig6_leg5__design (claim) V5 scale (along: consistency, the pitch was measured on this image; across: the side channels read wider)  along 0.9995 (0.995-1.005), across 1.0193 (1.000-1.050)
+ok     L3 gifford_fig6_leg3__design reproduces its anchors  V1 0.04 / 0.01 px, median 1.478 µm, chamfer 0.781 px (anchored 0.04 / 0.01, 1.478, 0.781)
+ok     L3 gifford_fig6_leg3__design window rule  half-window 9.05 µm, half the gap 10.25 µm
+ok     L3 gifford_fig6_leg3__design (claim) V1 the two registrations agree  along 0.04, across 0.01 px
+ok     L3 gifford_fig6_leg3__design (claim) median / p90  1.48 / 6.50 µm (limits 2.0 / 10.0)
+ok     L3 gifford_fig6_leg3__design coverage reproduces its anchor  0.9754 (anchored 0.9754)
+ok     L3 gifford_fig6_leg3__design (claim) coverage  0.975 of the eligible samples found an outline (>= 0.50)
+ok     L3 gifford_fig6_leg3__design (claim) V2 chamfer nulls  best 0.781 px; half a pitch [1.446 1.461], 5 µm across [0.984 0.961] (both >= 1.15 x)
+ok     L3 gifford_fig6_leg3__design (claim) V5 scale (along: consistency, the pitch was measured on this image; across: the side channels read wider)  along 0.9997 (0.995-1.005), across 1.0256 (1.000-1.050)
+ok     L3 gifford_fig6_leg1__design reproduces its anchors  V1 -0.00 / 0.10 px, median 1.092 µm, chamfer 0.977 px (anchored -0.00 / 0.10, 1.092, 0.977)
+ok     L3 gifford_fig6_leg1__design window rule  half-window 9.05 µm, half the gap 10.25 µm
+ok     L3 gifford_fig6_leg1__design (claim) V1 the two registrations agree  along -0.00, across 0.10 px
+ok     L3 gifford_fig6_leg1__design (claim) median / p90  1.09 / 2.33 µm (limits 2.0 / 10.0)
+ok     L3 gifford_fig6_leg1__design coverage reproduces its anchor  0.8158 (anchored 0.8158)
+ok     L3 gifford_fig6_leg1__design (claim) coverage  0.816 of the eligible samples found an outline (>= 0.50)
+ok     L3 gifford_fig6_leg1__design (claim) V2 chamfer nulls  best 0.977 px; half a pitch [1.635 1.661], 5 µm across [1.191 1.143] (both >= 1.15 x)
+ok     L3 gifford_fig6_leg1__design (claim) V5 scale (along: consistency, the pitch was measured on this image; across: the side channels read wider)  along 1.0000 (0.995-1.005), across 1.0428 (1.000-1.050)
+   (gifford6 design: 170 s)
+ok     L3 Gifford Fig. 6 (design): END_CHECK -- on every row the last pill (image) and the last post (mask) stand one gap before the divider wall, no further post beyond (the along-flow pairing)  image gaps 16.7 / 17.9 / 17.4 / 17.3 / 17.3 / 17.9 / 16.8 µm, mask [np.float64(20.5)] µm
+ok     L3 Gifford Fig. 6 (design): the legs identified as 7, 5, 3, 1 (flow direction and side widths)  offset SD 1.70 µm (mirrored order: 60.1)
+ok     L3 gifford_fig6_four_legs__design reproduces its anchors  V1 -0.01 / -0.10 px, median 1.415 µm, chamfer 0.723 px (anchored -0.01 / -0.10, 1.415, 0.723)
+ok     L3 gifford_fig6_four_legs__design window rule  half-window 9.05 µm, half the gap 10.25 µm
+ok     L3 gifford_fig6_four_legs__design (claim) V1 the two registrations agree  along -0.01, across -0.10 px
+ok     L3 gifford_fig6_four_legs__design (claim) median / p90  1.41 / 5.21 µm (limits 2.0 / 8.0)
+ok     L3 gifford_fig6_four_legs__design coverage reproduces its anchor  0.9359 (anchored 0.9359)
+ok     L3 gifford_fig6_four_legs__design (claim) coverage  0.936 of the eligible samples found an outline (>= 0.50)
+ok     L3 gifford_fig6_four_legs__design (claim) V2 chamfer nulls  best 0.723 px; half a pitch [1.357 1.385], 5 µm across [1.034 0.995] (both >= 1.15 x)
+ok     L3 gifford_fig6_four_legs__design (claim) V5 scale (consistency: the pitch and the leg axes were read on this image)  along 0.9994 (0.995-1.005), across 1.0007 (0.995-1.005)
+ok     L3 gifford_fig6_four_legs__design (claim) leg 7 (not in the fit) across, from its own end's map, µm (consistency: the axes were read on this image)  0.305 (-1.000-1.000)
+ok     L3 gifford_fig6_four_legs__design (claim) the turns: median distance from the image's turn walls to the mask's nearest edge, µm (consistency)  1.433 (0.000-2.000)
+ok     L3 gifford_fig6_four_legs__design (claim) the turns: 90th percentile of that distance, µm (consistency)  3.650 (0.000-5.000)
+ok     L3 gifford_fig6_four_legs__design (claim) the turns: mean radius mask - image about the image's turn centre, µm (consistency)  0.216 (-2.000-2.000)
+ok     L3 gifford_fig6_four_legs__design (claim) the turns: the mask's own turn centre across from the image's, µm (consistency)  7.954 (-20.000-20.000)
+ok     L3 gifford_fig6_four_legs__design (claim) the turns: the mask's own turn centre along the flow from the image's, µm (+ upstream): the one independent turn result  -5.679 (-10.000-10.000)
+   (gifford6 design: 182 s)
+ok     L3 Gifford Fig. 6 (aligned): END_CHECK -- on every row the last pill (image) and the last post (mask) stand one gap before the divider wall, no further post beyond (the along-flow pairing)  image gaps 16.7 / 17.9 / 17.4 / 17.3 / 17.3 / 17.9 / 16.8 µm, mask [np.float64(17.1)] µm
+ok     L3 Gifford Fig. 6 (aligned): the legs identified as 7, 5, 3, 1 (flow direction and side widths)  offset SD 0.51 µm (mirrored order: 58.5)
+ok     L3 gifford_fig6_leg7__aligned reproduces its anchors  V1 -0.00 / -0.17 px, median 0.639 µm, chamfer 0.504 px (anchored -0.00 / -0.17, 0.639, 0.504)
+ok     L3 gifford_fig6_leg7__aligned window rule  half-window 6.79 µm, half the gap 8.55 µm
+ok     L3 gifford_fig6_leg7__aligned (claim) V1 the two registrations agree  along -0.00, across -0.17 px
+ok     L3 gifford_fig6_leg7__aligned (claim) median / p90  0.64 / 1.74 µm (limits 1.0 / 2.5)
+ok     L3 gifford_fig6_leg7__aligned coverage reproduces its anchor  0.8718 (anchored 0.8718)
+ok     L3 gifford_fig6_leg7__aligned (claim) coverage  0.872 of the eligible samples found an outline (>= 0.50)
+ok     L3 gifford_fig6_leg7__aligned (claim) V2 chamfer nulls  best 0.504 px; half a pitch [1.322 1.411], 5 µm across [0.82  0.839] (both >= 1.30 x)
+ok     L3 gifford_fig6_leg7__aligned (claim) V5 scale (along: consistency, the pitch was measured on this image; across: the side channels on the image)  along 0.9999 (0.995-1.005), across 1.0040 (0.995-1.010)
+ok     L3 gifford_fig6_leg5__aligned reproduces its anchors  V1 0.09 / -0.01 px, median 0.610 µm, chamfer 0.450 px (anchored 0.09 / -0.01, 0.610, 0.450)
+ok     L3 gifford_fig6_leg5__aligned window rule  half-window 6.79 µm, half the gap 8.55 µm
+ok     L3 gifford_fig6_leg5__aligned (claim) V1 the two registrations agree  along 0.09, across -0.01 px
+ok     L3 gifford_fig6_leg5__aligned (claim) median / p90  0.61 / 1.66 µm (limits 1.0 / 2.5)
+ok     L3 gifford_fig6_leg5__aligned coverage reproduces its anchor  0.9609 (anchored 0.9609)
+ok     L3 gifford_fig6_leg5__aligned (claim) coverage  0.961 of the eligible samples found an outline (>= 0.50)
+ok     L3 gifford_fig6_leg5__aligned (claim) V2 chamfer nulls  best 0.450 px; half a pitch [1.325 1.342], 5 µm across [0.805 0.806] (both >= 1.30 x)
+ok     L3 gifford_fig6_leg5__aligned (claim) V5 scale (along: consistency, the pitch was measured on this image; across: the side channels on the image)  along 0.9995 (0.995-1.005), across 1.0016 (0.995-1.010)
+ok     L3 gifford_fig6_leg3__aligned reproduces its anchors  V1 0.05 / -0.03 px, median 0.591 µm, chamfer 0.517 px (anchored 0.05 / -0.03, 0.591, 0.517)
+ok     L3 gifford_fig6_leg3__aligned window rule  half-window 6.79 µm, half the gap 8.55 µm
+ok     L3 gifford_fig6_leg3__aligned (claim) V1 the two registrations agree  along 0.05, across -0.03 px
+ok     L3 gifford_fig6_leg3__aligned (claim) median / p90  0.59 / 1.64 µm (limits 1.0 / 2.5)
+ok     L3 gifford_fig6_leg3__aligned coverage reproduces its anchor  0.9920 (anchored 0.9920)
+ok     L3 gifford_fig6_leg3__aligned (claim) coverage  0.992 of the eligible samples found an outline (>= 0.50)
+ok     L3 gifford_fig6_leg3__aligned (claim) V2 chamfer nulls  best 0.517 px; half a pitch [1.383 1.397], 5 µm across [0.852 0.848] (both >= 1.30 x)
+ok     L3 gifford_fig6_leg3__aligned (claim) V5 scale (along: consistency, the pitch was measured on this image; across: the side channels on the image)  along 0.9997 (0.995-1.005), across 1.0022 (0.995-1.010)
+ok     L3 gifford_fig6_leg1__aligned reproduces its anchors  V1 0.02 / -0.01 px, median 0.515 µm, chamfer 0.609 px (anchored 0.02 / -0.01, 0.515, 0.609)
+ok     L3 gifford_fig6_leg1__aligned window rule  half-window 6.79 µm, half the gap 8.55 µm
+ok     L3 gifford_fig6_leg1__aligned (claim) V1 the two registrations agree  along 0.02, across -0.01 px
+ok     L3 gifford_fig6_leg1__aligned (claim) median / p90  0.51 / 1.55 µm (limits 1.0 / 2.5)
+ok     L3 gifford_fig6_leg1__aligned coverage reproduces its anchor  1.0000 (anchored 1.0000)
+ok     L3 gifford_fig6_leg1__aligned (claim) coverage  1.000 of the eligible samples found an outline (>= 0.50)
+ok     L3 gifford_fig6_leg1__aligned (claim) V2 chamfer nulls  best 0.609 px; half a pitch [1.443 1.468], 5 µm across [0.952 0.949] (both >= 1.30 x)
+ok     L3 gifford_fig6_leg1__aligned (claim) V5 scale (along: consistency, the pitch was measured on this image; across: the side channels on the image)  along 1.0000 (0.995-1.005), across 1.0001 (0.995-1.010)
+   (gifford6 aligned: 163 s)
+ok     L3 Gifford Fig. 6 (aligned): END_CHECK -- on every row the last pill (image) and the last post (mask) stand one gap before the divider wall, no further post beyond (the along-flow pairing)  image gaps 16.7 / 17.9 / 17.4 / 17.3 / 17.3 / 17.9 / 16.8 µm, mask [np.float64(17.1)] µm
+ok     L3 Gifford Fig. 6 (aligned): the legs identified as 7, 5, 3, 1 (flow direction and side widths)  offset SD 0.51 µm (mirrored order: 58.5)
+ok     L3 gifford_fig6_four_legs__aligned reproduces its anchors  V1 0.01 / -0.12 px, median 0.820 µm, chamfer 0.514 px (anchored 0.01 / -0.12, 0.820, 0.514)
+ok     L3 gifford_fig6_four_legs__aligned window rule  half-window 6.79 µm, half the gap 8.55 µm
+ok     L3 gifford_fig6_four_legs__aligned (claim) V1 the two registrations agree  along 0.01, across -0.12 px
+ok     L3 gifford_fig6_four_legs__aligned (claim) median / p90  0.82 / 2.19 µm (limits 1.0 / 3.0)
+ok     L3 gifford_fig6_four_legs__aligned coverage reproduces its anchor  0.9655 (anchored 0.9655)
+ok     L3 gifford_fig6_four_legs__aligned (claim) coverage  0.965 of the eligible samples found an outline (>= 0.50)
+ok     L3 gifford_fig6_four_legs__aligned (claim) V2 chamfer nulls  best 0.514 px; half a pitch [1.269 1.334], 5 µm across [0.922 0.903] (both >= 1.30 x)
+ok     L3 gifford_fig6_four_legs__aligned (claim) V5 scale (consistency: the pitch and the leg axes were read on this image)  along 0.9991 (0.995-1.005), across 0.9997 (0.995-1.005)
+ok     L3 gifford_fig6_four_legs__aligned (claim) leg 7 (not in the fit) across, from its own end's map, µm (consistency: the axes were read on this image)  0.305 (-1.000-1.000)
+ok     L3 gifford_fig6_four_legs__aligned (claim) the turns: median distance from the image's turn walls to the mask's nearest edge, µm (consistency)  1.607 (0.000-2.000)
+ok     L3 gifford_fig6_four_legs__aligned (claim) the turns: 90th percentile of that distance, µm (consistency)  4.030 (0.000-5.000)
+ok     L3 gifford_fig6_four_legs__aligned (claim) the turns: mean radius mask - image about the image's turn centre, µm (consistency)  0.826 (-2.000-2.000)
+ok     L3 gifford_fig6_four_legs__aligned (claim) the turns: the mask's own turn centre across from the image's, µm (consistency)  8.235 (-20.000-20.000)
+ok     L3 gifford_fig6_four_legs__aligned (claim) the turns: the mask's own turn centre along the flow from the image's, µm (+ upstream): the one independent turn result  -5.779 (-10.000-10.000)
+   (gifford6 aligned: 233 s)
+ok     L3 Xia Fig. 3a (rc7) whole-device pose reproduces its anchors  rotation -0.0095°, chamfer 1.125 px (anchored -0.0095, 1.125)
+ok     L3 Xia Fig. 3a (rc7) V11 inlet and head  along -4.9, across -28.9 µm (anchored -4.9, -28.9)
+ok     L3 Xia Fig. 3a (rc7) V11 loops at the top  along -0.0, across +24.3 µm (anchored -0.0, +24.3)
+ok     L3 Xia Fig. 3a (rc7) V11 leg 1  along invariant, across +10.9 µm (anchored invariant, +10.9)
+ok     L3 Xia Fig. 3a (rc7) V11 leg 2  along invariant, across -2.5 µm (anchored invariant, -2.5)
+ok     L3 Xia Fig. 3a (rc7) V11 leg 3  along invariant, across +34.2 µm (anchored invariant, +34.2)
+ok     L3 Xia Fig. 3a (rc7) V11 leg 4  along invariant, across +20.2 µm (anchored invariant, +20.2)
+ok     L3 Xia Fig. 3a (rc7) V11 leg 5  along invariant, across +37.1 µm (anchored invariant, +37.1)
+ok     L3 Xia Fig. 3a (rc7) V11 leg 6  along invariant, across +34.6 µm (anchored invariant, +34.6)
+ok     L3 Xia Fig. 3a (rc7) V11 leg 7  along invariant, across +21.8 µm (anchored invariant, +21.8)
+ok     L3 Xia Fig. 3a (rc7) V11 loops at the bottom  along +5685.2, across +40.2 µm (anchored +5685.2, +40.2)
+ok     L3 Xia Fig. 3a (rc7) V11 outlet ring and ports  along +5405.4, across +35.6 µm (anchored +5405.4, +35.6)
+ok     L3 Xia Fig. 3a (rc7) V12 panel c inside its box: True as anchored  0.15 of the half-size
+ok     L3 Xia Fig. 3a (rc7) V12 panel d inside its box: True as anchored  0.63 of the half-size
+ok     L3 Xia Fig. 3a (rc7) V12 panel e inside its box: True as anchored  0.61 of the half-size
+ok     L3 Xia Fig. 3a (rc7) V12 panel f inside its box: True as anchored  0.07 of the half-size
+ok     L3 Xia Fig. 3a (rc7) V12 panel g inside its box: False as anchored  8.20 of the half-size
+ok     L3 xia_fig3g_outlet__rc7 reproduces its anchors  V1 0.55 / 1.27 px, median 1.729 µm, chamfer 2.156 px (anchored 0.55 / 1.27, 1.729, 2.156)
+ok     L3 xia_fig3g_outlet__rc7 window rule  half-window 7.19 µm, half the gap 8.00 µm
+ok     L3 xia_fig3g_outlet__rc7 (recorded) V1 the two registrations agree  along 0.55, across 1.27 px
+ok     L3 xia_fig3g_outlet__rc7 coverage reproduces its anchor  0.4762 (anchored 0.4762)
+ok     L3 xia_fig3g_outlet__rc7 (recorded) V5 scale  along 0.9980 (0.990-1.010), across 1.0378 (1.020-1.050)
+ok     L3 xia_fig3c__rc7 reproduces its anchors  V1 0.13 / -0.01 px, median 2.774 µm, chamfer 1.258 px (anchored 0.13 / -0.01, 2.774, 1.258)
+ok     L3 xia_fig3c__rc7 window rule  half-window 7.19 µm, half the gap 8.00 µm
+ok     L3 xia_fig3c__rc7 (claim) V1 the two registrations agree  along 0.13, across -0.01 px
+ok     L3 xia_fig3c__rc7 (claim) median / p90  2.77 / 5.08 µm (limits 3.5 / 7.0)
+ok     L3 xia_fig3c__rc7 coverage reproduces its anchor  0.8981 (anchored 0.8981)
+ok     L3 xia_fig3c__rc7 (claim) coverage  0.898 of the eligible samples found an outline (>= 0.50)
+ok     L3 xia_fig3c__rc7 (claim) V2 chamfer nulls  best 1.258 px; half a pitch [3.03  3.009], 5 µm across [1.781 1.742] (both >= 1.30 x)
+ok     L3 xia_fig3c__rc7 (claim) V5 scale  along 0.9996 (0.990-1.010), across 1.0032 (0.990-1.010)
+ok     L3 xia_fig3c__rc7 (claim) leg 1 centre at its first posts (printed 300)  299.933 (297.000-303.000)
+ok     L3 xia_fig3d__rc7 reproduces its anchors  V1 0.26 / -1.24 px, median 1.697 µm, chamfer 1.839 px (anchored 0.26 / -1.24, 1.697, 1.839)
+ok     L3 xia_fig3d__rc7 window rule  half-window 7.19 µm, half the gap 8.00 µm
+ok     L3 xia_fig3d__rc7 (recorded) V1 the two registrations agree  along 0.26, across -1.24 px
+ok     L3 xia_fig3d__rc7 coverage reproduces its anchor  0.4214 (anchored 0.4214)
+ok     L3 xia_fig3d__rc7 (recorded) V5 scale  along 1.0054 (0.995-1.015), across 1.0088 (0.995-1.015)
+ok     L3 xia_fig3e__rc7 reproduces its anchors  V1 0.22 / -3.67 px, median 1.988 µm, chamfer 1.756 px (anchored 0.22 / -3.67, 1.988, 1.756)
+ok     L3 xia_fig3e__rc7 window rule  half-window 7.19 µm, half the gap 8.00 µm
+ok     L3 xia_fig3e__rc7 (recorded) V1 the two registrations disagree, as recorded  along 0.22, across -3.67 px
+ok     L3 xia_fig3e__rc7 coverage reproduces its anchor  0.7744 (anchored 0.7744)
+ok     L3 xia_fig3e__rc7 (recorded) V5 scale  along 1.0000 (0.990-1.010), across 1.0078 (1.000-1.020)
+ok     L3 xia_fig3e__rc7 (recorded) leg 3 centre at Fig. 3a's box (mask 205.1)  186.020 (183.000-189.000)
+ok     L3 xia_fig3f__rc7 reproduces its anchors  V1 -0.06 / 1.18 px, median 2.397 µm, chamfer 2.468 px (anchored -0.06 / 1.18, 2.397, 2.468)
+ok     L3 xia_fig3f__rc7 window rule  half-window 7.98 µm, half the gap 8.00 µm
+ok     L3 xia_fig3f__rc7 (recorded) V1 the two registrations agree  along -0.06, across 1.18 px
+ok     L3 xia_fig3f__rc7 coverage reproduces its anchor  0.6797 (anchored 0.6797)
+ok     L3 xia_fig3f__rc7 (recorded) V5 scale  along 1.0034 (0.990-1.010), across 0.9628 (0.950-0.980)
+   (xia rc7: 613 s)
+ok     L3 Xia Fig. 3a (pp) whole-device pose reproduces its anchors  rotation -0.0010°, chamfer 1.133 px (anchored -0.0010, 1.133)
+ok     L3 Xia Fig. 3a (pp) V11 inlet and head  along +0.0, across -6.7 µm (anchored +0.0, -6.7)
+ok     L3 Xia Fig. 3a (pp) V11 loops at the top  along +16.0, across +37.0 µm (anchored +16.0, +37.0)
+ok     L3 Xia Fig. 3a (pp) V11 leg 1  along invariant, across +15.4 µm (anchored invariant, +15.4)
+ok     L3 Xia Fig. 3a (pp) V11 leg 2  along invariant, across +0.3 µm (anchored invariant, +0.3)
+ok     L3 Xia Fig. 3a (pp) V11 leg 3  along invariant, across +31.3 µm (anchored invariant, +31.3)
+ok     L3 Xia Fig. 3a (pp) V11 leg 4  along invariant, across +22.8 µm (anchored invariant, +22.8)
+ok     L3 Xia Fig. 3a (pp) V11 leg 5  along invariant, across +47.3 µm (anchored invariant, +47.3)
+ok     L3 Xia Fig. 3a (pp) V11 leg 6  along invariant, across +43.8 µm (anchored invariant, +43.8)
+ok     L3 Xia Fig. 3a (pp) V11 leg 7  along invariant, across +31.5 µm (anchored invariant, +31.5)
+ok     L3 Xia Fig. 3a (pp) V11 loops at the bottom  along +109.8, across +42.0 µm (anchored +109.8, +42.0)
+ok     L3 Xia Fig. 3a (pp) V11 outlet ring and ports  along -194.1, across +39.6 µm (anchored -194.1, +39.6)
+ok     L3 Xia Fig. 3a (pp) V12 panel c inside its box: True as anchored  0.08 of the half-size
+ok     L3 Xia Fig. 3a (pp) V12 panel d inside its box: True as anchored  0.63 of the half-size
+ok     L3 Xia Fig. 3a (pp) V12 panel e inside its box: True as anchored  0.61 of the half-size
+ok     L3 Xia Fig. 3a (pp) V12 panel f inside its box: True as anchored  0.07 of the half-size
+ok     L3 Xia Fig. 3a (pp) V12 panel g inside its box: False as anchored  1.09 of the half-size
+ok     L3 xia_fig3g_outlet__pp reproduces its anchors  V1 0.23 / 1.83 px, median 1.256 µm, chamfer 1.305 px (anchored 0.23 / 1.83, 1.256, 1.305)
+ok     L3 xia_fig3g_outlet__pp window rule  half-window 7.19 µm, half the gap 8.00 µm
+ok     L3 xia_fig3g_outlet__pp (recorded) V1 the two registrations disagree, as recorded  along 0.23, across 1.83 px
+ok     L3 xia_fig3g_outlet__pp coverage reproduces its anchor  0.5109 (anchored 0.5109)
+ok     L3 xia_fig3g_outlet__pp (recorded) V5 scale  along 0.9969 (0.990-1.010), across 1.0043 (0.990-1.020)
+ok     L3 xia_fig3c__pp reproduces its anchors  V1 0.13 / -0.01 px, median 2.784 µm, chamfer 1.254 px (anchored 0.13 / -0.01, 2.784, 1.254)
+ok     L3 xia_fig3c__pp window rule  half-window 7.19 µm, half the gap 8.00 µm
+ok     L3 xia_fig3c__pp (claim) V1 the two registrations agree  along 0.13, across -0.01 px
+ok     L3 xia_fig3c__pp (claim) median / p90  2.78 / 4.99 µm (limits 3.5 / 7.0)
+ok     L3 xia_fig3c__pp coverage reproduces its anchor  0.9028 (anchored 0.9028)
+ok     L3 xia_fig3c__pp (claim) coverage  0.903 of the eligible samples found an outline (>= 0.50)
+ok     L3 xia_fig3c__pp (claim) V2 chamfer nulls  best 1.254 px; half a pitch [3.025 3.004], 5 µm across [1.778 1.735] (both >= 1.30 x)
+ok     L3 xia_fig3c__pp (claim) V5 scale  along 0.9996 (0.990-1.010), across 1.0034 (0.990-1.010)
+ok     L3 xia_fig3c__pp (claim) leg 1 centre at its first posts (printed 300)  299.933 (297.000-303.000)
+ok     L3 xia_fig3d__pp reproduces its anchors  V1 -0.25 / 0.39 px, median 2.987 µm, chamfer 1.723 px (anchored -0.25 / 0.39, 2.987, 1.723)
+ok     L3 xia_fig3d__pp window rule  half-window 7.19 µm, half the gap 8.00 µm
+ok     L3 xia_fig3d__pp (recorded) V1 the two registrations agree  along -0.25, across 0.39 px
+ok     L3 xia_fig3d__pp coverage reproduces its anchor  0.4345 (anchored 0.4345)
+ok     L3 xia_fig3d__pp (recorded) V5 scale  along 1.0027 (0.995-1.015), across 0.9988 (0.995-1.015)
+ok     L3 xia_fig3e__pp reproduces its anchors  V1 0.19 / 0.94 px, median 2.022 µm, chamfer 1.195 px (anchored 0.19 / 0.94, 2.022, 1.195)
+ok     L3 xia_fig3e__pp window rule  half-window 7.19 µm, half the gap 8.00 µm
+ok     L3 xia_fig3e__pp (claim) V1 the two registrations agree  along 0.19, across 0.94 px
+ok     L3 xia_fig3e__pp (claim) median / p90  2.02 / 4.11 µm (limits 3.0 / 13.0)
+ok     L3 xia_fig3e__pp coverage reproduces its anchor  0.8969 (anchored 0.8969)
+ok     L3 xia_fig3e__pp (claim) coverage  0.897 of the eligible samples found an outline (>= 0.50)
+ok     L3 xia_fig3e__pp (claim) V2 chamfer nulls  best 1.195 px; half a pitch [3.693 3.682], 5 µm across [1.45 1.67] (both >= 1.15 x)
+ok     L3 xia_fig3e__pp (claim) V5 scale  along 1.0000 (0.990-1.010), across 0.9981 (0.990-1.010)
+ok     L3 xia_fig3f__pp reproduces its anchors  V1 -0.06 / 1.17 px, median 2.409 µm, chamfer 2.453 px (anchored -0.06 / 1.17, 2.409, 2.453)
+ok     L3 xia_fig3f__pp window rule  half-window 7.98 µm, half the gap 8.00 µm
+ok     L3 xia_fig3f__pp (recorded) V1 the two registrations agree  along -0.06, across 1.17 px
+ok     L3 xia_fig3f__pp coverage reproduces its anchor  0.6811 (anchored 0.6811)
+ok     L3 xia_fig3f__pp (recorded) V5 scale  along 1.0032 (0.990-1.010), across 0.9500 (0.940-0.980)
+   (xia pp: 636 s)
+ok     L4 gifford2014_fig6_design takes the micrograph's leg axes and the last leg's early end  leg_Y [0, 3491.4, -587.8, 4079.3, -1175.4, 4666.8, -1764.3], pc_last_short 257
+ok     L4 gifford2014_fig6_as_fabricated_15um takes the micrograph's leg axes and the last leg's early end  leg_Y [0, 3491.4, -587.8, 4079.3, -1175.4, 4666.8, -1764.3], pc_last_short 257
+ok     L4 gifford2014_fig6_aligned takes the micrograph's leg axes and the last leg's early end  leg_Y [0, 3491.4, -587.8, 4079.3, -1175.4, 4666.8, -1764.3], pc_last_short 257
+ok     L4 gifford2014_fig4_design takes the inset's leg spacing  leg_spacing_um 818 (inset 817.9)
+ok     L4 gifford2014_fig4_as_fabricated_20um takes the inset's leg spacing  leg_spacing_um 818 (inset 817.9)
+ok     L4 gifford2014_fig4_as_fabricated_8um takes the inset's leg spacing  leg_spacing_um 818 (inset 817.9)
+ok     L4 gifford2014_fig4_aligned takes the inset's leg spacing  leg_spacing_um 818 (inset 817.9)
+ok     L6 V13 aligned_leg4 is anchored with its required verdict PASS  PASS, required PASS
+ok     L6 V13 aligned_neighbour is anchored with its required verdict PASS  PASS, required PASS
+ok     L6 V13 fold20_leg4 is anchored with its required verdict PASS  PASS, required PASS
+ok     L6 V13 pathorder_leg4 is anchored with its required verdict PASS  PASS, required PASS
+ok     L6 V13 pathorder_neighbour is anchored with its required verdict FAIL  FAIL, required FAIL
+ok     L6 V13 rc7_leg4 is anchored with its required verdict PASS  PASS, required PASS
+ok     L6 V13 start51_leg4 is anchored with its required verdict PASS  PASS, required PASS
+ok     L6 V13 aligned_leg4 reproduces its anchor (PASS)  PASS, 80 positions, image slope -0.00469325014438147, mask slope -0.007999376802892618
+ok     L6 V13 aligned_leg4: PASS, as required  PASS
+ok     L6 V13 aligned_neighbour reproduces its anchor (PASS)  PASS, 130 positions, image slope -0.0024046172776798903, mask slope -0.0025692746478342926
+ok     L6 V13 aligned_neighbour: PASS, as required  PASS
+ok     L6 V13 fold20_leg4 reproduces its anchor (PASS)  PASS, 80 positions, image slope -0.004709439863976563, mask slope -0.007997336008307734
+ok     L6 V13 fold20_leg4: PASS, as required  PASS
+ok     L6 V13 fold20_neighbour reproduces its anchor (FAIL)  FAIL, 116 positions, image slope -0.0025768844714721085, mask slope 0.0030175513500423786
+ok     L6 V13 pathorder_leg4 reproduces its anchor (PASS)  PASS, 80 positions, image slope -0.0046636984283506, mask slope -0.00799922209062848
+ok     L6 V13 pathorder_leg4: PASS, as required  PASS
+ok     L6 V13 pathorder_neighbour reproduces its anchor (FAIL)  FAIL, 117 positions, image slope -0.0025428130495155046, mask slope 0.0030146020169283007
+ok     L6 V13 pathorder_neighbour: FAIL, as required  FAIL
+ok     L6 V13 rc7_leg4 reproduces its anchor (PASS)  PASS, 80 positions, image slope -0.00471234907529635, mask slope -0.007997454358261451
+ok     L6 V13 rc7_leg4: PASS, as required  PASS
+ok     L6 V13 rc7_neighbour reproduces its anchor (PASS)  PASS, 130 positions, image slope -0.00240366680384882, mask slope -0.0025687851669711085
+ok     L6 V13 start51_leg4 reproduces its anchor (PASS)  PASS, 80 positions, image slope -0.004717549504845806, mask slope -0.007995786704276983
+ok     L6 V13 start51_leg4: PASS, as required  PASS
+ok     L6 V13 start51_neighbour reproduces its anchor (PASS)  PASS, 116 positions, image slope -0.002575844748936866, mask slope -0.003030768172542663
+
+339 checks, 0 failed, 0 inputs missing

@@ -1,0 +1,40 @@
+# Gifford 2014, Fig. 4 bead device -- REJECTED reading B (rc7's reproduction until RC8; register GIF4-1 / INV-2): kept
+# as a variant and shown as a figure, not a reproduction.  Gifford's printed design with every printed value (f_gap
+# 3.34e-4 at w_c 100 um, depth 80 um, final side width 300 um, four legs, his start rule at 8 um) and the inset's measured
+# gap (17.2 um) and posts (28.6 um along the flow), with the four legs side by side IN PATH ORDER (layout.order: path;
+# 818 um apart) so that the inset's neighbour of leg 4 is leg 3, and leg 4's array ending 8.2 mm before the others (D,
+# fitted: leg 3's 124.7 um side channels are what the inset shows beside leg 4).
+# Why rejected (RC8; third-party review 1 of rc7 and review8, register GIF4-1): in a CIF leg the side channels widen
+#   along the flow (Gifford 2014, Fig. 1 caption), so the neighbour's taper shows its flow direction.  In path order legs
+#   3 and 4 flow opposite ways; on the inset the neighbour widens the way leg 4 flows (V13, the taper-direction sign
+#   test: FAIL on this reading, PASS on the nested one).  With it, the caption ("the second and fourth legs") and the
+#   schematic's nesting contradict this layout (the inset's two co-directional arrows too, the weakest line: placed
+#   symmetrically about leg 4, both may mark leg 4).  Its mean wall offsets (-0.8 to +1.0 um on the walls with >= 50
+#   samples; -1.4 um on one of 20) could not see it: a mean over the window is blind to a slope along it.
+# RC8's Fig. 4 reproduction is presets/gifford2014_fig4_aligned.yaml (the nested reading, the same start, gap and
+# leg spacing); the design-level preset gifford2014_fig4_design is the reference.
+name: gifford2014_fig4_pathorder
+description: Gifford 2014 Fig. 4 bead device, rejected reading B (printed design and start rule; legs in path order; 17.2 um gap measured; rejected by the caption, the schematic, the arrows and the taper direction)
+targets:
+  cutoff_um: 5.203174831309222      # kappa_g x(f_gap 3.34e-4) w_c 100
+  filtrate_fraction: 0.90644        # outlet identity at the printed final side width 300 um
+process: {depth_um: 80, gap_um: 17.2, post_length_um: 28.6, post_width_um: 59.5, min_feature_um: 8, fillet_um: 2.5}
+centre_channel: {taper: constant, width_in_um: 100}
+layout: {style: paperclip, legs: 4, leg_spacing_um: 818, order: path}
+meander: {enabled: false}
+start: {style: floor, side_width_um: 8}
+inlet: {style: plain, port_radius_um: 300}
+outlet: {style: separate, port_radius_um: 750, centre_port_radius_um: 300}
+gates: {mode: reproduce}
+reproduction:
+  pc_last_short: 8200.0   # D, fitted: leg 4's array ends 8.2 mm before the others (the neighbour leg 3's width on the inset)
+  stem_half: 300.0
+  W: 2400.0
+paper:
+  source: Gifford et al. 2014, Fig. 4 and pp. 4496-4500, 4503
+  source_trace: "provenance/rc7_traces/results/gifford/gifford_results_pathorder.json (Fig. 4 inset)"   # RC8: the trace record of this variant
+  layout: "Fig. 4 caption: 'the second and fourth legs of the device'; schematic nested (not to scale). This reading:
+    legs in path order, the inset's legs 3 and 4 (register GIF4-1, B; INV-2)"
+  measured_on_figure: [the neighbour's side channels 124.5 / 124.96 um (50 profiles), leg spacing 817.9 um, G 17.2 um and
+    posts 28.6 um along the flow]
+  assumed: ["start side width 8 um (Gifford's 10 : 1 limitation at 80 um)", port radii (schematic not to scale)]

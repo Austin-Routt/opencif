@@ -1,0 +1,12 @@
+# Decoupling grid: the same parts (linear, constant w_c 80 um, packed meander head, plain inlet, separate outlets) and
+# process, with the cutoff D and the filtrate fraction F set independently.  Each build must realise its own D at every
+# gap and its own F on the drawn mask.
+name: dc_D4_F0p5
+targets: {cutoff_um: 4.0, filtrate_fraction: 0.5}
+process: {depth_um: 100, gap_um: 19, post_length_um: 27, post_width_um: 50, min_feature_um: 19}
+centre_channel: {taper: constant, width_in_um: 80}
+layout: {style: linear}
+meander: {enabled: true, style: pack, channel_um: 28, wall_um: 27, head_width_um: 4000, seal: require}
+inlet: {style: plain, port_radius_um: 750}
+outlet: {style: separate, port_radius_um: 750, centre_port_radius_um: 750}
+gates: {mode: strict}

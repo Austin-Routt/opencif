@@ -1,0 +1,608 @@
+{
+ "summary": {
+  "records_compared": 53,
+  "identical_apart_from_named_additions": [
+   "dc_D3_F0p3",
+   "dc_D3_F0p5",
+   "dc_D3_F0p7",
+   "dc_D4_F0p3",
+   "dc_D4_F0p5",
+   "dc_D4_F0p7",
+   "dc_D5_F0p3",
+   "dc_D5_F0p5",
+   "dc_D5_F0p7",
+   "dinh2024_v1_depicted",
+   "dinh2024_v1_figure_aligned",
+   "dinh2024_v1_specified",
+   "dinh_targets_sealed_head",
+   "gifford2014_fig4_aligned",
+   "gifford2014_fig4_as_fabricated_20um",
+   "gifford2014_fig4_as_fabricated_8um",
+   "gifford2014_fig4_design",
+   "gifford2014_fig5A_as_fabricated_12p5um",
+   "gifford2014_fig5B_as_fabricated_12p5um",
+   "gifford2014_fig5C_as_fabricated_12p5um",
+   "gifford2014_fig5D_as_fabricated_12p5um",
+   "gifford2014_fig6_aligned",
+   "gifford2014_fig6_as_fabricated_15um",
+   "gifford2014_fig6_design",
+   "gifford_physics_linear",
+   "gifford_targets_meander_head_19um",
+   "m01_linear_const_pack_plain_separate",
+   "m02_linear_shear_arms_filter_teardrop",
+   "m03_linear_const_hairpins_filter_ring",
+   "m04_linear_shear_pack_plain_ring",
+   "m05_serpentine_const_arms_plain_teardrop",
+   "m06_serpentine_shear_pack_filter_teardrop",
+   "m07_serpentine_const_pack_filter_separate",
+   "m07_serpentine_const_pack_filter_separate_x3",
+   "m08_serpentine_shear_hairpins_plain_teardrop",
+   "m09_paperclip_const_narrow_plain_teardrop",
+   "m10_paperclip_shear_hairpins_filter_separate",
+   "m11_paperclip_const_pack_filter_ring",
+   "m12_paperclip_shear_arms_plain_ring",
+   "m13_paperclip_const_nomeander_sealed_fine",
+   "m13_paperclip_const_nomeander_sealed_fine_x4",
+   "m15_linear_shear_nomeander_filter_teardrop",
+   "m16_serpentine_shear_nomeander_plain_separate",
+   "m17_paperclip_shear_nomeander_filter_ring",
+   "m18_paperclip_const_arms_filter_separate",
+   "platelet_serpentine_chip",
+   "wbc_paperclip_teardrop",
+   "wbc_xia_process_refused",
+   "xia2016_rs7_aligned",
+   "xia2016_rs7_depicted",
+   "xia2016_rs7_depicted_pullR",
+   "xia2016_rs7_specified"
+  ],
+  "changed_for_named_reason": {
+   "m14_paperclip_const_nomeander_floorstart19": "CHANGELOG 1.0.0 item 3: the physics audit's M14 (the design code's Reynolds and Stokes gates on the drawn mask) belongs to the validity envelope; the floor start's undeclared over-extracting rows exceed the Stokes gate (Re_gap 0.098 and Re_delta 0.18 against 0.01), so the record, which already FAILs Q2 (exit 2, unchanged), is also outside the envelope, and its verdict names the audit's failure (P5)"
+  },
+  "unexplained": {},
+  "named_additions": [
+   "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+   "element_physics_audit of an array (new; item 3)",
+   "validation.design_code_reports (new; item 4)",
+   "validation.physics_audit (new; CHANGELOG item 3)"
+  ]
+ },
+ "records": {
+  "dc_D3_F0p3": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "dc_D3_F0p5": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "dc_D3_F0p7": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "dc_D4_F0p3": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "dc_D4_F0p5": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "dc_D4_F0p7": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "dc_D5_F0p3": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "dc_D5_F0p5": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "dc_D5_F0p7": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "dinh2024_v1_depicted": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "dinh2024_v1_figure_aligned": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "dinh2024_v1_specified": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "dinh_targets_sealed_head": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "gifford2014_fig4_aligned": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "gifford2014_fig4_as_fabricated_20um": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "gifford2014_fig4_as_fabricated_8um": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "gifford2014_fig4_design": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "gifford2014_fig5A_as_fabricated_12p5um": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "gifford2014_fig5B_as_fabricated_12p5um": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "gifford2014_fig5C_as_fabricated_12p5um": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "gifford2014_fig5D_as_fabricated_12p5um": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "gifford2014_fig6_aligned": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "gifford2014_fig6_as_fabricated_15um": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "gifford2014_fig6_design": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "gifford_physics_linear": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "gifford_targets_meander_head_19um": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "m01_linear_const_pack_plain_separate": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "m02_linear_shear_arms_filter_teardrop": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "m03_linear_const_hairpins_filter_ring": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "m04_linear_shear_pack_plain_ring": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "m05_serpentine_const_arms_plain_teardrop": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "m06_serpentine_shear_pack_filter_teardrop": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "m07_serpentine_const_pack_filter_separate": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "m07_serpentine_const_pack_filter_separate_x3": {
+   "differences": [],
+   "expected": [
+    "element_physics_audit of an array (new; item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "m08_serpentine_shear_hairpins_plain_teardrop": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "m09_paperclip_const_narrow_plain_teardrop": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "m10_paperclip_shear_hairpins_filter_separate": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "m11_paperclip_const_pack_filter_ring": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "m12_paperclip_shear_arms_plain_ring": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "m13_paperclip_const_nomeander_sealed_fine": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "m13_paperclip_const_nomeander_sealed_fine_x4": {
+   "differences": [],
+   "expected": [
+    "element_physics_audit of an array (new; item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "m14_paperclip_const_nomeander_floorstart19": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [
+    [
+     "m14_paperclip_const_nomeander_floorstart19/assessment/status/validity_envelope",
+     "'INSIDE' vs 'OUTSIDE'"
+    ],
+    [
+     "m14_paperclip_const_nomeander_floorstart19/assessment/status_codes/validity_envelope",
+     "'INSIDE' vs 'OUTSIDE'"
+    ],
+    [
+     "m14_paperclip_const_nomeander_floorstart19/assessment/verdict",
+     "'FAIL (Q2 cutoff D at every gap (undeclared rows))' vs 'FAIL (Q2 cutoff D at every gap (undeclared rows); physics audit of the photomask file (P0-P10))'"
+    ]
+   ],
+   "reason": "CHANGELOG 1.0.0 item 3: the physics audit's M14 (the design code's Reynolds and Stokes gates on the drawn mask) belongs to the validity envelope; the floor start's undeclared over-extracting rows exceed the Stokes gate (Re_gap 0.098 and Re_delta 0.18 against 0.01), so the record, which already FAILs Q2 (exit 2, unchanged), is also outside the envelope, and its verdict names the audit's failure (P5)"
+  },
+  "m15_linear_shear_nomeander_filter_teardrop": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "m16_serpentine_shear_nomeander_plain_separate": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "m17_paperclip_shear_nomeander_filter_ring": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "m18_paperclip_const_arms_filter_separate": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "platelet_serpentine_chip": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "wbc_paperclip_teardrop": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "wbc_xia_process_refused": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "xia2016_rs7_aligned": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "xia2016_rs7_depicted": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "xia2016_rs7_depicted_pullR": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  },
+  "xia2016_rs7_specified": {
+   "differences": [],
+   "expected": [
+    "design.kernel_pair.source names the Pairing's new module (items 1 and 2)",
+    "validation.design_code_reports (new; item 4)",
+    "validation.physics_audit (new; CHANGELOG item 3)"
+   ],
+   "changed_for_named_reason": [],
+   "reason": null
+  }
+ }
+}

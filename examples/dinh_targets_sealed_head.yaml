@@ -1,0 +1,16 @@
+# Dinh 2024's targets and process, drawn as a NEW design: every gap at the cutoff, gap 1 sealed by the packing arms
+# head (Dinh's topology with as many arms as the width holds), exact transition, no pull-in.  Inside Dinh's 3.2 mm the
+# head cannot seal gap 1 (it needs 24 arms, 12 fit: the build refuses it and says so); the narrowest head that seals
+# it is 4.45 mm wide, and the sealed device is then ~170 mm long (a 5.2 x 175 mm chip; Dinh's unsealed V1 as reproduced: ~154 mm).
+# Outside the kappa plateau (u_min 0.029 < 0.035), like Dinh's own device, so it is built with gates.mode: evaluate
+# and the record says so.
+name: dinh_targets_sealed_head
+targets: {cutoff_um: 2.174, filtrate_fraction: 0.5592}
+process: {depth_um: 140, gap_um: 19, post_length_um: 26.1, post_width_um: 54, min_feature_um: 19}
+chip: {width_mm: 5.2, length_mm: 175, margin_um: 150}
+centre_channel: {taper: constant_shear, width_in_um: 75, width_min_um: 52}
+layout: {style: linear}
+meander: {enabled: true, style: pack, channel_um: 28, wall_um: 27, seal: require, seam_side_width_um: 21}
+inlet: {style: plain, port_radius_um: 750}
+outlet: {style: teardrop, port_radius_um: 750, centre_port_radius_um: 750}
+gates: {mode: evaluate}

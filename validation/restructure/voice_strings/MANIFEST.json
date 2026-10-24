@@ -1,0 +1,8 @@
+{
+ "devices/dinh2024_v1/inputs/SOURCE.md": "531955a4098b2cd1198db6fbc4dd8c0f794d3e6ae81a94e5218c0c0be68ffa5b",
+ "devices/gifford2014_fig4/inputs/SOURCE.md": "3149fc910a21d854405325b53f39f125eb2343a631b099269ab7c7fcef4aa213",
+ "devices/gifford2014_fig6/inputs/SOURCE.md": "72a5760df5ccab6f85208c0197f9fcda97f0f66c9b990183163fcd9762e5cb1e",
+ "devices/xia2016_rs7/inputs/SOURCE.md": "8c9b4367f31eacf9f5bc43b51a5fa9f9b30becb17bfb3feb9447a4e8cb0449b6",
+ "tools/options_sheet.py": "236f222cfa9ab6e9f67ab58da5bf71d8d574d4b4eaceebcf4ea02fe1dc9b0586",
+ "tools/results.py": "9e092236c737ed45aea40f4f7b447a7449d4000e850ee28e963a3f3d19c18d67"
+}

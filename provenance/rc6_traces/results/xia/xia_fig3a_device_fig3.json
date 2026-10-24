@@ -1,0 +1,367 @@
+{
+ "raster": "xia5-000.png",
+ "raster_sha256": "e9fb7fbb348567d3ab7606479c83342bcf2f5ee3d6b4c162f7c345e5ef339991",
+ "dxf": "xia2016_rs7_depicted_fig3.dxf",
+ "dxf_sha256": "280a04edaa54dcf736af80de049c37329cb1db0f85e3ae0e39dd53f22f111c64",
+ "record": "xia2016_rs7_depicted_fig3.json",
+ "bar_px": 178.31764705882352,
+ "um_per_px": 28.03984957445405,
+ "truncation_px": 3.0,
+ "leg_extent_um": [
+  [
+   12242.1,
+   57411.7
+  ],
+  [
+   -3971.3,
+   57411.7
+  ],
+  [
+   -3971.3,
+   57411.7
+  ],
+  [
+   -3971.3,
+   57411.7
+  ],
+  [
+   -3971.3,
+   57411.7
+  ],
+  [
+   -3971.3,
+   57411.7
+  ],
+  [
+   -3971.3,
+   57722.5
+  ]
+ ],
+ "pose_top": {
+  "col": 1063.1441278079315,
+  "row": 418.693147944231,
+  "rotation_deg": -0.008432773736065977,
+  "chamfer_px": 1.7265730545423215
+ },
+ "pose_whole": {
+  "col": 1064.234110227454,
+  "row": 419.7971997787025,
+  "rotation_deg": -0.008432773736065977,
+  "chamfer_px": 1.1114698574633501
+ },
+ "scale_free": {
+  "scale_over_bar": 1.0011379563106229,
+  "chamfer_px": 1.0980320755857493
+ },
+ "V11_group_shifts": {
+  "inlet and head": {
+   "points": 12391,
+   "shift_px": [
+    -0.9716772025447811,
+    -0.33519661894580577
+   ],
+   "shift_along_um": -9.394852660836918,
+   "shift_across_um": -27.247065620671947,
+   "chamfer_px_before": 1.8241101696624116,
+   "chamfer_px_after": 1.7771438716576062
+  },
+  "loops at the top": {
+   "points": 3010,
+   "shift_px": [
+    0.9534050581975455,
+    0.27434678284125386
+   ],
+   "shift_along_um": 7.688707835549014,
+   "shift_across_um": 26.734466326394884,
+   "chamfer_px_before": 1.3250506646908127,
+   "chamfer_px_after": 1.209219241725313
+  },
+  "leg 1": {
+   "points": 15568,
+   "shift_px": [
+    0.43749999999999994,
+    0.0
+   ],
+   "shift_along_um": null,
+   "shift_across_um": 12.267434055955958,
+   "chamfer_px_before": 1.5603047445863025,
+   "chamfer_px_after": 1.5443749377455442
+  },
+  "leg 2": {
+   "points": 16771,
+   "shift_px": [
+    -0.07150000000000002,
+    0.0
+   ],
+   "shift_along_um": null,
+   "shift_across_um": -2.004849222859089,
+   "chamfer_px_before": 1.5488273521692704,
+   "chamfer_px_after": 1.548371033294702
+  },
+  "leg 3": {
+   "points": 20507,
+   "shift_px": [
+    1.2578125000000004,
+    0.0
+   ],
+   "shift_along_um": null,
+   "shift_across_um": 35.2688729108734,
+   "chamfer_px_before": 1.3726240068967912,
+   "chamfer_px_after": 1.0743774671122468
+  },
+  "leg 4": {
+   "points": 21120,
+   "shift_px": [
+    0.7687500000000007,
+    0.0
+   ],
+   "shift_along_um": null,
+   "shift_across_um": 21.555634126894066,
+   "chamfer_px_before": 0.983753237327148,
+   "chamfer_px_after": 0.8179061174495101
+  },
+  "leg 5": {
+   "points": 21894,
+   "shift_px": [
+    1.3687499999999997,
+    0.0
+   ],
+   "shift_along_um": null,
+   "shift_across_um": 38.37954368934792,
+   "chamfer_px_before": 1.348379502409763,
+   "chamfer_px_after": 0.6637884078190102
+  },
+  "leg 6": {
+   "points": 21045,
+   "shift_px": [
+    1.2914062499999996,
+    0.0
+   ],
+   "shift_along_um": null,
+   "shift_across_um": 36.21083659731285,
+   "chamfer_px_before": 1.2341522072105,
+   "chamfer_px_after": 0.68194631604097
+  },
+  "leg 7": {
+   "points": 20315,
+   "shift_px": [
+    0.840625,
+    0.0
+   ],
+   "shift_along_um": null,
+   "shift_across_um": 23.570998293229664,
+   "chamfer_px_before": 0.886958289688288,
+   "chamfer_px_after": 0.7031156281090912
+  },
+  "loops at the bottom": {
+   "points": 3194,
+   "shift_px": [
+    1.444962573051452,
+    3.1134751081466674
+   ],
+   "shift_along_um": 87.29540953085287,
+   "shift_across_um": 40.52938173728848,
+   "chamfer_px_before": 1.959795195783608,
+   "chamfer_px_after": 1.2419130524116968
+  },
+  "outlet ring and ports": {
+   "points": 3055,
+   "shift_px": [
+    1.3464673720300193,
+    -6.821545236557719
+   ],
+   "shift_along_um": -191.28065695713548,
+   "shift_across_um": 37.72659035399728,
+   "chamfer_px_before": 2.4739112881846483,
+   "chamfer_px_after": 1.1701139632912638
+  }
+ },
+ "V12_boxes": {
+  "b": {
+   "box_centre_px": [
+    1072,
+    430
+   ],
+   "half_size_px": 21,
+   "box_centre_mask_um": [
+    317.0058801096215,
+    248.3639836258351
+   ],
+   "half_size_um": 588.836841063535
+  },
+  "c": {
+   "box_centre_px": [
+    1063,
+    851
+   ],
+   "half_size_px": 20.5,
+   "box_centre_mask_um": [
+    12121.819565159414,
+    -2.2572367205359587
+   ],
+   "half_size_um": 574.816916276308,
+   "traced": "xia_results_fig3c_fig3.json",
+   "panel_centre_mask_um": [
+    12089.826118062963,
+    50.43082762759814
+   ],
+   "offset_um": [
+    -31.993447096450836,
+    52.6880643481341
+   ],
+   "offset_over_half_size": 0.09166060158676252,
+   "ok": true
+  },
+  "d": {
+   "box_centre_px": [
+    988,
+    277
+   ],
+   "half_size_px": 20.5,
+   "box_centre_mask_um": [
+    -3972.7443990771726,
+    -2107.614770160077
+   ],
+   "half_size_um": 574.816916276308,
+   "traced": "xia_results_fig3d_fig3.json",
+   "panel_centre_mask_um": [
+    -4336.6359062041365,
+    -2211.983428513254
+   ],
+   "offset_um": [
+    -363.8915071269639,
+    -104.36865835317667
+   ],
+   "offset_over_half_size": 0.6330563642494568,
+   "ok": true
+  },
+  "e": {
+   "box_centre_px": [
+    972,
+    1447
+   ],
+   "half_size_px": 20.5,
+   "box_centre_mask_um": [
+    28833.945278039137,
+    -2551.423890521132
+   ],
+   "half_size_um": 574.816916276308,
+   "traced": "xia_results_fig3e_fig3.json",
+   "panel_centre_mask_um": [
+    28800.547555208123,
+    -2203.304283651372
+   ],
+   "offset_um": [
+    -33.39772283101411,
+    348.11960686976
+   ],
+   "offset_over_half_size": 0.6056182360200806,
+   "ok": true
+  },
+  "f": {
+   "box_centre_px": [
+    921,
+    967
+   ],
+   "half_size_px": 20.5,
+   "box_centre_mask_um": [
+    15375.028099756813,
+    -3983.437113266553
+   ],
+   "half_size_um": 574.816916276308,
+   "traced": "xia_results_fig3f_fig3.json",
+   "panel_centre_mask_um": [
+    15334.155774041415,
+    -3971.3298070634014
+   ],
+   "offset_um": [
+    -40.87232571539789,
+    12.107306203151438
+   ],
+   "offset_over_half_size": 0.0711049458672351,
+   "ok": true
+  },
+  "g": {
+   "box_centre_px": [
+    908,
+    2454
+   ],
+   "half_size_px": 21.5,
+   "box_centre_mask_um": [
+    57070.33761501582,
+    -4341.8184598778835
+   ],
+   "half_size_um": 602.856765850762,
+   "traced": "xia_results_fig3.json",
+   "panel_centre_mask_um": [
+    57724.077121103386,
+    -4296.072478501386
+   ],
+   "offset_um": [
+    653.7395060875642,
+    45.745981376497184
+   ],
+   "offset_over_half_size": 1.0844027024644827,
+   "ok": false
+  },
+  "h": {
+   "box_centre_px": [
+    918,
+    2658
+   ],
+   "half_size_px": 21.5,
+   "box_centre_mask_um": [
+    62790.42559729313,
+    -4060.5780804471615
+   ],
+   "half_size_um": 602.856765850762
+  },
+  "i": {
+   "box_centre_px": [
+    972,
+    2872
+   ],
+   "half_size_px": 21.5,
+   "box_centre_mask_um": [
+    68790.73048886712,
+    -2545.5430641461367
+   ],
+   "half_size_um": 602.856765850762
+  }
+ },
+ "mask_extent_um": {
+  "x": [
+   -8194.386479049057,
+   70692.3768015278
+  ],
+  "y": [
+   -8344.437570463526,
+   3816.793484995718
+  ]
+ },
+ "underlay": {
+  "name": "xia2016_fig3a_whole_device",
+  "raster_sha256": "e9fb7fbb348567d3ab7606479c83342bcf2f5ee3d6b4c162f7c345e5ef339991",
+  "crop": [
+   765,
+   40,
+   1203,
+   2920
+  ],
+  "px_per_um": 0.035663529411764705,
+  "map_chamfer": {
+   "origin_px": [
+    1063.1441278079315,
+    418.693147944231
+   ],
+   "ex_px_per_um": [
+    -5.248946355717252e-06,
+    0.03566352902549562
+   ],
+   "ey_px_per_um": [
+    0.03566352902549562,
+    5.248946355717252e-06
+   ]
+  }
+ }
+}

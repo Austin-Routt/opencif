@@ -1,0 +1,36 @@
+# Gifford 2014, Fig. 4 bead device -- DESIGN-LEVEL reproduction (his printed parameters and his sealed-start convention,
+# w_s(0) = 0, Fig. 2).  It is NOT a fabricable picture of his mask: the sealed start draws a 4.86 um first side channel and
+# 52 rows below 19 um, so it needs a 4.5 um process.  Gifford prints neither w_s(1) nor his minimum feature (his visible
+# gaps are ~20 um); the 4.5 um floor and the 1.8 um corner limit below were chosen after the design was known.
+# For his physics at a 19 um floor with a meander head see examples/gifford_targets_meander_head_19um.yaml (a sealed meander head: a new design, not a reproduction).
+# D: Gifford prints f_gap = 3.34e-4 at w_c = 100 um; the cutoff it implies is kappa_g x(f) w_c = 5.2032 um (cubic pair).
+# F: 0.90644, the outlet identity at the printed final side width 300 um.
+name: gifford2014_fig4_design
+description: Gifford 2014 Fig. 4 bead device, design-level (constant w_c, constant f, sealed start, 4-leg folded layout; needs 4.5 um features)
+targets:
+  cutoff_um: 5.203174831309222
+  filtrate_fraction: 0.90644
+process:
+  depth_um: 80
+  gap_um: 20.5            # G (record measurement on Fig. 4)
+  post_length_um: 25.3    # g_p along the flow (rc6: the inset's row pitch 45.82 um - G; rc5 25.6)
+  post_width_um: 59.5     # l_g across the flow (rc6: the post columns' centre-to-centre separation - the printed 100 um centre;
+                          # rc5 56.8 between outline centres)
+  min_feature_um: 4.5     # the sealed start draws a 4.86 um first side channel
+  min_radius_um: 1.8
+  fillet_um: 2.0
+centre_channel: {taper: constant, width_in_um: 100}
+layout: {style: paperclip, legs: 4, leg_spacing_um: 818}   # Fig. 4 inset: legs 2 and 4 817.9 um apart (rc6; the generator's rule gave 969)
+meander: {enabled: false}
+inlet: {style: plain, port_radius_um: 300}
+outlet: {style: separate, port_radius_um: 750, centre_port_radius_um: 300}
+gates: {mode: reproduce}
+reproduction:
+  pc_last_short: 2000.0   # Fig. 4 inset: leg 4's array ends 2 mm before the others
+  wall_M: 4.5
+  stem_half: 300.0       # the replica record's (unused without a filter)
+  W: 2400.0
+paper:
+  source: Gifford et al. 2014, Fig. 4 and p. 4499
+  source_trace: "provenance/rc7_traces/results/gifford/gifford_results_rc7.json (Fig. 4 inset; the design reference)"   # rc7 (ADJ-C6, code review R10): the trace record of this mask against the figures
+  measured: {cutoff: 'Fig. 5 beads d50/D* 1.01-1.13 (held-out devices)', F: '~10x enrichment is a design ratio'}

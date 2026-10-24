@@ -1,0 +1,483 @@
+--- v110/APPENDIX_B_current.tex	2026-10-09 13:52:15.063111634 -0500
++++ v114/APPENDIX_B_current.tex	2026-09-29 09:56:42.000000000 -0500
+@@ -358,7 +358,9 @@
+ derived law with a single calibrated prefactor; that the two are \emph{provably
+ decoupled}, so the size threshold and the filtrate fraction target are
+ independent design \emph{inputs} rather than coupled outcomes; and that all of
+-this holds inside a validity envelope the design tool checks and enforces. The
++this holds inside a validity envelope the design tool checks: it refuses a
++design that leaves the plateau or the Reynolds gates, and it reports, without
++refusing, a design over its length budget. The
+ plain-English rendering compresses those four to three (engineerable from
+ targets, on decoupled yield and cutoff laws, inside a checked envelope), and
+ this appendix argues them in that order.
+@@ -366,13 +368,14 @@
+ two storeys accordingly: the lower one is the cutoff law (C1--C3$'$, with C5--C7
+ corroborating into it and the yield-side separation lemma C4 drawn in but
+ deliberately \emph{disconnected} from its spine), and the upper one is what that
+-disconnection buys: the design map the separation makes locally invertible (C8), and the
++disconnection buys: the design map the separation, with the plateau schedule, makes locally
++invertible (C8), and the
+ five-leg accrual over the operating law, the separation lemma, the map's
+ inversion, its realization and the declared scope, that is the thesis. C4 is the
+ hinge between them: drawn low, joined to nothing in the cutoff chain, and a
+ premise of everything above it. C9, the transport lemma, belongs to neither
+-storey: it upgrades C1's steric premise and closes C3d's residual list without
+-lying on any path to the thesis.
++storey: it upgrades C1's steric premise and, within the model's premises, closes
++C3d's residual list, without lying on any path to the thesis.
+ 
+ This appendix's purpose is auditing rather than exposition:
+ each load-bearing claim is stated as a separate node, together with the support
+@@ -380,7 +383,7 @@
+ importantly, the residual risk, i.e.\ the critical questions that remain
+ unanswered. The closed-form derivations the chain invokes are proved line by
+ line in Appendix~A; the symbolic results are reproduced by the reference
+-implementation \texttt{cif\_cutoff.py} (its \texttt{verify\_all()} self-tests)
++code \texttt{cif\_cutoff.py} (its \texttt{verify\_all()} self-tests)
+ and the empirical and CFD results by that program's frozen Part~II regression
+ stamps, both recorded in the derivation record \cite{b12a}. This appendix is the connective tissue between them: it does not
+ re-prove the mathematics, it certifies that every link in the argument has been
+@@ -797,14 +800,14 @@
+         ``Four 125 \um-deep CIF devices with values of $\fgap$ ranging
+         $2.2$--$10.0\times10^{-4}$ were tested''
+         \cite[p.~4501, Fig.~5 caption]{b1}, at the \emph{same} $100\um$ central
+-        channel as the Fig.~4 device, and the leukoreduction device is ``The
++        channel as the Fig.~4 device, and the Fig.~6 platelet-enrichment device is ``The
+         depth of the device was 150 \um\ $\pm$5 \um; the width of the central
+         channel was 125 \um'' \cite[p.~4502]{b1}. Because $\Kdepth$ rises
+         monotonically towards $1$ with $\alpha$, either of those deeper
+         assumptions would make the correction both \emph{smaller} and
+         \emph{more uniform} across the three widths. Taking the shallowest
+-        reported depth is therefore the \emph{conservative} reading, and the
+-        $11$--$19\%$ above is an upper bound rather than an estimate. A number from one triplet must never
++        reported depth is therefore the \emph{conservative} reading, and, if the
++        array is at least that deep, the $11$--$19\%$ above is an upper bound rather than an estimate. A number from one triplet must never
+         be quoted against another. Throughout, $\Kdepth$ is folded into the
+         \emph{apparent} prefactor as a per-device interpretive factor; it is
+         \emph{not} applied to the data, which collapse more tightly on the clean
+@@ -905,10 +908,11 @@
+ digitizations (the primary and two re-digitizations), which return $\kapp$ in $[4.91, 4.92]$ and reject the global law
+ every time. None of that depends on the Xia comparison. &
+ \texttt{xia\_anchor\_unverified}. The recalculation is real and its inputs are
+-quoted, but it is \emph{not} a held-out test, for three reasons. The graph's own:
++quoted, but it is \emph{not} a held-out test, for the two reasons CQ2 separates, after a
++caveat that is the graph's own:
+ the $\sim\!140\um$ figure is the channel \emph{depth} while the central-channel
+ \emph{width} tapers $300 \to 150\um$, so the literal device aspect ratio is
+-uncertain, which is why the reference implementation flags the anchor
++uncertain, which is why \texttt{cif\_cutoff\_future\_work.py} flags the anchor
+ \textsc{unverified}. It is also circular: Xia \cite{b2} takes its $7\um$ cutoff
+ from \emph{the same Gifford Fig.~3} \cite[p.~4500]{b1} this plateau was fitted
+ from, and Gifford is a Xia co-author. Decisively, the $\xiaAgreePct\%$ agreement
+@@ -932,7 +936,7 @@
+ fifteen individual points span $\kappaSpanLo$--$\kappaSpanHi$, which is the span
+ and never the ramp. Foot and rejection robust across all three digitizations. &
+ \texttt{more\_reliable} (existence) and \texttt{more\_coherent\_explanation}
+-(mechanism). \emph{Mechanism} is a finite-particle capture-regime change, deferred
++(mechanism). \emph{Mechanism}: the knee is attributed to a finite-particle capture-regime change, deferred
+ to future finite-particle work; the $\feff(d)$ alternative (the content of
+ \texttt{more\_reliable}) is bounded but not eliminated; DLD is silent, its
+ \emph{apparent} prefactor $\kapp$ running $\dldKappaLo$--$\dldKappaHi$ with no knee
+@@ -1034,7 +1038,8 @@
+ critical position reproduces to six decimals
+ ($\varphi_{\mathrm{crit}} = 0.216643$). Deliberately \emph{not} load-bearing:
+ no support path runs from $\ksteric = 2$ to the thesis. &
+-None. The lemma also \emph{closes} C3d's residual list to three model gaps (the
++None. Within the model's premises, the lemma also \emph{closes} C3d's residual list to three
++model gaps (the
+ flat-lamina idealisation, the wall porosity $\phi$, and finite-particle
+ displacement), which answers C3d's exhaustiveness question while leaving its
+ identifiability question open. \\
+@@ -1046,7 +1051,8 @@
+ locally to geometry and forward substitution realizes both on a device inside the
+ envelope. &
+ \textbf{Partially closed.} The \emph{inversion} (C8a) is proven, resting on C2,
+-C3a, C4 and the S1 schedule, and is reached a second time by an executable
++C3a, C4 and the S1 schedule, and is reached a second time, by construction rather
++than by argument, through an executable
+ forward march ($N\!\cdot\!D^{2}$ holds to $0.29\%$ across five cutoff targets while
+ $N$ spans $1446$--$6562$). The \emph{realization} (C8b) is Argument from an
+ Established Rule and rests on the inversion plus three granted assumptions; the
+@@ -1363,10 +1369,10 @@
+ near-wall lamina yields the exact flow-fraction cubic $f = 3x^{2} - 2x^{3}$
+ ($x=\delta/\wc$), whose small-$f$ inverse is $\delta = \wc\sqrt{f/3}$ to within
+ $0.5\%$ across the Gifford calibration/design band ($\fgap\le5.76\times10^{-4}$;
+-worst case $\skimErrDesign\%$) and within $0.9\%$ across the wider measured operating band
++worst case $\skimErrDesign\%$) and within $0.9\%$ across the wider numerical sweep band
+ ($\fgap = 3.63\times10^{-5}$ to $1.93\times10^{-3}$; worst case $\skimErrBand\%$). The
+ band is quoted with the figure throughout, because the design-band and
+-operating-band worst cases differ by nearly a factor of two
++sweep-band worst cases differ by nearly a factor of two
+ ($\skimErrDesign\%$ against $\skimErrBand\%$), and each figure is the small-$f$
+ inversion error with the parabola itself taken exact. This cubic is \emph{proved} identical to the
+ Inglis (2006) DLD critical-streamline cubic, unifying the two device classes.
+@@ -1497,7 +1503,7 @@
+ $f = 1.04\times10^{-4}$, a worst case of $\skimErrDesign\%$ across the Gifford
+ calibration/design band ($\fgap\le5.76\times10^{-4}$; Gifford's own per-gap design
+ bound is $\fgap < 5\times10^{-4}$ \cite[p.~4498]{b1}), and a worst case of
+-$\skimErrBand\%$ across the wider measured operating band, which reaches
++$\skimErrBand\%$ across the wider numerical sweep band, which reaches
+ $\fgap = 1.93\times10^{-3}$.
+ \prov{code: skim.cubic, skim.delta\_leading, skim.a1/a2,
+ skim.verify\_symbolic/\_numeric; Appendix~A Results~1--2}
+@@ -1586,13 +1592,14 @@
+ These match the \emph{exact} cubic root ($\dcrit/g = 0.392$ at $\varepsilon=0.1$,
+ $0.118$ at $0.01$, which Inglis rounds to $0.4$ and $0.12$); the leading law
+ $2\sqrt{\varepsilon/3} = 0.365$ and $0.115$ captures the $\sqrt{\varepsilon}$
+-scaling but runs a few percent low at these DLD-scale shift fractions ($\approx
+-6\%$ at $\varepsilon=0.1$), exactly the $+f/9$ correction of P-C2.1, a gap that
+-shrinks to sub-percent across the much smaller CIF $f$-range. Inglis attributes
++scaling but runs a few percent low at these DLD-scale shift fractions ($6.8\%$
++at $\varepsilon=0.1$, $2.0\%$ at $0.01$); the $+f/9$ term of P-C2.1 removes most of that
++(leaving $1.1\%$ and $0.10\%$), and the gap shrinks to sub-percent across the much
++smaller CIF $f$-range. Inglis attributes
+ the ``surprisingly large critical size at small $\varepsilon$'' to the slow
+ near-wall fluid forcing a wider first streamline \cite[p.~656]{b17}: the
+ parabolic-vs-plug enhancement that distinguishes the $\sqrt{f}$ regime from a
+-flat profile. Davis's empirical $\dcrit = 1.4\,G\varepsilon^{0.48}$ \cite[eqn~(2-22)]{b22} (he quotes $0.46\,G$ at $\varepsilon = 0.1$) is the same
++flat profile. Davis's empirical $\dcrit = 1.4\,G\varepsilon^{0.48}$ \cite[eqn~(2-22)]{b22} (his $G$ is the DLD gap, Inglis's $g$; he quotes $0.46\,G$ at $\varepsilon = 0.1$) is the same
+ square-root-like law fit to data ($\varepsilon^{0.48}\!\approx\!\sqrt{\varepsilon}$).
+ Because the prefactor these imply is constant across $\varepsilon =
+ 0.01$--$0.5$ (no regime change), this evidence supports the $\sqrt{f}$ law and,
+@@ -1625,7 +1632,7 @@
+ $f\!\to\!0$} and its relative error \emph{grows} with $f$ (it is $\approx
+ 0.192\sqrt{f}$, hence largest at the top of the range), but stays
+ bounded: $\approx 0.2\%$ at $f = 1.04\times10^{-4}$, worst case $\skimErrDesign\%$ across
+-the design band and $\skimErrBand\%$ across the measured operating band; the only other
++the design band and $\skimErrBand\%$ across the numerical sweep band; the only other
+ deviation is from non-parabolic (finite-depth)
+ profiles, bounded by $\Kdepth = R(\alpha) \in [0.81, 0.98]$ (CFD-anchored at the upper end, analytic at the lower).
+ Scheme: none. This is the deductive core's own error budget, not a critical
+@@ -1968,7 +1975,7 @@
+ 
+ \field{Claim.} $\kapp$ is not constant: a single global power law is rejected,
+ and $\kapp$ falls from $\plateauKappa$ (plateau) to ${\approx}\footKappa$ (foot) through a knee
+-at $\dwc\approx0.03$. The knee is a finite-particle capture-regime change; its
++at $\dwc\approx0.03$. The knee is attributed to a finite-particle capture-regime change; its
+ existence is warranted on CIF data, its mechanism deferred to future
+ finite-particle work.
+ 
+@@ -2014,14 +2021,14 @@
+ Dinh reports that ``recovery of the smallest 2~fL PLTs ($a\approx1\um$) in the
+ filtrate was consistently lower than the percent of extracted fluid volume''
+ \cite[p.~917]{b5}, so size-dependent departures from tracer behaviour do
+-occur. Two considerations keep this effect clear of the knee. \emph{First, its
++occur. Two considerations bear on whether this effect could be the knee. \emph{First, its
+ sign would lower, not raise, $\kapp$ at small $d$:} suppressing the recovery of
+ the smallest particles narrows the effective lamina they sample
+ ($\delta_{\mathrm{eff}}<\delta_{\mathrm{nominal}}$), and since
+ $\kapp=\ksteric\,(\delta_{\mathrm{eff}}/\delta_{\mathrm{nominal}})$, the apparent
+-prefactor falls. Crowding therefore \emph{shares} the knee's direction and would
+-be confounded with it, never a substitute that manufactures a knee where none
+-exists. \emph{Second, it is a concentration-/flow-dependent many-body effect,
++prefactor falls. Crowding therefore \emph{shares} the knee's direction and could
++be confounded with it, so its sign alone cannot rule it out. \emph{Second, and
++decisively, it is a concentration-/flow-dependent many-body effect,
+ not an intrinsic cutoff property:} Dinh's own sweep shows the 2~fL
+ filtrate-recovery difference varying with operating conditions
+ ($23.2\rightarrow9.8$ percentage points as the flow rate rises from $30$ to
+@@ -2109,8 +2116,8 @@
+ degenerate product of per-gap over-extraction and cumulative finite-particle
+ displacement, both tied to the unpublished gap count; it is explicitly not
+ recoverable from the device-level filtrate fraction $F$. An independent
+-branch-flow group reports the identical cutoff-exceeds-prediction gap with the
+-identical two-part split, corroborating the picture.
++branch-flow group likewise finds its measured cutoffs above prediction and splits
++the excess into the same two mechanism classes, corroborating the picture.
+ 
+ \field{Claim.} The plateau prefactor decomposes as
+ \[
+@@ -2120,11 +2127,11 @@
+ Three factors are settled: $\ksteric=2$, $\kinplane=1$ (CFD),
+ $\Kdepth=R(\alpha)\in[0.89,\,0.98]$ (CFD $+$ duct law), leaving the single
+ lumped product $\sqrt{c}\,C$ as the one open quantity. With $R(\alpha)$ folded
+-in, the depth-independent excess over steric is
++in, the excess over steric is depth-folded and $\alpha$-independent,
+ $\kapp/\ksteric=\kappVal/2=\residualFolded$;
+-with $R(\alpha)$ explicit, $\sqrt{c}\,C=\kapp/\!\left(\ksteric\,R(\alpha)\right)=
++dividing out the measured $\Kdcfd$, $\sqrt{c}\,C=\kapp/\!\left(\ksteric\Kdcfd\right)=
+ \residualSepShallow/\residualSepMid/\residualSepDeep$ across $\alpha=0.80/1.40/2.69$ (each
+-value $\times$ its $R(\alpha)$ returns $\residualFolded$).
++value $\times$ its $\Kdcfd$ returns $\residualFolded$).
+ 
+ % ----------------------- ARGUMENT GRAPH 2 (decomposition) ---
+ \begin{figure}[t]
+@@ -2170,7 +2177,7 @@
+ \draw[link] (sc) -- (CC);
+ % --- corroboration ---
+ \node[corr] (ih) at (-4.6,-2.5)
+-  {\textbf{Inglis \& Herman 2013} (p.1729): same gap, same two-part split
++  {\textbf{Inglis \& Herman 2013} (p.1729): cutoffs above prediction, same two-part split
+    (Doyeux ${\approx}2\times$, inferred $+$ over-extraction)};
+ \draw[link] (ih.east) -- (cc.west);
+ \end{tikzpicture}
+@@ -2207,7 +2214,7 @@
+ \item[P-C3d.4 ($\Kdepth=R(\alpha)$; CFD $+$ duct law).] The CFD depth factor
+ matches the analytic rectangular-duct law to $\le0.6\%$ (CFD
+ $\KdepthCfdShallow/\KdepthCfdMid/\KdepthCfdDeep$ vs analytic
+-$\KdepthAnalyticShallow/\KdepthAnalyticMid/\KdepthAnalyticDeep$; per-point
++$\KdepthAnalyticShallow/\KdepthAnalyticMid/\KdepthAnalyticDeep$; per-aspect-ratio
+ deviations $\KdepthDevShallow\%/\KdepthDevMid\%/\KdepthDevDeep\%$, max
+ $\KdepthDevMax\%$ on Run~B); the cross-validation
+ $\texttt{duct.K\_depth}(100,80)=\KdepthAnalyticShallow$ against
+@@ -2217,9 +2224,9 @@
+ \prov{code: B9; Appendix~A Result~9; glossary \xref{app:units_cutoff}{A.4}/\xref{app:units_cheatsheet}{A.12}}
+ \item[P-C3d.5 (the residual: arithmetic).] With $\ksteric=2$ and
+ $\kinplane=1$, the residual reduces to the single lumped product $\sqrt{c}\,C$,
+-reportable two equivalent ways: the depth-independent excess
+-$\kapp/\ksteric=R(\alpha)\,\sqrt{c}\,C=\residualFolded$, or
+-$\sqrt{c}\,C=\kapp/\!\left(\ksteric\,R(\alpha)\right)=\residualSepShallow/\residualSepMid/\residualSepDeep$
++reportable two equivalent ways: the depth-folded ($\alpha$-independent) excess
++$\kapp/\ksteric=R(\alpha)\,\sqrt{c}\,C=\residualFolded$, or, dividing out the measured $\Kdcfd$,
++$\sqrt{c}\,C=\kapp/\!\left(\ksteric\Kdcfd\right)=\residualSepShallow/\residualSepMid/\residualSepDeep$
+ across
+ $\alpha=0.80/1.40/2.69$. Here $\sqrt{c}$ is per-gap over-extraction
+ ($c=\feff/\fnom$, a per-device constant from the local gap-to-channel resistance
+@@ -2279,8 +2286,8 @@
+ depth and width units are the paper's micrometres (the layer flattens $\mu$ to
+ m), and the dash in Zweifach--Fung is set as an en dash, as the bibliography
+ sets it. $\rightarrow$ an independent
+-branch-flow group reports the same cutoff-exceeds-prediction gap and decomposes
+-it into the same two mechanisms. Their \emph{first} reason is the Doyeux
++branch-flow group reports cutoffs above prediction and decomposes the excess
++into the same two mechanisms. Their \emph{first} reason is the Doyeux
+ direction, stated with its own anti-Zweifach--Fung contrast, so the
+ corroboration at P-C3d.6 is theirs as well as Doyeux's; the finite-particle
+ factor is ${\approx}2\times$, inferred from their ``50\% smaller than the
+@@ -2288,7 +2295,7 @@
+ main-channel resistance, the $\sqrt{c}$ factor, and they give the reason for it:
+ a shallow mould raises the \emph{main} channel's resistance disproportionately
+ \emph{because the branches are narrow to begin with}, so flow redistributes into
+-the branches. That is exactly the post-CFD CIF picture, a finite-particle knee
++the branches. That is the post-CFD CIF picture in kind, a finite-particle knee
+ $+$ $\sqrt{c}$ over-extraction, and not flow funnelling.
+ \end{description}
+ 
+@@ -2312,9 +2319,10 @@
+ C2's \texttt{c2\_funnel\_rival}, which the graph carries as defeated.
+ $\rightarrow$ \emph{answered: reversed; no funnelling.}
+ \item[CQ3: Can the residual be read out of $F$?] No. The over-extraction is
+-not ``fixed by $F$.'' The rigorous outlet identity $F=2R_{c}/(R_{s}+2R_{c})
+-\approx0.51$--$0.72$ is outlet-geometry-only and $N$-independent (C4); $0.3516$
+-is a cumulative-yield number ($\approx F/2$ in the small-$f$ limit), not $F$, and
++not ``fixed by $F$.'' The rigorous outlet identity $F=2R_{c}/(R_{s}+2R_{c})$
++($\FclosedVone$ and $\FclosedVthree$ at Dinh's V1 and V3) is outlet-geometry-only and
++$N$-independent (C4); $0.3516$ is a cumulative-yield number (the product $N\fgap$
++that $\ln(1-F)=-2N\fgap$ returns at $F\approx0.505$), not $F$, and
+ is historical rather than a live value (its provenance and arithmetic are given
+ under C4's cautionary tale). The
+ cutoff depends on the local per-gap $c$, narrowable by a local
+@@ -2333,7 +2341,8 @@
+ count (the $\sqrt{c}$ factor), not by the single-gap solve (now done) and not by
+ the $F$-identity (decoupled). A sibling ${\sim}\siblingSqrtcPct\%$ 3-D-junction uncertainty rides
+ on $\sqrt{c}$. \emph{Exhaustiveness}, as distinct from identifiability, is
+-answered downstream: C9d closes the residual list to exactly three model gaps.
++answered downstream: within the model's premises, C9d closes the residual list to
++three model gaps.
+ 
+ \field{Status.} \textbf{Partially closed: $\kinplane$, $\ksteric$, $R(\alpha)$
+ settled; $\sqrt{c}\,C$ open.}
+@@ -2615,8 +2624,9 @@
+ \draw[up] (dav) -- (cl);
+ % --- discrimination note ---
+ \node[nt, anchor=north, text width=12cm] at (0,-6.35)
+-  {Regime discrimination (CQ2--CQ3): the data select $\beta=\tfrac12$ (parabolic);
+-   the shallow Hele-Shaw law ($\beta=1$) lies outside $[\betaCIlo,\betaCIhi]$, and the
++  {Law discrimination (CQ2--CQ3): the data select $\beta=\tfrac12$ (a lamina thinner than
++   the depth); the linear law ($\beta=1$, a lamina wider than the depth) lies outside
++   $[\betaCIlo,\betaCIhi]$, and the
+    single global power law ($\beta\approx1.21$) is rejected at $\chired=\chiGlobal$.};
+ \end{tikzpicture}
+ \caption{Argument graph for C6. The exponents are a deductive corollary of the
+@@ -2625,8 +2635,8 @@
+ Davis's independent DLD device family, and, uniquely
+ among the law's parameters, \emph{exactly invariant} to a uniform per-gap
+ over-extraction $c$ (the confound the prefactor absorbs through $\sqrt{c}$). The
+-measured $\beta\approx\tfrac12$ positively selects the parabolic regime over the
+-shallow Hele-Shaw law and over the rejected single global fit.}
++measured $\beta\approx\tfrac12$ positively selects the thin-lamina $\sqrt{\fgap}$ law over the
++linear law and over the rejected single global fit.}
+ \label{fig:c6-argmap}
+ \end{figure}
+ 
+@@ -2754,13 +2764,16 @@
+ precisely so it can be seen to fail: shown to be rejected, not suppressed.
+ 
+ \item[CQ3: Could a different flow regime yield different exponents?]
+-Yes, and the observed value \emph{discriminates} among regimes. The shallow
+-Hele-Shaw limit ($h\ll\wc$) gives a depth-averaged plug across the width,
++Yes, and the observed value \emph{discriminates} between the laws they give. In a
++shallow, Hele-Shaw channel ($h\ll\wc$) a lamina much wider than the depth
++($\delta\gg h$) samples a depth-averaged plug across the width,
+ $\fgap\propto\delta/\wc$, hence $\delta\propto\fgap$ and $\beta=1$, a
+-\emph{distinct} law (Appendix~A Result~6 records the contrast). The plateau fit lands at
++\emph{distinct} law; but $\beta$ is $\tfrac12$ whenever $\delta\ll h$, at any aspect
++ratio, and CIF's laminae are orders of magnitude thinner than the channel depth
++(Appendix~A Result~6). The plateau fit lands at
+ $\beta\approx\tfrac12$, with $\beta=1$ far outside its confidence interval
+-$[\betaCIlo,\betaCIhi]$, so the data positively selects the parabolic ($\sqrt{\fgap}$)
+-regime over the shallow one. CIF's moderate aspect ratio ($\alpha=h/\wc\approx
++$[\betaCIlo,\betaCIhi]$, so the data positively selects the thin-lamina ($\sqrt{\fgap}$)
++law over the linear one. CIF's moderate aspect ratio ($\alpha=h/\wc\approx
+ 0.5$--$2.7$, not asymptotically deep) enters only through the depth factor
+ $R(\alpha)\in[0.81,0.98]$ (C2) folded into the apparent prefactor, never through the
+ exponent. For $\beta$ that is exact, since $R$ does not depend on $\fgap$. For
+@@ -2936,7 +2949,7 @@
+ at that value, $\delta=0.442\um$
+ ($\wc=75$) and $0.306\um$ ($\wc=52$), and the band $[\dinhBandLo,\dinhBandHi]\um$
+ (regression-stamped, and reproduced to the printed precision by the reference
+-implementation).
++code \texttt{cif\_cutoff.py}).
+ 
+ \emph{The band's width is an ambiguity, not a gradient.} A tapered device is
+ designed to hold one cutoff, not a range of them; Xia ramps $\fgap$ precisely so
+@@ -3500,7 +3513,7 @@
+ $N\fgap$ out of $F$ via $\ln(1-F)=-2N\fgap$: that relation belongs to the
+ \emph{cumulative} form, recovers only the product $N\fgap$ ($N$ unpublished), and
+ never touches the local over-extraction $c$ that sets the cutoff; moreover,
+-$0.3516\approx F/2$ is a cumulative-yield number, not the outlet $F$ at all. The
++$0.3516$ is that product, a cumulative-yield number, not the outlet $F$ at all. The
+ inversion fails on three counts.
+ 
+ \emph{Where the figure comes from, and why it carries no macro.} $0.3516$ is
+@@ -3557,8 +3570,8 @@
+ C1's testimonial premise to a derivation, and the same solve pays for itself
+ three more times. Diffusion is shown to broaden the transition without moving
+ the cutoff, the Fig.~1 ``about half'' caption is deselected on \emph{physical}
+-grounds independent of C1's textual adjudication, and the residual C3d leaves
+-open is pinned to exactly three model gaps. The node is
++grounds independent of C1's textual adjudication, and, within the model's
++premises, the residual C3d leaves open is pinned to three model gaps. The node is
+ deliberately \emph{not} load-bearing: no support path runs from $\ksteric=2$ to
+ the thesis, because C9 strengthens a premise rather than adding a branch.
+ 
+@@ -3602,8 +3615,8 @@
+   {\textbf{C9c}: caption\\ a hard wall cannot be\\ ``about half''
+    $\Rightarrow$ deselected\\ \textsf{[proven]}};
+ \node[ded] (d) at (5.7,-2.9)
+-  {\textbf{C9d}: the residual\\ C3d leaves open lives\\ in three model
+-   gaps, no more\\ \textsf{[proven]}};
++  {\textbf{C9d}: within the model's\\ premises, the residual\\ C3d leaves open\\ lives in three
++   model gaps\\ \textsf{[proven]}};
+ % --- the two auxiliary premises, each drawn below the one conclusion it feeds,
+ %     as the deductive strand is drawn below its claim in Fig. 2 ---
+ \node[aux] (exc) at (-5.7,-5.5)
+@@ -3611,9 +3624,10 @@
+    its centre, cannot bring that centre within $a$ of the wall
+    $\Rightarrow$ extracted iff $a\le\delta$};
+ \node[aux] (dif) at (-1.9,-8.1)
+-  {\textbf{P-C9.2.}\ per rung, migration ${\sim}\delta/2=0.22\um$ vs diffusion
++  {\textbf{P-C9.2.}\ diffusion broadens the transition and cannot move the
++   cutoff. Per rung, migration ${\sim}\delta/2=0.22\um$ vs diffusion
+    $\sqrt{2D\,\Delta t}=0.033\um$, $6.7\times$ smaller (the specification's
+-   estimate); over a transit, not small};
++   estimate, illustrative); over a transit, not small};
+ % --- edges ---
+ \draw[up] (lem) -- (a);
+ \draw[up] (lem) -- (b);
+@@ -3622,8 +3636,8 @@
+ \draw[up] (exc) -- (a);
+ \draw[up] (dif) -- (b);
+ \node[nt, anchor=west, text width=4.6cm] at (1.1,-5.6)
+-  {P-C9.1$'$ enters C9a only, P-C9.2 enters C9b only; C9c and C9d rest on the
+-   transport lemma alone.};
++  {P-C9.1$'$ is drawn into C9a and P-C9.2, which uses the same exclusion, into
++   C9b; C9c and C9d rest on the transport lemma alone.};
+ \end{tikzpicture}
+ \caption{Argument graph for C9. One transport lemma, two auxiliary premises, four
+ deductive consequences. Border style follows the overview map: every consequence
+@@ -3749,15 +3763,19 @@
+ illustrate the transition's width; C9b does not rest on them. The residual that
+ C9d \emph{pins} is C3d's, not C9's.
+ 
+-\field{Consequence for C3d (worth reading across).} C9d closes the list of places
+-the residual C3d leaves open can live: the flat-lamina idealisation, the wall
+-porosity $\phi$, and finite-particle displacement. C3d first divides out the
++\field{Consequence for C3d (worth reading across).} Within the model's premises,
++C9d closes the list of places the residual C3d leaves open can live: the flat-lamina idealisation, the wall
++porosity $\phi$, and finite-particle displacement: of the premises the lemma uses, these
++are the ones that can fail once its declared scope (the thesis's Leg~5) is granted, and
++a source outside the model, such as how a cutoff is read from data, is not on the
++list. C3d first divides out the
+ factors it measures ($\kinplane=1$, and the depth factor $\Kdepth=R(\alpha)$, which
+ corrects the flux fraction of a flat slab in a finite-depth duct and is not one of
+ the three gaps), then names what remains by its effects: per-gap over-extraction
+ $\sqrt{c}$ and cumulative finite-particle displacement $C$. C9d names the model
+ gaps that can produce that product, and the wall porosity is named only here.
+-C9d therefore answers the \emph{exhaustiveness} question C3d leaves open, while
++C9d therefore answers the \emph{exhaustiveness} question C3d leaves open, within
++those premises, while
+ leaving C3d's \emph{identifiability} question ($\sqrt{c}$ and $C$ degenerate
+ from the published data, being tied to the unreported gap count $N$) exactly
+ where it was.
+@@ -3769,11 +3787,16 @@
+ \clearpage
+ \section*{C8 (graph) --- The design map: targets to geometry, and three dormant defeaters}
+ 
+-\field{Summary.} Because cutoff and yield are governed by separate laws (C4), the
++\field{Summary.} Because cutoff and yield are governed by separate laws (C4), and
++the plateau schedule holds the cutoff at every row (P-C8.1), the
+ map from performance targets to device geometry has a \emph{lower-triangular}
+ Jacobian: changing the gap-row count $N$ leaves the cutoff untouched
+ ($\partial\dcrit/\partial N=0$) while moving the yield, through the terminal width,
+-and so the outlet ratio, that $N$ itself sets. C4 supplies that zero and not the
++and so the outlet ratio, that $N$ itself sets. The zero comes from the
++invariant-lamina schedule on the plateau (P-C8.1): S1 holds the lamina at every
++row and the plateau prefactor is constant, so the cutoff $\kapp\,\delta^{*}$ does
++not depend on $N$. C4 supplies what makes the two targets answer to separate laws:
++the yield law carries no per-gap parameter. Neither supplies the
+ diagonal; the diagonal is non-zero because every row skims a positive fraction, so
+ the retained flow $\prod_{i}(1-2\fgap(i))$ falls strictly with $N$. The inverse map
+ therefore exists: \emph{locally}, and throughout the declared envelope. A
+@@ -3785,7 +3808,7 @@
+ computes the width schedule for five cutoff targets and finds $N\!\cdot\!D^{2}$ invariant to
+ $0.29\%$ while $N$ itself moves by a factor of $4.5$. The row count is simply the
+ price of the target \emph{pair}. Forward substitution then supplies the practical
+-inverse on a real device. Realizability, however, is
++inverse for a device built to the resulting schedule. Realizability, however, is
+ \emph{conditional}, and the argument says so before a reader has to ask. Three
+ defeaters would break the realization if their antecedents held: the device
+ running below the knee, a run-out mismatch, and a row count pinned by a length
+@@ -3828,7 +3851,7 @@
+ \node[prem] (p2) at (-1.7,0)
+   {\textbf{Proportionality}\\ (C3a) $\dcrit=\kapp\,\delta$};
+ \node[ded]  (p3) at (1.7,0)
+-  {\textbf{Separation lemma}\\ (C4) $F\indep\fgap$: the yield knob\\ cannot reach $\dcrit$};
++  {\textbf{Separation lemma}\\ (C4) $F\indep\fgap$: the yield law\\ carries no per-gap parameter};
+ \node[prem] (p4) at (5.1,0)
+   {\textbf{Schedule S1}\\ $\delta(i)=\delta^{*}$ at every row\\
+    \textsf{[assumed; M8]}};
+@@ -3843,8 +3866,8 @@
+    \emph{local} inverse exists throughout the envelope\ \ \textsf{[proven]}};
+ % --- tier 3: the realization ---
+ \node[part] (proc) at (0,-5.2)
+-  {\textbf{C8b.}\ forward substitution realizes \emph{both} targets on the
+-   fabricated device, inside the envelope\\ \textsf{[partially closed]}};
++  {\textbf{C8b.}\ forward substitution realizes \emph{both} targets on a
++   device built to the schedule, inside the envelope\\ \textsf{[partially closed]}};
+ % --- tier 4: the three dormant defeaters ---
+ \node[cav] (d1) at (-5.6,-7.9)
+   {\textbf{CQ7} (withheld)\\ below the knee: $\kapp$ becomes a function of the
+@@ -3877,7 +3900,7 @@
+ same conclusion by construction, as Evidence to a Hypothesis rather than as an
+ entailment. The two routes share the physics and not the inference, so an error
+ in the triangularity reasoning would leave the march untouched. Only then does forward substitution realize both targets on a
+-fabricated device (C8b). The three dashed boxes are the envelope boundaries;
++device built to the resulting schedule (C8b). The three dashed boxes are the envelope boundaries;
+ their dashed arrows are \emph{undercutters}, not corroboration: each would
+ withdraw C8b's warrant if its antecedent were granted, and none is granted here.
+ C8b itself is dashed because its status is \emph{partially closed}, exactly as
+@@ -4279,8 +4302,10 @@
+ The target Jacobian is lower-triangular with non-zero diagonal, so the inverse
+ exists locally throughout the envelope.
+ \item[Leg 4: realizability (C8b).]
+-Forward substitution realizes both targets on a fabricated device, inside the
+-envelope, with three named boundaries dormant.
++Forward substitution realizes both targets on a device built to the resulting
++schedule, inside the envelope, with three named boundaries dormant. This appendix
++reports no device fabricated to such a schedule: the leg rests on the inversion and
++three granted assumptions (C8).
+ \item[Leg 5: declared scope.]
+ Rigid spheres in Stokes flow at nearly constant viscosity: the regime in which
+ the skim cubic, the current-divider identity and the steric criterion are all

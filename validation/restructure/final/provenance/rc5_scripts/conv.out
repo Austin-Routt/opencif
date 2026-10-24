@@ -1,0 +1,4 @@
+step 2.71 mesh x1.00: deep 0.52128 shallow 0.41804 (conformal 0.41806) elems 37378 (41 s)
+flare 2.4 14.5 mesh x1.00: deep 0.08245 shallow 0.06918 elems 26180 (13 s)
+step 2.71 mesh x0.70: deep 0.52092 shallow 0.41804 (conformal 0.41806) elems 59610 (97 s)
+flare 2.4 14.5 mesh x0.70: deep 0.08245 shallow 0.06918 elems 39440 (29 s)

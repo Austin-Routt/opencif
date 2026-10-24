@@ -1,0 +1,40 @@
+ 46 CHANGED  /assessment/checks/CHK:1-D model band (reported, not a pass c/requirement   
+ 46 ADDED    /assessment/checks/CHK:1-D model band (reported, not a pass c/value/outlet balance (both side outlets +-1 %)   
+ 46 CHANGED  /assessment/checks/CHK:aspect ratio of the narrowest CIF chan/check   
+ 46 CHANGED  /assessment/checks/CHK:validity envelope (kappa plateau, gap /requirement   
+ 46 ADDED    /assessment/checks/CHK:validity envelope (kappa plateau, gap /value/lamina_over_depth_planned_max   
+ 46 ADDED    /assessment/status/length_budget_G9   
+ 46 CHANGED  /assessment/status/physics_auditor_P8   
+ 46 CHANGED  /log   
+ 46 CHANGED  /seconds   
+ 46 CHANGED  /seconds_total   
+ 46 ADDED    /validation/drawn_parameters   
+ 46 CHANGED  /validation/drc/seconds   
+ 46 CHANGED  /validation/gates/P8/status   
+ 46 ADDED    /validation/gates/lamina_all_rows_ok   
+ 46 ADDED    /validation/length_budget   
+ 46 ADDED    /validation/model_scenarios/dDlast_dlnRside_out   
+ 46 ADDED    /validation/model_scenarios/outlet_side_resistance_+1%   
+ 46 ADDED    /validation/model_scenarios/outlet_side_resistance_-1%   
+ 46 REMOVED  /validation/published   
+ 37 CHANGED  /validation/gates/dean_note   
+ 27 CHANGED  /assessment/checks/CHK:aspect ratio of the narrowest CIF chan/kind   
+ 14 ADDED    /assessment/status/reproduction   
+  7 CHANGED  /assessment/status/aspect_ratio_of_CIF_channels   gifford2014_fig4_design, gifford2014_fig6_design, gifford_physics_linear, m13_paperclip_const_nomeander_sealed_fine, m15_linear_shear_nomeander_filter_teardrop, m16_serpentine_shear_nomeander_plain_separate, m17_paperclip_shear_nomeander_filter_ring
+  7 CHANGED  /assessment/verdict   gifford2014_fig4_design, gifford2014_fig6_design, gifford_physics_linear, m13_paperclip_const_nomeander_sealed_fine, m15_linear_shear_nomeander_filter_teardrop, m16_serpentine_shear_nomeander_plain_separate, m17_paperclip_shear_nomeander_filter_ring
+  7 CHANGED  /title   gifford2014_fig4_design, gifford2014_fig6_design, gifford_physics_linear, m13_paperclip_const_nomeander_sealed_fine, m15_linear_shear_nomeander_filter_teardrop, m16_serpentine_shear_nomeander_plain_separate, m17_paperclip_shear_nomeander_filter_ring
+  5 CHANGED  /assessment/checks/CHK:aspect ratio of the narrowest CIF chan/ok   gifford_physics_linear, m13_paperclip_const_nomeander_sealed_fine, m15_linear_shear_nomeander_filter_teardrop, m16_serpentine_shear_nomeander_plain_separate, m17_paperclip_shear_nomeander_filter_ring
+  5 CHANGED  /assessment/checks/CHK:aspect ratio of the narrowest CIF chan/requirement   gifford_physics_linear, m13_paperclip_const_nomeander_sealed_fine, m15_linear_shear_nomeander_filter_teardrop, m16_serpentine_shear_nomeander_plain_separate, m17_paperclip_shear_nomeander_filter_ring
+  5 CHANGED  /assessment/defaults_used   gifford_physics_linear, m13_paperclip_const_nomeander_sealed_fine, m15_linear_shear_nomeander_filter_teardrop, m16_serpentine_shear_nomeander_plain_separate, m17_paperclip_shear_nomeander_filter_ring
+  5 CHANGED  /assessment/over_aspect_ratio   gifford_physics_linear, m13_paperclip_const_nomeander_sealed_fine, m15_linear_shear_nomeander_filter_teardrop, m16_serpentine_shear_nomeander_plain_separate, m17_paperclip_shear_nomeander_filter_ring
+  5 ADDED    /input/process/aspect_ratio_max   gifford_physics_linear, m13_paperclip_const_nomeander_sealed_fine, m15_linear_shear_nomeander_filter_teardrop, m16_serpentine_shear_nomeander_plain_separate, m17_paperclip_shear_nomeander_filter_ring
+  3 CHANGED  /assessment/notes   gifford2014_fig4_design, gifford2014_fig6_design, xia2016_rs7_specified
+  2 CHANGED  /input/paper/note   dinh2024_v1_depicted, dinh2024_v1_specified
+  1 CHANGED  /element_verdict   m13_paperclip_const_nomeander_sealed_fine_x4
+  1 CHANGED  /input/outlet/style   wbc_xia_process_refused
+  1 CHANGED  /over_aspect_ratio   m13_paperclip_const_nomeander_sealed_fine_x4
+  1 CHANGED  /refused/gates/P8/status   wbc_xia_process_refused
+  1 CHANGED  /refused/gates/dean_note   wbc_xia_process_refused
+  1 ADDED    /refused/gates/lamina_all_rows_ok   wbc_xia_process_refused
+  1 CHANGED  /validation/components_drawn/head_drawn   m09_paperclip_const_narrow_plain_teardrop
+  1 CHANGED  /verdict   m13_paperclip_const_nomeander_sealed_fine_x4

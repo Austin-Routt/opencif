@@ -1,0 +1,33 @@
+{
+ "file": "m17_paperclip_shear_nomeander_filter_ring.dxf",
+ "d_um": 4.2,
+ "n_fluid": 1,
+ "n_solid": 1645,
+ "invalid_rings": 0,
+ "bulge_polylines": 0,
+ "bounds": [
+  -4246.1,
+  -2967.5,
+  14709.0,
+  1139.4
+ ],
+ "fluid_area": 14038753.9,
+ "overlap_area": 0.0,
+ "solid_layer_overlap_with_fluid": 0.0,
+ "n_components": 1,
+ "largest_component_frac": 1.0,
+ "small_components": [],
+ "n_lost_open": 0,
+ "n_lost_solid": 0,
+ "tiling_artefacts_dropped": [
+  0,
+  0
+ ],
+ "corner_artefacts_open": 0,
+ "corner_artefacts_solid": 2,
+ "lost_open_min_width": null,
+ "lost_solid_min_width": null,
+ "lost_open": [],
+ "lost_solid": [],
+ "seconds": 34.0
+}

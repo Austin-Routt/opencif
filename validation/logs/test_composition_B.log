@@ -1,0 +1,60 @@
+opencif 1.0.0 (code 9e4eb55a0affeef3)
+cases [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21] and the extras (OPENCIF_TEST_CASES)
+plan stage 11: answered (exit 0), no crash: generic19 paperclip 3 nested, constant-shear taper, pack, fi ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 11: the generator's own placement is outlined (exit 0 or 3) and never refused for colliding parts ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 11: the outlet stretch is not lengthened (no outlet meets the inlet end)              ok  
+plan stage 12: answered (exit 0), no crash: gifford2014 paperclip 4 in path order, pack (the Fig. 4 vari ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 12: the generator's own placement is outlined (exit 0 or 3) and never refused for colliding parts ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 12: the outlet stretch is not lengthened (no outlet meets the inlet end)              ok  
+build 12: exit 0: the check's (0)                                                                ok  PASS [1-D model: junction band: 3 row(s) beyond +-1% (up to 14.3% of D; rows 63-65; 0.36% of F)]
+build 12: every hard geometric check of the drawn mask passes (all but Q1, Q2 and the audit's same questions) ok  
+build 12: the outlet stretch is the check's (+0 um)                                              ok  
+build 12: the photomask is <name>.dxf, and no _UNASSESSED.dxf remains                            ok  
+plan stage 13: answered (exit 0), no crash: gifford2014 paperclip 3 nested, no head, floor start, plain, ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 13: the generator's own placement is outlined (exit 0 or 3) and never refused for colliding parts ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 13: the outlet stretch is not lengthened (no outlet meets the inlet end)              ok  
+plan stage 14: answered (exit 0), no crash: gifford2014 paperclip 6 in path order, narrow, filter, teard ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 14: the generator's own placement is outlined (exit 0 or 3) and never refused for colliding parts ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 14: the outlet stretch is not lengthened (no outlet meets the inlet end)              ok  
+plan stage 15: answered (exit 0), no crash: dinh2024 linear, arms 3, Dinh filter, separate, flared outle ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 15: the generator's own placement is outlined (exit 0 or 3) and never refused for colliding parts ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 15: the outlet stretch is not lengthened (no outlet meets the inlet end)              ok  
+plan stage 16: answered (exit 0), no crash: dinh2024 serpentine 3, arms 3, Dinh filter, teardrop ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 16: the generator's own placement is outlined (exit 0 or 3) and never refused for colliding parts ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 16: the outlet stretch is not lengthened (no outlet meets the inlet end)              ok  
+plan stage 17: answered (exit 0), no crash: dinh2024 paperclip 3 nested, pack, filter, separate  ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 17: the generator's own placement is outlined (exit 0 or 3) and never refused for colliding parts ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 17: the outlet stretch is not lengthened (no outlet meets the inlet end)              ok  
+build 17: exit 0: the check's (0)                                                                ok  PASS [1-D model: junction band: 3 row(s) beyond +-1% (up to 29.4% of D; rows 122-124; 0.25% of F)]
+build 17: every hard geometric check of the drawn mask passes (all but Q1, Q2 and the audit's same questions) ok  
+build 17: the outlet stretch is the check's (+0 um)                                              ok  
+build 17: the photomask is <name>.dxf, and no _UNASSESSED.dxf remains                            ok  
+plan stage 18: answered (exit 3), no crash: xia2016 paperclip 4 nested, hairpins, plain, ring    ok  planned and outlined in memory (no photomask written): outside the envelope: gap dominance M13 0.180
+plan stage 18: the generator's own placement is outlined (exit 0 or 3) and never refused for colliding parts ok  planned and outlined in memory (no photomask written): outside the envelope: gap dominance M13 0.1806 >= 0.05
+plan stage 18: the outlet stretch is not lengthened (no outlet meets the inlet end)              ok  
+plan stage 19: answered (exit 3), no crash: xia2016 linear, constant-shear taper, hairpins, plain, separ ok  planned and outlined in memory (no photomask written): outside the envelope: kappa plateau (u_min 0.
+plan stage 19: the generator's own placement is outlined (exit 0 or 3) and never refused for colliding parts ok  planned and outlined in memory (no photomask written): outside the envelope: kappa plateau (u_min 0.0233 < 0.035); gap d
+plan stage 19: the outlet stretch is not lengthened (no outlet meets the inlet end)              ok  
+plan stage 20: answered (exit 5), no crash: gifford Fig. 4 at a 20 um floor, pack head, path order, legs ok  WOULD BE REFUSED: the drawn parts collide: 'inlet and head' and 'U-turn 2' are 0.0 um apart (they ov
+plan stage 20: a spacing too tight for the head is refused, naming the parts and the generator's spacing ok  the drawn parts collide: 'inlet and head' and 'U-turn 2' are 0.0 um apart (they overlap; they must keep the 20.0 um proc
+build 20: refused like the check (exit 5), no photomask written, the refusal figure drawn        ok  REFUSED (layout): the drawn parts collide: 'inlet and head' and 'U-turn 2' are 0.0 um apart (they ov
+plan stage 21: answered (exit 0), no crash: the same with the legs at the generator's own spacing ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 21: the generator's own placement is outlined (exit 0 or 3) and never refused for colliding parts ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 21: the outlet stretch is not lengthened (no outlet meets the inlet end)              ok  
+the build's <name>_UNASSESSED.dxf takes its verdict's name: a FAIL (exit 2) <name>_FAILED.dxf, else <name>.dxf; a re-assessment that clears a FAIL renames it back ok  [True, True, True, True, True]
+array: 3 copies of a clean element composed, the photomask written, its collision checks pass    ok  PASS: 3 copies of the validated element (D 4.0000 um, F 0.50030 on its drawn mask), outlets per elem
+
+| # | case | check exit | refusal, or the build's failing checks | outlet stretch + um | check s | build exit | build s |
+|---|---|---|---|---|---|---|---|
+| 11 | generic19 paperclip 3 nested, constant-shear taper, pack, filter, ring | 0 |  |  | 128 |  |  |
+| 12 | gifford2014 paperclip 4 in path order, pack (the Fig. 4 variant's parts), plain, separate | 0 |  |  | 80 | 0 | 227 |
+| 13 | gifford2014 paperclip 3 nested, no head, floor start, plain, separate | 0 |  |  | 89 |  |  |
+| 14 | gifford2014 paperclip 6 in path order, narrow, filter, teardrop | 0 |  |  | 49 |  |  |
+| 15 | dinh2024 linear, arms 3, Dinh filter, separate, flared outlet 20 deg | 0 |  |  | 56 |  |  |
+| 16 | dinh2024 serpentine 3, arms 3, Dinh filter, teardrop | 0 |  |  | 83 |  |  |
+| 17 | dinh2024 paperclip 3 nested, pack, filter, separate | 0 |  |  | 130 | 0 | 606 |
+| 18 | xia2016 paperclip 4 nested, hairpins, plain, ring | 3 |  |  | 65 |  |  |
+| 19 | xia2016 linear, constant-shear taper, hairpins, plain, separate | 3 |  |  | 685 |  |  |
+| 20 | gifford Fig. 4 at a 20 um floor, pack head, path order, legs 818 um apart (too tight for the head) | 5 | layout |  | 62 | 5 | 73 |
+| 21 | the same with the legs at the generator's own spacing | 0 |  |  | 59 |  |  |
+ALL OK

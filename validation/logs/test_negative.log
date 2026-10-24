@@ -1,0 +1,71 @@
+<repo>/opencif/physics/kernels.py:93: RuntimeWarning: invalid value encountered in scalar power
+  seed = (12.0 * mu / (h * y)) ** (1.0 / 3.0)
+opencif 1.0.0 (code 9e4eb55a0affeef3)
+part clearance: unrelated parts -5.00 um apart (floor 19, tol 0.1) -> caught ok  [{'gap_um': 0.0, 'parts': ['a', 'c']}]
+part clearance: unrelated parts +5.00 um apart (floor 19, tol 0.1) -> caught ok  [{'gap_um': 5.0, 'parts': ['a', 'c']}]
+part clearance: unrelated parts +18.85 um apart (floor 19, tol 0.1) -> caught ok  [{'gap_um': 18.85, 'parts': ['a', 'c']}]
+part clearance: unrelated parts +18.95 um apart (floor 19, tol 0.1) -> ok  ok  [{'gap_um': 18.95, 'parts': ['a', 'c']}]
+part clearance: unrelated parts +40.00 um apart (floor 19, tol 0.1) -> ok  ok  []
+part clearance: parts joined in flow order may overlap                     ok  
+drawn m15: parts keep the floor apart                                      ok  []
+seeded: the outlet moved onto the inlet port is caught by name             ok  [{'gap_um': 0.0, 'parts': ['inlet and head', 'outlet']}]
+drawn m15: outlet ports clear of the inlet port                            ok  38926 um
+seeded: an outlet port 0.3 mm from the inlet port is caught                ok  300 um
+drawn m15: components as requested (filter posts counted on the drawing)   ok  posts 84
+seeded: an empty filter bulb is caught                                     ok  ['a filter inlet asked; no filter posts drawn']
+seeded: a plain inlet asked, the drawing has filter posts -> caught (counted on the drawing) ok  
+seeded: an outlet port missing from the drawing -> caught                  ok  ports on the drawing 1
+clean hairpins record passes                                               ok  
+seeded: hairpins asked, narrow units drawn (the old silent fallback) -> caught ok  ['hairpins asked; drawn: 2 arms, unit widths [19.0, 28.0]']
+seeded: seal: require, gap 1 unsealed -> caught                            ok  ['seal: require, but gap 1 extracts 2.500 f*']
+seeded: ring asked, separate drawn -> caught                               ok  ['outlet ring asked; separate drawn']
+seeded: 3 legs asked, 2 drawn -> caught                                    ok  ['3 legs asked; 2 drawn']
+seeded: legs and U-turns inconsistent -> caught                            ok  ['3 legs but 1 U-turns']
+seeded: the packing head asked, narrow units drawn -> caught (whatever spec.w_narrow says) ok  
+seeded: Dinh's arms asked, folded (packed) arms drawn -> caught            ok  
+seeded: hairpins + seal: require that cannot seal -> refused, nothing substituted ok  seal: the hairpins head cannot seal gap 1 within the 4000 um head width: unsealed, gap 1 e
+seeded: seal: allow in strict mode -> refused                              ok  
+seeded: a head that cannot even be planned -> a refusal record (exit 5), not a crash ok  REFUSED (seal): seal: the narrow head cannot be planned within the 600 um head w
+seeded: `opencif check` on that head reports the refusal (exit 5, no traceback) ok  
+seeded: u_min 0.032 below the kappa plateau 0.035 -> REFUSED in strict mode (exit 5), no mask drawn ok  REFUSED (strict): kappa plateau (u_min 0.0320 < 0.035)
+seeded: channel Re 37 > 10 (200 uL/min) -> REFUSED in strict mode (exit 5), no mask drawn ok  REFUSED (strict): Reynolds 37.04 > 10; Stokes gates (Re_gap 2.94e-02 at row 1, Re_delta 7.02e-02 at 
+seeded: lamina Re 1.05e-2 > 1e-2 (30 uL/min) -> REFUSED in strict mode (exit 5), no mask drawn ok  REFUSED (strict): Stokes gates (Re_gap 4.41e-03 at row 1, Re_delta 1.05e-02 at row 1; both must be <
+  ... the refusal reports both Stokes numbers and the plateau band (kappa_g interval x delta*) ok  Re_delta 0.0105, Re_gap 0.00441
+seeded: the same in evaluate mode is not refused, and the gate failure is listed ok  ['Stokes gates (Re_gap 4.41e-03 at row 1, Re_delta 1.05e-02 at row 1; both must be <= 0.01
+seeded: delta*/w_c >= 1/2 (D 250 um on a 100 um channel) -> SpecError (A implementers step 3) ok  the lamina delta* = D/kappa_g = 50.877 um is at least half of centre_channel.wid
+seeded: a closure with no solution (D 100 um on 100 um, f_gap 0.11) -> SpecError, not a crash ok  the design cannot be planned (D 100 um on a 100 um centre channel: u = D/w_c = 1
+seeded: a march of more than 400,000 rows (D 0.25 um on 100 um, f_gap 7.8e-7) -> SpecError, not a crash ok  the design cannot be planned (D 0.25 um on a 100 um centre channel: u = D/w_c = 
+seeded: the CLI reports a spec error (exit 6, no traceback)                ok  imeWarning: invalid value encountered in scalar power
+  seed = (12.0 * mu / (h * y)) ** (1.0 / 3.0)
+
+seeded: meander GS/G 1.58 outside gamma_GS -> refused in strict mode, with the reason ok  fold width over gap GS/G = 30.0/19.0 = 1.579, outside gamma_GS [1.4, 1.5] (meand
+  ... in evaluate mode it is reported in the notes, not refused            ok  
+control: without a meander head GS is not drawn and gamma_GS is not applied ok  
+control: a design over its chip area is drawn and reported (exit 0, verdict says so, not FAIL) ok  .92% of F)] -- OVER THE CHIP AREA (26.19 x 4.88 mm drawn; reported, not refused or failed)
+  ... and the API says so apart from ok: Result.ok and Result.over_chip_area both true; status chip_area OVER ok  
+seeded: delta*/h 0.111 > eps_lam 0.10 (E11) -> refused in strict mode, E11 the only reason ok  thin lamina E11 (delta/h 0.1110 on the cutoff rows, 0.1110 on every planned row;
+seeded: |dw_c|/(G + g_p) 1.29e-02 > eps_taper 1e-2 (M16) -> refused in strict mode (with M13 and Stokes) ok  gap dominance M13 0.2891 >= ; Stokes gates (Re_gap 3.19e-0; taper rate M16 (|w_c(i) - w_
+seeded: the same in evaluate mode -> `opencif check` exits 3 (outside the envelope), M16 listed ok  exit 3
+seeded: G 20.5 um below w_min = max(F_min, h/AR_max) = 30 um -> refused in strict mode (CIF_v2 pre-flight) ok  gap G = 20.50 um below w_min = max(F_min, h/AR_max) = max(4.
+  ... in evaluate mode it is reported in the notes, not refused            ok  
+seeded: a 5.35 um straight side channel 80 um deep (15 : 1 > 10) -> refused in strict mode before drawing (G7) ok  straight side channel w_s = 5.35 um (row 1) below w_min = max(F_min, h
+control: the same in evaluate mode is drawn and reported (exit 0, verdict and API say so, kind fabrication) ok  rrowest straight side channel; reported, not refused or failed in evaluate mode)
+seeded: a ring outlet that cannot close at F 0.9 -> check_only refuses it by name (exit 5), no library text ok  WOULD BE REFUSED: the ring outlet cannot close this design (F 0.9000) at any leg count the
+  ... and its build writes the refusal record (exit 5, REFUSED (outlet), advice names teardrop), no mask ok  REFUSED (outlet): the ring outlet cannot close this design (F 0.9000) at any leg count the
+seeded: the outlet fails at the first leg count only -> the next count is tried, nothing refused ok  counts tried [2, 3]
+seeded: the leg fitter meets an outlet failure -> it goes on to the next count (and stops at "too short") ok  2 legs: ring outlet: seeded failure at 2; 3 legs: device too short for 3 paperclip
+seeded: a sealed start below the floor -> the spec error also names every other finding (w_min, the plateau) ok  opencif does not draw; outside the validity envelope: kappa plateau (u_min 0.0200 < 0.035)
+seeded: one planned row with delta/h 0.11 -> E11 fails on every-row reading, the cutoff-row reading passes ok  planned max 0.110
+seeded: one 0.5 um step of the centre width (0.5 / 45.8 = 1.09e-02 > 1e-2) -> M16 fails alone on the gate function ok  rate 1.092e-02 at row 908
+control: `generate --help` names units and choices; --version gives the code hash ok  opencif 1.0.0 (code 9e4eb55a0affeef3)
+seeded: a flare on the ring outlet, a flare_start without a flare, a 60 deg flare -> each a spec error ok  outlet.flare_deg: the flared lead is drawn for the teardrop 
+seeded: a flare with outlet.stretch_um, a flare with the fail-safe margin -> each a spec error; control: the flare alone loads ok  outlet.stretch_um with outlet.flare_deg: the flare sets the 
+seeded: reproduction.L_out with outlet.flare_deg (Dinh V1) -> a spec error naming both; control: the preset loads ok  reproduction.L_out with outlet.flare_deg: the flare sets the outlet st
+seeded: the step tables cut at R 1.5 -> m15 refused before drawing in strict mode, by name (the ratio, the table end, the other modes) ok  the teardrop outlet: the outlet stretch's end lies outside the solved 2-D tables (step wid
+  ... in evaluate mode it plans (nothing refused) and the accepted plan carries the status (the ratio, the table end) ok  step width ratio 2.87 beyond the deep table's 1.5: deep held there (sh
+seeded: an explicit 5 um fillet at a 10 um floor -> a spec error naming the field and the feature; the default is 3 um (0.3 x the 10 um head units) ok  process.fillet_um 5.00 um is not below half the narrowest drawn feature (process
+seeded: rc5's 5 um fillet forced past the rule -> drawn and measured to the end (no crash), the vanished head units and gaps listed by name, the build FAILs on that check ok  12 not found, first {'row': 1, 'kind': 'head unit T', 'side': 'A', 'measured_width_um': 0.0, 'design_width_um': 10.0, 'sections_missed': 1}
+control: the same at the default 3 um fillet -> every planned feature found, topology as planned (single component, holes as planned, every row kind drawn) ok  FAIL (Q1 drawing realises its design (every gap); Q2 cutoff D at every gap (unde
+seeded: one gap filled on m15's drawing -> the measurement names it (row, gap, side A) and only it; control: the clean drawing finds every feature ok  [{'row': 391, 'kind': 'gap', 'side': 'A', 'measured_width_um': 0.0, 'design_width_um': 19.
+64 checks
+ALL OK

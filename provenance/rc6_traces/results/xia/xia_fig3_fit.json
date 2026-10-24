@@ -1,0 +1,165 @@
+{
+ "method": "F from panel g: the last side channel's width on Fig. 3g (results/xia/xia_results_rc6.json, measured.left_side_channel_um, outline to outline at the rc6 scale) is what the schedule's last straight side channel must equal; the side width at the end is set by F (the outlet identity), nearly independently of D.  D from Fig. 3a: the rows per full leg that fill Fig. 3a's legs at the measured row pitch, as xia_leg_fill.py computes them (its plan_N_goal: the preset's planned N times Fig. 3a's ratio of full-leg rows to the record's).  The two are solved alternately (secant steps, as xia_leg_fill.py) until neither moves: F for the width at the current D, D for the row count at that F.",
+ "preset": "xia2016_rs7_depicted",
+ "goals": {
+  "last_side_channel_um": 624.6305431958451,
+  "from_trace": "xia_results_rc6.json",
+  "N": 8106.266128313446,
+  "from_leg_fill": "xia_leg_fill.json"
+ },
+ "text_values": {
+  "F": 0.938,
+  "D_um": 6.8644008043574924,
+  "filtrate_to_retentate": 15.129032258064502
+ },
+ "result": {
+  "F": 0.9407157272549905,
+  "D_um": 6.570535180059767,
+  "N": 8106,
+  "ws_last_um": 624.6296869469599,
+  "filtrate_to_retentate": 15.867880024456902,
+  "D_over_text": 0.9571899088247905
+ },
+ "iterates": [
+  {
+   "F": 0.938,
+   "D_um": 6.531523661031902,
+   "N": 8106,
+   "ws_last_um": 599.6497653705395,
+   "F_planned": 0.9380064627007973
+  },
+  {
+   "F": 0.94,
+   "D_um": 6.531523661031902,
+   "N": 8176,
+   "ws_last_um": 617.8263814486847,
+   "F_planned": 0.9400064817055606
+  },
+  {
+   "F": 0.9407486719990021,
+   "D_um": 6.531523661031902,
+   "N": 8203,
+   "ws_last_um": 624.9982020400382,
+   "F_planned": 0.9407605584556896
+  },
+  {
+   "F": 0.9407102918027428,
+   "D_um": 6.531523661031902,
+   "N": 8202,
+   "ws_last_um": 624.7309582564002,
+   "F_planned": 0.9407327994480434
+  },
+  {
+   "F": 0.9407102918027428,
+   "D_um": 6.531523661031902,
+   "N": 8202,
+   "ws_last_um": 624.7309582564002,
+   "F_planned": 0.9407327994480434
+  },
+  {
+   "F": 0.9407102918027428,
+   "D_um": 6.498866042726743,
+   "N": 8283,
+   "ws_last_um": 624.6311841020827,
+   "F_planned": 0.9407222340799972
+  },
+  {
+   "F": 0.9407102918027428,
+   "D_um": 6.570755333065519,
+   "N": 8106,
+   "ws_last_um": 624.7742761428882,
+   "F_planned": 0.9407375351087885
+  },
+  {
+   "F": 0.9407102918027428,
+   "D_um": 6.570755333065519,
+   "N": 8106,
+   "ws_last_um": 624.7742761428882,
+   "F_planned": 0.9407375351087885
+  },
+  {
+   "F": 0.9427102918027428,
+   "D_um": 6.570755333065519,
+   "N": 8178,
+   "ws_last_um": 644.5800599990057,
+   "F_planned": 0.9427263727594111
+  },
+  {
+   "F": 0.9406957775630553,
+   "D_um": 6.570755333065519,
+   "N": 8105,
+   "ws_last_um": 624.5039280807897,
+   "F_planned": 0.9407094315565423
+  },
+  {
+   "F": 0.9406957775630553,
+   "D_um": 6.570755333065519,
+   "N": 8105,
+   "ws_last_um": 624.5039280807897,
+   "F_planned": 0.9407094315565423
+  },
+  {
+   "F": 0.9406957775630553,
+   "D_um": 6.537901556400192,
+   "N": 8185,
+   "ws_last_um": 624.3965876959782,
+   "F_planned": 0.9406980693418191
+  },
+  {
+   "F": 0.9406957775630553,
+   "D_um": 6.570231558521324,
+   "N": 8106,
+   "ws_last_um": 624.4303451061803,
+   "F_planned": 0.9407017746213638
+  },
+  {
+   "F": 0.9406957775630553,
+   "D_um": 6.570231558521324,
+   "N": 8106,
+   "ws_last_um": 624.4303451061803,
+   "F_planned": 0.9407017746213638
+  },
+  {
+   "F": 0.9426957775630553,
+   "D_um": 6.570231558521324,
+   "N": 8179,
+   "ws_last_um": 644.5006389548864,
+   "F_planned": 0.9427186611175953
+  },
+  {
+   "F": 0.9407157272549905,
+   "D_um": 6.570231558521324,
+   "N": 8107,
+   "ws_last_um": 624.7006152892045,
+   "F_planned": 0.9407298773355313
+  },
+  {
+   "F": 0.9407157272549905,
+   "D_um": 6.570231558521324,
+   "N": 8107,
+   "ws_last_um": 624.7006152892045,
+   "F_planned": 0.9407298773355313
+  },
+  {
+   "F": 0.9407157272549905,
+   "D_um": 6.5373804007287175,
+   "N": 8187,
+   "ws_last_um": 624.5878586008213,
+   "F_planned": 0.9407179597684947
+  },
+  {
+   "F": 0.9407157272549905,
+   "D_um": 6.570535180059767,
+   "N": 8106,
+   "ws_last_um": 624.6296869469599,
+   "F_planned": 0.9407225065945417
+  },
+  {
+   "F": 0.9407157272549905,
+   "D_um": 6.570535180059767,
+   "N": 8106,
+   "ws_last_um": 624.6296869469599,
+   "F_planned": 0.9407225065945417
+  }
+ ]
+}

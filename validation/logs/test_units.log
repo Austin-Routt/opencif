@@ -1,0 +1,36 @@
+opencif 1.0.0 (code 9e4eb55a0affeef3)
+spec rejects unknown key                                       ok  
+spec rejects unknown layout                                    ok  
+spec rejects unknown taper                                     ok  
+spec requires the process floor                                ok  
+cutoff of every designed gap = D (constant w_c)                ok  
+D changes N, not F                                             ok  N 1814 -> 1334
+F changes N, not the per-gap cutoff                            ok  N 1814 -> 1033
+wall profile resistance exact (w 4.9)                          ok  rel -1.7e-15, mid 4.584
+wall profile resistance exact (w 21.0)                         ok  rel 0.0e+00, mid 20.643
+wall profile resistance exact (w 296.0)                        ok  rel 2.2e-16, mid 297.083
+floor start draws w_s(1) at the floor                          ok  w_s(1) 20.000000, S0 2.009e-02
+floor start stops on the DELIVERED F (Gifford stops on the final width) ok  N 3487, F 0.906472, final w_s 299.90 um (printed 300)
+sub-floor sealed start refused                                 ok  
+bend ratio -> planar annulus (deep), Hele-Shaw (shallow), r1 431.7 ok  deep 0.998557/0.998558 shallow 1.003615/1.003615
+bend ratio -> planar annulus (deep), Hele-Shaw (shallow), r1 20.5 ok  deep 0.982145/0.982144 shallow 1.046162/1.046163
+bend ratio -> 1 for a straight duct                            ok  
+realised cutoff: clean rows pass, a 5% f error and a reverse row are caught, declared rows reported apart ok  0 / 1, [11]
+drawing fidelity: identical networks 0; a 5% f error at row 11 is found ok  0.0248 at 11
+compose element gate: PASS, audit PASS                         ok  
+compose element gate: REPRODUCED with declared departures (see, audit PASS ok  
+compose element gate: PASS -- OUTSIDE THE VALIDITY ENVELOPE (u, audit PASS ok  
+compose element gate: PASS with an allowed departure (seed), audit PASS ok  
+compose element gate: FAIL (Q1), audit FAIL                    ok  
+compose element gate: PASS, audit None                         ok  
+compose element gate: PASS, audit PASS_OUTSIDE_ENVELOPE        ok  
+declared rows: seed = gap 1 only, transition = its own rows, a fault at row 31 undeclared ok  {'seed: gap 1 above f*': [0], "papers' rectilinear transition": [5, 6, 7]}
+declared rows: nothing in evaluate mode without seal: allow    ok  {}
+targets.filtrate_to_retentate_ratio 4 -> F 0.8                 ok  
+F and FR that disagree are refused                             ok  
+meander.rectilinear_rows 0 is refused                          ok  
+flared stretch: linear = flare_start + flare + end arc; clearance = the longer of the two; no widening = the spec's stretch ok  L_f 238.77 um, tail 241.95 um
+flared stretch on a serpentine: one leg flare_start + flare + arc, three legs the loop's stretch + flare + arc ok  1 leg 421.90 um, 3 legs 1085.04 um (base 728.29)
+stretch-end domain: step R 8.0 inside, 8.01 beyond; flare R 4.0 inside, 4.01 beyond; no junction band: none ok  step width ratio 8.01 beyond the deep table's 8.0: deep held
+check_exp_domain: refuses beyond the table in strict mode, returns the status otherwise, None inside ok  
+ALL OK

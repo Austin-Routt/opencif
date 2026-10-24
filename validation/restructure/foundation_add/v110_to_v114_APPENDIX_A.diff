@@ -1,0 +1,56 @@
+--- v110/APPENDIX_A_revised.tex	2026-10-09 13:52:15.062789814 -0500
++++ v114/APPENDIX_A_revised.tex	2026-09-29 13:11:21.000000000 -0500
+@@ -209,8 +209,9 @@
+ about~$5$ (about~$16$ at $90~\mu\mathrm{L\,min^{-1}}$), laminar but not small, while a gap
+ carries only the fraction $\fgap$ of the channel flow, so its Reynolds number is about
+ $5\times10^{-3}$ at $\fgap\approx10^{-3}$. (The glossary also shows that the flow does not
+-fully redevelop between rungs of a real ladder, and that the error this makes in each
+-segment's resistance is of order $\fgap^2$.) Brody \emph{et al.}\ give the general background
++fully redevelop between rungs of a real ladder; each rung perturbs the flow by a relative
++amount of order $\fgap$, so the error this makes in a segment's resistance is expected to be
++small.) Brody \emph{et al.}\ give the general background
+ for microchannel flow at low Reynolds number \cite{bbrody}.
+ 
+ \paragraph{The parabola.} Between two parallel walls a distance $w$ apart, and far from
+@@ -256,15 +257,20 @@
+ with $Q_{\mathrm{gap}}(i)=\fgap(i)\,Q_m(i)$. The theory identifies the fluid removed at one
+ gap with the near-wall lamina of the central channel that carries this fraction: the
+ streamlines closest to that wall, treated as an undisturbed flat slab. This is the model's
+-central idealisation. The glossary names it as the first of the three model gaps in which
+-the measured prefactor's residual lives (the flat-lamina idealisation, wall porosity and
++central idealisation. The glossary names it as the first of the three model gaps to which
++the measured prefactor's residual is attributed (the flat-lamina idealisation, wall porosity and
+ finite-particle displacement). With it, $f$ of Eq.~\eqref{eq:frac} and $\fgap$ are the same
+ number.
+ 
+ \paragraph{Symbols.} Table~\ref{tab:nomen} collects the notation. It follows the glossary,
+ with two deliberate choices. The cubic $3x^2-2x^3$ is written $f(x)$ here; the glossary calls
+ the same kernel $g(x)$, which is why its prefactor is $\kappa_g$. And in Result~3 only, $g$ is
+-Inglis's DLD gap width, as in his paper.
++Inglis's DLD gap width, as in his paper. Two further departures are local and standard. In
++the flow derivations (Eq.~\eqref{eq:parab} and Results~\ref{res:depth-factor}
++and~\ref{res:resistance}) a bare $w$ is the width of the channel carrying the flow and
++$G=-\dd p/\dd x$ is the pressure gradient, where the glossary keeps bare $w$ for the
++empirical lamina width and $G$ for the gap (link) width; and in Result~\ref{res:ladder},
++$g_c$, $g_s$ and $g_g$ are the segment and gap conductances.
+ 
+ \begin{table}[ht]
+ \centering
+@@ -999,7 +1005,7 @@
+ so the calibration array has no stated depth. The $80~\mu$m used above is the depth of the
+ separate Fig.~4 device: \vq{The depth of the device was 80 $\mu$m $\pm$ 3 $\mu$m; the width of the central channel was 100 $\mu$m}~\cite[p.~4500, Fig.~4 caption]{b1}.
+ The paper's other devices are deeper ($125~\mu$m in Fig.~5, and $150\pm5~\mu$m for the
+-leukoreduction device). Because $\Kdth$ increases with $\alpha$, a deeper array would give a
++Fig.~6 platelet-enrichment device). Because $\Kdth$ increases with $\alpha$, a deeper array would give a
+ smaller and more uniform correction. The $80~\mu$m is the shallowest depth the paper reports, so
+ if the array is at least that deep, the $11$--$19\%$ correction at the calibration widths is an
+ upper bound, not an estimate.
+@@ -1353,7 +1359,7 @@
+ \Result{the resistance of a rectangular channel (Gifford's eqn~5) from the duct field}\label{res:resistance}
+ 
+ \paragraph{Setup.} The closure~\eqref{eq:closure} needs the resistance of a channel segment of
+-width $w$, depth $h$ and length $L$. Gifford \emph{et al.}\ use the rectangular-duct series, their
++width $w_{\mathrm{ch}}$ ($w$ below, for brevity), depth $h$ and length $L$. Gifford \emph{et al.}\ use the rectangular-duct series, their
+ eqn~(5), citing Yang \emph{et al.}\ \cite{b1,b6}. Here it is derived from the field
+ of Result~\ref{res:depth-factor}.
+ 

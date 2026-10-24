@@ -1,0 +1,352 @@
+{
+ "note": "rc6 (LIMITATIONS 26): the narrowest straight side channel of every shipped record against its cutoff D -- where a",
+ "records": 46,
+ "below_D": [
+  {
+   "name": "gifford_physics_linear",
+   "ws_min_um": 5.346809929721904,
+   "D_um": 6.0,
+   "ratio": 0.891134988286984
+  },
+  {
+   "name": "gifford2014_fig4_design",
+   "ws_min_um": 4.857148152176286,
+   "D_um": 5.203174831309222,
+   "ratio": 0.9334970108921232
+  }
+ ],
+ "between_1_and_2_D": [
+  {
+   "name": "m15_linear_shear_nomeander_filter_teardrop",
+   "ws_min_um": 4.374394562080634,
+   "D_um": 4.0,
+   "ratio": 1.0935986405201585
+  },
+  {
+   "name": "m16_serpentine_shear_nomeander_plain_separate",
+   "ws_min_um": 4.374394562080634,
+   "D_um": 4.0,
+   "ratio": 1.0935986405201585
+  },
+  {
+   "name": "m17_paperclip_shear_nomeander_filter_ring",
+   "ws_min_um": 4.374394562080634,
+   "D_um": 4.0,
+   "ratio": 1.0935986405201585
+  },
+  {
+   "name": "m13_paperclip_const_nomeander_sealed_fine",
+   "ws_min_um": 4.374991467838916,
+   "D_um": 4.0,
+   "ratio": 1.093747866959729
+  },
+  {
+   "name": "gifford2014_fig6_design",
+   "ws_min_um": 4.691897534023766,
+   "D_um": 3.6236,
+   "ratio": 1.2948166282215934
+  },
+  {
+   "name": "gifford2014_fig5D_as_fabricated_12p5um",
+   "ws_min_um": 12.5,
+   "D_um": 9.0268,
+   "ratio": 1.384765365356494
+  },
+  {
+   "name": "gifford2014_fig4_as_fabricated_8um",
+   "ws_min_um": 8.0,
+   "D_um": 5.203174831309222,
+   "ratio": 1.5375228123916491
+  },
+  {
+   "name": "xia2016_rs7_specified",
+   "ws_min_um": 11.355643111056109,
+   "D_um": 6.864400804357492,
+   "ratio": 1.6542803129805002
+  },
+  {
+   "name": "gifford2014_fig5C_as_fabricated_12p5um",
+   "ws_min_um": 12.5,
+   "D_um": 6.9823,
+   "ratio": 1.7902410380533633
+  }
+ ],
+ "all": [
+  {
+   "name": "gifford_physics_linear",
+   "ws_min_um": 5.346809929721904,
+   "D_um": 6.0,
+   "ratio": 0.891134988286984
+  },
+  {
+   "name": "gifford2014_fig4_design",
+   "ws_min_um": 4.857148152176286,
+   "D_um": 5.203174831309222,
+   "ratio": 0.9334970108921232
+  },
+  {
+   "name": "m15_linear_shear_nomeander_filter_teardrop",
+   "ws_min_um": 4.374394562080634,
+   "D_um": 4.0,
+   "ratio": 1.0935986405201585
+  },
+  {
+   "name": "m16_serpentine_shear_nomeander_plain_separate",
+   "ws_min_um": 4.374394562080634,
+   "D_um": 4.0,
+   "ratio": 1.0935986405201585
+  },
+  {
+   "name": "m17_paperclip_shear_nomeander_filter_ring",
+   "ws_min_um": 4.374394562080634,
+   "D_um": 4.0,
+   "ratio": 1.0935986405201585
+  },
+  {
+   "name": "m13_paperclip_const_nomeander_sealed_fine",
+   "ws_min_um": 4.374991467838916,
+   "D_um": 4.0,
+   "ratio": 1.093747866959729
+  },
+  {
+   "name": "gifford2014_fig6_design",
+   "ws_min_um": 4.691897534023766,
+   "D_um": 3.6236,
+   "ratio": 1.2948166282215934
+  },
+  {
+   "name": "gifford2014_fig5D_as_fabricated_12p5um",
+   "ws_min_um": 12.5,
+   "D_um": 9.0268,
+   "ratio": 1.384765365356494
+  },
+  {
+   "name": "gifford2014_fig4_as_fabricated_8um",
+   "ws_min_um": 8.0,
+   "D_um": 5.203174831309222,
+   "ratio": 1.5375228123916491
+  },
+  {
+   "name": "xia2016_rs7_specified",
+   "ws_min_um": 11.355643111056109,
+   "D_um": 6.864400804357492,
+   "ratio": 1.6542803129805002
+  },
+  {
+   "name": "gifford2014_fig5C_as_fabricated_12p5um",
+   "ws_min_um": 12.5,
+   "D_um": 6.9823,
+   "ratio": 1.7902410380533633
+  },
+  {
+   "name": "gifford2014_fig5B_as_fabricated_12p5um",
+   "ws_min_um": 12.5,
+   "D_um": 5.3268,
+   "ratio": 2.346624615153563
+  },
+  {
+   "name": "gifford2014_fig5A_as_fabricated_12p5um",
+   "ws_min_um": 12.5,
+   "D_um": 4.22,
+   "ratio": 2.962085308056872
+  },
+  {
+   "name": "xia2016_rs7_depicted",
+   "ws_min_um": 22.7999995896784,
+   "D_um": 6.864400804357492,
+   "ratio": 3.3214843129796647
+  },
+  {
+   "name": "xia2016_rs7_depicted_pullR",
+   "ws_min_um": 22.7999995896784,
+   "D_um": 6.864400804357492,
+   "ratio": 3.3214843129796647
+  },
+  {
+   "name": "wbc_paperclip_teardrop",
+   "ws_min_um": 25.10272172571988,
+   "D_um": 7.0,
+   "ratio": 3.5861031036742688
+  },
+  {
+   "name": "dc_D5_F0p3",
+   "ws_min_um": 19.074969491337843,
+   "D_um": 5.0,
+   "ratio": 3.8149938982675686
+  },
+  {
+   "name": "dc_D5_F0p5",
+   "ws_min_um": 19.074969491337843,
+   "D_um": 5.0,
+   "ratio": 3.8149938982675686
+  },
+  {
+   "name": "dc_D5_F0p7",
+   "ws_min_um": 19.074969491337843,
+   "D_um": 5.0,
+   "ratio": 3.8149938982675686
+  },
+  {
+   "name": "gifford2014_fig4_as_fabricated_20um",
+   "ws_min_um": 20.0,
+   "D_um": 5.203174831309222,
+   "ratio": 3.843807030979123
+  },
+  {
+   "name": "gifford_targets_meander_head_19um",
+   "ws_min_um": 20.59542965965056,
+   "D_um": 5.203174831309222,
+   "ratio": 3.958242866590039
+  },
+  {
+   "name": "gifford2014_fig6_as_fabricated_15um",
+   "ws_min_um": 15.0,
+   "D_um": 3.6236,
+   "ratio": 4.139529749420466
+  },
+  {
+   "name": "m14_paperclip_const_nomeander_floorstart19",
+   "ws_min_um": 19.0,
+   "D_um": 4.0,
+   "ratio": 4.75
+  },
+  {
+   "name": "m02_linear_shear_arms_filter_teardrop",
+   "ws_min_um": 19.04212481500853,
+   "D_um": 4.0,
+   "ratio": 4.760531203752133
+  },
+  {
+   "name": "m04_linear_shear_pack_plain_ring",
+   "ws_min_um": 19.04212481500853,
+   "D_um": 4.0,
+   "ratio": 4.760531203752133
+  },
+  {
+   "name": "m06_serpentine_shear_pack_filter_teardrop",
+   "ws_min_um": 19.04212481500853,
+   "D_um": 4.0,
+   "ratio": 4.760531203752133
+  },
+  {
+   "name": "m12_paperclip_shear_arms_plain_ring",
+   "ws_min_um": 19.04212481500853,
+   "D_um": 4.0,
+   "ratio": 4.760531203752133
+  },
+  {
+   "name": "dc_D4_F0p3",
+   "ws_min_um": 19.04472692665661,
+   "D_um": 4.0,
+   "ratio": 4.761181731664153
+  },
+  {
+   "name": "dc_D4_F0p5",
+   "ws_min_um": 19.04472692665661,
+   "D_um": 4.0,
+   "ratio": 4.761181731664153
+  },
+  {
+   "name": "dc_D4_F0p7",
+   "ws_min_um": 19.04472692665661,
+   "D_um": 4.0,
+   "ratio": 4.761181731664153
+  },
+  {
+   "name": "m01_linear_const_pack_plain_separate",
+   "ws_min_um": 19.04472692665661,
+   "D_um": 4.0,
+   "ratio": 4.761181731664153
+  },
+  {
+   "name": "m05_serpentine_const_arms_plain_teardrop",
+   "ws_min_um": 19.04472692665661,
+   "D_um": 4.0,
+   "ratio": 4.761181731664153
+  },
+  {
+   "name": "m07_serpentine_const_pack_filter_separate",
+   "ws_min_um": 19.04472692665661,
+   "D_um": 4.0,
+   "ratio": 4.761181731664153
+  },
+  {
+   "name": "m09_paperclip_const_narrow_plain_teardrop",
+   "ws_min_um": 19.04472692665661,
+   "D_um": 4.0,
+   "ratio": 4.761181731664153
+  },
+  {
+   "name": "m11_paperclip_const_pack_filter_ring",
+   "ws_min_um": 19.04472692665661,
+   "D_um": 4.0,
+   "ratio": 4.761181731664153
+  },
+  {
+   "name": "m18_paperclip_const_arms_filter_separate",
+   "ws_min_um": 19.04472692665661,
+   "D_um": 4.0,
+   "ratio": 4.761181731664153
+  },
+  {
+   "name": "m08_serpentine_shear_hairpins_plain_teardrop",
+   "ws_min_um": 19.081512556226745,
+   "D_um": 4.0,
+   "ratio": 4.770378139056686
+  },
+  {
+   "name": "m10_paperclip_shear_hairpins_filter_separate",
+   "ws_min_um": 19.081512556226745,
+   "D_um": 4.0,
+   "ratio": 4.770378139056686
+  },
+  {
+   "name": "m03_linear_const_hairpins_filter_ring",
+   "ws_min_um": 19.084120342268754,
+   "D_um": 4.0,
+   "ratio": 4.7710300855671886
+  },
+  {
+   "name": "dc_D3_F0p3",
+   "ws_min_um": 19.01454470266591,
+   "D_um": 3.0,
+   "ratio": 6.338181567555303
+  },
+  {
+   "name": "dc_D3_F0p5",
+   "ws_min_um": 19.01454470266591,
+   "D_um": 3.0,
+   "ratio": 6.338181567555303
+  },
+  {
+   "name": "dc_D3_F0p7",
+   "ws_min_um": 19.01454470266591,
+   "D_um": 3.0,
+   "ratio": 6.338181567555303
+  },
+  {
+   "name": "platelet_serpentine_chip",
+   "ws_min_um": 19.013338294998572,
+   "D_um": 2.5,
+   "ratio": 7.605335317999429
+  },
+  {
+   "name": "dinh2024_v1_specified",
+   "ws_min_um": 20.935728932340048,
+   "D_um": 2.1741549811760246,
+   "ratio": 9.62936364408377
+  },
+  {
+   "name": "dinh2024_v1_depicted",
+   "ws_min_um": 20.94198831991343,
+   "D_um": 2.1741549811760246,
+   "ratio": 9.632242641959994
+  },
+  {
+   "name": "dinh_targets_sealed_head",
+   "ws_min_um": 21.013674350562233,
+   "D_um": 2.174,
+   "ratio": 9.665903565116023
+  }
+ ]
+}

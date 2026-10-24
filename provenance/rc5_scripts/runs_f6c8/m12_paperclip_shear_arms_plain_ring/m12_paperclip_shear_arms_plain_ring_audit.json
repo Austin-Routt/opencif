@@ -1,0 +1,33 @@
+{
+ "file": "m12_paperclip_shear_arms_plain_ring.dxf",
+ "d_um": 18.9,
+ "n_fluid": 1,
+ "n_solid": 1635,
+ "invalid_rings": 0,
+ "bulge_polylines": 0,
+ "bounds": [
+  -17769.0,
+  -3135.1,
+  16489.9,
+  5348.1
+ ],
+ "fluid_area": 21885870.4,
+ "overlap_area": 0.0,
+ "solid_layer_overlap_with_fluid": 0.0,
+ "n_components": 1,
+ "largest_component_frac": 1.0,
+ "small_components": [],
+ "n_lost_open": 0,
+ "n_lost_solid": 0,
+ "tiling_artefacts_dropped": [
+  0,
+  0
+ ],
+ "corner_artefacts_open": 24,
+ "corner_artefacts_solid": 586,
+ "lost_open_min_width": null,
+ "lost_solid_min_width": null,
+ "lost_open": [],
+ "lost_solid": [],
+ "seconds": 46.2
+}

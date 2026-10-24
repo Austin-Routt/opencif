@@ -1,0 +1,28 @@
+{
+ "fgapDesignCap": [
+  "5.76",
+  "-4"
+ ],
+ "macros": {
+  "FclosedVone": "0.5592",
+  "FclosedVthree": "0.7189",
+  "dcritGGIn": "2.174",
+  "dinhBandHi": "2.17",
+  "dinhBandLo": "1.25",
+  "dinhCollapseLo": "1.80",
+  "dinhKappaLocal": "4.08",
+  "footUwc": "0.012",
+  "hillKmax": "5.568",
+  "hillN": "1.791",
+  "hillUhalf": "0.01651",
+  "kappCIhalfPct": "3.4",
+  "kappCIhi": "5.08",
+  "kappCIlo": "4.75",
+  "kappOverRootThree": "2.8370",
+  "kappVal": "4.9138",
+  "plateauUwc": "0.035",
+  "squareDuctR": "28.4542"
+ },
+ "preamble_md5": "3c075af8f63bb1d735f4b43c64f32d14",
+ "source": "the numeric macros of the dissertation glossary's preamble (v114, PREAMBLE_FINAL.tex, md5 3c075af8f63bb1d735f4b43c64f32d14) that tests/test_appendix_trace.py pins the code to; the preamble itself is foundation/PREAMBLE_FINAL.tex"
+}

@@ -1,0 +1,53 @@
+opencif 1.0.0 (code 9e4eb55a0affeef3)
+tolerances = CIF_v2 PhysicsSpec: tol_f_bulk 0.005, tol_delta 0.02, eps_net 0.001, Re_max 1, Q_in 5 uL/min ok  
+tolerances = CIF_v2 audit() source: P3 0.15, P6 1e-3 and 0.02, P6b max(8e-3, 4 f), P7 x3, P8 L_e <= Lambda/2 ok  
+the design envelope = CIF_v2 Tolerances (M14): Re_max 10, Re_stokes 1e-2               ok  
+demo_spec_A (69 units): the port's solver = CIF_v2's network to the precision either reaches ok  vs extended precision: port 8.3e-10, CIF_v2 5.6e-10
+demo_spec_A: P7 (run-out x3) F as CIF_v2                                               ok  
+demo_spec_A: terminal window lambda 0.6009, n_term 6 as CIF_v2                         ok  
+demo_spec_A: the bulk is CIF_v2's range(1, U - n_term)                                 ok  
+demo_spec_A: P4 2.536e-06 as CIF_v2 (max bulk |f_em/f - 1| = 2.54e-06 over un), same verdict ok  
+demo_spec_A: P5 lamina ratios = CIF_v2's delta_ratio (all 69), same verdict            ok  
+demo_spec_A: P3 PE-closure deviation 2.783e-02 as CIF_v2, same verdict                 ok  
+demo_spec_A: P6 verdict as CIF_v2 (F_em 0.4037)                                        ok  
+demo_spec_A: P8 inlet Re 0.775 as CIF_v2 (Re = 0.775 (max 1.0), ), same verdict        ok  
+demo_spec_B (88 units): the port's solver = CIF_v2's network to the precision either reaches ok  vs extended precision: port 3.3e-09, CIF_v2 3.5e-09
+demo_spec_B: P7 (run-out x3) F as CIF_v2                                               ok  
+demo_spec_B: terminal window lambda 0.6381, n_term 6 as CIF_v2                         ok  
+demo_spec_B: the bulk is CIF_v2's range(1, U - n_term)                                 ok  
+demo_spec_B: P4 9.176e-06 as CIF_v2 (max bulk |f_em/f - 1| = 9.18e-06 over un), same verdict ok  
+demo_spec_B: P5 lamina ratios = CIF_v2's delta_ratio (all 88), same verdict            ok  
+demo_spec_B: P3 PE-closure deviation 7.757e-03 as CIF_v2, same verdict                 ok  
+demo_spec_B: P6 verdict as CIF_v2 (F_em 0.0201)                                        ok  
+demo_spec_B: P8 inlet Re 0.310 as CIF_v2 (Re = 0.310 (max 1.0), ), same verdict        ok  
+demo_spec_C (3139 units): the port's solver = CIF_v2's network to the precision either reaches ok  vs extended precision: port 3.7e-08, CIF_v2 4.0e-08
+demo_spec_C: P7 (run-out x3) F as CIF_v2                                               ok  
+demo_spec_C: terminal window lambda 0.6011, n_term 6 as CIF_v2                         ok  
+demo_spec_C: the bulk is CIF_v2's range(1, U - n_term)                                 ok  
+demo_spec_C: P4 2.652e-06 as CIF_v2 (max bulk |f_em/f - 1| = 2.65e-06 over un), same verdict ok  
+demo_spec_C: P5 lamina ratios = CIF_v2's delta_ratio (all 3139), same verdict          ok  
+demo_spec_C: P3 PE-closure deviation 1.470e-03 as CIF_v2, same verdict                 ok  
+demo_spec_C: P6 verdict as CIF_v2 (F_em 0.5000)                                        ok  
+demo_spec_C: P8 inlet Re 0.310 as CIF_v2 (Re = 0.310 (max 1.0), ), same verdict        ok  
+the port's solver (banded Cholesky) = measure.solve3 (sparse LU) on 12 random ladders  ok  4.5e-10
+the photomask file read back is the drawn polygon, vertex for vertex                   ok  1 outline, 1645 islands, 118170 vertices
+the drawn device passes every check (P0-P10, R0, M14, R6b: 1560 posts; the two rulers within 1.47e-05 on 778 segments) ok  physics audit of m15.dxf: PASS
+P4 with the intended network: the reference named, the kernel deviation reported and equal to the kernel run's ok  bulk 4.62e-05 against the intended network, 4.72e-05 against the kernel
+fault: an intended network 1% away from the drawn one -> P4 (and nothing else)         ok  ['P4']
+fault: one vertex of the file moved by 1 nm -> P0                                      ok  ['P0']
+fault: the cubic kernel off by 1e-9 -> P1                                              ok  ['P1']
+fault: gap 401 widened by 0.6 um -> P4 and P5 (the drawn f rises 19.3 %)               ok  ['P4', 'P5', 'R0', 'R6b']
+fault: side segment 301 narrowed to 60 % -> P3 (and P4) at that segment                ok  ['M14', 'P3', 'P4', 'P5'] {'exact_closure_max_rel_dev': 1.61, 'at': (301, 'B'), 'pe_closure_max_rel_dev': 1.61}
+fault: the post after gap 501 0.6 um thicker across the flow -> R6b at that post       ok  ['P4', 'P5', 'R0', 'R6b'] {'row': 501, 'side': 'A', 'across_um': 50.6, 'along_um': 27.0}
+fault: the post after gap 601 moved half a gap along the flow -> R0 (the rulers disagree) and P4/P5 ok  ['P4', 'P5', 'R0']; R0 max 0.376 at {'Rc': {'max_rel_diff': 0.067, 'row': 601}, 'RsA': {'max_rel_diff': 0.115, 'row': 602}, 'RsB': {'max_rel_diff': 1.47e-05, 'row': 2}, 'RgA': {'max_rel_diff': 0.376, 'row': 601}, 'RgB': {'max_rel_diff': 3.26e-13, 'row': 2}}
+fault: side segment 301 2 % narrower over half its length -> P4 and P5 at that row     ok  ['P4', 'P5', 'R0']; P4 0.466 at row 301; P5 max 1.2107; R0 on RsB 0.0012 at row 301
+fault: another device's photomask under this build's name -> P0 (and the ruler finds none of its posts) ok  ['M14', 'P0', 'P4', 'P5', 'R0', 'R6b']
+fault: the flow x3 -> M14 (envelope): PASS_OUTSIDE_ENVELOPE, no hard failure           ok  ['M14'] PASS_OUTSIDE_ENVELOPE
+fault: the DRC finds a lost feature -> P9                                              ok  ['P9']
+fault: a corner sharper than the criterion -> P10                                      ok  ['P10']
+fault: the target F 0.01 above the drawn F -> P6                                       ok  ['P6']
+fault: an aspect-ratio limit below the drawing -> P9-AR (a pass condition in strict mode) ok  ['P9-AR']
+the ruler's corners: a change of slope of 0.0086 um found to 5.4e-06 um (bound 5.4e-06; the tips' mean: 2.2e-03) ok  
+the ruler's corners: a straight taper found exactly (1.4e-14 um)                       ok  
+the ruler's corners: a run shorter than RUN_MIN (16 posts) is left to the tips' mean   ok  
+ALL OK

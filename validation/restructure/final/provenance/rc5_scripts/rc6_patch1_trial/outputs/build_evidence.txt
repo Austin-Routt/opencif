@@ -1,0 +1,8 @@
+# the two m02 builds of the trial against the shipped record (sha256 of the DXF; the record fields the trial reports)
+shipped runs/m02_linear_shear_arms_filter_teardrop/m02_linear_shear_arms_filter_teardrop.dxf  bcdde72af409851f35dae691d0a566b227fa44610e3baf23ad9763f047d35bc6
+not forced, strict       DXF bcdde72af409851f35dae691d0a566b227fa44610e3baf23ad9763f047d35bc6
+                         gates {'mode': 'strict'}; exit_code 0; design.outlet.stretch_end.table_domain: 'inside the solved tables'; ratio 2.8977
+                         code a9b02db62d48e73d (the patched scratch copy)
+forced at 1.5, evaluate  DXF bcdde72af409851f35dae691d0a566b227fa44610e3baf23ad9763f047d35bc6
+                         gates {'mode': 'evaluate'}; exit_code 0; design.outlet.stretch_end.table_domain: 'forced test: width ratio 2.898 beyond 1.50'; ratio 2.8977
+                         code a9b02db62d48e73d (the patched scratch copy)

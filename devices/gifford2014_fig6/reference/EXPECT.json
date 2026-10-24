@@ -1,0 +1,42 @@
+{
+ "code_stamp": "9e4eb55a0affeef3",
+ "builds": {
+  "gifford2014_fig6_aligned": {
+   "dxf_sha256": "7c77194f968a755a71518a687fe905ac671e7566c0e1495780be64a36bd4add7",
+   "exit_code": 3,
+   "declared": [
+    "floor start"
+   ],
+   "N": 5783,
+   "NM": 0,
+   "F": 0.7292631258129143,
+   "verdict": "REPRODUCED with declared departures (floor start) -- OUTSIDE THE VALIDITY ENVELOPE (u_min 0.0290 below the kappa plateau 0.035): the cutoff law is not calibrated there; cutoff band 3.008-3.624 um, App. B C7 method below the plateau (Hill kappa 4.080 at the widest centre channel) [1-D model: junction band: 58 row(s) beyond +-1%, 10 losing their cutoff (up to 76.1% of D; rows 5726-5783; 0.45% of F)]"
+  },
+  "gifford2014_fig6_design": {
+   "dxf_sha256": "e47f5ca61b3f1a28f7cdc0998896ce9327fa01918a0613fd8709a6b492032422",
+   "exit_code": 3,
+   "declared": [],
+   "N": 6080,
+   "NM": 0,
+   "F": 0.7176978616726342,
+   "verdict": "REPRODUCED -- OUTSIDE THE VALIDITY ENVELOPE (u_min 0.0290 below the kappa plateau 0.035): the cutoff law is not calibrated there; cutoff band 3.008-3.624 um, App. B C7 method below the plateau (Hill kappa 4.080 at the widest centre channel) [1-D model: junction band: 47 row(s) beyond +-1%, 10 losing their cutoff (up to 81.7% of D; rows 6034-6080; 0.39% of F)] -- ABOVE THE PROCESS ASPECT-RATIO LIMIT (depth/width 32.0 > 10 at the narrowest straight side channel; reported, not refused or failed in reproduce mode)"
+  }
+ },
+ "inputs_sha256": {
+  "tree/provenance/rc7_scripts/gifford_alignment.py": "0bb5cc3f7aa930829809c0316789abe3ab83034831380de8c64bd28b478339bb",
+  "tree/provenance/rc6_scripts/gifford_fig6_measurement.json": "a9d273e12b5cd58b1f394e73c6ab7fed118e8e3db891a44d84b2946bd5244a7a",
+  "tree/provenance/rc6_traces/measurements/dinh_length_at_corrected_pitch.json": "3440e7be0b5bb5b00547a13c44d985f431423ea8e238c6adab7cb9217082a1d6",
+  "tree/provenance/rc6_traces/measurements/gifford_fig6_turns.json": "aee3c50e79ceb335d8e6e5fcf3b227ae391b1c1594600030a78d8e1ffd15f0b2",
+  "tree/provenance/rc6_traces/measurements/scales.json": "f9b1ed8d323599953a6cb021750c07c73b85e00dfe63b55dfd113055096322ee",
+  "tree/provenance/rc6_traces/measurements/summary_table.md": "8222c854d707403322fc2eab118d1564df5cbd3c51d17d2b5af1fb081f940799",
+  "tree/provenance/rc6_traces/measurements/xia_fig3d_arc_scale.json": "3e60dd0b38ed9e2013a6b2109a369397ec8610eb94d26eb2334ec0504b6c73aa",
+  "tree/provenance/rc6_traces/measurements/xia_side_walls_fg.json": "bc3eccd0e9b4cf953176f6d75265b6e7059e686e878821168aa74b7a4567db6c",
+  "inputs/gif7-000.png": "182826e7aaccf14ce9ad72f1c6411ad662bf96c19b5814dec242ebce81a00379",
+  "inputs/gifford2014_fig6_aligned.yaml": "e14d49c98759ad4eb1658262867b4019b3d3135f60c3a8a9c06feb4c06314af6",
+  "inputs/gifford2014_fig6_design.yaml": "80a7f0ea4f2eb901c308582829726f234f6377711b06faf5eacdf73738a9bdb5",
+  "devicekit.py": "4ff58c84231b43d3f04a0df7e20ae85e247340f29a43a6a52c6c0fdcd704e63b",
+  "make_gifford2014_fig6.py": "28b631a4504e12f5f5a978a03f1a0af5f404df0f38c050c4a4a84db2b2256461",
+  "inputs/SOURCE.md": "1fbd8e6f3f296d0fbb49029609673a0f3f3d4b0438a9b6980277002842466fa8"
+ },
+ "note": "from the frozen RC8 tree's records (runs/, provenance/rc7_traces/variants/runs/ and provenance/rc7_traces/results/), written by the package assembler; the package checks its own run against these (inputs_sha256 covers the inputs, the source note, devicekit.py and the device script)"
+}

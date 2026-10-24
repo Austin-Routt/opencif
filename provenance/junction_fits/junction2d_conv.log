@@ -1,0 +1,10 @@
+deep res 40 excess/w  90: 0.04839  180: 0.11332  360: 0.23780   (360-180)/w 0.12448 vs developed per pi 0.12262
+deep res 80 excess/w  90: 0.04448  180: 0.10546  360: 0.22908   (360-180)/w 0.12362 vs developed per pi 0.12262
+deep res 160 excess/w  90: 0.04253  180: 0.10405  360: 0.22738   (360-180)/w 0.12333 vs developed per pi 0.12262
+  deep 90 deg: observed order 1.00, extrapolated excess 0.04059 w, developed 0.06131 w -> junction -34% of developed
+  deep 180 deg: observed order 2.48, extrapolated excess 0.10374 w, developed 0.12262 w -> junction -15% of developed
+shallow res 40 excess/w  90: -0.11148  180: -0.25210  360: -0.53767   (360-180)/w -0.28557 vs developed per pi -0.28800
+shallow res 80 excess/w  90: -0.11138  180: -0.25508  360: -0.54221   (360-180)/w -0.28713 vs developed per pi -0.28800
+shallow res 160 excess/w  90: -0.11208  180: -0.25562  360: -0.54315   (360-180)/w -0.28753 vs developed per pi -0.28800
+  shallow 90 deg: observed order -2.84, extrapolated excess -0.11126 w, developed -0.14400 w -> junction -23% of developed
+  shallow 180 deg: observed order 2.46, extrapolated excess -0.25574 w, developed -0.28800 w -> junction -11% of developed

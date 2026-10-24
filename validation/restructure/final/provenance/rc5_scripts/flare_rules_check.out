@@ -1,0 +1,5 @@
+m01_linear_const_pack_plain_separate         linear     legs 1  w_s(N)  59.40  lead   59.40  rule linear     base   200.00  flare   0.00  stretch   200.00  (base or 67, + flare + arc:   200.00)
+m05_serpentine_const_arms_plain_teardrop     serpentine legs 3  w_s(N)  59.40  lead  150.84  rule clearance  base   728.29  flare 353.57  stretch  1085.04  (base or 67, + flare + arc:  1085.04)
+m05_serpentine_const_arms_plain_teardrop     serpentine legs 1  w_s(N)  59.40  lead  150.77  rule linear     base   200.00  flare 353.32  stretch   423.50  (base or 67, + flare + arc:   423.50)
+m09_paperclip_const_narrow_plain_teardrop    paperclip  legs 3  w_s(N)  59.40  lead  151.03  rule clearance  base  2723.29  flare 354.30  stretch  3080.77  (base or 67, + flare + arc:  3080.77)
+m09_paperclip_const_narrow_plain_teardrop    paperclip  legs 1  w_s(N)  59.40  lead  150.77  rule linear     base   200.00  flare 353.32  stretch   423.50  (base or 67, + flare + arc:   423.50)

@@ -1,0 +1,15 @@
+# Xia's own process (140 um deep, 16 um gaps, 70.9 um posts across the flow, rc6) with a 200 um centre channel leaves the
+# gap-dominance gate M13 (0.18 >= 0.05) like Xia's RS-7 (0.17): strict mode REFUSES it and reports why and the cutoff
+# band it would have.  wbc_paperclip_teardrop.yaml is the same targets in a process inside the gates.
+name: wbc_xia_process_refused
+targets: {cutoff_um: 7.0, filtrate_fraction: 0.9}
+process: {depth_um: 140, gap_um: 16, post_length_um: 35.8, post_width_um: 70.9, min_feature_um: 16}
+chip: {width_mm: 20, length_mm: 40, margin_um: 1000}
+centre_channel: {taper: constant_shear, width_in_um: 200, width_min_um: 120}
+layout: {style: paperclip, legs: auto}
+meander: {enabled: true, style: pack, channel_um: 22.8, wall_um: 35.8, seal: require}
+inlet: {style: plain, port_radius_um: 750}
+# rc4: teardrop, as wbc_paperclip_teardrop.yaml (rc3 had a ring, which cannot close this design: rc4 refuses it in every
+# mode, before drawing; the example's purpose is the M13 refusal)
+outlet: {style: teardrop, port_radius_um: 1000, centre_port_radius_um: 1000}
+gates: {mode: strict}

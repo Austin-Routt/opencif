@@ -1,0 +1,12 @@
+# Variant matrix (pairwise covering of layout x taper x meander style x inlet x outlet), one base design:
+# D 4.0 um, F 0.5, 100 um deep, 19 um gaps and floor, w_c 80 um (u_min 0.05: inside the kappa plateau).
+name: m02_linear_shear_arms_filter_teardrop
+targets: {cutoff_um: 4.0, filtrate_fraction: 0.5}
+process: {depth_um: 100, gap_um: 19, post_length_um: 27, post_width_um: 50, min_feature_um: 19}
+chip: {width_mm: 12, length_mm: 75, margin_um: 1000}  # linear: a 75 mm strip (a folded layout fits 12 x 30)
+centre_channel: {taper: constant_shear, width_in_um: 80, width_min_um: 56}
+layout: {style: linear, legs: 1}
+meander: {enabled: true, style: arms, arms: 3, channel_um: 28, wall_um: 27, seal: require}
+inlet: {style: filter, port_radius_um: 750}
+outlet: {style: teardrop, port_radius_um: 750, centre_port_radius_um: 750}
+gates: {mode: evaluate}

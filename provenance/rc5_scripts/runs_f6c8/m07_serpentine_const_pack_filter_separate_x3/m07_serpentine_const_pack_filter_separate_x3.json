@@ -1,0 +1,79 @@
+{
+ "name": "m07_serpentine_const_pack_filter_separate_x3",
+ "element": "m07_serpentine_const_pack_filter_separate",
+ "element_verdict": "PASS [1-D model: junction band: 3 row(s) beyond +-1% (up to 13.9% of D; rows 71-73; 0.35% of F)]",
+ "element_code": {
+  "version": "1.0.0rc5",
+  "sha256": "f6c8eba91ec1f316",
+  "files": 34
+ },
+ "code": {
+  "version": "1.0.0rc5",
+  "sha256": "f6c8eba91ec1f316",
+  "files": 34
+ },
+ "count": 3,
+ "pitch_um": 5609.8390500000005,
+ "dxf": "m07_serpentine_const_pack_filter_separate_x3.dxf",
+ "dxf_sha256": "bcfd02a9d8604ef58063c315234031bf763afc5c116cf52ebfaea509a863a447",
+ "inlet": "shared",
+ "bus_width_um": 500.0,
+ "checks": {
+  "components": {
+   "n": 1,
+   "expected": 1,
+   "ok": true
+  },
+  "product_port_separated_in_every_element": {
+   "ok": true,
+   "per_element": [
+    true,
+    true,
+    true
+   ]
+  },
+  "manifold_touches_elements_only_at_their_ports": {
+   "ok": true,
+   "stray_area_um2": 0.0,
+   "min_clearance_um": 2220.7067651786674
+  },
+  "throughput_split": {
+   "min_over_mean": 0.9974972714308612,
+   "max_over_mean": 1.0050054571382778
+  },
+  "reynolds_per_element": {
+   "note": "total flow = 3 x the element's stated flow",
+   "Re_max": 5.583363650768211,
+   "ok": true
+  },
+  "stokes_per_element": {
+   "note": "Re_gap and Re_delta at the busiest element's flow",
+   "Re_gap_max": 0.0026055034042145216,
+   "Re_delta_max": 0.004704065053079596,
+   "ok": true
+  },
+  "fits_chip": {
+   "ok": true,
+   "footprint_mm": [
+    31.104359380000002,
+    16.52951715
+   ],
+   "reported_only": true
+  },
+  "drc": {
+   "ok": true,
+   "n_components": 1,
+   "n_lost_open": 0,
+   "n_lost_solid": 0,
+   "d_um": 18.9,
+   "error": null
+  }
+ },
+ "notes": [
+  "each element keeps its own outlet ports and the off-chip outlet tubing it was validated with (R_ext centre 0, side 0 Pa s/m^3); different tubing changes its last rows"
+ ],
+ "over_aspect_ratio": false,
+ "over_chip_area": false,
+ "verdict": "PASS: 3 copies of the validated element (D 4.0000 um, F 0.50030 on its drawn mask), outlets per element [1-D model: junction band: 3 row(s) beyond +-1% (up to 13.9% of D; rows 71-73; 0.35% of F)]",
+ "exit_code": 0
+}

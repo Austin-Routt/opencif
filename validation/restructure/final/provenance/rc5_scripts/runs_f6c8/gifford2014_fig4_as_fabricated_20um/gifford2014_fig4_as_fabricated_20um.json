@@ -1,0 +1,1434 @@
+{
+ "design": {
+  "name": "gifford2014_fig4_as_fabricated_20um",
+  "kernel_pair": {
+   "kernel": "cubic",
+   "f_of_x": "f = 3x^2 - 2x^3, x = delta/w_c (delta/w_c < 1/2)",
+   "cutoff": "D = kappa_g delta*",
+   "kappa_g": 4.9138,
+   "kappa_ci": [
+    4.75,
+    5.078
+   ],
+   "plateau_u": 0.035,
+   "foot_u": 0.012,
+   "hill_below_knee": {
+    "kmax": 5.568,
+    "u_half": 0.01651,
+    "n": 1.791
+   },
+   "source": "CIF_v2 v2.1.0 Pairing (byte-frozen, opencif/reference); Hill fit: glossary macros"
+  },
+  "spec": {
+   "name": "gifford2014_fig4_as_fabricated_20um",
+   "h": 80.0,
+   "G": 20.5,
+   "g_p": 25.6,
+   "l_g": 56.8,
+   "GS": 29.7,
+   "wc0": 100.0,
+   "delta_star": 1.0588902338941801,
+   "F_target": 0.90644,
+   "ws_in": 20.5,
+   "W": 2400.0,
+   "F_min": 20.0,
+   "wall_M": 20.0,
+   "w_arm": 29.7,
+   "w_narrow": null,
+   "taper": "const",
+   "wc_min": 0.0,
+   "c_ent": 1.0,
+   "margin": 60.0,
+   "Q_in_uL_min": 30.0,
+   "head": "none",
+   "n_arms_fixed": 3,
+   "cap_frac": 1.0,
+   "n_rect": 2,
+   "stem_half": 300.0,
+   "L_out": 200.0,
+   "flare_deg": null,
+   "flare_start": 67.0,
+   "filter": false,
+   "f_head": null,
+   "NM_force": null,
+   "R0_arms": null,
+   "transition": "exact",
+   "ws_rect": null,
+   "outlet": "separate",
+   "port_r": 750.0,
+   "port_r_c": 300.0,
+   "port_r_in": 300.0,
+   "r_fillet": 5.0,
+   "rmin_ok": 4.5,
+   "loop_pull_in": 0.0,
+   "loop_pull_in_leg": false,
+   "loop_pull_mode": "width",
+   "loop_ramp": null,
+   "pc_last_short": 2000.0,
+   "R_ext_c": 0.0,
+   "R_ext_s": 0.0,
+   "seam_at": "segment",
+   "leg_Y": null,
+   "inlet_gap": null,
+   "pc_inlet_offset": 0.0,
+   "pc_out_ext": null,
+   "outlet_style": "teardrop",
+   "ring_R": 4179.0,
+   "ring_dc": 1187.0,
+   "ring_dfp": 4762.0,
+   "ring_rq": 250.0,
+   "note": "",
+   "trim_F": false,
+   "bend_model": "stokes",
+   "t_junction": true,
+   "S0": 0.02009164437770959,
+   "tubing_centre_id_mm": null
+  },
+  "layout": "paperclip",
+  "n_legs": 4,
+  "A": 0,
+  "f1_over_fstar": 1.0,
+  "gap1_cutoff_um": 5.203174831309222,
+  "D_star_um": 5.203174831309222,
+  "N": 3487,
+  "NM": 0,
+  "F": 0.9064717056405934,
+  "exact_before_margin": {
+   "F": 0.9064717056405934,
+   "N": 3487
+  },
+  "failsafe_rows": 0,
+  "K_narrow": 0,
+  "turns": [
+   874,
+   1758,
+   2642
+  ],
+  "leg_Y": [
+   0.0,
+   963.4072266067608,
+   -963.4072266067608,
+   1926.8144532135216
+  ],
+  "leg_d": 963.4072266067608,
+  "ws_min_um": 20.0,
+  "wall_rule": "exact",
+  "x_top": -35.85,
+  "R_element_SI": 29742446126845.516,
+  "outlet": {
+   "style": "separate",
+   "w_lead_um": 299.9036133033804,
+   "L_lead_um": 2183.2961640924877,
+   "L_out_um": 200.0,
+   "R_stretch_design_SI": 349481057540.5461,
+   "stretch_end": {
+    "kind": "none",
+    "w_side_um": 299.9036133033804,
+    "w_lead_um": 299.9036133033804,
+    "ratio": 1.0,
+    "c": 0.0,
+    "c_deep": 0.0,
+    "c_shallow": 0.0,
+    "depth_weight": 0.0,
+    "excess_len_um": 0.0,
+    "R": 0.0
+   }
+  }
+ },
+ "validation": {
+  "topology": {
+   "single_component": true,
+   "valid": true,
+   "holes": 6972,
+   "holes_expected": 6972,
+   "holes_ok": true,
+   "rectilinear_rows": 0,
+   "arms_per_side": 0,
+   "meander_units_per_side": 0,
+   "row_kinds_planned": {
+    "A": 0,
+    "N": 0,
+    "T": 0,
+    "R": 0,
+    "L": 3487
+   },
+   "row_kinds_drawn": {
+    "A": 0,
+    "N": 0,
+    "T": 0,
+    "R": 0,
+    "L": 3487
+   },
+   "row_kinds_survive": true
+  },
+  "envelope": {
+   "W_um": 2400.0,
+   "head_halfwidth_um": 50.0,
+   "ok": true
+  },
+  "rounding": {
+   "min_local_radius_um": 4.929127151152088,
+   "at": [
+    -3896.09783,
+    319.37623
+   ],
+   "vertices_with_radius_below": {
+    "1.0": 0,
+    "3.0": 0,
+    "4.5": 0
+   },
+   "criterion_um": 4.5,
+   "ok": true
+  },
+  "outlet_separation": {
+   "n_components_after_cut": 4,
+   "outlet_kind": "separate",
+   "separated": true
+  },
+  "part_clearance": {
+   "ok": true,
+   "floor_um": 20.0,
+   "parts": [
+    "inlet and head",
+    "leg 1",
+    "U-turn 1",
+    "leg 2",
+    "U-turn 2",
+    "leg 3",
+    "U-turn 3",
+    "leg 4",
+    "outlet"
+   ],
+   "pairs_within_reach": 4,
+   "closest": [
+    {
+     "gap_um": 446.451,
+     "parts": [
+      "inlet and head",
+      "U-turn 2"
+     ]
+    },
+    {
+     "gap_um": 502.864,
+     "parts": [
+      "U-turn 1",
+      "U-turn 3"
+     ]
+    },
+    {
+     "gap_um": 502.864,
+     "parts": [
+      "leg 2",
+      "U-turn 3"
+     ]
+    }
+   ]
+  },
+  "port_spacing": {
+   "ok": true,
+   "inlet_to_nearest_outlet_port_um": 3122.6,
+   "port": "A",
+   "required_um": 2000.0
+  },
+  "components_drawn": {
+   "head_drawn": "none",
+   "head_units": 0,
+   "head_arms": 0,
+   "arm_lane_pairs": [],
+   "head_unit_widths_um": [],
+   "gap1_f_over_fstar": null,
+   "gap1_sealed": true,
+   "filter_posts_counted": 0,
+   "outlet_style": "separate",
+   "outlet_ports": 3,
+   "legs": 4,
+   "u_turns": 3
+  },
+  "side_continuity": {
+   "ok": true,
+   "narrowest_um": 20.000000000000004,
+   "floor_um": 20.0,
+   "above_floor": true,
+   "legs": [
+    {
+     "leg": 1,
+     "side": "A",
+     "rows": [
+      1,
+      874
+     ],
+     "pieces": 1,
+     "connected": true,
+     "narrowest_um": 20.000000000000004,
+     "narrowest_row": 0,
+     "narrowest_xy": [
+      -10.0,
+      117.1
+     ]
+    },
+    {
+     "leg": 1,
+     "side": "B",
+     "rows": [
+      1,
+      874
+     ],
+     "pieces": 1,
+     "connected": true,
+     "narrowest_um": 20.000000000000004,
+     "narrowest_row": 0,
+     "narrowest_xy": [
+      -10.0,
+      -117.1
+     ]
+    },
+    {
+     "leg": 2,
+     "side": "A",
+     "rows": [
+      875,
+      1758
+     ],
+     "pieces": 1,
+     "connected": true,
+     "narrowest_um": 65.65128999999995,
+     "narrowest_row": 875,
+     "narrowest_xy": [
+      40222.54999999934,
+      823.4815816067608
+     ]
+    },
+    {
+     "leg": 2,
+     "side": "B",
+     "rows": [
+      875,
+      1758
+     ],
+     "pieces": 1,
+     "connected": true,
+     "narrowest_um": 65.65128000000009,
+     "narrowest_row": 875,
+     "narrowest_xy": [
+      40222.54999999934,
+      1103.332866606761
+     ]
+    },
+    {
+     "leg": 3,
+     "side": "A",
+     "rows": [
+      1759,
+      2642
+     ],
+     "pieces": 1,
+     "connected": true,
+     "narrowest_um": 110.13705999999995,
+     "narrowest_row": 1759,
+     "narrowest_xy": [
+      -438.2500000020591,
+      -801.2386966067609
+     ]
+    },
+    {
+     "leg": 3,
+     "side": "B",
+     "rows": [
+      1759,
+      2642
+     ],
+     "pieces": 1,
+     "connected": true,
+     "narrowest_um": 110.13705000000009,
+     "narrowest_row": 1759,
+     "narrowest_xy": [
+      -438.2500000020591,
+      -1125.5757516067608
+     ]
+    },
+    {
+     "leg": 4,
+     "side": "A",
+     "rows": [
+      2643,
+      3487
+     ],
+     "pieces": 1,
+     "connected": true,
+     "narrowest_um": 181.25486000000006,
+     "narrowest_row": 2643,
+     "narrowest_xy": [
+      40222.55000000308,
+      1729.0870232135217
+     ]
+    },
+    {
+     "leg": 4,
+     "side": "B",
+     "rows": [
+      2643,
+      3487
+     ],
+     "pieces": 1,
+     "connected": true,
+     "narrowest_um": 181.25486000000006,
+     "narrowest_row": 2643,
+     "narrowest_xy": [
+      40222.55000000308,
+      2124.5418832135215
+     ]
+    }
+   ],
+   "loop_narrowest_um": 54.320905442843774
+  },
+  "fidelity": {
+   "unit_length_rel_max": 0.0,
+   "side_eqwidth_dev_max_um": 8.045195016848083e-06,
+   "gap_width_dev_max_um": 4.547473508864641e-13,
+   "loop_R_rel_max": 1.3026488441703066e-05,
+   "outlet_R_rel_max": 6.356221158632103e-06
+  },
+  "outlet_measured": {
+   "Rc_out": 2677116482748.155,
+   "RsA_out": 552309578761.4738,
+   "RsB_out": 552309560298.0688,
+   "Rc_out_rel": 4.440892098500626e-16,
+   "RsA_out_rel": -6.322791921031801e-06,
+   "RsB_out_rel": -6.356221158632103e-06,
+   "R_ext_c": 0.0,
+   "R_ext_side": 0.0,
+   "lead_width_min_um": {
+    "A": 299.90323552035676,
+    "B": 299.9032651945146,
+    "C": 100.0
+   },
+   "stretch_end": {
+    "A": {
+     "c": 0.0,
+     "R": 0.0,
+     "stretch_width_um": 299.90360999999984
+    },
+    "B": {
+     "c": 0.0,
+     "R": 0.0,
+     "stretch_width_um": 299.90362000000005
+    }
+   }
+  },
+  "loops_measured": [
+   {
+    "row": 874,
+    "A": {
+     "w_min": 54.320905442843774,
+     "R_rel": 3.113791212427941e-06
+    },
+    "B": {
+     "w_min": 65.57533,
+     "R_rel": 1.3026488441703066e-05
+    },
+    "Rc_rel_to_design": 2.057972332547564e-06
+   },
+   {
+    "row": 1758,
+    "A": {
+     "w_min": 96.45490999999993,
+     "R_rel": 7.765698217809813e-07
+    },
+    "B": {
+     "w_min": 110.02998000000002,
+     "R_rel": 3.573560783731722e-06
+    },
+    "Rc_rel_to_design": 5.642010363349215e-07
+   },
+   {
+    "row": 2642,
+    "A": {
+     "w_min": 158.85082922977222,
+     "R_rel": 2.7344712871801846e-07
+    },
+    "B": {
+     "w_min": 181.0708199999999,
+     "R_rel": 1.1934281487491205e-06
+    },
+    "Rc_rel_to_design": 2.725538683634454e-07
+   }
+  ],
+  "network": {
+   "F_design": 0.9064717056405934,
+   "F_target": 0.90644,
+   "F_as_drawn": 0.906472219441638,
+   "F_rel_to_design": 5.668142109005458e-07,
+   "F_rel_to_target": 3.5545035124151525e-05,
+   "row_f_ratio_max_dev": 30.188135866278223,
+   "row_f_ratio_max_dev_row": 1,
+   "cutoff_design_um": 5.203174831309222,
+   "F_intended": 0.9064717056531231
+  },
+  "drawing_fidelity": {
+   "cutoff_dev_max": 0.0006959353032588402,
+   "cutoff_dev_row": 874,
+   "own_cutoff_rel_dev_max": 0.0006959353058686446,
+   "own_cutoff_rel_dev_row": 874,
+   "f_dev_max_where_no_cutoff": 0.0,
+   "f_dev_row": 1,
+   "f_dev_over_fstar_max_where_no_cutoff": 0.0,
+   "f_dev_over_fstar_row": 1,
+   "F_drawn": 0.906472219441638,
+   "F_intended": 0.9064717056531231,
+   "F_abs_dev": 5.137885149553156e-07
+  },
+  "realised_cutoff": {
+   "D_target_um": 5.203174831309222,
+   "tolerance": 0.01,
+   "F_net": 0.9064722194080863,
+   "reverse_flow_rows": [],
+   "reverse_flow_share_of_inlet": -0.0,
+   "declared_rows": {
+    "floor start": [
+     1,
+     11,
+     11
+    ]
+   },
+   "D_realised_max_um": 29.553635568282054,
+   "D_realised_min_um": 5.199553738742421,
+   "row1_cutoff_over_D": 5.6799236094178625,
+   "share_of_F_within_1%": 0.9496328973695627,
+   "share_of_F_oversize_1%": 0.050367102630437366,
+   "rows_outside_1%": 11,
+   "share_of_F_within_2%": 0.9503532067906725,
+   "share_of_F_oversize_2%": 0.04964679320932759,
+   "rows_outside_2%": 10,
+   "share_of_F_within_5%": 0.9518625597687616,
+   "share_of_F_oversize_5%": 0.04813744023123837,
+   "rows_outside_5%": 8,
+   "undeclared_rows_outside": 0,
+   "undeclared_rows_list": [],
+   "undeclared_worst_over": null,
+   "undeclared_worst_under": null,
+   "undeclared_undefined_rows": 0,
+   "declared_by_option": {
+    "floor start": {
+     "rows_outside": 11,
+     "first_last": [
+      1,
+      11
+     ],
+     "worst_over": 5.6799236094178625,
+     "worst_under": 1.011732673256553,
+     "undefined_rows": 0,
+     "share_of_F_oversize": 0.050367102630437366
+    }
+   },
+   "declared_rows_outside": 11,
+   "declared_worst_over": 5.6799236094178625,
+   "declared_share_of_F_oversize": 0.050367102630437366
+  },
+  "intended_cutoff": {
+   "D_target_um": 5.203174831309222,
+   "tolerance": 0.01,
+   "F_net": 0.906471705619931,
+   "reverse_flow_rows": [],
+   "reverse_flow_share_of_inlet": -0.0,
+   "declared_rows": {
+    "floor start": [
+     1,
+     11,
+     11
+    ]
+   },
+   "D_realised_max_um": 29.553635876782046,
+   "D_realised_min_um": 5.2031747697504205,
+   "row1_cutoff_over_D": 5.679923668708584,
+   "share_of_F_within_1%": 0.9496328693408733,
+   "share_of_F_oversize_1%": 0.05036713065912663,
+   "rows_outside_1%": 11,
+   "share_of_F_within_2%": 0.9503531814699695,
+   "share_of_F_oversize_2%": 0.049646818530030584,
+   "rows_outside_2%": 10,
+   "share_of_F_within_5%": 0.951862530567101,
+   "share_of_F_oversize_5%": 0.04813746943289905,
+   "rows_outside_5%": 8,
+   "undeclared_rows_outside": 0,
+   "undeclared_rows_list": [],
+   "undeclared_worst_over": null,
+   "undeclared_worst_under": null,
+   "undeclared_undefined_rows": 0,
+   "declared_by_option": {
+    "floor start": {
+     "rows_outside": 11,
+     "first_last": [
+      1,
+      11
+     ],
+     "worst_over": 5.679923668708584,
+     "worst_under": 1.0117342927916608,
+     "undefined_rows": 0,
+     "share_of_F_oversize": 0.05036713065912663
+    }
+   },
+   "declared_rows_outside": 11,
+   "declared_worst_over": 5.679923668708584,
+   "declared_share_of_F_oversize": 0.05036713065912663
+  },
+  "model_scenarios": {
+   "bend_model": {
+    "model": "stokes",
+    "junction_lambda_at_GS": 0.09655620088952044,
+    "kappa_j_at_GS": 0.48358544584878155,
+    "c_T_at_GS": -0.42994869156214693,
+    "limits": {
+     "kappa_j": [
+      0.5,
+      0.33
+     ],
+     "c_T": [
+      -0.28,
+      -0.47
+     ]
+    }
+   },
+   "junction_band_lo": {
+    "F": 0.9064569001417306,
+    "rows_outside_tol": 15,
+    "rows_newly_outside_tol": 4,
+    "newly_outside_rows": [
+     3484,
+     3485,
+     3486,
+     3487
+    ],
+    "rows_losing_their_cutoff": 0,
+    "share_of_F_in_those_rows": 0.0002764187421311572,
+    "rows_moved_over_half_tol": 9,
+    "max_cutoff_change": 0.018158836498267106,
+    "max_change_row": 3487,
+    "cutoff_over_D_range": [
+     0.9824434941124022,
+     5.6799236094178625
+    ]
+   },
+   "junction_band_hi": {
+    "F": 0.9064773971469078,
+    "rows_outside_tol": 11,
+    "rows_newly_outside_tol": 0,
+    "newly_outside_rows": [],
+    "rows_losing_their_cutoff": 0,
+    "share_of_F_in_those_rows": 0.0,
+    "rows_moved_over_half_tol": 2,
+    "max_cutoff_change": 0.006065279457776018,
+    "max_change_row": 3487,
+    "cutoff_over_D_range": [
+     0.9991100885062004,
+     5.679923609417276
+    ]
+   },
+   "t_junction_ignored": {
+    "F": 0.906472219441638,
+    "rows_outside_tol": 11,
+    "rows_newly_outside_tol": 0,
+    "newly_outside_rows": [],
+    "rows_losing_their_cutoff": 0,
+    "share_of_F_in_those_rows": 0.0,
+    "rows_moved_over_half_tol": 0,
+    "max_cutoff_change": 0.0,
+    "max_change_row": 12,
+    "cutoff_over_D_range": [
+     0.9993040609465952,
+     5.6799236094178625
+    ]
+   },
+   "junctions_ignored": {
+    "F": 0.9065171880975613,
+    "rows_outside_tol": 22,
+    "rows_newly_outside_tol": 11,
+    "newly_outside_rows": [
+     3477,
+     3478,
+     3479,
+     3480,
+     3481,
+     3482,
+     3483,
+     3484,
+     3485,
+     3486,
+     3487
+    ],
+    "rows_losing_their_cutoff": 0,
+    "share_of_F_in_those_rows": 0.0007616687419851305,
+    "rows_moved_over_half_tol": 15,
+    "max_cutoff_change": 0.051541650681914186,
+    "max_change_row": 3487,
+    "cutoff_over_D_range": [
+     0.9981652316216278,
+     5.679923609417276
+    ]
+   },
+   "bend_correction_off": {
+    "F": 0.9061385205723802,
+    "rows_outside_tol": 71,
+    "rows_newly_outside_tol": 60,
+    "newly_outside_rows": [
+     867,
+     868,
+     869,
+     870,
+     871,
+     872,
+     873,
+     874,
+     875,
+     876,
+     877,
+     878,
+     879,
+     880,
+     881,
+     882,
+     2633,
+     2634,
+     2635,
+     2636,
+     2637,
+     2638,
+     2639,
+     2640,
+     2641,
+     2642,
+     2643,
+     2644,
+     2645,
+     2646,
+     2647,
+     2648,
+     2649,
+     2650,
+     2651,
+     2652,
+     3464,
+     3465,
+     3466,
+     3467
+    ],
+    "rows_losing_their_cutoff": 0,
+    "share_of_F_in_those_rows": 0.010417145322599283,
+    "rows_moved_over_half_tol": 89,
+    "max_cutoff_change": 0.5305470731737841,
+    "max_change_row": 3487,
+    "cutoff_over_D_range": [
+     0.47005525743688514,
+     5.679923609417276
+    ]
+   },
+   "bend_correction_per_loop": [
+    {
+     "row": 874,
+     "R_um": 481.7036133033804,
+     "centre_conductance_ratio": 1.0008449506427348,
+     "centre_excess_um": -1.2413236460743613
+    },
+    {
+     "row": 1758,
+     "R_um": 963.4072266067608,
+     "centre_conductance_ratio": 1.0002112763632771,
+     "centre_excess_um": -0.6302448898298778
+    },
+    {
+     "row": 2642,
+     "R_um": 1445.1108399101413,
+     "centre_conductance_ratio": 1.00009390357811,
+     "centre_excess_um": -0.4222430754836901
+    }
+   ],
+   "outlet_side_resistance_+1%": {
+    "F": 0.9056624959434114,
+    "rows_outside_tol": 40,
+    "rows_newly_outside_tol": 29,
+    "newly_outside_rows": [
+     3459,
+     3460,
+     3461,
+     3462,
+     3463,
+     3464,
+     3465,
+     3466,
+     3467,
+     3468,
+     3469,
+     3470,
+     3471,
+     3472,
+     3473,
+     3474,
+     3475,
+     3476,
+     3477,
+     3478,
+     3479,
+     3480,
+     3481,
+     3482,
+     3483,
+     3484,
+     3485,
+     3486,
+     3487
+    ],
+    "rows_losing_their_cutoff": 5,
+    "share_of_F_in_those_rows": 0.0020194983761685154,
+    "rows_moved_over_half_tol": 34,
+    "max_cutoff_change": 0.6216744033645073,
+    "max_change_row": 3482,
+    "cutoff_over_D_range": [
+     0.37859797771937387,
+     5.679923609417276
+    ]
+   },
+   "outlet_side_resistance_-1%": {
+    "F": 0.907283392130635,
+    "rows_outside_tol": 40,
+    "rows_newly_outside_tol": 29,
+    "newly_outside_rows": [
+     3459,
+     3460,
+     3461,
+     3462,
+     3463,
+     3464,
+     3465,
+     3466,
+     3467,
+     3468,
+     3469,
+     3470,
+     3471,
+     3472,
+     3473,
+     3474,
+     3475,
+     3476,
+     3477,
+     3478,
+     3479,
+     3480,
+     3481,
+     3482,
+     3483,
+     3484,
+     3485,
+     3486,
+     3487
+    ],
+    "rows_losing_their_cutoff": 0,
+    "share_of_F_in_those_rows": 0.0020194983761685154,
+    "rows_moved_over_half_tol": 34,
+    "max_cutoff_change": 0.7113037218840315,
+    "max_change_row": 3487,
+    "cutoff_over_D_range": [
+     0.9993040609464212,
+     5.679923609416692
+    ]
+   },
+   "dDlast_dlnRside_out": -100.09507293270858
+  },
+  "gates": {
+   "M13_gap_dominance_max": 0.02957678196763303,
+   "M13_ok": true,
+   "Re_max": 5.555555555555556,
+   "Re_ok": true,
+   "Re_gap_max": 0.003323383084577114,
+   "Re_gap_row": 1,
+   "Re_gap_row1_cifv2": 0.003323383084577114,
+   "Re_delta_max": 0.007919937493927871,
+   "Re_delta_row": 1,
+   "Re_delta_row1": 0.007919937493927871,
+   "stokes_ok": true,
+   "Re_gap_planned_max": 0.003323383084577114,
+   "Re_delta_planned_max": 0.007919937493927871,
+   "f_design_max": 0.000334,
+   "f_planned_max": 0.000334,
+   "f_calibration_cap": 0.000576,
+   "f_beyond_calibration": false,
+   "f_soft": 0.0005,
+   "f_above_soft": false,
+   "lamina_over_depth": 0.013236127923677251,
+   "lamina_limit": 0.1,
+   "lamina_ok": true,
+   "lamina_over_depth_planned_max": 0.013236127923677251,
+   "lamina_all_rows_ok": true,
+   "taper_rate_max": 0.0,
+   "taper_rate_row": 1,
+   "taper_rate_limit": 0.01,
+   "taper_ok": true,
+   "taper_pitch_um": 46.1,
+   "P8": {
+    "inlet_Re_limit": 1.0,
+    "at_auditor_flow": {
+     "flow_uL_min": 5.0,
+     "inlet_Re": 0.9259259259259259,
+     "inlet_Re_within_limit": true,
+     "naive_Le_um": 4.1152263374485605,
+     "naive_Le_over_half_pitch": 0.1785347651821501,
+     "passes": true
+    },
+    "at_design_flow": {
+     "flow_uL_min": 30.0,
+     "inlet_Re": 5.555555555555556,
+     "inlet_Re_within_limit": false,
+     "naive_Le_um": 24.69135802469136,
+     "naive_Le_over_half_pitch": 1.0712085910929006,
+     "passes": false
+    },
+    "status": "diagnostic only, not an audit and not gated (docs/LIMITATIONS.md 6): the two criteria of CIF_v2's physics auditor check P8, computed from the design (CIF_v2's auditor is not run on the exported mask; opencif's own drawn-mask checks are assessment.status.drawn_mask_assessment) at the auditor's default operating point (5 uL/min) and at the design flow; its 0.05 Re D_h is the entrance length spec v5, the glossary and CIF_v2 S16-c call wrong in this regime, and its Re limit 1.0 is CIF_v2's settable default (App. B prints no value), not the design envelope's (Re_max = 10, M14)"
+   },
+   "Re_any_channel_bound": 10.010010010010014,
+   "dean_leading_term_bound": null,
+   "dean_note": "no bound: the channel Reynolds bound 2 rho Q/(mu (h + F_min - 0.1 um)) = 10.01 exceeds 10 (the gated centre-channel Re is Re_max)",
+   "fluid": {
+    "rho_kg_m3": 1000.0,
+    "mu_Pa_s": 0.001,
+    "note": "water; the Reynolds gates scale with rho/mu"
+   },
+   "Le_over_Lambda_L": 1.432640202263395,
+   "plateau_u_min": 0.05203174831309222,
+   "plateau_ok": true,
+   "plateau_rows_in_knee": 0,
+   "plateau_F_share_in_knee": 0.0,
+   "cutoff_band_um": {
+    "band_um": [
+     5.029728610997355,
+     5.377044607714647
+    ],
+    "basis": "on the plateau: the kappa_g interval x delta*",
+    "retention_side": [
+     5.029728610997355,
+     5.377044607714647
+    ],
+    "passage_edge_below_knee": null,
+    "c7_band_constant_lamina": null,
+    "kappa_at_passage_edge": null,
+    "method": "on the plateau (u_min >= 0.035): the kappa_g interval x delta*.  Below it the record uses App. B P-C7.1 (the frozen Hill fit; glossary \\hillKmax, \\hillUhalf, \\hillN): band [kappa(u) delta*, kappa_g delta*], plateau-anchored (App. B C7 CQ3)"
+   },
+   "kappa_band_um": [
+    5.029728610997355,
+    5.377044607714647
+   ]
+  },
+  "robustness_design_network": {
+   "junction +1 w/2": {
+    "cutoff_max_over_Dstar": 1.0,
+    "cutoff_min_over_Dstar": 1.0,
+    "rows_without_cutoff": 0,
+    "rows_outside_1pct": 0,
+    "cutoff_row1_over_Dstar": 1.0,
+    "cutoff_lastrow_over_Dstar": 1.0
+   },
+   "junction -1 w/2": {
+    "cutoff_max_over_Dstar": 1.0,
+    "cutoff_min_over_Dstar": 1.0,
+    "rows_without_cutoff": 0,
+    "rows_outside_1pct": 0,
+    "cutoff_row1_over_Dstar": 1.0,
+    "cutoff_lastrow_over_Dstar": 1.0
+   },
+   "bias +0.5 um": {
+    "cutoff_max_over_Dstar": 1.0337868477541092,
+    "cutoff_min_over_Dstar": 0.9584160757536936,
+    "rows_without_cutoff": 0,
+    "rows_outside_1pct": 69,
+    "cutoff_row1_over_Dstar": 1.029200267803245,
+    "cutoff_lastrow_over_Dstar": 1.0000119478767475
+   },
+   "bias -0.5 um": {
+    "cutoff_max_over_Dstar": 1.0526325862362471,
+    "cutoff_min_over_Dstar": 0.9519082607462522,
+    "rows_without_cutoff": 0,
+    "rows_outside_1pct": 88,
+    "cutoff_row1_over_Dstar": 0.9707497891926403,
+    "cutoff_lastrow_over_Dstar": 0.9999619535224378
+   },
+   "mouth R_gap +20%": {
+    "cutoff_max_over_Dstar": 1.0,
+    "cutoff_min_over_Dstar": 1.0,
+    "rows_without_cutoff": 0,
+    "rows_outside_1pct": 0,
+    "cutoff_row1_over_Dstar": 1.0,
+    "cutoff_lastrow_over_Dstar": 1.0
+   },
+   "mouth R_gap -20%": {
+    "cutoff_max_over_Dstar": 1.0,
+    "cutoff_min_over_Dstar": 1.0,
+    "rows_without_cutoff": 0,
+    "rows_outside_1pct": 0,
+    "cutoff_row1_over_Dstar": 1.0,
+    "cutoff_lastrow_over_Dstar": 1.0
+   },
+   "noise 0.010 um": {
+    "cutoff_max_over_Dstar": 1.0246990378947245,
+    "cutoff_min_over_Dstar": 0.9605997516132594,
+    "rows_without_cutoff": 0,
+    "rows_outside_1pct": 207,
+    "cutoff_row1_over_Dstar": 1.000167036350719,
+    "cutoff_lastrow_over_Dstar": 0.9999020891772973
+   }
+  },
+  "drawn_parameters": {
+   "depth_um": 80.0,
+   "G_meas": 20.5,
+   "G_meas_min": 20.499999999999545,
+   "wc_in_meas": 100.0,
+   "wc_out_meas": 100.0,
+   "ws_first_linear_eq": 20.000000000000018,
+   "ws_out_eq": 299.90361185353095,
+   "footprint_mm": [
+    47.40891805,
+    5.384484240000001
+   ],
+   "array_length_mm": 169.78449919658016,
+   "head_length_mm": 0.0
+  },
+  "length_budget": {
+   "leg_path_lengths_mm": [
+    40.30419999999934,
+    40.75240000000141,
+    40.752400000005146,
+    42.65156083991505
+   ],
+   "total_mm": 164.46056083992093,
+   "definition": "each leg along its rows: leg 1 from the head's top, an intermediate leg from half a pitch before its first gap to half a pitch after its last, the last leg to the end of the outlet stretch; U-turns and outlet leads not counted (at least spec v5 G9's sum of Lambda: conservative)"
+  },
+  "drc": {
+   "file": "gifford2014_fig4_as_fabricated_20um.dxf",
+   "d_um": 19.9,
+   "n_fluid": 1,
+   "n_solid": 6972,
+   "invalid_rings": 0,
+   "bulge_polylines": 0,
+   "bounds": [
+    -5381.8,
+    -1251.3,
+    42027.1,
+    4133.2
+   ],
+   "fluid_area": 77574084.3,
+   "overlap_area": 0.0,
+   "solid_layer_overlap_with_fluid": 0.0,
+   "n_components": 1,
+   "largest_component_frac": 1.0,
+   "small_components": [],
+   "n_lost_open": 0,
+   "n_lost_solid": 0,
+   "tiling_artefacts_dropped": [
+    1,
+    0
+   ],
+   "corner_artefacts_open": 3,
+   "corner_artefacts_solid": 13,
+   "lost_open_min_width": null,
+   "lost_solid_min_width": null,
+   "lost_open": [],
+   "lost_solid": [],
+   "seconds": 104.9
+  }
+ },
+ "log": [
+  "[gifford2014_fig4_as_fabricated_20um] planned: A=0 (sealed would need 0, lateral cap 0), f1/f*=1.000, N=3487, NM=0, w_s(in) target 20.50 (1s)",
+  "[gifford2014_fig4_as_fabricated_20um] drawn: bounds [-5381.8, -1251.3, 42027.1, 4133.2] (48s)",
+  "[gifford2014_fig4_as_fabricated_20um] topology holes 6972/6972; envelope True; r_min 4.93 um (57s)",
+  "[gifford2014_fig4_as_fabricated_20um] part clearance: ok (closest [{'gap_um': 446.451, 'parts': ['inlet and head', 'U-turn 2']}]); drawn components {'head_drawn': 'none', 'head_units': 0, 'head_arms': 0, 'arm_lane_pairs': [], 'gap1_f_over_fstar': None, 'gap1_sealed': True, 'filter_posts_counted': 0, 'outlet_style': 'separate', 'outlet_ports': 3, 'legs': 4, 'u_turns': 3}",
+  "[gifford2014_fig4_as_fabricated_20um] side-channel continuity: every leg and side one strip; narrowest 20.000 um (floor 20.0) (79s)",
+  "[gifford2014_fig4_as_fabricated_20um] fidelity {'unit_length_rel_max': 0.0, 'side_eqwidth_dev_max_um': 8.045195016848083e-06, 'gap_width_dev_max_um': 4.547473508864641e-13, 'loop_R_rel_max': 1.3026488441703066e-05, 'outlet_R_rel_max': 6.356221158632103e-06}",
+  "[gifford2014_fig4_as_fabricated_20um] network F 0.906472 (design 0.906472, target 0.906440); realised cutoff {'D_target_um': 5.20317, 'tolerance': 0.01, 'F_net': 0.90647, 'reverse_flow_rows': [], 'reverse_flow_share_of_inlet': -0.0, 'declared_rows': {'floor start': [1, 11, 11]}, 'D_realised_max_um': 29.55364, 'D_realised_min_um': 5.19955, 'row1_cutoff_over_D': 5.67992, 'share_of_F_within_1%': 0.94963, 'share_of_F_oversize_1%': 0.05037, 'rows_outside_1%': 11, 'share_of_F_within_2%': 0.95035, 'share_of_F_oversize_2%': 0.04965, 'rows_outside_2%': 10, 'share_of_F_within_5%': 0.95186, 'share_of_F_oversize_5%': 0.04814, 'rows_outside_5%': 8, 'undeclared_rows_outside': 0, 'undeclared_rows_list': [], 'undeclared_worst_over': None, 'undeclared_worst_under': None, 'undeclared_undefined_rows': 0, 'declared_by_option': {'floor start': {'rows_outside': 11, 'first_last': [1, 11], 'worst_over': 5.6799236094178625, 'worst_under': 1.011732673256553, 'undefined_rows': 0, 'share_of_F_oversize': 0.050367102630437366}}, 'declared_rows_outside': 11, 'declared_worst_over': 5.67992, 'declared_share_of_F_oversize': 0.05037} (307s)",
+  "[gifford2014_fig4_as_fabricated_20um] DRC {'n_components': 1, 'invalid_rings': 0, 'n_lost_open': 0, 'n_lost_solid': 0, 'd_um': 19.9}",
+  "[gifford2014_fig4_as_fabricated_20um] done in 414s"
+ ],
+ "seconds": 414.06264209747314,
+ "assessment": {
+  "verdict": "REPRODUCED with declared departures (floor start) [1-D model: junction band: 4 row(s) beyond +-1% (up to 1.8% of D; rows 3484-3487; 0.028% of F)]",
+  "exit_code": 0,
+  "checks": [
+   {
+    "check": "DRC at the process floor",
+    "ok": true,
+    "value": {
+     "lost_open": 0,
+     "lost_solid": 0,
+     "components": 1,
+     "d_um": 19.9
+    },
+    "requirement": "nothing narrower than 20.0 um lost (tested at 19.9 um); one fluid component",
+    "kind": "hard"
+   },
+   {
+    "check": "topology",
+    "ok": true,
+    "value": {
+     "holes": 6972,
+     "expected": 6972
+    },
+    "requirement": "one valid polygon; every post and unit present",
+    "kind": "hard"
+   },
+   {
+    "check": "side channels continuous (straight sections, every leg, both sides)",
+    "ok": true,
+    "value": {
+     "pieces": "all 1",
+     "narrowest_um": 20.0
+    },
+    "requirement": "one connected strip per leg and side; narrowest section >= 20.0 um",
+    "kind": "hard"
+   },
+   {
+    "check": "outlet ports separated",
+    "ok": true,
+    "value": 4,
+    "requirement": "product, filtrate and inlet ports in separate components once the outlet stretch is cut",
+    "kind": "hard"
+   },
+   {
+    "check": "no intersections: parts keep the floor apart",
+    "ok": true,
+    "value": [
+     {
+      "gap_um": 446.451,
+      "parts": [
+       "inlet and head",
+       "U-turn 2"
+      ]
+     },
+     {
+      "gap_um": 502.864,
+      "parts": [
+       "U-turn 1",
+       "U-turn 3"
+      ]
+     }
+    ],
+    "requirement": "every part (inlet and head, each leg, each U-turn, outlet) at least 20.0 um from every part it is not joined to",
+    "kind": "hard"
+   },
+   {
+    "check": "inlet and outlet ports apart",
+    "ok": true,
+    "value": 3122.6,
+    "requirement": "every outlet port at least 2000 um (edge to edge) from the inlet port",
+    "kind": "hard"
+   },
+   {
+    "check": "drawn components as requested",
+    "ok": true,
+    "value": "head none, inlet plain, outlet separate, 4 leg(s)",
+    "requirement": "the head style, sealing, inlet filter, outlet style and leg count drawn are the ones the spec asks for (nothing substituted or left empty)",
+    "kind": "hard"
+   },
+   {
+    "check": "head inside its envelope",
+    "ok": true,
+    "value": 50.0,
+    "requirement": "<= W/2 = 1200 um",
+    "kind": "hard"
+   },
+   {
+    "check": "corner radius",
+    "ok": true,
+    "value": 4.929,
+    "requirement": ">= 4.50 um",
+    "kind": "hard"
+   },
+   {
+    "check": "Q1 drawing realises its design (every gap)",
+    "ok": true,
+    "value": {
+     "cutoff_dev_max": 0.000696,
+     "at_row": 874,
+     "f_dev_where_no_cutoff": 0.0,
+     "f_row": 1,
+     "F_drawn": 0.906472,
+     "F_intended": 0.906472
+    },
+    "requirement": "at every gap the drawn cutoff within 0.25% of the intended one, judged on the larger of the intended cutoff and D (where a row has no cutoff: f within 0.5% of the larger of |f| and f*); F within 1e-4",
+    "kind": "hard"
+   },
+   {
+    "check": "Q2 filtrate fraction F",
+    "ok": true,
+    "value": 0.906472,
+    "requirement": "F = 0.90644 +- 0.001",
+    "kind": "hard"
+   },
+   {
+    "check": "Q2 cutoff D at every gap (undeclared rows)",
+    "ok": true,
+    "value": {
+     "rows_outside": 0,
+     "first_rows": [],
+     "worst_over": null,
+     "worst_under": null,
+     "undefined_rows": 0,
+     "D_range_um": [
+      5.1996,
+      29.5536
+     ]
+    },
+    "requirement": "every gap not covered by a declared option realises D +- 1% on both sides (no reverse flow, f < 1/2)",
+    "kind": "hard"
+   },
+   {
+    "check": "declared departures (reported, not a pass condition)",
+    "ok": true,
+    "value": {
+     "by_option": {
+      "floor start": {
+       "rows_outside": 11,
+       "first_last": [
+        1,
+        11
+       ],
+       "worst_over": 5.6799236094178625,
+       "worst_under": 1.011732673256553,
+       "undefined_rows": 0,
+       "share_of_F_oversize": 0.050367102630437366
+      }
+     },
+     "reverse_flow_share_of_inlet": -0.0
+    },
+    "requirement": "rows each declared option moves, inside its zone, predicted by the design network before measuring",
+    "kind": "declared"
+   },
+   {
+    "check": "aspect ratio of the narrowest CIF channel (gap openings, centre channel, side channels, U-turn sides, head units, outlet leads, measured; reported, not a pass condition in reproduce mode: LIMITATIONS 7)",
+    "ok": true,
+    "value": {
+     "depth_over_width": 4.0,
+     "at": "straight side channel",
+     "width_um": 20.0
+    },
+    "requirement": "depth/width <= process.aspect_ratio_max = 10 (CIF_v2 w_min = max(F_min, h/AR_max) = 20.00 um; spec v5 G7, G11)",
+    "kind": "fabrication"
+   },
+   {
+    "check": "validity envelope (kappa plateau, gap dominance, Reynolds, Stokes gap and lamina, thin lamina, taper rate)",
+    "ok": true,
+    "value": {
+     "u_min": 0.052,
+     "M13": 0.0296,
+     "Re_max": 5.556,
+     "Re_gap_max": 0.00332,
+     "Re_delta_max": 0.00792,
+     "lamina_over_depth": 0.0132,
+     "lamina_over_depth_planned_max": 0.0132,
+     "taper_rate_max": 0.0,
+     "f_design_max": 0.000334,
+     "cutoff_band_um": {
+      "band_um": [
+       5.029728610997355,
+       5.377044607714647
+      ],
+      "basis": "on the plateau: the kappa_g interval x delta*",
+      "retention_side": [
+       5.029728610997355,
+       5.377044607714647
+      ],
+      "passage_edge_below_knee": null,
+      "c7_band_constant_lamina": null,
+      "kappa_at_passage_edge": null,
+      "method": "on the plateau (u_min >= 0.035): the kappa_g interval x delta*.  Below it the record uses App. B P-C7.1 (the frozen Hill fit; glossary \\hillKmax, \\hillUhalf, \\hillN): band [kappa(u) delta*, kappa_g delta*], plateau-anchored (App. B C7 CQ3)"
+     }
+    },
+    "requirement": "u_min >= 0.035 (no gap below the kappa knee); M13 < 0.05; Re <= 10; Re_gap and Re_delta <= 0.01 (CIF_v2 M13/M14); delta(i)/h <= 0.1 at every planned row (E11); |w_c(i) - w_c(i-1)|/(G + g_p) <= 0.01 (M16)",
+    "kind": "envelope"
+   },
+   {
+    "check": "1-D model band (reported, not a pass condition)",
+    "ok": true,
+    "value": {
+     "junction band (bend, head T-junction and outlet stretch-end terms at both ends of their range)": {
+      "rows_newly_outside_tol": [
+       4,
+       0
+      ],
+      "rows_losing_their_cutoff": 0,
+      "max_cutoff_change_over_D": 0.0182,
+      "rows": [
+       3484,
+       3485,
+       3486,
+       3487
+      ],
+      "share_of_F_in_those_rows": 0.0002764187421311572
+     },
+     "t_junction_ignored": {
+      "rows_newly_outside_tol": 0,
+      "rows_losing_their_cutoff": 0,
+      "max_cutoff_change_over_D": 0.0
+     },
+     "junctions_ignored": {
+      "rows_newly_outside_tol": 11,
+      "rows_losing_their_cutoff": 0,
+      "max_cutoff_change_over_D": 0.0515
+     },
+     "bend_correction_off": {
+      "rows_newly_outside_tol": 60,
+      "rows_losing_their_cutoff": 0,
+      "max_cutoff_change_over_D": 0.5305
+     },
+     "outlet balance (both side outlets +-1 %)": {
+      "rows_newly_outside_tol": [
+       29,
+       29
+      ],
+      "rows_losing_their_cutoff": 5,
+      "max_cutoff_change_over_D": 0.7113,
+      "rows": [
+       3459,
+       3460,
+       3461,
+       3462,
+       3463,
+       3464,
+       3465,
+       3466,
+       3467,
+       3468,
+       3469,
+       3470,
+       3471,
+       3472,
+       3473,
+       3474,
+       3475,
+       3476,
+       3477,
+       3478
+      ],
+      "share_of_F_in_those_rows": 0.0020194983761685154,
+      "dDlast_dlnRside_out": -100.0951
+     }
+    },
+    "requirement": "cutoff change on the drawn network when the junction terms (bends, head T-junctions, the outlet stretch's end) take the ends of their range (the depth weight moved; the T-junction term widened; the stretch-end term +-30 %) (and, for information, ignored, and with no bend correction), when both side outlets' resistance moves +-1 % (the outlet balance the last rows rest on), and when the off-chip tubing varies (length x0.5/x2, centre I.D. +-0.025 mm); counted on rows inside D +- tol on the drawn mask",
+    "kind": "model"
+   }
+  ],
+  "notes": [
+   "start: floor rule (Gifford 2014 p. 4498): w_s(1) = 20.00 um (sealed design: 4.86 um); the design assumes a side flow S0 = 2.009e-02 of the inlet flow at gap 1, which the sealed drawing does not have",
+   "measured on the drawing: every side segment, head unit length and width, U-turn side and centre arc, outlet lead, gap opening and centre width.  Taken from the design (not measured): the post length across the flow (gap length l_g) and so the side channels' inner edge, the radii of the head and outlet arcs (their widths are measured), the head rows' centre-path lengths, and any off-chip tubing."
+  ],
+  "cutoff_tolerance": 0.01,
+  "mode": "reproduce",
+  "status": {
+   "hard_checks": "PASS",
+   "validity_envelope": "INSIDE",
+   "chip_area": "NOT GIVEN",
+   "aspect_ratio_of_CIF_channels": "WITHIN THE LIMIT",
+   "length_budget_G9": "NOT GIVEN (no chip)",
+   "drawn_mask_assessment": "RUN: opencif's own checks on the drawn polygons (DRC at the floor, topology, continuity, ports, clearances, corner radii, aspect ratio) and the 1-D network measured on them (Q1, Q2)",
+   "physics_auditor_P8": "NOT RUN ON THE MASK: CIF_v2's physics auditor (P1-P10) is not run on the exported mask; its P8 criteria are computed from the design as diagnostics, not gated (validation.gates.P8)",
+   "fabricated_or_measured": "NO: Q1 and Q2 are statements of the 1-D network on the drawn mask",
+   "reproduction": "DESIGN-LEVEL: D and F from printed values, drawn with the paper's parts and printed dimensions where printed; not a full-mask match, not a measured-performance match (docs/REPRODUCTIONS.md)"
+  },
+  "over_chip_area": false,
+  "over_aspect_ratio": false,
+  "reproduction_only_options": [
+   "pc_last_short"
+  ],
+  "defaults_used": [
+   "process.gap_entrance_c = 1.0 (default)",
+   "process.aspect_ratio_max = 10.0 (default)",
+   "chip.margin_um = 500.0 (default)",
+   "meander.style = 'pack' (default)",
+   "meander.seal = 'require' (default)",
+   "meander.transition = 'exact' (default)",
+   "meander.rectilinear_rows = 2 (default)",
+   "meander.seam_at = 'segment' (default)",
+   "operation.flow_uL_min = 30.0 (default)",
+   "physics.fail_safe_margin = False (default)",
+   "physics.trim_F = False (default)",
+   "physics.wall_rule = 'exact' (default)",
+   "physics.bend_model = 'stokes' (default)",
+   "process.min_radius_um = min(4.5, 0.25 x min_feature) (derived)",
+   "meander.channel_um = 1.45 x gap (derived)",
+   "meander.wall_um = max(min_feature, channel/2) (derived)",
+   "meander.seam_side_width_um = gap (derived)",
+   "meander.narrow_um = min_feature (derived)",
+   "meander.head_width_um = the narrowest that seals gap 1, searched from 0.3 to 1 x (chip width - 2 margin) (or 3200) (derived)",
+   "inlet.stem_half_width_um = w_c/2 + max(gap, min_feature) (derived)"
+  ]
+ },
+ "code": {
+  "version": "1.0.0rc5",
+  "sha256": "f6c8eba91ec1f316",
+  "files": 34
+ },
+ "input": {
+  "name": "gifford2014_fig4_as_fabricated_20um",
+  "description": "Gifford 2014 Fig. 4 as fabricated (no meander, sealed start at a 20 um side width, 4-leg nested paperclip)",
+  "targets": {
+   "cutoff_um": 5.203174831309222,
+   "filtrate_fraction": 0.90644
+  },
+  "process": {
+   "depth_um": 80,
+   "gap_um": 20.5,
+   "post_length_um": 25.6,
+   "post_width_um": 56.8,
+   "min_feature_um": 20,
+   "fillet_um": 5.0
+  },
+  "centre_channel": {
+   "taper": "constant",
+   "width_in_um": 100
+  },
+  "layout": {
+   "style": "paperclip",
+   "legs": 4
+  },
+  "meander": {
+   "enabled": false
+  },
+  "start": {
+   "style": "floor",
+   "side_width_um": 20
+  },
+  "inlet": {
+   "style": "plain",
+   "port_radius_um": 300
+  },
+  "outlet": {
+   "style": "separate",
+   "port_radius_um": 750,
+   "centre_port_radius_um": 300
+  },
+  "gates": {
+   "mode": "reproduce"
+  },
+  "reproduction": {
+   "pc_last_short": 2000.0,
+   "stem_half": 300.0,
+   "W": 2400.0
+  },
+  "paper": {
+   "source": "Gifford et al. 2014, Fig. 4 and pp. 4498, 4500, 4503",
+   "layout": "Fig. 4 caption: 'the second and fourth legs of the device'; nested 4-leg layout, three ports at the top",
+   "assumed": [
+    "start side width",
+    "port radii (schematic not to scale)",
+    "leg spacing (generator rule)"
+   ]
+  }
+ },
+ "title": "gifford2014_fig4_as_fabricated_20um \u2014 D 5.203 \u00b5m, F 0.9064; paperclip \u00d74, const taper, no head, plain inlet, separate outlet; REPRODUCED with declared departures (floor start) [1-D model: junction band: 4 row(s) beyond +-1% (up to 1.8% of D; rows 3484-3487; 0.028% of F)]",
+ "files": {
+  "dxf": "gifford2014_fig4_as_fabricated_20um.dxf",
+  "dxf_sha256": "b4a9cb0818dfe406d3b5bcf8c0229dbdd9a06a4c4ef1307c0bb531c9e3e6e650",
+  "record": "gifford2014_fig4_as_fabricated_20um.json",
+  "figures": [
+   "gifford2014_fig4_as_fabricated_20um_layout.png",
+   "gifford2014_fig4_as_fabricated_20um_zooms.png",
+   "gifford2014_fig4_as_fabricated_20um_physics.png"
+  ]
+ },
+ "seconds_total": 508.94444727897644
+}

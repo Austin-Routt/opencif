@@ -1,0 +1,44 @@
+{
+ "lateral_scale_um_per_px": 32.323232323232325,
+ "arm_span_px": 99,
+ "port_px": {
+  "width": 63,
+  "height": 61,
+  "centre_row": 77.0
+ },
+ "port_aspect_h_over_w": 0.9682539682539683,
+ "port_r_um": 1018.1818181818182,
+ "head_top_row": 191,
+ "meander_end_row": 1021,
+ "outlet_start_row": 1738,
+ "last_row": 1922,
+ "port_centre_to_head_top_mm": 3.684848484848485,
+ "port_centre_to_row1_mm": 5.136848484848485,
+ "meander_mm": 26.82828282828283,
+ "linear_mm": 23.175757575757576,
+ "drawing_length_mm": 60.60606060606061,
+ "meander_fraction_of_head_to_outlet": 0.5365223012281836,
+ "meander_fraction_of_drawing": 0.44266666666666665,
+ "outlet": {
+  "side_lead_width_px": 6.360784313725491,
+  "side_lead_width_um": 205.6011091305209,
+  "side_lead_width_range_um": [
+   41.44979203802734,
+   214.98118439294913
+  ],
+  "centre_port_width_px": 59.13333333333333,
+  "centre_port_r_um": 955.6902356902358,
+  "centre_port_rows": [
+   1796,
+   1838
+  ],
+  "side_lead_width_iqr_um": [
+   202.65399088928498,
+   208.86512180629828
+  ],
+  "port_centre_spacing_um": 2375.757575757576,
+  "loop_outer_half_width_um": 1341.4141414141416,
+  "note": "rows 1810-1834; widths by integrated darkness; the lead is drawn ~6-7 px at 32 um/px; a few rows pick a fragment of the crown of lines entering the middle port (the low end of the range)"
+ },
+ "note": "lateral scale from the arms spanning the 3.2 mm chip; lengths at that scale (the round port shows the panel is not stretched or squeezed along the chip)"
+}

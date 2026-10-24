@@ -1,0 +1,35 @@
+"""The Dinh V1 presets' OWN schedule (the printed 75 -> 52 um centre channel, the assumed constant-shear taper, the
+reconstructed head, the printed f*'s lamina held at every gap) planned to other filtrate fractions F, with the length
+it needs: the head and the linear rows (and, given the presets' run records, the drawn parts outside them: inlet,
+filter, outlet).  The schedule-specific companion of dinh_length_bound.py (which bounds every taper).
+
+rc6 port of provenance/rc5_scripts/dinh_schedule_at_F.py: the head's upstream end x_top comes from the plan itself
+(layout.head_top_x, as the build computes it), so the head and rows need no build; with --runs the record's drawn
+footprint adds the other parts, and its x_top is checked against the plan's.  The row pitch is the preset's (rc6
+45.1 um).  On the rc5 tree with --runs it reproduces rc5's dinh_schedule_at_F.json
+(provenance/rc6_scripts/out/length_regression_rc5.out).
+Usage: python3 dinh_schedule_at_F.py OPENCIF_ROOT OUT.json [--runs RUNS_DIR] [F ...]
+       (default F 0.5592 0.5105 0.505 0.472)"""
+import copy
+import json
+import os
+import sys
+
+argv, RUNS = sys.argv[1:], None
+if '--runs' in argv:
+    i_ = argv.index('--runs')
+    RUNS = argv[i_ + 1]
+    del argv[i_:i_ + 2]
+R, OUT = argv[:2]
+Fs = [float(v) for v in argv[2:]] or [0.5592, 0.5105, 0.505, 0.472]
+sys.path[:0] = [R, os.path.join(R, 'opencif'), os.path.join(R, 'opencif', 'engine')]
+dinh2024_v1_depicted {"F_target": 0.5592, "F": 0.55922, "N": 2701, "NM": 219, "linear_rows": 2482, "wc_last_um": 52.0, "head_mm": 25.566, "linear_rows_mm": 112.027, "head_plus_rows_mm": 137.593}
+dinh2024_v1_depicted {"F_target": 0.5105, "F": 0.51065, "N": 2459, "NM": 219, "linear_rows": 2240, "wc_last_um": 52.0, "head_mm": 25.566, "linear_rows_mm": 101.113, "head_plus_rows_mm": 126.679}
+dinh2024_v1_depicted {"F_target": 0.505, "F": 0.50515, "N": 2433, "NM": 219, "linear_rows": 2214, "wc_last_um": 52.304, "head_mm": 25.566, "linear_rows_mm": 99.941, "head_plus_rows_mm": 125.506}
+dinh2024_v1_depicted {"F_target": 0.472, "F": 0.47208, "N": 2276, "NM": 219, "linear_rows": 2057, "wc_last_um": 54.22, "head_mm": 25.566, "linear_rows_mm": 92.86, "head_plus_rows_mm": 118.426}
+dinh2024_v1_specified {"F_target": 0.5592, "F": 0.55926, "N": 2738, "NM": 256, "linear_rows": 2482, "wc_last_um": 52.0, "head_mm": 28.614, "linear_rows_mm": 112.027, "head_plus_rows_mm": 140.641}
+dinh2024_v1_specified {"F_target": 0.5105, "F": 0.51069, "N": 2496, "NM": 256, "linear_rows": 2240, "wc_last_um": 52.0, "head_mm": 28.614, "linear_rows_mm": 101.113, "head_plus_rows_mm": 129.727}
+dinh2024_v1_specified {"F_target": 0.505, "F": 0.50519, "N": 2470, "NM": 256, "linear_rows": 2214, "wc_last_um": 52.304, "head_mm": 28.614, "linear_rows_mm": 99.941, "head_plus_rows_mm": 128.554}
+dinh2024_v1_specified {"F_target": 0.472, "F": 0.47212, "N": 2313, "NM": 256, "linear_rows": 2057, "wc_last_um": 54.22, "head_mm": 28.614, "linear_rows_mm": 92.86, "head_plus_rows_mm": 121.473}
+
+[exited with code 0]

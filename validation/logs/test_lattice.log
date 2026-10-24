@@ -1,0 +1,45 @@
+opencif 1.0.0 (code 9e4eb55a0affeef3)
+generic19 separate F0.1 paperclip                          6      0.9 s  ok  the paperclip layout cannot be laid out at the leg counts the fitter tries (2 leg(s): device too short for 2 paperclip legs); more legs only shorten e
+generic19 separate F0.5 paperclip                          0      5.6 s  ok  planned only (no outline: check_only='plan'): inside the envelope
+generic19 separate F0.9 paperclip                          0     17.3 s  ok  planned only (no outline: check_only='plan'): inside the envelope
+generic19 teardrop F0.1 paperclip                          6      1.0 s  ok  the paperclip layout cannot be laid out at the leg counts the fitter tries (2 leg(s): device too short for 2 paperclip legs); more legs only shorten e
+generic19 teardrop F0.5 paperclip                          0      6.7 s  ok  planned only (no outline: check_only='plan'): inside the envelope
+generic19 teardrop F0.9 paperclip                          0     20.7 s  ok  planned only (no outline: check_only='plan'): inside the envelope
+generic19 ring F0.1 paperclip                              6      1.0 s  ok  the paperclip layout cannot be laid out at the leg counts the fitter tries (2 leg(s): device too short for 2 paperclip legs); more legs only shorten e
+generic19 ring F0.5 paperclip                              0      6.4 s  ok  planned only (no outline: check_only='plan'): inside the envelope
+generic19 ring F0.9 paperclip                              5     39.3 s  ok  WOULD BE REFUSED: the ring outlet cannot close this design (F 0.9000) at any leg count the layout tries: 3 leg(s): ring outlet: ring inner edge 52 um 
+gifford2014 separate F0.1 paperclip                        6      0.8 s  ok  the paperclip layout cannot be laid out at the leg counts the fitter tries (2 leg(s): device too short for 2 paperclip legs); more legs only shorten e
+gifford2014 separate F0.5 paperclip                        0      5.4 s  ok  planned only (no outline: check_only='plan'): inside the envelope
+gifford2014 separate F0.9 paperclip                        0     17.9 s  ok  planned only (no outline: check_only='plan'): inside the envelope
+gifford2014 teardrop F0.1 paperclip                        6      0.8 s  ok  the paperclip layout cannot be laid out at the leg counts the fitter tries (2 leg(s): device too short for 2 paperclip legs); more legs only shorten e
+gifford2014 teardrop F0.5 paperclip                        0      5.4 s  ok  planned only (no outline: check_only='plan'): inside the envelope
+gifford2014 teardrop F0.9 paperclip                        0     16.6 s  ok  planned only (no outline: check_only='plan'): inside the envelope
+gifford2014 ring F0.1 paperclip                            6      0.9 s  ok  the paperclip layout cannot be laid out at the leg counts the fitter tries (2 leg(s): device too short for 2 paperclip legs); more legs only shorten e
+gifford2014 ring F0.5 paperclip                            0      6.2 s  ok  planned only (no outline: check_only='plan'): inside the envelope
+gifford2014 ring F0.9 paperclip                            5     35.6 s  ok  WOULD BE REFUSED: the ring outlet cannot close this design (F 0.9000) at any leg count the layout tries: 3 leg(s): ring outlet: the closure leaves the
+dinh2024 separate F0.1 paperclip                           6      0.2 s  ok  F 0.1000 is reached inside the meander head (171 of the 171 rows are head rows): a head needs a linear section after it; use a smaller head (meander.h
+dinh2024 separate F0.5 paperclip                           0      5.7 s  ok  planned only (no outline: check_only='plan'): inside the envelope
+dinh2024 separate F0.9 paperclip                           0     18.0 s  ok  planned only (no outline: check_only='plan'): inside the envelope
+dinh2024 teardrop F0.1 paperclip                           6      0.2 s  ok  F 0.1000 is reached inside the meander head (171 of the 171 rows are head rows): a head needs a linear section after it; use a smaller head (meander.h
+dinh2024 teardrop F0.5 paperclip                           0      6.0 s  ok  planned only (no outline: check_only='plan'): inside the envelope
+dinh2024 teardrop F0.9 paperclip                           0     17.8 s  ok  planned only (no outline: check_only='plan'): inside the envelope
+dinh2024 ring F0.1 paperclip                               6      0.2 s  ok  F 0.1000 is reached inside the meander head (171 of the 171 rows are head rows): a head needs a linear section after it; use a smaller head (meander.h
+dinh2024 ring F0.5 paperclip                               0      6.4 s  ok  planned only (no outline: check_only='plan'): inside the envelope
+dinh2024 ring F0.9 paperclip                               0     20.5 s  ok  planned only (no outline: check_only='plan'): inside the envelope
+xia2016 separate F0.1 paperclip                            3      1.9 s  ok  planned only (no outline: check_only='plan'): outside the envelope: gap dominance M13 0.1806 >= 0.05
+xia2016 separate F0.5 paperclip                            3      5.9 s  ok  planned only (no outline: check_only='plan'): outside the envelope: gap dominance M13 0.1806 >= 0.05
+xia2016 separate F0.9 paperclip                            3     17.1 s  ok  planned only (no outline: check_only='plan'): outside the envelope: gap dominance M13 0.1806 >= 0.05
+xia2016 teardrop F0.1 paperclip                            3      2.0 s  ok  planned only (no outline: check_only='plan'): outside the envelope: gap dominance M13 0.1806 >= 0.05
+xia2016 teardrop F0.5 paperclip                            3      5.4 s  ok  planned only (no outline: check_only='plan'): outside the envelope: gap dominance M13 0.1806 >= 0.05
+xia2016 teardrop F0.9 paperclip                            3     18.3 s  ok  planned only (no outline: check_only='plan'): outside the envelope: gap dominance M13 0.1806 >= 0.05
+xia2016 ring F0.1 paperclip                                3      2.0 s  ok  planned only (no outline: check_only='plan'): outside the envelope: gap dominance M13 0.1806 >= 0.05
+xia2016 ring F0.5 paperclip                                3      6.8 s  ok  planned only (no outline: check_only='plan'): outside the envelope: gap dominance M13 0.1806 >= 0.05
+xia2016 ring F0.9 paperclip                                5     35.9 s  ok  WOULD BE REFUSED: the ring outlet cannot close this design (F 0.9000) at any leg count the layout tries: 3 leg(s): ring outlet: side channel at 2312 u
+generic19 separate F0.9 linear                             0     16.5 s  ok  planned only (no outline: check_only='plan'): inside the envelope
+generic19 teardrop F0.9 linear                             0     15.9 s  ok  planned only (no outline: check_only='plan'): inside the envelope
+generic19 separate F0.9 serpentine                         0     17.6 s  ok  planned only (no outline: check_only='plan'): inside the envelope
+generic19 teardrop F0.9 serpentine                         0     17.5 s  ok  planned only (no outline: check_only='plan'): inside the envelope
+generic19 separate F0.5 linear, u = 0.035 (plateau edge)   0     22.8 s  ok  planned only (no outline: check_only='plan'): inside the envelope
+generic19 ring F0.9 linear                                 5     33.4 s  ok  WOULD BE REFUSED: the ring outlet cannot close this design (F 0.9000) at any leg count the layout tries: 1 leg(s): ring outlet: ring inner edge 52 um 
+42 cases; exit codes {'6': 9, '0': 21, '5': 4, '3': 8}
+ALL OK

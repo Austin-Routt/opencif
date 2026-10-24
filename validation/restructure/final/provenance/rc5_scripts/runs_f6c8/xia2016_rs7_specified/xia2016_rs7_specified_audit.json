@@ -1,0 +1,33 @@
+{
+ "file": "xia2016_rs7_specified.dxf",
+ "d_um": 15.9,
+ "n_fluid": 1,
+ "n_solid": 14543,
+ "invalid_rings": 0,
+ "bulge_polylines": 0,
+ "bounds": [
+  -8167.7,
+  -8305.3,
+  68253.6,
+  3802.6
+ ],
+ "fluid_area": 316959277.9,
+ "overlap_area": 0.0,
+ "solid_layer_overlap_with_fluid": 0.0,
+ "n_components": 1,
+ "largest_component_frac": 1.0,
+ "small_components": [],
+ "n_lost_open": 0,
+ "n_lost_solid": 0,
+ "tiling_artefacts_dropped": [
+  0,
+  0
+ ],
+ "corner_artefacts_open": 10,
+ "corner_artefacts_solid": 27,
+ "lost_open_min_width": null,
+ "lost_solid_min_width": null,
+ "lost_open": [],
+ "lost_solid": [],
+ "seconds": 301.2
+}

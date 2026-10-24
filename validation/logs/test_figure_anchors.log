@@ -1,0 +1,44 @@
+opencif 1.0.0 (code 9e4eb55a0affeef3)
+dinh2024_v1_depicted: flare_deg 14.50 within the measured 14.30-14.56 deg (+-0.3)                ok  
+dinh2024_v1_depicted: flare_start 65.4 um within the measured 65.4 +- 2.0 um                     ok  
+dinh2024_v1_depicted: post pitch G + g_p = 45.1 um within the measured 45.11 +- 0.2 um           ok  
+dinh2024_v1_depicted: the printed outlet widths (w_c 52, depth 140, G 19) are the preset's (52, 140, 19) ok  
+dinh2024_v1_depicted drawn: the last side channel w_s(N) 43.99 um is the printed 44 um (+-0.1)   ok  
+dinh2024_v1_depicted drawn: the record's outlet stretch 307.35 um is the layout's (307.35), the straight run, the flare (238.8) and the end arc ok  
+dinh2024_v1_depicted drawn, side A: straight 65.0 um from the last gap centre (preset 65.4; measured 65.4 +- 2.0) ok  
+dinh2024_v1_depicted drawn, side A: flare 14.50 deg (preset 14.50; measured 14.30-14.56)         ok  
+dinh2024_v1_depicted drawn, side A: the wall follows the designed profile over the stretch's last 40 um to 305.0 um (largest difference 0.000 um) ok  
+dinh2024_v1_depicted drawn, side B: straight 65.0 um from the last gap centre (preset 65.4; measured 65.4 +- 2.0) ok  
+dinh2024_v1_depicted drawn, side B: flare 14.50 deg (preset 14.50; measured 14.30-14.56)         ok  
+dinh2024_v1_depicted drawn, side B: the wall follows the designed profile over the stretch's last 40 um to 305.0 um (largest difference 0.000 um) ok  
+dinh2024_v1_specified: flare_deg 14.50 within the measured 14.30-14.56 deg (+-0.3)               ok  
+dinh2024_v1_specified: flare_start 65.4 um within the measured 65.4 +- 2.0 um                    ok  
+dinh2024_v1_specified: post pitch G + g_p = 45.1 um within the measured 45.11 +- 0.2 um          ok  
+dinh2024_v1_specified: the printed outlet widths (w_c 52, depth 140, G 19) are the preset's (52, 140, 19) ok  
+dinh2024_v1_specified drawn: the last side channel w_s(N) 43.99 um is the printed 44 um (+-0.1)  ok  
+dinh2024_v1_specified drawn: the record's outlet stretch 307.36 um is the layout's (307.36), the straight run, the flare (238.8) and the end arc ok  
+dinh2024_v1_specified drawn, side A: straight 65.0 um from the last gap centre (preset 65.4; measured 65.4 +- 2.0) ok  
+dinh2024_v1_specified drawn, side A: flare 14.50 deg (preset 14.50; measured 14.30-14.56)        ok  
+dinh2024_v1_specified drawn, side A: the wall follows the designed profile over the stretch's last 40 um to 305.0 um (largest difference 0.000 um) ok  
+dinh2024_v1_specified drawn, side B: straight 65.0 um from the last gap centre (preset 65.4; measured 65.4 +- 2.0) ok  
+dinh2024_v1_specified drawn, side B: flare 14.50 deg (preset 14.50; measured 14.30-14.56)        ok  
+dinh2024_v1_specified drawn, side B: the wall follows the designed profile over the stretch's last 40 um to 305.0 um (largest difference 0.000 um) ok  
+every built record (53): design.outlet.L_out_um is the layout's drawn stretch                    ok  
+gifford2014_fig4_design: pitch G + g_p = 45.80 um within the inset's 45.82 +- 0.2 um             ok  
+gifford2014_fig4_design: l_g 59.5 um is the inset's 59.5 um (post columns centre to centre minus the printed centre) ok  
+gifford2014_fig4_design: centre width 100 um (printed) within the inset's 100.5 +- 5.6 um        ok  
+gifford2014_fig4_as_fabricated_20um: pitch G + g_p = 45.80 um within the inset's 45.82 +- 0.2 um ok  
+gifford2014_fig4_as_fabricated_20um: l_g 59.5 um is the inset's 59.5 um (post columns centre to centre minus the printed centre) ok  
+gifford2014_fig4_as_fabricated_20um: centre width 100 um (printed) within the inset's 100.5 +- 5.6 um ok  
+gifford2014_fig4_as_fabricated_8um: pitch G + g_p = 45.80 um within the inset's 45.82 +- 0.2 um  ok  
+gifford2014_fig4_as_fabricated_8um: l_g 59.5 um is the inset's 59.5 um (post columns centre to centre minus the printed centre) ok  
+gifford2014_fig4_as_fabricated_8um: centre width 100 um (printed) within the inset's 100.5 +- 5.6 um ok  
+gifford2014_fig4_design drawn: final side width 299.9 um within the inset's 299.3 +- 5.6 um      ok  
+gifford Fig. 6 measurement: made from the project raster gif7-000.png (recorded sha256 182826e7aaccf14c...) ok  
+gifford Fig. 6: the raster in OPENCIF_PAPER_RASTERS is that one (sha256 182826e7aaccf14c...)     ok  
+gifford2014_fig6_design: pitch G + g_p = 51.40 um within Fig. 6's 51.29-51.41 um and l_g 70.8 within 70.6-70.9 um ok  
+gifford2014_fig6_as_fabricated_15um: pitch G + g_p = 51.40 um within Fig. 6's 51.29-51.41 um and l_g 70.8 within 70.6-70.9 um ok  
+global panels marked: Gifford Figs. 4 (left) and 6 not to scale; Dinh Fig. 2A main panel scale not established ok  
+dinh2024_v1_depicted: paper.length_bound equals the computations it quotes (20 values)           ok  
+dinh2024_v1_specified: paper.length_bound equals the computations it quotes (20 values)          ok  
+ALL OK (42 checks)

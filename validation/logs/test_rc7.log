@@ -1,0 +1,118 @@
+opencif 1.0.0 (code 9e4eb55a0affeef3)
+BUILD-1: the caches hold entries before clearing                   ok  
+BUILD-1: clear_caches empties both                                 ok  
+BUILD-1: pipeline.run clears the caches first (source)             ok  
+BUILD-1: a nearby input returns the cached value until the caches are cleared ok  cached 0.998344512765972, fresh 0.9983445175118361
+BUILD-1: pipeline.run calls clear_caches before building (behaviour) ok  
+XIA-1: parallel-plate shear 6 Q / (a b^2)                          ok  
+XIA-1: narrow channel uses a = h, b = w                            ok  
+XIA-1: exact is the default and unchanged                          ok  
+XIA-1: the table inverts the parallel-plate shear                  ok  222.000000000
+XIA-1: the aligned Xia preset takes parallel_plates                ok  
+XIA-1: w_c / (centre flow) constant along the taper                ok  rows 3366, spread 5.12e-13
+XIA-1: shear_formula refused without the constant_shear taper      ok  
+XIA-1: parallel_plates refused outside reproduce mode (spec v5 S16-b) ok  
+XIA-1: parallel_plates recorded as a reproduction-only departure   ok  
+DINH-1: the Dinh preset takes square turns                         ok  
+DINH-1: c_corner at r_in/w 0.00: the table (deep -0.2352, shallow -0.4417) ok  
+DINH-1: c_corner at r_in/w 0.18: the table (deep -0.3882, shallow -0.4892) ok  
+DINH-1: c_corner at r_in/w 0.32: the table (deep -0.5287, shallow -0.5567) ok  
+DINH-1: c_corner at r_in/w 0.44: the table (deep -0.6370, shallow -0.6105) ok  
+DINH-1: c_corner between its limits by the depth weight            ok  
+DINH-1: the band brackets the value                                ok  -0.6585 < -0.5627 < -0.4605
+DINH-1: no corner term without junction terms                      ok  
+DINH-1: no corner term under the plain 1-D rule (bend_model none)  ok  
+DINH-1: a square turn runs r to the corner and r on                ok  
+DINH-1: turn() on an arc path draws rc6's arc exactly              ok  
+DINH-1: the bend excess counts each corner once                    ok  
+DINH-1: quarter-turn lengths                                       ok  
+DINH-1: the outer corner loses (1 - pi/4) r_out^2                  ok  10.53 um2
+DINH-1: the inner corner gains (1 - pi/4) r_in^2                   ok  21.49 um2
+DINH-1: spec refuses square without a head                         ok  
+DINH-1: spec refuses corner radii with arc turns                   ok  
+defaults: shear_formula not listed for a constant taper            ok  
+defaults: shear_formula listed for the constant_shear taper        ok  
+DINH-1: corner_round_area = the drawn ribbon's net rounding area   ok  10.9608 um2
+DINH-1: no rounding area without square-turn radii                 ok  
+DINH-1: measure takes the rounding area off before area -> length  ok  
+ADJ-C4: the aliases map onto post_length_um / post_width_um        ok  
+ADJ-C4: the same engine spec as the YAML keys                      ok  
+ADJ-C4: an alias that disagrees with its key is refused            ok  
+ADJ-C4: an alias equal to its key is accepted                      ok  
+ADJ-C5: water by default                                           ok  
+ADJ-C5: the fluid section reaches the engine spec                  ok  
+ADJ-C5: the schedule does not depend on the fluid                  ok  
+ADJ-C5: the Reynolds gates scale with rho/mu                       ok  Re ratio 0.512500
+ADJ-C5: the record's fluid names it                                ok  
+ADJ-C5: refuses a zero density                                     ok  
+ADJ-C5: refuses a non-Newtonian rheology                           ok  
+ADJ-C6: every status field has its enumerated codes                ok  
+ADJ-C6: paper.source_trace reaches the options                     ok  
+ADJ-C6 (R10): the traced presets point to their rc7 trace records  ok  
+ADJ-C6 (codereview2 N1): every source_trace pointer resolves to traces of the shipped mask ok  
+ADJ-C6 (R16): a value that is not a pointer is noted, not refused (paper is free-form) ok  
+ADJ-C6 (R16): a list of pointers is joined                         ok  
+ADJ-C6: assess writes status_codes and source_trace                ok  
+ADJ-C6: the CLI prints them                                        ok  
+ADJ-C7: tests and lock hashed, versions recorded                   ok  tests 5d83c0644e5bb4e3 lock e5fe9f7a6de19539 matches True
+ADJ-C7: the code stamp is unchanged in definition (no tests in it) ok  
+ADJ-C8: no meander or inlet-stem values listed without a head or a filter ok  []
+ADJ-C8: a derived value carries its effective value                ok  ['process.min_radius_um = min(4.5, 0.25 x min_feature) (derive', 'process.fillet_um = min(5, 0.4 x the narrowest drawn feature', 'meander.channel_um = 1.45 x gap (derived) -> 29.7']
+ADJ-C8: without the engine spec the rc6 wording                    ok  
+ADJ-C8: the depicted head's rectilinear rows are named as the drawn value (Xia: 76) ok  ['meander.rectilinear_rows: not the default 2: reproduction.de']
+clearance guarantee: rectilinear rows 9 beside a depicted head (76) is refused, naming both ok  meander.rectilinear_rows = 9 is given, but reproduction.depicted_head = 'xia' (its n_rect 76, data/depicted.json) replac
+clearance guarantee: a given fillet a reproduction block replaces is refused ok  process.fillet_um = 3.0 is given, but reproduction.r_fillet = 2.0 replaces it: the reproduction value would be drawn, no
+clearance guarantee: the same value given in both places is accepted ok  
+clearance guarantee: a head width beside a different reproduction.W is refused ok  meander.head_width_um = 1840 is given, but reproduction.W = 2400.0 replaces it: the reproduction value would be drawn, n
+ADJ-C9: the classes against D and 2D                               ok  
+ADJ-C9: a warning note, the centre channel not warned              ok  
+ADJ-C9: the report can be turned off                               ok  
+DINH-7: the Dinh presets round the head junctions 11 um            ok  
+DINH-7: a junction radius above half the wall refused              ok  
+DINH-7: a junction radius refused without a head                   ok  
+DINH-7: two roundings per unit, each (1 - pi/4) r^2, at the stem edges on the trunk wall ok  26.005 um2 each
+DINH-7: none without meander.junction_radius_um                    ok  
+GIF4-1 B: the path-order variant (reading B) takes legs in path order ok  
+GIF4-1 (RC8): the aligned Fig. 4 reproduction is nested, leg 4 ending 2 mm short, the 8 um start, the inset gap ok  nested 2000.0 17.2 8.0
+GIF4-1 B: path order puts the legs at 0, d, 2d, 3d                 ok  
+GIF4-1 B: nested order unchanged (0, +d, -d, +2d)                  ok  
+GIF4-1 B: layout.order refused outside the paperclip               ok  
+GIF4-1 B: layout.order listed among the defaults only for a paperclip ok  
+R1: default radii drawn and modelled at the head fillet            ok  
+R1: the derived radii are listed with their effective value        ok  
+R1: a given radius below the fillet is raised to it, with a note   ok  
+R1: c_corner is taken at the drawn (fillet) radius, not 0          ok  -0.3916
+R1: the smoothing draws a 2 um corner as the fillet-radius corner  ok  -0.004 um2
+R13: the drawn roundings equal corner_round_area at every heading (both turns) ok  worst 0.0000 um2
+R13: smoothing refills no rounding (no spike) at any heading       ok  worst 0.184 um2
+R14: refuses an outer rounding above 0.307 w                       ok  
+R14: refuses an inner rounding above half the wall                 ok  
+R14: under bend_model none no term, the table values reported      ok  deep -0.5622 shallow -0.5734
+R2: data/depicted.json[dinh] is derived for square turns (7 / 10 um) ok  
+R2: the stored fractions are the square-turn derivation            ok  
+R2: the figure-aligned preset carries the depicted preset's planned head ok  unchanged
+R3: classes against min(D_realised_max, G), with a warning         ok  
+R4: a second report does not repeat its notes                      ok  
+R3: no comparison when no row is realised above D                  ok  
+R4: reassess twice gives the same notes                            ok  [4, 4]
+R6: Xia aligned: no zero from rows that carry no flow (its rectilinear rows at f/f* ~ 2e-7 left out) ok  0.0061<repo>/opencif/build.py:585: RuntimeWarning: All-NaN slice encountered
+  out['D_realised_max_um'] = float(np.nanmax(np.where(fin, np.fmax(dA, dB), np.nan)))
+<repo>/opencif/build.py:586: RuntimeWarning: All-NaN slice encountered
+  out['D_realised_min_um'] = float(np.nanmin(np.where(fin, np.fmin(dA, dB), np.nan)))
+
+R6: Dinh figure-aligned: the head rows at 2.17 um below the plateau, with their share ok  u 0.0290 share 0.072
+R7: square-turn capacity = geometric + c_corner w                  ok  
+R7: arc-turn capacity unchanged (geometric)                        ok  
+R12: arc-turn heads (arms, hairpins, pack, narrow) plan and draw as in rc6 ok  5 specs
+T1 (B1): an exact constant-shear taper holds its peak shear (head rows outside the taper) ok  max/min - 1 = 2.22e-15 over 785 rows
+T2 (B1): parallel-plate taper: the taper is the L rows above the floor; true/pp - 1 spans C(alpha)/6 - 1 from w_c0 to the floor ok  rows 3291 (L rows above 150.0 um: 3291); range [0.3361, 0.5696]; C/6 - 1 at w_c0 0.3361, at the floor 0.5696
+T3: shear_peak row 1 = C(alpha) Q / (a b^2) (constant centre channel, s^-1) ok  7063.499 s^-1 (by hand 7063.499)
+T4 (B2): rows_f_half_or_more counts only rows with f >= 1/2 on a side (not f = 0, not reverse) ok  1
+T5 (m1, m2): f >= 1/2 rows: d_pass = G, the note names them; D_max absent does not fail ok  passage (a warning, not a check; LIMITATIONS 26): narrower than 2 D = 10.40 um: straight side channel 8.00 um (1.54 D) |
+T6: the source_trace status codes                                  ok  
+T7 (M1): brace groups in a pointer expand                          ok  
+T8: R14 names reproduction.r_fillet when the fillet comes from it  ok  the head fillet (reproduction.r_fillet) 9.00 um is 0.321 of the narrowest head unit (28.00 um): the 
+T8: R14 names process.fillet_um when the fillet comes from it      ok  the head fillet (process.fillet_um) 9.00 um is 0.321 of the narrowest head unit (28.00 um): the squa
+T9: under bend_model none the record reports the depth weight lambda(h, w) ok  0.045740
+T10: paper.targets_fitted reaches the reproduction status (the aligned Xia preset fits D and F) ok  
+ALL OK

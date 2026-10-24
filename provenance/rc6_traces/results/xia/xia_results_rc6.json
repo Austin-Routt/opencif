@@ -1,0 +1,369 @@
+{
+ "name": "xia_fig3g_outlet__rc6",
+ "raster": "xia5-000.png",
+ "raster_sha256": "e9fb7fbb348567d3ab7606479c83342bcf2f5ee3d6b4c162f7c345e5ef339991",
+ "mask": "xia2016_rs7_depicted.dxf",
+ "mask_sha256": "0161ab00682d354f199b0c71148d7af124b2375ae1cc181b85e42652be14c73f",
+ "crop": [
+  1277,
+  1594,
+  2025,
+  2338
+ ],
+ "px_per_um": 0.5561735261401557,
+ "pitch_um": 51.8,
+ "map_feature": {
+  "origin_px": [
+   3941.50030210572,
+   -27063.309990501235
+  ],
+  "ex_px_per_um": [
+   0.0019296276075529263,
+   0.5561701787371115
+  ],
+  "ey_px_per_um": [
+   0.5561701787371115,
+   -0.0019296276075529263
+  ]
+ },
+ "map_chamfer": {
+  "origin_px": [
+   3940.23181216668,
+   -27062.760386316226
+  ],
+  "ex_px_per_um": [
+   0.0019296276075529263,
+   0.5561701787371115
+  ],
+  "ey_px_per_um": [
+   0.5561701787371115,
+   -0.0019296276075529263
+  ]
+ },
+ "V1_feature_vs_chamfer_px": {
+  "along": 0.5451998887997411,
+  "across": 1.2703891399403806,
+  "agree": true
+ },
+ "V2_chamfer": {
+  "points": 8869,
+  "best_px": 2.1559040628265524,
+  "one_pitch_along_px": [
+   2.15510001119703,
+   2.311840871000988
+  ],
+  "half_pitch_along_px": [
+   3.8062498018538804,
+   3.813743454702168
+  ],
+  "five_um_across_px": [
+   2.25936444528703,
+   2.7665439939733205
+  ],
+  "landscape_median_px": 3.7614191865861972,
+  "ratio_landscape_median_to_best": 1.7447062007270833,
+  "ratio_one_pitch_to_best": 0.9996270466560241
+ },
+ "metric": {
+  "n": 3998,
+  "median_abs_um": 2.3303946348915945,
+  "p90_abs_um": 12.231702462685545,
+  "mean_signed_um": 3.74520078005106
+ },
+ "metric_null": {
+  "half_pitch_along": {
+   "n": 3746,
+   "median_abs_um": 10.549547003503339,
+   "p90_abs_um": 13.47912076699917,
+   "mean_signed_um": -7.9043553229070875
+  },
+  "5um_across": {
+   "n": 3930,
+   "median_abs_um": 3.5830958658233847,
+   "p90_abs_um": 12.06283295530308,
+   "mean_signed_um": 1.5531204640594496
+  },
+  "one_pitch_along": {
+   "n": 3506,
+   "median_abs_um": 2.3383961171869485,
+   "p90_abs_um": 12.065855463141567,
+   "mean_signed_um": 3.7585425085625097
+  },
+  "registered_same_points": {
+   "n": 3754,
+   "median_abs_um": 2.26903416583478,
+   "p90_abs_um": 12.231183523932911,
+   "mean_signed_um": 3.7397675310422307
+  }
+ },
+ "V3_by_class": {
+  "channel_across_L": {
+   "n": 0,
+   "total": 812,
+   "mean_signed_um": null,
+   "sd_um": null,
+   "median_abs_um": null,
+   "systematic": false
+  },
+  "island_across_C": {
+   "n": 267,
+   "total": 369,
+   "mean_signed_um": 1.498443831695656,
+   "sd_um": 0.46442196261887636,
+   "median_abs_um": 1.4777351465608382,
+   "systematic": false
+  },
+  "island_across_R": {
+   "n": 133,
+   "total": 1105,
+   "mean_signed_um": 1.6593729629246452,
+   "sd_um": 0.2962291670070518,
+   "median_abs_um": 1.7178805448453105,
+   "systematic": false
+  },
+  "island_along_C": {
+   "n": 23,
+   "total": 24,
+   "mean_signed_um": 3.4873825974692623,
+   "sd_um": 0.2921928589746299,
+   "median_abs_um": 3.4721859545546794,
+   "systematic": true
+  },
+  "island_along_R": {
+   "n": 23,
+   "total": 46,
+   "mean_signed_um": 3.718675165203355,
+   "sd_um": 0.7581048274116161,
+   "median_abs_um": 3.61587281339489,
+   "systematic": true
+  },
+  "post_across_C": {
+   "n": 193,
+   "total": 227,
+   "mean_signed_um": 1.4764898108825824,
+   "sd_um": 0.6638513579844475,
+   "median_abs_um": 1.467132294896561,
+   "systematic": false
+  },
+  "post_across_R": {
+   "n": 278,
+   "total": 705,
+   "mean_signed_um": 2.3766313623092534,
+   "sd_um": 1.7085009144541046,
+   "median_abs_um": 1.8404367390844725,
+   "systematic": true
+  },
+  "post_along_C": {
+   "n": 333,
+   "total": 785,
+   "mean_signed_um": 5.119340886360377,
+   "sd_um": 4.479980397657719,
+   "median_abs_um": 3.48240321910279,
+   "systematic": true
+  },
+  "post_along_R": {
+   "n": 755,
+   "total": 1395,
+   "mean_signed_um": 5.339570358874177,
+   "sd_um": 4.457025313331428,
+   "median_abs_um": 3.653807824242209,
+   "systematic": true
+  }
+ },
+ "outline_threshold": 4.0,
+ "claim_edges": 35,
+ "other_edges": 0,
+ "region_um": [
+  51419.9,
+  52879.9,
+  -4795.0,
+  -3595.0
+ ],
+ "along_px": [
+  0.0034694704383801617,
+  0.9999939813693266
+ ],
+ "exclude_px": [
+  [
+   1285,
+   1600,
+   1345,
+   1680
+  ],
+  [
+   1285,
+   1870,
+   1345,
+   2010
+  ]
+ ],
+ "measured": {
+  "px_per_um": 0.5561735261401557,
+  "scale_note": "the rc6 scale 1.798 \u00b5m/px: the mean of the printed widths, the post columns' separations and the loop curvature (data/r6/rc6_values.json)",
+  "rotation_deg": 0.19878641207208028,
+  "rotation_fit_sd_px": 0.20319760848898155,
+  "pitch_um": {
+   "image": 51.72745556945746,
+   "image_px": 28.76944136232339,
+   "mask": 51.8
+  },
+  "centre_um": 148.26027916580657,
+  "posts_um": [
+   73.18058277032057,
+   71.72915528906424
+  ],
+  "column_separation_um": 220.82427306666622,
+  "left_side_channel_um": 624.6305431958451,
+  "mask": {
+   "centre": 150.0,
+   "post": 70.9,
+   "column_separation": 220.9,
+   "side_last_row": null
+  },
+  "feature_fit_residual_um": {
+   "along": [
+    0.079907972612444,
+    -0.30939158822238916,
+    0.3573663626744091,
+    0.037528979824564566,
+    -0.3523928532030371,
+    0.3879351675468855,
+    0.7798211576788094,
+    -0.4764771158682304,
+    1.001090513165951,
+    0.2362007854204234,
+    -0.2984455195639938,
+    0.43119047432774504,
+    -0.14835856201388872,
+    -0.2006069290561252,
+    -0.44193462437775377,
+    -0.5300091126755931,
+    -0.5362947999337798,
+    -0.017130308342611762
+   ],
+   "across": [
+    0.3474160092774069,
+    -0.1502547999776895,
+    -0.40108155037912896,
+    -0.14411628213453961,
+    -0.12430511182698044,
+    -0.3409796707262923,
+    0.16668419221122516,
+    -0.0022215490122870487,
+    -0.31433235950531035,
+    -0.052596356125629615,
+    0.04578724113527932,
+    -0.11014408951112692,
+    0.0943750626219155,
+    -0.21843687827181252,
+    1.2726492630106592,
+    0.391238560528944,
+    0.1246490363920776,
+    -0.5843307176956938
+   ]
+  }
+ },
+ "caption": "Xia et al. 2016 Sci. Rep. 6:35943, Fig. 3g (the outlet: leg 7's last post rows and the leads) at 1.798 \u00b5m/px (the rc6 scale 1.798 \u00b5m/px: the mean of the printed widths, the post columns' separations and the loop curvature (data/r6/rc6_values.json); rotation 0.20\u00b0) with the shipped mask xia2016_rs7_depicted.  Registration: scale from the printed widths, column separations and loop curvature, rotation measured on the image; translation fitted on features and, independently, by chamfer matching (they agree within 0.5 / 1.3 px along / across).  Nearest-outline offset: median 2.33 \u00b5m, 90th percentile 12.23 \u00b5m (n 3998); for comparison 10.55 \u00b5m with the mask shifted half a pitch along and 3.58 \u00b5m with it shifted 5 \u00b5m across.  On the image at this scale: centre 148.3 \u00b5m (printed 150), posts 73.2 / 71.7 (mask 70.9), post columns 220.8 apart (mask 220.9), pitch 51.73 (mask 51.80), left side channel 625 \u00b5m.",
+ "micrograph_box": [
+  1277,
+  1594,
+  2025,
+  2338
+ ],
+ "V5_scale_scan": {
+  "best_along": 0.9979635085076836,
+  "best_across": 1.0378078440781238,
+  "score_best": 1.3802403884423649,
+  "score_at_bar": 2.127448824919062,
+  "factors": [
+   0.95,
+   0.955,
+   0.96,
+   0.965,
+   0.97,
+   0.975,
+   0.98,
+   0.985,
+   0.99,
+   0.995,
+   1.0,
+   1.005,
+   1.01,
+   1.015,
+   1.02,
+   1.025,
+   1.03,
+   1.035,
+   1.04,
+   1.045,
+   1.05
+  ],
+  "profile_along_at_across_1": [
+   2.9431496645067394,
+   2.860169844663684,
+   2.77964274419632,
+   2.6984240210106156,
+   2.6236748617696612,
+   2.5358027586986904,
+   2.396039613453003,
+   2.2545552791146597,
+   2.150905889369112,
+   2.1253229227977806,
+   2.127448824919062,
+   2.145126270649064,
+   2.1865720384656777,
+   2.282375234824212,
+   2.399951948658672,
+   2.5292308805187265,
+   2.6314715527767087,
+   2.7027049341385685,
+   2.770291032931206,
+   2.8351020789983723,
+   2.9014820124744425
+  ],
+  "profile_across_at_along_1": [
+   2.9285555323800723,
+   2.845420651747436,
+   2.7645522456194684,
+   2.6622962468666,
+   2.529752882728433,
+   2.3764798983812403,
+   2.298800139663285,
+   2.2500378783236528,
+   2.205375811941855,
+   2.162289542417148,
+   2.127448824919062,
+   2.0970429370311696,
+   2.069132014950782,
+   2.0485718653690794,
+   2.0197761401510217,
+   1.823789030979794,
+   1.5689718788618428,
+   1.3935749259331949,
+   1.3802403884423649,
+   1.5834852565405828,
+   1.910557027581872
+  ],
+  "on_grid_edge": false
+ },
+ "scale_evidence": {
+  "centre_px_panel_c": 165.66118112789798,
+  "centre_px_panel_g": 82.4589385400673,
+  "rows_c": 19,
+  "rows_g": 13,
+  "px_per_um_printed": 0.5546816172522046,
+  "um_per_px_printed": 1.8028360214167987,
+  "outline_bias_px": -0.37165202388169405,
+  "panel_d_leg_axes_px": [
+   129.3069973120889,
+   630.9672214370189
+  ],
+  "panel_d_axis_separation_px": 501.66022412493,
+  "fig3a_leg_spacing_um_legs_3_5": 901.0,
+  "fig3a_leg_spacing_uncertainty_um": 28.0
+ },
+ "bar": {
+  "px_aa": 129.11297429620564,
+  "full_pixels": 128
+ }
+}

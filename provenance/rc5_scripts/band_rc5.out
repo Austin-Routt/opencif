@@ -1,0 +1,52 @@
+design                                         outlet end            c | rc4 n/max | rc5 n (last) max@row lost shF
+dc_D3_F0p3                                     none              0.000 |   3 0.271 |   3 (  0) 0.271@128    0 0.0033 
+dc_D3_F0p5                                     none              0.000 |   3 0.271 |   3 (  0) 0.271@128    0 0.0020 
+dc_D3_F0p7                                     none              0.000 |   3 0.271 |   3 (  0) 0.271@128    0 0.0014 
+dc_D4_F0p3                                     none              0.000 |   3 0.139 |   3 (  0) 0.139@72     0 0.0059 
+dc_D4_F0p5                                     none              0.000 |   3 0.139 |   3 (  0) 0.139@72     0 0.0035 
+dc_D4_F0p7                                     none              0.000 |   3 0.139 |   3 (  0) 0.139@72     0 0.0025 
+dc_D5_F0p3                                     none              0.000 |   3 0.085 |   3 (  0) 0.085@46     0 0.0092 
+dc_D5_F0p5                                     none              0.000 |   3 0.085 |   3 (  0) 0.085@46     0 0.0055 
+dc_D5_F0p7                                     none              0.000 |   3 0.085 |   3 (  0) 0.085@46     0 0.0039 
+dinh2024_v1_depicted                           flare             0.082 |   1 0.007 |  11 ( 10) 0.286@2702   0 0.0038 
+dinh2024_v1_specified                          flare             0.082 |   1 0.007 |  11 ( 10) 0.286@2738   0 0.0038 
+dinh_targets_sealed_head                       step, one-sided   0.505 |   5 0.479 |  21 ( 16) 1.103@2760   4 0.0072 
+gifford2014_fig4_as_fabricated_20um            none              0.000 |   0 0.000 |   4 (  4) 0.018@3487   0 0.0003 
+gifford2014_fig4_as_fabricated_8um             none              0.000 |   0 0.000 |   4 (  4) 0.018@3543   0 0.0003 
+gifford2014_fig4_design                        none              0.000 |   0 0.000 |   4 (  4) 0.018@3546   0 0.0003 
+gifford2014_fig5A_as_fabricated_12p5um         none              0.000 |   0 0.000 |   6 (  6) 0.021@7161   0 0.0001 
+gifford2014_fig5B_as_fabricated_12p5um         none              0.000 |   0 0.000 |   5 (  5) 0.019@4501   0 0.0002 
+gifford2014_fig5C_as_fabricated_12p5um         none              0.000 |   0 0.000 |   4 (  4) 0.016@2626   0 0.0002 
+gifford2014_fig5D_as_fabricated_12p5um         none              0.000 |   0 0.000 |   1 (  1) 0.011@1575   0 0.0001 
+gifford2014_fig6_as_fabricated_15um            step, one-sided   0.438 |   0 0.000 |  47 ( 47) 1.094@6050  12 0.0039 
+gifford2014_fig6_design                        step, one-sided   0.438 |   0 0.000 |  47 ( 47) 1.094@6080  12 0.0039 
+gifford_physics_linear                         none              0.000 |   0 0.000 |   0 (  0) 0.009@1814   0 0.0000 
+gifford_targets_meander_head_19um              none              0.000 |   3 0.145 |   9 (  6) 0.145@64     0 0.0025 
+m01_linear_const_pack_plain_separate           none              0.000 |   3 0.139 |   3 (  0) 0.139@72     0 0.0035 
+m02_linear_shear_arms_filter_teardrop          step, one-sided   0.527 |   3 0.139 |  15 ( 12) 0.522@817    1 0.0187 
+m03_linear_const_hairpins_filter_ring          step, one-sided   0.476 |   3 0.141 |  22 ( 19) 0.667@1116   2 0.0153 
+m04_linear_shear_pack_plain_ring               step, one-sided   0.438 |   3 0.139 |  14 ( 11) 0.428@818    0 0.0174 
+m05_serpentine_const_arms_plain_teardrop       step, one-sided   0.538 |   3 0.139 |  21 ( 18) 0.671@1123   1 0.0147 
+m06_serpentine_shear_pack_filter_teardrop      step, one-sided   0.527 |   3 0.139 |  14 ( 11) 0.410@818    0 0.0174 
+m07_serpentine_const_pack_filter_separate      none              0.000 |   3 0.139 |   3 (  0) 0.139@72     0 0.0035 
+m08_serpentine_shear_hairpins_plain_teardrop   step, one-sided   0.527 |   3 0.141 |  14 ( 11) 0.433@813    0 0.0174 
+m09_paperclip_const_narrow_plain_teardrop      step, one-sided   0.539 |   3 0.139 |  20 ( 17) 0.530@1124   0 0.0141 
+m10_paperclip_shear_hairpins_filter_separate   none              0.000 |   3 0.141 |   3 (  0) 0.141@67     0 0.0035 
+m11_paperclip_const_pack_filter_ring           step, one-sided   0.476 |   3 0.139 |  22 ( 19) 0.579@1122   2 0.0153 
+m12_paperclip_shear_arms_plain_ring            step, one-sided   0.438 |   3 0.139 |  14 ( 11) 0.395@818    0 0.0174 
+m13_paperclip_const_nomeander_sealed_fine      none              0.000 |   0 0.000 |   0 (  0) 0.000@1124   0 0.0000 
+m14_paperclip_const_nomeander_floorstart19     none              0.000 |   0 0.000 |   0 (  0) 0.000@1052   0 0.0000 
+m15_linear_shear_nomeander_filter_teardrop     step, one-sided   0.527 |   0 0.000 |  12 ( 12) 0.522@780    1 0.0152 
+m16_serpentine_shear_nomeander_plain_separate  none              0.000 |   0 0.000 |   0 (  0) 0.000@523    0 0.0000 
+m17_paperclip_shear_nomeander_filter_ring      step, one-sided   0.438 |   0 0.000 |  11 ( 11) 0.395@781    0 0.0139 
+m18_paperclip_const_arms_filter_separate       none              0.000 |   3 0.139 |   3 (  0) 0.139@72     0 0.0035 
+platelet_serpentine_chip                       step, one-sided   0.505 |   3 0.356 |  17 ( 14) 0.620@1981   2 0.0073 
+wbc_paperclip_teardrop                         step, one-sided   0.614 |   3 0.107 |  22 ( 19) 0.754@2709   0 0.0034 
+xia2016_rs7_depicted                           step, centred     0.142 |   0 0.000 |   7 (  7) 0.007@7286   0 0.0003 
+xia2016_rs7_depicted_pullR                     step, centred     0.142 |   0 0.000 |   7 (  7) 0.007@7286   0 0.0003 
+xia2016_rs7_specified                          step, centred     0.142 |   0 0.000 |   7 (  7) 0.007@7216   0 0.0003 
+designs with a stretch-end term: 21; band names last rows on 21 of them
+  last rows named: 7-47; band max over those designs (any row) 0.007-1.103; lost up to 12
+designs without: 25; band names last rows on 8 (lead arcs)
+   [('gifford2014_fig4_as_fabricated_20um', 4, 0.0182, 3487), ('gifford2014_fig4_as_fabricated_8um', 4, 0.0182, 3543), ('gifford2014_fig4_design', 4, 0.0182, 3546), ('gifford2014_fig5A_as_fabricated_12p5um', 6, 0.021, 7161), ('gifford2014_fig5B_as_fabricated_12p5um', 5, 0.0193, 4501), ('gifford2014_fig5C_as_fabricated_12p5um', 4, 0.0156, 2626), ('gifford2014_fig5D_as_fabricated_12p5um', 1, 0.0107, 1575), ('gifford_targets_meander_head_19um', 6, 0.145, 64)]
+seam rows unchanged on all: True []

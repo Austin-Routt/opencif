@@ -1,0 +1,63 @@
+{
+ "note": "Values read by hand on the listed crops (no measurement script); +-1 px per edge unless stated. They are inputs of the replicas; V9 carries them back from the drawings.",
+ "dinh_inset": {
+  "crop": "r4/dinh_inset_z3.png (Fig. 2A inset, dinh-001.png)",
+  "scale_um_per_px": 9.89,
+  "arm_rise_lanes_um_from_axis": [
+   1277,
+   1399,
+   1508
+  ],
+  "meander_channel_um": 28,
+  "meander_wall_um": 27,
+  "head_row_pitch_px": 11.1,
+  "meander_wall_note": "read on the inset at its own 9.89 um/px; Fig. 2B panel 1 gives 25.0-26.4 um (dinh_fig2B.hairpin_wall_um)"
+ },
+ "dinh_fig2B": {
+  "crops": [
+   "r4/dinhB1_z2.png",
+   "r4/dinhB2_z2.png",
+   "r4/dinhB3_z2.png",
+   "r4/dinhB4_z2.png"
+  ],
+  "scale": "50 um bar = 46 px (1.087 um/px)",
+  "row_pitch_um": 45.9,
+  "gap_G_um": 19.6,
+  "post_along_flow_um": 26,
+  "post_across_flow_um": [
+   51,
+   54
+  ],
+  "plain_block_um": [
+   79,
+   54
+  ],
+  "block_opening_um": 30,
+  "side_channel_beside_blocks_um": [
+   28,
+   31
+  ],
+  "ws_in_um": 21,
+  "ws_out_um": 44.6,
+  "trunk_panel1_um": [
+   70,
+   75
+  ],
+  "hairpin_wall_um": [
+   25.0,
+   26.4
+  ],
+  "hairpin_channel_um": [
+   28.5,
+   29.3
+  ],
+  "hairpin_method": "outline-centre spacings on r4/dinhB1_z2.png (2x crop of panel 1: 92 px per 50 um bar, 0.5435 um/px), columns x = 615-665 through the right-hand hairpins: channels 52.5-54 px, walls 46-48.5 px"
+ },
+ "xia_fig3b": {
+  "crop": "r4/xia_b_z3.png",
+  "scale_um_per_px": 1.953125,
+  "head_row_pitch_px": 65.3,
+  "meander_wall_um": 41.0,
+  "inlet_trunk_um": 289
+ }
+}

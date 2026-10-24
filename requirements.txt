@@ -1,0 +1,8 @@
+# opencif 1.0.0 -- tested with Python 3.11.17 and the versions below
+numpy>=1.24        # tested 2.4.4
+scipy>=1.10        # tested 1.17.1
+shapely>=2.0       # tested 2.1.2
+matplotlib>=3.7    # tested 3.10.9
+pyyaml>=6.0        # tested 6.0.3
+ezdxf>=1.1         # tested 1.4.4
+pillow>=9          # tested 12.2.0 (DRC audit, depicted heads)

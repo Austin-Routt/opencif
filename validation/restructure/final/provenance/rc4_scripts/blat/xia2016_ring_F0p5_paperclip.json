@@ -1,0 +1,28 @@
+{
+ "name": "xia2016_ring_F0p5_paperclip",
+ "kwargs": {
+  "cutoff_um": 7.0,
+  "filtrate_fraction": 0.5,
+  "process": "xia2016",
+  "chip": [
+   25,
+   75
+  ],
+  "layout": "paperclip",
+  "outlet": "ring",
+  "mode": "evaluate"
+ },
+ "exit_code": 3,
+ "verdict": "PASS -- OUTSIDE THE VALIDITY ENVELOPE (gap dominance M13 0.178 >= 0.05): the cutoff law is not calibrated there; cutoff band 6.767-7.234 um, on the plateau: the kappa_g interval x delta* [1-D model: junction band: 1 row(s) beyond +-1% (up to 1.6% of D; rows 10; 0.12% of F)]",
+ "status": {
+  "hard_checks": "PASS",
+  "validity_envelope": "OUTSIDE",
+  "chip_area": "FITS",
+  "aspect_ratio_of_CIF_channels": "WITHIN THE LIMIT",
+  "length_budget_G9": "WITHIN",
+  "physics_auditor_P8": "ABSENT: no independent drawn-geometry auditor; CIF_v2's P8 criteria computed from the design as diagnostics (validation.gates.P8), not gated",
+  "fabricated_or_measured": "NO: Q1 and Q2 are statements of the 1-D network on the drawn mask"
+ },
+ "failed": [],
+ "seconds": 117.2
+}

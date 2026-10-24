@@ -1,0 +1,2689 @@
+% =====================================================================
+% CIF Variable, Unit, and Equation Reference
+%
+% This appendix is the dissertation's NORMATIVE NOTATION LAYER. Every
+% CONSTANT is drawn from the verified derivation record rather than by
+% cross-reference, so no VALUE here depends on another appendix. It does
+% cite Appendix A for three DERIVATIONS (the skim inversion, the cubic
+% identity, the scaling exponents); those citations go through \xref and
+% degrade to a literal when the target is absent. It names Appendix B
+% twice, in plain text: for the proven status of that identity (A.1) and
+% for the corrected Xia scaling Dinh's schedule follows (A.7). So this
+% file still compiles and reads correctly on its own. (Corrected at the
+% v108 freeze: this sentence said "Appendix B once" and "those four
+% citations go through \xref"; the A.1 mention was never an \xref, and
+% the A.7 mention came with the step-2 unfreeze batch, ledger DG-24. The
+% batch's corrections to this glossary are listed item by item in
+% FREEZE_v108.md and recorded in DEFERRED_GLOSSARY_CHANGES.md.)
+%
+% (The earlier wording claimed the appendix "does not cite any other
+% appendix." That has been untrue since the skim-inversion row acquired
+% its provenance, and the claim is corrected rather than the citations
+% deleted: the derivations genuinely live in Appendix A, and a pointer to
+% them is worth more than a self-containment boast.)
+%
+% SUBSTANTIVE CHANGES IN THIS REVISION (detail in the Change Log):
+%   foot region corrected; supplied vs refit prefactor named apart; the
+%   junction campaign disambiguated from the retired common-origin claim;
+%   two factors vs three model gaps recorded, with phi/G/Lambda added;
+%   the f_eff retraction narrowed; the accuracy band defined; the
+%   aspect-ratio symbol crosswalk to the code; the kernel-prefactor
+%   pairing rule and kappa_F added; the two calibration sensitivities
+%   named apart; analytic and CFD depth factors separated; values
+%   generated rather than typed; cross-lineage framing corrected and the
+%   Davis leg added; a selectivity-axis validation section added; the
+%   +1.64 sigma closed-form distance surfaced; F split into its two
+%   identities; platelet-volume terminology corrected; a Status and Role
+%   legend added; a validity-envelope inventory added; the entrance-length
+%   convention added; the gap symbol g deprecated in favour of G with the
+%   link length ell_g added; the reduced size ratio moved off the letter u.
+%
+% HOUSE STYLE: no prose em dashes. The triple hyphen appears as an empty
+% table cell, and INSIDE A VERBATIM QUOTATION where the em dash is the
+% SOURCE's punctuation and altering it would misquote. The Lezzar anchor
+% in the source-quote index is the only such case today ("the magnitude of
+% this flow fraction---not the width of the gaps---that determines the
+% size cutoff"). texlint.py already encodes this exemption by stripping
+% quoted spans before counting; this sentence brings the stated policy
+% into line with the enforced one.
+%   The double hyphen appears in numeric and page ranges and in name
+% compounds (Hagen--Poiseuille, Zweifach--Fung, log--log), where an en
+% dash is the correct typography.
+%
+% TABLE STYLE: the variable tables are longtable, NOT table floats. A
+% float must fit on one page; these do not, and an oversized float is
+% reported as "Float too large for page" and dropped. A longtable carries
+% its own caption and label and must never be wrapped in \begin{table}.
+% Column fractions sum to about 0.92, budgeting the inner \tabcolsep
+% gutters; summing to 1.0 produces few-point overfull \hbox warnings. No
+% bare l or c column sits beside an X column WHEN ITS CONTENT IS WIDE OR
+% VARIABLE, because l takes its natural width and can squeeze X below its
+% minimum ("X Columns too narrow"). A SHORT, FIXED l is sanctioned: A.11's
+% three-family table uses {@{}lYY@{}} for labels of a few words and compiles
+% with no X-column warning. The rule was stated absolutely and the appendix
+% did not follow it; the enforced policy is the one written here.
+% =====================================================================
+\documentclass{article}
+\usepackage[margin=1in]{geometry} % wider text block: removes table/line overflow from default-article narrow column
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage{url} % for \url{} in the COMSOL bibliography entry
+\usepackage{array}
+\usepackage{tabularx} % wide tables forced to \textwidth (wrapping X columns) instead of overflowing
+% Scalable fonts where available; microtype's font EXPANSION requires them, so
+% expansion is enabled only when lmodern loads. Keeps the file portable to a
+% minimal TeX installation without silently dropping the typographic benefit.
+\IfFileExists{lmodern.sty}{%
+  \usepackage{lmodern}\usepackage[T1]{fontenc}\usepackage{microtype}%
+  % BOLD SMALL CAPS. Latin Modern has no T1/lmr/bx/sc, so any \textbf{...\textsc{...}}
+  % (A.8's "On the EXTERNAL label" heading, and any future one) raises
+  %   Font shape `T1/lmr/bx/sc' undefined ... defaults substituted
+  % and silently drops either the bold or the small caps. lmr DOES carry the b series,
+  % so substituting bx -> b gives real bold small caps instead of a fallback.
+  \DeclareFontShape{T1}{lmr}{bx}{sc}{<->ssub*lmr/b/sc}{}%
+  \DeclareFontShape{T1}{lmr}{bx}{si}{<->ssub*lmr/b/si}{}%
+}{%
+  \usepackage[expansion=false]{microtype}%
+}
+% THE SAME GAP EXISTS WITHOUT lmodern. On a minimal installation the encoding stays
+% OT1/cmr, which has no bold small caps either, so the identical warning appears as
+% `OT1/cmr/bx/sc'. Computer Modern has no bold small caps to substitute, so this falls
+% back to medium small caps: the small caps survive and only the weight is lost, which
+% is the better of the two degradations. Declared for both encodings because the file
+% must build the same on Overleaf (lmodern present) and on a bare TeX Live.
+\DeclareFontShape{OT1}{cmr}{bx}{sc}{<->ssub*cmr/m/sc}{}
+\DeclareFontShape{T1}{cmr}{bx}{sc}{<->ssub*cmr/m/sc}{}% protrusion/expansion: clears most under/overfull \hbox warnings in prose
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X} % ragged, line-wrapping X column
+\setlength{\emergencystretch}{3em} % last-resort glue so stubborn lines (DOIs etc.) do not run overfull
+
+% --- lineage shorthand ---
+\newcommand{\fgap}{f_{\mathrm{gap}}}
+% --- cutoff-law (selectivity-axis) decomposition ---
+\newcommand{\kapp}{\kappa_{\mathrm{app}}}
+\newcommand{\kster}{\kappa_{\mathrm{steric}}}
+\newcommand{\kg}{\kappa_{g}}                    % E8: prefactor paired with the CUBIC branch
+\newcommand{\kF}{\kappa_{F_{\mathrm{lam}}}}     % E8: prefactor paired with the EXACT kernel
+\newcommand{\Kin}{K_{\text{in-plane}}} % text-mode hyphen (no \text nested in \mathrm)
+\newcommand{\Kdepth}{K_{\mathrm{depth}}}
+\newcommand{\Kdth}{K_{\mathrm{depth}}^{\mathrm{th}}}    % E10: ANALYTIC depth factor
+\newcommand{\Kdcfd}{K_{\mathrm{depth}}^{\mathrm{CFD}}}  % E10: MEASURED depth factor
+\newcommand{\dcrit}{d_{\mathrm{crit}}}
+\newcommand{\Ral}{R(\alpha)}          % interpretive alias of Kdepth, see collision warning
+\newcommand{\skimw}{\delta}           % dividing-streamline (skim) width
+\newcommand{\acal}{\alpha_{\mathrm{cal}}}       % E9: calibration aspect-ratio array
+% E19: reduced size ratio d_crit/w_c.
+% WAS u_{d}. That differed from the ASME V&V-20 data uncertainty u_D by SUBSCRIPT
+% CASE ALONE. A collision note documents that trap without removing it, because a
+% reader scanning a dense table cannot see case: the sigma note works only because
+% sigma_F and sigma(i) differ by subscript CONTENT. The letter u already carries the
+% velocities u(y), u_max (standard fluid mechanics) and the V&V-20 uncertainties
+% u_val, u_num, u_input, u_D (ASME's own symbols); both are inherited notations, so
+% the reduced size ratio was the only one free to move. d-tilde is apt for a
+% normalised diameter and clashes with no other d in this appendix: the deprecated d,
+% d_crit, D=2a, D_c and D_h are all distinct.
+% The macro KEEPS ITS NAME, so no subsection body changes. symlint.py carries the
+% mapping \ud -> dtilde so it stops reporting a u-collision that no longer exists.
+% BEFORE RELYING ON THIS: grep the remaining subsections for a literal "u_d" written
+% as prose rather than through \ud; those mentions will not follow the redefinition.
+\newcommand{\ud}{\widetilde{d}}
+% --- gap geometry (see the G/g collision note) ---
+% G is the along-flow LINK WIDTH (the opening a particle passes through, Gifford's
+% "wide (~20 um) gaps"); ell_g is the LINK LENGTH (the wall thickness the fluid
+% crosses); g_p is the along-flow POST WIDTH. G and g_p are both along-flow, which is
+% why they sum to a row pitch. Lower-case g is the CUBIC KERNEL g(x)=3x^2-2x^3 and is
+% dimensionless; it is not a length, and the earlier gap row that used it is
+% deprecated in favour of G.
+% --- validation-layer (V&V-20) ---
+\newcommand{\uval}{u_{\mathrm{val}}}
+\newcommand{\unum}{u_{\mathrm{num}}}
+\newcommand{\uinput}{u_{\mathrm{input}}}
+\newcommand{\uD}{u_{D}}
+
+
+% ---------------------------------------------------------------------------
+% \xref{label}{fallback} -- a cross-reference that degrades gracefully.
+%
+%   standalone build (target not in this document)
+%       prints `fallback'. No warning, no `??', nothing to clean up later.
+%   assembled dissertation (target present)
+%       prints the live \ref, so renumbering Appendix A is still absorbed.
+%
+% The body text is written ONCE and is correct in both builds. Use it for every
+% pointer that leaves the current file -- Appendix A results, chapter sections,
+% glossary subsections not yet written.
+%
+% Two-pass note: on the FIRST pdflatex pass of an assembled build the .aux has
+% not been read, so the fallback prints; the second pass resolves it. That is
+% ordinary LaTeX behaviour and emits no warning.
+% ---------------------------------------------------------------------------
+\makeatletter
+\providecommand{\xref}[2]{\@ifundefined{r@#1}{#2}{\ref{#1}}}
+\makeatother
+
+% =====================================================================
+% VALUES ARE GENERATED, NOT TYPED.
+% The macro file loaded below is emitted from the verified derivation
+% record and pinned to its content hash. A number typed inline instead of
+% cited from a macro is a number that will be stale after the next
+% correction: the change log records three such corrections that each had
+% to be chased through four places by hand. The fallback block keeps this
+% file compilable when the generated file is absent; it is a SNAPSHOT and
+% the generated file is authoritative.
+%
+% The snapshot below was re-verified against the derivation record on this
+% revision: all 40 constants reproduce, including the three calibration
+% depth factors, which use the EXACT ratios 80/100, 80/125 and 80/150
+% rather than the rounded aspect ratios printed in the prose (0.811 at the
+% widest channel is K_depth(80/150)=0.810929, not K_depth(0.53)=0.809540).
+% =====================================================================
+\IfFileExists{tex/notation_values.tex}{\input{tex/notation_values}}{%
+  \newcommand{\kappVal}{4.9138}\newcommand{\kappFit}{4.9137}%
+  \newcommand{\kappFitFull}{4.913717814706706}%
+  \newcommand{\kappCIlo}{4.75}\newcommand{\kappCIhi}{5.08}\newcommand{\kappCV}{4.0}%
+  \newcommand{\kstericVal}{2}\newcommand{\KinVal}{1.000}%
+  \newcommand{\kappOverRootThree}{2.8370}%
+  \newcommand{\plateauKappa}{4.91}\newcommand{\footKappa}{1.34}%
+  \newcommand{\plateauN}{8}\newcommand{\footN}{3}%
+  \newcommand{\kappaSpanLo}{1.20}\newcommand{\kappaSpanHi}{5.20}%
+  \newcommand{\KdepthAnalyticShallow}{0.8879}\newcommand{\KdepthAnalyticMid}{0.9500}%
+  \newcommand{\KdepthAnalyticDeep}{0.9794}%
+  \newcommand{\KdepthCfdShallow}{0.891}\newcommand{\KdepthCfdMid}{0.945}%
+  \newcommand{\KdepthCfdDeep}{0.981}%
+  \newcommand{\KdepthCalNarrow}{0.888}\newcommand{\KdepthCalMid}{0.849}%
+  \newcommand{\KdepthCalWide}{0.811}%
+  \newcommand{\residualFolded}{2.4569}\newcommand{\residualSepShallow}{2.7574}%
+  \newcommand{\residualSepMid}{2.5999}\newcommand{\residualSepDeep}{2.5044}%
+  \newcommand{\stericFloorShallow}{1.782}%
+  \newcommand{\FclosedVone}{0.5592}\newcommand{\FclosedVthree}{0.7189}%
+  \newcommand{\FcomsolVone}{0.5070}\newcommand{\FcomsolVthree}{0.6281}%
+  \newcommand{\FexpVone}{0.505}\newcommand{\FexpVthree}{0.649}%
+  \newcommand{\FsdVone}{0.033}\newcommand{\FsdVthree}{0.036}%
+  \newcommand{\alphaThreeDVone}{0.811}\newcommand{\alphaThreeDVthree}{0.660}%
+  \newcommand{\ReWorstChannel}{5.2}\newcommand{\ReGapScale}{5.2\times10^{-3}}%
+  \newcommand{\fgapBandLo}{3.63\times10^{-5}}\newcommand{\fgapBandHi}{1.93\times10^{-3}}%
+  \newcommand{\fgapDesignCap}{5.76\times10^{-4}}%
+}
+% NOTE on \alphaThreeDVone: it is 0.811, the same three digits as
+% \KdepthCalWide. They are DIFFERENT quantities that coincide numerically --
+% the 3-D outlet resistance-ratio correction at V1, and the depth factor at
+% the widest calibration channel. Do not let one be edited into the other.
+
+% =====================================================================
+% A.4 KERNEL-PAIRING VALUES.
+% Generated by gen_kernel_pairing.py from the verified derivation record.
+% Loaded the same way as notation_values: the generated file is
+% AUTHORITATIVE, and the fallback below is a SNAPSHOT that keeps this file
+% compilable when the generated file is absent.
+%
+% Without this block, A.4 raises "Undefined control sequence" on
+% \kappSuppliedGap, \KdepthDev*, \ctwobar, \kFval and 29 others.
+% Regenerate after any change to c2(), K_depth(), F_lam() or the plateau fit:
+%   python3 gen_kernel_pairing.py tex/kernel_pairing_values.tex
+% =====================================================================
+\IfFileExists{tex/kernel_pairing_values.tex}{\input{tex/kernel_pairing_values}}{%
+  \newcommand{\ctwobar}{4.177}%
+  \newcommand{\kFval}{5.798}%
+  \newcommand{\depthEff}{0.8475}%
+  \newcommand{\kFmeanK}{5.7862}%
+  \newcommand{\kFmeanKerr}{0.21}%
+  \newcommand{\kFoneAlpha}{5.5342}%
+  \newcommand{\kFoneAlphaErr}{4.6}%
+  \newcommand{\ctwobarDecl}{4.182}%
+  \newcommand{\kFdecl}{5.802}%
+  \newcommand{\transferExact}{19.9}%
+  \newcommand{\transferDecl}{20.3}%
+  \newcommand{\dcritGGleadIn}{2.170}%
+  \newcommand{\dcritGGleadOut}{1.504}%
+  \newcommand{\choiceLeadGap}{0.2}%
+  \newcommand{\crossUp}{18.0}%
+  \newcommand{\crossDown}{-15.3}%
+  \newcommand{\alphaDIn}{1.867}%
+  \newcommand{\dcritGGIn}{2.174}%
+  \newcommand{\dcritFFIn}{2.482}%
+  \newcommand{\dcritFgIn}{2.565}%
+  \newcommand{\dcritgFIn}{2.103}%
+  \newcommand{\choiceIn}{14.1}%
+  \newcommand{\alphaDOut}{2.692}%
+  \newcommand{\dcritGGOut}{1.507}%
+  \newcommand{\dcritFFOut}{1.743}%
+  \newcommand{\dcritFgOut}{1.779}%
+  \newcommand{\dcritgFOut}{1.477}%
+  \newcommand{\choiceOut}{15.6}%
+  \newcommand{\KdepthDevShallow}{0.349}%
+  \newcommand{\KdepthDevMid}{0.530}%
+  \newcommand{\KdepthDevDeep}{0.160}%
+  \newcommand{\KdepthDevMidTh}{0.527}%
+  \newcommand{\KdepthDevMax}{0.531}%
+  \newcommand{\kappSuppliedGap}{1.7\times10^{-5}}%
+  \newcommand{\dinhBandLo}{1.25}%
+  \newcommand{\dinhBandHi}{2.17}%
+  \newcommand{\dinhKappaLocal}{4.08}%
+  \newcommand{\dinhCollapseLo}{1.80}%
+  \newcommand{\dinhKneeRatio}{1.21}%
+  \newcommand{\dinhBandWidth}{1.74}%
+  \newcommand{\kappCIhalfPct}{3.4}%
+  \newcommand{\xiaKappaA}{5.03}%
+  \newcommand{\xiaKappaB}{5.16}%
+  \newcommand{\xiaKappaC}{5.32}%
+  \newcommand{\xiaKappaMean}{5.17}%
+  \newcommand{\xiaAgreePct}{5.2}%
+  \newcommand{\depthCorrPct}{5.3}%
+  \newcommand{\chiGlobal}{30.6}%
+  \newcommand{\chiPlateau}{3.8}%
+  \newcommand{\chiRatio}{8.0}%
+  \newcommand{\etaShortfallPct}{9.7}%
+  \newcommand{\etaVal}{0.903}%
+  \newcommand{\runoutFmatched}{0.519}%
+  \newcommand{\runoutFmismatched}{0.265}%
+  \newcommand{\residPctVOne}{9.3}%
+  \newcommand{\residPctVThree}{12.6}%
+  \newcommand{\squareDuctR}{28.4542}%
+  \newcommand{\skimErrDesign}{0.47}%
+  \newcommand{\skimErrBand}{0.86}%
+  \newcommand{\DhOutlet}{75.8}%
+  \newcommand{\DhInlet}{97.7}%
+  \newcommand{\Uoutlet}{0.069}%
+  \newcommand{\ReHighFlow}{16}%
+  \newcommand{\RePRP}{2.6}%
+  \newcommand{\LeInlet}{60.5}%
+  \newcommand{\LeOverLamInlet}{1.23}%
+  \newcommand{\LeOverLamGInlet}{1.31}%
+  \newcommand{\LeOutlet}{46.9}%
+  \newcommand{\LeOverLamOutlet}{0.96}%
+  \newcommand{\LeOverLamGOutlet}{1.02}%
+  \newcommand{\aTwelveFL}{1.42}%
+  \newcommand{\DTwelveFL}{2.84}%
+  \newcommand{\QgapDinh}{3.12}%
+  \newcommand{\dldExcessLo}{1.23}%
+  \newcommand{\dldExcessHi}{1.33}%
+  \newcommand{\ihRatioA}{1.44}%
+  \newcommand{\ihRatioB}{1.48}%
+  \newcommand{\ihRatioC}{1.21}%
+  \newcommand{\ihRatioLo}{1.21}%
+  \newcommand{\ihRatioHi}{1.48}%
+  \newcommand{\ihRatioMean}{1.4}%
+  \newcommand{\davisKappaHi}{2.659}%
+  \newcommand{\davisKappaLo}{2.459}%
+  \newcommand{\inglisKappaLo}{2.040}%
+  \newcommand{\inglisKappaHi}{2.449}%
+  \newcommand{\dldKappaLo}{2.040}%
+  \newcommand{\dldKappaHi}{2.659}%
+  \newcommand{\dldConvergePct}{0.4}%
+  \newcommand{\expBeta}{0.51}%
+  \newcommand{\expGamma}{1.02}%
+  \newcommand{\plateauUwc}{0.035}%
+  \newcommand{\footUwc}{0.012}%
+  \newcommand{\betaCIlo}{0.41}%
+  \newcommand{\betaCIhi}{0.61}%
+  \newcommand{\gammaCIlo}{0.84}%
+  \newcommand{\gammaCIhi}{1.20}%
+  \newcommand{\hillKmax}{5.568}%
+  \newcommand{\hillUhalf}{0.01651}%
+  \newcommand{\hillN}{1.791}%
+  \newcommand{\dinhSaddleFgap}{1.041\times10^{-4}}%
+  \newcommand{\dinhSaddleU}{0.02894}%
+  \newcommand{\sibALo}{1.02}%
+  \newcommand{\sibAHi}{1.47}%
+  \newcommand{\sibBLo}{1.26}%
+  \newcommand{\sibBHi}{1.81}%
+  \newcommand{\dinhBracketLo}{1.0}%
+  \newcommand{\dinhBracketHi}{4.7}%
+}
+
+% =====================================================================
+% A.6 VALIDATION DISTANCES. Generated by gen_validation_values.py from the
+% same F values this preamble carries, so the document and the generator
+% cannot disagree about what F is. Fallback is a SNAPSHOT.
+% =====================================================================
+\IfFileExists{tex/validation_values.tex}{\input{tex/validation_values}}{%
+  \newcommand{\EsdClosedVOne}{+1.64}%
+  \newcommand{\EsdComsolVOne}{+0.06}%
+  \newcommand{\EsemComsolVOne}{+0.12}%
+  \newcommand{\uvalExcessVOne}{0.048}%
+  \newcommand{\EsdClosedVThree}{+1.94}%
+  \newcommand{\EsdComsolVThree}{-0.58}%
+  \newcommand{\EsemComsolVThree}{-1.16}%
+  \newcommand{\uvalExcessVThree}{0.011}%
+  \newcommand{\uDoverUnumVOne}{660}%
+  \newcommand{\uDoverUnumVThree}{720}%
+  \newcommand{\uDoverUnum}{660}%
+  \newcommand{\uvalExcessMax}{0.05}%
+  \newcommand{\FexcessPctVOne}{10.7}%
+  \newcommand{\FexcessPctVThree}{10.8}%
+  \newcommand{\dFrecurConst}{2.35\times10^{-4}}%
+  \newcommand{\dFrecurVar}{1.97\times10^{-5}}%
+  \newcommand{\peMarginMin}{48}%
+  \newcommand{\peHalfAgreeVOne}{2.3}%
+  \newcommand{\peHalfAgreeVThree}{4.7}%
+  \newcommand{\netEmergentPct}{0.12}%
+  \newcommand{\siblingSqrtcPct}{5}%
+}
+\title{CIF Variable, Unit, and Equation Reference}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\appendix
+\section{Variable and Unit Reference}
+\label{app:units}
+
+This appendix catalogs the symbols, dimensionless quantities, and
+key equations of the dissertation's analytical, design, and
+validation framework, with SI units, the practical units used in the CIF
+lineage, and step-by-step dimensional derivations. It spans both
+performance axes, the filtrate fraction (yield) and the particle-size
+cutoff (selectivity), together with the verification-and-validation layer
+that connects the analytical framework to numerical (COMSOL) and
+published-device evidence. Direct quotations from the source papers
+anchoring each unit convention and each adjudicated physical criterion are
+collected in Section~\ref{app:units_quotes}; the selectivity axis is
+validated in Section~\ref{app:units_selval} and the yield axis in
+Section~\ref{app:units_validation}; an independent cross-lineage dataset
+is given in Section~\ref{app:units_crosslineage}; the design envelope is
+inventoried in Section~\ref{app:units_envelope}; and a consolidated master
+cheat-sheet is in Section~\ref{app:units_cheatsheet}.
+\newline
+
+
+
+%==============================================================
+% A.1 -- GEOMETRIC VARIABLES  (complete, corrected)
+% Every locator in this subsection is verified against per-page OCR by
+% locatorcheck.py (validate.sh gate 8b).
+%==============================================================
+\subsection{Geometric Variables}
+\label{app:units_geom}
+
+Table~\ref{tab:units_geom} fixes the geometric symbols and the in-plane
+versus out-of-plane convention. $G$, $\Lambda$ and $\phi$ are included here because the
+wall porosity is one of the three model gaps to which the cutoff residual
+is attributed (Section~\xref{app:units_cutoff}{``Cutoff-Law Prefactor Decomposition''}).
+
+\paragraph{Evidentiary markers.} Where a row's status is not obvious it is
+marked \textsc{external} (an input the record does not derive: a source
+states it, or this work supplies it and no validator discharges it),
+\textsc{derived} (it follows from geometry or from an Appendix~A result), or
+\emph{This work} (a convention this document sets). Unmarked rows are
+\textsc{external} and carry their locator in the Source column. The status
+columns of later tables use five more markers: \textsc{fitted} (calibrated
+to data by a fit), \textsc{numerical} (computed by a numerical solve),
+\textsc{measured} (set by a measurement), \textsc{proposed} (a
+parameterization this work proposes and has not yet computed or measured)
+and \textsc{bounds} (a condition that limits where the design relations
+hold); \textsc{establishes} and \textsc{competes}, in the name column of
+Table~\xref{tab:units_cutoff}{A.4}, say what a quantity does in the argument.
+
+% longtable, NOT a float: this table is taller than a page, and a `table` float
+% that does not fit is reported as "Float too large for page" and dropped.
+% Column fractions sum to 0.92, budgeting 8 x \tabcolsep of inner gutter at 4pt;
+% summing to 1.0 is what produces the few-point overfull \hbox warnings.
+\begingroup\small\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.115\textwidth}>{\raggedright\arraybackslash}p{0.44\textwidth}>{\raggedright\arraybackslash}p{0.065\textwidth}>{\raggedright\arraybackslash}p{0.105\textwidth}>{\raggedright\arraybackslash}p{0.165\textwidth}@{}}
+\caption{Geometric variables used to specify CIF device architecture. Practical units reflect the CIF lineage convention; SI units are used in all dimensional derivations.}\label{tab:units_geom}\\
+\toprule Symbol & Quantity & SI unit & Practical unit & Source \\\midrule\endfirsthead
+\multicolumn{5}{@{}l}{\footnotesize\itshape Table \thetable\ (continued)}\\
+\toprule Symbol & Quantity & SI unit & Practical unit & Source \\\midrule\endhead
+\bottomrule\endlastfoot
+$w_c$           & Center-channel width (constant-$w_c$ regime)            & \si{\meter} & \si{\micro\meter} & \cite[p.~4498, Fig.~1]{b1} \\
+$w_c(i)$        & Center-channel width of segment $i$, after gap row $i$ (tapered-$w_c$ regime; $w_c(0)$ is the inlet width). Xia's width at gap $i$ is read as this $w_c(i)$ in Sections~\xref{app:units_selval}{A.7} and~\xref{app:units_equations}{A.9}, as in App.~A; the width arriving at row $i$ is $w_c(i-1)$, one taper step away & \si{\meter} & \si{\micro\meter} & \cite[p.~916]{b5}; \cite[p.~10 (Sci Rep PDF pagination)]{b2} \\
+$w_s$, $w_s(i)$ & Side-channel width (generic / of segment $i$, after gap row $i$, the width that sets $R_s(i)$) & \si{\meter} & \si{\micro\meter} & \cite[p.~4498, Fig.~1]{b1} \\
+$w_c(\text{ref})$ & Reference center-channel width (Xia 2022 scaling)    & \si{\meter} & \si{\micro\meter} & \cite[p.~1]{b3} \\
+$w_{\mathrm{ch}}$ & \emph{Generic} channel width placeholder, $w_{\mathrm{ch}}\!\in\!\{w_c,w_s\}$, used only inside the resistance law (Eqn~\xref{eqn:gifford5}{5}) & \si{\meter} & \si{\micro\meter} & This work \\
+$w$             & \emph{Diverted fluid lamina width} (empirical extracted-lamina width; cutoff reference length) & \si{\meter} & \si{\micro\meter} & \cite[p.~917]{b5} \\
+$\skimw$        & Dividing-streamline (skim) width, $\skimw=w_c\sqrt{\fgap/3}$ at leading order; plays the role of $w$ in the cutoff law. \textsc{derived} (App.~A, Result~\xref{res:skim-inversion}{2}) & \si{\meter} & \si{\micro\meter} & \cite{b12a}\,(\texttt{delta\_skim}); \cite[p.~656]{b17} \\
+$b$             & First-streamline (boundary-lamina) width; Inglis writes $D_c=2\beta$, rendered $b$ here (see Lamina-width collision below) & \si{\meter} & \si{\micro\meter} & \cite[p.~656, Eqn~1]{b17} \\
+$h$             & Channel depth (out-of-plane height); Gifford's $d$ in the Eqn~5 sentence (``$d$ is the depth of the channel'') & \si{\meter} & \si{\micro\meter} & \cite[p.~4498]{b1} \\
+$d$             & \textcolor{gray}{\emph{[deprecated]} Gifford depth notation $\equiv h$; retained for cross-reference only. Use $h$ to avoid collision with $\dcrit$.} & \si{\meter} & \si{\micro\meter} & \cite[p.~4498]{b1} \\
+$L_{\mathrm{dev}}$ & Device length (along flow direction). \emph{Renamed from $L$}: Gifford's $L$ is the \emph{segment} length, not the device length & \si{\meter} & \si{\milli\meter} & This work \\
+$L_c(i), L_s(i)$ & Center/side channel \emph{segment} length after gap row $i$ (between rows $i$ and $i+1$; segment $0$ is the inlet stretch, segment $N$ the outlet), the segment that carries $Q_c(i)$ and $Q_s(i)$. Gifford describes a segment as lying between rows $i-1$ and $i$, one row earlier, which is immaterial for his constant $\fgap$; the quantity Gifford's Eqn~5 calls $L$, clarified there as ``the size (along the direction of flow) of an obstacle in the device'' & \si{\meter} & \si{\micro\meter} & This work, after Gifford's Eqn~5 $L$ (\cite[p.~4498]{b1}; clarified \cite[p.~4499]{b1}) \\
+$g$             & \textcolor{gray}{\emph{[deprecated]} An earlier draft used $g$ for the gap opening. That is the same quantity as $G$ below, and lower-case $g$ is needed for the cubic kernel; use $G$.} & \si{\meter} & \si{\micro\meter} & --- \\
+$G$             & \textbf{Link width}: the along-flow width of the opening in the wall between center and side channel. This is the dimension a particle passes through, and the one Gifford reports as ``wide ($\sim$20~\si{\micro\meter}) gaps'' & \si{\meter} & \si{\micro\meter} & This work; value \cite[p.~4498]{b1} \\
+$\ell_g$        & \textbf{Link length}: the wall thickness the fluid crosses, i.e.\ the flow path \emph{through} the opening. With $G$ it sets the gap cross-section, and hence the gap resistance $R_{\mathrm{gap}}$ of Table~\xref{tab:units_fluid}{A.2}; the hydraulic diameter of the opening is $D_h=2Gh/(G+h)$ & \si{\meter} & \si{\micro\meter} & This work \\
+$g_p$           & \textbf{Post width}: the along-flow width of the wall segment between successive openings. $G$ and $g_p$ are both along-flow, which is why they sum to a row pitch & \si{\meter} & \si{\micro\meter} & This work \\
+$\Lambda$       & Row pitch, $\Lambda(i)\ge\max(G+g_p,\,2p\ \text{[if folded]})$; equality only for an unfolded tight-packed row. A \emph{design constraint}, not a definition: the bound is set by the minimum feature and fold geometry & \si{\meter} & \si{\micro\meter} & This work \\
+$\phi$          & \textbf{Wall porosity}, $\phi=G/\Lambda$: the open fraction of the ``wall'' the resistance kernels assume solid. \textsc{derived} from geometry. One of the \emph{three} model gaps the cutoff residual is measured against (Section~\xref{app:units_cutoff}{``Cutoff-Law Prefactor Decomposition''}). Distinct from $\phi_{\mathrm{cal}}$, which is \textsc{external} (Section~\xref{app:units_envelope}{``Validity Envelope''}), and from the fold factor $\Phi(i)$ & --- & --- & This work; \cite{b12a} \\
+$N$             & Total number of gap rows. Gifford's symbol is $i_T$ (Fig.~2 caption, ``the necessary total number of rows of gaps, $i_T$''); $N$ is this work's, adopted to free $i$ for the row index & --- & --- & This work, after \cite[p.~4499]{b1} \\
+$i$             & Gap row index, $1 \le i \le N$; flows and segments are labelled $0 \le i \le N$, $0$ being the inlet stretch & ---          & ---                 & \cite[p.~4498, Fig.~1]{b1} \\
+\end{longtable}\endgroup
+
+\textbf{Convention.} $w_c$, $w_s$ (and the generic placeholder
+$w_{\mathrm{ch}}$) are the in-plane channel widths (perpendicular to
+flow); $h$ is the out-of-plane channel depth.
+
+\textbf{Lamina-width collision.} The bare symbol $w$ denotes
+the \emph{diverted fluid lamina width} only. The rectangular-duct
+resistance law (Eqn~\xref{eqn:gifford5}{5}) takes the \emph{channel} width as
+argument; that argument is written $w_{\mathrm{ch}}$ here, never bare $w$.
+The theoretical lamina width is $\skimw=w_c\sqrt{\fgap/3}$; the empirical
+lamina width is $w$; the Inglis first-streamline width is $b$. Inglis
+writes this as $D_c=2\beta$ with Greek $\beta$ (\cite[p.~656, Eqn~1]{b17});
+it is rendered $b$ here to free $\beta$ for the cutoff scaling exponent.
+These three denote the same boundary lamina, and their identification
+$b\equiv\skimw$ is a \emph{proven} result, not a definition: the CIF skim
+cubic is algebraically identical to the Inglis DLD cubic
+(App.~A, Result~\xref{res:cubic-identity}{4}; recorded as a proven node in the
+argument map, App.~B).
+
+\textbf{$G$/$g$ collision: $g$ is the cubic kernel, not a length.}
+Lower-case $g$ denotes the
+skim kernel $g(x)\equiv3x^2-2x^3$ and rides as a subscript on the paired
+prefactor $\kappa_g$. It is dimensionless. It is \emph{not} a gap width: the
+opening is $G$, its through-wall length is $\ell_g$, and the post is $g_p$;
+$G$ and $g$ differ only by case and denote different kinds of thing, so a
+reader scanning a formula must read the case.
+An earlier draft of this table used $g$ for the opening, which both duplicated
+$G$ and collided with the kernel; that row is deprecated above. The gap
+geometry needs no lower-case $g$: $\Lambda(i)\ge\max(G+g_p,\,2p)$ and
+$\phi=G/\Lambda$ are stated entirely in $G$, $g_p$ and $\Lambda$.
+
+\textbf{Two further symbol collisions, declared.} The lower-case $\phi$
+above is the wall porosity; the upper-case $\Phi(i)=r(w_s(i))/r(\mathrm{GS})$
+used in the folded-channel geometry is the \emph{fold factor} and is a
+different quantity. The fold pitch $p=\mathrm{GS}+\max(F_{\min},2R_{\min})$
+of that same geometry ($\mathrm{GS}$ the fold width, $F_{\min}$ the minimum
+feature and $R_{\min}$ the minimum inner-corner radius, as the design
+specification's symbol table defines them) shares a letter with the hydrostatic pressure $p$ of
+Table~\xref{tab:units_fluid}{A.2}; pressure is always written $P$ or $p$ in a
+pressure context and the fold pitch only inside that folded-channel geometry.
+ 
+
+ 
+ 
+
+ 
+%==============================================================
+% A.2 -- FLUID AND HYDRAULIC VARIABLES  (corrected)
+% Every locator verified against per-page OCR (locatorcheck.py, gate 8b).
+%==============================================================
+\subsection{Fluid and Hydraulic Variables}
+\label{app:units_fluid}
+
+Table~\ref{tab:units_fluid} lists the flow, pressure and resistance
+variables, together with the two external inputs $\sigma(i)$ and
+$\sigma_0$. Two letters are overloaded and are disambiguated in notes below
+the table: $R$ carries four unrelated meanings across this appendix, and $P$
+is both the pressure and the normalised march flow $P(i)$ within this one
+table.
+
+% longtable, NOT a float: consistent with Table~\ref{tab:units_geom}, and safe if
+% the table grows. Fractions sum to 0.92, budgeting 8 x \tabcolsep of inner gutter
+% at 4pt; summing to 1.0 is what produces few-point overfull \hbox warnings.
+% A bare `l' column beside an `X' is also avoided: `l' takes its natural width and
+% can squeeze X below its minimum ("X Columns too narrow").
+\begingroup\small\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.115\textwidth}
+>{\raggedright\arraybackslash}p{0.40\textwidth}
+>{\raggedright\arraybackslash}p{0.115\textwidth}
+>{\raggedright\arraybackslash}p{0.115\textwidth}
+>{\raggedright\arraybackslash}p{0.175\textwidth}@{}}
+\caption{Fluid-mechanical and hydraulic variables.}\label{tab:units_fluid}\\
+\toprule Symbol & Quantity & SI unit & Practical unit & Source \\\midrule\endfirsthead
+\multicolumn{5}{@{}l}{\footnotesize\itshape Table \thetable\ (continued)}\\
+\toprule Symbol & Quantity & SI unit & Practical unit & Source \\\midrule\endhead
+\bottomrule\endlastfoot
+$Q_c$, $Q_c(i)$       & Center-channel volumetric flow rate after gap row $i$            & \si{\cubic\meter\per\second} & \si{\micro\liter\per\minute} & \cite[p.~4498]{b1} \\
+$Q_s$, $Q_s(i)$       & Side-channel volumetric flow rate (one side, after gap $i$) & \si{\cubic\meter\per\second} & \si{\micro\liter\per\minute} & \cite[p.~4498]{b1} \\
+$Q_{\mathrm{gap}}(i)$ & Volumetric flow through one gap on one side at row $i$    & \si{\cubic\meter\per\second} & \si{\nano\liter\per\minute} & \cite[p.~915]{b5} \\
+$Q_{\mathrm{in}}$     & Total inlet flow rate. The lineage devices are operated at $30~\si{\micro\liter\per\minute}$; the \emph{symbol} is this work's & \si{\cubic\meter\per\second} & \si{\micro\liter\per\minute} & This work; rate \cite[p.~915]{b5} \\
+$Q_m(i)$              & Middle-channel flow rate at gap $i$ (Dinh notation; $=Q_c(i-1)$)  & \si{\cubic\meter\per\second} & \si{\micro\liter\per\minute} & \cite[p.~915]{b5} \\
+$P$, $p$              & Hydrostatic pressure. Gifford writes only the differential $\Delta P$; the bare symbol is this work's & \si{\pascal} & \si{\kilo\pascal} or psi & This work \\
+$\Delta P$, $\Delta P(i)$ & Pressure drop across one channel segment              & \si{\pascal} & \si{\kilo\pascal} & \cite[p.~4498]{b1} \\
+$p_{\text{center}}(L_{\mathrm{dev}})$ & Pressure in center channel at the outlet & \si{\pascal} & \si{\kilo\pascal} & Condition \cite[p.~4500]{b1}; symbol this work \\
+$p_{\text{side}}(L_{\mathrm{dev}})$ & Pressure in side channel at the outlet & \si{\pascal} & \si{\kilo\pascal} & Condition \cite[p.~4500]{b1}; symbol this work \\
+$R_c$, $R_c(i)$       & Hydraulic resistance of one center-channel segment        & \si{\pascal\second\per\cubic\meter} & --- & \cite[p.~4498]{b1} \\
+$R_s$, $R_s(i)$       & Hydraulic resistance of one side-channel segment          & \si{\pascal\second\per\cubic\meter} & --- & \cite[p.~4498]{b1} \\
+$R_{\mathrm{gap}}$    & Hydraulic resistance of one gap. Gifford describes the gaps as presenting ``a relatively small amount of resistance'' but defines no symbol; this one is this work's & \si{\pascal\second\per\cubic\meter} & --- & This work, after \cite[p.~4498]{b1} \\
+$P(i)$, $S(i)$        & Normalised center and side flows along the march, $P(i)=Q_c(i)/Q_c(0)$ and $S(i)=Q_s(i)/Q_c(0)$. \emph{Not} the pressure $P$ above: see the collision note & --- & --- & This work; \cite{b12a} \\
+$\sigma(i)$, $\sigma_0$ & Cumulative side-flow ratio along the march, $\sigma(i)=S(i)/P(i)$; $\sigma_0$ is the (fictitious) inlet side-flow. \textsc{external}: enters the mass identity $P(i)+2S(i)=1+2\sigma_0$ and is not derived here & --- & --- & This work; \cite{b12a} \\
+$\mu$                 & Dynamic viscosity of fluid                                & \si{\pascal\second} & \si{\milli\pascal\second} & \cite[p.~4498]{b1} \\
+$\rho$                & Fluid density. Water is taken as $1000~\si{\kilo\gram\per\cubic\meter}$ and platelet-rich plasma as $1025~\si{\kilo\gram\per\cubic\meter}$; neither value is measured here & \si{\kilo\gram\per\cubic\meter} & \si{\kilo\gram\per\cubic\meter} & This work (assumed) \\
+$u(y)$, $v$           & Local fluid velocity                                      & \si{\meter\per\second} & \si{\milli\meter\per\second} & Standard \\
+$u_{\max}$            & Peak velocity in parabolic profile                        & \si{\meter\per\second} & \si{\milli\meter\per\second} & Standard \\
+\end{longtable}\endgroup
+
+\textbf{R-symbol collision.} Four distinct objects use the
+letter $R$ in this dissertation: the hydraulic resistances
+$R_c, R_s, R_{\mathrm{gap}}$ (this table); the depth-correction
+\emph{function} $\Ral$ (Section~\xref{app:units_cutoff}{``Cutoff-Law
+Prefactor Decomposition''}); the Reynolds number $\mathrm{Re}$
+(Table~\xref{tab:units_dimensionless}{A.3}); and the multi-variant ratio
+$\mathcal{R}$ (Eqn~\xref{eqn:multi_variant}{16}). To keep them separate,
+the depth correction is written $\Kdepth$ throughout, with $\Ral$ used
+only as its interpretive alias when the aspect-ratio dependence is being
+emphasized; $\mathcal{R}$ is always script.
+
+\textbf{$P$-symbol collision.} The pressure $P$ of this table and the
+normalised center flow $P(i)$ are different quantities that share a letter
+within this same table. Pressure is always written with a $\Delta$ or a subscript
+($\Delta P$, $p_{\text{center}}$, $p_{\text{side}}$) or as the bare $P$ with
+no argument; the march quantity is \emph{always} written with its row index,
+$P(i)$, and is paired with $S(i)$. The terminal filtrate fraction is
+$F=1-P(N)$, never $1-P$.
+
+\textbf{Outlet pressure equilibration (P1.4).} The two outlet pressures
+$p_{\text{center}}(L_{\mathrm{dev}})$ and $p_{\text{side}}(L_{\mathrm{dev}})$
+are taken equal. This is not an assumption introduced here: the lineage
+source states the resistance-ratio calculation holds ``provided the
+hydrostatic pressures in the output collection areas are kept equal''
+(\cite[p.~4500]{b1}). It is the premise of the closed-form filtrate
+identity (Eqn~\xref{eqn:closed_form}{12}), stated as P1.4 in the formal
+argument of Section~\xref{app:units_quotes}{A.10}; App.~B's C4 carries it as
+premise~(3) of P-C4.1.
+
+\textbf{Unit equivalences.}
+\begin{align*}
+1~\si{\micro\liter\per\minute} &= 1.667 \times 10^{-11}~\si{\cubic\meter\per\second} \\
+1~\si{\nano\liter\per\minute}  &= 1.667 \times 10^{-14}~\si{\cubic\meter\per\second} \\
+1~\si{\kilo\pascal}            &= 1000~\si{\pascal} = 0.145~\text{psi} \\
+1~\text{psi}                   &= 6894.76~\si{\pascal} \\
+1~\si{\milli\pascal\second}    &= 10^{-3}~\si{\pascal\second}
+\end{align*}
+%==============================================================
+% A.3 -- DIMENSIONLESS QUANTITIES  (corrected)
+% Every locator verified against per-page OCR (locatorcheck.py, gate 8b).
+% Every b12a key verified to exist in the derivation record.
+%==============================================================
+\subsection{Dimensionless Quantities}
+\label{app:units_dimensionless}
+
+Table~\ref{tab:units_dimensionless} collects the dimensionless groups. Two
+entries are easily misread: $\fgap$ is defined \emph{per side and per gap},
+which is the origin of the factor of two in the continuity relation, and $F$
+has two distinct forms with different explanatory roles
+(Section~\xref{app:units_equations}{``Equations: Step-by-Step Unit
+Derivations''}). Three symbol collisions are declared in notes below the
+table.
+
+\begingroup\small\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.125\textwidth}
+>{\raggedright\arraybackslash}p{0.245\textwidth}
+>{\raggedright\arraybackslash}p{0.315\textwidth}
+>{\raggedright\arraybackslash}p{0.235\textwidth}@{}}
+\caption{Dimensionless ratios and design parameters. All entries are strictly
+dimensionless; SI and practical columns are omitted.}\label{tab:units_dimensionless}\\
+\toprule Symbol & Name & Defining relation & Source \\\midrule\endfirsthead
+\multicolumn{4}{@{}l}{\footnotesize\itshape Table \thetable\ (continued)}\\
+\toprule Symbol & Name & Defining relation & Source \\\midrule\endhead
+\bottomrule\endlastfoot
+$\fgap$, $\fgap(i)$ & Per-gap filtration fraction (per-side, per-gap) & $Q_{\mathrm{gap}}(i) = \fgap(i) \cdot Q_c(i-1)$ & \cite[p.~915]{b5}, \cite[p.~4498]{b1} \\
+$\fgap(\text{ref})$ & Reference $\fgap$ in the Xia 2022 corrected scaling & Xia 2022 corrected Eqn~1 & \cite[p.~1]{b3} \\
+$\fgap^*$ & Empirical threshold $\fgap$ for cutoff (read visually) & ``the filtration fraction per gap below which the beads of a specific diameter are consistently'' retained & \cite[p.~4500]{b1} \\
+$F_{\mathrm{outlet}}$ & Filtrate fraction from the outlet divider & $F_{\mathrm{outlet}}=2R_c/(R_s+2R_c)$; \emph{contains no} $\fgap$ & Eqn~\xref{eqn:closed_form}{12}; this work, under the outlet condition of \cite[p.~4500]{b1} \\
+$F_{\mathrm{recursion}}$ & Filtrate fraction from the per-gap march & $F_{\mathrm{recursion}}=1-\prod_i(1-2\fgap(i))$ & Eqn~\xref{eqn:F_product}{13}; derived from Eqn~3 of \cite[p.~4498]{b1} \\
+$F_{\mathrm{V1}}$, $F_{\mathrm{V3}}$ & Filtrate fraction at the Dinh V1 and V3 variants & Closed form, paper, or COMSOL & \cite[p.~919]{b5} \\
+$\sigma_F$ & One-SD experimental uncertainty in $F$. \emph{Not} the side-flow ratio $\sigma(i)$ of Table~\xref{tab:units_fluid}{A.2}: see the collision note & Propagated from measurement & \cite[p.~919]{b5} \\
+$\alpha=h/w_{\mathrm{ch}}$ & Channel aspect ratio & --- & This work; the resistance series it enters is \cite[p.~875]{b6} \\
+$\ud$ & Reduced size ratio, $\ud=\dcrit/w_c$ & Sets the plateau ($\ud\ge0.035$) and foot ($\ud<0.012$) bins & \cite{b12a}\,(\texttt{kappa\_bins}) \\
+$x$ & Reduced skim width, $x=\skimw/w_c$ & root of $\fgap = 3x^2 - 2x^3$ & \cite{b12a}\,(\texttt{skim\_invert}); \cite[p.~656]{b17} \\
+$\beta$ & Cutoff $\fgap$-scaling exponent & $\beta=\partial\ln\dcrit/\partial\ln\fgap=\tfrac12$ (empirical plateau fit $\approx0.51$) & \cite{b12a}\,(\texttt{exponents}); App.~A, Result~\xref{res:exponents}{6} \\
+$\gamma$ & Cutoff $w_c$-scaling exponent & $\gamma=\partial\ln\dcrit/\partial\ln w_c=1$ (empirical plateau fit $\approx1.02$) & \cite{b12a}\,(\texttt{exponents}); App.~A, Result~\xref{res:exponents}{6} \\
+$\mathrm{Re}$ & Reynolds number & $\mathrm{Re}=\rho U L_{\mathrm{char}}/\mu$ & \cite{b13}, which defines ``$\mathrm{Re}$ is the Reynolds number'' \\
+$\varepsilon$ & \emph{Source notation, not a dissertation variable.} In the deterministic-lateral-displacement literature $\varepsilon$ is the row-shift fraction, and the cross-family comparison of Section~\xref{app:units_crosslineage}{``Cross-Lineage Validation''} quotes prefactors ``across $\varepsilon=0.01$--$0.5$'' in that sense. It is never used as a CIF quantity here & quoted only & \cite{b17,b22} \\
+$\Pi$ & Cumulative product (in $F_{\mathrm{recursion}}$) & $\Pi = \prod_i (1 - 2 \fgap(i))$ & Derived from Eqn~3 of \cite[p.~4498]{b1} \\
+\end{longtable}\endgroup
+
+\textbf{Convention.} $\fgap$ is the \emph{per-side, per-gap} extraction
+fraction. The total bilateral extraction at gap row $i$ is $2\fgap(i)$, which
+is the origin of the factor of $2$ in the continuity equation (Eqn~3 of
+\cite[p.~4498]{b1}) and in the closed-form identity numerator $2R_c$.
+
+\textbf{Aspect-ratio symbol.} This appendix writes the channel aspect ratio as
+$\alpha=h/w_{\mathrm{ch}}$ and reserves $\beta$ for the cutoff-law scaling
+exponent. This is the canonical dissertation convention and supersedes the
+alternatives. Note that the reference mathematics takes the aspect ratio as a
+parameter literally named \texttt{beta} (\texttt{c2(beta)},
+\texttt{K\_depth(beta)}, evaluated at $0.80/1.40/2.69$). When reading code,
+\texttt{beta} is this appendix's $\alpha$; when reading this appendix, $\beta$
+is never an aspect ratio.
+
+\textbf{$\sigma$-symbol collision.} $\sigma_F$ here is a \emph{standard
+deviation}, propagated from measurement. It is not the side-flow ratio
+$\sigma(i)$, $\sigma_0$ of Table~\xref{tab:units_fluid}{A.2}, which is a march
+variable. The rule: a subscripted $\sigma$ with a measured quantity in the
+subscript ($\sigma_F$, and $\sigma_{F_{V1}}$, $\sigma_{F_{V3}}$,
+$\sigma_{\mathrm{ratio}}$ in the validation subsection) is always a dispersion;
+$\sigma$ carrying a row index or the subscript $0$ is always the march
+variable.
+
+\textbf{Exponent vs.\ lamina-width collision.} $\beta$ and $\gamma$ are the
+cutoff-law \emph{scaling exponents} (log--log slopes; symbolic $\tfrac12$ and
+$1$; empirical plateau fits $\approx0.51$ and $\approx1.02$). These must not be
+confused with the Inglis first-streamline \emph{lamina width}, which this
+appendix writes as $b$ (Inglis writes $D_c=2\beta$; rendered $D_c=2b$ here,
+Table~\xref{tab:units_geom}{A.1}). The prototype implementation overloads the
+name \texttt{beta} for both (\texttt{scaling.beta} for the exponent,
+\texttt{Dc=2*beta} for the width); this appendix disambiguates them as $\beta$
+(exponent) and $b$ (width). The exponents are the falsifiable functional-form
+test of the cutoff law: a single global power law over the full range is
+rejected at reduced $\chi^2\approx30.6$, while the plateau exponents lie within
+the confidence intervals of $\beta=\tfrac12$, $\gamma=1$, surviving
+digitization noise.
+
+%==============================================================
+% A.4 -- CUTOFF-LAW PREFACTOR DECOMPOSITION  (complete, corrected)
+%
+% Requires, in the preamble:
+%   \input{tex/kernel_pairing_values}   % generated by gen_kernel_pairing.py
+% and \usepackage{longtable}.
+%==============================================================
+\subsection{Cutoff-Law Prefactor Decomposition (selectivity axis)}
+\label{app:units_cutoff}
+
+The selectivity axis is governed by the cutoff law
+\begin{equation}
+\dcrit = \kapp \, w_c \, \sqrt{\fgap/3},
+\qquad
+\skimw = w_c\sqrt{\fgap/3},
+\label{eqn:cutoff_law}
+\end{equation}
+in which $\skimw$ is the leading term of the exact dividing-streamline
+inversion of the skim cubic $\fgap = 3x^2 - 2x^3$ (Inglis $\varepsilon$-cubic,
+\cite[p.~656]{b17}; $x=\skimw/w_c$), and $\kapp$ is the \emph{apparent}
+prefactor that maps the idealized skim width onto the measured cutoff
+diameter. \textbf{$\kapp$ is a plateau-region constant, not a universal
+one.} It is constant only for $\ud\ge0.035$; below that the prefactor
+becomes a function of the cutoff itself and Eqn~\ref{eqn:cutoff_law}
+becomes implicit. Every use of the numerical value $\kappVal$ in this
+appendix is a plateau-region use. The prefactor factorizes as
+\begin{equation}
+\kapp = \kster \cdot \Kin \cdot \Kdepth \cdot \sqrt{c}\cdot C
+       = 2 \cdot 1 \cdot \Ral \cdot \sqrt{c}\cdot C .
+\label{eqn:kappa_decomp}
+\end{equation}
+
+% longtable, NOT a float: eleven paragraph-length rows do not fit one page,
+% and an oversized float is reported as "Float too large" and dropped. No bare
+% l or c column sits beside an X column. Fractions sum to 0.92, budgeting the
+% inner \tabcolsep gutters at 4pt.
+\begingroup\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.085\textwidth}
+>{\raggedright\arraybackslash}p{0.185\textwidth}
+>{\raggedright\arraybackslash}p{0.375\textwidth}
+>{\raggedright\arraybackslash}p{0.095\textwidth}
+>{\raggedright\arraybackslash}p{0.16\textwidth}@{}}
+\caption{Cutoff-law prefactor factors. All strictly dimensionless. $\kster$,
+$\Kin$ and the depth factor $\Kdepth$ are determined from first principles or
+single-gap CFD; the product
+$\sqrt{c}\,C$ is the single remaining calibrated (open)
+quantity.}\label{tab:units_cutoff}\\
+\toprule Symbol & Name & Value / defining relation & Status & Source \\\midrule\endfirsthead
+\multicolumn{5}{@{}l}{\footnotesize\itshape Table \thetable\ (continued)}\\
+\toprule Symbol & Name & Value / defining relation & Status & Source \\\midrule\endhead
+\bottomrule\endlastfoot
+$\kapp$ ($\equiv\kg$) & Apparent cutoff prefactor, cubic branch. \textsc{establishes} & $\dcrit = \kapp w_c\sqrt{\fgap/3}$; \emph{supplied} $\kapp = \kappVal$, 95\% CI $[\kappCIlo,\kappCIhi]$, $\mathrm{CV}=\kappCV\%$, plateau $\ud\gtrsim0.035$. \emph{Refit} from the digitised points gives $\kappFitFull$ ($=\kappFit$ to 4~d.p.); the two agree to four significant figures and differ by $\kappSuppliedGap$ relative. Use $\kappVal$ in prose and equations; use $\kappFit$ only where the fit itself is the subject & \textsc{fitted} & \cite[p.~4500, Fig.~3]{b1} digitization; \cite{b12a} \\
+$\kF$ & Prefactor paired with the finite-aspect-ratio lamina kernel $F_{\mathrm{lam}}$ & $\kF=\kg\sqrt{\overline{c_2(\acal)}/3}=\kFval$ at the \emph{assumed} $80~\si{\micro\meter}$ calibration depth. \textbf{The kernel $F_{\mathrm{lam}}$ is exact; the scalar $\kF$ is not.} It is an array-level transferred prefactor obtained from the cubic-branch value using the mean $c_2$ over an assumed calibration set, so it inherits an unreported depth. \textbf{Not interchangeable with $\kapp$}; see the pairing rule below and the $\acal$ entry & \textsc{derived} from an \textsc{external} input & This work, computed from \cite{b12a} (\texttt{c2}, \texttt{plateau\_kappa}) \\
+$\kster$ & Steric factor & $\boldsymbol{=\kstericVal}$: cutoff radius $=$ lamina width $\Rightarrow$ cutoff diameter $=2\times$lamina ($D_c=2b$; $b$ is defined in Table~\xref{tab:units_geom}{A.1}) & \textsc{derived}, corroborated & \cite[p.~656]{b17}; \cite[p.~917]{b5} main text; \cite{b12a} (\texttt{KAPPA\_STERIC}) \\
+$\Kin$ & In-plane funnelling factor & $=\KinVal$ (single-gap CFD Runs A/B/C; no in-plane aperture funnelling) & \textsc{numerical} & \cite{b7}; \cite{b12a} (\texttt{K\_INPLANE}) \\
+$\Kdth(\alpha)$ & Depth factor, \emph{analytic} & $\Kdth=\sqrt{3/c_2(\alpha)}=\lim_{x\to0}\skimw_{3D}/\skimw_{2D}$ from the rectangular-duct law. $\KdepthAnalyticShallow/\KdepthAnalyticMid/\KdepthAnalyticDeep$ at $\alpha=0.80/1.40/2.69$ & \textsc{derived} & \cite[p.~875]{b6}; \cite{b12a} (\texttt{c2}, \texttt{K\_depth}) \\
+$\Kdcfd(\alpha)$ & Depth factor, \emph{CFD} & Single-gap CFD: $\KdepthCfdShallow/\KdepthCfdMid/\KdepthCfdDeep$ at the same three $\alpha$. Agreement $|\Kdcfd-\Kdth|/\Kdcfd\le0.6\%$ (actual $\KdepthDevShallow/\KdepthDevMid/\KdepthDevDeep\%$, i.e.\ at most $\KdepthDevMax\%$, the largest rounded up to a bound, at $\alpha=1.40$; the denominator is the CFD anchor, matching the gated \texttt{cfd\_kdepth\_obs}) & \textsc{numerical} & \cite{b7}; \cite{b12a} \\
+$\acal$ & Calibration aspect-ratio array & $(0.8000,\,0.6400,\,0.5333)$ at $w_c=100/125/150~\si{\micro\meter}$ \emph{assuming} $h_{\mathrm{cal}}=80~\si{\micro\meter}$. The depth is \textbf{unreported}: a genuine free parameter, and an \textsc{external} input rather than a computed quantity. Two distinct sensitivities follow and must be named apart; see below & \textsc{external}, undischargeable & This work (assumed); the assumption is recorded in \cite{b12a} \\
+$c$ & Per-device over-extraction factor. \textsc{competes} with the finite-particle account for the same residual & Enters as $\sqrt{c}$; the cumulative per-gap over-extraction tied to gap count $N$. \emph{Lower-case $c$ under the radical is not the finite-particle factor $C$ below}: see the collision note & \textsc{proposed} & \cite{b12a} \\
+$C$ & Cumulative finite-particle factor & Body-averaged finite-sphere displacement vs.\ point streamline; \emph{open}, to be computed by a finite-body method of the MOPSA class (\cite[p.~2]{b19}). See the three-layer note below: the \emph{mechanism} is established, the \emph{method class} is available, the \emph{factor} is this work's parameterization & \textsc{proposed}, uncomputed & \cite[p.~359]{b21} (mechanism); \cite[p.~2]{b19} (method class) \\
+$\sqrt{c}\,C$ & Open residual (two factors, three gaps). \textsc{establishes} the cutoff magnitude; its \emph{split} does not & $\Kdepth\sqrt{c}\,C=\kapp/\kster=\residualFolded$ (depth-folded, $\alpha$-independent); $\sqrt{c}\,C=\kapp/(\kster\Kdcfd)=\residualSepShallow/\residualSepMid/\residualSepDeep$ over $\alpha=0.80/1.40/2.69$, depth-separated. \emph{Never print the two conventions as one range} & \textsc{fitted} / \textsc{proposed} & \cite{b12a} \\
+\end{longtable}\endgroup
+
+\textbf{$c$/$C$ collision.} Lower-case $c$ is the per-device over-extraction
+factor and upper-case $C$ the cumulative finite-particle factor. They are
+different quantities that differ only by case, and they appear together in a
+single product, $\sqrt{c}\,C$, which is the most misreadable arrangement
+possible. The radical is the only typographic cue: $c$ is \emph{always} under
+it, $C$ \emph{never}. When either appears alone, restate which it is.
+
+\textbf{One open residual, two factors, three gaps.} The residual is
+\emph{derived from a fitted prefactor}, not measured: $\kapp$ is calibrated
+on the Gifford plateau~\cite{b1,b12a}, and published single-lineage data fix
+the product $\sqrt{c}\,C$ but not its split into $c$ and $C$~\cite{b12a}.
+Within the model's premises the transport lemma makes $\kster=\kstericVal$
+exact, so the residual $\sqrt{c}\,C$ must arise where a premise fails; the three
+model gaps the decomposition tracks are the flat-lamina idealisation, the wall
+porosity $\phi=G/\Lambda$, and finite-particle displacement~\cite{b12a}.
+Yet the factors number two: $C$ is the finite-particle displacement alone
+(the anti-Zweifach--Fung attraction to the low-flow branch~\cite{b21}), and
+because the decomposition $\kapp=\kster\Kin\Kdepth\,\sqrt{c}\,C$ closes by
+construction ($\kster=\kstericVal$, $\Kin=\KinVal$), $\sqrt{c}\,C$ is the
+entire residual~\cite{b12a}, so $\sqrt{c}$, the per-gap over-extraction, is
+that residual divided by $C$ and carries the flat-lamina and porosity
+contributions together without isolating either. This grouping follows from
+the closure, not from any statement in the record, which names porosity as a
+source but assigns it to no factor~\cite{b12a}; neither the single-gap solve
+nor the yield identity resolves the split, which is what leaves the residual
+open~\cite{b12a}.
+
+\textbf{Calibration depth (caveat).} $\kapp = \kappVal$ is fit on the
+Gifford Fig.~3 array, whose caption reports only the three center-channel
+widths ($w_c = 100,125,150~\si{\micro\meter}$) and \emph{no depth}. The
+value $\alpha = 0.8$ used for $\Kdepth$ borrows the $80~\si{\micro\meter}$
+depth of the \emph{separate} Fig.~4 demonstration device at
+$w_c = 100~\si{\micro\meter}$; it is therefore an assumption, and
+$\Kdepth$ in fact varies across the three calibration widths
+($\alpha = 0.8000/0.6400/0.5333$ at $w_c = 100/125/150~\si{\micro\meter}$,
+giving $\Kdth = \KdepthCalNarrow/\KdepthCalMid/\KdepthCalWide$). The depth
+correction is therefore $11$--$19\%$ across the calibration channels, not
+negligible. Crucially, $\Kdepth$ is folded into the \emph{apparent}
+prefactor as an interpretive factor and is \emph{not} applied to the
+calibration data (which collapse more tightly on the parabolic $\skimw$),
+so it does not shift the fitted $\kapp = \kappVal$; it enters only the
+residual decomposition (depth-folded $\kapp/\kster = \residualFolded$
+vs.\ depth-separated $\sqrt{c}\,C$). Gifford states three device depths, none of them for this array:
+$80\pm3~\si{\micro\meter}$ for the Fig.~4 device (\cite[p.~4500, Fig.~4
+caption]{b1}), $125~\si{\micro\meter}$ for the four Fig.~5 devices
+(\cite[p.~4501, Fig.~5 caption]{b1}) and $150\pm5~\si{\micro\meter}$ for
+the Fig.~6 platelet-enrichment device (\cite[p.~4502, Fig.~6 caption]{b1}),
+so the borrowed $80~\si{\micro\meter}$ is the shallowest depth the paper
+reports. \emph{The true array depth is not
+known and is not inferred here}; the consequences of that ignorance are
+quantified in the two $\acal$ sensitivities below.
+
+\textbf{The two $\acal$ sensitivities, named apart.} Both are correct and
+they answer different questions. Do not call either ``the
+$\beta_{\mathrm{cal}}$ swing'' without saying which.
+\begin{itemize}
+\item $\Delta N_{\mathrm{kernel|depth}} = +26.9\%$: the row-count
+inflation of an $F_{\mathrm{lam}}$ design over a cubic design at
+$h_{\mathrm{cal}}=80~\si{\micro\meter}$ (against the cubic baseline
+$N=2496$), falling to $+3.9\%$ at $150~\si{\micro\meter}$.
+\textbf{Conditional on adopting $F_{\mathrm{lam}}$}: if the kernel is
+never switched, $h_{\mathrm{cal}}$ does not enter $N$ at all, because
+$\kg$ is fitted self-consistently on the cubic. This is the single
+dominant risk the design code flags: the one number that
+swings $N$ by roughly $27\%$. \emph{Provenance note: unlike every other
+figure in this subsection, these three numbers come from a calibration-depth
+sweep that is not reproduced in the derivation record and are not gated.}
+\item $\Delta_{\mathrm{transfer}} = \transferDecl\%$: the within-array
+transfer bias, $c_2(0.53)/c_2(0.80)-1$, for the array \emph{as declared}
+$(0.80,0.64,0.53)$; $\transferExact\%$ using the exact ratio $0.5333$. The
+exact value is canonical in this appendix (a two-decimal input should not
+drive a four-decimal output); the declared-array figure is the one the
+verification registry gates and is labelled as such wherever it appears.
+\end{itemize}
+
+\textbf{Steric criterion (adjudicated).} The cutoff radius equals the
+extracted-lamina width (Dinh main text, $a<w$; \cite[p.~917]{b5}), and the
+cutoff \emph{diameter} is therefore twice the lamina width, matching
+Inglis's $D_c = 2\beta$ (\cite[p.~656]{b17}; $D_c=2b$ in this appendix's
+notation) and the Inglis--Herman restriction
+of particles ``geometrically restricted away from walls by a distance equal
+to their radius'' (\cite[p.~1724]{b18}). Hence
+$\boldsymbol{\kster = \kstericVal}$. The Dinh Fig.~1 caption phrasing
+``about half the width of the extracted flow lamina'' (equivalent to
+$\kster=1$) is \emph{deselected} in favor of the main text and Inglis.
+\emph{This is an adjudication between two readings of the same paper, not a
+preference}: Dinh's main text and Fig.~1 caption are formally inconsistent,
+so one must be retracted, and the main text is selected because it agrees
+with the two independent statements of the same criterion in \cite{b17} and
+\cite{b18}.
+
+\textbf{Finite-particle factor $C$: three layers, kept apart.} The
+residual has physically motivated candidate explanations; its
+finite-particle component has not yet been computed directly. The evidence
+comes at three different strengths.
+\begin{enumerate}
+\item \emph{Established physical mechanism.} A finite sphere near a
+bifurcation is drawn toward the \emph{low-flow-rate} branch, the
+anti-Zweifach--Fung effect (Doyeux \emph{et al.}, \cite[p.~359]{b21}: the
+attraction is ``directed towards the low flow rate branch''), which in CIF
+is the side channel. Finite particles are therefore over-extracted
+relative to a point-streamline model, so the streamline that just excludes
+a particle is narrower than its radius and the measured cutoff diameter
+exceeds the idealized steric value $2\skimw$. This is the physical content
+of $C>1$.
+\item \emph{Available computational methodology.} Finite-body trajectory
+models of the MOPSA class (\cite[p.~2]{b19}) can represent particles as
+finite rigid objects rather than point tracers; the paper ``treats the
+particle as a two-dimensional rigid circular object instead of a single
+point.''
+\item \emph{The factor $C$ itself.} A dissertation-specific
+parameterization of the remaining finite-particle contribution, deferred
+to finite-particle work. It is \emph{not} independently established by
+either \cite{b19} or \cite{b21}; those support the mechanism and the
+method, not this multiplicative form.
+\end{enumerate}
+Its sign, mechanism and scale are corroborated on an unrelated device
+family in Section~\xref{app:units_crosslineage}{``Cross-Lineage Validation''}.
+
+\textbf{Foot region and retraction.} For $\ud<0.012$ the collapse degrades
+to a \emph{sub-steric, recovery-suppressed} foot ($\kapp\to\footKappa$,
+below the steric floor $\kster\Kdcfd\approx\stericFloorShallow$).
+\emph{Both $\plateauKappa$ and $\footKappa$ are binned means, not
+extremes}: $\plateauKappa$ is the mean of the $n=\plateauN$ plateau bin
+($\ud\ge0.035$) and $\footKappa$ the mean of the $n=\footN$ foot bin
+($\ud<0.012$). The fifteen individual points span $\kappaSpanLo$ to
+$\kappaSpanHi$; that span is a different statistic and must not be quoted
+as the ramp. Depth cannot account for the foot because
+$\Kdepth\in[0.81,0.98]$ cannot move $\kapp$ from $\plateauKappa$ to
+$\footKappa$.
+
+\emph{Scope of the evidence, stated explicitly.} The foot bin is composed
+of three points at $d=1.01~\si{\micro\meter}$ (Gifford Fig.~3 rigid beads,
+$w_c=100/125/150~\si{\micro\meter}$), roughly $1~\si{\micro\meter}$
+particles, well below the $2.8$--$4.8~\si{\micro\meter}$ platelet cutoffs
+this framework targets, so the foot lies outside the regime the
+dissertation's claims cover. The corroborating observation comes from a
+\emph{different} device and a \emph{different} particle class: Dinh report
+that ``recovery of the smallest 2 fL PLTs ($a \approx 1~\si{\micro\meter}$)
+in the filtrate was consistently lower than the percent of extracted fluid
+volume'' (\cite[p.~917]{b5}), and attribute it to ``crowding of the flow
+laminae near the filtration gaps by retained'' platelets, which ``impeded
+the free outflow of the smallest PLTs'' (\cite[p.~917]{b5}). That is a
+concentration-dependent crowding effect in a platelet suspension, so its
+bearing on the dilute rigid-bead foot is by analogy of sign only. Recast in
+the language of this decomposition it corresponds to an effective sampled
+lamina narrower than nominal
+($\skimw_{\mathrm{eff}}<\skimw_{\mathrm{nominal}}$), so that
+$\kapp=\kster(\skimw_{\mathrm{eff}}/\skimw_{\mathrm{nominal}})$ falls below
+steric; the recasting is this work's inference, the crowding mechanism is
+the source's, and the two are not rival accounts. Platelets are discoid and
+outside the rigid-sphere envelope
+(Section~\xref{app:units_particle}{``Particle and Separation Variables''}),
+so the Dinh observation is offered as a mechanistic analogy of the same
+sign, not as evidence within scope, and no cutoff number is drawn from it.
+\textbf{The knee and foot mechanisms remain open}: the present data
+establish that the prefactor is size-dependent, but not which physical
+account of that dependence is correct.
+
+\textbf{The $f_{\mathrm{eff}}$ retraction is narrow.} A
+\emph{size}-dependent effective flow fraction $f_{\mathrm{eff}}(d)$ remains
+a competing account of the knee, stated in its strongest form and not
+resolved here: the published data do not discriminate between it and the
+finite-particle account, because both predict the same sign and the same
+qualitative size dependence. It is \emph{not} retracted. The cutoff law and
+the yield law are independent of which account is correct, since neither
+account enters them; only the \emph{interpretation} of
+the residual turns on it. Retracted: $f_{\mathrm{eff}}(N)$. Open and
+unresolved: $f_{\mathrm{eff}}(d)$.
+
+\textbf{Scaling equivalence.} Eqn~\ref{eqn:cutoff_law} is equivalent to
+$D_c \propto w_c\sqrt{\fgap}$ with proportionality constant
+$\kapp/\sqrt{3} \approx \kappOverRootThree$; the $1/3$ is carried
+explicitly inside the radical so that $\kapp = \kappVal$ is unambiguous.
+
+% =====================================================================
+% KERNEL-PREFACTOR PAIRING.
+% Every COMPUTED number in the block below is a macro from
+% tex/kernel_pairing_values, generated by gen_kernel_pairing.py from the
+% derivation record and regenerated on every build. Do not type a computed
+% value here; regenerate. Three kinds of literal remain, all deliberate:
+%   * INPUTS -- the h_cal/w_c ratios 0.8000/0.6400/0.5333 (and their declared
+%     two-decimal forms), and the Dinh geometry h = 140 um, f_gap = 1.04e-4.
+%     An input is not generated; it is assumed, and is labelled as such.
+%   * the flagged EXCEPTION, below.
+% An earlier revision claimed "every number is a macro" while three computed
+% leading-order values were still typed. Counting exceptions is fragile; the
+% rule is now stated by KIND.
+% The ONLY exception is flagged in the text where it appears: +26.9%, +3.9%
+% and N = 2496 come from a calibration-depth sweep the record does not
+% reproduce. Every other number here, including the leading-order values
+% quoted to show what the approximation costs, is a macro.
+% (Before this revision every one of the 31 numbers in this block was a typed
+% literal sitting under a comment that said they were generated.)
+% =====================================================================
+
+\textbf{Kernel--prefactor pairing rule.}
+$\kapp$ is meaningless without the kernel it was fitted with. Two kernels
+are in use: the leading-order skim branch $g:\;\skimw=w_c\sqrt{\fgap/3}$
+with prefactor $\kg=\kappVal$; and the exact lamina-flux kernel
+$F_{\mathrm{lam}}$ with prefactor $\kF$. Declare a pair and use \emph{that
+kernel at all three call sites}: the inversion, the schedule, and the scale
+$\dcrit=\kappa_{\mathcal K}\skimw$.
+
+\textbf{Conversion.} Using the \emph{array-mean} $c_2$ over the calibration
+widths:
+\begin{equation}
+\kF=\kg\sqrt{\overline{c_2}/3}=\kg\big/\sqrt{3/\overline{c_2}},\qquad\overline{c_2}=\tfrac13\textstyle\sum_i c_2(\alpha_{\mathrm{cal},i}),
+\label{eqn:kernel_pairing}
+\end{equation}
+with $\acal=h_{\mathrm{cal}}/w_c=0.8000/0.6400/0.5333$ at the \emph{assumed}
+$h_{\mathrm{cal}}=80~\si{\micro\meter}$, giving
+$\overline{c_2}=\ctwobar$ and $\kF=\kFval$.
+
+\textbf{Two sources of numerical discrepancy in that formula.} Neither is
+pedantry; both move the third significant figure.
+\begin{enumerate}
+\item \emph{Do not average the depth factors.}
+$\sqrt{3/\overline{c_2}}=\depthEff$ is an \emph{effective} depth factor
+derived from the mean $c_2$. The arithmetic mean of the three $\Kdepth$
+values gives $\kF=\kFmeanK$ instead, $\kFmeanKerr\%$ off, because the mean
+of the square roots is not the square root of the mean.
+\item \emph{Do not evaluate at one aspect ratio.} Using $\Kdth(0.80)$
+alone gives $\kFoneAlpha$, $\kFoneAlphaErr\%$ low. The conversion is an
+array quantity.
+\end{enumerate}
+
+\textbf{What crossing costs, computed.} At the Dinh geometry
+($h=140~\si{\micro\meter}$, $\fgap=1.04\times10^{-4}$). Throughout this
+table $\skimw_g$ and $\skimw_F$ are the \emph{exact} inversions of the
+cubic and of $F_{\mathrm{lam}}$ respectively, so that the two branches are
+compared like for like, and the percentages are computed on those exact
+widths at full precision, not from the rounded cells. The leading term
+$w_c\sqrt{\fgap/3}$ of $\skimw_g$ is not used here: substituting it would
+give $\dcritGGleadIn/\dcritGGleadOut$ for the first column, $\choiceLeadGap\%$
+below the tabulated $\dcritGGIn/\dcritGGOut$, and would raise the
+kernel-choice figures above the tabulated $+\choiceIn\%/+\choiceOut\%$.
+
+\begin{center}\footnotesize
+\begin{tabular}{@{}llrrrr@{}}
+\toprule
+station & $\alpha=h/w_c$ & $\kg\skimw_g$ & $\kF\skimw_{F}$ & $\kF\skimw_g$ & $\kg\skimw_{F}$ \\
+\midrule
+inlet ($w_c=75$) & $\alphaDIn$ & $\dcritGGIn$ & $\dcritFFIn$ & $\dcritFgIn$ & $\dcritgFIn$ \\
+outlet ($w_c=52$) & $\alphaDOut$ & $\dcritGGOut$ & $\dcritFFOut$ & $\dcritFgOut$ & $\dcritgFOut$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The first two columns are the \emph{self-consistent} pairs; the last two
+are crossings. Reading the inlet row: the kernel \emph{choice} alone
+already moves the answer by $+\choiceIn\%$ ($\dcritGGIn$ vs
+$\dcritFFIn~\si{\micro\meter}$), rising to $+\choiceOut\%$ at the outlet.
+Crossing a prefactor onto the other kernel's lamina shifts the result by a
+further $+\crossUp\%$ or $\crossDown\%$; one pair of figures covers both
+rows because the lamina width cancels, leaving the pure prefactor ratio
+$\kF/\kg-1$ and its inverse. The mismatch is not detected automatically and
+is therefore a potentially silent modelling error.
+
+\textbf{Which to use.} The specification is directive, not neutral: until
+the calibration depth is measured, \emph{use the cubic branch with $\kg$},
+which is self-consistent with the fit, and report the transfer-bias band
+as an uncertainty rather than applying a correction whose calibration
+cannot be verified. This dissertation's cutoff law
+(Eqn~\ref{eqn:cutoff_law}) and its entire validation path are on the cubic
+branch. The design code carries both pairs: its \texttt{design} function
+defaults to the cubic pair, and the physics layer that the design-map test
+marches (App.~B, P-C8.2) runs on $F_{\mathrm{lam}}$. The
+pairing rule is what keeps the two apart. See the $\acal$ entry for the
+row-count consequence of switching
+($\Delta N_{\mathrm{kernel|depth}}=+26.9\%$).
+
+\textbf{Rounding convention for $\acal$.} The array is declared in the
+design code as $(0.80,\,0.64,\,0.53)$, but $0.53$ is a
+two-decimal rounding of $h_{\mathrm{cal}}/w_c=0.5333$. This appendix uses
+the \emph{exact} ratio: $\overline{c_2}=\ctwobar$ and $\kF=\kFval$. Under
+the declared rounding they are $\ctwobarDecl$ and $\kFdecl$. The same split
+appears in the transfer bias: $\transferExact\%$ exact against
+$\transferDecl\%$ for the declared array, which is the figure the
+verification registry gates. Both are correct for what they are; the exact
+ratio is canonical here and the declared-array figure is labelled as such
+wherever it appears.
+
+%==============================================================
+% A.5 -- PARTICLE AND SEPARATION VARIABLES  (complete, corrected)
+%==============================================================
+\subsection{Particle and Separation Variables}
+\label{app:units_particle}
+
+Table~\ref{tab:units_particle} gives the particle variables. The
+distinction that matters is between a volume-equivalent sphere and a real
+discoid platelet: the cutoff law returns the former.
+
+% longtable for consistency with A.1-A.4. No bare l beside an X column, and the
+% fractions sum to 0.92 to budget the inner \tabcolsep gutters.
+\begingroup\small\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.095\textwidth}
+>{\raggedright\arraybackslash}p{0.46\textwidth}
+>{\raggedright\arraybackslash}p{0.075\textwidth}
+>{\raggedright\arraybackslash}p{0.115\textwidth}
+>{\raggedright\arraybackslash}p{0.175\textwidth}@{}}
+\caption{Particle-property variables, together with the one
+separation-performance quantity they set: the cutoff diameter. The filtrate
+fraction $F$ and its variants are in
+Table~\xref{tab:units_dimensionless}{A.3}, and the validation dispersions in
+the V\&V table.}\label{tab:units_particle}\\
+\toprule Symbol & Quantity & SI unit & Practical unit & Source \\\midrule\endfirsthead
+\multicolumn{5}{@{}l}{\footnotesize\itshape Table \thetable\ (continued)}\\
+\toprule Symbol & Quantity & SI unit & Practical unit & Source \\\midrule\endhead
+\bottomrule\endlastfoot
+$\dcrit$ & \emph{Critical (cutoff) diameter} (canonical; output of Eqn~\xref{eqn:cutoff_law}{1}) & \si{\meter} & \si{\micro\meter} & \cite{b12a}; \cite[p.~656]{b17} \\
+$D_c$, c.d. & Cutoff diameter (Xia/lineage symbol, $\equiv \dcrit$); Xia introduces the abbreviation as ``particles above a certain size (or `critical diameter', c.d.)'' & \si{\meter} & \si{\micro\meter} & \cite[p.~2 (Sci Rep PDF pagination)]{b2} \\
+$a$ & Particle radius, as used in the \emph{adopted} capture criterion $a<w$ (main text). \emph{Not} the ``effective radius'' of the deselected Fig.~1 caption on p.~916; see the steric adjudication in Section~\xref{app:units_cutoff}{``Cutoff-Law Prefactor Decomposition''} & \si{\meter} & \si{\micro\meter} & \cite[p.~917]{b5} \\
+$D=2a$ & Particle diameter (sphere) & \si{\meter} & \si{\micro\meter} & Standard \\
+$V_{\mathrm{sph}}$ & \emph{Sphere} volume, $V_{\mathrm{sph}}=\tfrac43\pi a^3$. Used for the equivalent-sphere conversion only; real platelets are discoid and this is \emph{not} their volume formula & \si{\cubic\meter} & fL ($\equiv \si{\micro\meter\cubed}$) & Standard \\
+$V_{12}$ & Dinh platelet-volume \emph{classification threshold}, $12$~fL: ``cell volumes larger than 12 fL are commonly considered `large''', the P-LCR cut used to define ``$>12$~fL recovery''. \emph{Not} a minimum retained volume & \si{\cubic\meter} & fL & \cite[p.~913]{b5} \\
+\end{longtable}\endgroup
+
+\textbf{$D$/$d$ collision: diameter-symbol reconciliation.} $\dcrit$ is canonical for the
+cutoff law; $D_c$ is its lineage synonym (Xia). Neither is to be confused
+with the deprecated depth symbol $d$ (use $h$), nor with the hydraulic
+diameter $D_h$ (Table~\xref{tab:units_geom}{A.1}). For a sphere $D=2a$.
+
+\textbf{Two further case collisions, declared.} $V$ is a volume; lower-case
+$v$ is a local fluid velocity (Table~\xref{tab:units_fluid}{A.2}).
+$V_{\mathrm{sph}}$ and $V_{12}$ are one quantity, a volume, read two ways.
+A particle radius is written $a$ throughout and \emph{never} $r$. Lower-case
+$r$ is not used as a variable anywhere in this appendix, and reserving it
+keeps it clear of the resistances $R_c$, $R_s$, $R_{\mathrm{gap}}$ and their
+aliases (Table~\xref{tab:units_fluid}{A.2}).
+
+\textbf{Volume convention.} $1~\text{fL} = 1~\si{\micro\meter\cubed}$
+(by definition: $1$~femtoliter $= 10^{-15}$~liter
+$= 10^{-18}~\si{\meter\cubed} = (10^{-6})^3~\si{\meter\cubed}$).
+For comparison with the rigid-sphere model, $12$~fL corresponds to an
+equivalent-sphere diameter
+$D = 2\,(3V_{\mathrm{sph}}/(4\pi))^{1/3} \approx 2.84~\si{\micro\meter}$.
+\emph{This is a geometric conversion, not a measured platelet diameter.}
+Dinh report the actual \emph{discoid} platelet as
+$2a \approx 4.8~\si{\micro\meter}$ at $12$~fL, which in their own terms is the
+major/equatorial axis of an oblate spheroid, i.e.\ the in-plane one
+(\cite[p.~917]{b5}); the
+$\sim\!1.7\times$ gap between the two reflects the sphere idealization and
+therefore marks a shape-related \emph{limitation} of applying the
+rigid-sphere model to platelets. The model is in scope; real platelets are
+not validated against it. A cutoff diameter
+predicted by Eqn~\xref{eqn:cutoff_law}{1} is therefore an
+\emph{equivalent-sphere} diameter; for discoidal platelets it under-states
+the physical in-plane diameter by this factor.
+
+
+%==============================================================
+% A.6 -- VALIDATION AND UNCERTAINTY QUANTITIES  (complete, corrected)
+%
+% Requires, in the preamble:
+%   \input{tex/validation_values}   % generated by gen_validation_values.py
+%==============================================================
+\subsection{Validation and Uncertainty Quantities (V\&V~20, yield axis)}
+\label{app:units_validation}
+
+Table~\ref{tab:units_validation} lists the validation and uncertainty
+quantities with the COMSOL and reproducibility diagnostics. The framework
+is ASME V\&V~20~\cite{b25}: the comparison error $E=S-D$ is judged against
+a combined validation uncertainty $\uval=\sqrt{\unum^2+\uinput^2+\uD^2}$,
+of which the experimental term $\uD=\FsdVone$--$\FsdVthree$ is by far the
+largest. Each Dinh variant was solved at two mesh levels a ${\sim}5$-fold
+refinement apart (V1: $115{,}904$ and $24{,}783$ elements; V3: $104{,}206$
+and $21{,}448$), fully converged in four Newton iterations,
+\emph{these are the convergence-study meshes}; the production V3 solve used a
+slightly different mesh of $104{,}651$ elements, so the two V3 figures are
+different meshes rather than a discrepancy, and the
+reported $F$ is identical at both~\cite[COMSOL reports; Block~19]{b12}. \emph{That
+bounds $\unum$ at $5\times10^{-5}$ rather than measuring it}: five
+significant figures is the precision to which the flow tables are printed,
+so the true discretisation error is smaller and unresolved. Even as a bound it is at
+least $\uDoverUnum\times$ below $\uD$ ($\uDoverUnumVOne\times$ at V1,
+$\uDoverUnumVThree\times$ at V3).
+
+The remaining term, $\uinput$, is bounded by fabrication tolerance in two
+independent components; the boundary conditions do not contribute
+separately, because $F$ is a ratio of filtrate flow to inlet flow, in
+which the imposed inlet rate and the outlet pressure datum both cancel
+identically. \emph{Out of plane}, the channel-depth tolerance shifts $F$
+by at most $0.031\,\uD$ at V1 and $0.015\,\uD$ at V3 over
+$\pm5~\si{\micro\meter}$~\cite[\S8.6]{b12}. \emph{In plane}, $F$ is
+likewise a channel-resistance \emph{ratio} in which isotropic scaling of
+the widths and lengths cancels to leading order, the only residual being
+the aspect-ratio bracket of the resistance law
+(Eqn~\xref{eqn:gifford5}{5}), which is second order in the depth-fixed
+width perturbation and stays well below the out-of-plane term, so the
+$\uvalExcessMax\%$ bound below already accommodates it. So $\uval$ exceeds $\uD$ by at most
+$\uvalExcessMax\%$ ($\uvalExcessVOne\%$ at V1, $\uvalExcessVThree\%$ at
+V3): to the two decimals given $E/\uval$ equals $E/\uD$, so the reported
+distances are governed by the choice of $\uD$ scale, not by the small
+$\unum$ or $\uinput$ terms. See the SD-vs-SEM note for that choice.
+
+% longtable for consistency with A.1-A.5, and because the fixed p{} columns are
+% what prevent an over-wide cell. Fractions sum to 0.92 to budget the gutters.
+\begingroup\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.175\textwidth}
+>{\raggedright\arraybackslash}p{0.47\textwidth}
+>{\raggedright\arraybackslash}p{0.085\textwidth}
+>{\raggedright\arraybackslash}p{0.19\textwidth}@{}}
+\caption{Quantities used in validation, COMSOL simulation, and
+reproducibility infrastructure, including the ASME V\&V~20 uncertainty
+terms.}\label{tab:units_validation}\\
+\toprule Symbol & Quantity & Unit & Source \\\midrule\endfirsthead
+\multicolumn{4}{@{}l}{\footnotesize\itshape Table \thetable\ (continued)}\\
+\toprule Symbol & Quantity & Unit & Source \\\midrule\endhead
+\bottomrule\endlastfoot
+$|\Delta F_{\mathrm{1D}}|$ & Absolute difference: closed-form $F$ vs.\ recursion endpoint. \emph{A one-dimensional self-consistency check, not the mesh-to-mesh difference} & --- & \cite[\S8.4]{b12} \\
+$\uval$ & Combined validation uncertainty, $\uval=\sqrt{\unum^2+\uinput^2+\uD^2}$; evaluates to $\approx\uD$ here & --- & \cite{b25}; \cite{b7} \\
+$\unum$ & Numerical (discretisation) uncertainty. \emph{Bounded, not measured}: $\le5\times10^{-5}$, the reporting precision at which $F$ is unchanged across two mesh levels a ${\sim}5$-fold refinement apart, i.e.\ at least $\uDoverUnum\times$ below $\uD$ & --- & \cite{b7}; \cite[COMSOL reports]{b12} \\
+$\uinput$ & Input uncertainty (geometry, boundary conditions). $\le0.031\,\uD$ from the channel-depth tolerance over $\pm5~\si{\micro\meter}$; isotropic in-plane fabrication error cancels to leading order in the resistance ratio & --- & \cite[\S8.6]{b12} \\
+$\uD$ & Experimental (data) uncertainty, reported here as the published $\mathrm{SD}$ (a conservative choice; see the SD-vs-SEM note). V\&V~20's $\uD$ for a mean of $n$ has random component $\mathrm{SEM}=\mathrm{SD}/\sqrt{n}$, reported alongside & --- & \cite[p.~919]{b5} \\
+$E$, $S$, $D$ & Validation comparison error $E=S-D$, simulation value $S$ minus data value $D$. \emph{All three letters are reused}: see the collision note below & --- & \cite{b25} \\
+$T_{\mathrm{PE,1/2}}$ & PE half-life: gap rows for outlet pressure mismatch to halve & gaps (count) & \cite[\S8.7]{b12} \\
+$\alpha_{\mathrm{3D}}$ & 3-D outlet resistance-ratio correction $(R_c/R_s)_{\mathrm{app}}/(R_c/R_s)_{\mathrm{Yang}}$ (yield-side). \emph{Not} the channel aspect ratio $\alpha$ of Table~\xref{tab:units_dimensionless}{A.3} & --- & \cite{b7}; \cite[\S8.8]{b12} \\
+$\sigma_{F_{V1}}, \sigma_{F_{V3}}$ & One-SD experimental $F$ uncertainty (Dinh, $n{=}4$, panel B). A subscripted $\sigma$ naming a measured quantity is a dispersion, never the side-flow ratio $\sigma(i)$ of Table~\xref{tab:units_fluid}{A.2} & --- & \cite[p.~919]{b5} \\
+$\sigma_{\text{ratio}}$ & Propagated uncertainty on multi-variant ratio & --- & \cite[p.~919]{b5}; \cite[\S15.4]{b12} \\
+$N_{\text{elem}}, N_{\text{DOF}}$ & COMSOL mesh element / degrees-of-freedom count & count & \cite{b7}; \cite[Block~19]{b12} \\
+$\epsilon_{\text{conv}}$ & Newton convergence residual tolerance. \emph{Not} the DLD row-shift fraction $\varepsilon$ of Table~\xref{tab:units_dimensionless}{A.3}; the two epsilons are one glyph & --- & \cite{b7} \\
+$N_{\text{validators}}, N_{\text{stamps}}$ & Validator-suite assertion / regression-stamp count & count & \cite{b12a} \\
+\end{longtable}\endgroup
+
+\textbf{$E=S-D$ collision: three reused letters in one formula.} The
+V\&V~20 comparison error is written $E=S-D$, and each letter already
+denotes something else in this appendix. $S$ here is the \emph{simulation}
+value of $F$; $S(i)$ in Table~\xref{tab:units_fluid}{A.2} is the normalised
+side-channel flow along the march. $D$ here is the \emph{data} value of
+$F$; $D=2a$ in Table~\xref{tab:units_particle}{A.5} is a particle diameter,
+and $D_c$, $D_h$ are the cutoff and hydraulic diameters. The rule: inside
+$E=S-D$, and nowhere else, $S$ and $D$ are the V\&V~20 simulation and data
+values; they are dimensionless and always appear in that formula, or as the
+reported ratio $E/\mathrm{SD}$, in which the roman $\mathrm{SD}$ is the
+standard-deviation abbreviation and not the italic pair $S,D$. Elsewhere they keep their table meanings.
+
+\textbf{$\alpha_{\mathrm{3D}}$ collision.} $\alpha=h/w_{\mathrm{ch}}$ is
+the channel aspect ratio and $\acal$ its three-element calibration array
+(Table~\xref{tab:units_dimensionless}{A.3}); both are geometric.
+$\alpha_{\mathrm{3D}}$ is neither: it is a \emph{resistance-ratio}
+correction on the yield axis, dimensionless but unrelated. The subscript is
+the only cue, so restate it wherever the two could be read together.
+
+\textbf{$\varepsilon$/$\epsilon$ collision.} \LaTeX{} offers two epsilons
+and they are one glyph to a reader. $\varepsilon$ is source notation only,
+the DLD row-shift fraction quoted from the deterministic-lateral-displacement
+literature (Table~\xref{tab:units_dimensionless}{A.3}); it is never a CIF
+quantity. $\epsilon_{\text{conv}}$ is this work's Newton convergence
+tolerance. The rule: a bare epsilon is always the source's, and a
+subscripted one is always this work's.
+
+\textbf{$u$-symbol collision.} The letter $u$ carries three unrelated
+meanings, two of them inherited and not negotiable. $u(y)$ and $u_{\max}$
+are fluid velocities (Table~\xref{tab:units_fluid}{A.2}, standard fluid
+mechanics). $\uval$, $\unum$, $\uinput$ and $\uD$ are ASME V\&V~20
+uncertainties (this table, the standard's own notation). The third,
+$\ud=\dcrit/w_c$, was moved off the letter entirely and is rendered
+$\widetilde{d}$ (Table~\xref{tab:units_dimensionless}{A.3}) precisely
+because $u_d$ and $u_D$ differ by subscript case alone.
+
+\textbf{$N$-symbol collision.} Bare $N$ is the total gap-row count
+(Table~\xref{tab:units_geom}{A.1}) and is load-bearing in the schedule and
+cutoff laws. Every other $N$ in this appendix carries a subscript naming
+what it counts: $N_{\text{elem}}$, $N_{\text{DOF}}$,
+$N_{\text{validators}}$, $N_{\text{stamps}}$, all of which are
+infrastructure diagnostics. A bare $N$ is never a count of anything but
+gap rows.
+
+\textbf{$\sigma$ collision.} A subscripted $\sigma$ that names a
+\emph{measured} quantity is a dispersion, never a flow ratio:
+$\sigma_{F_{V1}}$, $\sigma_{F_{V3}}$ and $\sigma_{\text{ratio}}$ are
+experimental standard deviations (this table), while $\sigma(i)$ and its
+inlet value $\sigma_0$ are the normalised side-channel flow along the march
+(Table~\xref{tab:units_fluid}{A.2}). The two are told apart by subscript
+\emph{content}, not case: a bare or row-indexed $\sigma$ is always the flow
+ratio, a device- or ratio-subscripted $\sigma$ is always a standard
+deviation.
+
+\textbf{SD vs.\ SEM.} Dinh Fig.~4 reports \emph{mean $\pm$ standard
+deviation} ($n{=}3$ panel~A; $n{=}4$ panel~B; \cite[p.~919]{b5}). The
+$F$-validation is the two-device comparison in panel~B, so the datum $D$ is
+a mean of $n{=}4$ (the V1 recovery $50.5\pm3.3\%$ is also reported in
+panel~A at $n{=}3$; the panel~B quadruplicate is the one used here). ASME
+V\&V~20 defines $\uD$ as the standard uncertainty appropriate for $D$ and
+states that it ``includes all effects of averaging, includes all random and
+systematic uncertainty components'' (\cite[\S1-6]{b25}); for a mean of $n$
+the random component is therefore the standard deviation of the mean,
+$\mathrm{SEM}=\mathrm{SD}/\sqrt{n}$, so the distance measured in units of
+the standard's own random uncertainty is $E/\mathrm{SEM}$.
+
+\textbf{The published $\mathrm{SD}$ is nevertheless retained here as
+$\uD$}, as a deliberately \emph{conservative} choice on two grounds: it
+over-covers that random component by $\sqrt{n}$, and it stands in for the
+systematic experimental uncertainty that V\&V~20's $\uD$ formally includes
+but that Dinh do not separately report. Both distances are given below so
+the reader can see the choice rather than inherit it. Under the stricter
+$\mathrm{SEM}$ scale the closed form and the 3-D solve remain within
+$2\sigma$ (the largest, V3 COMSOL, is $\EsemComsolVThree\sigma$); on the
+raw-$\mathrm{SD}$ scale they are within $1\sigma$.
+
+% =====================================================================
+% VALIDATION DISTANCES. Every number in the display below is a macro from
+% tex/validation_values, generated by gen_validation_values.py from the same
+% F values the document carries. Do not type a distance here; regenerate.
+% Deliberately NOT generated, and not implied to be: the mesh element counts
+% (COMSOL outputs), the 0.031/0.015 depth-tolerance sensitivities (a notebook
+% sweep this record does not reproduce), and the +/-5 um tolerance and 5e-5
+% reporting precision (inputs).
+% =====================================================================
+\textbf{Worked validation numbers (Dinh V1, V3).}
+\begin{align*}
+F^{\mathrm{closed}}_{V1} &= \FclosedVone, & F^{\mathrm{closed}}_{V3} &= \FclosedVthree
+   &&\text{(closed form, no fit)}\\
+F^{\mathrm{COMSOL}}_{V1} &= \FcomsolVone, & F^{\mathrm{COMSOL}}_{V3} &= \FcomsolVthree \\
+F^{\mathrm{exp}}_{V1} &= \FexpVone \pm \FsdVone, & F^{\mathrm{exp}}_{V3} &= \FexpVthree \pm \FsdVthree
+   &&\text{(SD, } n{=}4)\\
+E/\mathrm{SD}\ \text{(1-D closed form)}:\quad V1 &= \EsdClosedVOne, & V3 &= \EsdClosedVThree \\
+E/\mathrm{SD}\ \text{(3-D COMSOL)}:\quad V1 &= \EsdComsolVOne, & V3 &= \EsdComsolVThree \\
+E/\mathrm{SEM}\ \text{(3-D COMSOL)}:\quad V1 &= \EsemComsolVOne, & V3 &= \EsemComsolVThree
+   &&(\text{within } \uval).
+\end{align*}
+
+\textbf{What ``calibration-free'' claims.} The calibration-free 1-D closed
+form is $\EsdClosedVOne\sigma$ (V1) and $\EsdClosedVThree\sigma$ (V3) above
+the measurement, consistent within $2\sigma$ but not a match. The 3-D outlet solve is
+closer: within $1\sigma$ on the $\mathrm{SD}$ scale and within $2\sigma$ on
+the stricter $\mathrm{SEM}$ scale ($\EsemComsolVOne\sigma$ /
+$\EsemComsolVThree\sigma$), and
+$\alpha_{\mathrm{3D}}=\alphaThreeDVone/\alphaThreeDVthree$ quantifies the
+outlet-resistance correction required to reconcile the two. The claim is
+that the yield law requires \emph{no device-specific fitting}, not that the
+one-dimensional form reproduces the measurement. State both distances
+wherever one is stated. \emph{Whether this yield-side residual and the
+cutoff-side residual of
+Section~\xref{app:units_cutoff}{``Cutoff-Law Prefactor Decomposition''}
+share a common three-dimensional origin is an open question and is deferred
+to future work}; nothing in this appendix turns on the answer, and the two
+are treated throughout as corrections on independent axes.
+
+%==============================================================
+% A.7 -- SELECTIVITY-AXIS VALIDATION  (complete, corrected)
+%==============================================================
+\subsection{Selectivity-Axis Validation (predicted vs.\ measured cutoff)}
+\label{app:units_selval}
+
+The yield axis is validated directly against a measured mean with a stated
+dispersion (Section~\xref{app:units_validation}{``Validation and
+Uncertainty Quantities''}). The selectivity axis is independently checked
+using published devices that took no part in the $\kapp$ fit,
+\textbf{although the available checks are materially weaker than the yield
+validation}: the Dinh check is genuinely held out but resolves only a wide
+interval bracket, and the Xia check is not independent of the calibration
+at all. \textbf{Neither delivers a sharp held-out validation}, and both are
+reported with the reasons why.
+
+\textbf{Dinh 2024: weak interval-consistency check.} The framework predicts
+a cutoff band $[\dinhBandLo,\,\dinhBandHi]~\si{\micro\meter}$ for the Dinh
+device: the registered band, recomputed by the derivation record~\cite{b12a} and
+carried throughout the formal argument. \textbf{Its width is an ambiguity,
+not a gradient}, and the distinction matters because it is easy to read the
+band as a cutoff that varies down the device. It does not, or at least the
+lineage design says it should not.
+
+\emph{Why the taper does not move the cutoff.} The centre channel narrows
+for a reason unrelated to selectivity: Xia introduced the taper ``in order
+to reduce the maximum amount of shear stress experienced by particles
+within the device'' (\cite[p.~4 (Sci Rep PDF pagination)]{b2}), which is what the RS in RS-CIF
+stands for. Narrowing $w_c$ alone would shrink the lamina and drag the
+cutoff down with it, so the lineage ramps the extraction to compensate:
+``In order to maintain a consistent c.d.\ along the length of an RS-CIF
+device, the value of $\fgap$ can no longer be kept constant and must be
+scaled relative to'' the narrowing (\cite[p.~9 (Sci Rep PDF pagination)]{b2}).
+That scaling is Xia's eqn.~(1), stated here in its \emph{corrected} form,
+$\fgap(i)=(w_c(\mathrm{ref})/w_c(i))^2\,\fgap(\mathrm{ref})$. The 2016
+printing (\cite[p.~10 (Sci Rep PDF pagination)]{b2}) inverted the two
+widths, and the 2022 Correction records that the article ``contains an
+error in equation 1, where the terms'' $w_c(i)$ and $w_c(\mathrm{ref})$
+``are inverted'' (\cite[p.~1]{b3}). \textbf{The direction is load-bearing
+here}, so the version matters: with the widths inverted,
+$\skimw\propto w_c(i)^2$ and the lamina shrinks \emph{faster} than the bare
+taper, which is the opposite of compensation. In the corrected form it
+cancels the taper exactly:
+\[
+\skimw(i)=w_c(i)\sqrt{\tfrac{\fgap(i)}{3}}
+        =w_c(i)\,\frac{w_c(\mathrm{ref})}{w_c(i)}\sqrt{\tfrac{\fgap(\mathrm{ref})}{3}}
+        =w_c(\mathrm{ref})\sqrt{\tfrac{\fgap(\mathrm{ref})}{3}},
+\]
+independent of $w_c$. A tapered device is designed to hold one cutoff, not
+a range of them.
+
+\emph{What the band's width therefore is.} For the bracket device Dinh
+states a single initial $\fgap=1.04\times10^{-4}$, one of three initial
+values its designs span (\cite[p.~917]{b5}), and describes such a value as
+one of ``the
+initial values for the width of the middle channel and the filtration
+fraction'' (\cite[p.~915]{b5}); the paper states that the later values are
+``iteratively adjusted with each subsequent gap $i$ \ldots\ to maintain the
+desired size cut-off throughout the device'' (\cite[p.~916]{b5}), citing Xia
+2016 for the method, but does not print them. The band is computed holding it constant, which makes
+$\skimw\propto w_c$ and spreads the prediction across the taper. Of the
+band's $\dinhBandWidth\times$ width, $75/52=1.44\times$ is that spread and
+only $\dinhKneeRatio\times$ is the near-knee $\kapp$ ambiguity, where the fitted prefactor
+has ramped off the plateau $\kg$ to a local $\dinhKappaLocal$. Under the
+Xia-scaled reading, with $\fgap$ pinned at the initial station, the lamina,
+and with it the cutoff at the plateau prefactor, is a single value and the
+band collapses to $[\dinhCollapseLo,\,\dinhBandHi]$, the
+$\kapp$ ambiguity alone. \emph{The wider band is retained because it is the
+conservative envelope}: it contains the Xia-scaled reading, which is the one
+Dinh describes, in its corrected form (Appendix~B, C5), and taking the
+narrower one would assume that a schedule the paper describes but does not
+print meets its stated intent exactly.
+
+The measured rigid-bead bracket is $(1.0,\,4.7)~\si{\micro\meter}$ (Dinh
+ESI Fig.~S1: $1~\si{\micro\meter}$ beads track the fluid,
+$4.7~\si{\micro\meter}$ beads are retained). The predicted band lies
+\emph{inside} the measured bracket on either reading. \textbf{This is a
+weak test and must be reported as one:} the bracket is $4.7\times$ wide,
+wider than the prediction it is supposed to discriminate; the device
+operates near the knee, where held at its initial gap fraction the
+self-consistent cutoff sits at the sub-steric foot, beneath the bracket, so
+the band is anchor-contingent; and
+the band is doubly sensitive to the assumed calibration depth and to the
+unresolved $f_{\mathrm{eff}}$. It is a consistency check, not a sharp
+validation.
+
+\textbf{Xia 2016: cross-paper consistency check.} \emph{Recalculation} from
+three Xia devices, using their stated cutoff and $\fgap$ values, gives
+$\kapp=\xiaKappaA/\xiaKappaB/\xiaKappaC$ (mean $\xiaKappaMean$) at $140~\si{\micro\meter}$ depth
+against the Gifford plateau $\kappVal$ fitted at an assumed
+$80~\si{\micro\meter}$, which agrees to $\xiaAgreePct\%$ across papers and depths.
+All three device triples are quoted data: OR-7 at
+$\fgap=5.8\times10^{-4}$ for a $7~\si{\micro\meter}$ cutoff, and RS-8 and
+RS-9 at $7.2\times10^{-4}$ and $8.6\times10^{-4}$ for $8$ and
+$9~\si{\micro\meter}$, all at $w_c(\text{ref})=100~\si{\micro\meter}$, are
+each stated verbatim in the source.
+
+\textbf{This anchor is not independent, and the agreement is not
+diagnostic.} Two separate reasons, and the second is the stronger one.
+First, Xia reads its cutoff from the same Gifford figure the plateau was
+fitted from, and Gifford is a Xia co-author, so the anchor and the fit
+share a figure rather than merely a literature. Second, and decisively:
+the $\xiaAgreePct\%$ by which the recomputed mean exceeds $\kappVal$ is
+numerically the depth correction itself. Xia's devices are
+$140~\si{\micro\meter}$ deep against the plateau's assumed
+$80~\si{\micro\meter}$, and $1/\Kdth(1.40)-1=\depthCorrPct\%$, which is the
+same correction as the $\xiaAgreePct\%$ agreement above (the two printed
+figures differ only because they fall either side of a rounding boundary at
+full precision), so
+$\kappVal/\KdepthAnalyticMid$ reproduces the recomputed mean to three
+significant figures. The observed agreement is therefore \emph{equally
+consistent} with a depth-robust prefactor and with a depth correction of
+exactly that size: it discriminates between them not at all. The
+recalculation is real and rests on quoted data, but it is reported here as
+a \emph{lead}, not as a cross-paper agreement, and the argument records
+\texttt{xia\_anchor\_unverified} as open.
+
+\textbf{Numerical uncertainty here is bounded differently.} The single-gap
+CFD behind $\Kin$ and the $\Kdcfd$ anchors has no $h$-refinement study.
+Its resolution rests instead on agreement with the exact analytic duct law
+to $\le0.6\%$ at every point and aspect ratio (the depth factors themselves
+agree to $\KdepthDevShallow/\KdepthDevMid/\KdepthDevDeep\%$), supported by mass
+conservation to $0.015\%$ and an export-grid check that moves $\skimw$ by
+$\le0.1\%$ under an $8\times$ coarsening of the \emph{sampling} pitch. A
+sub-micron skim that lands on an analytic value to six parts in a
+thousand cannot be under-resolved, so the discretisation error on $\skimw$
+is bounded near $0.6\%$: some $5\times$ below the $\pm\kappCIhalfPct\%$ confidence
+interval on $\kapp$ it feeds, and finer than the $4.7\times$-wide measured
+bracket above can resolve.
+
+\textbf{Fitted-prefactor uncertainty.} $\kapp$ carries a 95\% CI
+$[\kappCIlo,\kappCIhi]$ and $\mathrm{CV}=\kappCV\%$ over the
+$n=\plateauN$ plateau devices. The single global power law is rejected at
+reduced $\chi^2\approx\chiGlobal$, robust across three independent
+re-digitizations; that rejection is the falsifiable content of the
+functional-form test. \emph{The plateau-only fit is itself
+$\chi^2_{\mathrm{red}}\approx\chiPlateau$, which is not a good fit in absolute
+terms}; the claim is relative, that $\chiGlobal$ against $\chiPlateau$ is a factor-$\chiRatio$
+degradation which rejects the global law.
+%==============================================================
+% A.8 -- VALIDITY-ENVELOPE AND EXTERNAL INPUTS  (complete, corrected)
+%
+% STRUCTURE: converted from tabularx-in-a-float to longtable. As submitted this
+% table reported "Float too large for page by 2739pt", one "X Columns too narrow",
+% and 283 overfull \hbox warnings: a float must fit on one page and this one is
+% several pages tall, and a bare `l' column beside an X column squeezes X below its
+% minimum. The p{} fractions sum to 0.92 to budget the inner gutters.
+%==============================================================
+\subsection{Validity-Envelope and External Inputs}
+\label{app:units_envelope}
+
+The design framework operates inside a declared envelope. These quantities
+are the boundary conditions on that envelope, and several are
+\textsc{external}: supplied, and undischargeable by any validator in this
+work. An appendix that catalogued the framework without them would omit
+the conditions under which its own claims hold.
+
+\begingroup\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.155\textwidth}
+>{\raggedright\arraybackslash}p{0.475\textwidth}
+>{\raggedright\arraybackslash}p{0.115\textwidth}
+>{\raggedright\arraybackslash}p{0.175\textwidth}@{}}
+\caption{Validity-envelope quantities and external
+inputs.}\label{tab:units_envelope}\\
+\toprule Symbol & Role & Status & Source \\\midrule\endfirsthead
+\multicolumn{4}{@{}l}{\footnotesize\itshape Table \thetable\ (continued)}\\
+\toprule Symbol & Role & Status & Source \\\midrule\endhead
+\bottomrule\endlastfoot
+$u_{\mathrm{lo}}$ & Plateau guard: every row must satisfy $\ud=\dcrit/w_c\ge u_{\mathrm{lo}}$, keeping the design above the knee. \emph{A threshold on $\ud$, not a velocity and not a V\&V uncertainty}; see the $u$ note below & \textsc{external} & This work (supplied) \\
+$u_{\mathrm{ff}}$ & Free-flow guard on the reduced size ratio $\ud$, same letter caveat & \textsc{external} & This work (supplied) \\
+$\eta$ & Realized-yield factor $\eta=\etaVal$: a three-dimensional correction on the \emph{flow split}. \textbf{Not} an external free parameter: its shortfall $1-\eta=\etaShortfallPct\%$ is the same ${\sim}10\%$ one-dimensional-versus-three-dimensional residual on $F$ that the outlet solve closes, so it is a computed magnitude recorded here rather than a supplied constant. \emph{A single realized-yield magnitude, not a per-variant fit}: the actual residual is $\residPctVOne\%$ at V1 and $\residPctVThree\%$ at V3, so $\etaShortfallPct\%$ is representative and matches V1 closely rather than holding exactly at both. \textbf{Not} the lamina model gap either, which lives in $\kapp$; the two act on different axes and must not be traded against one another & \textsc{measured} (corroborated by the 3-D COMSOL outlet solve to within $1\sigma$, not derived by the one-dimensional treatment) & \cite{b12a}, \texttt{uncheckable\_eta} \\
+$\phi_{\mathrm{cal}}$ & Calibration wall-porosity input, distinct from $\phi=G/\Lambda$, which is \emph{computed} from geometry; $\phi_{\mathrm{cal}}$ is supplied and no validator discharges it. See the $\phi$ note below & \textsc{external} & This work (supplied); \cite{b12a} \\
+$\sigma_0$ & Fictitious inlet side-flow in the mass identity $P(i)+2S(i)=1+2\sigma_0$. \emph{Defined in Table~\xref{tab:units_fluid}{A.2}}; repeated here only to record that it is supplied & \textsc{external} & Table~\xref{tab:units_fluid}{A.2} \\
+$f_{\mathrm{soft}}$, $\gamma_{\mathrm{GS}}$ & Schedule-softening and gap-scale process parameters. $f_{\mathrm{soft}}$ is a \emph{process} parameter and is not the filtrate fraction $\fgap$; see the $f$ note below & \textsc{external} & This work (supplied) \\
+$\mathrm{AR}_{\max}$, $R_{\min}$ & Fabrication limits: maximum feature aspect ratio and minimum inner-corner radius & \textsc{external} & This work (supplied) \\
+$c_{\mathrm{ent}}$, $L_{\mathrm{eq}}$ & Entrance coefficient and bend-equivalent length. \emph{The link length $\ell_g$ is defined in Table~\xref{tab:units_geom}{A.1}} and is not redefined here & \textsc{external} & This work (supplied) \\
+\midrule
+\multicolumn{4}{@{}p{0.93\textwidth}}{\emph{Three conditions a design must satisfy. Each is stated as a boundary rather than asserted to hold, because a real device can violate any of them; asserting they always hold would claim the device is always above the knee, which is false.}}\\
+\midrule
+Above-knee operation & If the device runs below the knee, $\kapp$ ceases to be a constant and becomes a function of the cutoff itself, making the design relation implicit & \textsc{bounds} & This work \\
+Run-out match & A $3\times$ run-out mismatch collapses $F$ from $\runoutFmatched$ to $\runoutFmismatched$; the outlet lengths must be matched & \textsc{bounds} & \cite{b12a}, \texttt{runout\_mismatch} \\
+Free row count & Pinning $N$ over-constrains the problem: two targets meet one free variable, and the orthogonality of cutoff and yield is lost & \textsc{bounds} & This work \\
+\end{longtable}\endgroup
+
+\textbf{$u$-symbol collision, extended.} Table~\xref{tab:units_validation}{A.6}
+records three meanings for the letter $u$: the fluid velocities $u(y)$ and
+$u_{\max}$, the V\&V~20 uncertainties $\uval$, $\unum$, $\uinput$, $\uD$,
+and the reduced size ratio, which was moved \emph{off} the letter to
+$\ud=\widetilde{d}$ precisely because $u_d$ and $u_D$ differ by subscript
+case alone. The guards $u_{\mathrm{lo}}$ and $u_{\mathrm{ff}}$ are a
+fourth use, and an awkward one: they are thresholds \emph{on} $\ud$, so
+they are named after the very symbol this appendix stopped using. They keep
+their names because they are the identifiers the design code and the
+specification use, and renaming them here would break that correspondence,
+but the reader should read $u_{\mathrm{lo}}$ and $u_{\mathrm{ff}}$ as
+bounds on $\widetilde{d}$ and never as velocities or uncertainties.
+
+\textbf{$f$-symbol collision.} $\fgap$ is the per-gap filtrate fraction and
+is the central dimensionless quantity of the yield axis
+(Table~\xref{tab:units_dimensionless}{A.3}). $f_{\mathrm{soft}}$ is a
+schedule-softening \emph{process} parameter with no flow meaning, and
+$F$ with its variants is the cumulative filtrate fraction. Three
+$f$-shaped objects, distinguished by subscript and by case.
+
+\textbf{$\phi$-symbol collision.} $\phi_{\mathrm{cal}}$, the wall porosity
+\emph{supplied} to the calibration, is distinct from $\phi=G/\Lambda$, which
+is \emph{computed} from the geometry (Table~\xref{tab:units_geom}{A.1}), and
+and from the upper-case fold factor $\Phi(i)=r(w_s(i))/r(\mathrm{GS})$ of
+the folded-channel geometry (Table~\xref{tab:units_geom}{A.1}): one letter,
+separated by subscript and by case.
+
+\textbf{$c$-symbol collision.} The letter $c$ carries three unrelated
+meanings. In the cutoff decomposition $\sqrt{c}\,C$
+(Table~\xref{tab:units_cutoff}{A.4}) lower-case $c$ is the per-device
+over-extraction factor and upper-case $C$ the cumulative finite-particle
+factor, distinguished by case alone. $c_2$ is the near-wall coefficient of
+the velocity expansion (Table~\xref{tab:units_dimensionless}{A.3}). And
+$c_{\mathrm{ent}}$, in this table, is a dimensionless entrance-length
+coefficient with no relation to either. All three are dimensionless, so
+unit disagreement will not separate them; the subscript is the only cue.
+
+\textbf{$L$-symbol note.} $L_{\mathrm{eq}}$, the bend-equivalent length, is
+a member of the length family alongside $L_{\mathrm{dev}}$, $L_c(i)$ and
+$L_s(i)$ (Table~\xref{tab:units_geom}{A.1}): all are lengths in metres and
+all carry a subscript naming what they measure.
+
+\textbf{On the} \textsc{external} \textbf{label.} In this table it has the
+second of the two senses Section~\xref{app:units_geom}{A.1} gives it: it marks
+a quantity this work supplies rather than derives, and which no validator in the record
+discharges. That is a statement about \emph{this} record, not a claim that
+the quantity is underivable: $\phi_{\mathrm{cal}}$ and the fabrication
+limits are physically measurable, and a later campaign that measured them
+would move them out of this table. The label is a boundary on what the
+present argument establishes.
+
+%==============================================================
+% A.9 -- EQUATIONS: STEP-BY-STEP UNIT DERIVATIONS  (complete, corrected)
+%
+% CHANGES FROM THE SUBMITTED DRAFT, each justified in the report:
+%   * depth-factor denominator corrected to |Kdcfd - Kdth|/Kdcfd. The draft wrote
+%     /Kdth while printing the /Kdcfd values, the same formula-versus-value
+%     mismatch A.4 carried and had corrected.
+%   * the CFD deviations and fourteen other computed figures are now macros.
+%   * every cross-subsection \ref became \xref, so this file builds standalone.
+%   * the self-reference (Section \ref{app:units_equations} pointing at itself)
+%     now names the subsubsection that actually quotes the band.
+%   * the cutoff law and its decomposition are displayed UNNUMBERED here and
+%     cited to A.4, which already numbers both. One equation, one number.
+% This list is the change set FROM SUBMISSION, not a running log; later rounds
+% corrected the lineage f_gap maximum, attributed the row pitch to Gifford's
+% measured Fig.4 value, and anchored the hydraulic-electric analogy.
+%==============================================================
+\subsection{Equations: Step-by-Step Unit Derivations}
+\label{app:units_equations}
+
+This section provides a dimensional \emph{consistency check} for each
+load-bearing equation. The notation $[X]$ denotes ``the SI unit of $X$.''
+\emph{Dimensional consistency is necessary, not sufficient}: it shows an
+equation is well formed, not that its physical assumptions hold. The
+assumptions are stated separately with each equation.
+
+\subsubsection{Gifford 2014 Eqn~1: flow recursion}
+
+\begin{equation}
+Q_s(i) = Q_s(i-1) + \fgap(i) \cdot Q_c(i-1)
+\label{eqn:gifford1}
+\end{equation}
+
+\emph{Dimensional analysis:}
+\begin{align*}
+[\text{LHS}] &= \si{\meter\cubed\per\second} \\
+[\text{RHS}] &= \si{\meter\cubed\per\second} + \underbrace{[\fgap]}_{1}\!\cdot\!\underbrace{[Q_c]}_{\si{\meter\cubed\per\second}}
+              = \si{\meter\cubed\per\second}
+\end{align*}
+$[\text{LHS}] = [\text{RHS}].$~\checkmark
+\emph{Index note:} Gifford writes Eqn~1 with no row index on
+$\fgap$ (his constant-$\fgap$ regime); the $(i)$ here is the
+tapered-$\fgap$ generalization. $Q_c(i)$ and $Q_s(i)$ are the flows
+following gap row~$i$, as Gifford defines them, so $\fgap(i)$ is the
+fraction taken at row~$i$ from the central flow reaching it, $Q_c(i-1)$,
+which is Dinh's $Q_m(i)$ (\cite{b5}). Every equation in this appendix
+uses this labelling.
+
+\subsubsection{Gifford 2014 Eqn~3: continuity}
+
+\begin{equation}
+\frac{\Delta P(i)}{\Delta P(i-1)} = 1 - 2\fgap(i)
+\label{eqn:gifford3}
+\end{equation}
+
+\emph{Dimensional analysis:} $[\text{LHS}]=\si{\pascal}/\si{\pascal}=1$;
+$[\text{RHS}]=1-2\cdot1=1$.~\checkmark The factor of $2$ is bilateral
+extraction (each of two side channels takes $\fgap$ of $Q_c$).
+\emph{Index note:} Gifford's verbatim form carries no index on $\fgap$;
+the $(i)$ is the tapered generalization.
+
+\subsubsection{Gifford 2014 Eqn~5: Yang series for hydraulic resistance}
+
+\begin{equation}
+R = \frac{12 \mu L}{w_{\mathrm{ch}} h^3}
+   \left[
+     1 - \frac{192\,h}{\pi^5 w_{\mathrm{ch}}}
+         \sum_{n=1,3,5,\ldots}^{\infty} \frac{1}{n^5}
+         \tanh\!\left(\frac{n \pi w_{\mathrm{ch}}}{2h}\right)
+   \right]^{-1}
+\label{eqn:gifford5}
+\end{equation}
+
+\emph{Dimensional analysis} (convention $h \le w_{\mathrm{ch}}$):
+prefactor $[12\mu L]/[w_{\mathrm{ch}} h^3]
+= \si{\pascal\second\meter}/\si{\meter^4}
+= \si{\pascal\second\per\meter\cubed}$; the bracket is dimensionless, so
+$[R] = \si{\pascal\second\per\meter\cubed}$.~\checkmark
+
+\textbf{Attribution.} Gifford's Eqn~5 carries citation [20] $=$
+Yang/\"{U}ndar/Zahn (\cite{b6}), whose Eqn~3 is the rectangular-duct
+series; Gifford's ref [19] (Sethu/Sin/Toner) is the \emph{simplified}
+$R(w)$ treatment Eqn~5 improves on, not its source.
+
+\textbf{Limit checks.} Parallel plates ($h\ll w_{\mathrm{ch}}$): series
+$\to 0$, $R\to12\mu L/(w_{\mathrm{ch}} h^3)$.~\checkmark Square channel
+($h=w_{\mathrm{ch}}$): $R\to 28.4\,\mu L/h^4$ (Bruus 2008, \cite{b20}).
+Independently corroborated by the registry's square-duct anchor
+$12/B(1) = \squareDuctR$, computed from the duct series with no reference
+to \cite{b20}.~\checkmark
+\emph{Note:} the channel-width argument is $w_{\mathrm{ch}}\in\{w_c,w_s\}$,
+not the lamina width $w$.
+
+\subsubsection{Dinh 2024 p.~915: definition of $\fgap$}
+
+\begin{equation}
+Q_{\mathrm{gap}}(i) = \fgap(i) \cdot Q_c(i-1)
+\label{eqn:dinh_fgap}
+\end{equation}
+
+\emph{Dimensional analysis:} $\fgap(i)=Q_{\mathrm{gap}}(i)/Q_c(i-1)$,
+units $\si{\meter\cubed\per\second}/\si{\meter\cubed\per\second}=1$.~\checkmark
+\emph{Index note:} Dinh writes the flow reaching gap~$i$ as $Q_m(i)$
+(\cite{b5}); in Gifford's labelling, used throughout this appendix, it
+is $Q_c(i-1)$.
+
+\textbf{Numerical sanity (Dinh V1):} $Q_c\approx30~\si{\micro\liter\per\minute}$,
+$\fgap=1.04\times10^{-4}\Rightarrow Q_{\mathrm{gap}}=\QgapDinh~\si{\nano\liter\per\minute}$
+per gap per side.
+
+\subsubsection{Xia 2022 corrected scaling for matched cutoffs}
+
+\begin{equation}
+\fgap(i) = \left( \frac{w_c(\text{ref})}{w_c(i)} \right)^2 \fgap(\text{ref})
+\label{eqn:xia_corrected}
+\end{equation}
+
+\emph{Dimensional analysis:} ratio squared is dimensionless; both sides
+dimensionless.~\checkmark At fixed cutoff: $\fgap\,w_c^2=$ const, i.e.\
+$\dcrit\propto w_c\sqrt{\fgap}$, consistent with the cutoff law of
+Section~\xref{app:units_cutoff}{``Cutoff-Law Prefactor Decomposition''}.
+\emph{This is the \textbf{corrected} form}: the 2016 printing inverted
+$w_c(i)$ and $w_c(\mathrm{ref})$, and the 2022 Correction records that the
+article ``contains an error in equation 1, where the terms'' $w_c(i)$ and
+$w_c(\mathrm{ref})$ ``are inverted'' (\cite[p.~1]{b3}). The direction is
+load-bearing: inverted, the lamina would shrink \emph{faster} than the
+taper instead of holding constant.
+
+\subsubsection{Skim cubic and dividing-streamline width (selectivity)}
+\label{sec:skim_band}
+
+\begin{equation}
+\fgap = 3x^2 - 2x^3,\qquad x=\skimw/w_c;\qquad
+\skimw = w_c\!\left[\sqrt{\fgap/3} + \tfrac{1}{9}\fgap + \cdots\right]
+\label{eqn:skim_cubic}
+\end{equation}
+
+\emph{Dimensional analysis:} $\fgap$ and $x$ are dimensionless; the cubic
+balances $1=1$.~\checkmark $[\skimw]=[w_c]\cdot1=\si{\meter}$.~\checkmark
+This is the Inglis $\varepsilon$-cubic (\cite{b17}): the
+parabolic-profile flux fraction equals $3x^2-2x^3$. Inglis states the
+premise, ``by assuming a conventional parabolic flow profile through the
+gap'' (\cite[p.~656]{b17}), and writes the result in monic cube-root form,
+$y^3-\tfrac{3}{2}y^2+\tfrac{\varepsilon}{2}=0$ with $y=b/g$; multiplying by
+$-2$ and identifying $\varepsilon\!\leftrightarrow\!\fgap$,
+$y\!\leftrightarrow\!x$ recovers $\fgap=3x^2-2x^3$ exactly. \emph{The
+polynomial is a derived identity, not a quoted formula}, which is why the
+source-quote index anchors the premise rather than the cubic.
+
+\textbf{Accuracy of the leading inversion, with the band named.} The
+leading inversion $\skimw=w_c\sqrt{\fgap/3}$ is within $0.5\%$ of the
+exact root across the Gifford \emph{calibration/design} band
+($\fgap\le\fgapDesignCap$, device~\#33; worst case $\skimErrDesign\%$),
+and within $0.9\%$ across the wider \emph{numerical sweep} band
+($\fgap=\fgapBandLo$ to $\fgapBandHi$; worst case $\skimErrBand\%$ at the
+top). Quote the band with the figure: the two differ by nearly a factor
+of two.
+
+\subsubsection{Cutoff law and prefactor decomposition (selectivity)}
+
+The cutoff law and its prefactor decomposition are numbered in
+Section~\xref{app:units_cutoff}{``Cutoff-Law Prefactor Decomposition''}
+(Eqns~\xref{eqn:cutoff_law}{6} and~\xref{eqn:kappa_decomp}{7}) and are
+restated here \emph{unnumbered}, for dimensional analysis only, so that
+one equation carries one number:
+\[
+\dcrit = \kapp\, w_c\, \sqrt{\fgap/3},\qquad
+\kapp = \kster\,\Kin\,\Kdepth\,\sqrt{c}\,C .
+\]
+
+\emph{Dimensional analysis:} $\kapp$ is dimensionless (product of
+dimensionless factors), $[\sqrt{\fgap/3}]=1$, so
+$[\dcrit]=[w_c]=\si{\meter}$.~\checkmark Each factor is a pure number
+(Table~\xref{tab:units_cutoff}{A.4}); $\kster=\kstericVal$,
+$\Kin=\KinVal$, and the depth-folded residual
+$\Kdepth\sqrt{c}\,C=\kapp/\kster=\residualFolded$ (depth-separated
+$\sqrt{c}\,C=\kapp/(\kster\Kdcfd)=\residualSepShallow/\residualSepMid/\residualSepDeep$
+at $\alpha=0.80/1.40/2.69$).
+
+\subsubsection{Depth-correction factor: analytic and CFD}
+
+\begin{equation}
+\Kdth(\alpha) = \sqrt{\frac{3}{c_2(\alpha)}}
+ = \lim_{x\to0}\frac{\skimw_{3D}(\alpha)}{\skimw_{2D}},
+\qquad
+\frac{|\Kdcfd-\Kdth|}{\Kdcfd}\le 0.6\%
+\label{eqn:depth_factor}
+\end{equation}
+
+\emph{Dimensional analysis:} ratio of two widths, dimensionless.~\checkmark
+$\Kdth$ is evaluated from the rectangular-duct velocity field of aspect
+ratio $\alpha=h/w_{\mathrm{ch}}$; $\Kdcfd$ is the single-gap CFD
+measurement. \textbf{These are two distinct quantities and must not be
+averaged or interchanged.} Analytic:
+$\KdepthAnalyticShallow/\KdepthAnalyticMid/\KdepthAnalyticDeep$. CFD:
+$\KdepthCfdShallow/\KdepthCfdMid/\KdepthCfdDeep$. Actual deviations
+$\KdepthDevShallow\%$, $\KdepthDevMid\%$, $\KdepthDevDeep\%$; the $0.6\%$
+figure is the \emph{bound}, not the observed value. \emph{The denominator
+is $\Kdcfd$}, the measured factor, because the residual is defined against
+the measurement; dividing by $\Kdth$ instead shifts the middle deviation
+from $\KdepthDevMid\%$ to $\KdepthDevMidTh\%$ and would no longer match the gated
+value. The analytic set is canonical for derivations; the CFD set is
+canonical for the depth-separated residual, which is defined against it.
+
+\subsubsection{Filtrate fraction: two identities, two roles}
+
+The filtrate fraction has two representations. They evaluate to the same
+realized $F$ for a self-consistent device satisfying the model
+assumptions, but they expose different dependencies and should not be
+written as one undifferentiated chain of equalities.
+
+\paragraph{Outlet divider (yield law).}
+\begin{equation}
+F_{\mathrm{outlet}} = \frac{2 R_c}{R_s + 2 R_c}
+\label{eqn:closed_form}
+\end{equation}
+
+\emph{Dimensional analysis:} numerator and denominator both
+$\si{\pascal\second\per\meter\cubed}$, so $F$ is dimensionless.~\checkmark
+
+\textbf{Derivation under PE (P1.4) and $Q_s(0)=0$ (P1.5).} With outlet
+pressure equilibration $p_{\text{center}}(L)=p_{\text{side}}(L)$, the
+current-divider rule on the equivalent network (two side channels $R_s$ in
+parallel, sharing the outlet node with the center channel $R_c$) gives
+$Q_s(\text{one side}) = R_c Q_{\mathrm{in}}/(R_s+2R_c)$, hence
+$F = 2Q_s/Q_{\mathrm{in}} = 2R_c/(R_s+2R_c)$. The hydraulic--electric
+analogy underpinning this is \cite{b13,b14}.
+
+\textbf{Decoupling.} $\fgap$ does not appear in
+Eqn~\ref{eqn:closed_form}: $F_{\mathrm{outlet}}$ is fixed by outlet
+geometry ($R_c,R_s$) alone, while the cutoff is fixed locally by
+$\skimw=w_c\sqrt{\fgap/3}$. \emph{This absence is the decoupling.} The
+two axes are therefore separately addressable, and the orthogonality holds
+\emph{because $N$ is free}; pinning $N$ re-couples them.
+
+\paragraph{Cumulative march (internal extraction history).}
+\begin{equation}
+F_{\mathrm{recursion}} = 1 - \prod_{i=1}^{N} \bigl[ 1 - 2 \fgap(i) \bigr]
+\label{eqn:F_product}
+\end{equation}
+
+\emph{Dimensional analysis:} each factor dimensionless; product
+dimensionless.~\checkmark Small-$\fgap$ limit:
+$F\approx1-\exp(-2\sum_i\fgap(i))$; constant $\fgap$:
+$F\approx1-\exp(-2N\fgap)$. This form describes how cumulative extraction
+unfolds along the ladder; it does \emph{not} exhibit the decoupling,
+because $\fgap$ appears explicitly.
+
+\subsubsection{Hagen--Poiseuille / Ohm's-law analogue}
+
+\begin{equation}
+\Delta P = R \cdot Q
+\label{eqn:HP_ohm}
+\end{equation}
+
+\emph{Dimensional analysis:}
+$[R\cdot Q]=\si{\pascal\second\per\meter\cubed}\cdot\si{\meter\cubed\per\second}=\si{\pascal}=[\Delta P]$.~\checkmark
+The load-bearing identity of the hydraulic--electrical analogy
+($P\!\leftrightarrow\!V$, $Q\!\leftrightarrow\!I$, $R\!\leftrightarrow\!R$):
+``pressure drop, flow rate, and flow resistance in microchannels are
+analogous to electrical voltage, current, and resistance, respectively''
+(\cite[p.~3312]{b14}), and the circuit-analogy design paper states the same
+mapping as ``correlations of pressure to voltage, volumetric flow rate to
+current, and hydraulic to electric resistance'' (\cite[p.~515]{b13}).
+
+\subsubsection{Reynolds number and flow regime}
+
+\begin{equation}
+\text{Re} = \frac{\rho U L_{\mathrm{char}}}{\mu}
+\label{eqn:reynolds}
+\end{equation}
+
+\emph{Dimensional analysis:} dimensionless (using
+$\si{\pascal\second}=\si{\kilo\gram\per\meter\per\second}$).~\checkmark
+
+\textbf{CIF regime check (Dinh, water-like fluid).}
+Dinh's channel depth is $h=140~\si{\micro\meter}$ and the middle channel
+narrows to $w_c\approx52~\si{\micro\meter}$ at the outlet, giving a
+hydraulic diameter
+$D_h = 2w_c h/(w_c+h) \approx \DhOutlet~\si{\micro\meter}$. At
+$Q=30~\si{\micro\liter\per\minute}$ through the outlet cross-section (the
+whole flow through the narrowest section, a worst case that bounds the
+design code's local-flow value), $U=Q/A\approx\Uoutlet~\si{\meter\per\second}$,
+so the \emph{channel-scale}
+$\text{Re}=\rho U D_h/\mu \approx \ReWorstChannel$ (rising to
+$\approx\ReHighFlow$ at $90~\si{\micro\liter\per\minute}$). PRP is more
+viscous than water, so its Reynolds number is lower in proportion; none of
+the three papers states PRP's viscosity. The
+Reynolds number \emph{at the gap} is obtained not by rescaling the length
+but by rescaling the \emph{flux}: a gap carries only the diverted fraction
+$\fgap$ of the channel flow, so
+$\mathrm{Re}_{\mathrm{gap}}\approx\fgap\,\mathrm{Re}_{\mathrm{channel}}
+\approx10^{-3}\times\ReWorstChannel\approx\ReGapScale \ll 1$, evaluated at
+$\fgap\approx10^{-3}$, which is the \emph{top} of the published lineage
+range rather than a margin above it. Gifford's 33-device \emph{calibration}
+array caps lower, at $\fgapDesignCap$ (device~\#33); his separate
+bead-separation devices were built with ``a range of values of'' $\fgap$
+``$(2.2$--$10.0 \times 10^{-4})$'' (\cite[p.~4500]{b1}), reaching
+$1.0\times10^{-3}$, and no published lineage device exceeds it. The
+argument record's scope gate evaluates the same product. The design code's
+Stokes gate (M14) instead computes the gap's own Reynolds number, over the
+gap's $G\times h$ section at the first row's gap flow, which exceeds this
+product by $(w_c+h)/(G+h)$ (about $1.2$ for Dinh's $19~\si{\micro\meter}$ gaps
+and outlet width), and a lamina-shear $\mathrm{Re}_\delta$, and in a cutoff
+design refuses either above $10^{-2}$. \textbf{Do not confuse this with the wider band
+$\fgapBandLo$ to $\fgapBandHi$ quoted under ``Skim cubic and
+dividing-streamline width'' above}, which is the span of a deliberately
+widened numerical sweep used to demonstrate decoupling over a decade, not
+a range any built device occupies. \emph{The margin is worth stating
+plainly}: at the top of that sweep, $\fgap=\fgapBandHi$, the same scaling
+would give $\mathrm{Re}_{\mathrm{gap}}\approx0.010$ (the design code's own
+measure about a fifth higher, just past its gate), which is where the
+creeping-flow premise stops having room. The premise is comfortable for
+built devices and marginal at the top of the test sweep. \emph{(A
+length-rescaling estimate gives different numbers and should not be
+conflated with this one: at the same $U$, using the
+$19~\si{\micro\meter}$ gap width gives $\mathrm{Re}\approx1.3$ and using
+the outlet lamina width $\skimw\approx0.31~\si{\micro\meter}$ gives
+$\approx0.02$. The flux argument is the one the scope gate uses.)} The
+steric-skimming junction is therefore in the creeping (Stokes) regime
+while the channel flow is low-Reynolds laminar.
+\textbf{The framework is therefore not globally Stokes}: it is scoped to
+rigid, approximately spherical particles in a Newtonian, nearly
+constant-viscosity fluid, with creeping-flow conditions \emph{at the gap
+and lamina scales that govern particle selection}. Deformable particles,
+cell crowding and whole-blood rheology are outside the validated envelope.
+\emph{(An earlier revision used $L_{\mathrm{char}}=30~\si{\micro\meter}$
+and $U=0.22~\si{\meter\per\second}$ and overstated the regime as
+``Stokes''; the steric derivation is unaffected because it rests on the
+gap-scale $\text{Re}\ll1$.)}
+
+\subsubsection{Entrance length and the quasi-developed assumption}
+
+\begin{equation}
+\frac{L_e}{D_h}\simeq\Bigl[0.619^{1.6}+(0.0567\,\mathrm{Re})^{1.6}\Bigr]^{1/1.6}
+\ \xrightarrow{\ \mathrm{Re}\to0\ }\ 0.619
+\label{eqn:entrance}
+\end{equation}
+
+\emph{Dimensional analysis:} ratio of two lengths, dimensionless.~\checkmark
+
+\textbf{The kernels assume fully developed flow, and strictly it is not.}
+The correct laminar entrance length has a \emph{Stokes floor} and does not
+vanish as $\mathrm{Re}\to0$; the naive $L_e=0.05\,\mathrm{Re}\,D_h$ goes
+to zero in this regime and is wrong here. The correlation is Durst \emph{et al.}~\cite{b23} for developing
+\emph{pipe} flow, applied here through the hydraulic diameter $D_h$; the
+$0.619$ constant is that correlation's low-Reynolds limit. The
+rectangular-duct coefficient differs slightly, and \cite{b23} is the one
+citation in this section whose source is not held in the verification
+corpus, so the constant is taken as published. The conclusion below does
+not turn on it.
+
+\textbf{Evaluated on this document's own geometry}, rather than quoted:
+at the Dinh inlet ($w_c=75~\si{\micro\meter}$, $h=140~\si{\micro\meter}$,
+$D_h=\DhInlet~\si{\micro\meter}$) the floor gives
+$L_e\approx\LeInlet~\si{\micro\meter}$; at the outlet
+($w_c=52~\si{\micro\meter}$, $D_h=\DhOutlet~\si{\micro\meter}$) it gives
+$L_e\approx\LeOutlet~\si{\micro\meter}$. Against the lineage row pitch $\Lambda=G+g_p=46.1~\si{\micro\meter}$, which
+the record measures from Gifford's Fig.~4 ($G=20.5$, $g_p=25.6$), this is
+$\LeOverLamGInlet$ at the inlet and $\LeOverLamGOutlet$ at the outlet. \emph{Dinh publish no row
+pitch}: their Fig.~2 gives the gap width, the taper and the depth but no
+post width or spacing, so an estimated Dinh pitch near
+$49~\si{\micro\meter}$ (giving $\LeOverLamInlet$ and $\LeOverLamOutlet$)
+is an inference, not a source figure, and the traceable Gifford value is
+quoted here instead. On either pitch
+the ratio exceeds unity at the inlet and sits at unity at the outlet.
+\textbf{The entrance length is
+therefore comparable to the row pitch and exceeds it over much of the
+device: the flow does not classically redevelop between rungs.}
+
+This is expected to be benign, for a stated reason: each rung perturbs the
+base flow by a relative amount of order $\fgap$ (about $10^{-4}$, and at most
+$10^{-3}$ across the published lineage range), so the error this makes in a
+segment's resistance is expected to be small. The design specification puts
+that error at $O(\fgap^2)\sim10^{-8}$; that order needs the first-order term
+to cancel, which this record does not show, so it is not used here as a
+bound. The conclusion does not turn on
+the exact value of $L_e$: it is the same whether $L_e/\Lambda$ is $\LeOverLamOutlet$ or
+$\LeOverLamGInlet$. Report $L_e/\Lambda$; do not gate
+on it. Gate instead on the perturbation, which the design specification identifies with the design
+code's gap-dominance gate (M13).
+
+\subsubsection{Platelet volume and the Dinh threshold}
+
+\begin{equation}
+V_{\mathrm{sph}} = \frac{4}{3} \pi a^3
+\label{eqn:platelet_volume}
+\end{equation}
+
+\emph{Dimensional analysis:} $[V_{\mathrm{sph}}]=[a]^3=\si{\meter\cubed}$.~\checkmark
+\textbf{Numerical ($12$~fL):} $a\approx\aTwelveFL~\si{\micro\meter}$,
+$D=2a\approx\DTwelveFL~\si{\micro\meter}$ (volume-equivalent sphere; a
+geometric conversion, not a measured diameter). Dinh report
+$2a\approx4.8~\si{\micro\meter}$ for the actual discoid $12$~fL platelet
+(\cite[p.~917]{b5}); see the volume-convention note in
+Section~\xref{app:units_particle}{``Particle and Separation Variables''}.
+
+\subsubsection{Multi-variant ratio (Dinh V1, V3)}
+
+\begin{equation}
+\mathcal{R} = \frac{\ln(1 - F_{V3})}{\ln(1 - F_{V1})}
+\label{eqn:multi_variant}
+\end{equation}
+
+\emph{Dimensional analysis:} $\ln$ of dimensionless argument;
+ratio dimensionless.~\checkmark \textbf{Origin.} With
+$F=1-\exp(-2N\fgap)$, $\ln(1-F)=-2N\fgap$ and
+$\mathcal{R}=(N_{V3}\,f_{\mathrm{gap},V3})/(N_{V1}\,f_{\mathrm{gap},V1})$,
+sensitive only to the cumulative $\fgap$-product.
+% =====================================================================
+% OPTION A (recommended): fold the unit-consistency summary into A.9 as a
+% closing subsubsection. APPEND this to A9_FINAL.tex and DELETE A.12.
+%
+% Why here rather than as its own subsection: fourteen of the seventeen rows
+% point at equations numbered in THIS file, so as a separate subsection they
+% are cross-file \ref pointers. That is exactly the fragility that broke the
+% build when the cutoff law was unnumbered and app:units_summary still
+% referenced the retired label. Folded in, those fourteen become intra-file
+% references that resolve in a standalone A.9 build, and only the three
+% Appendix-A.4 rows need \xref.
+%
+% The CONVENTION column is the reason the table is not merely A.9's
+% checkmarks reprinted: a dimensional check is only meaningful under a stated
+% convention, and three of these carry one that a reader would otherwise have
+% to reconstruct from the body.
+% =====================================================================
+\subsubsection{Unit-consistency summary}
+\label{app:units_summary}
+
+Each equation above was checked inline. The table gathers them so the
+whole set can be scanned at once, and records the convention each check
+runs under, because a dimensional identity that holds only under a
+convention is not established until the convention is named. Three rows
+come from Section~\xref{app:units_cutoff}{``Cutoff-Law Prefactor
+Decomposition''} and are checked here rather than there.
+
+\begingroup\small\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.30\textwidth}
+>{\raggedright\arraybackslash}p{0.17\textwidth}
+>{\raggedright\arraybackslash}p{0.17\textwidth}
+>{\raggedright\arraybackslash}p{0.28\textwidth}@{}}
+\caption{Unit-consistency check for every load-bearing equation, both axes
+and the validation layer, with the convention each check assumes. Every
+entry matches; the column that carries information is the
+last.}\label{tab:units_check}\\
+\toprule Equation & LHS & RHS & Convention assumed \\\midrule\endfirsthead
+\multicolumn{4}{@{}l}{\footnotesize\itshape Table \thetable\ (continued)}\\
+\toprule Equation & LHS & RHS & Convention assumed \\\midrule\endhead
+\bottomrule\endlastfoot
+Eqn~\ref{eqn:gifford1} (Gifford flow recursion) & \si{\meter\cubed\per\second} & \si{\meter\cubed\per\second} & $\fgap$ carries the row index; Gifford's own form has none \\
+Eqn~\ref{eqn:gifford3} (Gifford continuity) & 1 & 1 & bilateral extraction, hence the factor $2$ \\
+Eqn~\ref{eqn:gifford5} (Yang series) & \si{\pascal\second\per\meter\cubed} & \si{\pascal\second\per\meter\cubed} & $h\le w_{\mathrm{ch}}$; $w_{\mathrm{ch}}\in\{w_c,w_s\}$, not the lamina $w$ \\
+Eqn~\ref{eqn:dinh_fgap} (Dinh $\fgap$ definition) & \si{\meter\cubed\per\second} & \si{\meter\cubed\per\second} & per gap, per side \\
+Eqn~\ref{eqn:xia_corrected} (Xia corrected scaling) & 1 & 1 & the \emph{corrected} form; the 2016 printing inverts the widths \\
+Eqn~\ref{eqn:skim_cubic} (skim cubic / $\skimw$) & 1 \;/\; \si{\meter} & 1 \;/\; \si{\meter} & two statements in one display: the cubic is dimensionless, $\skimw$ is a length \\
+Eqn~\xref{eqn:cutoff_law}{6} (cutoff law, $\dcrit$) & \si{\meter} & \si{\meter} & leading skim $w_c\sqrt{\fgap/3}$, the form $\kg$ was fitted with \\
+Eqn~\xref{eqn:kappa_decomp}{7} ($\kapp$ decomposition) & 1 & 1 & every factor a pure number \\
+Eqn~\xref{eqn:kernel_pairing}{8} (kernel--prefactor conversion) & 1 & 1 & \emph{array-mean} $\overline{c_2}$ over the calibration widths, not a per-device $c_2$ \\
+Eqn~\ref{eqn:depth_factor} (depth factor $\Kdth$) & 1 & 1 & deviation denominator is $\Kdcfd$, the measured factor \\
+Eqn~\ref{eqn:closed_form} ($F_{\mathrm{outlet}}$) & 1 & 1 & outlet pressure equilibration and $Q_s(0)=0$ \\
+Eqn~\ref{eqn:F_product} ($F_{\mathrm{recursion}}$) & 1 & 1 & cumulative over $N$ rows; not the outlet identity \\
+Eqn~\ref{eqn:HP_ohm} (Hagen--Poiseuille analogue) & \si{\pascal} & \si{\pascal} & $P\!\leftrightarrow\!V$, $Q\!\leftrightarrow\!I$, $R\!\leftrightarrow\!R$ \\
+Eqn~\ref{eqn:reynolds} (Reynolds number) & 1 & 1 & channel scale; the gap value rescales the \emph{flux}, not the length \\
+Eqn~\ref{eqn:entrance} (entrance length $L_e/D_h$) & 1 & 1 & the $\mathrm{Re}\to0$ Stokes floor, $0.619$ \\
+Eqn~\ref{eqn:platelet_volume} (sphere volume) & \si{\meter\cubed} & \si{\meter\cubed} & volume-equivalent sphere, not a measured discoid diameter \\
+Eqn~\ref{eqn:multi_variant} (multi-variant ratio) & 1 & 1 & constant-$\fgap$ exponential limit \\
+\end{longtable}\endgroup
+
+\noindent All seventeen are unit-consistent. \emph{Dimensional consistency
+is necessary and not sufficient}, and the conventions in the last column
+are where the substantive assumptions live: the check confirms each
+equation is well formed under them, not that they hold.
+
+%==============================================================
+% A.10 -- SOURCE-QUOTE VALIDATION INDEX  (complete, corrected)
+%==============================================================
+\subsection{Source-Quote Validation Index (verbatim)}
+\label{app:units_quotes}
+
+Direct quotations anchoring each unit convention and adjudicated
+criterion, organized by source. Quotes are minimal; the
+page/figure/equation locator does the identifying work. A consolidated
+claim$\rightarrow$source$\rightarrow$anchor table follows
+(Table~\ref{tab:verbatim}).
+
+\paragraph{What needs a quotation, and what does not.} Not every statement
+in this appendix should carry one, and forcing quotations onto
+mathematical or computed claims would weaken rather than strengthen them.
+The standard applied here is: \emph{every externally attributable premise
+has a source anchor; every mathematical claim has a derivation; every
+computed claim has a reproducible computation; every measured claim has a
+traceable datum; every interpretive claim has an explicit evidentiary
+status.} Identities such as $D=2a$, $D_h=2wh/(w+h)$ and
+Eqn~\xref{eqn:closed_form}{12}, the series inversion, the CFD values, the
+computed Reynolds numbers and the uncertainty ratios belong to the second,
+third and fourth categories and are marked as such rather than quoted.
+
+\paragraph{How this index is maintained.} Table~\ref{tab:verbatim} is
+\emph{generated} from the quotation register, not typed. Every row is
+verified on every build: its text against the primary source and, where its
+page can be resolved, its page against the paginated source; rows marked
+$^{\dagger}$ are text-verified only. Locators are corrected in
+the register and propagate here on the next build.
+
+\subsubsection*{Gifford 2014~\cite{b1}}
+\textbf{p.~4498} ($\fgap$ regime): Gifford describes ``devices that remove
+less than $0.05\%$ of the fluid from the central channel at each gap,''
+i.e.\ $\fgap < 5\times10^{-4}$. \emph{This is the regime the source
+reports, not a design target it states.}\\
+\textbf{p.~4498} (Eqn~1): $Q_s(i)=Q_s(i-1)+\fgap Q_c(i-1)$ (no row index on
+$\fgap$).\\
+\textbf{p.~4498} (Eqn~3): continuity, from ``the total volumetric flow
+within the device before and after each gap must be constant.''\\
+\textbf{p.~4498} (Eqn~5): the rectangular-channel resistance carries
+citation [20] ($=$ Yang/\"{U}ndar/Zahn, \cite{b6}); ``$L$ is the length,
+$w$ is the width and $d$ is the depth of the channel.'' Clarified on
+\textbf{p.~4499}: $L$ is ``the size (along the direction of flow) of an
+obstacle in the device.''\\
+\textbf{p.~4500} (calibration): ``33 test devices to explore a wide range
+of $\fgap$ values ranging linearly from'' $6.40\times10^{-5}$ (device \#1)
+to $5.76\times10^{-4}$ (device \#33); $\fgap^*$ read visually;
+$\fgap=3.34\times10^{-4}$ selected between beads of diameter
+$4.7~\si{\micro\meter}$ and $8.3~\si{\micro\meter}$ (Fig.~4 caption).\\
+\textbf{p.~4500, Fig.~3 caption} (depth \emph{unreported}): states only
+$w_c = 100,125,150~\si{\micro\meter}$, no depth (the
+$80~\si{\micro\meter}$ value belongs to the Fig.~4 device).\\
+\textbf{p.~4503}: ``the size cutoff is determined primarily by the width of
+the streamlines diverted into the side (filtrate) channels.''
+
+\subsubsection*{Yang 2006~\cite{b6} (resistance series)}
+\textbf{p.~875}: its Eqn~3 is ``the analytical solution of flow resistance
+within a rectangular duct'': the series Gifford's Eqn~5 cites and that
+Eqn~\xref{eqn:gifford5}{5} reproduces.
+
+\subsubsection*{Xia 2016~\cite{b2} / 2022 Correction~\cite{b3}}
+\textbf{Correction p.~1} (verbatim): the article ``contains an error in
+equation 1, where the terms $w_c(i)$ and $w_c(\text{ref})$ are inverted'';
+it should read $\fgap(i)=(w_c(\text{ref})/w_c(i))^2\,\fgap(\text{ref})$.
+
+\subsubsection*{Lezzar 2022~\cite{b4} (third lineage device)}
+\textbf{p.~2}: the CIF design in that study targets a $6~\si{\micro\meter}$
+critical diameter, and ``any CIF design must incorporate thousands of
+gaps.'' The unpublished gap count $N$ is the quantity to which the
+per-gap over-extraction factor $\sqrt{c}$ is tied
+(Section~\xref{app:units_cutoff}{``Cutoff-Law Prefactor Decomposition''}). \emph{Verification note:} two of the
+three registered Lezzar quotes are the softest verifications in the
+register, one passing under ligature-tolerant matching and one against a
+page image rather than a text layer; they are not equivalent in strength
+to the exact-match anchors elsewhere in this index.
+
+\subsubsection*{Dinh 2024~\cite{b5}}
+\textbf{p.~913} ($12$~fL threshold): ``PLTs with cell volumes larger than
+12 fL are commonly considered `large','' the P-LCR classification cut.
+\emph{A classification threshold, not a cutoff.}\\
+\textbf{p.~915} ($\fgap$ definition): a CIF device operates ``by siphoning
+a relatively small (and precisely calculated) fraction, $\fgap(i)$, of the
+flow in the middle channel, $Q_m(i)$,'' so
+$Q_{\mathrm{gap}}(i)=\fgap(i)Q_m(i)$.\\
+\textbf{p.~916}: the taper, ``progressively increasing the width of the
+side channels and decreasing the width of the middle channel.''\\
+\textbf{p.~916, Fig.~1 caption (DESELECTED, $\kster=1$):} ``about half the
+width of the extracted flow lamina'', superseded by the main text and
+Inglis; the two Dinh readings are formally inconsistent, so one must be
+retracted.\\
+\textbf{p.~917, main text (ADOPTED for $\kster$):} particles with a radius
+smaller than the lamina width ($a<w$) are carried into the side
+channels; larger particles ($a>w$) remain in the middle channel.\\
+\textbf{p.~917 (discoid platelet):} ``recovery of 12 fL PLTs
+($2a\approx4.8~\si{\micro\meter}$)'', the physical discoid diameter
+(cf.\ $2.84~\si{\micro\meter}$ equivalent-sphere; see
+Section~\xref{app:units_particle}{``Particle and Separation Variables''}).\\
+\textbf{p.~917, Fig.~caption (geometry):} gaps $19~\si{\micro\meter}$-wide;
+middle channel narrows $75\to52~\si{\micro\meter}$; depth of all channels
+$140~\si{\micro\meter}$.\\
+\textbf{p.~919, Fig.~4 caption (validation dispersion):} ``Values shown are
+mean $\pm$ standard deviation (panel A: $n=3$; panel B: $n=4$).'' The same
+caption reports the filtrate volume recoveries, $50.5\pm3.3\%$ and
+$64.9\pm3.6\%$.
+
+\subsubsection*{Yamada \& Seki 2005~\cite{b15} (geometric exclusion)}
+\textbf{p.~1233--1234}: a particle centre cannot approach a sidewall closer
+than one particle radius, and the method uses that fact. This is the
+geometric-exclusion premise beneath $\kster$; it is \emph{not} a source for
+the finite-particle factor $C$, which is cited to \cite{b19} and
+\cite{b21}.
+
+\subsubsection*{Davis 2008~\cite{b22} (cross-family DLD comparison)}
+\textbf{pp.~14, 18, 22--24}: the DLD critical diameter is about twice the width
+of the first streamline; the correlation with terms $A=1.4$ and $B=0.48$
+is fitted to critical diameters measured on ``about 20 different devices''
+and was used to design the thresholds the thesis reports, and its parabolic
+approximation is checked against simulation. Used only in the cross-family
+comparison (Section~\xref{app:units_crosslineage}{``Cross-Lineage Validation''}), never to fix a CIF
+constant. \emph{Verification note:} the archived text carries the
+thesis's printed page numbers, and these locators are verified against them.
+
+\subsubsection*{Inglis 2006~\cite{b17} (steric basis)}
+\textbf{p.~656}: the boundary-streamline fraction satisfies the
+parabolic-profile cubic $\varepsilon = 3y^2 - 2y^3$ (identical to the CIF
+skim cubic), and the critical diameter is twice the first-streamline
+width, which Inglis writes $D_c = 2\beta$ (its Eqn~1; Greek $\beta$ is his
+symbol, rendered $b$ here per the notation convention), giving
+$\kster=\kstericVal$.
+
+\subsubsection*{Inglis \& Herman 2013~\cite{b18} (lamina / branch flow)}
+\textbf{p.~1724}: a particle is ``restricted away from walls by a distance
+equal to their radius,'' so a boundary stream of width $b$ sets a cutoff
+radius $b$ (equivalently $\kster=\kstericVal$); the abstract reports
+``high filtration ratios (14--29\%) on beads and fungal spores'' with ``a
+sharp size cutoff.''\\
+\textbf{p.~1727} (Methods): ``The measured depth of the SU-8 mold was
+48'' \si{\micro\meter}, against $50~\si{\micro\meter}$ designed.\\
+\textbf{p.~1728, Table~1}: design versus measured cutoff diameters
+($7.2/5.0=1.44$; $8.9/6.0=1.48$; $9.7/8.0=1.21$).\\
+\textbf{p.~1729} (Discussion): ``the experimentally observed cutoff
+diameters are significantly higher than the cutoff sizes determined from
+our design process,'' and the shallower channel ``increases the main
+channel resistance more than it does the branch channel resistance''
+(see Section~\xref{app:units_crosslineage}{``Cross-Lineage Validation''}).
+
+\subsubsection*{MOPSA 2017~\cite{b19} (finite-particle method class)}
+\textbf{p.~2}: the simulation ``treats the particle as a two-dimensional
+rigid circular object instead of a single point'': the finite-body
+\emph{method class} available for computing $C$, not an establishment of
+the factor itself.
+
+\subsubsection*{Doyeux \emph{et al.} 2011~\cite{b21} (factor-$C$ mechanism)}
+\textbf{p.~359} (abstract): near an asymmetric bifurcation the
+finite-sphere attraction is ``directed towards the low flow rate branch''
+(anti-Zweifach--Fung): the \emph{mechanism} that raises the measured
+cutoff above the steric value ($C>1$), not a derivation of the
+multiplicative form. \emph{Locator note:} the register cites \emph{JFM}
+pagination while the archived artifact is the arXiv preprint, which
+paginates differently; the text verifies, the page does not.
+
+\subsubsection*{Bruus 2008~\cite{b20} (resistance limit)}
+The rectangular-duct series reduces to $R = 28.4\,\mu L/h^4$ at the square
+cross-section $h=w$ (Eqn~\xref{eqn:gifford5}{5} limit check). This claim is
+\emph{self-derived} rather than quoted: the registry's independent
+square-duct anchor is $12/B(1)=28.4542$, checked by the derivation record
+rather than by the quotation gate.
+
+\subsubsection*{Formal Argument}
+\textbf{P1.4} (PE outlet condition):
+$p_{\text{center}}(L_{\mathrm{dev}})=p_{\text{side}}(L_{\mathrm{dev}})$ at the
+outlet. \emph{The physical condition is not introduced here.} The lineage
+source states that its resistance-ratio calculation holds ``provided the
+hydrostatic pressures in the output collection areas are kept equal''
+(\cite[p.~4500]{b1}). What is this work's is the \emph{formalisation} of that
+condition as an equality of outlet-node pressures, and its use as the premise
+of the closed-form filtrate identity
+(Eqn~\xref{eqn:closed_form}{12}).\\
+\textbf{P1.5} (inlet seal): $Q_s(0)=0$; side channels accumulate filtrate
+only through the gap network. \emph{This one is a numbered assumption of this
+work and carries no external anchor.}\\
+\emph{Both are stated and used as premises in
+Section~\xref{app:units_equations}{``Equations: Step-by-Step Unit Derivations''}.}
+
+\paragraph{Consolidated index.} Table~\ref{tab:verbatim} maps every
+load-bearing claim to its source location and a short verbatim anchor, so
+a third party can confirm each in seconds. It is generated from the
+quotation register; do not edit it by hand.
+
+% The block below is GENERATED from the quotation register by gen_a10.py and is
+% inlined here so this subsection is one self-contained file. Do not edit inside the
+% markers: gate 8c re-splices the generator output into a copy and diffs, so a hand
+% edit here fails the build. To change a locator, fix the REGISTER and rebuild with
+%     python3 gen_a10.py quote_register.json cif_argument.yml --inline A1_A10_FINAL.tex
+% It is a longtable and carries its own caption and label -- it must NOT be wrapped
+% in \begin{table}, because a longtable is not a float.
+% >>> BEGIN GENERATED A.10 TABLE (gen_a10.py) -- DO NOT EDIT THIS BLOCK
+% GENERATED by gen_a10.py from quote_register.json -- DO NOT EDIT BY HAND.
+% Every row here is covered by gate 8 (verbatim text) and gate 8b (page locator).
+% To change a locator, fix the REGISTER and rebuild.
+% Requires \usepackage{longtable} in the preamble.
+\begingroup\scriptsize\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.15}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.30\textwidth}>{\raggedright\arraybackslash}p{0.17\textwidth}>{\raggedright\arraybackslash}p{0.45\textwidth}@{}}
+\caption{Claim $\rightarrow$ source (location) $\rightarrow$ verbatim anchor. Generated from the quotation register. Every row's \emph{text} is verified against the primary source on every build; \emph{pages} are checked where they can be resolved: against per-page images, or, for the Davis thesis, against the page numbers its text carries. Rows marked $^{\dagger}$ are text-verified but not page-verified.}\label{tab:verbatim}\\
+\toprule
+Claim in glossary & Source (location) & Verbatim anchor (short) \\
+\midrule\endfirsthead
+\multicolumn{3}{@{}l}{\footnotesize\itshape Table \thetable\ (continued)}\\
+\toprule
+Claim in glossary & Source (location) & Verbatim anchor (short) \\
+\midrule\endhead
+\midrule\multicolumn{3}{r@{}}{\footnotesize\itshape continued on the next page}\\
+\endfoot
+\bottomrule\endlastfoot
+V\&V-20 defines u\_D to include all effects of averaging & \cite[p.~1-6]{b25} & ``includes all effects of averaging, includes all random and systematic uncertainty components'' \\  % A-VV1
+Critical diameter is twice the first-streamline width (independent corroboration) & \cite[p.~14]{b22} & ``about twice the width of the first streamline'' \\  % P-C1.6
+DLD critical-diameter correlation, terms A and B & \cite[p.~23]{b22} & ``with terms A=1.4 and B=0.48'' \\  % P-C6.1
+That correlation was used to design the thresholds the thesis reports & \cite[p.~24]{b22} & ``equation 2-22 was used to design all the thresholds discussed herein'' \\  % P-C6.2
+Critical diameters measured across about twenty devices & \cite[p.~22]{b22} & ``about 20 different devices over a range of G from 1.3 micron to 38 micron'' \\  % P-C6.3a
+Parabolic approximation checked against simulation & \cite[p.~18]{b22} & ``The Femlab simulation shows this simple parabolic approximation is a reasonable estimation for the velocity\,\ldots'' \\  % P-C6.3b
+Definition of the per-gap extraction fraction & \cite[p.~915]{b5} & ``siphoning a relatively small (and precisely calculated)'' \\  % A-D1
+V1 filtrate-volume recovery, the yield-axis experimental datum (panel B, n=4) & \cite[p.~919]{b5} & ``Volume recovery in filtrate was 50.5 $\pm$ 3.3\% for f* gap = 1.04'' \\  % A-D10
+Dinh selects f*\_gap as an initial value alongside the initial channel width & \cite[p.~915]{b5} & ``the initial values for the width of the middle channel and the filtration fraction'' \\  % A-D11
+Dinh reports three initial f*\_gap values across three designs & \cite[p.~917 (Fig. 2 caption)]{b5} & ``for f* gap values of 1.04 $\times$ 10$-$4 , 1.12 $\times$ 10$-$4, and 1.28 $\times$ 10$-$4, respectively'' \\  % A-D12
+V3 filtrate-volume recovery, the yield-axis experimental datum (panel B, n=4) & \cite[p.~919]{b5} & ``64.9 $\pm$ 3.6\% for f* gap = 1.28'' \\  % A-D13
+Dinh describes the taper as widening side channels and narrowing the middle & \cite[p.~916]{b5} & ``progressively increasing the width of the side channels and decreasing'' \\  % A-D14
+A platelet-size classification threshold (not the cutoff) & \cite[p.~913]{b5} & ``cell volumes larger than 12 fL are commonly considered'' \\  % A-D2
+Physical discoid diameter of a 12 fL platelet & \cite[p.~917]{b5} & ``recovery of 12 fL PLTs (2a $\approx$ 4.8 \si{\micro\meter}) in the filtrate'' \\  % A-D3
+Reported dispersion is standard deviation, with panel sample sizes & \cite[p.~919]{b5} & ``Values shown are mean $\pm$ standard deviation (panel A: n = 3; panel B: n = 4)'' \\  % A-D4
+Device operating flow rate & \cite[p.~915]{b5} & ``a CIF device operating at a flow rate of 30'' \\  % A-D5
+Smallest platelets are recovered in the filtrate below the fluid rate & \cite[p.~917]{b5} & ``recovery of the smallest 2 fL PLTs (a $\approx$ 1 \si{\micro\meter}) in the filtrate was consistently lower than the percent of extracted fluid volume'' \\  % A-D6
+Dinh's own explanation: crowding by retained platelets & \cite[p.~917]{b5} & ``crowding of the flow laminae near the filtration gaps by retained'' \\  % A-D7
+Crowding impedes the outflow of the smallest platelets & \cite[p.~917]{b5} & ``impeded the free outflow of the smallest PLTs'' \\  % A-D8
+Platelet diameter is the major/equatorial axis of an oblate spheroid & \cite[p.~917]{b5} & ``range in diameter (major/equatorial axis, 2a) from about 2.0'' \\  % A-D9
+\textbf{DESELECTED} ($\kster=1$ reading), superseded by the main text and Inglis; the two Dinh readings are formally inconsistent, so one must be retracted: Caption reading places the cutoff at half the lamina width & \cite[p.~916]{b5} & ``Particles with an effective radius smaller than about half the width of the extracted flow\,\ldots'' \\  % P-C1.2-caption
+\textbf{ADOPTED} for $\kster=2$: Main-text capture criterion, at a = lamina width & \cite[p.~917]{b5} & ``For particles with a radius smaller than the width of the extracted flow lamina (a\,\ldots'' \\  % P-C1.2-lower
+Device geometry: gap width, middle-channel taper, channel depth & \cite[p.~917 (Fig. 2 caption)]{b5} & ``All filtration gaps in the linear section were 19 \si{\micro\meter}-wide. The middle channel narrowed from\,\ldots'' \\  % P-C7.1-geom
+Platelets are discoid, not spherical & \cite[p.~913]{b5} & ``1 \si{\micro\meter}-thick oblate spheroids (discoids) ranging from 2 to 7 \si{\micro\meter} in diameter'' \\  % P-LIM.1
+Discoid platelets tumble near the channel walls & \cite[p.~921]{b5} & ``the characteristic tumbling motion oblate spheroids undergo when flowing near the channel walls'' \\  % P-LIM.2
+Bead bracket, lower end: a 1 um bead is recovered in the filtrate at the fluid rate & \cite[Fig. S1(A)]{b5}$^{\dagger}$ & ``fluid volume recovery in filtrate was 52\% and bead recovery in filtrate was 54\%'' \\  % P-C7.2
+Bead bracket, upper end: a 4.7 um bead is retained against the fluid & \cite[Fig. S1(B)]{b5}$^{\dagger}$ & ``fluid volume recovery in filtrate: 50\%, bead recovery in filtrate: 1.8\%'' \\  % P-C7.3
+Finite particle size shifts the effective separation line at a bifurcation & \cite[p.~368]{b21}$^{\dagger}$ & ``might play a role, due to the finite size of the flowing objects'' \\  % P-C3d.5
+Finite-sphere attraction is toward the low-flow branch (mechanism for C > 1) & \cite[abstract]{b21}$^{\dagger}$ & ``such an attraction does not occur but is, on the contrary, directed towards the low\,\ldots'' \\  % P-C6.4
+The apparent high-flow enrichment is an inlet-distribution effect & \cite[abstract]{b21}$^{\dagger}$ & ``the enrichment in particles in the high flow rate branch is shown to be mainly\,\ldots'' \\  % P-C6.5
+Flow recursion, Eqn 1 & \cite[p.~4498]{b1} & ``Qs(i) = Qs(i $-$ 1) + fgapQc(i $-$ 1)'' \\  % A-G1
+Gifford built four devices spanning f\_gap from 2.2e-4 to 10.0e-4 & \cite[p.~4500]{b1} & ``four individual devices with a range of values of fgap (2.2--10.0 $\times$ 10$-$4'' \\  % A-G10
+Gifford names Eqn 5 variables: length, width, depth of the channel & \cite[p.~4498]{b1} & ``L is the length, w is the width and d is the depth of the\,\ldots'' \\  % A-G11
+Gifford clarifies L as an obstacle size along the flow direction & \cite[p.~4499]{b1} & ``the size (along the direction of flow) of an obstacle in the device'' \\  % A-G12
+The Fig. 4 device is 80 um deep with a 100 um central channel & \cite[p.~4500 (body; cf. the Fig. 4 caption, which gives 80 \si{\micro\meter} $\pm$ 3 \si{\micro\meter})]{b1} & ``The depth of the device shown in Fig. 4 was 80 \si{\micro\meter}; the width of the central channel was 100 \si{\micro\meter}'' \\  % A-G13
+Gifford describes the gaps as wide, about 20 um & \cite[p.~4498]{b1} & ``wide (~20 \si{\micro\meter}) gaps'' \\  % A-G14
+Gifford names the total number of gap rows & \cite[p.~4499]{b1} & ``the necessary total number of rows of gaps'' \\  % A-G15
+Gifford defines f*\_gap as the per-gap fraction below which beads are retained & \cite[p.~4500]{b1} & ``the filtration fraction per gap below which the beads of a spe'' \\  % A-G16
+Continuity, Eqn 3, from incompressibility & \cite[p.~4498]{b1} & ``the total volumetric flow within the device before and after each gap must be constant'' \\  % A-G2
+The reported per-gap extraction regime (not a stated design target) & \cite[p.~4498]{b1} & ``devices that remove less than 0.05\% of the fluid from the central channel at each gap, i.e. fgap < 5 $\times$ 10$-$4'' \\  % A-G3
+The 33-device calibration array and its f\_gap span & \cite[p.~4500]{b1} & ``33 test devices to explore a wide range of fgap values ranging linearly from'' \\  % A-G4
+The f\_gap selection bracket between two bead sizes & \cite[p.~4500]{b1} & ``retain beads with diameter 4.7 \si{\micro\meter} and diameter 8.3 \si{\micro\meter}'' \\  % A-G5
+Calibration figure gives three channel widths and no depth & \cite[p.~4500]{b1} & ``Effect of central channel width (wc = 100 \si{\micro\meter}, 125 \si{\micro\meter}, 150 \si{\micro\meter})'' \\  % A-G6
+Centre- and side-channel flow rates defined & \cite[p.~4498]{b1} & ``a simple recursive eqn (1) for the volumetric flow rate in the central'' \\  % A-G7
+Centre and side segment resistances defined & \cite[p.~4498]{b1} & ``the resistance of a side channel segment, Rs(i), and the central channel segment resistance, Rc'' \\  % A-G8
+Outlet hydrostatic pressures are kept equal (the P1.4 condition) & \cite[p.~4500]{b1} & ``provided the hydrostatic pressures in the output collection areas are kept equal'' \\  % A-G9
+Cutoff is set by the diverted-lamina width, not the gap width & \cite[p.~4503]{b1} & ``the size cutoff is determined primarily by the width of the streamlines diverted into the\,\ldots'' \\  % P-C1.1
+Platelets are approximately discoid & \cite[p.~4502]{b1} & ``approximately discoid'' \\  % P-LIM.3
+Platelet-rich plasma behaviour in the lineage device & \cite[p.~4502]{b1} & ``we observed the behavior of PRP flowing through the same three arrays'' \\  % P-LIM.4
+Pressure, flow and resistance map to voltage, current and resistance & \cite[p.~3312]{b14} & ``pressure drop, flow rate, and flow resistance in microchannels are analogous to electrical voltage, current,\,\ldots'' \\  % A-HE1
+Inglis derives the streamline width from a parabolic profile through the gap & \cite[p.~656]{b17} & ``By assuming a conventional parabolic flow profile through the gap, with zero velocity at the\,\ldots'' \\  % A-IN1
+Critical diameter is twice the first-streamline width, D\_c = 2b & \cite[p.~656]{b17} & ``The critical particle diameter, Dc, for determining which path a particle will follow is then\,\ldots'' \\  % P-C2.1
+First-streamline width defined by integrating the flow profile from the post edge & \cite[p.~656]{b17} & ``we integrate the flow profile'' \\  % P-C2.3
+First-streamline construction, second statement & \cite[p.~655]{b17} & ``is the width of the first streamline'' \\  % P-C2.4
+Branch-flow filtration ratios and a sharp size cutoff & \cite[p.~1724]{b18} & ``high filtration ratios (14--29\%) on beads and fungal spores'' \\  % A-IH1
+Measured cutoff diameters exceed the design values & \cite[p.~1729]{b18} & ``The experimentally observed cutoff diameters are significantly higher than the cutoff sizes determined from our design process.\,\ldots'' \\  % A-IH2
+Fabricated mould depth fell short of the design depth & \cite[p.~1727]{b18} & ``The measured depth of the SU-8 mold was 48'' \\  % A-IH3
+A shallow mold raises main-channel resistance more than branch resistance & \cite[p.~1729]{b18} & ``increases the main channel resistance more than it does the branch channel resistance'' \\  % A-IH4
+More branch flow raises the critical size at each branch & \cite[p.~1729]{b18} & ``more fluid flow in the branches, increasing the critical size at each branch'' \\  % A-IH5
+Excluding a particle can need a streamline narrower than its radius & \cite[p.~1729]{b18} & ``excluding a particular size particle from a branch may require a streamline width that is as much as 50\% smaller than the particle radius'' \\  % A-IH6
+Inglis and Herman name a second contributing reason & \cite[p.~1729]{b18} & ``A second contributing reason is that the devices, as fabricated'' \\  % A-IH7
+The finite-particle attraction runs contrary to the Zweifach-Fung effect & \cite[p.~1729]{b18} & ``contrary to the situation in the Zweifach-Fung effect'' \\  % A-IH8
+The branches are narrow, so a shallow mould raises main resistance more & \cite[p.~1729]{b18} & ``because the branches are only 25'' \\  % A-IH9
+Same mechanism and exclusion premise, independent (non-lineage) group & \cite[p.~1724]{b18} & ``Assuming that particles do not affect streamlines and are geometrically restricted away from walls by\,\ldots'' \\  % P-C1.5
+The same source's own caveat on that mechanism & \cite[p.~1724]{b18} & ``This is a frequent assumption in the microfluidic particle separation literature, that is not always\,\ldots'' \\  % P-C1.5-hedge
+The same near-wall lamina integrated over the same rectangular-duct field & \cite[p.~1724]{b18} & ``the cutoff size is determined by the width of the boundary layer in the main\,\ldots'' \\  % P-C2.2
+Third lineage device: the cutoff is set by the flow fraction, not the gap width & \cite[p.~2 (Sci Rep PDF pagination)]{b4} & ``It is the magnitude of this flow fraction---not the width of the gaps---that determines the\,\ldots'' \\  % P-C1.4
+Third lineage device: 6 um critical-diameter target & \cite[p.~2 (Sci Rep PDF pagination)]{b4} & ``The critical diameter of the CIF design used in this study was 6'' \\  % P-C1.4b
+Gap count is unpublished; sqrt(c) is tied to it & \cite[p.~2 (Sci Rep PDF pagination)]{b4} & ``any CIF design must incorporate thousands of gaps to achieve the desired'' \\  % P-C1.4c
+Finite-body method class: the particle treated as a rigid disc, not a point & \cite[p.~2]{b19} & ``treats the particle as a two-dimensional rigid circular object instead of a single point'' \\  % A-M1
+Oh maps pressure to voltage, flow rate to current, and hydraulic to electric resistance & \cite[p.~515]{b13} & ``correlations of pressure to voltage, volumetric flow rate to current, and hydraulic to electric resistance'' \\  % A-HE2
+Xia introduces the cutoff-diameter abbreviation c.d. & \cite[p.~2 (Sci Rep PDF pagination)]{b2} & ``particles above a certain size (or `critical diameter', c.d.)'' \\  % A-X1
+RS-8 and RS-9 device parameters: cutoff, reference width and reference f\_gap & \cite[p.~6 (Sci Rep PDF pagination)]{b2} & ``nominal c.d. of 8\si{\micro\meter} (``RS-8'', wc(ref)= 100 \si{\micro\meter} and fgap(ref)= 7.2$\times$ 10$-$4 ) and 9 \si{\micro\meter} (``RS-9'', wc(ref)= 100 \si{\micro\meter} and fgap(ref)= 8.6$\times$ 10$-$4'' \\  % A-X2
+OR-7 reference width and reference f\_gap & \cite[p.~10 (Sci Rep PDF pagination)]{b2} & ``OR-7 was patterned using wc= 100\si{\micro\meter} and fgap= 5.8$\times$ 10$-$4'' \\  % A-X3
+The f\_gap ramp exists to hold the cutoff constant along a tapering channel & \cite[p.~9 (Sci Rep PDF pagination)]{b2} & ``In order to maintain a consistent c.d. along the length of an RS-CIF device, the value of fgap can no longer be kept constant and must be scaled relative to'' \\  % A-X4
+The centre-channel taper exists to reduce shear, not to move the cutoff & \cite[p.~4 (Sci Rep PDF pagination)]{b2} & ``in order to reduce the maximum amount of shear stress experienced by particles within the\,\ldots'' \\  % A-X5
+The 7 um cutoff is inherited by citation, not measured & \cite[p.~10 (Sci Rep PDF pagination)]{b2} & ``a combination of parameters we found corresponding to a c.d. of 7'' \\  % P-C3b.2
+The citation points at the same figure the plateau is fitted from & \cite[p.~9 (Sci Rep PDF pagination)]{b2} & ``see Fig. 3 of Gifford et al.'' \\  % P-C3b.3
+Equation 1 of the 2016 paper is corrected: the two widths were inverted & \cite[p.~1]{b3} & ``This Article contains an error in equation 1, where the terms wc(i) and wc(ref) are inverted'' \\  % P-C5.2
+A particle centre is excluded from the wall by one radius & \cite[p.~1234]{b15} & ``the center position of a particle cannot be present within a certain distance from the\,\ldots'' \\  % P-C1.3
+Geometric-exclusion premise, context sentence & \cite[p.~1233]{b15} & ``particles are concentrated and aligned onto the sidewalls'' \\  % P-C1.3b
+The rectangular-duct resistance series the lineage resistance law cites & \cite[p.~875]{b6} & ``analytical solution of flow resistance within a rectangular duct'' \\  % A-Y1
+\end{longtable}\endgroup
+
+\vspace{2pt}\footnotesize $^{\dagger}$Text verified against the primary source; \emph{page} not machine-verified (a figure anchor rather than a page, or preprint-versus-journal pagination).
+% <<< END GENERATED A.10 TABLE
+
+\textbf{Self-derived (not from a single source).} The skim-cubic inversion
+$\skimw=w_c[\sqrt{\fgap/3}+\tfrac19\fgap+\cdots]$ is obtained by
+series-reverting $\fgap=3x^2-2x^3$ (verified term-by-term). The worked
+V\&V-20 distances follow from the tabulated $F$-values with $n{=}4$. The
+Reynolds figures ($D_h\approx75.8~\si{\micro\meter}$,
+$U\approx0.069~\si{\meter\per\second}$,
+$\mathrm{Re}\approx\ReWorstChannel$) follow from the Dinh geometry by
+$D_h=2w_ch/(w_c+h)$ and $U=Q/A$. The square-duct limit $12/B(1)=28.4542$
+is a registry anchor. The kernel-pairing table is generated from the
+registry. All were re-derived independently.
+
+
+%==============================================================
+% A.11 -- CROSS-LINEAGE VALIDATION  (complete, corrected)
+%
+% The two tables stay FLOATS, deliberately. A.8's envelope table had to become a
+% longtable because it ran several pages and a float that cannot fit is dropped
+% with "Float too large for page". These two are three and four data rows; they
+% fit, and they compile with zero overfull boxes and no X-column warning.
+%
+% CHANGES:
+%   * A-IH2 quoted as the source writes it. The draft rendered "determined from
+%     [the] design" where Inglis & Herman write "determined from our design
+%     process": a bracketed insertion that also dropped a word.
+%   * the two resistance sentences, quoted verbatim with a page but previously
+%     outside the register, are now anchored (A-IH4, A-IH5).
+%   * "Inglis" disambiguated. In the DLD parenthetical it meant the Inglis CUBIC,
+%     a computation, while three paragraphs above "Inglis & Herman" is an
+%     experimental family. One surname, two papers, two roles.
+%   * every gated figure is a macro; \ref into A.4 became \xref.
+%   * item 1's finite-particle MAGNITUDE and the Zweifach-Fung contrast anchored to
+%     Inglis & Herman's own p.1729 words (A-IH6, A-IH8), replacing the coined
+%     "anti-Zweifach-Fung" shorthand in the body with their phrasing; the TWO-reason
+%     count anchored to their "A second contributing reason" (A-IH7). The two-effect
+%     mapping is the source's structure, not this work's imposition.
+%   * "cutoff" scoped to "cutoff DIAMETER", with A.4's sub-steric foot named as a
+%     below-cutoff regime so it cannot read as a counterexample.
+%   * the DLD bracket described as two computations running in OPPOSITE senses that
+%     agree to a fraction of a percent at the top of the range, not one curve
+%     sweeping the full bracket. Union bounds are now min/max OF THE LEGS, so the
+%     bracket and the legs cannot print different values for one quantity.
+%==============================================================
+\subsection{Cross-Lineage Validation (Davis DLD; Inglis \& Herman branch flow)}
+\label{app:units_crosslineage}
+
+The cutoff prefactor's open residual predicts that a measured cutoff
+diameter sits \emph{above} the idealized steric value
+$\dcrit^{\text{ideal}}=2\skimw=2w_c\sqrt{\fgap/3}$. This is corroborated
+across three device families: CIF
+(Shevkoplyas lineage), deterministic lateral displacement (Davis), and
+branch-flow filtration (Inglis \& Herman). \emph{Within the CIF lineage
+itself there is no independence}: Gifford, Xia, Dinh and Lezzar share a
+laboratory, and it is the two non-CIF families that carry the
+out-of-lineage check.
+
+\begin{table}[ht]
+\centering
+\caption{Inglis \& Herman 2013, Table~1: design vs.\ measured cutoff
+diameter and filtration ratio (FR). The measured cutoff exceeds the design
+in every case; the mean ratio is $\approx\ihRatioMean$. $\pm$ values are CV
+over three runs.}
+\label{tab:crosslineage}
+\small
+\begin{tabularx}{\textwidth}{@{}YYYYY@{}}
+\toprule
+Design $D_c$ (\si{\micro\meter}) & Design FR & Measured FR & Measured $D_c$ (\si{\micro\meter}) & Measured/Design \\
+\midrule
+5.0 & 13.3\% & $14.5\pm0.2\%$ & 7.2 & \ihRatioA \\
+6.0 & 18.3\% & $20.4\pm0.5\%$ & 8.9 & \ihRatioB \\
+8.0 & 28.4\% & $28.5\pm0.4\%$ & 9.7 & \ihRatioC \\
+\midrule
+\multicolumn{4}{@{}l}{\emph{Mean measured/design ratio}} & $\approx\ihRatioMean$ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Three-family excess over the steric floor $\kster=2$, all
+expressed as ratios to that floor so they compare directly. The magnitudes
+differ, and that difference is a result.}
+\label{tab:threefamily}
+\small
+\begin{tabularx}{\textwidth}{@{}lYY@{}}
+\toprule
+Family (source) & Excess over the steric floor & Basis \\
+\midrule
+CIF (Shevkoplyas) & $\kapp/\kster=\residualFolded$ & Gifford Fig.~3 plateau fit \\
+DLD (Davis) & $\kapp/2 = \dldExcessLo$--$\dldExcessHi$ & recomputed from Davis eqn~2-22~\cite{b22} \\
+Branch flow (Inglis \& Herman) & measured/design $=\ihRatioLo$--$\ihRatioHi$ & \cite{b18}, Table~1 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{What agrees, and what does not.} The consilience is in the
+\emph{sign} and the \emph{floor}, not the magnitude. Every family's
+measured cutoff \emph{diameter} exceeds the steric floor $\kster=2$ where the
+three are compared: on CIF's plateau, and across the whole reported range of
+the other two. (Below CIF's knee the apparent
+prefactor falls under the floor, to the sub-steric foot of
+Section~\xref{app:units_cutoff}{``Cutoff-Law Prefactor Decomposition''}; that
+regime is the knee's own, and is not a counterexample.) \textbf{The magnitudes do not agree, and that is a result rather than
+a discrepancy to be harmonised away}: CIF's excess is roughly \emph{twice}
+the DLD and branch-flow families'. Correctly normalised, DLD shows a
+smooth, knee-free apparent prefactor across $\varepsilon=0.01$--$0.5$,
+bracketed by $\kapp=\dldKappaLo$--$\dldKappaHi$. \emph{Those two bounds are
+two computations of the same DLD prefactor, not two laboratories, and they
+run in opposite senses}: Davis's eqn~2-22 falls with $\varepsilon$, from
+$\davisKappaHi$ to $\davisKappaLo$, while the exact Inglis \emph{cubic}
+(\cite{b17}, the skim construction of
+Section~\xref{app:units_equations}{``Equations: Step-by-Step Unit Derivations''})
+rises, from $\inglisKappaLo$ to $\inglisKappaHi$. At the top of the range the two agree to
+$\dldConvergePct\%$, so the width of the bracket is a between-method gap at
+small $\varepsilon$, not size-dependence within either. Each is monotone
+and neither shows a knee. Read ``Inglis'' there as the cubic, not as Inglis \& Herman, whose
+branch-flow data are the separate third family above. Within the examined
+DLD comparison datasets the normalized prefactor therefore does not
+exhibit the CIF knee: the size-dependence is CIF-specific \emph{within the
+validation corpus}, not demonstrably a universal feature of
+streamline-skimming devices. \emph{The factor-of-two difference is an
+observed quantitative distinction between CIF and the comparison families,
+not an identified physical cause.} \emph{Note the two bases}: Table~\ref{tab:threefamily}'s DLD excess
+$\dldExcessLo$--$\dldExcessHi$ is the Davis design correlation alone, which
+is the leg the ``roughly twice'' comparison rides on, whereas the wider
+bracket above adds the theoretical cubic and is used only to establish the
+absence of a knee. Halving the bracket would give a different and
+incomparable range. \textbf{Compare the depth-\emph{folded}
+$\residualFolded$ with the other two families, not the depth-separated
+triplet}: the published measured/design ratios are depth-inclusive.
+
+\textbf{Interpretation of the branch-flow leg.} The authors state that the
+``experimentally observed cutoff diameters are significantly higher than
+the cutoff sizes determined from our design process'' (\cite[p.~1729]{b18}),
+and they themselves name two contributing reasons for it (``A second
+contributing reason is that the devices, as fabricated\ldots'',
+\cite[p.~1729]{b18}), which correspond to the two non-unity factors of
+Eqn~\xref{eqn:kappa_decomp}{7}. \emph{The
+correspondence is to mechanism classes, not to this work's specific
+factorization}, and the published data fix the \emph{product}
+$\sqrt{c}\,C$ without fixing the split between its two factors. That
+degeneracy is a property of the available measurements, not a gap in the
+analysis: no published dataset varies $c$ and $C$ independently.
+\begin{enumerate}
+\item \textbf{Finite-particle displacement ($C$).} A finite sphere near a
+bifurcation is drawn toward the \emph{low-flow-rate} branch, ``contrary to
+the situation in the Zweifach-Fung effect'' (Doyeux \emph{et al.},
+\cite{b21}; the contrast is Inglis \& Herman's own phrase,
+\cite[p.~1729]{b18}). They invoke the mechanism themselves, agreeing with
+Doyeux that ``excluding a particular size particle from a branch may
+require a streamline width that is as much as 50\% smaller than the
+particle radius'' (\cite[p.~1729]{b18}): the streamline that just excludes
+the particle is narrower than its radius, raising the measured cutoff.
+\item \textbf{Over-extraction from increased branch flow ($\sqrt{c}$).}
+The realized SU-8 mold depth was $48~\si{\micro\meter}$ against a
+$50~\si{\micro\meter}$ design (\cite[p.~1727]{b18}). Inglis \& Herman
+attribute the resulting cutoff shift not to a skim-width change but to
+resistance: the shallower channel ``increases the main channel resistance
+more than it does the branch channel resistance'' ``because the branches
+are only 25'' \si{\micro\meter} wide, which will mean ``more fluid flow in
+the branches, increasing the critical size at each branch''
+(\cite[p.~1729]{b18}). \emph{They give no magnitude for that shift}: the
+48-versus-50 \si{\micro\meter} depth and the 25 \si{\micro\meter} branch
+width are geometry, not a quantification of the cutoff change, which is
+why the published data fix the product and not the split. This is per-gap \emph{over-extraction}, the
+$\sqrt{c}$ factor, not the finite-aspect-ratio skim-width factor
+$\Kdepth$. \emph{Note that this makes the $\ihRatioLo$--$\ihRatioHi$ range
+a mixed measurement}: part of their excess is a fabrication deviation, so
+it is not a pure finite-particle figure.
+\end{enumerate}
+The independent branch-flow literature therefore corroborates the sign and
+the plausible physical classes of the CIF residual; it does not identify
+the CIF-specific numerical factors $c$ and $C$ separately.
+
+
+
+%==============================================================
+% A.12 -- MASTER CHEAT-SHEET  (complete, corrected)
+%
+% CORRECTIONS, each traced to the subsection it contradicted:
+%   * K_dcfd denominator was /Kdth while printing the /Kdcfd values, the same
+%     formula-versus-value mismatch A.4 and A.9 had corrected. Now /Kdcfd,
+%     matching the gated cfd_kdepth_obs.
+%   * the DEPRECATED lower-case g was reintroduced as "gap width". A.1 retires
+%     it: "lower-case g is needed for the cubic kernel; use G." Row now names
+%     G, g_p and Lambda only.
+%   * entrance-length figures were the pre-correction ones (47-61, Lambda 49,
+%     0.96-1.2). A.9 now leads with Gifford's MEASURED pitch 46.1.
+%   * u_D read "primary = SD", the framing A.6 retired once ASME V&V-20 S1-6
+%     was read: the standard's u_D "includes all effects of averaging", so SD
+%     is a CONSERVATIVE stand-in, not the standard's primary quantity.
+%   * the Xia anchor was stated flatly at 5.17; A.7 downgraded it to a lead
+%     because the agreement is numerically the depth correction itself.
+%   * every computed figure is a macro; \ref into other subsections is \xref.
+%   * longtable, not a float: thirty-odd rows do not fit one page.
+%==============================================================
+\subsection{Master Cheat-Sheet}
+\label{app:units_cheatsheet}
+
+A single consolidated lookup table for both performance axes, the cutoff
+prefactor decomposition, the unification campaign, and the validation
+layer. Values in \textbf{bold} are fixed constants; $w_c$-dependent and
+device-dependent quantities are given as relations. \emph{This table
+summarises; where it and a subsection differ, the subsection governs.}
+
+% SYMLINT: SUMMARY -- this table REPEATS symbols defined in A.1-A.11; it does not
+% define them. Without this directive the collision lint reads its thirty-odd rows as
+% redefinitions and reports one duplicate per row.
+\begingroup\scriptsize\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.2}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.11\textwidth}
+>{\raggedright\arraybackslash}p{0.40\textwidth}
+>{\raggedright\arraybackslash}p{0.09\textwidth}
+>{\raggedright\arraybackslash}p{0.31\textwidth}@{}}
+\caption{CIF master cheat-sheet. ``Unit'' is the practical CIF-lineage
+convention; all derivations use SI.}\label{tab:cheatsheet}\\
+\toprule Symbol & Value / defining relation & Unit & One-line meaning \\\midrule\endfirsthead
+\multicolumn{4}{@{}l}{\scriptsize\itshape Table \thetable\ (continued)}\\
+\toprule Symbol & Value / defining relation & Unit & One-line meaning \\\midrule\endhead
+\bottomrule\endlastfoot
+\multicolumn{4}{@{}l}{\emph{Geometry}}\\
+$w_c$ & design input & \si{\micro\meter} & Center-channel width \\
+$w,\ \skimw$ & $\skimw=w_c\sqrt{\fgap/3}$ (theory); $w$ empirical & \si{\micro\meter} & Diverted-lamina width ($b\equiv\skimw\approx w$) \\
+$h$ & design input; Eqn~\xref{eqn:gifford5}{5} is written with $h\le w_{\mathrm{ch}}$, the two exchanged when $h>w_{\mathrm{ch}}$ & \si{\micro\meter} & Channel depth \\
+$G$, $g_p$, $\Lambda$ & design inputs; $\Lambda=G+g_p$. \emph{Lower-case $g$ is the cubic kernel, not a length} (Table~\xref{tab:units_geom}{A.1}) & \si{\micro\meter} & Link width, post width, row pitch \\
+$\phi$ & $\phi=G/\Lambda$ (computed); cf.\ $\phi_{\mathrm{cal}}$ (external) & --- & Wall porosity; one of three residual model gaps \\
+$N$ & design input & --- & Number of gap rows \\
+\addlinespace
+\multicolumn{4}{@{}l}{\emph{Yield axis}}\\
+$\fgap$ & $Q_{\mathrm{gap}}=\fgap Q_c$; Gifford's stated practical regime is $\fgap<5\times10^{-4}$ & --- & Per-side, per-gap extraction fraction \\
+$R_c,R_s$ & Eqn~\xref{eqn:gifford5}{5} (Yang series, \cite{b6}) & \si{\pascal\second\per\meter\cubed} & Segment hydraulic resistances \\
+$F_{\mathrm{outlet}}$ & $=2R_c/(R_s+2R_c)$, with no $\fgap$; this absence \emph{is} the decoupling & --- & Outlet divider under PE (P1.4) and $Q_s(0)=0$ (P1.5) \\
+$F_{\mathrm{recursion}}$ & $=1-\prod_i(1-2\fgap(i))$ & --- & Cumulative march; equals $F_{\mathrm{outlet}}$ for a self-consistent device \\
+$\Pi$ & $\prod_i(1-2\fgap(i))$ & --- & Retained fraction \\
+\addlinespace
+\multicolumn{4}{@{}l}{\emph{Selectivity axis (cutoff)}}\\
+$\dcrit$ & $\dcrit=\kapp w_c\sqrt{\fgap/3}$ & \si{\micro\meter} & Critical (cutoff) diameter \\
+$\ud$ & $\ud=\dcrit/w_c$; plateau $\ge\plateauUwc$, foot $<\footUwc$ & --- & Reduced size ratio (sets the bins) \\
+$x$ & root of $\fgap=3x^2-2x^3$; $x=\skimw/w_c$ & --- & Reduced skim width (Inglis cubic) \\
+$\beta,\gamma$ & $\partial\ln\dcrit/\partial\ln\fgap=\tfrac12\,(\approx\expBeta)$; $\partial\ln\dcrit/\partial\ln w_c=1\,(\approx\expGamma)$ & --- & Cutoff scaling exponents ($\neq$ lamina width $b$) \\
+$\kapp\equiv\kg$ & supplied \textbf{\kappVal} (95\% CI $[\kappCIlo,\kappCIhi]$, CV $\kappCV\%$); refit $\kappFit$ & --- & Apparent prefactor, \textbf{cubic branch} \\
+$\kF$ & \textbf{\kFval} $=\kg\sqrt{\overline{c_2}/3}$ at assumed $h_{\mathrm{cal}}=80~\si{\micro\meter}$. \textbf{Not interchangeable with $\kg$}: crossing shifts $\dcrit$ by $\crossUp\%$ / $\crossDown\%$; the kernel choice alone shifts it by $\choiceIn\%$ to $\choiceOut\%$ & --- & Prefactor, \textbf{exact $F_{\mathrm{lam}}$ branch} \\
+$\kster$ & \textbf{\kstericVal} ($D_c=2b$, Inglis's $2\beta$; Dinh $a<w$) & --- & Steric factor (radius $=$ lamina) \\
+$\Kin$ & \textbf{\KinVal} (single-gap CFD) & --- & In-plane funnelling (none) \\
+$\Kdth$ & analytic $\KdepthAnalyticShallow/\KdepthAnalyticMid/\KdepthAnalyticDeep$ at $\alpha=0.80/1.40/2.69$\,$^{\dagger}$ & --- & Depth factor, theorem \\
+$\Kdcfd$ & CFD $\KdepthCfdShallow/\KdepthCfdMid/\KdepthCfdDeep$; $|\Kdcfd-\Kdth|/\Kdcfd\le0.6\%$, at most $\KdepthDevMax\%$. \emph{The denominator is the CFD anchor}, matching the gated value & --- & Depth factor, CFD \\
+$\sqrt{c}\,C$ & $\Kdepth\sqrt{c}\,C=\kapp/\kster=\mathbf{\residualFolded}$ (depth-folded); $\sqrt{c}\,C=\residualSepShallow/\residualSepMid/\residualSepDeep$ (depth-separated). Two factors; \emph{three} model gaps & --- & Open calibrated residual \\
+$\acal$ & $(0.80,0.64,0.5333)$ at assumed $h_{\mathrm{cal}}=80~\si{\micro\meter}$; $\Delta_{\mathrm{transfer}}=\transferDecl\%$. The $+26.9\%$ kernel/depth sensitivity is \emph{ungated}, from a specification sweep this record does not reproduce & --- & Calibration array; \textbf{unreported depth} \\
+\addlinespace
+\multicolumn{4}{@{}l}{\emph{Particle}}\\
+$a,\ D$ & $D=2a$; $V_{\mathrm{sph}}=\tfrac43\pi a^3$ & \si{\micro\meter} & Radius / diameter (rigid sphere) \\
+$V_{12}$ & $12$~fL classification threshold $\to D\approx\DTwelveFL~\si{\micro\meter}$ equivalent sphere; $2a\approx4.8~\si{\micro\meter}$ (Dinh discoid) & fL & \textbf{Not} a minimum retained volume \\
+\addlinespace
+\multicolumn{4}{@{}l}{\emph{Regime and envelope}}\\
+$\mathrm{Re}$ & channel $\approx\ReWorstChannel$; gap/lamina $\approx\ReGapScale\ll1$ & --- & Not globally Stokes; creeping at the selecting scale \\
+$L_e/\Lambda$ & $L_e\approx\LeOutlet$--$\LeInlet~\si{\micro\meter}$ (outlet to inlet) against the Gifford Fig.~4 pitch $\Lambda=G+g_p=46.1~\si{\micro\meter}$, i.e.\ $L_e/\Lambda\approx\LeOverLamGOutlet$--$\LeOverLamGInlet$ & --- & Exceeds the row pitch; expected benign either way (per-rung perturbation of order $\fgap$) \\
+$u_{\mathrm{lo}}$, $\sigma_0$, $\phi_{\mathrm{cal}}$ & supplied & --- & External inputs, undischargeable \\
+$\eta$ & $\eta=\etaVal$, a computed magnitude, not a free parameter (Table~\xref{tab:units_envelope}{A.8}) & --- & Realized-yield factor, \textsc{measured} \\
+\addlinespace
+\multicolumn{4}{@{}l}{\emph{Validation (V\&V-20)}}\\
+$E$ & $E=S-D$ (sim $-$ data) & --- & Validation comparison error; $S$ and $D$ are reused letters \\
+$\alpha_{\mathrm{3D}}$ & $(R_c/R_s)_{\mathrm{app}}/(R_c/R_s)_{\mathrm{Yang}}$; $\alphaThreeDVone$/$\alphaThreeDVthree$ & --- & Outlet correction reconciling 1-D with 3-D \\
+$\uD$ & the published $\mathrm{SD}$, a \emph{conservative} choice. V\&V~20's $\uD$ for a mean of $n$ has random component $\mathrm{SEM}=\mathrm{SD}/\sqrt{n}$, reported alongside & --- & Data uncertainty \\
+$\uval$ & $\sqrt{\unum^2+\uinput^2+\uD^2}$ & --- & Combined validation uncertainty \\
+$F$ check & 1-D closed form $\EsdClosedVOne\sigma$ / $\EsdClosedVThree\sigma$; 3-D COMSOL $\EsdComsolVOne\sigma$ / $\EsdComsolVThree\sigma$ on the SD scale & --- & The 3-D solve lands within $1\sigma$ on the SD scale, $2\sigma$ on SEM \\
+Cutoff check & Dinh band $[\dinhBandLo,\dinhBandHi]$ inside measured $(1.0,4.7)~\si{\micro\meter}$; Xia $\kapp\approx\xiaKappaMean$ vs $\plateauKappa$, reported as a \emph{lead} & \si{\micro\meter} & Both consistency checks: Dinh held out but weak, Xia not independent \\
+\end{longtable}\endgroup
+
+\noindent{\footnotesize $^{\dagger}$ The $\kapp$ fit uses the Gifford
+Fig.~3 array, whose depth is \emph{unreported}; $\alpha=0.8$ assumes the
+$80~\si{\micro\meter}$ depth of the \emph{separate} Fig.~4 device, of which
+Gifford writes ``The depth of the device shown in Fig.~4 was 80 \si{\micro\meter};
+the width of the central channel was 100 \si{\micro\meter}''
+(\cite[p.~4500]{b1}), and $\Kdth$ varies across the three
+calibration widths ($\KdepthCalNarrow/\KdepthCalMid/\KdepthCalWide$ at
+$w_c=100/125/150~\si{\micro\meter}$, i.e.\ $\alpha=0.80/0.64/0.5333$). See
+Section~\xref{app:units_cutoff}{``Cutoff-Law Prefactor Decomposition''}.}
+
+%==============================================================
+% BIBLIOGRAPHY
+%==============================================================
+\begin{thebibliography}{99}
+
+\bibitem{b1}
+S.~C. Gifford, A.~M. Spillane, S.~M. Vignes, and S.~S. Shevkoplyas,
+``Controlled incremental filtration: A simplified approach to design
+and fabrication of high-throughput microfluidic devices for selective
+enrichment of particles,'' \emph{Lab Chip}, vol.~14, no.~23,
+pp.~4496--4505, 2014, doi: 10.1039/C4LC00785A.
+
+\bibitem{b2}
+H.~Xia, B.~C. Strachan, S.~C. Gifford, and S.~S. Shevkoplyas,
+``A high-throughput microfluidic approach for 1000-fold leukocyte
+reduction of platelet-rich plasma,'' \emph{Sci. Rep.}, vol.~6,
+p.~35943, 2016, doi: 10.1038/srep35943.
+
+\bibitem{b3}
+H.~Xia, B.~C. Strachan, S.~C. Gifford, and S.~S. Shevkoplyas,
+``Author Correction: A high-throughput microfluidic approach for
+1000-fold leukocyte reduction of platelet-rich plasma,''
+\emph{Sci. Rep.}, vol.~12, p.~14689, 2022, doi:
+10.1038/s41598-022-18449-5.
+
+\bibitem{b4}
+D.~L. Lezzar \emph{et~al.}, ``A high-throughput microfluidic device
+based on controlled incremental filtration to enable
+centrifugation-free, low extracorporeal volume leukapheresis,''
+\emph{Sci. Rep.}, vol.~12, p.~13798, 2022, doi:
+10.1038/s41598-022-16748-5.
+
+\bibitem{b5}
+M.~T.~P. Dinh, A.~Mukhamedshin, K.~Abhishek, F.~W. Lam, S.~C. Gifford,
+and S.~S. Shevkoplyas, ``Separation of platelets by size in a
+microfluidic device based on controlled incremental filtration,''
+\emph{Lab Chip}, vol.~24, no.~4, pp.~913--923, 2024, doi:
+10.1039/D3LC00842H.
+
+\bibitem{b6}
+S.~Yang, A.~\"{U}ndar, and J.~D. Zahn, ``A microfluidic device for
+continuous, real time blood plasma separation,'' \emph{Lab Chip},
+vol.~6, no.~7, pp.~871--880, 2006, doi: 10.1039/B516401J.
+
+\bibitem{b7}
+COMSOL Multiphysics\textregistered\ v.~6.3, COMSOL AB, Stockholm,
+Sweden, \url{www.comsol.com}.
+
+\bibitem{b12}
+A.~H. Routt, ``CIF reference implementation \texttt{v3.20}'' [software and
+data: computational notebook and archived COMSOL reports], \emph{Zenodo},
+2026, doi: 10.5281/zenodo.20146562. Notebook sections and blocks are cited
+by number; the four five-gap reports (V1 and V3 at production and
+${\sim}5\times$ coarser meshes) are cited as \emph{COMSOL reports}.
+
+\bibitem{b12a}
+A.~H. Routt, ``CIF verified derivation record'' [software], release tag
+and content hash recorded in the dissertation reproducibility archive,
+2026. \emph{Numerical authority: every constant is recomputed on each run
+and pinned by content hash, and the whole record is regenerated and
+re-verified on every commit.}
+
+\bibitem{b13}
+K.~W. Oh, K.~Lee, B.~Ahn, and E.~P. Furlani, ``Design of pressure-driven
+microfluidic networks using electric circuit analogy,'' \emph{Lab Chip},
+vol.~12, no.~3, pp.~515--545, 2012, doi: 10.1039/C2LC20799K.
+
+\bibitem{b14}
+Z.~Li, C.~Liu, and J.~Sun, ``Hydraulic--electric analogy for design and
+operation of microfluidic systems,'' \emph{Lab Chip}, vol.~23,
+pp.~3311--3327, 2023, doi: 10.1039/D3LC00265A.
+
+\bibitem{b15}
+M.~Yamada and M.~Seki, ``Hydrodynamic filtration for on-chip
+particle concentration and classification utilizing microfluidics,''
+\emph{Lab Chip}, vol.~5, no.~11, pp.~1233--1239, 2005, doi:
+10.1039/B509386D.
+
+% b8-b11 (design-automation) and b16 (PDMS shrinkage) were declared here but never
+% cited in this appendix; they belong to the introduction and the sensitivity
+% chapter. Removed so the reference list matches the text.
+% ---------------- Inglis references (steric basis, kappa_steric = 2) ----------------
+\bibitem{b17}
+D.~W. Inglis, J.~A. Davis, R.~H. Austin, and J.~C. Sturm, ``Critical
+particle size for fractionation by deterministic lateral displacement,''
+\emph{Lab Chip}, vol.~6, no.~5, pp.~655--658, 2006, doi:
+10.1039/B515371A.
+
+\bibitem{b18}
+D.~W. Inglis and N.~Herman, ``A scalable approach for high throughput
+branch flow filtration,'' \emph{Lab Chip}, vol.~13, no.~9,
+pp.~1724--1731, 2013, doi: 10.1039/C3LC50192B.
+
+% ---------------- finite-particle mechanism and method ----------------
+\bibitem{b19}
+J.~Wang, V.~G.~J. Rodgers, P.~Brisk, and W.~H. Grover, ``MOPSA: A
+microfluidics-optimized particle simulation algorithm,''
+\emph{Biomicrofluidics}, vol.~11, no.~3, p.~034121, 2017, doi:
+10.1063/1.4989860.
+
+\bibitem{b20}
+H.~Bruus, \emph{Theoretical Microfluidics}. Oxford, U.K.: Oxford
+Univ.\ Press, 2008.
+
+\bibitem{b21}
+V.~Doyeux, T.~Podgorski, S.~Peponas, M.~Ismail, and G.~Coupier,
+``Spheres in the vicinity of a bifurcation: elucidating the
+Zweifach--Fung effect,'' \emph{J. Fluid Mech.}, vol.~674,
+pp.~359--388, 2011, doi: 10.1017/S0022112010006567.
+
+\bibitem{b22}
+J.~A. Davis, \emph{Microfluidic Separation of Blood Components through
+Deterministic Lateral Displacement}, Ph.D. dissertation, Princeton
+University, 2008. (Eqn~2-22; recomputed here for the cross-family
+comparison, Table~\ref{tab:threefamily}.)
+
+\bibitem{b23}
+F.~Durst, S.~Ray, B.~\"{U}nsal, and O.~A. Bayoumi, ``The development
+lengths of laminar pipe and channel flows,'' \emph{J. Fluids Eng.},
+vol.~127, no.~6, pp.~1154--1160, 2005, doi: 10.1115/1.2063088.
+(Source of the entrance-length correlation, Eqn~\ref{eqn:entrance}, and of
+its low-Reynolds limit $0.619$.)
+
+\bibitem{b25}
+\emph{Standard for Verification and Validation in Computational Fluid
+Dynamics and Heat Transfer}, ASME V\&V 20-2009 (R2021), American Society
+of Mechanical Engineers, New York, 2009.
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,46 @@
+# Gifford 2014, Fig. 4 bead device -- REJECTED reading C (rc7 register GIF4-1 / INV-2): kept as a variant and shown as
+# a figure (the rc7 Fig. 4 package), not a reproduction.  It was the rc6 Fig. 4 package's version 2 device (A. H.
+# Routt, 2026-10-18 17:28: full alignment).  Gifford's printed design (f_gap 3.34e-4 at w_c 100 um, depth 80 um, final
+# side width 300 um, four nested legs) with:
+#   start: the first side channel 51 um wide (Gifford p. 4498: w_s(1) "close to or equal to zero, depending on the
+#     device production capabilities available"; App. A's "other start mode", A:1118-1119).  D, FITTED to a
+#     measurement: the start that puts leg 2's side channels at the width the inset shows (124.7 um, M), through the
+#     frozen row-fraction law.  A fit, so leg 2's width is not a test of it.
+#   gap: 17.2 um, posts 28.6 um along the flow (row pitch 45.8 um unchanged): M, as gifford2014_fig4_aligned.
+# Why rejected (INV-2): this start's side flow (App. A's "fictitious inlet side flow", 2 sigma0 = 0.485) would carry
+#   about 33 % of the inset's 8.3 um beads into the side channels of legs 1-2, and the earliest-extracted fluid, which
+#   lies against the side channels' outer walls, at the inlet concentration.  The inset shows the outer 0.2 of leg 4's
+#   side channels nearly bead-free (2 beads where >= 98 are expected): the particle evidence rejects it (p ~ 1e-39).
+#   The widths fit; the physics of the start does not.
+# RC8's Fig. 4 reproduction is the nested reading with the 8 um start (presets/gifford2014_fig4_aligned.yaml; rc7's
+# reading B, legs in path order, is the rejected variant gifford2014_fig4_pathorder.yaml); the design-level preset
+# (gifford2014_fig4_design: sealed start, nested legs, G 20.5) is the reference.
+name: gifford2014_fig4_start51
+description: Gifford 2014 Fig. 4 bead device, rejected reading C (printed design, nested legs, a 51 um start fitted to leg 2's widths; rejected by the inset's beads, register INV-2)
+targets:
+  cutoff_um: 5.203174831309222
+  filtrate_fraction: 0.90644
+process:
+  depth_um: 80
+  gap_um: 17.2            # G measured on the inset (narrow window)
+  post_length_um: 28.6    # g_p along the flow = the inset's row pitch 45.8 um - G
+  post_width_um: 59.5     # l_g across the flow (as the design preset)
+  min_feature_um: 4.5     # unchanged from the design preset (the side channels now start at 51 um)
+  min_radius_um: 1.8
+  fillet_um: 2.0
+centre_channel: {taper: constant, width_in_um: 100}
+layout: {style: paperclip, legs: 4, leg_spacing_um: 818}
+meander: {enabled: false}
+inlet: {style: plain, port_radius_um: 300}
+outlet: {style: separate, port_radius_um: 750, centre_port_radius_um: 300}
+gates: {mode: reproduce}
+start: {style: floor, side_width_um: 51.0}
+reproduction:
+  pc_last_short: 2000.0
+  wall_M: 4.5
+  stem_half: 300.0
+  W: 2400.0
+paper:
+  source: Gifford et al. 2014, Fig. 4 and pp. 4496-4500
+  measured_on_figure: [leg 2's side channels 124.5 / 124.96 um on the inset (50 profiles at the rc6 registration) -> start 50.7 um
+    (fitted), 51 drawn; the gap 17.2 um and posts 28.6 um along the flow at a +-3.5 px window (shorter than the gap)]

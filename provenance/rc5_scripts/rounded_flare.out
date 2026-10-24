@@ -1,0 +1,5 @@
+Dinh V1 flare: ratio 2.4037, 14.5 deg, arc radius 0.568 w, tangent length 0.0723 w, flare 5.428 w
+sharp (the tables)     mesh hmin 0.0050 hmax 0.080: deep 0.08251 shallow 0.06931 elems 29190 (7 s)
+as drawn (25 um arcs)  mesh hmin 0.0050 hmax 0.080: deep 0.08193 shallow 0.06917 elems 29190 (7 s)
+sharp (the tables)     mesh hmin 0.0025 hmax 0.060: deep 0.08251 shallow 0.06931 elems 48246 (14 s)
+as drawn (25 um arcs)  mesh hmin 0.0025 hmax 0.060: deep 0.08193 shallow 0.06917 elems 48246 (16 s)

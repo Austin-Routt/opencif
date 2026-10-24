@@ -1,0 +1,1764 @@
+{
+ "config": "one process per device (full_device_config.py, then full_device.py on each device's own config_<name>.json; the Xia devices at strip_max_mm 20 and pdf_dpi 300)",
+ "devices": {
+  "dinh2024_v1_depicted": {
+   "name": "dinh2024_v1_depicted",
+   "dxf": "dinh2024_v1_depicted.dxf",
+   "dxf_sha256": "c63abab53ed84e87796eaf885b89df5731e0dedd8f61bf01d27128eac8fc45a7",
+   "bbox_um": [
+    -6137.99925,
+    142204.29258,
+    -1577.73059,
+    1577.73059
+   ],
+   "footprint_mm": [
+    148.34229183,
+    3.1554611799999996
+   ],
+   "strips": 4,
+   "strip_um_per_px": 2.0,
+   "panels": {
+    "p1": {
+     "title": "Dinh Fig. 2B panel 1",
+     "results": "dinh_results_rc6.json",
+     "key": "p1",
+     "corners_um": [
+      [
+       -267.4911966616685,
+       -169.2780035447667
+      ],
+      [
+       -265.25386489807846,
+       183.5491140781244
+      ],
+      [
+       193.101605125617,
+       180.64261057859665
+      ],
+      [
+       190.86427336202703,
+       -172.18450704429446
+      ]
+     ],
+     "centre_um": [
+      -37.19479576802575,
+      5.6823035169149705
+     ],
+     "V9": {
+      "roundtrip_err_px": 5.684341886080802e-14,
+      "roundtrip_err_um": 5.684341886080802e-14,
+      "det": -0.8800647197231833,
+      "not_mirrored": true,
+      "orthogonal": true,
+      "equal_axes": 1.0,
+      "scale_px_per_um": 0.9381176470588235,
+      "declared_px_per_um": 0.9381176470588235,
+      "scale_rel_err": 0.0,
+      "raster_sha256_matches": true,
+      "dxf_sha256_matches": true,
+      "ok": true
+     },
+     "trace": {
+      "V1_px": {
+       "along": -1.0890081832207097,
+       "across": 0.18082243242128873,
+       "agree": true
+      },
+      "median_um": 1.2934981434562864,
+      "p90_um": 2.698325831397507,
+      "null_half_pitch_um": 1.753643902494888,
+      "null_5um_across_um": 1.8190278800264217,
+      "V5": {
+       "along": 0.9804597603928017,
+       "across": 0.9878401151935513
+      },
+      "um_per_px": 1.0659643842488087,
+      "trace": "dinh_fig2B_p1_head__rc6"
+     },
+     "zoom_um_per_px": 0.5329821921244043
+    },
+    "p2": {
+     "title": "Dinh Fig. 2B panel 2",
+     "results": "dinh_results_rc6.json",
+     "key": "p2",
+     "corners_um": [
+      [
+       24225.645625294954,
+       -175.2111742043198
+      ],
+      [
+       24228.898408295954,
+       177.60804293988028
+      ],
+      [
+       24685.111776687852,
+       173.40202745822026
+      ],
+      [
+       24681.85899368685,
+       -179.41718968597982
+      ]
+     ],
+     "centre_um": [
+      24455.3787009914,
+      -0.9045733730497716
+     ],
+     "V9": {
+      "roundtrip_err_px": 8.86757334228605e-12,
+      "roundtrip_err_um": 7.275957614183426e-12,
+      "det": -0.8800647197231833,
+      "not_mirrored": true,
+      "orthogonal": true,
+      "equal_axes": 1.0,
+      "scale_px_per_um": 0.9381176470588235,
+      "declared_px_per_um": 0.9381176470588235,
+      "scale_rel_err": 0.0,
+      "raster_sha256_matches": true,
+      "dxf_sha256_matches": true,
+      "ok": true
+     },
+     "trace": {
+      "V1_px": {
+       "along": 0.009028921588879364,
+       "across": -0.14519250802071115,
+       "agree": true
+      },
+      "median_um": 0.8141364238503775,
+      "p90_um": 2.5514734980690665,
+      "null_half_pitch_um": 2.200254200601097,
+      "null_5um_across_um": 4.1061592680293755,
+      "V5": {
+       "along": 0.9873373536020027,
+       "across": 1.0055411809484507
+      },
+      "um_per_px": 1.0659643842488087,
+      "trace": "dinh_fig2B_p2_transition__rc6"
+     },
+     "zoom_um_per_px": 0.5329821921244043
+    },
+    "p3": {
+     "title": "Dinh Fig. 2B panel 3",
+     "results": "dinh_results_rc6.json",
+     "key": "p3",
+     "corners_um": [
+      [
+       57998.02110273451,
+       -174.63255197464804
+      ],
+      [
+       58001.90552267858,
+       178.1802763992589
+      ],
+      [
+       58460.24242962958,
+       173.13405109427325
+      ],
+      [
+       58456.35800968551,
+       -179.6787772796337
+      ]
+     ],
+     "centre_um": [
+      58229.13176618204,
+      -0.7492504401873958
+     ],
+     "V9": {
+      "roundtrip_err_px": 1.0913936421275139e-11,
+      "roundtrip_err_um": 1.4551915228366852e-11,
+      "det": -0.8800647197231836,
+      "not_mirrored": true,
+      "orthogonal": true,
+      "equal_axes": 1.0,
+      "scale_px_per_um": 0.9381176470588236,
+      "declared_px_per_um": 0.9381176470588235,
+      "scale_rel_err": 1.183458202823405e-16,
+      "raster_sha256_matches": true,
+      "dxf_sha256_matches": true,
+      "ok": true
+     },
+     "trace": {
+      "V1_px": {
+       "along": 0.00463202353483571,
+       "across": 0.10799101190322552,
+       "agree": true
+      },
+      "median_um": 0.4395115523957068,
+      "p90_um": 0.8910867655425438,
+      "null_half_pitch_um": 2.707408026268475,
+      "null_5um_across_um": 3.8412030704005287,
+      "V5": {
+       "along": 0.9996564280170979,
+       "across": 0.9954793401730629
+      },
+      "um_per_px": 1.0659643842488087,
+      "trace": "dinh_fig2B_p3_linear__rc6"
+     },
+     "zoom_um_per_px": 0.5329821921244043
+    },
+    "p4": {
+     "title": "Dinh Fig. 2B panel 4",
+     "results": "dinh_results_rc6.json",
+     "key": "p4",
+     "corners_um": [
+      [
+       136021.2358873873,
+       -170.3480105699801
+      ],
+      [
+       136024.38918563677,
+       182.47210973730574
+      ],
+      [
+       136482.73556549216,
+       178.37567998722696
+      ],
+      [
+       136479.5822672427,
+       -174.44444032005887
+      ]
+     ],
+     "centre_um": [
+      136251.98572643974,
+      4.013834708623435
+     ],
+     "V9": {
+      "roundtrip_err_px": 3.637978807091713e-11,
+      "roundtrip_err_um": 2.9103830456733704e-11,
+      "det": -0.8800647197231833,
+      "not_mirrored": true,
+      "orthogonal": true,
+      "equal_axes": 1.0,
+      "scale_px_per_um": 0.9381176470588235,
+      "declared_px_per_um": 0.9381176470588235,
+      "scale_rel_err": 0.0,
+      "raster_sha256_matches": true,
+      "dxf_sha256_matches": true,
+      "ok": true
+     },
+     "trace": {
+      "V1_px": {
+       "along": -0.18351381540048997,
+       "across": -0.09403489426720966,
+       "agree": true
+      },
+      "median_um": 0.563654660611665,
+      "p90_um": 1.5742948553798135,
+      "null_half_pitch_um": 1.8241365215892729,
+      "null_5um_across_um": 4.197487262349989,
+      "V5": {
+       "along": 0.9958045341972147,
+       "across": 1.0014244657571474
+      },
+      "um_per_px": 1.0659643842488087,
+      "trace": "dinh_fig2B_p4_outlet__rc6"
+     },
+     "zoom_um_per_px": 0.5329821921244043
+    }
+   },
+   "files": [
+    "dinh2024_v1_depicted_strip1.png",
+    "dinh2024_v1_depicted_strip2.png",
+    "dinh2024_v1_depicted_strip3.png",
+    "dinh2024_v1_depicted_strip4.png",
+    "dinh2024_v1_depicted_full.pdf",
+    "dinh2024_v1_depicted_zoom_p1.png",
+    "dinh2024_v1_depicted_zoom_p2.png",
+    "dinh2024_v1_depicted_zoom_p3.png",
+    "dinh2024_v1_depicted_zoom_p4.png"
+   ],
+   "V10": [
+    {
+     "file": "dinh2024_v1_depicted_strip1.png",
+     "um_per_px": [
+      2.0,
+      2.000000000000001
+     ]
+    },
+    {
+     "file": "dinh2024_v1_depicted_strip2.png",
+     "um_per_px": [
+      2.0,
+      2.000000000000001
+     ]
+    },
+    {
+     "file": "dinh2024_v1_depicted_strip3.png",
+     "um_per_px": [
+      2.0,
+      2.000000000000001
+     ]
+    },
+    {
+     "file": "dinh2024_v1_depicted_strip4.png",
+     "um_per_px": [
+      2.0,
+      2.000000000000001
+     ]
+    }
+   ]
+  },
+  "gifford2014_fig4_design": {
+   "name": "gifford2014_fig4_design",
+   "dxf": "gifford2014_fig4_design.dxf",
+   "dxf_sha256": "09b471f909113cf6d02912c5211be1d67235128dc6a576d81f1f5e9b68ca0705",
+   "bbox_um": [
+    -5202.05753,
+    42240.0893,
+    -1107.13928,
+    3845.10175
+   ],
+   "footprint_mm": [
+    47.44214683,
+    4.95224103
+   ],
+   "strips": 2,
+   "strip_um_per_px": 2.0,
+   "panels": {
+    "4": {
+     "title": "Gifford Fig. 4 inset, the end of leg 4",
+     "results": "gifford_results_rc6.json",
+     "key": "-",
+     "corners_um": [
+      [
+       423.8193861564331,
+       1127.4894959722528
+      ],
+      [
+       1651.731981659706,
+       2389.224436799187
+      ],
+      [
+       2649.522370681323,
+       1418.1810371856639
+      ],
+      [
+       1421.60977517805,
+       156.44609635872933
+      ]
+     ],
+     "centre_um": [
+      1536.670878418878,
+      1272.8352665789582
+     ],
+     "V9": {
+      "roundtrip_err_px": 2.2737367544323206e-13,
+      "roundtrip_err_um": 4.547473508864641e-13,
+      "det": -0.12844962300824467,
+      "not_mirrored": true,
+      "orthogonal": true,
+      "equal_axes": 1.0,
+      "scale_px_per_um": 0.3583986928104575,
+      "declared_px_per_um": 0.3583986928104575,
+      "scale_rel_err": 0.0,
+      "raster_sha256_matches": true,
+      "dxf_sha256_matches": true,
+      "ok": true
+     },
+     "trace": {
+      "V1_px": {
+       "along": -0.09423674150219158,
+       "across": 0.04313710354937091,
+       "agree": true
+      },
+      "median_um": 1.2119826411301031,
+      "p90_um": 18.17276110358323,
+      "null_half_pitch_um": 4.117012344784895,
+      "null_5um_across_um": 4.8235538765574955,
+      "V5": {
+       "along": 1.0007039049176811,
+       "across": 1.001224519489221
+      },
+      "um_per_px": 2.790188748062369,
+      "trace": "gifford_fig4_inset_leg4__rc6"
+     },
+     "zoom_um_per_px": 1.3950943740311845
+    }
+   },
+   "files": [
+    "gifford2014_fig4_design_strip1.png",
+    "gifford2014_fig4_design_strip2.png",
+    "gifford2014_fig4_design_full.pdf",
+    "gifford2014_fig4_design_zoom_4.png"
+   ],
+   "V10": [
+    {
+     "file": "gifford2014_fig4_design_strip1.png",
+     "um_per_px": [
+      2.0,
+      1.9999999999999996
+     ]
+    },
+    {
+     "file": "gifford2014_fig4_design_strip2.png",
+     "um_per_px": [
+      2.0,
+      1.9999999999999996
+     ]
+    }
+   ]
+  },
+  "gifford2014_fig6_design": {
+   "name": "gifford2014_fig6_design",
+   "dxf": "gifford2014_fig6_design.dxf",
+   "dxf_sha256": "e47f5ca61b3f1a28f7cdc0998896ce9327fa01918a0613fd8709a6b492032422",
+   "bbox_um": [
+    -3965.53447,
+    49804.72018,
+    -3379.60536,
+    4923.82783
+   ],
+   "footprint_mm": [
+    53.77025465,
+    8.30343319
+   ],
+   "strips": 2,
+   "strip_um_per_px": 2.0,
+   "panels": {
+    "6": {
+     "title": "Gifford Fig. 6 micrograph, one map for the four legs and their turns",
+     "results": "gifford6_results_rc6_onemap.json",
+     "key": "four_legs",
+     "corners_um": [
+      [
+       44213.65132982955,
+       -2869.277757164336
+      ],
+      [
+       42376.84237515243,
+       -695.2461290000588
+      ],
+      [
+       44042.79347972347,
+       712.2926884154689
+      ],
+      [
+       45879.60243440058,
+       -1461.7389397488084
+      ]
+     ],
+     "centre_um": [
+      44128.22240477651,
+      -1078.4925343744335
+     ],
+     "V9": {
+      "roundtrip_err_px": 1.8758328224066645e-12,
+      "roundtrip_err_um": 7.275957614183426e-12,
+      "det": -0.04884287554841562,
+      "not_mirrored": true,
+      "orthogonal": true,
+      "equal_axes": 1.0,
+      "scale_px_per_um": 0.221004243281471,
+      "declared_px_per_um": 0.221004243281471,
+      "scale_rel_err": 0.0,
+      "raster_sha256_matches": true,
+      "dxf_sha256_matches": true,
+      "ok": true
+     },
+     "trace": {
+      "V1_px": {
+       "along": -0.007127994975029804,
+       "across": -0.1032446892581692,
+       "agree": true
+      },
+      "median_um": 1.4745318538402232,
+      "p90_um": 5.926152194600817,
+      "null_half_pitch_um": 5.994443619513779,
+      "null_5um_across_um": 3.0612888648017864,
+      "V5": {
+       "along": 0.9994465542464852,
+       "across": 1.0007089840734238
+      },
+      "um_per_px": 4.5248,
+      "trace": "gifford_fig6_four_legs__rc6"
+     },
+     "zoom_um_per_px": 2.2624
+    }
+   },
+   "files": [
+    "gifford2014_fig6_design_strip1.png",
+    "gifford2014_fig6_design_strip2.png",
+    "gifford2014_fig6_design_full.pdf",
+    "gifford2014_fig6_design_zoom_6.png"
+   ],
+   "V10": [
+    {
+     "file": "gifford2014_fig6_design_strip1.png",
+     "um_per_px": [
+      2.0,
+      2.0
+     ]
+    },
+    {
+     "file": "gifford2014_fig6_design_strip2.png",
+     "um_per_px": [
+      2.0,
+      2.0
+     ]
+    }
+   ]
+  },
+  "xia2016_rs7_depicted": {
+   "name": "xia2016_rs7_depicted",
+   "dxf": "xia2016_rs7_depicted.dxf",
+   "dxf_sha256": "0161ab00682d354f199b0c71148d7af124b2375ae1cc181b85e42652be14c73f",
+   "bbox_um": [
+    -8128.00735,
+    65149.79933,
+    -8337.83771,
+    3802.33022
+   ],
+   "footprint_mm": [
+    73.27780668000001,
+    12.14016793
+   ],
+   "strips": 4,
+   "strip_um_per_px": 2.0,
+   "panels": {
+    "c": {
+     "title": "Xia Fig. 3c, leg 1: the transition's last blocks and first posts",
+     "results": "xia_results_fig3c_rc6.json",
+     "key": "-",
+     "corners_um": [
+      [
+       11420.44667522324,
+       -625.9738153558076
+      ],
+      [
+       11414.322963939283,
+       718.9162431159289
+      ],
+      [
+       12757.415041049426,
+       725.0317676200943
+      ],
+      [
+       12763.538752333383,
+       -619.8582908516421
+      ]
+     ],
+     "centre_um": [
+      12088.930858136333,
+      49.528976132143384
+     ],
+     "V9": {
+      "roundtrip_err_px": 1.3642420526593924e-12,
+      "roundtrip_err_um": 1.8189894035458565e-12,
+      "det": -0.30932899117917445,
+      "not_mirrored": true,
+      "orthogonal": true,
+      "equal_axes": 1.0,
+      "scale_px_per_um": 0.5561735261401557,
+      "declared_px_per_um": 0.5561735261401557,
+      "scale_rel_err": 0.0,
+      "raster_sha256_matches": true,
+      "dxf_sha256_matches": true,
+      "ok": true
+     },
+     "trace": {
+      "V1_px": {
+       "along": 0.12922160488365952,
+       "across": -0.006040241569968035,
+       "agree": true
+      },
+      "median_um": 3.0591685878626946,
+      "p90_um": 5.963886831543251,
+      "null_half_pitch_um": 5.488876932456959,
+      "null_5um_across_um": 2.9452962649703114,
+      "V5": {
+       "along": 0.9995661640306127,
+       "across": 1.0031544164417185
+      },
+      "um_per_px": 1.798,
+      "trace": "xia_fig3c__rc6"
+     },
+     "zoom_um_per_px": 0.899
+    },
+    "d": {
+     "title": "Xia Fig. 3d, legs 5 and 3 leaving the top loops",
+     "results": "xia_results_fig3d_rc6.json",
+     "key": "-",
+     "corners_um": [
+      [
+       -4952.271933843895,
+       -2889.428972426967
+      ],
+      [
+       -4960.395850216537,
+       -1548.1455747638292
+      ],
+      [
+       -3619.112452553399,
+       -1540.0216583911877
+      ],
+      [
+       -3610.9885361807574,
+       -2881.305056054325
+      ]
+     ],
+     "centre_um": [
+      -4285.692193198647,
+      -2214.725315409077
+     ],
+     "V9": {
+      "roundtrip_err_px": 6.821210263296962e-13,
+      "roundtrip_err_um": 9.094947017729282e-13,
+      "det": -0.30932899117917445,
+      "not_mirrored": true,
+      "orthogonal": true,
+      "equal_axes": 1.0,
+      "scale_px_per_um": 0.5561735261401557,
+      "declared_px_per_um": 0.5561735261401557,
+      "scale_rel_err": 0.0,
+      "raster_sha256_matches": true,
+      "dxf_sha256_matches": true,
+      "ok": true
+     },
+     "trace": {
+      "V1_px": {
+       "along": 0.25799047679785514,
+       "across": -1.2356873675330406,
+       "agree": true
+      },
+      "median_um": 2.278854248437123,
+      "p90_um": 9.05062522544856,
+      "null_half_pitch_um": 8.095948015477315,
+      "null_5um_across_um": 4.813394792761477,
+      "V5": {
+       "along": 1.005448162864226,
+       "across": 1.00876764741837
+      },
+      "um_per_px": 1.798,
+      "trace": "xia_fig3d__rc6"
+     },
+     "zoom_um_per_px": 0.899
+    },
+    "e": {
+     "title": "Xia Fig. 3e, legs 5 and 3 half way down",
+     "results": "xia_results_fig3e_rc6.json",
+     "key": "-",
+     "corners_um": [
+      [
+       28177.357343274667,
+       -2873.1021418212717
+      ],
+      [
+       28184.238978584694,
+       -1528.2157479903801
+      ],
+      [
+       29525.529419490904,
+       -1535.0789832059952
+      ],
+      [
+       29518.647784180877,
+       -2879.965377036887
+      ]
+     ],
+     "centre_um": [
+      28851.443381382785,
+      -2204.090562513634
+     ],
+     "V9": {
+      "roundtrip_err_px": 5.4569682106375694e-12,
+      "roundtrip_err_um": 7.275957614183426e-12,
+      "det": -0.30932899117917445,
+      "not_mirrored": true,
+      "orthogonal": true,
+      "equal_axes": 1.0,
+      "scale_px_per_um": 0.5561735261401557,
+      "declared_px_per_um": 0.5561735261401557,
+      "scale_rel_err": 0.0,
+      "raster_sha256_matches": true,
+      "dxf_sha256_matches": true,
+      "ok": true
+     },
+     "trace": {
+      "V1_px": {
+       "along": 0.22376629179631952,
+       "across": -3.665391498133518,
+       "agree": false
+      },
+      "median_um": 3.028272800725225,
+      "p90_um": 12.932754803626661,
+      "null_half_pitch_um": 10.690850301252107,
+      "null_5um_across_um": 3.768295288896504,
+      "V5": {
+       "along": 1.0000338019299546,
+       "across": 1.0078491259591573
+      },
+      "um_per_px": 1.798,
+      "trace": "xia_fig3e__rc6"
+     },
+     "zoom_um_per_px": 0.899
+    },
+    "f": {
+     "title": "Xia Fig. 3f, leg 7 a quarter of the way down",
+     "results": "xia_results_fig3f_rc6.json",
+     "key": "-",
+     "corners_um": [
+      [
+       14723.468841509624,
+       -4634.793304184654
+      ],
+      [
+       14723.341135146438,
+       -3311.4675138410653
+      ],
+      [
+       16046.666925490026,
+       -3311.3398074778784
+      ],
+      [
+       16046.794631853212,
+       -4634.665597821466
+      ]
+     ],
+     "centre_um": [
+      15385.067883499825,
+      -3973.0665558312658
+     ],
+     "V9": {
+      "roundtrip_err_px": 2.7284841053187847e-12,
+      "roundtrip_err_um": 3.637978807091713e-12,
+      "det": -0.3177928324084242,
+      "not_mirrored": true,
+      "orthogonal": true,
+      "equal_axes": 1.0,
+      "scale_px_per_um": 0.5637311703360248,
+      "declared_px_per_um": 0.5637311703360248,
+      "scale_rel_err": 0.0,
+      "raster_sha256_matches": true,
+      "dxf_sha256_matches": true,
+      "ok": true
+     },
+     "trace": {
+      "V1_px": {
+       "along": -0.06347238106480735,
+       "across": 1.1762823214161588,
+       "agree": true
+      },
+      "median_um": 3.7938278091159474,
+      "p90_um": 11.427568693774413,
+      "null_half_pitch_um": 10.961696802847577,
+      "null_5um_across_um": 4.137473734583102,
+      "V5": {
+       "along": 1.0034317657845964,
+       "across": 0.9627748805707681
+      },
+      "um_per_px": 1.7738951695786613,
+      "trace": "xia_fig3f__rc6"
+     },
+     "zoom_um_per_px": 0.8869475847893307
+    },
+    "g": {
+     "title": "Xia Fig. 3g, the outlet: leg 7's last rows and the leads",
+     "results": "xia_results_rc6.json",
+     "key": "-",
+     "corners_um": [
+      [
+       51507.02942461054,
+       -4968.121815523502
+      ],
+      [
+       51511.695529281,
+       -3623.2259100039696
+      ],
+      [
+       52849.399478086525,
+       -3627.867062243036
+      ],
+      [
+       52844.733373416064,
+       -4972.762967762569
+      ]
+     ],
+     "centre_um": [
+      52178.21445134853,
+      -4297.994438883269
+     ],
+     "V9": {
+      "roundtrip_err_px": 5.4569682106375694e-12,
+      "roundtrip_err_um": 7.275957614183426e-12,
+      "det": -0.30932899117917434,
+      "not_mirrored": true,
+      "orthogonal": true,
+      "equal_axes": 1.0,
+      "scale_px_per_um": 0.5561735261401556,
+      "declared_px_per_um": 0.5561735261401557,
+      "scale_rel_err": 1.9961809982760315e-16,
+      "raster_sha256_matches": true,
+      "dxf_sha256_matches": true,
+      "ok": true
+     },
+     "trace": {
+      "V1_px": {
+       "along": 0.5451998887997411,
+       "across": 1.2703891399403806,
+       "agree": true
+      },
+      "median_um": 2.3303946348915945,
+      "p90_um": 12.231702462685545,
+      "null_half_pitch_um": 10.549547003503339,
+      "null_5um_across_um": 3.5830958658233847,
+      "V5": {
+       "along": 0.9979635085076836,
+       "across": 1.0378078440781238
+      },
+      "um_per_px": 1.798,
+      "trace": "xia_fig3g_outlet__rc6"
+     },
+     "zoom_um_per_px": 0.899
+    }
+   },
+   "files": [
+    "xia2016_rs7_depicted_strip1.png",
+    "xia2016_rs7_depicted_strip2.png",
+    "xia2016_rs7_depicted_strip3.png",
+    "xia2016_rs7_depicted_strip4.png",
+    "xia2016_rs7_depicted_full.pdf",
+    "xia2016_rs7_depicted_zoom_c.png",
+    "xia2016_rs7_depicted_zoom_d.png",
+    "xia2016_rs7_depicted_zoom_e.png",
+    "xia2016_rs7_depicted_zoom_f.png",
+    "xia2016_rs7_depicted_zoom_g.png"
+   ],
+   "V10": [
+    {
+     "file": "xia2016_rs7_depicted_strip1.png",
+     "um_per_px": [
+      2.0000000000000018,
+      2.0
+     ]
+    },
+    {
+     "file": "xia2016_rs7_depicted_strip2.png",
+     "um_per_px": [
+      2.0,
+      2.0
+     ]
+    },
+    {
+     "file": "xia2016_rs7_depicted_strip3.png",
+     "um_per_px": [
+      2.0,
+      2.0
+     ]
+    },
+    {
+     "file": "xia2016_rs7_depicted_strip4.png",
+     "um_per_px": [
+      2.0,
+      2.0
+     ]
+    }
+   ]
+  },
+  "xia2016_rs7_depicted_dfill": {
+   "name": "xia2016_rs7_depicted_dfill",
+   "dxf": "xia2016_rs7_depicted_dfill.dxf",
+   "dxf_sha256": "ce8dbcf2bfa2bc36a461850b8c801f1ef5efba4d942ab6cbae2d968d0ae3b291",
+   "bbox_um": [
+    -8180.56915,
+    70692.39933,
+    -8337.79858,
+    3803.09194
+   ],
+   "footprint_mm": [
+    78.87296848,
+    12.140890520000001
+   ],
+   "strips": 4,
+   "strip_um_per_px": 2.0,
+   "panels": {
+    "c": {
+     "title": "Xia Fig. 3c, leg 1: the transition's last blocks and first posts",
+     "results": "xia_results_fig3c_dfill.json",
+     "key": "-",
+     "corners_um": [
+      [
+       11420.447109346287,
+       -625.9752043702564
+      ],
+      [
+       11414.32339806233,
+       718.91485410148
+      ],
+      [
+       12757.415475172473,
+       725.0303786056455
+      ],
+      [
+       12763.53918645643,
+       -619.8596798660909
+      ]
+     ],
+     "centre_um": [
+      12088.93129225938,
+      49.527587117694566
+     ],
+     "V9": {
+      "roundtrip_err_px": 1.3642420526593924e-12,
+      "roundtrip_err_um": 1.8189894035458565e-12,
+      "det": -0.30932899117917445,
+      "not_mirrored": true,
+      "orthogonal": true,
+      "equal_axes": 1.0,
+      "scale_px_per_um": 0.5561735261401557,
+      "declared_px_per_um": 0.5561735261401557,
+      "scale_rel_err": 0.0,
+      "raster_sha256_matches": true,
+      "dxf_sha256_matches": true,
+      "ok": true
+     },
+     "trace": {
+      "V1_px": {
+       "along": 0.12898015713692945,
+       "across": -0.006812774634260384,
+       "agree": true
+      },
+      "median_um": 3.053260435360038,
+      "p90_um": 5.962674284302909,
+      "null_half_pitch_um": 5.477766781891825,
+      "null_5um_across_um": 2.943593359645572,
+      "V5": {
+       "along": 0.9995653678772821,
+       "across": 1.003161276739857
+      },
+      "um_per_px": 1.798,
+      "trace": "xia_fig3c__dfill"
+     },
+     "zoom_um_per_px": 0.899
+    },
+    "d": {
+     "title": "Xia Fig. 3d, legs 5 and 3 leaving the top loops",
+     "results": "xia_results_fig3d_dfill.json",
+     "key": "-",
+     "corners_um": [
+      [
+       -5003.952570991838,
+       -2889.051734356118
+      ],
+      [
+       -5012.076487364479,
+       -1547.7683366929803
+      ],
+      [
+       -3670.7930897013416,
+       -1539.644420320339
+      ],
+      [
+       -3662.6691733287003,
+       -2880.9278179834764
+      ]
+     ],
+     "centre_um": [
+      -4337.37283034659,
+      -2214.3480773382284
+     ],
+     "V9": {
+      "roundtrip_err_px": 6.821210263296962e-13,
+      "roundtrip_err_um": 9.094947017729282e-13,
+      "det": -0.30932899117917445,
+      "not_mirrored": true,
+      "orthogonal": true,
+      "equal_axes": 1.0,
+      "scale_px_per_um": 0.5561735261401557,
+      "declared_px_per_um": 0.5561735261401557,
+      "scale_rel_err": 0.0,
+      "raster_sha256_matches": true,
+      "dxf_sha256_matches": true,
+      "ok": true
+     },
+     "trace": {
+      "V1_px": {
+       "along": 0.19160401847897413,
+       "across": -1.0258775394748239,
+       "agree": true
+      },
+      "median_um": 2.34477796868604,
+      "p90_um": 9.409546364828145,
+      "null_half_pitch_um": 7.896815481382133,
+      "null_5um_across_um": 5.000632294157308,
+      "V5": {
+       "along": 1.0055856069236788,
+       "across": 1.008496919872911
+      },
+      "um_per_px": 1.798,
+      "trace": "xia_fig3d__dfill"
+     },
+     "zoom_um_per_px": 0.899
+    },
+    "e": {
+     "title": "Xia Fig. 3e, legs 5 and 3 half way down",
+     "results": "xia_results_fig3e_dfill.json",
+     "key": "-",
+     "corners_um": [
+      [
+       28125.565143135158,
+       -2874.0569394685667
+      ],
+      [
+       28132.446778445184,
+       -1529.1705456376749
+      ],
+      [
+       29473.7372193514,
+       -1536.03378085329
+      ],
+      [
+       29466.855584041372,
+       -2880.9201746841813
+      ]
+     ],
+     "centre_um": [
+      28799.65118124328,
+      -2205.045360160928
+     ],
+     "V9": {
+      "roundtrip_err_px": 5.4569682106375694e-12,
+      "roundtrip_err_um": 7.275957614183426e-12,
+      "det": -0.30932899117917445,
+      "not_mirrored": true,
+      "orthogonal": true,
+      "equal_axes": 1.0,
+      "scale_px_per_um": 0.5561735261401557,
+      "declared_px_per_um": 0.5561735261401557,
+      "scale_rel_err": 0.0,
+      "raster_sha256_matches": true,
+      "dxf_sha256_matches": true,
+      "ok": true
+     },
+     "trace": {
+      "V1_px": {
+       "along": 0.21942821588942568,
+       "across": -4.2015550834838145,
+       "agree": false
+      },
+      "median_um": 3.576221589780303,
+      "p90_um": 12.795983577167764,
+      "null_half_pitch_um": 10.669515209515634,
+      "null_5um_across_um": 3.7608671208975095,
+      "V5": {
+       "along": 1.0000157497416353,
+       "across": 1.0089116235356774
+      },
+      "um_per_px": 1.798,
+      "trace": "xia_fig3e__dfill"
+     },
+     "zoom_um_per_px": 0.899
+    },
+    "f": {
+     "title": "Xia Fig. 3f, leg 7 a quarter of the way down",
+     "results": "xia_results_fig3f_dfill.json",
+     "key": "-",
+     "corners_um": [
+      [
+       14723.469150903145,
+       -4634.779548307698
+      ],
+      [
+       14723.341444539958,
+       -3311.4537579641105
+      ],
+      [
+       16046.667234883545,
+       -3311.326051600923
+      ],
+      [
+       16046.794941246733,
+       -4634.651841944511
+      ]
+     ],
+     "centre_um": [
+      15385.068192893346,
+      -3973.0527999543106
+     ],
+     "V9": {
+      "roundtrip_err_px": 2.7284841053187847e-12,
+      "roundtrip_err_um": 3.637978807091713e-12,
+      "det": -0.3177928324084242,
+      "not_mirrored": true,
+      "orthogonal": true,
+      "equal_axes": 1.0,
+      "scale_px_per_um": 0.5637311703360248,
+      "declared_px_per_um": 0.5637311703360248,
+      "scale_rel_err": 0.0,
+      "raster_sha256_matches": true,
+      "dxf_sha256_matches": true,
+      "ok": true
+     },
+     "trace": {
+      "V1_px": {
+       "along": -0.0636467958358817,
+       "across": 1.18403693803094,
+       "agree": true
+      },
+      "median_um": 4.0884731057116035,
+      "p90_um": 12.999416100212608,
+      "null_half_pitch_um": 11.27856549063559,
+      "null_5um_across_um": 4.561951088194654,
+      "V5": {
+       "along": 1.0031244224617042,
+       "across": 0.9727120119044366
+      },
+      "um_per_px": 1.7738951695786613,
+      "trace": "xia_fig3f__dfill"
+     },
+     "zoom_um_per_px": 0.8869475847893307
+    },
+    "g": {
+     "title": "Xia Fig. 3g, the outlet: leg 7's last rows and the leads",
+     "results": "xia_results_dfill.json",
+     "key": "-",
+     "corners_um": [
+      [
+       57049.62892329495,
+       -4968.121768393798
+      ],
+      [
+       57054.2950279654,
+       -3623.2258628742657
+      ],
+      [
+       58391.998976770934,
+       -3627.867015113332
+      ],
+      [
+       58387.33287210047,
+       -4972.762920632865
+      ]
+     ],
+     "centre_um": [
+      57720.81395003294,
+      -4297.994391753566
+     ],
+     "V9": {
+      "roundtrip_err_px": 5.4569682106375694e-12,
+      "roundtrip_err_um": 7.275957614183426e-12,
+      "det": -0.30932899117917434,
+      "not_mirrored": true,
+      "orthogonal": true,
+      "equal_axes": 1.0,
+      "scale_px_per_um": 0.5561735261401556,
+      "declared_px_per_um": 0.5561735261401557,
+      "scale_rel_err": 1.9961809982760315e-16,
+      "raster_sha256_matches": true,
+      "dxf_sha256_matches": true,
+      "ok": true
+     },
+     "trace": {
+      "V1_px": {
+       "along": 0.5454787072612396,
+       "across": 1.2704153522335986,
+       "agree": true
+      },
+      "median_um": 2.29970856305045,
+      "p90_um": 12.15961080906679,
+      "null_half_pitch_um": 10.549086921802314,
+      "null_5um_across_um": 3.5831240339562145,
+      "V5": {
+       "along": 0.9979531792856312,
+       "across": 1.0378552030024952
+      },
+      "um_per_px": 1.798,
+      "trace": "xia_fig3g_outlet__dfill"
+     },
+     "zoom_um_per_px": 0.899
+    }
+   },
+   "files": [
+    "xia2016_rs7_depicted_dfill_strip1.png",
+    "xia2016_rs7_depicted_dfill_strip2.png",
+    "xia2016_rs7_depicted_dfill_strip3.png",
+    "xia2016_rs7_depicted_dfill_strip4.png",
+    "xia2016_rs7_depicted_dfill_full.pdf",
+    "xia2016_rs7_depicted_dfill_zoom_c.png",
+    "xia2016_rs7_depicted_dfill_zoom_d.png",
+    "xia2016_rs7_depicted_dfill_zoom_e.png",
+    "xia2016_rs7_depicted_dfill_zoom_f.png",
+    "xia2016_rs7_depicted_dfill_zoom_g.png"
+   ],
+   "V10": [
+    {
+     "file": "xia2016_rs7_depicted_dfill_strip1.png",
+     "um_per_px": [
+      2.0,
+      2.0
+     ]
+    },
+    {
+     "file": "xia2016_rs7_depicted_dfill_strip2.png",
+     "um_per_px": [
+      2.0,
+      2.0
+     ]
+    },
+    {
+     "file": "xia2016_rs7_depicted_dfill_strip3.png",
+     "um_per_px": [
+      2.0,
+      2.0
+     ]
+    },
+    {
+     "file": "xia2016_rs7_depicted_dfill_strip4.png",
+     "um_per_px": [
+      2.0,
+      2.0
+     ]
+    }
+   ]
+  },
+  "xia2016_rs7_depicted_fig3": {
+   "name": "xia2016_rs7_depicted_fig3",
+   "dxf": "xia2016_rs7_depicted_fig3.dxf",
+   "dxf_sha256": "280a04edaa54dcf736af80de049c37329cb1db0f85e3ae0e39dd53f22f111c64",
+   "bbox_um": [
+    -8194.39571,
+    70692.39933,
+    -8344.43939,
+    3816.89245
+   ],
+   "footprint_mm": [
+    78.88679504,
+    12.161331839999999
+   ],
+   "strips": 4,
+   "strip_um_per_px": 2.0,
+   "panels": {
+    "c": {
+     "title": "Xia Fig. 3c, leg 1: the transition's last blocks and first posts",
+     "results": "xia_results_fig3c_fig3.json",
+     "key": "-",
+     "corners_um": [
+      [
+       11420.447037858969,
+       -625.9750479310451
+      ],
+      [
+       11414.323326575011,
+       718.9150105406914
+      ],
+      [
+       12757.415403685156,
+       725.0305350448568
+      ],
+      [
+       12763.539114969111,
+       -619.8595234268796
+      ]
+     ],
+     "centre_um": [
+      12088.931220772061,
+      49.527743556905875
+     ],
+     "V9": {
+      "roundtrip_err_px": 1.3642420526593924e-12,
+      "roundtrip_err_um": 1.8189894035458565e-12,
+      "det": -0.30932899117917445,
+      "not_mirrored": true,
+      "orthogonal": true,
+      "equal_axes": 1.0,
+      "scale_px_per_um": 0.5561735261401557,
+      "declared_px_per_um": 0.5561735261401557,
+      "scale_rel_err": 0.0,
+      "raster_sha256_matches": true,
+      "dxf_sha256_matches": true,
+      "ok": true
+     },
+     "trace": {
+      "V1_px": {
+       "along": 0.1290199164894842,
+       "across": -0.006725767286769616,
+       "agree": true
+      },
+      "median_um": 3.0524380419914916,
+      "p90_um": 5.9607810043364635,
+      "null_half_pitch_um": 5.4795309205088785,
+      "null_5um_across_um": 2.9436841430438534,
+      "V5": {
+       "along": 0.9995655685021694,
+       "across": 1.0031604349521823
+      },
+      "um_per_px": 1.798,
+      "trace": "xia_fig3c__fig3"
+     },
+     "zoom_um_per_px": 0.899
+    },
+    "d": {
+     "title": "Xia Fig. 3d, legs 5 and 3 leaving the top loops",
+     "results": "xia_results_fig3d_fig3.json",
+     "key": "-",
+     "corners_um": [
+      [
+       -5004.103740391554,
+       -2888.4904975363033
+      ],
+      [
+       -5012.227656764197,
+       -1547.2070998731658
+      ],
+      [
+       -3670.9442591010584,
+       -1539.0831835005242
+      ],
+      [
+       -3662.820342728417,
+       -2880.366581163662
+      ]
+     ],
+     "centre_um": [
+      -4337.523999746307,
+      -2213.786840518414
+     ],
+     "V9": {
+      "roundtrip_err_px": 6.821210263296962e-13,
+      "roundtrip_err_um": 9.094947017729282e-13,
+      "det": -0.30932899117917445,
+      "not_mirrored": true,
+      "orthogonal": true,
+      "equal_axes": 1.0,
+      "scale_px_per_um": 0.5561735261401557,
+      "declared_px_per_um": 0.5561735261401557,
+      "scale_rel_err": 0.0,
+      "raster_sha256_matches": true,
+      "dxf_sha256_matches": true,
+      "ok": true
+     },
+     "trace": {
+      "V1_px": {
+       "along": 0.2756804365639411,
+       "across": -0.7137324783984584,
+       "agree": true
+      },
+      "median_um": 2.8848697358611846,
+      "p90_um": 9.95881187164993,
+      "null_half_pitch_um": 7.453299000872938,
+      "null_5um_across_um": 5.139445789079041,
+      "V5": {
+       "along": 1.0063207309690136,
+       "across": 1.0084420260775357
+      },
+      "um_per_px": 1.798,
+      "trace": "xia_fig3d__fig3"
+     },
+     "zoom_um_per_px": 0.899
+    },
+    "e": {
+     "title": "Xia Fig. 3e, legs 5 and 3 half way down",
+     "results": "xia_results_fig3e_fig3.json",
+     "key": "-",
+     "corners_um": [
+      [
+       28125.557928845235,
+       -2873.2102511665776
+      ],
+      [
+       28132.439564155262,
+       -1528.3238573356862
+      ],
+      [
+       29473.730005061472,
+       -1535.187092551301
+      ],
+      [
+       29466.848369751446,
+       -2880.0734863821926
+      ]
+     ],
+     "centre_um": [
+      28799.643966953354,
+      -2204.1986718589396
+     ],
+     "V9": {
+      "roundtrip_err_px": 4.774847184307873e-12,
+      "roundtrip_err_um": 7.275957614183426e-12,
+      "det": -0.30932899117917445,
+      "not_mirrored": true,
+      "orthogonal": true,
+      "equal_axes": 1.0,
+      "scale_px_per_um": 0.5561735261401557,
+      "declared_px_per_um": 0.5561735261401557,
+      "scale_rel_err": 0.0,
+      "raster_sha256_matches": true,
+      "dxf_sha256_matches": true,
+      "ok": true
+     },
+     "trace": {
+      "V1_px": {
+       "along": 0.2234406129495795,
+       "across": -3.7267802932602705,
+       "agree": false
+      },
+      "median_um": 2.976608108174839,
+      "p90_um": 12.942745113070034,
+      "null_half_pitch_um": 10.694990825801723,
+      "null_5um_across_um": 3.776205086413188,
+      "V5": {
+       "along": 1.000047540686128,
+       "across": 1.007899392802723
+      },
+      "um_per_px": 1.798,
+      "trace": "xia_fig3e__fig3"
+     },
+     "zoom_um_per_px": 0.899
+    },
+    "f": {
+     "title": "Xia Fig. 3f, leg 7 a quarter of the way down",
+     "results": "xia_results_fig3f_fig3.json",
+     "key": "-",
+     "corners_um": [
+      [
+       14671.66995565871,
+       -4634.830536172184
+      ],
+      [
+       14671.542249295522,
+       -3311.5047458285967
+      ],
+      [
+       15994.86803963911,
+       -3311.3770394654093
+      ],
+      [
+       15994.995746002296,
+       -4634.702829808997
+      ]
+     ],
+     "centre_um": [
+      15333.26899764891,
+      -3973.1037878187967
+     ],
+     "V9": {
+      "roundtrip_err_px": 2.7284841053187847e-12,
+      "roundtrip_err_um": 3.637978807091713e-12,
+      "det": -0.3177928324084242,
+      "not_mirrored": true,
+      "orthogonal": true,
+      "equal_axes": 1.0,
+      "scale_px_per_um": 0.5637311703360248,
+      "declared_px_per_um": 0.5637311703360248,
+      "scale_rel_err": 0.0,
+      "raster_sha256_matches": true,
+      "dxf_sha256_matches": true,
+      "ok": true
+     },
+     "trace": {
+      "V1_px": {
+       "along": -0.06410046163321875,
+       "across": 1.1552934895107088,
+       "agree": true
+      },
+      "median_um": 3.7773772965667227,
+      "p90_um": 11.424416187910731,
+      "null_half_pitch_um": 10.96247801410299,
+      "null_5um_across_um": 4.116312822562092,
+      "V5": {
+       "along": 1.0036876526117555,
+       "across": 0.95
+      },
+      "um_per_px": 1.7738951695786613,
+      "trace": "xia_fig3f__fig3"
+     },
+     "zoom_um_per_px": 0.8869475847893307
+    },
+    "g": {
+     "title": "Xia Fig. 3g, the outlet: leg 7's last rows and the leads",
+     "results": "xia_results_fig3.json",
+     "key": "-",
+     "corners_um": [
+      [
+       57050.191991543725,
+       -4967.089492569098
+      ],
+      [
+       57054.858096214186,
+       -3622.193587049565
+      ],
+      [
+       58392.56204501971,
+       -3626.834739288631
+      ],
+      [
+       58387.89594034925,
+       -4971.7306448081645
+      ]
+     ],
+     "centre_um": [
+      57721.37701828171,
+      -4296.9621159288645
+     ],
+     "V9": {
+      "roundtrip_err_px": 5.4569682106375694e-12,
+      "roundtrip_err_um": 7.275957614183426e-12,
+      "det": -0.30932899117917434,
+      "not_mirrored": true,
+      "orthogonal": true,
+      "equal_axes": 1.0,
+      "scale_px_per_um": 0.5561735261401556,
+      "declared_px_per_um": 0.5561735261401557,
+      "scale_rel_err": 1.9961809982760315e-16,
+      "raster_sha256_matches": true,
+      "dxf_sha256_matches": true,
+      "ok": true
+     },
+     "trace": {
+      "V1_px": {
+       "along": 0.23231505388139034,
+       "across": 1.844539837606817,
+       "agree": false
+      },
+      "median_um": 1.3485,
+      "p90_um": 12.657318576919986,
+      "null_half_pitch_um": 10.832224472317996,
+      "null_5um_across_um": 4.12895885152567,
+      "V5": {
+       "along": 0.9970963182244917,
+       "across": 1.004521804265238
+      },
+      "um_per_px": 1.798,
+      "trace": "xia_fig3g_outlet__fig3"
+     },
+     "zoom_um_per_px": 0.899
+    }
+   },
+   "files": [
+    "xia2016_rs7_depicted_fig3_strip1.png",
+    "xia2016_rs7_depicted_fig3_strip2.png",
+    "xia2016_rs7_depicted_fig3_strip3.png",
+    "xia2016_rs7_depicted_fig3_strip4.png",
+    "xia2016_rs7_depicted_fig3_full.pdf",
+    "xia2016_rs7_depicted_fig3_zoom_c.png",
+    "xia2016_rs7_depicted_fig3_zoom_d.png",
+    "xia2016_rs7_depicted_fig3_zoom_e.png",
+    "xia2016_rs7_depicted_fig3_zoom_f.png",
+    "xia2016_rs7_depicted_fig3_zoom_g.png"
+   ],
+   "V10": [
+    {
+     "file": "xia2016_rs7_depicted_fig3_strip1.png",
+     "um_per_px": [
+      2.0,
+      2.0
+     ]
+    },
+    {
+     "file": "xia2016_rs7_depicted_fig3_strip2.png",
+     "um_per_px": [
+      2.0,
+      2.0
+     ]
+    },
+    {
+     "file": "xia2016_rs7_depicted_fig3_strip3.png",
+     "um_per_px": [
+      2.0,
+      2.0
+     ]
+    },
+    {
+     "file": "xia2016_rs7_depicted_fig3_strip4.png",
+     "um_per_px": [
+      2.0,
+      2.0
+     ]
+    }
+   ]
+  }
+ },
+ "failures": [],
+ "ok": true,
+ "composite": {
+  "um_per_px": 4.0,
+  "method": "the four shipped devices' strips (2 \u00b5m/px) reduced by 2 by box averaging, padded right and top so that each strip's x0 and y0 stay on pixel edges (code/composite_from_strips.py)",
+  "rows": [
+   {
+    "device": "dinh2024_v1_depicted",
+    "strip": 1,
+    "of": 4,
+    "box_um": [
+     -6187.99925,
+     31000.00075,
+     -1853.9490372,
+     1854.0509628
+    ],
+    "um_per_px": [
+     4.0,
+     4.0
+    ]
+   },
+   {
+    "device": "dinh2024_v1_depicted",
+    "strip": 2,
+    "of": 4,
+    "box_um": [
+     30897.5737075,
+     68085.5737075,
+     -1853.9490372,
+     1854.0509628
+    ],
+    "um_per_px": [
+     4.0,
+     4.0
+    ]
+   },
+   {
+    "device": "dinh2024_v1_depicted",
+    "strip": 3,
+    "of": 4,
+    "box_um": [
+     67983.14666500001,
+     105171.14666500001,
+     -1853.9490372,
+     1854.0509628
+    ],
+    "um_per_px": [
+     4.0,
+     4.0
+    ]
+   },
+   {
+    "device": "dinh2024_v1_depicted",
+    "strip": 4,
+    "of": 4,
+    "box_um": [
+     105068.71962250001,
+     142256.7196225,
+     -1853.9490372,
+     1854.0509628
+    ],
+    "um_per_px": [
+     4.0,
+     4.0
+    ]
+   },
+   {
+    "device": "gifford2014_fig4_design",
+    "strip": 1,
+    "of": 2,
+    "box_um": [
+     -5252.05753,
+     18571.94247,
+     -1455.2289212,
+     4196.7710788
+    ],
+    "um_per_px": [
+     4.0,
+     4.0
+    ]
+   },
+   {
+    "device": "gifford2014_fig4_design",
+    "strip": 2,
+    "of": 2,
+    "box_um": [
+     18469.015885,
+     42293.015885,
+     -1455.2289212,
+     4196.7710788
+    ],
+    "um_per_px": [
+     4.0,
+     4.0
+    ]
+   },
+   {
+    "device": "gifford2014_fig6_design",
+    "strip": 1,
+    "of": 2,
+    "box_um": [
+     -4015.53447,
+     22972.46553,
+     -3861.7426876,
+     5406.2573124
+    ],
+    "um_per_px": [
+     4.0,
+     4.0
+    ]
+   },
+   {
+    "device": "gifford2014_fig6_design",
+    "strip": 2,
+    "of": 2,
+    "box_um": [
+     22869.592855,
+     49857.592854999995,
+     -3861.7426876,
+     5406.2573124
+    ],
+    "um_per_px": [
+     4.0,
+     4.0
+    ]
+   },
+   {
+    "device": "xia2016_rs7_depicted",
+    "strip": 1,
+    "of": 4,
+    "box_um": [
+     -8178.00735,
+     10241.99265,
+     -8973.4444272,
+     4438.5555728
+    ],
+    "um_per_px": [
+     4.0,
+     4.0
+    ]
+   },
+   {
+    "device": "xia2016_rs7_depicted",
+    "strip": 2,
+    "of": 4,
+    "box_um": [
+     10141.444320000002,
+     28561.444320000002,
+     -8973.4444272,
+     4438.5555728
+    ],
+    "um_per_px": [
+     4.0,
+     4.0
+    ]
+   },
+   {
+    "device": "xia2016_rs7_depicted",
+    "strip": 3,
+    "of": 4,
+    "box_um": [
+     28460.895990000005,
+     46880.895990000005,
+     -8973.4444272,
+     4438.5555728
+    ],
+    "um_per_px": [
+     4.0,
+     4.0
+    ]
+   },
+   {
+    "device": "xia2016_rs7_depicted",
+    "strip": 4,
+    "of": 4,
+    "box_um": [
+     46780.34766000001,
+     65200.34766000001,
+     -8973.4444272,
+     4438.5555728
+    ],
+    "um_per_px": [
+     4.0,
+     4.0
+    ]
+   }
+  ],
+  "V10": {
+   "ok": true,
+   "um_per_px": 4.0
+  },
+  "files": [
+   "full_device_composite.png"
+  ]
+ }
+}

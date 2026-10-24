@@ -1,0 +1,13 @@
+[m02_linear_shear_arms_filter_teardrop] head width: 6600 um, the narrowest that seals gap 1 within 0.3 to 1 times the available 10000 um (+3%)
+[m02_linear_shear_arms_filter_teardrop] planned: A=3 (sealed would need 3, lateral cap 3), f1/f*=1.000, N=818, NM=72, w_s(in) target 19.00 (4s)
+[m02_linear_shear_arms_filter_teardrop] drawn: bounds [-13742.8, -3135.1, 47394.9, 3135.1] (10s)
+[m02_linear_shear_arms_filter_teardrop] topology holes 1705/1705; envelope True; r_min 4.90 um (32s)
+[m02_linear_shear_arms_filter_teardrop] part clearance: ok (closest []); drawn components {'head_drawn': '3 arms (lane pairs [1, 1, 1]) + hairpins', 'head_units': 72, 'head_arms': 3, 'arm_lane_pairs': [1, 1, 1], 'gap1_f_over_fstar': 1.0, 'gap1_sealed': True, 'filter_posts_counted': 70, 'outlet_style': 'teardrop', 'outlet_ports': 2, 'legs': 1, 'u_turns': 0}
+[m02_linear_shear_arms_filter_teardrop] side-channel continuity: every leg and side one strip; narrowest 19.031 um (floor 19.0) (38s)
+[m02_linear_shear_arms_filter_teardrop] fidelity {'unit_length_rel_max': 1.2140269318727803e-05, 'side_eqwidth_dev_max_um': 0.02029937563728268, 'gap_width_dev_max_um': 3.0000000002416982e-05, 'loop_R_rel_max': 0.0, 'outlet_R_rel_max': 1.3444332919165802e-06}
+[m02_linear_shear_arms_filter_teardrop] network F 0.500249 (design 0.500249, target 0.500000); realised cutoff {'D_target_um': 4.0, 'tolerance': 0.01, 'F_net': 0.50025, 'reverse_flow_rows': [], 'reverse_flow_share_of_inlet': -0.0, 'declared_rows': {}, 'D_realised_max_um': 4.00067, 'D_realised_min_um': 3.99895, 'row1_cutoff_over_D': 1.0, 'share_of_F_within_1%': 1.0, 'share_of_F_oversize_1%': 0.0, 'rows_outside_1%': 0, 'share_of_F_within_2%': 1.0, 'share_of_F_oversize_2%': 0.0, 'rows_outside_2%': 0, 'share_of_F_within_5%': 1.0, 'share_of_F_oversize_5%': 0.0, 'rows_outside_5%': 0, 'undeclared_rows_outside': 0, 'undeclared_rows_list': [], 'undeclared_worst_over': None, 'undeclared_worst_under': None, 'undeclared_undefined_rows': 0, 'declared_by_option': {}, 'declared_rows_outside': 0, 'declared_worst_over': None, 'declared_share_of_F_oversize': 0.0} (74s)
+[m02_linear_shear_arms_filter_teardrop] DRC {'n_components': 1, 'invalid_rings': 0, 'n_lost_open': 0, 'n_lost_solid': 0, 'd_um': 18.9}
+[m02_linear_shear_arms_filter_teardrop] done in 107s
+[m02_linear_shear_arms_filter_teardrop] PASS [1-D model: junction band: 15 row(s) beyond +-1%, 1 losing their cutoff (up to 52.2% of D; rows 71-73, 807-818; 1.9% of F)] in 167 s
+PASS [1-D model: junction band: 15 row(s) beyond +-1%, 1 losing their cutoff (up to 52.2% of D; rows 71-73, 807-818; 1.9% of F)]
+[test] outlet_exp_domain called 4 times; ratios [np.float64(2.898)]

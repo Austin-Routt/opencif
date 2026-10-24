@@ -1,0 +1,76 @@
+{
+ "code_stamp": "9e4eb55a0affeef3",
+ "builds": {
+  "gifford2014_fig4_aligned": {
+   "dxf_sha256": "edaf92626d574aea0dc9defed781e2f848def5c70fbaf9d70def345cc0ddf2e0",
+   "exit_code": 0,
+   "declared": [
+    "floor start"
+   ],
+   "N": 3543,
+   "NM": 0,
+   "F": 0.9064961035437347,
+   "verdict": "REPRODUCED with declared departures (floor start) [1-D model: junction band: 3 row(s) beyond +-1% (up to 1.5% of D; rows 3541-3543; 0.021% of F)]"
+  },
+  "gifford2014_fig4_design": {
+   "dxf_sha256": "09b471f909113cf6d02912c5211be1d67235128dc6a576d81f1f5e9b68ca0705",
+   "exit_code": 0,
+   "declared": [],
+   "N": 3546,
+   "NM": 0,
+   "F": 0.9064743461558772,
+   "verdict": "REPRODUCED [1-D model: junction band: 4 row(s) beyond +-1% (up to 1.8% of D; rows 3543-3546; 0.028% of F)] -- ABOVE THE PROCESS ASPECT-RATIO LIMIT (depth/width 16.5 > 10 at the narrowest straight side channel; reported, not refused or failed in reproduce mode)"
+  },
+  "gifford2014_fig4_pathorder": {
+   "dxf_sha256": "e8f68a394c535ec19204e2d83ae7ce8593a4f2ff8cb11fe9b7f98191a67a3920",
+   "exit_code": 0,
+   "declared": [
+    "floor start"
+   ],
+   "N": 3543,
+   "NM": 0,
+   "F": 0.9064961035437347,
+   "verdict": "REPRODUCED with declared departures (floor start) [1-D model: junction band: 6 row(s) beyond +-1% (up to 1.3% of D; rows 2784-2789; 0.069% of F)]"
+  },
+  "gifford2014_fig4_start51": {
+   "dxf_sha256": "3c72b2d7c3620ad744b0e8bba764743ac8ade1ebebd48c775e971b1ffbf106e4",
+   "exit_code": 0,
+   "declared": [
+    "floor start"
+   ],
+   "N": 2954,
+   "NM": 0,
+   "F": 0.9064550590242866,
+   "verdict": "REPRODUCED with declared departures (floor start) [1-D model: junction band: 3 row(s) beyond +-1% (up to 1.5% of D; rows 2952-2954; 0.021% of F)]"
+  },
+  "gifford2014_fig4_fold20": {
+   "dxf_sha256": "b3fcda80159e2347e292725b20f2f3491ed261be235ffdb17cc57adc2d13ced9",
+   "exit_code": 0,
+   "declared": [],
+   "N": 3546,
+   "NM": 59,
+   "F": 0.9064743461558772,
+   "verdict": "REPRODUCED [1-D model: junction band: 13 row(s) beyond +-1% (up to 12.1% of D; rows 58-60, 2786-2795; 0.33% of F)]"
+  }
+ },
+ "inputs_sha256": {
+  "tree/provenance/rc7_scripts/gifford_alignment.py": "0bb5cc3f7aa930829809c0316789abe3ab83034831380de8c64bd28b478339bb",
+  "tree/tools/dissertation_figures.py": "6b174ea6dde62954e59b8ddd5f50f7cd0c695f13fcdc5ce4aa2aa8166c7ea546",
+  "tree/provenance/rc6_traces/measurements/dinh_length_at_corrected_pitch.json": "3440e7be0b5bb5b00547a13c44d985f431423ea8e238c6adab7cb9217082a1d6",
+  "tree/provenance/rc6_traces/measurements/gifford_fig6_turns.json": "aee3c50e79ceb335d8e6e5fcf3b227ae391b1c1594600030a78d8e1ffd15f0b2",
+  "tree/provenance/rc6_traces/measurements/scales.json": "f9b1ed8d323599953a6cb021750c07c73b85e00dfe63b55dfd113055096322ee",
+  "tree/provenance/rc6_traces/measurements/summary_table.md": "8222c854d707403322fc2eab118d1564df5cbd3c51d17d2b5af1fb081f940799",
+  "tree/provenance/rc6_traces/measurements/xia_fig3d_arc_scale.json": "3e60dd0b38ed9e2013a6b2109a369397ec8610eb94d26eb2334ec0504b6c73aa",
+  "tree/provenance/rc6_traces/measurements/xia_side_walls_fg.json": "bc3eccd0e9b4cf953176f6d75265b6e7059e686e878821168aa74b7a4567db6c",
+  "inputs/gif5-001.png": "e70a8b38b87f96393df21e404802f51159d435f163f5e55f3a3b48bc3b523a0b",
+  "inputs/gifford2014_fig4_aligned.yaml": "27eec68894abe1bd586bd5f929cba57b3a18e80f83707cfa6765c08167484c55",
+  "inputs/gifford2014_fig4_design.yaml": "f7c9d30f98ec1d48f841b9b1675ac18c232817c505a8b96ab68befb427831351",
+  "inputs/gifford2014_fig4_pathorder.yaml": "a6b0dcb6b560cd86534e17a0ee280f4bdfcb95a7f88c9766e71e92e2cb2f58aa",
+  "inputs/gifford2014_fig4_start51.yaml": "781d07e1e5e58572a3aa2b53e61c3a2de3f7d4f4deab236e00895d03f1797020",
+  "inputs/gifford2014_fig4_fold20.yaml": "7754390307050938c6f43f5b17c4f40d047b80859df540c59bfc013978bf740f",
+  "devicekit.py": "4ff58c84231b43d3f04a0df7e20ae85e247340f29a43a6a52c6c0fdcd704e63b",
+  "make_gifford2014_fig4.py": "da55b7ca7db8ba2942cb9a46c0956fbb1569a60979ba5cef5a116a17c996035b",
+  "inputs/SOURCE.md": "658dfcb86f76eaf16be743b75df182c19fe2bf14577cecc0ba36ce460449296a"
+ },
+ "note": "from the frozen RC8 tree's records (runs/, provenance/rc7_traces/variants/runs/ and provenance/rc7_traces/results/), written by the package assembler; the package checks its own run against these (inputs_sha256 covers the inputs, the source note, devicekit.py and the device script)"
+}

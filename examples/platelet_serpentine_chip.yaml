@@ -1,0 +1,15 @@
+# A new platelet-cut device inside the validity envelope: D 2.5 um, F 0.6, Dinh's process, constant-shear taper whose
+# widest section keeps u = D/w_c on the kappa plateau (70 um: u_min 0.0357), packed meander head, serpentine legs
+# chosen automatically to fit a 25 x 75 mm microscope slide.  Strict gates.
+# (A 12 x 30 mm chip cannot hold it: the sealed head for D 2.5 um has so many units that it alone is ~25-46 mm long
+# whatever its width, and the generator says so.)
+name: platelet_serpentine_chip
+targets: {cutoff_um: 2.5, filtrate_fraction: 0.6}
+process: {depth_um: 140, gap_um: 19, post_length_um: 26.1, post_width_um: 54, min_feature_um: 19}
+chip: {width_mm: 25, length_mm: 75, margin_um: 1000}
+centre_channel: {taper: constant_shear, width_in_um: 70, width_min_um: 50}
+layout: {style: serpentine, legs: auto}
+meander: {enabled: true, style: pack, channel_um: 28, wall_um: 27, seal: auto}
+inlet: {style: filter, port_radius_um: 750}
+outlet: {style: teardrop, port_radius_um: 750, centre_port_radius_um: 750}
+gates: {mode: strict}

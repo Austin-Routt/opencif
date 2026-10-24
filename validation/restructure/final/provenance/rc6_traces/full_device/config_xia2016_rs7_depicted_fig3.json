@@ -1,0 +1,57 @@
+{
+ "strip_um_per_px": 2.0,
+ "composite_um_per_px": 5.0,
+ "strip_max_mm": 20,
+ "devices": [
+  {
+   "name": "xia2016_rs7_depicted_fig3",
+   "dxf": "variants_out/xia2016_rs7_depicted_fig3/xia2016_rs7_depicted_fig3.dxf",
+   "title": "Xia 2016 RS-7 with F and D read off Fig. 3 (F 0.94072, D 6.5705 \u00b5m), opencif rc6 variant",
+   "panels": [
+    {
+     "letter": "c",
+     "results": "results/xia/xia_results_fig3c_fig3.json",
+     "key": "-",
+     "raster": "rasters/xia5-000.png",
+     "title": "Xia Fig. 3c, leg 1: the transition's last blocks and first posts"
+    },
+    {
+     "letter": "d",
+     "results": "results/xia/xia_results_fig3d_fig3.json",
+     "key": "-",
+     "raster": "rasters/xia5-000.png",
+     "title": "Xia Fig. 3d, legs 5 and 3 leaving the top loops"
+    },
+    {
+     "letter": "e",
+     "results": "results/xia/xia_results_fig3e_fig3.json",
+     "key": "-",
+     "raster": "rasters/xia5-000.png",
+     "title": "Xia Fig. 3e, legs 5 and 3 half way down"
+    },
+    {
+     "letter": "f",
+     "results": "results/xia/xia_results_fig3f_fig3.json",
+     "key": "-",
+     "raster": "rasters/xia5-000.png",
+     "title": "Xia Fig. 3f, leg 7 a quarter of the way down"
+    },
+    {
+     "letter": "g",
+     "results": "results/xia/xia_results_fig3.json",
+     "key": "-",
+     "raster": "rasters/xia5-000.png",
+     "title": "Xia Fig. 3g, the outlet: leg 7's last rows and the leads"
+    }
+   ],
+   "underlay": {
+    "results": "results/xia/xia_fig3a_device_fig3.json",
+    "key": "underlay",
+    "raster": "rasters/xia5-000.png"
+   },
+   "note": "The variant whose last side channel is panel g's (624.6 \u00b5m: F 0.94072, 15.9 : 1) and whose rows fill Fig. 3a's legs at that F (D 6.5705 \u00b5m; provenance/rc6_traces/code/xia_fig3_fit.py): the same drawing and micrographs, registered the same way."
+  }
+ ],
+ "composite": false,
+ "pdf_dpi": 300
+}

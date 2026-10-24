@@ -1,0 +1,32 @@
+# Gifford 2014 Fig. 6 platelet device -- DESIGN-LEVEL (sealed start, w_s(0) = 0): needs a 4.69 um first side channel, so
+# the 4.5 um floor here is chosen to let it draw (not a fabrication fact).  As fabricated: gifford2014_fig6_as_fabricated_15um.
+# Layout from the Fig. 6 schematic: 7 nested legs, inlet inside the innermost loop, a ring-like outlet (a small centre port
+# inside a ring, one larger port below it).  Outside the kappa plateau (u = 0.029): built in reproduce mode.
+# Layout from the Fig. 6 micrograph (rc6; Gifford prints none): legs 1, 3, 5, 7 on the post rows' tip lines (588 um
+# apart), legs 2, 4, 6 where semicircular turns about the 16 turn walls' common centre (1745.7 um beyond leg 1) put them
+# -- only 8-23 deg of each turn is in the frame, so that closure is an ASSUMPTION; the last leg's array ends 5 rows
+# (257 um) before the others.  provenance/rc6_scripts/gifford_layout_measurement.json; LIMITATIONS 25.
+name: gifford2014_fig6_design
+description: Gifford 2014 Fig. 6 platelet device, design-level (h 150, w_c 125, f 1.04e-4, final w_s 140; 7 nested legs, ring outlet)
+targets:
+  cutoff_um: 3.6236           # kappa_g x(1.04e-4) w_c 125
+  filtrate_fraction: 0.71768  # outlet identity at the caption's final side width 140 um (the text says 144: 0.72923)
+process: {depth_um: 150, gap_um: 20.5, post_length_um: 30.9, post_width_um: 70.8, min_feature_um: 4.5, min_radius_um: 1.8, fillet_um: 2.0}
+centre_channel: {taper: constant, width_in_um: 125}
+layout: {style: paperclip, legs: 7}
+meander: {enabled: false}
+inlet: {style: plain, port_radius_um: 300}
+outlet: {style: ring, port_radius_um: 750, centre_port_radius_um: 300}
+operation: {flow_uL_min: 55}       # printed (p. 4502)
+gates: {mode: reproduce}
+reproduction: {pc_last_short: 257, leg_Y: [0, 3491.4, -587.8, 4079.3, -1175.4, 4666.8, -1764.3]}   # the micrograph's layout (rc6)
+paper:
+  source: Gifford et al. 2014, Fig. 6 and pp. 4501-4502
+  source_trace: "provenance/rc7_traces/results/gifford/gifford6_results_design.json and gifford6_results_design_onemap.json (Fig. 6)"   # rc7 (ADJ-C6, code review R10): the trace record of this mask against the figures
+  assumed: [G 20.5 as Fig. 4 (the micrograph reads 17.1 um along the flow -- relief contrast shifts outlines);
+    ring and port sizes]
+  measured_on_figure: [the row pitch 51.38 um (51.29-51.41; at most 52.01 by the caption's 250 um bar which runs
+    off the raster) and l_g 70.8 um (70.6-70.9) on Fig. 6's micrograph at its printed 125 um centre --
+    provenance/rc6_scripts/measure_gifford_fig6.py; g_p = pitch - G; rc5 used Fig. 4's l_g 56.8 and an
+    unscripted pitch of 52.7 um]
+  measured: platelet yield 83.2% (80-85%), ~3x enrichment, side:centre ~2.5x

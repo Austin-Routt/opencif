@@ -1,0 +1,16 @@
+# Gifford-style physics (constant centre width, hence constant f) with no meander: a fine process (4.5 um floor)
+# draws the sealed start directly.  D 6 um, F 0.8, linear (87 x 4.1 mm: a 6 x 95 mm strip), separate outlets.
+# Run at 25 uL/min (Gifford 2014's Fig. 5 rate): at 30 uL/min the lamina Reynolds number at gap 1 is 1.05e-2, above the
+# Stokes gate 1e-2 (CIF_v2 M14), and strict mode refuses it (tests/test_negative.py keeps that refusal).
+name: gifford_physics_linear
+targets: {cutoff_um: 6.0, filtrate_fraction: 0.8}
+process: {depth_um: 80, gap_um: 20.5, post_length_um: 25.3, post_width_um: 59.5, min_feature_um: 4.5, min_radius_um: 1.8, fillet_um: 2.0,
+          aspect_ratio_max: 25}   # a stated process capability (its 5.3 um side channel at 80 um deep is 15 : 1), not a foundry fact
+chip: {width_mm: 6, length_mm: 95, margin_um: 500}
+centre_channel: {taper: constant, width_in_um: 100}
+layout: {style: linear}
+meander: {enabled: false}
+inlet: {style: plain, port_radius_um: 300}
+outlet: {style: separate, port_radius_um: 750, centre_port_radius_um: 300}
+operation: {flow_uL_min: 25}
+gates: {mode: strict}

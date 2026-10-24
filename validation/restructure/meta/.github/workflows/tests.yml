@@ -1,0 +1,28 @@
+# The code stamp and the fast suites on every push: Linux, macOS and Windows, Python 3.11 to 3.13, the tested versions.
+# The stamp is the same on every system (paths hashed with '/', in the same order; .gitattributes keeps the bytes).
+# The suites that build devices (test_negative, test_units, test_lattice, test_composition, ...) take minutes to hours
+# and the trace suite needs the publishers' figures: run them locally (docs/EVALUATION.md section 3).
+name: tests
+on: [push, pull_request]
+jobs:
+  fast:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python: ["3.11", "3.12", "3.13"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: pip install -r requirements-tested.txt
+      - name: the code stamp
+        run: python -I -B -c "import sys; sys.path.insert(0, '.'); import opencif.pipeline as p; print(p.CODE); assert p.CODE['sha256'] == '{{STAMP}}'"
+      - name: the fast suites
+        shell: bash
+        run: |
+          for t in test_kernels test_teaching test_appendix_trace test_options_sheet test_bend_fd; do
+            python -I -B tests/$t.py || exit 1
+          done

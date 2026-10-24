@@ -1,0 +1,38 @@
+opencif 1.0.0rc5 (code 56e1980d8a064b35)
+dinh2024_v1_depicted: flare_deg 14.50 within the measured 14.30-14.56 deg (+-0.3)                ok  
+dinh2024_v1_depicted: flare_start 67.0 um within the measured 66.7 +- 2.0 um                     ok  
+dinh2024_v1_depicted: post pitch G + g_p = 46.0 um within the measured 45.98 +- 1.0 um           ok  
+dinh2024_v1_depicted: the printed outlet widths (w_c 52, depth 140, G 19) are the preset's (52, 140, 19) ok  
+dinh2024_v1_depicted drawn: the last side channel w_s(N) 43.99 um is the printed 44 um (+-0.1)   ok  
+dinh2024_v1_depicted drawn: the record's outlet stretch 308.97 um is the layout's (308.97), the straight run, the flare (238.8) and the end arc ok  
+dinh2024_v1_depicted drawn, side A: straight 67.0 um from the last gap centre (preset 67.0; measured 66.7 +- 2.0) ok  
+dinh2024_v1_depicted drawn, side A: flare 14.50 deg (preset 14.50; measured 14.30-14.56)         ok  
+dinh2024_v1_depicted drawn, side A: the wall follows the designed profile over the stretch's last 40 um to 306.0 um (largest difference 0.000 um) ok  
+dinh2024_v1_depicted drawn, side B: straight 67.0 um from the last gap centre (preset 67.0; measured 66.7 +- 2.0) ok  
+dinh2024_v1_depicted drawn, side B: flare 14.50 deg (preset 14.50; measured 14.30-14.56)         ok  
+dinh2024_v1_depicted drawn, side B: the wall follows the designed profile over the stretch's last 40 um to 306.0 um (largest difference 0.000 um) ok  
+dinh2024_v1_specified: flare_deg 14.50 within the measured 14.30-14.56 deg (+-0.3)               ok  
+dinh2024_v1_specified: flare_start 67.0 um within the measured 66.7 +- 2.0 um                    ok  
+dinh2024_v1_specified: post pitch G + g_p = 46.0 um within the measured 45.98 +- 1.0 um          ok  
+dinh2024_v1_specified: the printed outlet widths (w_c 52, depth 140, G 19) are the preset's (52, 140, 19) ok  
+dinh2024_v1_specified drawn: the last side channel w_s(N) 43.99 um is the printed 44 um (+-0.1)  ok  
+dinh2024_v1_specified drawn: the record's outlet stretch 308.96 um is the layout's (308.96), the straight run, the flare (238.8) and the end arc ok  
+dinh2024_v1_specified drawn, side A: straight 67.0 um from the last gap centre (preset 67.0; measured 66.7 +- 2.0) ok  
+dinh2024_v1_specified drawn, side A: flare 14.50 deg (preset 14.50; measured 14.30-14.56)        ok  
+dinh2024_v1_specified drawn, side A: the wall follows the designed profile over the stretch's last 40 um to 306.0 um (largest difference 0.000 um) ok  
+dinh2024_v1_specified drawn, side B: straight 67.0 um from the last gap centre (preset 67.0; measured 66.7 +- 2.0) ok  
+dinh2024_v1_specified drawn, side B: flare 14.50 deg (preset 14.50; measured 14.30-14.56)        ok  
+dinh2024_v1_specified drawn, side B: the wall follows the designed profile over the stretch's last 40 um to 306.0 um (largest difference 0.000 um) ok  
+every built record (45): design.outlet.L_out_um is the layout's drawn stretch                    ok  
+  NOT RUN (1 check): the record-against-layout check for 1 record(s) without run pickles: no run pickle: m02_linear_shear_arms_filter_teardrop
+gifford2014_fig4_design: pitch G + g_p = 46.10 um within the inset's 46.04 +- 0.5 um             ok  
+gifford2014_fig4_design: centre width 100 um (printed) within the inset's 102.3 +- 5.6 um        ok  
+gifford2014_fig4_as_fabricated_20um: pitch G + g_p = 46.10 um within the inset's 46.04 +- 0.5 um ok  
+gifford2014_fig4_as_fabricated_20um: centre width 100 um (printed) within the inset's 102.3 +- 5.6 um ok  
+gifford2014_fig4_as_fabricated_8um: pitch G + g_p = 46.10 um within the inset's 46.04 +- 0.5 um  ok  
+gifford2014_fig4_as_fabricated_8um: centre width 100 um (printed) within the inset's 102.3 +- 5.6 um ok  
+gifford2014_fig4_design drawn: final side width 299.9 um within the inset's 302.8 +- 5.6 um      ok  
+global panels marked: Gifford Figs. 4 (left) and 6 not to scale; Dinh Fig. 2A main panel scale not established ok  
+dinh2024_v1_depicted: paper.length_bound equals the computations it quotes (19 values)           ok  
+dinh2024_v1_specified: paper.length_bound equals the computations it quotes (19 values)          ok  
+INCOMPLETE: 35 checks ok, 1 not run (the record-against-layout check for 1 record(s) without run pickles: no run pickle: m02_linear_shear_arms_filter_teardrop); not a pass.  Build the presets (runs/ with its pickles) for the full suite, or run with --source-anchors-only for the checks that need no build

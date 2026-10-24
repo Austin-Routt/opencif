@@ -1,0 +1,30 @@
+# Xia 2016 RS-7, the head AS DEPICTED (Figs. 3b + 3a): reproduced from its decoupled targets.
+# D: Xia prints f_ref = 5.8e-4 at w_c(ref) = 100 um (corrected eqn 1); the cutoff it implies is 6.8644 um.
+# F: 0.938, the printed ~15:1 filtrate:retentate flow ratio.
+name: xia2016_rs7_depicted_s181
+description: Xia 2016 RS-7 -- constant-shear taper 300 -> 150 um, hairpin head, 7-leg paperclip (Fig. 3a axes), ring outlet
+targets: {cutoff_um: 6.8644008043574924, filtrate_fraction: 0.938}
+process: {depth_um: 140, gap_um: 16, post_length_um: 36.0, post_width_um: 74.7, min_feature_um: 16, min_radius_um: 4.5}
+centre_channel: {taper: constant_shear, width_in_um: 300, width_min_um: 150}
+layout: {style: paperclip, legs: 7}
+meander: {enabled: true, style: hairpins, channel_um: 22.8, wall_um: 41, head_width_um: 2000, seal: allow,
+          transition: paper, rectilinear_rows: 9, seam_side_width_um: 16, seam_at: post}
+inlet: {style: plain, port_radius_um: 859, stem_half_width_um: 166, port_gap_um: 591}
+outlet: {style: ring, port_radius_um: 1712, centre_port_radius_um: 1716,
+         tubing: {centre_id_mm: 0.25, side_id_mm: 0.86, length_m: 0.15},
+         ring: {radius_um: 4179, centre_offset_um: 1187, filtrate_port_offset_um: 4762, turn_radius_um: 250}}
+gates: {mode: reproduce}
+reproduction:
+  margin: 20.0
+  ws_rect: 22.8
+  leg_Y: [0.0, 1327.0, -1739.0, 2221.0, -2640.0, 3254.0, -3959.0]
+  pc_inlet_offset: 2543.0
+  pc_out_ext: 3428.0
+  loop_pull_in: 2.0
+  loop_pull_in_leg: true
+  loop_ramp: 40.0
+  depicted_head: xia
+paper:
+  source: Xia et al. 2016 Sci. Rep., Figs. 1, 3 and p. 4; tubing length 0.15 m assumed (only the I.D.s are printed)
+# flow: Xia ran RS-7 at "~1 mL/min" (line 18) and ">0.75 mL/min" (line 244); 800 uL/min is used (printed range)
+operation: {flow_uL_min: 800}

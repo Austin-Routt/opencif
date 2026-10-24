@@ -1,0 +1,56 @@
+{
+ "title": "Dinh 2024 Fig. 2B",
+ "columns": 4,
+ "width_in": 7.0,
+ "panels": [
+  {
+   "results": "results/dinh/dinh_results_rc6.json",
+   "key": "p1",
+   "raster": "rasters/dinh5-000.png",
+   "dxf": "opencif_rc6/runs/dinh2024_v1_depicted/dinh2024_v1_depicted.dxf",
+   "letter": "a",
+   "title": "head",
+   "post_max": [
+    27.1,
+    55.0
+   ]
+  },
+  {
+   "results": "results/dinh/dinh_results_rc6.json",
+   "key": "p2",
+   "raster": "rasters/dinh5-000.png",
+   "dxf": "opencif_rc6/runs/dinh2024_v1_depicted/dinh2024_v1_depicted.dxf",
+   "letter": "b",
+   "title": "transition",
+   "post_max": [
+    27.1,
+    55.0
+   ]
+  },
+  {
+   "results": "results/dinh/dinh_results_rc6.json",
+   "key": "p3",
+   "raster": "rasters/dinh5-000.png",
+   "dxf": "opencif_rc6/runs/dinh2024_v1_depicted/dinh2024_v1_depicted.dxf",
+   "letter": "c",
+   "title": "linear section",
+   "post_max": [
+    27.1,
+    55.0
+   ]
+  },
+  {
+   "results": "results/dinh/dinh_results_rc6.json",
+   "key": "p4",
+   "raster": "rasters/dinh5-000.png",
+   "dxf": "opencif_rc6/runs/dinh2024_v1_depicted/dinh2024_v1_depicted.dxf",
+   "letter": "d",
+   "title": "outlet",
+   "post_max": [
+    27.1,
+    55.0
+   ]
+  }
+ ],
+ "footer": "Dinh et al. 2024 Lab Chip 24, 913-923, Fig. 2B (adapted; \u00a9 The Royal Society of Chemistry: permission for reproduction to be obtained before publication, README), with the edges of the shipped opencif rc6 mask dinh2024_v1_depicted (cyan).  Scale: each panel's own 50 \u00b5m bar read with its anti-aliased ends (46.91 px; 1.0660 \u00b5m/px); rotation measured on the image (0.36-0.63\u00b0); translation fitted on features and, independently, by chamfer matching (they agree within 1.1 px).  Under each panel: the median and 90th percentile of the distance from the mask's edges to the image's outlines, the same with the mask shifted half a row pitch along and 5 \u00b5m across (the nulls), and the scale the image prefers along and across the flow (1 = the bar's).  Row pitch \u039b = G + g_p = 19 + 26.1 = 45.1 \u00b5m; link length \u2113_g 54 \u00b5m."
+}

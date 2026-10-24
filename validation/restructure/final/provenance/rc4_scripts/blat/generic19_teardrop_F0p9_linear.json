@@ -1,0 +1,26 @@
+{
+ "name": "generic19_teardrop_F0p9_linear",
+ "kwargs": {
+  "cutoff_um": 4.0,
+  "filtrate_fraction": 0.9,
+  "chip": [
+   25,
+   75
+  ],
+  "layout": "linear",
+  "outlet": "teardrop"
+ },
+ "exit_code": 0,
+ "verdict": "PASS [1-D model: junction band: 3 row(s) beyond +-1% (up to 16.4% of D; rows 71-73; 0.2% of F)] -- OVER THE CHIP AREA (184.32 x 7.32 mm drawn; reported, not refused or failed)",
+ "status": {
+  "hard_checks": "PASS",
+  "validity_envelope": "INSIDE",
+  "chip_area": "OVER",
+  "aspect_ratio_of_CIF_channels": "WITHIN THE LIMIT",
+  "length_budget_G9": "OVER (legs [1]; reported)",
+  "physics_auditor_P8": "ABSENT: no independent drawn-geometry auditor; CIF_v2's P8 criteria computed from the design as diagnostics (validation.gates.P8), not gated",
+  "fabricated_or_measured": "NO: Q1 and Q2 are statements of the 1-D network on the drawn mask"
+ },
+ "failed": [],
+ "seconds": 504.8
+}

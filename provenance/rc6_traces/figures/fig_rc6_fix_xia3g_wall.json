@@ -1,0 +1,38 @@
+{
+ "title": "Xia 2016 Fig. 3g, the last side channel",
+ "columns": 2,
+ "width_in": 7.0,
+ "panels": [
+  {
+   "results": "results/xia/xia_results_rc6.json",
+   "key": "-",
+   "raster": "rasters/xia5-000.png",
+   "dxf": "opencif_rc6/runs/xia2016_rs7_depicted/xia2016_rs7_depicted.dxf",
+   "letter": "a",
+   "title": "before: the preset (F 0.938, the printed ~15 : 1)",
+   "post_max": [
+    36.8,
+    71.9
+   ],
+   "extra_lines": [
+    "last side channel: image 624.6 \u00b5m, mask 599.7 \u00b5m; scale fit across 1.038"
+   ]
+  },
+  {
+   "results": "results/xia/xia_results_fig3.json",
+   "key": "-",
+   "raster": "rasters/xia5-000.png",
+   "dxf": "variants_out/xia2016_rs7_depicted_fig3/xia2016_rs7_depicted_fig3.dxf",
+   "letter": "b",
+   "title": "after: F 0.94072 and D 6.5705 \u00b5m read off Figs. 3g and 3a",
+   "post_max": [
+    36.8,
+    71.9
+   ],
+   "extra_lines": [
+    "last side channel: image 624.6 \u00b5m, mask 624.6 \u00b5m; scale fit across 1.005"
+   ]
+  }
+ ],
+ "footer": "Xia et al. 2016 Sci. Rep. 6:35943, Fig. 3g (CC BY 4.0; adapted) at 1.798 \u00b5m/px, with the edges of (a) the shipped opencif rc6 mask xia2016_rs7_depicted and (b) the rc6 variant xia2016_rs7_depicted_fig3 (cyan).  The side channel's width at the end is set by F (the outlet identity): the printed ~15 : 1 (F 0.938) draws 599.7 \u00b5m against the image's 624.6 \u00b5m (outline to outline); F 0.94072 (15.9 : 1) draws 624.6 \u00b5m, and D 6.5705 \u00b5m (x 0.957 of the printed f_ref's) then fills Fig. 3a's legs (code/xia_fig3_fit.py).  A reading of the figures under the model's premises, not of the text."
+}

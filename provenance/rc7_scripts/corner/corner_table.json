@@ -1,0 +1,189 @@
+{
+ "method": "rc7 (DINH-1): the square quarter-turn's excess length c (in w, against the centreline through the corner point) in\nboth limits, for outer-corner roundings r_out/w and inner fillets r_in/w; n = 40 and 80 cells per w, first-order\n(staircase) extrapolation 2 c80 - c40, as validated on rc6's exact arc (validate: arc rm/w 1.0).\nUsage: python3 -I corner_table.py OUT.json",
+ "cases": [
+  {
+   "case": "validate_arc_rm1.0",
+   "kind": "arc",
+   "rm": 1.0,
+   "shallow": {
+    "n40": -0.08475762839769097,
+    "n80": -0.0999726021493963,
+    "extrapolated": -0.11518757590110162
+   },
+   "deep": {
+    "n40": 0.17874102481674914,
+    "n80": 0.10974144110753503,
+    "extrapolated": 0.040741857398320924
+   },
+   "seconds": 2.6
+  },
+  {
+   "case": "square_rout0.000_rin0.00",
+   "kind": "square",
+   "r_out": 0.0,
+   "r_in": 0.0,
+   "shallow": {
+    "n40": -0.4387786677294594,
+    "n80": -0.4402871960107486,
+    "extrapolated": -0.44179572429203784
+   },
+   "deep": {
+    "n40": -0.2721903904672738,
+    "n80": -0.25369497369437966,
+    "extrapolated": -0.23519955692148553
+   },
+   "seconds": 1.9
+  },
+  {
+   "case": "square_rout0.000_rin0.18",
+   "kind": "square",
+   "r_out": 0.0,
+   "r_in": 0.18,
+   "shallow": {
+    "n40": -0.4867598630901355,
+    "n80": -0.48800366349806,
+    "extrapolated": -0.4892474639059845
+   },
+   "deep": {
+    "n40": -0.3643165594261317,
+    "n80": -0.376251389126133,
+    "extrapolated": -0.38818621882613424
+   },
+   "seconds": 2.3
+  },
+  {
+   "case": "square_rout0.214_rin0.00",
+   "kind": "square",
+   "r_out": 0.214,
+   "r_in": 0.0,
+   "shallow": {
+    "n40": -0.43868082282772036,
+    "n80": -0.44021629154467945,
+    "extrapolated": -0.44175176026163854
+   },
+   "deep": {
+    "n40": -0.27217850054881865,
+    "n80": -0.2536897599400598,
+    "extrapolated": -0.235201019331301
+   },
+   "seconds": 2.6
+  },
+  {
+   "case": "square_rout0.214_rin0.18",
+   "kind": "square",
+   "r_out": 0.214,
+   "r_in": 0.18,
+   "shallow": {
+    "n40": -0.4866690111331655,
+    "n80": -0.48793778640368934,
+    "extrapolated": -0.48920656167421317
+   },
+   "deep": {
+    "n40": -0.36430769292405696,
+    "n80": -0.3762478033027037,
+    "extrapolated": -0.3881879136813504
+   },
+   "seconds": 2.7
+  },
+  {
+   "case": "square_rout0.250_rin0.00",
+   "kind": "square",
+   "r_out": 0.25,
+   "r_in": 0.0,
+   "shallow": {
+    "n40": -0.4386300003603143,
+    "n80": -0.44016208153776315,
+    "extrapolated": -0.441694162715212
+   },
+   "deep": {
+    "n40": -0.2721621687338214,
+    "n80": -0.25368159585398065,
+    "extrapolated": -0.23520102297413992
+   },
+   "seconds": 2.2
+  },
+  {
+   "case": "square_rout0.250_rin0.18",
+   "kind": "square",
+   "r_out": 0.25,
+   "r_in": 0.18,
+   "shallow": {
+    "n40": -0.4866218205289341,
+    "n80": -0.4878874195845331,
+    "extrapolated": -0.48915301864013205
+   },
+   "deep": {
+    "n40": -0.36429505451317024,
+    "n80": -0.3762421472108022,
+    "extrapolated": -0.3881892399084341
+   },
+   "seconds": 2.4
+  },
+  {
+   "case": "square_rout0.307_rin0.00",
+   "kind": "square",
+   "r_out": 0.307,
+   "r_in": 0.0,
+   "shallow": {
+    "n40": -0.4384585493736459,
+    "n80": -0.44000458052541713,
+    "extrapolated": -0.44155061167718834
+   },
+   "deep": {
+    "n40": -0.2719999873092469,
+    "n80": -0.25361760897020513,
+    "extrapolated": -0.23523523063116336
+   },
+   "seconds": 2.3
+  },
+  {
+   "case": "square_rout0.307_rin0.18",
+   "kind": "square",
+   "r_out": 0.307,
+   "r_in": 0.18,
+   "shallow": {
+    "n40": -0.4864626207731586,
+    "n80": -0.48774108335519006,
+    "extrapolated": -0.4890195459372215
+   },
+   "deep": {
+    "n40": -0.36416560000538656,
+    "n80": -0.3761955402729358,
+    "extrapolated": -0.388225480540485
+   },
+   "seconds": 2.2
+  },
+  {
+   "case": "square_rout0.250_rin0.32",
+   "kind": "square",
+   "r_out": 0.25,
+   "r_in": 0.32,
+   "shallow": {
+    "n40": -0.5393037597779262,
+    "n80": -0.5479890241363874,
+    "extrapolated": -0.5566742884948486
+   },
+   "deep": {
+    "n40": -0.4799633162582282,
+    "n80": -0.5043119302941816,
+    "extrapolated": -0.5286605443301351
+   }
+  },
+  {
+   "case": "square_rout0.250_rin0.44",
+   "kind": "square",
+   "r_out": 0.25,
+   "r_in": 0.44,
+   "shallow": {
+    "n40": -0.5967229890106092,
+    "n80": -0.6035998527404258,
+    "extrapolated": -0.6104767164702425
+   },
+   "deep": {
+    "n40": -0.6032036718905305,
+    "n80": -0.620081485089286,
+    "extrapolated": -0.6369592982880414
+   }
+  }
+ ]
+}

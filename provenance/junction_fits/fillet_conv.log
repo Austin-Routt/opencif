@@ -1,0 +1,10 @@
+r_f/w 0.00 n  40: deep c_T -0.3008  (0s)
+r_f/w 0.00 n  60: deep c_T -0.2922  (1s)
+r_f/w 0.00 n  90: deep c_T -0.2871  (2s)
+r_f/w 0.00 n 120: deep c_T -0.2847  (4s)
+r_f/w 0.00: shallow n160 -0.4661
+r_f/w 0.18 n  40: deep c_T -0.4013  (0s)
+r_f/w 0.18 n  60: deep c_T -0.4149  (1s)
+r_f/w 0.18 n  90: deep c_T -0.4207  (2s)
+r_f/w 0.18 n 120: deep c_T -0.4277  (3s)
+r_f/w 0.18: shallow n160 -0.5207

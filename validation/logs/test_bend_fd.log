@@ -1,0 +1,5 @@
+opencif 1.0.0 (code 9e4eb55a0affeef3)
+bend_ratio = finite differences (r 30-58 um, h 140 um): 0.9884649 vs 0.9884648 ok  -9.3e-08
+bend_ratio = finite differences (r 100-128 um, h 28 um): 1.0005901 vs 1.0005901 ok  -1.4e-08
+bend_ratio = finite differences (r 20-60 um, h 40 um): 1.0084421 vs 1.0084418 ok  -3.0e-07
+ALL OK

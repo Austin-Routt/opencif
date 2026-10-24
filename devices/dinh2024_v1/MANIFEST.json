@@ -1,0 +1,410 @@
+{
+ "device": "dinh2024_v1",
+ "script": "make_dinh2024_v1.py",
+ "code_stamp": "9e4eb55a0affeef3",
+ "note": "assembled by tools/device_package.py: tree/ from this repository, the kit's own files from devices/, and the figures from --rasters (each checked by its sha256)",
+ "files": {
+  "devicekit.py": {
+   "repo": "devices/_shared/devicekit.py",
+   "sha256": "4ff58c84231b43d3f04a0df7e20ae85e247340f29a43a6a52c6c0fdcd704e63b"
+  },
+  "inputs/SOURCE.md": {
+   "repo": "devices/dinh2024_v1/inputs/SOURCE.md",
+   "sha256": "e12d8943852cf31fc9eaf4bbee2922994875ce1b9d33a0d4fc027d98fd5b13f4"
+  },
+  "inputs/dinh2024_v1_depicted.yaml": {
+   "repo": "presets/dinh2024_v1_depicted.yaml",
+   "sha256": "9b56ca60cfe377ec4e3ca74f0b8c9e6271ed89666009717721ecf1ed98fb0764"
+  },
+  "inputs/dinh2024_v1_figure_aligned.yaml": {
+   "repo": "presets/dinh2024_v1_figure_aligned.yaml",
+   "sha256": "eb29500f1e41cb73e75c1cc35134167d115daef7adf52c7e05d1e29884d5db06"
+  },
+  "inputs/dinh5-000.png": {
+   "raster": "a21e2e3ce0710e32410ba4941f348c6a1ef561b748f569e24decce1dea9fbbe6"
+  },
+  "inputs/dinh6-000.png": {
+   "raster": "14c01a4ac50adf606a89a7a4292e67e8e70bf5babe9021dfa3d6edea86c90ed5"
+  },
+  "make_dinh2024_v1.py": {
+   "repo": "devices/dinh2024_v1/make_dinh2024_v1.py",
+   "sha256": "de322c8745eddde713e84ca3c3da6518533d6ecef1ab9360cd63349cfcaebb4d"
+  },
+  "reference/EXPECT.json": {
+   "repo": "devices/dinh2024_v1/reference/EXPECT.json",
+   "sha256": "e1c4c923c8ebed1d07be6811b2e0aa42cf8323bd26eb04a6107313f70c48bbc7"
+  },
+  "reference/dinh2024_v1_depicted_dxf_sha256.txt": {
+   "repo": "devices/dinh2024_v1/reference/dinh2024_v1_depicted_dxf_sha256.txt",
+   "sha256": "30699f6f38cd20e024a44b80dbaefa656b1efb74a85a51d90383dbd57939f68c"
+  },
+  "reference/dinh2024_v1_figure_aligned_dxf_sha256.txt": {
+   "repo": "devices/dinh2024_v1/reference/dinh2024_v1_figure_aligned_dxf_sha256.txt",
+   "sha256": "b880500fcf229d2b51ce628686a63c3718827c4195eecd5433733797f2119478"
+  },
+  "reference/dinh_results_fa.json": {
+   "repo": "provenance/rc7_traces/results/dinh/dinh_results_fa.json",
+   "sha256": "f6414785462f03ade9295753a2f45a11fd9d466b1bddfa29440468e4fd385f74"
+  },
+  "reference/dinh_results_rc7.json": {
+   "repo": "provenance/rc7_traces/results/dinh/dinh_results_rc7.json",
+   "sha256": "fd266671bb3bca23e756e273c82dc1d189c2053717678f3983e5bcf27e28de3e"
+  },
+  "tree/opencif/__init__.py": {
+   "repo": "opencif/__init__.py",
+   "sha256": "c77828571680c07fa0dcebfa4a54289991a7713b5683a161b5a5f5b7a8451746"
+  },
+  "tree/opencif/__main__.py": {
+   "repo": "opencif/__main__.py",
+   "sha256": "c16f83114ab385fd60a48d40165bb084d3abd2485fe0eaaf5791e19d7a17b850"
+  },
+  "tree/opencif/api.py": {
+   "repo": "opencif/api.py",
+   "sha256": "68ef77b1d8115a7293db8b89c9426a317aff896758364bc25d3f1ae63a981ab1"
+  },
+  "tree/opencif/build.py": {
+   "repo": "opencif/build.py",
+   "sha256": "e33d0ef2ff723d9916d8f8ff0a47509265802ebb460f4a8e9987b9945823935d"
+  },
+  "tree/opencif/checks/__init__.py": {
+   "repo": "opencif/checks/__init__.py",
+   "sha256": "b6521a9ff5174cb973fb606b3a57c5f0d6a1be8eed6b9cdde9a3a1ca5c97a5f7"
+  },
+  "tree/opencif/checks/auditor.py": {
+   "repo": "opencif/checks/auditor.py",
+   "sha256": "4f509cf3863c4c0d00f47dcbda4b473427488d86c80961a44ba010c41b77147e"
+  },
+  "tree/opencif/checks/design_code.py": {
+   "repo": "opencif/checks/design_code.py",
+   "sha256": "e12aec5f03b659afa52e46bb7bbed02a08ea3cfd77cc2da12066ba30f9fd99d7"
+  },
+  "tree/opencif/checks/drc.py": {
+   "repo": "opencif/checks/drc.py",
+   "sha256": "5aa86efc929499f4276c7d0d42f69e03200f6ca8f9ae8640af2753ccecf12eb7"
+  },
+  "tree/opencif/checks/measure.py": {
+   "repo": "opencif/checks/measure.py",
+   "sha256": "d9631fae270c9b39919af50954b22db425795e1acc2e38d0d482ca07e4b9e228"
+  },
+  "tree/opencif/checks/ruler.py": {
+   "repo": "opencif/checks/ruler.py",
+   "sha256": "cc1f10ba487967e533edd027ef8ded48dbf567afcb22140bd2ed226db3dc2673"
+  },
+  "tree/opencif/compose.py": {
+   "repo": "opencif/compose.py",
+   "sha256": "013d7f17f4685b5077b4a3e5701ddbac8295744d9c6e9cd2058bd5989cbb0b0a"
+  },
+  "tree/opencif/data/depicted.json": {
+   "repo": "opencif/data/depicted.json",
+   "sha256": "adb401c01a42b8c367e60dbcc8415992dce701b29b55289a97156881c912d49d"
+  },
+  "tree/opencif/data/r4/dinh_filter_meas.json": {
+   "repo": "opencif/data/r4/dinh_filter_meas.json",
+   "sha256": "eb5461d33f2323be506044d5f8dfdd3440f9ebb69d2d58cc33f227dc2999ea14"
+  },
+  "tree/opencif/data/r4/dinh_inset_meas.json": {
+   "repo": "opencif/data/r4/dinh_inset_meas.json",
+   "sha256": "d962ebee250209c8aeb87c85ff5374a33d89a900a004cf6be22f59119ddf0ff8"
+  },
+  "tree/opencif/data/r4/dinh_layout_meas.json": {
+   "repo": "opencif/data/r4/dinh_layout_meas.json",
+   "sha256": "6146f8caf0ad3444634ca93ea3d50feaa02ead4b55737946b9f72589de1a328d"
+  },
+  "tree/opencif/data/r4/gifford_inset_meas.json": {
+   "repo": "opencif/data/r4/gifford_inset_meas.json",
+   "sha256": "e0ed27328be1d6648e5ed1666f7eb35838ce566ce341c27aa2aac2883ed3142e"
+  },
+  "tree/opencif/data/r4/manual_reads.json": {
+   "repo": "opencif/data/r4/manual_reads.json",
+   "sha256": "c2ceb392cc4957f68e18e6cb215a60b9e009ee0ccdaadac3156a5789f1f2b6fe"
+  },
+  "tree/opencif/data/r4/meas_xia_fig3a.json": {
+   "repo": "opencif/data/r4/meas_xia_fig3a.json",
+   "sha256": "71077f25dd4367b8f48ce8ea94970dfbcfe0ff15a9d9b655889260b8aa204dc6"
+  },
+  "tree/opencif/data/r4/xia_fig2a_meas.json": {
+   "repo": "opencif/data/r4/xia_fig2a_meas.json",
+   "sha256": "c67a62911cbcc35e44428533007200bb179e3240db893f27b145e781982c991c"
+  },
+  "tree/opencif/data/r4/xia_fig3g_meas.json": {
+   "repo": "opencif/data/r4/xia_fig3g_meas.json",
+   "sha256": "e342ba02596d5527ae481299d98417f8e0147a091b307d83bfc8fda35edd2aac"
+  },
+  "tree/opencif/data/r4/xia_head_lines.json": {
+   "repo": "opencif/data/r4/xia_head_lines.json",
+   "sha256": "61ae2b2ef16becab5917acb00297752ae84c0128264719e3861794aab9a0b409"
+  },
+  "tree/opencif/data/r5/dinh_flare_measurement.json": {
+   "repo": "opencif/data/r5/dinh_flare_measurement.json",
+   "sha256": "b231da5d1f0f7df70c2beb837967e33c7a8e24b1edec431d2ac307820fc94e4d"
+  },
+  "tree/opencif/data/r5/dinh_pitch_gap_measurement.json": {
+   "repo": "opencif/data/r5/dinh_pitch_gap_measurement.json",
+   "sha256": "85bef27c90ba939691e4a0acc29c9aa1f14026e6a8d3b0a3c77e95358a32f981"
+  },
+  "tree/opencif/data/r5/figure_anchors.json": {
+   "repo": "opencif/data/r5/figure_anchors.json",
+   "sha256": "22730c2e5b4384a44cc723905a85dbe49008f1018e179cb22093013a3769467f"
+  },
+  "tree/opencif/data/r6/figure_anchors.json": {
+   "repo": "opencif/data/r6/figure_anchors.json",
+   "sha256": "bf2a07deb64832f81d952f6287e81ce0b1d10798c46aa30af1582d5a3637e335"
+  },
+  "tree/opencif/data/r6/rc6_values.json": {
+   "repo": "opencif/data/r6/rc6_values.json",
+   "sha256": "214fe24894b45166bc10267ae752326f23f67cf52f92d1daf0560d1904323c6b"
+  },
+  "tree/opencif/figures/__init__.py": {
+   "repo": "opencif/figures/__init__.py",
+   "sha256": "0c18e64d71d5cf7f1a1d55cbf32639f3b9fca9ff4ddab7387cb0dc1ea2faa4d0"
+  },
+  "tree/opencif/figures/drawing.py": {
+   "repo": "opencif/figures/drawing.py",
+   "sha256": "e1311d469e867a79c7fad1d3893d94079077eb518b5d026a1d2028e0b61f83ef"
+  },
+  "tree/opencif/figures/proof.py": {
+   "repo": "opencif/figures/proof.py",
+   "sha256": "599ad09bf5db08cb721422807a4ae9a3598035a7980f2e48ffa0dd487f3c3dee"
+  },
+  "tree/opencif/geometry/__init__.py": {
+   "repo": "opencif/geometry/__init__.py",
+   "sha256": "241f35902a4246b1e3ab32aa140ea68ae943983a6026a1349f645b5b9083111a"
+  },
+  "tree/opencif/geometry/depicted.py": {
+   "repo": "opencif/geometry/depicted.py",
+   "sha256": "273aac503fe043d99a545a621b294aa7e0fc477e06ebe5116d73148d349ca8c8"
+  },
+  "tree/opencif/geometry/dinh_inlet.py": {
+   "repo": "opencif/geometry/dinh_inlet.py",
+   "sha256": "776976d4975749d22c1b6d4e4f8ee9c153fe03dc174c7d9f48c0a2433995e293"
+  },
+  "tree/opencif/geometry/dxf.py": {
+   "repo": "opencif/geometry/dxf.py",
+   "sha256": "3555258970167a3ffdd2edf6330127f3ee3ccb269a933e52c8a90b9fd4c3fd23"
+  },
+  "tree/opencif/geometry/layout.py": {
+   "repo": "opencif/geometry/layout.py",
+   "sha256": "9a12337faeb35ed93207acaf8c8daa2f87797e7ef10c99f3d45292d5abc6e29f"
+  },
+  "tree/opencif/geometry/shapes.py": {
+   "repo": "opencif/geometry/shapes.py",
+   "sha256": "d85d17af5713251e4709c947624c6350939099088eb42418d4aa4b19f0989726"
+  },
+  "tree/opencif/physics/__init__.py": {
+   "repo": "opencif/physics/__init__.py",
+   "sha256": "7b730303344c6b665c07861e5257e98ae47a7977855d44b1bb7cf1eae53dda2c"
+  },
+  "tree/opencif/physics/kernels.py": {
+   "repo": "opencif/physics/kernels.py",
+   "sha256": "07b75847513327edf4363db03e351dae6480875d006cb377138fee17bf07f398"
+  },
+  "tree/opencif/physics/network.py": {
+   "repo": "opencif/physics/network.py",
+   "sha256": "64d77e451729895d1ac480f8ff3baa2bdb06a8bce611c8fb29015f63b16535a9"
+  },
+  "tree/opencif/physics/scenarios.py": {
+   "repo": "opencif/physics/scenarios.py",
+   "sha256": "88dd54c3bbbcd578a2b2eee6064a95f5dc5d231e13742e4b49931bcb7544b134"
+  },
+  "tree/opencif/physics/schedule.py": {
+   "repo": "opencif/physics/schedule.py",
+   "sha256": "8572161244ccef70dd4fd4403643ed6aa12137ab2201b929894b5a836db52ef4"
+  },
+  "tree/opencif/pipeline.py": {
+   "repo": "opencif/pipeline.py",
+   "sha256": "b68cdfce85d90ca8176177ef3a77e3a0789a85fa7d89a1e4f1678e2f7a29c661"
+  },
+  "tree/opencif/published.py": {
+   "repo": "opencif/published.py",
+   "sha256": "0cea340d9de766d7626694d6398927bbaeba21c8e730b7e584108d3d7098fb37"
+  },
+  "tree/opencif/spec.py": {
+   "repo": "opencif/spec.py",
+   "sha256": "8ada2fd3c0faf1342c8c292713bcedffba535ffcc4f58d2d2c96b74188ead8c6"
+  },
+  "tree/opencif/teaching.py": {
+   "repo": "opencif/teaching.py",
+   "sha256": "ff9ea17f95bf10eb3e04e7bc46026072c357607c3355a45c9414758f1772c0fc"
+  },
+  "tree/provenance/rc6_traces/measurements/dinh_length_at_corrected_pitch.json": {
+   "repo": "provenance/rc6_traces/measurements/dinh_length_at_corrected_pitch.json",
+   "sha256": "3440e7be0b5bb5b00547a13c44d985f431423ea8e238c6adab7cb9217082a1d6"
+  },
+  "tree/provenance/rc6_traces/measurements/gifford_fig6_turns.json": {
+   "repo": "provenance/rc6_traces/measurements/gifford_fig6_turns.json",
+   "sha256": "aee3c50e79ceb335d8e6e5fcf3b227ae391b1c1594600030a78d8e1ffd15f0b2"
+  },
+  "tree/provenance/rc6_traces/measurements/scales.json": {
+   "repo": "provenance/rc6_traces/measurements/scales.json",
+   "sha256": "f9b1ed8d323599953a6cb021750c07c73b85e00dfe63b55dfd113055096322ee"
+  },
+  "tree/provenance/rc6_traces/measurements/summary_table.md": {
+   "repo": "provenance/rc6_traces/measurements/summary_table.md",
+   "sha256": "8222c854d707403322fc2eab118d1564df5cbd3c51d17d2b5af1fb081f940799"
+  },
+  "tree/provenance/rc6_traces/measurements/xia_fig3d_arc_scale.json": {
+   "repo": "provenance/rc6_traces/measurements/xia_fig3d_arc_scale.json",
+   "sha256": "3e60dd0b38ed9e2013a6b2109a369397ec8610eb94d26eb2334ec0504b6c73aa"
+  },
+  "tree/provenance/rc6_traces/measurements/xia_side_walls_fg.json": {
+   "repo": "provenance/rc6_traces/measurements/xia_side_walls_fg.json",
+   "sha256": "bc3eccd0e9b4cf953176f6d75265b6e7059e686e878821168aa74b7a4567db6c"
+  },
+  "tree/provenance/rc7_traces/code/alignment_fixes.py": {
+   "repo": "provenance/rc7_traces/code/alignment_fixes.py",
+   "sha256": "2207403b589e7b1acf6b693770791beddb89610aaa8534142ff7bb5f4cecdbc5"
+  },
+  "tree/provenance/rc7_traces/code/apply_doc_edits.py": {
+   "repo": "provenance/rc7_traces/code/apply_doc_edits.py",
+   "sha256": "32ad5c329257183260e278de7e79519468c06293449aecbba56aa9f9d3590199"
+  },
+  "tree/provenance/rc7_traces/code/build_variant.py": {
+   "repo": "provenance/rc7_traces/code/build_variant.py",
+   "sha256": "305600c6a639754d361167e38b1aa008fbb54938770ee7ce9aa439da5fe1cd4b"
+  },
+  "tree/provenance/rc7_traces/code/composite.py": {
+   "repo": "provenance/rc7_traces/code/composite.py",
+   "sha256": "adc6f89ef21566d08a7fdd65b1bc210f506fcd7c9ae189f3ac18598150284dd3"
+  },
+  "tree/provenance/rc7_traces/code/composite_from_strips.py": {
+   "repo": "provenance/rc7_traces/code/composite_from_strips.py",
+   "sha256": "868b977dc72a9fbd36be11653c6c7d0ba473b9456deb203c7c5b2c6e1286a7a8"
+  },
+  "tree/provenance/rc7_traces/code/composites_rc6.py": {
+   "repo": "provenance/rc7_traces/code/composites_rc6.py",
+   "sha256": "6c0d7968595f2de5e0fb5a7cc76eefa503dd3a917292a3e6a94800c13a43acfb"
+  },
+  "tree/provenance/rc7_traces/code/dinh_length_at_corrected_pitch.py": {
+   "repo": "provenance/rc7_traces/code/dinh_length_at_corrected_pitch.py",
+   "sha256": "98f4734748418e8eeb880de7cf2fe9933580e1b687090ad162ff2326137a3166"
+  },
+  "tree/provenance/rc7_traces/code/evidence_index.py": {
+   "repo": "provenance/rc7_traces/code/evidence_index.py",
+   "sha256": "a3979e98aefb9bc1b109810a7b9585883e70d876439ea037a852691ab00499d1"
+  },
+  "tree/provenance/rc7_traces/code/full_device.py": {
+   "repo": "provenance/rc7_traces/code/full_device.py",
+   "sha256": "9208e1153c3ba040d753c355304c09132802995179f29e85361197852162846d"
+  },
+  "tree/provenance/rc7_traces/code/full_device_config.py": {
+   "repo": "provenance/rc7_traces/code/full_device_config.py",
+   "sha256": "60484c1a93cd38d8a6f65b77821eac2f8d894ac5c7cc3e177a4bae2289ba5748"
+  },
+  "tree/provenance/rc7_traces/code/gifford6_turns.py": {
+   "repo": "provenance/rc7_traces/code/gifford6_turns.py",
+   "sha256": "3a518aa955ffda277111d24b1d90abbe1d89bdf13be227f2dc1646defe2b3713"
+  },
+  "tree/provenance/rc7_traces/code/make_anchors.py": {
+   "repo": "provenance/rc7_traces/code/make_anchors.py",
+   "sha256": "f9fe0841ca355d64457f207d9f76d95a85219a5782308316ad5b6296dfde835c"
+  },
+  "tree/provenance/rc7_traces/code/measure_scales.py": {
+   "repo": "provenance/rc7_traces/code/measure_scales.py",
+   "sha256": "5edae6cbf2cfd23c86aedcd9fcd014dd509a30a02dbdc644850edd54e6c73748"
+  },
+  "tree/provenance/rc7_traces/code/panel_core.py": {
+   "repo": "provenance/rc7_traces/code/panel_core.py",
+   "sha256": "d041513b363f375239809628f480b3d74cee8af0abfb8b0f70ddf9f15f42fe30"
+  },
+  "tree/provenance/rc7_traces/code/panels_dinh.py": {
+   "repo": "provenance/rc7_traces/code/panels_dinh.py",
+   "sha256": "24cf2dff5bf9aa0b719f5098157e46d9d4bb89144a354080deb6c7ffe81c5150"
+  },
+  "tree/provenance/rc7_traces/code/panels_dinh_v2.py": {
+   "repo": "provenance/rc7_traces/code/panels_dinh_v2.py",
+   "sha256": "91313871c78f88c392d7f094cb22677903e87ffc944156e74edfd4ce4a09217d"
+  },
+  "tree/provenance/rc7_traces/code/panels_gifford.py": {
+   "repo": "provenance/rc7_traces/code/panels_gifford.py",
+   "sha256": "665456a2f197b25a4e9616418035d9cd3f79bf4ff302aa177ed58c92a6bb7821"
+  },
+  "tree/provenance/rc7_traces/code/panels_gifford6.py": {
+   "repo": "provenance/rc7_traces/code/panels_gifford6.py",
+   "sha256": "b5e60062b63e125a19aa12d52301963880b365c17ddbc71377f2083312823395"
+  },
+  "tree/provenance/rc7_traces/code/panels_xia.py": {
+   "repo": "provenance/rc7_traces/code/panels_xia.py",
+   "sha256": "4be80b4a92ad6fd8f47622365b1d2c83af4045501a5bb6351125849d624e5944"
+  },
+  "tree/provenance/rc7_traces/code/panels_xia_more.py": {
+   "repo": "provenance/rc7_traces/code/panels_xia_more.py",
+   "sha256": "5e73fbb91841ebd7810536875aa30e4e38f5651d24738062ae9555fad3f8b833"
+  },
+  "tree/provenance/rc7_traces/code/readme_rc7.py": {
+   "repo": "provenance/rc7_traces/code/readme_rc7.py",
+   "sha256": "02530ee0ffa2219b97ea70e735c4a4e1b2f54b136ebdd98cdaf522a50132d1b7"
+  },
+  "tree/provenance/rc7_traces/code/run_all_rc7.sh": {
+   "repo": "provenance/rc7_traces/code/run_all_rc7.sh",
+   "sha256": "86af67d3e95687c34922f3a6d2bff862872b5f258288d1c274622a7c0cbcd7f1"
+  },
+  "tree/provenance/rc7_traces/code/run_dinh.py": {
+   "repo": "provenance/rc7_traces/code/run_dinh.py",
+   "sha256": "3220ac2655ebf548f1cdde463b3caef8ce87f4f908773b173b4d4a0d53385f64"
+  },
+  "tree/provenance/rc7_traces/code/run_full_device.py": {
+   "repo": "provenance/rc7_traces/code/run_full_device.py",
+   "sha256": "f3692052ca8854ec86444c55b13738c4879c602669482011b3d6fcacd3a3f92f"
+  },
+  "tree/provenance/rc7_traces/code/run_gifford.py": {
+   "repo": "provenance/rc7_traces/code/run_gifford.py",
+   "sha256": "5ad10d0442cd255ec21dcd207ce25addd89e69dbf186f85ef71f64a0e643e5fd"
+  },
+  "tree/provenance/rc7_traces/code/run_gifford6.py": {
+   "repo": "provenance/rc7_traces/code/run_gifford6.py",
+   "sha256": "4f1defa351d0e6f8499e06a7a6a18f04a9abf2d283b8e4aa3f0e31f238a5588d"
+  },
+  "tree/provenance/rc7_traces/code/run_xia.py": {
+   "repo": "provenance/rc7_traces/code/run_xia.py",
+   "sha256": "deb72ccbf50f017e70baa406245f3467e829c9a6164ff96e3e13f3203caae65b"
+  },
+  "tree/provenance/rc7_traces/code/run_xia_more.py": {
+   "repo": "provenance/rc7_traces/code/run_xia_more.py",
+   "sha256": "e4ef27366a16b37fc545650a933a921d31a4b584d8a3a7d08a5243156c9326db"
+  },
+  "tree/provenance/rc7_traces/code/summary_table.py": {
+   "repo": "provenance/rc7_traces/code/summary_table.py",
+   "sha256": "65f55f32f5e37231e7e41665336b163a34903d0a5126fad561e87ebe7fa85185"
+  },
+  "tree/provenance/rc7_traces/code/taper_sign.py": {
+   "repo": "provenance/rc7_traces/code/taper_sign.py",
+   "sha256": "d2e380b1e3213872f0298b4a7d1b7631a7a8dc2927907e104e59a0d388284708"
+  },
+  "tree/provenance/rc7_traces/code/trace_lib.py": {
+   "repo": "provenance/rc7_traces/code/trace_lib.py",
+   "sha256": "f8c8550b6a90a31cb3fefa247faf502d6779db9bf8c87dd8cfd781dbb767d425"
+  },
+  "tree/provenance/rc7_traces/code/xia_arc_scale.py": {
+   "repo": "provenance/rc7_traces/code/xia_arc_scale.py",
+   "sha256": "30eb7fb6f7c7897151d45ae452cd3ea2ed92957e59971ea802231dccec7f2a96"
+  },
+  "tree/provenance/rc7_traces/code/xia_fig3_fit.py": {
+   "repo": "provenance/rc7_traces/code/xia_fig3_fit.py",
+   "sha256": "13c32acda26cf55759802d786bc1e297532b835fcbd9defe1cbc49aca197552d"
+  },
+  "tree/provenance/rc7_traces/code/xia_fig3a_device.py": {
+   "repo": "provenance/rc7_traces/code/xia_fig3a_device.py",
+   "sha256": "de9f0fc920a67044e24b365350594a44d0206156357224cd4b2f8bc0c8695665"
+  },
+  "tree/provenance/rc7_traces/code/xia_leg_fill.py": {
+   "repo": "provenance/rc7_traces/code/xia_leg_fill.py",
+   "sha256": "e9616cf95b1be443bfaf24c2df987f9726e7ad1884569e3842c9cdf1e071e0af"
+  },
+  "tree/provenance/rc7_traces/code/xia_side_walls.py": {
+   "repo": "provenance/rc7_traces/code/xia_side_walls.py",
+   "sha256": "03555b729aa63ba09a4937c3ed01c0c94fbad145126bf11005957fee168c659c"
+  },
+  "tree/provenance/rc7_traces/code/zoom.py": {
+   "repo": "provenance/rc7_traces/code/zoom.py",
+   "sha256": "e657904d52b1ec3c30ced4f704c9e38e5a01f9331815b8cc068e3391e634d380"
+  },
+  "tree/requirements-tested.txt": {
+   "repo": "requirements-tested.txt",
+   "sha256": "e5fe9f7a6de19539e5bf6d4b89c77dea73be6d6c0c0d985bcdc89c6880d01526"
+  },
+  "tree/validation/RELEASE.json": {
+   "repo": "validation/RELEASE.json",
+   "sha256": "e4f0001000a7ff311d56165fe095336ff22264ea45c686575c8161286789c14b"
+  }
+ }
+}

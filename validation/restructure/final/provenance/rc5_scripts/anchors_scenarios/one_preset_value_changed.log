@@ -1,0 +1,23 @@
+opencif 1.0.0rc5 (code 56e1980d8a064b35)
+dinh2024_v1_depicted: flare_deg 14.50 within the measured 14.30-14.56 deg (+-0.3)                ok  
+dinh2024_v1_depicted: flare_start 67.0 um within the measured 66.7 +- 2.0 um                     ok  
+dinh2024_v1_depicted: post pitch G + g_p = 46.0 um within the measured 45.98 +- 1.0 um           ok  
+dinh2024_v1_depicted: the printed outlet widths (w_c 52, depth 140, G 19) are the preset's (52, 140, 19) ok  
+  NOT RUN (8 checks): dinh2024_v1_depicted drawn-mask checks: not requested (--source-anchors-only)
+dinh2024_v1_specified: flare_deg 14.50 within the measured 14.30-14.56 deg (+-0.3)               ok  
+dinh2024_v1_specified: flare_start 67.0 um within the measured 66.7 +- 2.0 um                    ok  
+dinh2024_v1_specified: post pitch G + g_p = 46.0 um within the measured 45.98 +- 1.0 um          ok  
+dinh2024_v1_specified: the printed outlet widths (w_c 52, depth 140, G 19) are the preset's (52, 140, 19) ok  
+  NOT RUN (8 checks): dinh2024_v1_specified drawn-mask checks: not requested (--source-anchors-only)
+  NOT RUN (1 check): the record-against-layout check over every built record: not requested (--source-anchors-only)
+gifford2014_fig4_design: pitch G + g_p = 46.10 um within the inset's 46.04 +- 0.5 um             ok  
+gifford2014_fig4_design: centre width 100 um (printed) within the inset's 102.3 +- 5.6 um        ok  
+gifford2014_fig4_as_fabricated_20um: pitch G + g_p = 46.10 um within the inset's 46.04 +- 0.5 um ok  
+gifford2014_fig4_as_fabricated_20um: centre width 100 um (printed) within the inset's 102.3 +- 5.6 um ok  
+gifford2014_fig4_as_fabricated_8um: pitch G + g_p = 46.10 um within the inset's 46.04 +- 0.5 um  ok  
+gifford2014_fig4_as_fabricated_8um: centre width 100 um (printed) within the inset's 102.3 +- 5.6 um ok  
+  NOT RUN (1 check): gifford2014_fig4_design drawn final side width: not requested (--source-anchors-only)
+global panels marked: Gifford Figs. 4 (left) and 6 not to scale; Dinh Fig. 2A main panel scale not established ok  
+dinh2024_v1_depicted: paper.length_bound equals the computations it quotes (19 values)           FAIL schedule F_0.505 127.71 vs 127.606
+dinh2024_v1_specified: paper.length_bound equals the computations it quotes (19 values)          ok  
+FAILED: ['dinh2024_v1_depicted: paper.length_bound equals the computations it quotes (19 values)'] (17 checks run, 18 not run)

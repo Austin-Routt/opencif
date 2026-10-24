@@ -1,0 +1,354 @@
+{
+ "f_max": 0.00021596831587030545,
+ "printed_mm": 75.8,
+ "head_credit_rows": {
+  "depicted": 17.76641535105723,
+  "specified": 9.134747563425403
+ },
+ "pitches": {
+  "46.0": {
+   "readings": [
+    {
+     "F_reading": "presets (outlet identity)",
+     "F": 0.5593,
+     "rows_every_row": 1897,
+     "bound_mm": 87.26,
+     "bound_mm_credited": {
+      "depicted": 86.44,
+      "specified": 86.84
+     },
+     "rows_linear": 2734,
+     "linear_taper_mm": 125.76,
+     "rows_in_printed_length": 1647,
+     "largest_share_tapering": null,
+     "largest_share_tapering_with_head_credit": {
+      "depicted": null,
+      "specified": null
+     }
+    },
+    {
+     "F_reading": "constant-shear taper reaching 52 um",
+     "F": 0.5105,
+     "rows_every_row": 1654,
+     "bound_mm": 76.08,
+     "bound_mm_credited": {
+      "depicted": 75.27,
+      "specified": 75.66
+     },
+     "rows_linear": 2383,
+     "linear_taper_mm": 109.62,
+     "rows_in_printed_length": 1647,
+     "largest_share_tapering": null,
+     "largest_share_tapering_with_head_credit": {
+      "depicted": 0.022,
+      "specified": 0.005
+     }
+    },
+    {
+     "F_reading": "measured mean",
+     "F": 0.505,
+     "rows_every_row": 1628,
+     "bound_mm": 74.89,
+     "bound_mm_credited": {
+      "depicted": 74.07,
+      "specified": 74.47
+     },
+     "rows_linear": 2346,
+     "linear_taper_mm": 107.92,
+     "rows_in_printed_length": 1647,
+     "largest_share_tapering": 0.038,
+     "largest_share_tapering_with_head_credit": {
+      "depicted": 0.073,
+      "specified": 0.056
+     }
+    },
+    {
+     "F_reading": "measured mean minus one SD",
+     "F": 0.472,
+     "rows_every_row": 1479,
+     "bound_mm": 68.03,
+     "bound_mm_credited": {
+      "depicted": 67.22,
+      "specified": 67.61
+     },
+     "rows_linear": 2131,
+     "linear_taper_mm": 98.03,
+     "rows_in_printed_length": 1647,
+     "largest_share_tapering": 0.334,
+     "largest_share_tapering_with_head_credit": {
+      "depicted": 0.37,
+      "specified": 0.353
+     }
+    }
+   ],
+   "head_corollary_E2": {
+    "depicted": {
+     "rows_after_head": 1089,
+     "F_max": 0.4103
+    },
+    "specified": {
+     "rows_after_head": 1025,
+     "F_max": 0.3937
+    }
+   }
+  },
+  "45.3": {
+   "readings": [
+    {
+     "F_reading": "presets (outlet identity)",
+     "F": 0.5593,
+     "rows_every_row": 1897,
+     "bound_mm": 85.93,
+     "bound_mm_credited": {
+      "depicted": 85.13,
+      "specified": 85.52
+     },
+     "rows_linear": 2734,
+     "linear_taper_mm": 123.85,
+     "rows_in_printed_length": 1673,
+     "largest_share_tapering": null,
+     "largest_share_tapering_with_head_credit": {
+      "depicted": null,
+      "specified": null
+     }
+    },
+    {
+     "F_reading": "constant-shear taper reaching 52 um",
+     "F": 0.5105,
+     "rows_every_row": 1654,
+     "bound_mm": 74.93,
+     "bound_mm_credited": {
+      "depicted": 74.12,
+      "specified": 74.51
+     },
+     "rows_linear": 2383,
+     "linear_taper_mm": 107.95,
+     "rows_in_printed_length": 1673,
+     "largest_share_tapering": 0.037,
+     "largest_share_tapering_with_head_credit": {
+      "depicted": 0.072,
+      "specified": 0.055
+     }
+    },
+    {
+     "F_reading": "measured mean",
+     "F": 0.505,
+     "rows_every_row": 1628,
+     "bound_mm": 73.75,
+     "bound_mm_credited": {
+      "depicted": 72.94,
+      "specified": 73.33
+     },
+     "rows_linear": 2346,
+     "linear_taper_mm": 106.27,
+     "rows_in_printed_length": 1673,
+     "largest_share_tapering": 0.088,
+     "largest_share_tapering_with_head_credit": {
+      "depicted": 0.123,
+      "specified": 0.106
+     }
+    },
+    {
+     "F_reading": "measured mean minus one SD",
+     "F": 0.472,
+     "rows_every_row": 1479,
+     "bound_mm": 67.0,
+     "bound_mm_credited": {
+      "depicted": 66.19,
+      "specified": 66.58
+     },
+     "rows_linear": 2131,
+     "linear_taper_mm": 96.53,
+     "rows_in_printed_length": 1673,
+     "largest_share_tapering": 0.38,
+     "largest_share_tapering_with_head_credit": {
+      "depicted": 0.415,
+      "specified": 0.398
+     }
+    }
+   ],
+   "head_corollary_E2": {
+    "depicted": {
+     "rows_after_head": 1106,
+     "F_max": 0.4146
+    },
+    "specified": {
+     "rows_after_head": 1041,
+     "F_max": 0.3979
+    }
+   }
+  },
+  "45.1": {
+   "readings": [
+    {
+     "F_reading": "presets (outlet identity)",
+     "F": 0.5593,
+     "rows_every_row": 1897,
+     "bound_mm": 85.55,
+     "bound_mm_credited": {
+      "depicted": 84.75,
+      "specified": 85.14
+     },
+     "rows_linear": 2734,
+     "linear_taper_mm": 123.3,
+     "rows_in_printed_length": 1680,
+     "largest_share_tapering": null,
+     "largest_share_tapering_with_head_credit": {
+      "depicted": null,
+      "specified": null
+     }
+    },
+    {
+     "F_reading": "constant-shear taper reaching 52 um",
+     "F": 0.5105,
+     "rows_every_row": 1654,
+     "bound_mm": 74.6,
+     "bound_mm_credited": {
+      "depicted": 73.79,
+      "specified": 74.18
+     },
+     "rows_linear": 2383,
+     "linear_taper_mm": 107.47,
+     "rows_in_printed_length": 1680,
+     "largest_share_tapering": 0.051,
+     "largest_share_tapering_with_head_credit": {
+      "depicted": 0.086,
+      "specified": 0.069
+     }
+    },
+    {
+     "F_reading": "measured mean",
+     "F": 0.505,
+     "rows_every_row": 1628,
+     "bound_mm": 73.42,
+     "bound_mm_credited": {
+      "depicted": 72.62,
+      "specified": 73.01
+     },
+     "rows_linear": 2346,
+     "linear_taper_mm": 105.8,
+     "rows_in_printed_length": 1680,
+     "largest_share_tapering": 0.102,
+     "largest_share_tapering_with_head_credit": {
+      "depicted": 0.136,
+      "specified": 0.119
+     }
+    },
+    {
+     "F_reading": "measured mean minus one SD",
+     "F": 0.472,
+     "rows_every_row": 1479,
+     "bound_mm": 66.7,
+     "bound_mm_credited": {
+      "depicted": 65.9,
+      "specified": 66.29
+     },
+     "rows_linear": 2131,
+     "linear_taper_mm": 96.11,
+     "rows_in_printed_length": 1680,
+     "largest_share_tapering": 0.392,
+     "largest_share_tapering_with_head_credit": {
+      "depicted": 0.427,
+      "specified": 0.41
+     }
+    }
+   ],
+   "head_corollary_E2": {
+    "depicted": {
+     "rows_after_head": 1111,
+     "F_max": 0.4159
+    },
+    "specified": {
+     "rows_after_head": 1046,
+     "F_max": 0.3992
+    }
+   }
+  },
+  "44.9": {
+   "readings": [
+    {
+     "F_reading": "presets (outlet identity)",
+     "F": 0.5593,
+     "rows_every_row": 1897,
+     "bound_mm": 85.18,
+     "bound_mm_credited": {
+      "depicted": 84.38,
+      "specified": 84.77
+     },
+     "rows_linear": 2734,
+     "linear_taper_mm": 122.76,
+     "rows_in_printed_length": 1688,
+     "largest_share_tapering": null,
+     "largest_share_tapering_with_head_credit": {
+      "depicted": null,
+      "specified": null
+     }
+    },
+    {
+     "F_reading": "constant-shear taper reaching 52 um",
+     "F": 0.5105,
+     "rows_every_row": 1654,
+     "bound_mm": 74.26,
+     "bound_mm_credited": {
+      "depicted": 73.47,
+      "specified": 73.85
+     },
+     "rows_linear": 2383,
+     "linear_taper_mm": 107.0,
+     "rows_in_printed_length": 1688,
+     "largest_share_tapering": 0.066,
+     "largest_share_tapering_with_head_credit": {
+      "depicted": 0.101,
+      "specified": 0.084
+     }
+    },
+    {
+     "F_reading": "measured mean",
+     "F": 0.505,
+     "rows_every_row": 1628,
+     "bound_mm": 73.1,
+     "bound_mm_credited": {
+      "depicted": 72.3,
+      "specified": 72.69
+     },
+     "rows_linear": 2346,
+     "linear_taper_mm": 105.34,
+     "rows_in_printed_length": 1688,
+     "largest_share_tapering": 0.117,
+     "largest_share_tapering_with_head_credit": {
+      "depicted": 0.151,
+      "specified": 0.134
+     }
+    },
+    {
+     "F_reading": "measured mean minus one SD",
+     "F": 0.472,
+     "rows_every_row": 1479,
+     "bound_mm": 66.41,
+     "bound_mm_credited": {
+      "depicted": 65.61,
+      "specified": 66.0
+     },
+     "rows_linear": 2131,
+     "linear_taper_mm": 95.68,
+     "rows_in_printed_length": 1688,
+     "largest_share_tapering": 0.406,
+     "largest_share_tapering_with_head_credit": {
+      "depicted": 0.44,
+      "specified": 0.423
+     }
+    }
+   ],
+   "head_corollary_E2": {
+    "depicted": {
+     "rows_after_head": 1116,
+     "F_max": 0.4171
+    },
+    "specified": {
+     "rows_after_head": 1050,
+     "F_max": 0.4003
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,110 @@
+{
+ "dinh2024_v1_depicted": {
+  "drawn_footprint_mm": 150.57499242,
+  "drawn_other_parts_mm": 10.641,
+  "plans": [
+   {
+    "F_target": 0.5592,
+    "F": 0.55928,
+    "N": 2702,
+    "NM": 220,
+    "linear_rows": 2482,
+    "wc_last_um": 52.0,
+    "head_mm": 25.676,
+    "linear_rows_mm": 114.258,
+    "head_plus_rows_mm": 139.934,
+    "with_other_parts_mm": 150.575
+   },
+   {
+    "F_target": 0.5105,
+    "F": 0.51071,
+    "N": 2460,
+    "NM": 220,
+    "linear_rows": 2240,
+    "wc_last_um": 52.0,
+    "head_mm": 25.676,
+    "linear_rows_mm": 103.126,
+    "head_plus_rows_mm": 128.802,
+    "with_other_parts_mm": 139.443
+   },
+   {
+    "F_target": 0.505,
+    "F": 0.50521,
+    "N": 2434,
+    "NM": 220,
+    "linear_rows": 2214,
+    "wc_last_um": 52.304,
+    "head_mm": 25.676,
+    "linear_rows_mm": 101.93,
+    "head_plus_rows_mm": 127.606,
+    "with_other_parts_mm": 138.247
+   },
+   {
+    "F_target": 0.472,
+    "F": 0.47215,
+    "N": 2277,
+    "NM": 220,
+    "linear_rows": 2057,
+    "wc_last_um": 54.22,
+    "head_mm": 25.676,
+    "linear_rows_mm": 94.708,
+    "head_plus_rows_mm": 120.384,
+    "with_other_parts_mm": 131.025
+   }
+  ]
+ },
+ "dinh2024_v1_specified": {
+  "drawn_footprint_mm": 154.53497058999997,
+  "drawn_other_parts_mm": 11.663,
+  "plans": [
+   {
+    "F_target": 0.5592,
+    "F": 0.55926,
+    "N": 2738,
+    "NM": 256,
+    "linear_rows": 2482,
+    "wc_last_um": 52.0,
+    "head_mm": 28.614,
+    "linear_rows_mm": 114.258,
+    "head_plus_rows_mm": 142.872,
+    "with_other_parts_mm": 154.535
+   },
+   {
+    "F_target": 0.5105,
+    "F": 0.51069,
+    "N": 2496,
+    "NM": 256,
+    "linear_rows": 2240,
+    "wc_last_um": 52.0,
+    "head_mm": 28.614,
+    "linear_rows_mm": 103.126,
+    "head_plus_rows_mm": 131.74,
+    "with_other_parts_mm": 143.403
+   },
+   {
+    "F_target": 0.505,
+    "F": 0.50519,
+    "N": 2470,
+    "NM": 256,
+    "linear_rows": 2214,
+    "wc_last_um": 52.304,
+    "head_mm": 28.614,
+    "linear_rows_mm": 101.93,
+    "head_plus_rows_mm": 130.544,
+    "with_other_parts_mm": 142.207
+   },
+   {
+    "F_target": 0.472,
+    "F": 0.47212,
+    "N": 2313,
+    "NM": 256,
+    "linear_rows": 2057,
+    "wc_last_um": 54.22,
+    "head_mm": 28.614,
+    "linear_rows_mm": 94.708,
+    "head_plus_rows_mm": 123.322,
+    "with_other_parts_mm": 134.985
+   }
+  ]
+ }
+}

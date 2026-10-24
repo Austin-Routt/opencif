@@ -1,0 +1,68 @@
+{
+ "title": "Xia 2016 Fig. 3 c-g",
+ "columns": 5,
+ "width_in": 7.0,
+ "panels": [
+  {
+   "results": "results/xia/xia_results_fig3c_rc6.json",
+   "key": "-",
+   "raster": "rasters/xia5-000.png",
+   "dxf": "opencif_rc6/runs/xia2016_rs7_depicted/xia2016_rs7_depicted.dxf",
+   "letter": "c",
+   "title": "leg 1, first posts",
+   "post_max": [
+    36.8,
+    71.9
+   ]
+  },
+  {
+   "results": "results/xia/xia_results_fig3d_rc6.json",
+   "key": "-",
+   "raster": "rasters/xia5-000.png",
+   "dxf": "opencif_rc6/runs/xia2016_rs7_depicted/xia2016_rs7_depicted.dxf",
+   "letter": "d",
+   "title": "legs 5, 3 below the loops",
+   "post_max": [
+    36.8,
+    71.9
+   ]
+  },
+  {
+   "results": "results/xia/xia_results_fig3e_rc6.json",
+   "key": "-",
+   "raster": "rasters/xia5-000.png",
+   "dxf": "opencif_rc6/runs/xia2016_rs7_depicted/xia2016_rs7_depicted.dxf",
+   "letter": "e",
+   "title": "legs 5, 3 half way",
+   "post_max": [
+    36.8,
+    71.9
+   ]
+  },
+  {
+   "results": "results/xia/xia_results_fig3f_rc6.json",
+   "key": "-",
+   "raster": "rasters/xia5-000.png",
+   "dxf": "opencif_rc6/runs/xia2016_rs7_depicted/xia2016_rs7_depicted.dxf",
+   "letter": "f",
+   "title": "leg 7",
+   "post_max": [
+    36.8,
+    71.9
+   ]
+  },
+  {
+   "results": "results/xia/xia_results_rc6.json",
+   "key": "-",
+   "raster": "rasters/xia5-000.png",
+   "dxf": "opencif_rc6/runs/xia2016_rs7_depicted/xia2016_rs7_depicted.dxf",
+   "letter": "g",
+   "title": "the outlet",
+   "post_max": [
+    36.8,
+    71.9
+   ]
+  }
+ ],
+ "footer": "Xia et al. 2016 Sci. Rep. 6:35943, Fig. 3 c-g (CC BY 4.0; adapted), with the shipped opencif rc6 mask xia2016_rs7_depicted (cyan).  Scale: 1.798 \u00b5m/px, the scale the panels' printed widths, post columns and loop curvature give (the only bar is panel i's); panel f at its own pitch (1.774 \u00b5m/px).  Panel e is recorded, not claimed: leg 3 there is narrower than the constant-shear taper puts it (186 vs 205 \u00b5m), so one translation cannot fit both legs."
+}

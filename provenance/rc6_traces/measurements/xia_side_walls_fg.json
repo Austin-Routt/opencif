@@ -1,0 +1,107 @@
+{
+ "method": "Xia Fig. 3 panels f and g: where the image's side-channel outer walls lie against each mask's, on each panel's own registration (the record's chamfer map, nothing re-fitted).  The walls run along the image's columns, so each is found as the darkest column of the panel's column profile within +-30 px of the mask's wall mapped onto the image.  Offset > 0: the image's wall lies inside the mask's side channel (the device's channel narrower than drawn).  Panel f is at its own scale (1.774 \u00b5m/px, from its pitch); at the 1.798 of the other panels its widths would be 1.35 % larger (about 7 \u00b5m on each side channel), which shrinks its offsets by about that much.  The leg's centre (which side is which) is the mean y of the mask's posts in the panel's region (the posts flank the centre channel; recorded with the region's mid-line, which the first form of this script took, for comparison).",
+ "panels": {
+  "f_rc6": {
+   "mask": "xia2016_rs7_depicted",
+   "um_per_px": 1.7738951695786613,
+   "leg_centre_y_um": -3974.502848771186,
+   "region_mid_y_um": -3973.379176603891,
+   "walls": [
+    {
+     "side": "left",
+     "mask_col_px": 47.72295477327113,
+     "image_col_px": 61,
+     "image_inside_um": 23.55208639397177
+    },
+    {
+     "side": "right",
+     "mask_col_px": 697.0967490167916,
+     "image_col_px": 686,
+     "image_inside_um": 19.684469478913364
+    }
+   ]
+  },
+  "g_rc6": {
+   "mask": "xia2016_rs7_depicted",
+   "um_per_px": 1.798,
+   "leg_centre_y_um": -3974.511729514877,
+   "region_mid_y_um": -4195.0,
+   "walls": [
+    {
+     "side": "left",
+     "mask_col_px": 1416.668930177807,
+     "image_col_px": 1402,
+     "image_inside_um": -26.374736459696884
+    }
+   ]
+  },
+  "f_dfill": {
+   "mask": "xia2016_rs7_depicted_dfill",
+   "um_per_px": 1.7738951695786613,
+   "leg_centre_y_um": -3974.5089464265534,
+   "region_mid_y_um": -3973.379176603891,
+   "walls": [
+    {
+     "side": "left",
+     "mask_col_px": 51.02178799298723,
+     "image_col_px": 61,
+     "image_inside_um": 17.700302080271754
+    },
+    {
+     "side": "right",
+     "mask_col_px": 693.7824065975816,
+     "image_col_px": 686,
+     "image_inside_um": 13.805173471147103
+    }
+   ]
+  },
+  "g_dfill": {
+   "mask": "xia2016_rs7_depicted_dfill",
+   "um_per_px": 1.798,
+   "leg_centre_y_um": -3974.514521972833,
+   "region_mid_y_um": -4195.0,
+   "walls": [
+    {
+     "side": "left",
+     "mask_col_px": 1416.6586526855701,
+     "image_col_px": 1402,
+     "image_inside_um": -26.3562575286551
+    }
+   ]
+  },
+  "f_fig3": {
+   "mask": "xia2016_rs7_depicted_fig3",
+   "um_per_px": 1.7738951695786613,
+   "leg_centre_y_um": -3974.5521850141245,
+   "region_mid_y_um": -3973.3791766038903,
+   "walls": [
+    {
+     "side": "left",
+     "mask_col_px": 42.54445416943051,
+     "image_col_px": 61,
+     "image_inside_um": 32.73820360078482
+    },
+    {
+     "side": "right",
+     "mask_col_px": 702.3172274054712,
+     "image_col_px": 686,
+     "image_inside_um": 28.94505087548184
+    }
+   ]
+  },
+  "g_fig3": {
+   "mask": "xia2016_rs7_depicted_fig3",
+   "um_per_px": 1.798,
+   "leg_centre_y_um": -3974.614133561732,
+   "region_mid_y_um": -4195.0,
+   "walls": [
+    {
+     "side": "left",
+     "mask_col_px": 1402.221698715409,
+     "image_col_px": 1402,
+     "image_inside_um": -0.39861429030546747
+    }
+   ]
+  }
+ }
+}

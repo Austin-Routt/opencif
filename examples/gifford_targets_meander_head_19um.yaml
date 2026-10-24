@@ -1,0 +1,19 @@
+# NEW DESIGN (not a reproduction): Gifford 2014 Fig. 4's targets and physics at a 19 um process floor.  His D (5.2032 um,
+# from f_gap 3.34e-4 at w_c 100 um) and F (0.90644, from the printed final side width), depth, centre width, gap and post
+# dimensions and his 4-leg nested layout, with the start sealed by a meander head instead of a 4.86 um side channel.
+# Gifford had no meander: replacing the narrow initial side channel by equal-resistance meander segments is Xia 2016's
+# idea; the packing arms head drawn here (Dinh's arms topology, as many arms as the width holds) is this project's
+# design of it.
+name: gifford_targets_meander_head_19um
+description: Gifford 2014 Fig. 4 targets at 19 um with a sealed packing arms head (new design; meander after Xia 2016 and Dinh 2024)
+targets: {cutoff_um: 5.203174831309222, filtrate_fraction: 0.90644}
+process: {depth_um: 80, gap_um: 20.5, post_length_um: 25.3, post_width_um: 59.5, min_feature_um: 19}
+centre_channel: {taper: constant, width_in_um: 100}
+layout: {style: paperclip, legs: 4}
+meander: {enabled: true, style: pack, seal: require}
+inlet: {style: plain, port_radius_um: 300}
+outlet: {style: separate, port_radius_um: 750, centre_port_radius_um: 300}
+gates: {mode: strict}
+paper:
+  targets_from: Gifford et al. 2014, Fig. 4 (f_gap, w_c, depth, final w_s)
+  meander_from: Xia et al. 2016 (serpentine segments of equivalent resistance); head geometry this project's

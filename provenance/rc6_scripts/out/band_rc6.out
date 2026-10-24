@@ -1,0 +1,52 @@
+design                                         outlet end            c | rc5 n/max | rc6 n (last) max@row lost shF
+dc_D3_F0p3                                     none              0.000 |   3 0.271 |   3 (  0) 0.271@128    0 0.0033 
+dc_D3_F0p5                                     none              0.000 |   3 0.271 |   3 (  0) 0.271@128    0 0.0020 
+dc_D3_F0p7                                     none              0.000 |   3 0.271 |   3 (  0) 0.271@128    0 0.0014 
+dc_D4_F0p3                                     none              0.000 |   3 0.139 |   3 (  0) 0.139@72     0 0.0059 
+dc_D4_F0p5                                     none              0.000 |   3 0.139 |   3 (  0) 0.139@72     0 0.0035 
+dc_D4_F0p7                                     none              0.000 |   3 0.139 |   3 (  0) 0.139@72     0 0.0025 
+dc_D5_F0p3                                     none              0.000 |   3 0.085 |   3 (  0) 0.085@46     0 0.0092 
+dc_D5_F0p5                                     none              0.000 |   3 0.085 |   3 (  0) 0.085@46     0 0.0055 
+dc_D5_F0p7                                     none              0.000 |   3 0.085 |   3 (  0) 0.085@46     0 0.0039 
+dinh2024_v1_depicted                           flare             0.082 |  11 0.286 |  11 ( 10) 0.284@2702   0 0.0038 SEAM-CHANGED
+dinh2024_v1_specified                          flare             0.082 |  11 0.286 |  11 ( 10) 0.284@2738   0 0.0038 SEAM-CHANGED
+dinh_targets_sealed_head                       step, one-sided   0.505 |  21 1.103 |  21 ( 16) 1.097@2760   4 0.0072 SEAM-CHANGED
+gifford2014_fig4_as_fabricated_20um            none              0.000 |   4 0.018 |   4 (  4) 0.018@3487   0 0.0003 SEAM-CHANGED
+gifford2014_fig4_as_fabricated_8um             none              0.000 |   4 0.018 |   4 (  4) 0.018@3543   0 0.0003 SEAM-CHANGED
+gifford2014_fig4_design                        none              0.000 |   4 0.018 |   4 (  4) 0.018@3546   0 0.0003 SEAM-CHANGED
+gifford2014_fig5A_as_fabricated_12p5um         none              0.000 |   6 0.021 |   6 (  6) 0.021@7161   0 0.0001 SEAM-CHANGED
+gifford2014_fig5B_as_fabricated_12p5um         none              0.000 |   5 0.019 |   5 (  5) 0.019@4501   0 0.0002 SEAM-CHANGED
+gifford2014_fig5C_as_fabricated_12p5um         none              0.000 |   4 0.016 |   4 (  4) 0.015@2626   0 0.0002 SEAM-CHANGED
+gifford2014_fig5D_as_fabricated_12p5um         none              0.000 |   1 0.011 |   1 (  1) 0.011@1575   0 0.0001 SEAM-CHANGED
+gifford2014_fig6_as_fabricated_15um            step, one-sided   0.438 |  47 1.094 |  47 ( 47) 0.817@6050  10 0.0039 SEAM-CHANGED
+gifford2014_fig6_design                        step, one-sided   0.438 |  47 1.094 |  47 ( 47) 0.817@6080  10 0.0039 SEAM-CHANGED
+gifford_physics_linear                         none              0.000 |   0 0.009 |   0 (  0) 0.009@1814   0 0.0000 
+gifford_targets_meander_head_19um              none              0.000 |   9 0.145 |   9 (  6) 0.144@64     0 0.0025 SEAM-CHANGED
+m01_linear_const_pack_plain_separate           none              0.000 |   3 0.139 |   3 (  0) 0.139@72     0 0.0035 
+m02_linear_shear_arms_filter_teardrop          step, one-sided   0.527 |  15 0.522 |  15 ( 12) 0.522@817    1 0.0187 SEAM-CHANGED
+m03_linear_const_hairpins_filter_ring          step, one-sided   0.476 |  22 0.667 |  22 ( 19) 0.667@1116   2 0.0153 SEAM-CHANGED
+m04_linear_shear_pack_plain_ring               step, one-sided   0.438 |  14 0.428 |  14 ( 11) 0.428@818    0 0.0174 SEAM-CHANGED
+m05_serpentine_const_arms_plain_teardrop       step, one-sided   0.538 |  21 0.671 |  21 ( 18) 0.671@1123   1 0.0147 SEAM-CHANGED
+m06_serpentine_shear_pack_filter_teardrop      step, one-sided   0.527 |  14 0.410 |  14 ( 11) 0.410@818    0 0.0174 SEAM-CHANGED
+m07_serpentine_const_pack_filter_separate      none              0.000 |   3 0.139 |   3 (  0) 0.139@72     0 0.0035 
+m08_serpentine_shear_hairpins_plain_teardrop   step, one-sided   0.527 |  14 0.433 |  14 ( 11) 0.433@813    0 0.0174 SEAM-CHANGED
+m09_paperclip_const_narrow_plain_teardrop      step, one-sided   0.539 |  20 0.530 |  20 ( 17) 0.530@1124   0 0.0141 SEAM-CHANGED
+m10_paperclip_shear_hairpins_filter_separate   none              0.000 |   3 0.141 |   3 (  0) 0.141@67     0 0.0035 
+m11_paperclip_const_pack_filter_ring           step, one-sided   0.476 |  22 0.579 |  22 ( 19) 0.579@1122   2 0.0153 SEAM-CHANGED
+m12_paperclip_shear_arms_plain_ring            step, one-sided   0.438 |  14 0.395 |  14 ( 11) 0.395@818    0 0.0174 SEAM-CHANGED
+m13_paperclip_const_nomeander_sealed_fine      none              0.000 |   0 0.000 |   0 (  0) 0.000@1124   0 0.0000 
+m14_paperclip_const_nomeander_floorstart19     none              0.000 |   0 0.000 |   0 (  0) 0.000@1052   0 0.0000 
+m15_linear_shear_nomeander_filter_teardrop     step, one-sided   0.527 |  12 0.522 |  12 ( 12) 0.522@780    1 0.0152 SEAM-CHANGED
+m16_serpentine_shear_nomeander_plain_separate  none              0.000 |   0 0.000 |   0 (  0) 0.000@523    0 0.0000 
+m17_paperclip_shear_nomeander_filter_ring      step, one-sided   0.438 |  11 0.395 |  11 ( 11) 0.395@781    0 0.0139 SEAM-CHANGED
+m18_paperclip_const_arms_filter_separate       none              0.000 |   3 0.139 |   3 (  0) 0.139@72     0 0.0035 
+platelet_serpentine_chip                       step, one-sided   0.505 |  17 0.620 |  17 ( 14) 0.617@1981   2 0.0073 SEAM-CHANGED
+wbc_paperclip_teardrop                         step, one-sided   0.614 |  22 0.754 |  22 ( 19) 0.754@2709   0 0.0034 SEAM-CHANGED
+xia2016_rs7_depicted                           step, centred     0.141 |   7 0.007 |   7 (  7) 0.007@7295   0 0.0003 SEAM-CHANGED
+xia2016_rs7_depicted_pullR                     step, centred     0.141 |   7 0.007 |   7 (  7) 0.007@7295   0 0.0003 SEAM-CHANGED
+xia2016_rs7_specified                          step, centred     0.141 |   7 0.007 |   7 (  7) 0.007@7216   0 0.0003 SEAM-CHANGED
+designs with a stretch-end term: 21; band names last rows on 21 of them
+  last rows named: 7-47; band max over those designs (any row) 0.007-1.097; lost up to 10
+designs without: 25; band names last rows on 8 (lead arcs)
+   [('gifford2014_fig4_as_fabricated_20um', 4, 0.0183, 3487), ('gifford2014_fig4_as_fabricated_8um', 4, 0.0183, 3543), ('gifford2014_fig4_design', 4, 0.0183, 3546), ('gifford2014_fig5A_as_fabricated_12p5um', 6, 0.0206, 7161), ('gifford2014_fig5B_as_fabricated_12p5um', 5, 0.0189, 4501), ('gifford2014_fig5C_as_fabricated_12p5um', 4, 0.0153, 2626), ('gifford2014_fig5D_as_fabricated_12p5um', 1, 0.0105, 1575), ('gifford_targets_meander_head_19um', 6, 0.1437, 64)]
+seam rows unchanged on all: False ['dinh2024_v1_depicted', 'dinh2024_v1_specified', 'dinh_targets_sealed_head', 'gifford2014_fig4_as_fabricated_20um', 'gifford2014_fig4_as_fabricated_8um', 'gifford2014_fig4_design', 'gifford2014_fig5A_as_fabricated_12p5um', 'gifford2014_fig5B_as_fabricated_12p5um', 'gifford2014_fig5C_as_fabricated_12p5um', 'gifford2014_fig5D_as_fabricated_12p5um', 'gifford2014_fig6_as_fabricated_15um', 'gifford2014_fig6_design', 'gifford_targets_meander_head_19um', 'm02_linear_shear_arms_filter_teardrop', 'm03_linear_const_hairpins_filter_ring', 'm04_linear_shear_pack_plain_ring', 'm05_serpentine_const_arms_plain_teardrop', 'm06_serpentine_shear_pack_filter_teardrop', 'm08_serpentine_shear_hairpins_plain_teardrop', 'm09_paperclip_const_narrow_plain_teardrop', 'm11_paperclip_const_pack_filter_ring', 'm12_paperclip_shear_arms_plain_ring', 'm15_linear_shear_nomeander_filter_teardrop', 'm17_paperclip_shear_nomeander_filter_ring', 'platelet_serpentine_chip', 'wbc_paperclip_teardrop', 'xia2016_rs7_depicted', 'xia2016_rs7_depicted_pullR', 'xia2016_rs7_specified']

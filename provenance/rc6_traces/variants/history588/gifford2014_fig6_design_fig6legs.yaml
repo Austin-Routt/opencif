@@ -1,0 +1,40 @@
+# SUPERSEDED (kept for the before / after figure code/alignment_fixes.py): the first rc6 Fig. 6 variant, the micrograph's
+# 588 um leg spacing on the generator's uniform paperclip; its turns (radius 294 um) do not match the micrograph's
+# (1.68-3.17 mm).  The shipped preset presets/gifford2014_fig6_design.yaml now takes the measured leg axes (rc6, after the
+# 2026-10-17 review; provenance/rc6_scripts/apply_rc6_layout_presets.py).
+# rc6 VARIANT (not a preset): gifford2014_fig6_design with the two layout quantities Fig. 6's micrograph shows and the
+# shipped preset leaves to the generator (Gifford prints neither and calls the schematic not to scale, p. 4502):
+#   layout.leg_spacing_um 588 -- the legs' centre-line spacing on the micrograph (legs 7-5-3-1: 588.9 / 587.5 /
+#     587.9 um, between the post rows' tip lines of provenance/rc6_scripts/gifford_fig6_measurement.json at its
+#     4.5248 um/px); the generator's default is 723 um (the inlet port's clearance);
+#   reproduction.pc_last_short 257 -- the last leg's array ends 5 rows (56.8 px = 257 um) before the other legs'
+#     (its last pill at u 148.0 px against 91.0-91.6 on the other six rows); the generator's default is 0.
+# Both are read on the micrograph without the mask.  Built and traced to test whether one map registers the four legs'
+# ends with these two inputs (provenance/rc6_traces/code/panels_gifford6.py).  Everything else is the shipped preset.
+# Gifford 2014 Fig. 6 platelet device -- DESIGN-LEVEL (sealed start, w_s(0) = 0): needs a 4.69 um first side channel, so
+# the 4.5 um floor here is chosen to let it draw (not a fabrication fact).  As fabricated: gifford2014_fig6_as_fabricated_15um.
+# Layout from the Fig. 6 schematic: 7 nested legs, inlet inside the innermost loop, a ring-like outlet (a small centre port
+# inside a ring, one larger port below it).  Outside the kappa plateau (u = 0.029): built in reproduce mode.
+name: gifford2014_fig6_design_fig6legs
+description: Gifford 2014 Fig. 6 platelet device, design-level (h 150, w_c 125, f 1.04e-4, final w_s 140; 7 nested legs, ring outlet)
+targets:
+  cutoff_um: 3.6236           # kappa_g x(1.04e-4) w_c 125
+  filtrate_fraction: 0.71768  # outlet identity at the caption's final side width 140 um (the text says 144: 0.72923)
+process: {depth_um: 150, gap_um: 20.5, post_length_um: 30.9, post_width_um: 70.8, min_feature_um: 4.5, min_radius_um: 1.8, fillet_um: 2.0}
+centre_channel: {taper: constant, width_in_um: 125}
+layout: {style: paperclip, legs: 7, leg_spacing_um: 588}
+meander: {enabled: false}
+inlet: {style: plain, port_radius_um: 300}
+outlet: {style: ring, port_radius_um: 750, centre_port_radius_um: 300}
+operation: {flow_uL_min: 55}       # printed (p. 4502)
+gates: {mode: reproduce}
+reproduction: {pc_last_short: 257}
+paper:
+  source: Gifford et al. 2014, Fig. 6 and pp. 4501-4502
+  assumed: [G 20.5 as Fig. 4 (the micrograph reads 17.1 um along the flow -- relief contrast shifts outlines);
+    ring and port sizes]
+  measured_on_figure: [the row pitch 51.38 um (51.29-51.41; at most 52.01 by the caption's 250 um bar which runs
+    off the raster) and l_g 70.8 um (70.6-70.9) on Fig. 6's micrograph at its printed 125 um centre --
+    provenance/rc6_scripts/measure_gifford_fig6.py; g_p = pitch - G; rc5 used Fig. 4's l_g 56.8 and an
+    unscripted pitch of 52.7 um]
+  measured: platelet yield 83.2% (80-85%), ~3x enrichment, side:centre ~2.5x

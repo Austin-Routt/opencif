@@ -1,0 +1,33 @@
+{
+ "scale_um_per_px": 1.953125,
+ "post_pitch_um": [
+  56.24,
+  56.25
+ ],
+ "below_posts_dips_px": [
+  122,
+  469,
+  513,
+  542,
+  553,
+  591,
+  636
+ ],
+ "side_channel_left_um": 677.7,
+ "centre_channel_um": 152.3,
+ "post_rows_dips_px": [
+  42,
+  121,
+  469,
+  509,
+  537,
+  552,
+  591,
+  631
+ ],
+ "post_across_flow_um": [
+  78.1,
+  78.1
+ ],
+ "note": "distances between dark outline centres (+-1 px per edge, +-3.9 um on a width); the right side channel runs past the crop"
+}

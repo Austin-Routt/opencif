@@ -1,0 +1,79 @@
+{
+ "arrow_rows_dropped": {
+  "right_column": [
+   1688.48
+  ],
+  "left_column": [
+   1646.09,
+   1688.43
+  ]
+ },
+ "right_column": {
+  "outline_rows": [
+   1505.53,
+   1529.0,
+   1547.84,
+   1571.46,
+   1590.76,
+   1614.35,
+   1632.49,
+   1656.09,
+   1674.45,
+   1697.95,
+   1716.66
+  ],
+  "pill_centres": [
+   1517.26,
+   1559.65,
+   1602.55,
+   1644.29,
+   1686.2
+  ],
+  "pitch_px": [
+   42.39,
+   42.9,
+   41.73,
+   41.91
+  ],
+  "pitch_um_mean": 45.91,
+  "post_along_flow_um": 25.61,
+  "last_gap_um": 20.34,
+  "last_gap_centre_row": 1707.31,
+  "last_pill_bottom_row": 1697.95,
+  "long_wall_top_row": 1716.66
+ },
+ "left_column": {
+  "outline_rows": [
+   1506.09,
+   1529.86,
+   1548.84,
+   1572.74,
+   1591.31,
+   1614.89,
+   1633.18,
+   1656.81,
+   1675.71,
+   1699.27,
+   1717.56
+  ],
+  "pill_centres": [
+   1517.97,
+   1560.79,
+   1603.1,
+   1645.0,
+   1687.49
+  ],
+  "pitch_px": [
+   42.81,
+   42.31,
+   41.9,
+   42.5
+  ],
+  "pitch_um_mean": 46.06,
+  "post_along_flow_um": 25.75,
+  "last_gap_um": 19.88,
+  "last_gap_centre_row": 1708.41,
+  "last_pill_bottom_row": 1699.27,
+  "long_wall_top_row": 1717.56
+ }
+}

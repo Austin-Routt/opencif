@@ -1,0 +1,23 @@
+{
+ "strip_um_per_px": 2.0,
+ "composite_um_per_px": 5.0,
+ "strip_max_mm": 40,
+ "composite": false,
+ "devices": [
+  {
+   "name": "gifford2014_fig6_design",
+   "dxf": "opencif_rc6/runs/gifford2014_fig6_design/gifford2014_fig6_design.dxf",
+   "title": "Gifford 2014 Fig. 6 platelet device (design level, the micrograph's leg axes), opencif rc6",
+   "panels": [
+    {
+     "letter": "6",
+     "results": "results/gifford/gifford6_results_rc6_onemap.json",
+     "key": "four_legs",
+     "raster": "rasters/gif7-000.png",
+     "title": "Gifford Fig. 6 micrograph, one map for the four legs and their turns"
+    }
+   ],
+   "note": "Gifford's Fig. 6 schematic is topology only (not to scale), so there is no underlay; the micrograph (the ends of legs 7, 5, 3, 1 and the turns of 5, 3, 1) is placed where its one-map trace registered it.  The preset takes the micrograph's layout (rc6): legs 1, 3, 5, 7 on its rows, legs 2, 4, 6 where semicircular turns about the turn walls' common centre (1745.7 \u00b5m beyond leg 1) put them -- only 8-23 degrees of each turn are in the frame, so legs 2, 4, 6 are an assumption; leg 7's array ends 4 rows beyond the image's (LIMITATIONS 25)."
+  }
+ ]
+}

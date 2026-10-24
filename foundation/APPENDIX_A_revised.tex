@@ -1,0 +1,1754 @@
+% =====================================================================
+%  INTEGRATION NOTE.  This file compiles stand-alone AND drops into the
+%  manuscript as Appendix A (the dissertation letters its appendices A
+%  derivations, B argumentation, C glossary).  To integrate it, delete the
+%  \documentclass and \usepackage block, the \title/\author/\date/\maketitle
+%  group, \begin{document}, \end{document} and the thebibliography block at
+%  the foot, and change \section to the manuscript's appendix-level command.
+%  Also delete the \labelitemi line below: it only replaces a bitmap bullet
+%  on a TeX installation without lmodern, and would restyle the whole manuscript.
+%
+%  ON THE BIBLIOGRAPHY.  Every \cite key here is the GLOSSARY's key, as in
+%  Appendix B (b1 is Gifford 2014, b5 is Dinh 2024, b17 is Inglis 2006, ...),
+%  so on integration every \cite resolves against the manuscript's own
+%  bibliography.  Three keys are not the glossary's: bbrody and bpre are
+%  Appendix B's own (Brody 1996, the companion preprint), and bdavis06
+%  (Davis et al. 2006, PNAS) is this appendix's own; the manuscript's
+%  bibliography must carry all three.
+%
+%  Every macro below is \providecommand (the counter is guarded), so the
+%  manuscript's definitions win wherever the names overlap; the shared symbols
+%  have the same bodies as PREAMBLE_FINAL.tex.  The \Result macro and its
+%  counter follow APPENDIX_A_LABELS.tex.
+%
+%  PACKAGES.  Beyond the glossary's preamble (PREAMBLE_FINAL.tex), this appendix
+%  needs only TikZ with the arrows.meta and positioning libraries, for Figure 1;
+%  Appendix B's integration note already asks the manuscript to load them.
+%  appendixA/integrate_check.py builds A, B and the glossary together this way.
+% =====================================================================
+\documentclass[11pt]{article}
+
+% ----- packages -----
+\usepackage[utf8]{inputenc}
+% Scalable fonts where available (as in the glossary preamble): T1 with Latin Modern;
+% on a minimal TeX installation without lmodern, OT1 Computer Modern, which is also scalable.
+\IfFileExists{lmodern.sty}{\usepackage{lmodern}\usepackage[T1]{fontenc}}{}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage[protrusion=true,expansion=false]{microtype}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, calc}
+\usepackage[hidelinks]{hyperref}
+
+% ----- title -----
+\title{Step-by-Step Derivations Behind Controlled Incremental Filtration:\\
+the Size-Cutoff Law, the Filtrate Fraction and the Design March\\[4pt]
+\large A first-principles companion to \texttt{cif\_cutoff.py}, \texttt{ARG\_MATH.py} and the design code \texttt{CIF\_v2.py}}
+\author{Austin Routt}
+\date{June 2026; revised September 2026}
+
+\providecommand{\dd}{\mathrm{d}}
+\providecommand{\half}{\tfrac{1}{2}}
+% Symbols shared with the glossary and Appendix B. \providecommand, so that the
+% assembled dissertation's own definitions (identical in meaning) take precedence.
+\providecommand{\fgap}{f_{\mathrm{gap}}}
+\providecommand{\dcrit}{d_{\mathrm{crit}}}
+\providecommand{\kapp}{\kappa_{\mathrm{app}}}
+\providecommand{\kster}{\kappa_{\mathrm{steric}}}
+\providecommand{\Kdepth}{K_{\mathrm{depth}}}
+\providecommand{\Kdth}{K_{\mathrm{depth}}^{\mathrm{th}}}
+\providecommand{\Kdcfd}{K_{\mathrm{depth}}^{\mathrm{CFD}}}
+\providecommand{\Flam}{F_{\mathrm{lam}}}
+% A verbatim quotation. Every \vq is followed by its \cite with a page locator;
+% appA_check.py extracts each one and finds it, word for word, on that page of the source.
+\providecommand{\vq}[1]{``#1''}
+
+% itemize bullets from the math font (scalable in every encoding)
+\renewcommand{\labelitemi}{$\bullet$}
+
+% ----- numbered, referenceable Results (the glossary cites them by label) -----
+% A \label after a STARRED heading would capture the wrong counter and print a wrong
+% number with no warning; \refstepcounter makes every res:* label resolve correctly.
+\makeatletter\@ifundefined{c@cifresult}{\newcounter{cifresult}}{}\makeatother
+\providecommand{\Result}[1]{%
+  \refstepcounter{cifresult}%
+  \subsection*{Result \thecifresult\ --- #1}}
+
+% ----- diagram styles (grayscale- and colorblind-robust: each class has a distinct
+%        outline STYLE in addition to its fill, so the figure reads correctly in B&W) -----
+\tikzset{
+  box/.style   ={draw, rounded corners=2pt, inner sep=4pt, align=center, font=\footnotesize},
+  root/.style  ={box, fill=black!8, double, double distance=0.6pt},   % first principle: doubled outline
+  res/.style   ={box, fill=blue!6},                                   % closed-form result: thin solid
+  oplaw/.style ={box, fill=green!12, very thick},                     % operating law: heavy outline
+  net/.style   ={box, fill=orange!10, dashed, thick},                 % yield and design chain: dashed
+  ed/.style    ={-{Stealth[length=2.2mm]}, thick},
+  da/.style    ={-{Stealth[length=2.2mm]}, thick, dashed},
+  eq/.style    ={{Stealth[length=2mm]}-{Stealth[length=2mm]}, thick, dashed},
+  elbl/.style  ={font=\scriptsize, fill=white, inner sep=1.5pt},
+}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent This appendix proves, from first principles and step by step, the fifteen
+mathematical results on which the dissertation's theory of controlled incremental
+filtration (CIF) and its reference code rest. Results~1--9 form the \emph{cutoff chain}:
+the flux carried by a near-wall lamina, its inversion to a lamina width, the identity of
+that law with the critical-streamline cubic of deterministic lateral displacement (DLD),
+the steric factor that turns a width into a particle diameter, the scaling exponents, the
+cross-width design rule, the outlet identity for the filtrate fraction and its independence
+of the gap fraction, and the finite-depth factor. Results~10--15 form the \emph{yield and
+design chain}: the per-gap march of Gifford \emph{et al.}\ in normalised form, its equality
+with the outlet identity, the transport lemma, the map from design targets to geometry, the
+rectangular-duct resistance, and the decay of pressure imbalances along the ladder. Every
+step uses single-variable calculus, elementary algebra or Kirchhoff's laws. Where a result
+needs one standard fact beyond these, the fact is stated where it is used: a Fourier series
+that the reader checks by substitution (Results~9 and~14), the uniqueness of solutions and the
+maximum principle for Laplace's equation (Results~9 and~14), and the inverse function theorem
+(Result~13). Each result opens with its physical setup and the
+published source it rests on. Every result has also been re-proved by a machine script, and
+every quotation has been checked word for word against the page it cites
+(Section~\ref{sec:verify}). Section~\ref{sec:implement} collects what a reader needs to write
+a CIF device generator in any programming language, with test values.
+\end{abstract}
+
+\section{Introduction}
+
+Controlled incremental filtration (CIF) sorts suspended particles by size in a
+microchannel. A central channel runs between two side channels. The walls between them are
+pierced by a long sequence of small lateral openings, or \emph{gaps}. At each gap a thin
+sliver of fluid from the edge of the central channel is bled off into the side channel
+\cite{b1,b2}. Because the bled sliver is taken from right against the wall, it
+is thin, and only a particle small enough to sit within that sliver is carried out with it;
+a larger particle cannot fit and stays in the central stream, where it is progressively
+concentrated \cite{b1,b5,b4}. The particle diameter that just
+separates \emph{carried out} from \emph{retained} is the device's \emph{size cutoff},
+written $\dcrit$.
+
+The three CIF papers that describe the mechanism state that the cutoff is set by the
+diverted flow, not by the size of the gaps. Gifford \emph{et al.}\ write that
+\vq{the size cutoff is determined primarily by the width of the streamlines diverted into the side (filtrate) channels}~\cite[p.~4503]{b1};
+Dinh \emph{et al.}\ that
+\vq{the width of the middle channel and the magnitude of $f_{\mathrm{gap}}(i)$ determine the width of the fluid lamina, $w$, that is diverted into the side channel through each gap $i$, and thus the size cut-off}~\cite[p.~915]{b5};
+and Lezzar \emph{et al.}\ that
+\vq{the magnitude of the fluid flow through the gaps determines the separation size cutoff (not the gap width which remains constant)}~\cite[p.~9]{b4}.
+The diverted sliver is called the \emph{lamina}; we write its width $\delta$ (Dinh's $w$).
+
+The theory therefore has four jobs: (i) compute the lamina width $\delta$ from the flow;
+(ii) turn that width into a particle diameter $\dcrit$; (iii) find how $\dcrit$ scales with
+the geometry; and (iv) account for \emph{how much} fluid leaves as filtrate, and show how a
+device is built to meet a cutoff and a filtrate target together. Results~1--2 do job~(i),
+Result~5 job~(ii), Results~6, 7 and~9 job~(iii), and Results~8 and~10--15 job~(iv).
+Results~3--4 show that the mathematics of job~(i) already appears in the older
+deterministic-lateral-displacement literature \cite{b17,bdavis06}. Table~\ref{tab:inventory}
+lists the fifteen results and the code object that computes each one.
+
+Section~\ref{sec:setup} fixes the notation and derives the one velocity profile that every
+closed-form result in the cutoff chain depends on. Part~I (Results~1--9) and Part~II
+(Results~10--15) follow. Section~\ref{sec:connect} shows how the results link together,
+Section~\ref{sec:prov} records which rest on first principles and which on published
+equations, Section~\ref{sec:implement} is the implementer's summary, and
+Section~\ref{sec:verify} describes how every line was checked.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{@{}cp{5.5cm}p{3.3cm}>{\raggedright\arraybackslash}p{4.4cm}@{}}
+\toprule
+\# & Result & Reduces to & Code object \\
+\midrule
+1 & Skim flux cubic $f = 3x^2 - 2x^3$ & one integral ratio & \texttt{skim.cubic} \\
+2 & Skim law $\delta = w_c\sqrt{f/3}$ (and the exact root) & series inversion; Vi\`ete & \texttt{skim.delta\_leading}, \texttt{skim.a1/a2} \\
+3 & DLD streamline cubic $\varepsilon = 3y^2 - 2y^3$ & the same integral & \texttt{steric.eps\_of\_y} \\
+4 & Unification: Result 3 $\equiv$ Result 1 & substitution & \texttt{steric.verify\_symbolic} \\
+5 & Steric prefactor $\kster = 2$ & diameter $= 2\times$ radius & \texttt{steric.KAPPA\_STERIC} \\
+6 & Exponents $\beta=\half,\ \gamma=1$; shift invariance & logarithmic derivative & \texttt{scaling.beta/gamma} \\
+7 & Cross-width scaling $\fgap \propto w_c^{-2}$ & constant lamina width & \texttt{scaling.f\_gap\_of\_wc} \\
+8 & Outlet identity $F = 2R_c/(R_s+2R_c)$; decoupling & three premises; current divider & \texttt{network.F} \\
+9 & Depth factor $\Kdth=\sqrt{3/c_2(\alpha)}$ & duct series; one limit & \texttt{c2}, \texttt{K\_depth} (\texttt{ARG\_MATH}) \\
+\midrule
+10 & The per-gap march (Gifford eqns 1--4) in $P,S,\sigma$ form & mass bookkeeping & \texttt{march}, \texttt{invert\_widths} \\
+11 & The march and the outlet identity give one $F$ & one line of algebra & \texttt{design} (S10), \texttt{network.F} \\
+12 & Transport lemma: extracted iff $\varphi_0\le F/2$ & an affine map & \texttt{critical\_phi} \\
+13 & Design map: invariant lamina, row count, triangular Jacobian & Results 7, 10 & \texttt{canonical\_taper}, \texttt{Psi} \\
+14 & Duct resistance (Gifford eqn 5) from the Result-9 field & one integral & \texttt{r}, \texttt{R\_rect} \\
+15 & Pressure imbalance decays by $r$ per row, $r+1/r=2+\Gamma$ & a linear recurrence & (preprint Sec.~8.7 diagnostic) \\
+\bottomrule
+\end{tabular}
+\caption{The fifteen results. Results~1--9 keep the numbers they had in the June 2026
+edition, because the glossary and Appendix~B cite them by number. The code objects are in
+\texttt{cif\_cutoff.py} (Results~1--8), \texttt{ARG\_MATH.py} (Result~9) and the design code
+\texttt{CIF\_v2.py} (Results~10--14).}
+\label{tab:inventory}
+\end{table}
+
+\section{Setup and notation}
+\label{sec:setup}
+
+\paragraph{The flow.} In a long, straight microchannel the flow is steady, laminar and
+\emph{unidirectional}: the velocity points along the channel,
+$\mathbf{u}=(u(y,z),0,0)$, and varies only across the cross-section. Two consequences carry
+every derivation below. First, conservation of mass,
+$\nabla\cdot\mathbf{u}=\partial u/\partial x=0$, makes the inertial term
+$(\mathbf{u}\cdot\nabla)\mathbf{u}=u\,\partial u/\partial x$ vanish identically, so the
+Navier--Stokes equation reduces \emph{exactly} to
+\begin{equation}
+\mu\left(\frac{\partial^2 u}{\partial y^2}+\frac{\partial^2 u}{\partial z^2}\right)=\frac{\dd p}{\dd x}=\text{const},
+\label{eq:stokes}
+\end{equation}
+whatever the Reynolds number, as long as the flow is laminar and fully developed. Second,
+the particle-scale physics at a gap is creeping flow. The glossary evaluates both scales
+for the lineage's worst case (Dinh's outlet section carrying the whole
+$30~\mu\mathrm{L\,min^{-1}}$, a water-like fluid): the channel-scale Reynolds number is
+about~$5$ (about~$16$ at $90~\mu\mathrm{L\,min^{-1}}$), laminar but not small, while a gap
+carries only the fraction $\fgap$ of the channel flow, so its Reynolds number is about
+$5\times10^{-3}$ at $\fgap\approx10^{-3}$. (The glossary also shows that the flow does not
+fully redevelop between rungs of a real ladder; each rung perturbs the flow by a relative
+amount of order $\fgap$, so the error this makes in a segment's resistance is expected to be
+small.) Brody \emph{et al.}\ give the general background
+for microchannel flow at low Reynolds number \cite{bbrody}.
+
+\paragraph{The parabola.} Between two parallel walls a distance $w$ apart, and far from
+any other wall, the velocity depends on one coordinate only, the distance $s$ from one wall,
+and Eq.~\eqref{eq:stokes} becomes the ordinary differential equation
+$\mu\,u''(s)=\dd p/\dd x$. Integrating twice,
+\begin{equation}
+u(s) \;=\; \frac{1}{2\mu}\frac{\dd p}{\dd x}\,s^2 + A\,s + B,
+\end{equation}
+and the no-slip conditions (fluid at a wall does not move) $u(0)=u(w)=0$ fix $B=0$ and
+$A=-\tfrac{1}{2\mu}(\dd p/\dd x)\,w$, leaving
+\begin{equation}
+u(s) \;=\; -\frac{1}{2\mu}\frac{\dd p}{\dd x}\,s\,(w-s) \;=\; \frac{G}{2\mu}\, s\,(w - s), \qquad 0 \le s \le w,
+\label{eq:parab}
+\end{equation}
+with $G=-\dd p/\dd x>0$ for flow in the $+x$ direction (pressure falling downstream). The factor
+$s(w-s)$ is zero at both walls and largest at the centre, $s=w/2$. Xia \emph{et al.}\ adopt
+this profile for the CIF central channel: \vq{the velocity profile of the centre channel in cross-section is approximately parabolic}~\cite[pp.~9--10]{b2};
+and Davis, testing it against finite-element simulation for a DLD gap, reports that
+\vq{The Femlab simulation shows this simple parabolic approximation is a reasonable estimation for the velocity profile between two walls}~\cite[p.~18]{b22}.
+\emph{Every quantity computed in the cutoff chain is a ratio of integrals of $u$}, so the
+constant $G/(2\mu)$ cancels every time; we drop it and write $u(s)=s(w-s)$.
+
+\paragraph{Flow fraction in a near-wall lamina.} The volumetric flow through a
+cross-section is the integral of the velocity over it. The strip of fluid from the wall
+($s=0$) out to a distance $\delta$ carries a flow proportional to
+$\int_0^{\delta}u(s)\,\dd s$, so the \emph{fraction} of the channel's flow inside this
+near-wall lamina is
+\begin{equation}
+f \;=\; \frac{\displaystyle\int_0^{\delta} u(s)\,\dd s}{\displaystyle\int_0^{w} u(s)\,\dd s}.
+\label{eq:frac}
+\end{equation}
+We measure the lamina width relative to the central-channel width $w_c$,
+\begin{equation}
+x \;=\; \frac{\delta}{w_c}, \qquad 0 \le x \le 1,
+\label{eq:xdef}
+\end{equation}
+so that $f=f(x)$.
+
+\paragraph{What a gap removes: the lamina idealisation.} Dinh \emph{et al.}\ define the gap
+fraction per gap and per side: a CIF device siphons a
+\vq{fraction, $f_{\mathrm{gap}}(i)$, of the flow in the middle channel, $Q_m(i)$, into two side channels}~\cite[p.~915]{b5},
+with $Q_{\mathrm{gap}}(i)=\fgap(i)\,Q_m(i)$. The theory identifies the fluid removed at one
+gap with the near-wall lamina of the central channel that carries this fraction: the
+streamlines closest to that wall, treated as an undisturbed flat slab. This is the model's
+central idealisation. The glossary names it as the first of the three model gaps to which
+the measured prefactor's residual is attributed (the flat-lamina idealisation, wall porosity and
+finite-particle displacement). With it, $f$ of Eq.~\eqref{eq:frac} and $\fgap$ are the same
+number.
+
+\paragraph{Symbols.} Table~\ref{tab:nomen} collects the notation. It follows the glossary,
+with two deliberate choices. The cubic $3x^2-2x^3$ is written $f(x)$ here; the glossary calls
+the same kernel $g(x)$, which is why its prefactor is $\kappa_g$. And in Result~3 only, $g$ is
+Inglis's DLD gap width, as in his paper. Two further departures are local and standard. In
+the flow derivations (Eq.~\eqref{eq:parab} and Results~\ref{res:depth-factor}
+and~\ref{res:resistance}) a bare $w$ is the width of the channel carrying the flow and
+$G=-\dd p/\dd x$ is the pressure gradient, where the glossary keeps bare $w$ for the
+empirical lamina width and $G$ for the gap (link) width; and in Result~\ref{res:ladder},
+$g_c$, $g_s$ and $g_g$ are the segment and gap conductances.
+
+\begin{table}[ht]
+\centering
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}lp{5.2cm}@{\hskip 1.2em}lp{5.2cm}@{}}
+\toprule
+Symbol & Meaning & Symbol & Meaning \\
+\midrule
+$w_c,\ w_s$ & central / side channel width & $h$ & channel depth \\
+$\delta$ & lamina (diverted-sliver) width; Dinh's $w$ & $\alpha=h/w_c$ & aspect ratio (the code's \texttt{beta}) \\
+$x=\delta/w_c$ & relative lamina width & $c_2(\alpha)$ & near-wall flux coefficient (Result 9) \\
+$f,\ \fgap$ & flow fraction diverted at one gap, one side & $\Kdth,\ \Kdcfd$ & analytic / CFD depth factor \\
+$\dcrit$ & size cutoff (a particle \emph{diameter}) & $a$ & particle radius \\
+$\kster,\ \kapp$ & steric / apparent prefactor & $\kappa_g,\ \kappa_F$ & prefactor paired with the cubic / exact kernel \\
+$\beta,\ \gamma$ & cutoff exponents in $\fgap$ and $w_c$ & $N$ & number of gap rows \\
+$g,\ b,\ y=b/g$ & DLD gap, first-streamline width (Inglis's $\beta$), ratio & $\varepsilon$ & DLD row-shift fraction \\
+$Q_c(i),\ Q_s(i)$ & central / one-side flow after gap row $i$ & $P(i),\ S(i)$ & $Q_c(i)/Q_c(0)$, $Q_s(i)/Q_c(0)$ \\
+$\sigma(i),\ \sigma_0$ & $S(i)/P(i)$; its inlet value & $\rho(i)$ & $1/\sigma(i)$ \\
+$R_c,\ R_s$ & central / one-side segment resistance & $F$ & device filtrate fraction \\
+$\varphi$ & flux coordinate of a fluid element, from one wall & $r$ & per-row decay factor (Result 15) \\
+\bottomrule
+\end{tabular}
+\caption{Notation. Inglis writes the first-streamline width as Greek $\beta$; it is written
+$b$ here, as in the glossary, so that $\beta$ is free for the cutoff exponent. Quotations
+keep each author's own symbols.}
+\label{tab:nomen}
+\end{table}
+
+\paragraph{Exact versus leading order.} The parabola~\eqref{eq:parab} is exact only between
+infinitely wide parallel walls. A real channel also has a top and a bottom, a depth $h$, and
+its velocity is then the rectangular-duct profile, flatter across the width. We derive the
+cutoff chain for the parabola first, because it is clean and closed-form, and quantify the
+finite depth in Result~9. The correction is not small: at the aspect ratios probed by direct
+simulation ($\alpha=0.80$, $1.40$, $2.69$) it reduces the lamina width by $11\%$, $5\%$
+and~$2\%$, and at the three calibration widths under the assumed $80~\mu$m depth by
+$11$--$19\%$. At a fixed aspect ratio it is a constant factor, so it enters the prefactor and
+not the exponents (Result~6). Across widths at a fixed depth the aspect ratio changes, so for
+the width exponent this is not an identity (Result~9, paragraph \emph{How the factor is used}).
+
+% =====================================================================================
+\section{Part I --- the cutoff chain}
+\label{sec:part1}
+
+\Result{the skim flux cubic, $f = 3x^2 - 2x^3$}\label{res:skim-cubic}
+
+\paragraph{Setup.} Evaluate the flow fraction~\eqref{eq:frac} for the near-wall lamina, using
+the parabola~\eqref{eq:parab} with $w=w_c$ and upper limit $\delta=x\,w_c$:
+\begin{equation}
+f(x) \;=\; \frac{\displaystyle\int_0^{x w_c} s\,(w_c - s)\,\dd s}{\displaystyle\int_0^{w_c} s\,(w_c - s)\,\dd s}.
+\end{equation}
+This is the program's object \texttt{skim.cubic}. The cubic it produces is the one Inglis
+derives for the analogous DLD construction \cite{b17} (Result~\ref{res:dld-cubic}).
+
+\paragraph{Derivation.}
+\emph{Step 1 (antiderivative).} Expand the integrand and integrate term by term with the
+power rule $\int s^n\,\dd s = s^{n+1}/(n+1)$:
+\begin{equation}
+\int s\,(w_c - s)\,\dd s \;=\; \int \big(w_c\,s - s^2\big)\,\dd s \;=\; \frac{w_c\,s^2}{2} - \frac{s^3}{3}.
+\end{equation}
+
+\emph{Step 2 (numerator).} Evaluate from $s=0$ to $s=x w_c$; the lower limit contributes zero:
+\begin{equation}
+\int_0^{x w_c}\! s(w_c-s)\,\dd s \;=\; \frac{w_c\,(x w_c)^2}{2} - \frac{(x w_c)^3}{3}
+\;=\; w_c^3\!\left(\frac{x^2}{2} - \frac{x^3}{3}\right).
+\end{equation}
+
+\emph{Step 3 (denominator).} This is the special case $x=1$:
+\begin{equation}
+\int_0^{w_c}\! s(w_c-s)\,\dd s \;=\; w_c^3\!\left(\frac{1}{2} - \frac{1}{3}\right) \;=\; \frac{w_c^3}{6}.
+\end{equation}
+(The total channel flow is therefore proportional to $w_c^3/6$: $Q_{\text{tot}}\propto w_c^3/6$.)
+
+\emph{Step 4 (ratio).} Divide; the common factor $w_c^3$ cancels:
+\begin{equation}
+f(x) \;=\; \frac{w_c^3\!\left(\frac{x^2}{2}-\frac{x^3}{3}\right)}{w_c^3/6}
+\;=\; 6\!\left(\frac{x^2}{2}-\frac{x^3}{3}\right)
+\;=\; \boxed{\,3x^2 - 2x^3\,}.
+\label{eq:r1}
+\end{equation}
+
+\paragraph{Result and checks.} The fraction of channel flow within a lamina of relative width
+$x$ is $f(x)=3x^2-2x^3$. Three checks. At $x=1$ the lamina is the whole channel and
+$f(1)=3-2=1$. The two walls are equivalent: $f(x)+f(1-x)=1$, so $f(\half)=\half$. And the
+derivative $f'(x)=6x-6x^2=6x(1-x)$ is positive on $0<x<1$, so $f$ is strictly increasing: each
+flow fraction $0\le f\le1$ belongs to exactly one lamina width. For a thin lamina ($x\to0$) the
+cubic term is negligible and $f\approx 3x^2$: the flow fraction grows like the \emph{square} of
+the lamina width, because the velocity near a wall is small.
+
+% -------------------------------------------------------------------------------------
+\Result{inverting the cubic: the skim law $\delta = w_c\sqrt{f/3}$}\label{res:skim-inversion}
+
+\paragraph{Setup.} Result~\ref{res:skim-cubic} gives $f$ as a function of $x$. In a device
+$f=\fgap$ is chosen and the lamina width is wanted, so we must \emph{invert}
+$f=3x^2-2x^3$. CIF gaps bleed very little: Gifford \emph{et al.}\ expect that
+\vq{most practical applications of this approach will involve devices that remove less than 0.05\% of the fluid from the central channel at each gap, i.e.\ $f_{\mathrm{gap}} < 5\times10^{-4}$}~\cite[p.~4498]{b1},
+their 33-device calibration array reaches $5.76\times10^{-4}$, and no published lineage device
+exceeds $1.0\times10^{-3}$ (glossary, section on the Reynolds number and flow regime). So $x$ is small and
+a power series in $\sqrt{f}$ converges fast. This is the program's
+\texttt{skim.delta\_leading} with the coefficients \texttt{skim.a1}, \texttt{skim.a2}.
+
+\paragraph{Derivation (undetermined coefficients).} Because $f\approx 3x^2$ for small $x$,
+$x$ grows like $\sqrt f$. Take $t=\sqrt f$ as the expansion variable, so $f=t^2$, and posit
+\begin{equation}
+x \;=\; a_1 t + a_2 t^2 + a_3 t^3 + \cdots, \qquad t = \sqrt f,
+\end{equation}
+with unknown coefficients. Substitute into $3x^2-2x^3 = t^2$ and require equality
+\emph{separately at every power of $t$}; each power gives one equation.
+
+\emph{Step 1 (expand).} Keeping terms through $t^4$,
+\begin{align}
+3x^2 &= 3\Big(a_1^2 t^2 + 2a_1 a_2\,t^3 + (2a_1 a_3 + a_2^2)\,t^4 + \cdots\Big),\\[2pt]
+2x^3 &= 2\Big(a_1^3 t^3 + 3a_1^2 a_2\,t^4 + \cdots\Big).
+\end{align}
+
+\emph{Step 2 (match powers of $t$).} Insert into $3x^2 - 2x^3 - t^2 = 0$ and collect:
+\begin{align}
+t^2:&\quad 3a_1^2 - 1 = 0 &&\Longrightarrow\quad a_1 = \frac{1}{\sqrt3}\ \ (\text{the positive root, since } x>0),\\[2pt]
+t^3:&\quad 6a_1 a_2 - 2a_1^3 = 0 &&\Longrightarrow\quad a_2 = \frac{a_1^2}{3} = \frac{1}{9},\\[2pt]
+t^4:&\quad 6a_1 a_3 + 3a_2^2 - 6a_1^2 a_2 = 0 &&\Longrightarrow\quad a_3 = \frac{6a_1^2 a_2 - 3a_2^2}{6a_1}.
+\end{align}
+With $a_1^2=\tfrac13$ and $a_2=\tfrac19$ the numerator of $a_3$ is
+$6\cdot\tfrac13\cdot\tfrac19 - 3\cdot\tfrac{1}{81} = \tfrac29 - \tfrac1{27} = \tfrac{5}{27}$ and
+the denominator is $6/\sqrt3 = 2\sqrt3$, so
+\begin{equation}
+a_3 \;=\; \frac{5/27}{2\sqrt3} \;=\; \frac{5}{54\sqrt3} \;=\; \frac{5\sqrt3}{162}.
+\end{equation}
+Numerically $a_1 = 0.577350$, $a_2 = 0.111111$, $a_3 = 0.053458$ (and, one order further,
+$a_4=8/243=0.032922$). The program asserts $a_1$ and $a_2$ exactly.
+
+\emph{Step 3 (read off the lamina width).} Since $\delta = x\,w_c$,
+\begin{equation}
+\delta \;=\; w_c\sqrt{\frac{f}{3}} \;+\; \frac{w_c f}{9} \;+\; \cdots
+\quad\Longrightarrow\quad
+\boxed{\,\delta \;\approx\; w_c\sqrt{f/3}\,}.
+\label{eq:r2}
+\end{equation}
+
+\emph{Step 4 (the exact root, for implementers).} The cubic also has a closed-form real root
+that needs no complex arithmetic. Put $x=\half-q$ and expand:
+\begin{equation}
+3x^2-2x^3-f \;=\; \tfrac12\Big[(4q^3-3q)-(2f-1)\Big].
+\end{equation}
+So $x$ is a root exactly when $4q^3-3q=2f-1$. The triple-angle identity
+$\cos3\phi=4\cos^3\phi-3\cos\phi$ solves this with $q=\cos\phi$ and $\cos3\phi=2f-1$.
+Write $\theta=\arccos(1-2f)$, which lies in $[0,\pi/2]$ for $0\le f\le\half$; then
+$\cos(\theta+\pi)=-\cos\theta=2f-1$, so $3\phi=\theta+\pi$ and
+\begin{equation}
+\boxed{\,x \;=\; \frac12-\cos\!\left(\frac{\arccos(1-2f)+\pi}{3}\right)\,},\qquad 0\le f\le\tfrac12 .
+\label{eq:viete}
+\end{equation}
+Here $\phi\in[\pi/3,\pi/2]$, so $q\in[0,\half]$ and $x\in[0,\half]$; by the monotonicity of
+Result~\ref{res:skim-cubic} this is the only root in $[0,1]$. (Check: $f=0$ gives
+$x=\half-\cos\frac{\pi}{3}=0$; $f=\half$ gives $x=\half$.) Inglis gives the same root in
+complex (Cardano) form, his eqns~(6)--(8); evaluated with the principal cube root, his formula
+and Eq.~\eqref{eq:viete} agree to $10^{-30}$ (Section~\ref{sec:verify}).
+
+\paragraph{How accurate the leading law is, with the range named.} Relative to the leading
+term, the first correction is
+\begin{equation}
+\frac{a_2 f}{a_1\sqrt f} = \frac{\sqrt3}{9}\sqrt f = \frac{\sqrt f}{3\sqrt3} \approx 0.192\,\sqrt f .
+\end{equation}
+The full error of the leading law against the exact root, $|\delta_{\text{lead}}-\delta_{\text{exact}}|/\delta_{\text{exact}}$,
+is $0.20\%$ at Dinh's $\fgap=1.04\times10^{-4}$, $0.47\%$ at the calibration array's cap
+$5.76\times10^{-4}$, $0.61\%$ at $1.0\times10^{-3}$, and $0.86\%$ at $1.93\times10^{-3}$, the top
+of the glossary's deliberately widened numerical sweep. So the leading law is within $0.5\%$
+across the calibration and design band ($\fgap\le5.76\times10^{-4}$), within $0.7\%$ up to the
+largest fraction of any built lineage device ($1.0\times10^{-3}$), and within $0.9\%$ across the
+sweep; quote the range with the figure, because the first and last differ by nearly a factor of
+two. (The program's numerical
+self-test checks the weaker bound $0.7\%$ at three points, $\fgap=1.04\times10^{-4}$,
+$5.8\times10^{-4}$ and $10^{-3}$.)
+
+\paragraph{A check at much larger fractions: Inglis's worked values.} Inglis reports for DLD
+arrays that
+\vq{For $\varepsilon$ = 0.1 the predicted critical particle diameter is 0.4$g$, $\eta$ = 2.0. For $\varepsilon$ = 0.01 the predicted critical particle diameter is 0.12$g$ and $\eta$ = 5.9}~\cite[p.~656]{b17},
+where $\eta=D_c/(2g\varepsilon)$ (his eqn~9). The exact root gives $D_c/g=2y=0.3916$ and
+$0.1178$, hence $\eta=1.958$ and $5.890$, reproducing both pairs. The leading law alone,
+$2\sqrt{\varepsilon/3}=0.3651$ and $0.1155$, is $6.8\%$ and $2.0\%$ low at these fractions;
+adding the second term, $2(\sqrt{\varepsilon/3}+\varepsilon/9)=0.3874$ and $0.1177$, brings the
+error to $1.1\%$ and $0.10\%$. The sub-percent accuracy of the leading law is therefore a
+property of CIF's small fractions ($f\lesssim2\times10^{-3}$), not of DLD's.
+
+% -------------------------------------------------------------------------------------
+\Result{the DLD critical-streamline cubic, $\varepsilon = 3y^2 - 2y^3$}\label{res:dld-cubic}
+
+\paragraph{Setup.} In deterministic lateral displacement (DLD) a suspension flows through a
+periodic array of posts, each row shifted sideways by a fraction $\varepsilon$ of the post
+spacing. The flow through each gap then divides into streamlines that carry equal flow: in
+Davis's schematic, a row shift of one third \vq{creates three equal flux streamlines}~\cite[p.~14780]{bdavis06},
+and in Inglis's words \vq{Each streamline carries equal fluid flux, but is not necessarily the same width}~\cite[p.~656]{b17}.
+A particle is displaced (\emph{bumped}) when it is too large to fit in the first streamline beside
+a post. Inglis computes the width of that first streamline by the integral of
+Result~\ref{res:skim-cubic}, applied to the parabolic velocity across a gap of width $g$
+\cite{b17}. He writes the width as Greek $\beta$; we write it $b$ (Table~\ref{tab:nomen}).
+His construction, eqns~(3)--(4), sets the flow in the first streamline equal to the fraction
+$\varepsilon$ of the gap flow,
+\begin{equation}
+\int_0^{b} u(\xi)\,\dd\xi \;=\; \varepsilon\int_0^{g} u(\xi)\,\dd\xi,
+\qquad
+u(\xi) = \frac{g^2}{4} - \Big(\xi - \frac{g}{2}\Big)^2,
+\label{eq:inglis}
+\end{equation}
+with the across-gap coordinate written $\xi$ here (Inglis writes $x$), and reduces it to his
+eqn~(5), $(b/g)^3 - \tfrac32 (b/g)^2 + \varepsilon/2 = 0$. The profile is the parabola of
+Eq.~\eqref{eq:parab} written about its centre; in fact it is \emph{identically}
+$\xi(g-\xi)$, since $\tfrac{g^2}{4}-\big(\xi^2-g\xi+\tfrac{g^2}{4}\big)=g\xi-\xi^2$. This is the
+program's \texttt{steric.eps\_of\_y}. We reproduce the reduction in full.
+
+\paragraph{Derivation.}
+\emph{Step 1 (antiderivative).}
+\begin{equation}
+\int u(\xi)\,\dd\xi \;=\; \frac{g^2 \xi}{4} - \frac{1}{3}\Big(\xi - \frac{g}{2}\Big)^3.
+\end{equation}
+
+\emph{Step 2 (full gap).} Using $(\xi-\tfrac g2)^3\big|_{\xi=g} = (\tfrac g2)^3$ and
+$(\xi-\tfrac g2)^3\big|_{\xi=0} = -(\tfrac g2)^3$,
+\begin{equation}
+\int_0^{g} u\,\dd\xi = \frac{g^3}{4} - \frac{1}{3}\Big[\Big(\tfrac g2\Big)^3 - \Big(-\tfrac g2\Big)^3\Big]
+= \frac{g^3}{4} - \frac{1}{3}\cdot\frac{2g^3}{8}
+= \frac{g^3}{4} - \frac{g^3}{12}
+= \frac{g^3}{6}.
+\end{equation}
+
+\emph{Step 3 (first streamline, $b = yg$).} Substitute the upper limit $b=yg$ and factor out $g^3$:
+\begin{equation}
+\int_0^{yg} u\,\dd\xi
+= g^3\!\left\{ \frac{y}{4} - \frac{1}{3}\Big[\big(y-\tfrac12\big)^3 + \tfrac18\Big] \right\}.
+\end{equation}
+Expanding $\big(y-\tfrac12\big)^3 = y^3 - \tfrac32 y^2 + \tfrac34 y - \tfrac18$, the constant
+$-\tfrac18$ cancels the added $\tfrac18$:
+\begin{equation}
+\big(y-\tfrac12\big)^3 + \tfrac18 = y^3 - \tfrac32 y^2 + \tfrac34 y.
+\end{equation}
+
+\emph{Step 4 (solve for $\varepsilon$).} Set Step~3 equal to $\varepsilon\cdot g^3/6$ and
+cancel $g^3$:
+\begin{equation}
+\frac{y}{4} - \frac{1}{3}\Big(y^3 - \tfrac32 y^2 + \tfrac34 y\Big) = \frac{\varepsilon}{6}.
+\end{equation}
+Multiply through by $6$ and simplify:
+\begin{equation}
+\varepsilon = \frac{3y}{2} - 2\Big(y^3 - \tfrac32 y^2 + \tfrac34 y\Big)
+= \frac{3y}{2} - 2y^3 + 3y^2 - \frac{3y}{2}
+= \boxed{\,3y^2 - 2y^3\,}.
+\label{eq:r3}
+\end{equation}
+
+\paragraph{Result and consistency with Inglis's form.} The first-streamline flow fraction is
+$\varepsilon(y) = 3y^2 - 2y^3$ with $y=b/g$. This is Inglis's eqn~(5): move everything to one
+side and divide by $2$,
+\begin{equation}
+2y^3 - 3y^2 + \varepsilon = 0 \quad\Longrightarrow\quad y^3 - \tfrac32 y^2 + \frac{\varepsilon}{2} = 0 .
+\end{equation}
+Inglis introduces it as the equation whose \emph{cube root} must be found, and gives that root
+in closed Cardano form (his eqns~6--8), which Result~\ref{res:skim-inversion} checks against
+Eq.~\eqref{eq:viete}.
+
+% -------------------------------------------------------------------------------------
+\Result{the unification: the two cubics are one}\label{res:cubic-identity}
+
+\paragraph{Claim.} Place the CIF and DLD results side by side:
+\begin{align}
+\text{CIF skim (Result 1):}&\quad f(x) = 3x^2 - 2x^3, & x&=\delta/w_c, \\
+\text{DLD streamline (Result 3):}&\quad \varepsilon(y) = 3y^2 - 2y^3, & y&=b/g.
+\end{align}
+
+\paragraph{Proof.} They are the same function of their width fraction:
+\begin{equation}
+\varepsilon(y) - f(x)\big|_{x=y} = (3y^2 - 2y^3) - (3y^2 - 2y^3) = 0 \quad\text{identically.}
+\end{equation}
+This is the program's assertion that \texttt{steric.eps\_of\_y} equals \texttt{skim.cubic}.
+The reason is visible in Result~\ref{res:dld-cubic}: both integrate the same parabola,
+$s(w-s)$ and $\xi(g-\xi)$, from a wall.
+
+\paragraph{Significance.} CIF and DLD are presented as different devices, a wall with gaps
+\cite{b1} and an array of posts \cite{b17,bdavis06}, yet their governing
+geometry is one cubic. Applying the leading inversion of Result~\ref{res:skim-inversion} to
+the DLD cubic gives $b = g\sqrt{\varepsilon/3}$, the same form as the CIF skim law
+$\delta = w_c\sqrt{f/3}$, and the exact root~\eqref{eq:viete} serves both. Gifford
+\emph{et al.}\ already note that removing a consistent fraction of the flow at each filtration
+point is an approach
+\vq{which also applies to the DLD-style `bumping' arrays}~\cite[p.~4503]{b1};
+what this result adds is the algebraic statement that the two width laws are one polynomial.
+None of the four CIF papers cited here writes the cubic. The identity is what lets results
+proved for one device transfer to the other; the glossary and Appendix~B record it as a proven
+identification of the CIF lamina width with Inglis's first-streamline width.
+
+% -------------------------------------------------------------------------------------
+\Result{the steric prefactor, $\kster = 2$}\label{res:steric-two}
+
+\paragraph{Setup.} Results~1--2 give the \emph{width} of the diverted lamina. To get a
+particle \emph{diameter} we ask how large a particle can be carried into a lamina of width
+$\delta$. The model carries a rigid sphere with its centre on the streamline that its centre
+occupies, and a sphere's centre cannot come closer to a wall than its own radius. Yamada and
+Seki state this exclusion for a microchannel:
+\vq{the center position of a particle cannot be present within a certain distance from the sidewalls, which is equal to the particle radius}~\cite[p.~1234]{b15}.
+A particle is therefore carried into the side channel only if its centre can enter the
+lamina, that is, only if its radius does not exceed the lamina width. This is the program's
+\texttt{steric.KAPPA\_STERIC}.
+
+\paragraph{Derivation.} Let $a$ be the particle radius. The marginal (critical) particle has
+\begin{equation}
+a = \delta ,
+\end{equation}
+and since a diameter is twice a radius,
+\begin{equation}
+\dcrit = 2a = 2\delta \quad\Longrightarrow\quad \dcrit = \kster\,\delta \ \ \text{with}\ \ \boxed{\,\kster = 2\,}.
+\label{eq:r5}
+\end{equation}
+
+\paragraph{Sources.} The same criterion appears, in the same form, across the DLD, branch-flow
+and CIF literatures.
+\begin{itemize}
+\item Inglis: \vq{The critical particle radius is the dividing line between the two modes of travel and in this model is equal to the width of the first streamline, which we define as $\beta$. The parameter of interest is the critical particle diameter, $D_{\mathrm{c}}$, which is twice the radius or twice the width of the first streamline, $\beta$}~\cite[p.~656]{b17};
+his eqn~(1) is $D_c=2\beta$, written $D_c=2b$ here.
+\item Davis \emph{et al.}: \vq{The critical diameter $D_c$ is just twice the width of the first streamline adjacent to the post in the gap}~\cite[p.~14779]{bdavis06}.
+\item Yamada and Seki, for the branch-channel geometry closest to CIF: \vq{particles whose radius is larger than $w_1$ never go through the side channels}~\cite[p.~1235]{b15},
+where $w_1$ is the width of the flow entering a side channel. They introduce it as
+\vq{a rough guess}~\cite[p.~1235]{b15}.
+\item Inglis and Herman, for branch-flow filtration: \vq{Assuming that particles do not affect streamlines and are geometrically restricted away from walls by a distance equal to their radius, the cutoff size is determined by the width of the boundary layer in the main channel that is drawn up into each branch}~\cite[p.~1724]{b18},
+adding that this \vq{is a frequent assumption in the microfluidic particle separation literature, that is not always true}~\cite[p.~1724]{b18}.
+\item Dinh \emph{et al.}, in the main text: \vq{For particles with a radius smaller than the width of the extracted flow lamina ($a < w$), we would expect their distribution between the filtrate and retentate to approximate that of the fluid volume}~\cite[p.~917]{b5},
+and \vq{we would expect particles with radii exceeding the width of the extracted flow lamina ($a > w$) to remain in the middle channel}~\cite[p.~917]{b5}.
+Dinh's $w$ is our $\delta$, so the marginal condition is $a=\delta$ and $\kster=2$.
+\end{itemize}
+Dinh's Fig.~1 caption states a looser condition: \vq{Particles with an effective radius smaller than about half the width of the extracted flow lamina $w$ are carried into the side channels by the filtrate}~\cite[p.~916, Fig.~1 caption]{b5}.
+Taken literally, the caption's condition would give $\kster=1$. The two statements differ by
+exactly the factor at issue, so the choice is not cosmetic. We follow the main text, which
+agrees with Inglis's $D_c=2\beta$, with Davis, and with the exclusion geometry above. The
+transport lemma (Result~\ref{res:transport}) adds that, given the exclusion premise, the
+selection is a sharp threshold at $a=\delta$; Appendix~B (C9) uses this to deselect the caption
+on physical grounds as well.
+
+\paragraph{From the steric value to the measured prefactor.} Combining with
+Result~\ref{res:skim-inversion} gives the ideal-steric cutoff
+$\dcrit = 2\,w_c\sqrt{\fgap/3}$. Measured CIF data sit above it: the plateau of Gifford's
+calibration array gives $\kapp=4.9138$. Writing the measured prefactor as a product
+(glossary, prefactor decomposition),
+\begin{equation}
+\kapp = \kster\cdot K_{\text{in-plane}}\cdot \Kdepth\cdot \sqrt{c}\cdot C
+= 2\cdot 1\cdot \Kdepth\cdot \sqrt{c}\cdot C,
+\end{equation}
+the excess over the steric value is $\kapp/\kster = \Kdepth\sqrt{c}\,C = 2.4569$.
+Single-gap simulation fixes the in-plane funnelling factor at $K_{\text{in-plane}}=1$. The
+excess folds together the finite-depth factor $\Kdepth$ (Result~\ref{res:depth-factor}, which
+is less than one), a per-gap over-extraction factor $\sqrt{c}$ and a cumulative finite-particle
+factor $C$. Keeping $\Kdepth$ explicit and dividing out the measured single-gap CFD factor
+leaves $\sqrt{c}\,C = \kapp/(\kster\Kdcfd) = 2.7574$, $2.5999$ and $2.5044$ at
+$\alpha = 0.80$, $1.40$ and $2.69$: a triplet, one value per aspect ratio, not a
+range. (These are computed from the unrounded plateau value $4.913718$ and rounded once; dividing
+the rounded $4.9138$ gives $2.7575$ and $2.5045$ in the last place.)\footnote{The companion code \texttt{cif\_cutoff.py} instead folds $\Kdepth$ into the
+residual and reports $\sqrt{c}\,C=\kapp/\kster=2.457$. The two conventions describe the same
+data with $\Kdepth$ pulled out or absorbed; as the glossary directs, never print the two as one
+range.} The decomposition is interpreted in Appendix~B (claim C3d) and is not part of these
+proofs.
+
+% -------------------------------------------------------------------------------------
+\Result{the operating-law exponents, $\beta = \half$, $\gamma = 1$}\label{res:exponents}
+
+\paragraph{Setup.} With a general prefactor $\kappa$ the operating law is
+\begin{equation}
+\dcrit = \kappa\, w_c \sqrt{\frac{\fgap}{3}} = \kappa\,3^{-1/2}\, w_c\, \fgap^{1/2}.
+\label{eq:law}
+\end{equation}
+The scaling exponents record how strongly the cutoff responds to a fractional change in each
+design variable. They are the program's \texttt{scaling.beta} and \texttt{scaling.gamma}.
+
+\paragraph{Derivation.} Take the natural logarithm of~\eqref{eq:law}, turning the product into
+a sum:
+\begin{equation}
+\ln \dcrit = \ln\kappa + \ln w_c + \frac{1}{2}\ln \fgap - \frac{1}{2}\ln 3.
+\end{equation}
+The exponent of a variable is the \emph{logarithmic derivative} of $\dcrit$ with respect to it:
+it answers the question: a $1\%$ change in this variable changes the cutoff by what percent?
+Differentiating with $\kappa$, $w_c$ and $\fgap$ independent,
+\begin{align}
+\beta &\equiv \frac{\partial \ln \dcrit}{\partial \ln \fgap} = \frac{1}{2}, &
+\gamma &\equiv \frac{\partial \ln \dcrit}{\partial \ln w_c} = 1.
+\end{align}
+Equivalently, $\beta = \dfrac{\fgap}{\dcrit}\dfrac{\partial \dcrit}{\partial \fgap} = \half$ and
+$\gamma = \dfrac{w_c}{\dcrit}\dfrac{\partial \dcrit}{\partial w_c} = 1$. So
+$\boxed{\beta=\half,\ \gamma=1}$: the cutoff grows as the square root of the gap fraction and
+linearly with the channel width.
+
+\paragraph{Corollary (shift invariance).} A constant factor never changes an exponent. If
+$\dcrit = \kappa'\,w_c^{\gamma}\fgap^{\beta}$ for any constant $\kappa'>0$, then
+$\ln\dcrit=\ln \kappa'+\gamma\ln w_c+\beta\ln\fgap$, and $\ln \kappa'$ drops out of both derivatives. Two
+cases matter. (i) The prefactor $\kappa$ (and every factor in its decomposition, including
+$\Kdepth$ at a fixed aspect ratio) moves the cutoff's level and not its slopes. (ii) A
+\emph{uniform} mis-estimate of the gap fraction, $f_{\mathrm{eff}}=c\,\fgap$ with $c$ the same
+for every device, gives $\dcrit=\kappa w_c\sqrt{c\fgap/3}=(\kappa\sqrt c)\,w_c\sqrt{\fgap/3}$:
+again a new prefactor and the same $\beta=\half$, $\gamma=1$. A factor that varies from device
+to device is not covered; Appendix~B treats that case (C3c, C6).
+
+\paragraph{Remark (why $\beta=\half$, and when it would be $1$).} The exponent $\beta=\half$
+comes from the velocity vanishing \emph{linearly} at the wall, so that a thin lamina carries a
+flow proportional to $\delta^2$. The opposite limit shows what else could happen. In a very
+shallow channel ($h\ll w_c$) the flow is of Hele-Shaw type: Oh \emph{et al.}\ note that,
+\vq{Assuming pressure-driven flows and no-slip boundary conditions in a high aspect ratio channel (e.g., Hele-Shaw limit: $h/w \ll 1$), the flow velocity is independent of the position across the channel width}~\cite[p.~525]{b13}
+(Oh's \emph{high aspect ratio} means wide and shallow, which is a \emph{small} $\alpha=h/w_c$ in
+this appendix's convention),
+and Brody \emph{et al.}\ that the depth-averaged flow \vq{has a boundary-layer character, varying rapidly near the walls on a scale of order $h$, but approaching a very flat, low gradient profile in the center of the channel}~\cite[p.~3433]{bbrody}.
+A lamina much wider than that boundary layer, $\delta\gg h$, samples an essentially flat
+velocity $\bar u\approx\text{const}$, and a flat profile integrates linearly:
+\begin{equation}
+f = \frac{\int_0^{\delta}\bar u\,\dd s}{\int_0^{w_c}\bar u\,\dd s} \approx \frac{\delta}{w_c},
+\end{equation}
+which is Oh's flat-profile relation $w_1/w_2=Q_1/Q_2$ \cite[p.~525, eqn~22]{b13}, which Oh
+calls a rough 1D model. Inverting, $\delta\approx w_c f$, so
+$\beta=\partial\ln\delta/\partial\ln f=1$ and $\dcrit\propto\fgap$: a distinct law. But the
+same boundary layer shows that $\beta=\half$ holds \emph{whenever the lamina is thin compared
+with the depth}, $\delta\ll h$, at any aspect ratio: inside the layer the velocity still rises
+linearly from the wall, and only its slope depends on $\alpha$. Result~\ref{res:depth-factor}
+makes this exact (the slope is carried by $c_2(\alpha)$), and the exact duct field shows the
+crossover: in a slot with $h=0.01\,w_c$ the local exponent
+$\dd\ln\delta/\dd\ln f$ is $0.503$ at $\delta=0.01h$, $0.528$ at $0.1h$, $0.937$ at $5h$ and
+$0.984$ at $20h$. CIF laminae are between about $0.3$ and $2~\mu$m wide in channels
+$80$--$150~\mu$m deep, $\delta/h$ of order $10^{-3}$ to $10^{-2}$, so the device sits firmly in
+the square-root regime, and its moderate aspect ratio enters through the prefactor
+(Result~\ref{res:depth-factor}), never through the exponent $\beta$. The empirical plateau exponent,
+$\beta=0.51$ with $95\%$ confidence interval $[0.41,0.61]$, excludes $\beta=1$ (Appendix~B,
+C3b and C6). The companion code records this contrast in its Hele-Shaw check.
+
+% -------------------------------------------------------------------------------------
+\Result{the cross-width scaling, $\fgap\propto w_c^{-2}$}\label{res:cross-width}
+
+\paragraph{Setup.} Suppose two devices, or two rows of one tapered device, of \emph{different}
+central width are to have the \emph{same} cutoff. By Result~\ref{res:steric-two},
+$\dcrit=\kappa\,\delta$, so with the same prefactor, equal cutoffs need equal lamina widths. We translate \emph{same
+$\delta$} into a relation between the gap fractions. This is the program's
+\texttt{scaling.f\_gap\_of\_wc}.
+
+\paragraph{Derivation.} With $\delta = w_c\sqrt{\fgap/3}$ (Result~\ref{res:skim-inversion}),
+set the lamina width at a reference $(w_{\text{ref}}, f_{\text{ref}})$ equal to that at
+$(w_c, \fgap)$:
+\begin{equation}
+w_c\sqrt{\frac{\fgap}{3}} = w_{\text{ref}}\sqrt{\frac{f_{\text{ref}}}{3}}.
+\end{equation}
+Square both sides (the $\tfrac13$ cancels):
+\begin{equation}
+w_c^2\, \fgap = w_{\text{ref}}^2\, f_{\text{ref}}
+\quad\Longrightarrow\quad
+\boxed{\,\fgap = \Big(\frac{w_{\text{ref}}}{w_c}\Big)^{2} f_{\text{ref}}\,},
+\label{eq:r7}
+\end{equation}
+so holding the cutoff fixed forces the gap fraction to fall as the \emph{inverse square} of the
+channel width.
+
+\paragraph{Source.} This is the corrected Xia design relation. The 2022 Author Correction
+states that the 2016 article
+\vq{contains an error in equation 1, where the terms}~\cite[p.~1]{b3}
+$w_c(i)$ and $w_c(\mathrm{ref})$ \vq{are inverted}~\cite[p.~1]{b3},
+so that the relation reads
+\begin{equation}
+\fgap(i) = \Big(\frac{w_c(\text{ref})}{w_c(i)}\Big)^{2} \fgap(\text{ref}),
+\end{equation}
+the inverse-square law just derived. The direction matters: with the indices inverted, the
+lamina would shrink faster than the taper instead of holding constant.
+
+\paragraph{How exact it is.} Eq.~\eqref{eq:r7} holds the lamina constant at \emph{leading
+order}. Holding it exactly requires the exact kernel: choose
+$\fgap(i)=f\big(\delta^*/w_c(i)\big)=3(\delta^*/w_c(i))^2-2(\delta^*/w_c(i))^3$, and the exact
+root of Result~\ref{res:skim-inversion} returns $\delta^*$ at every width, because $f$ is
+strictly increasing (Result~\ref{res:skim-cubic}). The leading-order rule drifts by the second
+term of the series, $w_c f/9$, which scales as $1/w_c$ along the rule. For example, from
+$(w_{\text{ref}},f_{\text{ref}})=(100~\mu\mathrm{m},\,5.8\times10^{-4})$ the rule gives
+$\fgap=2.578\times10^{-4}$ at $150~\mu$m, and on the exact cubic the lamina there is $0.16\%$
+narrower than at the reference. Result~\ref{res:design-map} uses the exact form.
+
+% -------------------------------------------------------------------------------------
+\Result{the outlet filtrate-fraction identity and its decoupling lemma}\label{res:decoupling}
+
+\paragraph{What the cutoff chain needs from the outlet.} The results above concern
+\emph{which} particles leave (selectivity). A separate question is \emph{how much} fluid leaves
+as filtrate: the device-level filtrate fraction $F$, the share of the inlet flow that exits
+through the side outlets. The cutoff chain needs one fact about it, a \emph{decoupling lemma}:
+at fixed outlet geometry $F$ does not depend on the gap fraction, so yield and cutoff are set
+separately and a yield measurement carries no information about the local per-gap fraction, or
+the over-extraction, that set the cutoff. The full treatment
+of $F$ (its experimental validation, three-dimensional refinement and design inverse) is in
+the companion paper \cite{bpre}; Results~10--11 connect it to the per-gap march.
+
+\paragraph{Setup.} Microfluidic networks obey a hydraulic--electric analogy: volumetric flow
+$Q$ plays the role of current, pressure drop $\Delta P$ of voltage, and hydraulic resistance
+$R$ of resistance, with $\Delta P=RQ$ mirroring Ohm's law \cite[p.~515]{b13}. A CIF device
+has one central (retentate) channel between \emph{two} side (filtrate) channels
+\cite{b1,b4,b5}. Let $Q_c(i)$ and $Q_s(i)$ be the flows in the central
+channel and in \emph{one} side channel after gap row $i$, with $i=0$ the inlet and $i=N$ the
+outlet, and let $R_c$ and $R_s$ be the resistances of the central and of one side channel's
+outlet segment. Three premises, shared across the CIF lineage, make the outlet a clean divider:
+\begin{enumerate}
+\item[(P1)] a single inlet: sample enters the central channel only, $Q_s(0)=0$;
+\item[(P2)] device mass conservation: $Q_c(0)=Q_c(N)+2Q_s(N)$;
+\item[(P3)] outlet pressure equilibration: the central and side outlet segments share one
+pressure drop, $Q_s(N)R_s=Q_c(N)R_c$.
+\end{enumerate}
+
+\paragraph{Derivation.} The filtrate fraction is the filtrate outflow over the inflow,
+\begin{equation}
+F\equiv\frac{2Q_s(N)}{Q_c(0)+2Q_s(0)}=\frac{2Q_s(N)}{Q_c(0)}\qquad\text{(by P1)}.
+\end{equation}
+\emph{Step 1.} From (P3), $Q_c(N)=Q_s(N)\,R_s/R_c$.
+\emph{Step 2.} Substitute into (P2): $Q_c(0)=Q_s(N)\,R_s/R_c+2Q_s(N)=Q_s(N)\,(R_s+2R_c)/R_c$.
+\emph{Step 3.} Divide:
+\begin{equation}
+F=\frac{2Q_s(N)}{Q_c(0)}=\frac{2Q_s(N)\,R_c}{Q_s(N)\,(R_s+2R_c)}
+=\boxed{\,\frac{2R_c}{R_s + 2R_c}\,}.
+\label{eq:Fident}
+\end{equation}
+\emph{The same result by the circuit route.} At the outlet the two side segments carry
+filtrate in parallel, so together they present $R_s/2$; across their common pressure drop
+$\Delta P$ the filtrate and retentate flows are $2\Delta P/R_s$ and $\Delta P/R_c$, and
+\begin{equation}
+F = \frac{2/R_s}{2/R_s + 1/R_c}=\frac{2R_c}{R_s+2R_c},
+\end{equation}
+the textbook current-divider rule. The two routes are the same physics in two notations, so
+their agreement is a consistency check, not independent evidence; the circuit form makes the
+dependence on outlet geometry alone immediately visible. This is the program's
+\texttt{network.F}, and it matches the companion paper's outlet identity \cite{bpre}.
+
+\emph{Limiting checks.} If the side channels offer no resistance ($R_s\to0$), $F\to 1$; if they
+are infinitely resistive ($R_s\to\infty$), $F\to 0$; and
+$\partial F/\partial R_s=-2R_c/(R_s+2R_c)^2<0$.
+
+\paragraph{Decoupling (the lemma the cutoff chain uses).} The resistances are fixed by the
+outlet segments' geometry and the fluid viscosity alone (Result~\ref{res:resistance}), the same
+for every particle. The gap fraction does not appear in Eq.~\eqref{eq:Fident}, so at fixed
+outlet geometry
+\begin{equation}
+\frac{\partial F}{\partial \fgap} = 0 .
+\end{equation}
+Yield ($F$) is therefore independent of selectivity (the cutoff, set by $\fgap$ through
+Results~2 and~5); the two can be designed separately, and a measured filtrate fraction carries
+no information about the local per-gap fraction, or the over-extraction factor $c$, that set the
+cutoff. Through the march it fixes only the product $N\fgap$ (Result~\ref{res:march}), so it
+returns a gap fraction only if $N$ is also known and the fraction is the same at every row, and it
+never returns $c$. Result~\ref{res:march-outlet} shows the same thing from the
+inside: any gap schedule that reaches the same outlet ratio gives the same $F$. The
+independence holds \emph{because the row count $N$ is free}: a design that pins $N$ re-couples
+the two (Result~\ref{res:design-map}).
+
+\paragraph{Idealisation and inverse.} Identity~\eqref{eq:Fident} is exact under (P1)--(P3), but
+it is not a high-accuracy predictor of the \emph{measured} filtrate fraction. For Dinh's
+devices V1 and V3 it predicts $0.5592$ and $0.7189$, above the measured $0.505$ and $0.649$ by
+$10.7\%$ and $10.8\%$; the companion paper's three-dimensional outlet solve gives $0.5070$ and
+$0.6281$, within one standard deviation of the measurement on the raw-SD scale (within two on
+the SEM scale) \cite{bpre}. That correction is itself an outlet-geometry effect and
+introduces no dependence on $\fgap$. In a finite network the premises hold only approximately:
+Appendix~B (C4, P-C4.3) reports that an untapered ladder realises the identity to rounding,
+while on the linear tapers probed the outlet row holds a pressure imbalance that moves $F$ by
+between about a quarter of and about four times the gap fraction, falling as $1/N$ when the same
+taper is spread over more rows. Finally, inverting
+Eq.~\eqref{eq:Fident},
+\begin{equation}
+\frac{R_s}{R_c} = \frac{2(1-F)}{F}
+\end{equation}
+(so the balanced split $F=\half$ needs $R_s = 2R_c$), turns a measured $F$ into an
+outlet-geometry constraint. Neither the residual nor the inverse re-enters the cutoff chain.
+
+% -------------------------------------------------------------------------------------
+\Result{the finite-depth correction, $\Kdth=\sqrt{3/c_2(\alpha)}$}\label{res:depth-factor}
+
+\paragraph{Setup.} The parabola~\eqref{eq:parab} ignores the top and bottom walls. A real
+channel of width $w_c$ and depth $h$ has the full rectangular-duct velocity field, and its
+aspect ratio $\alpha=h/w_c$ measures how deep it is. Across the width, the depth-averaged
+velocity of a finite duct is flatter in the middle and steeper at the side walls than the
+parabola with the same mean flow (Brody's boundary layer, Result~\ref{res:exponents}). So a
+thin lamina beside a side wall carries \emph{more} flow than on the parabola, and the lamina
+that carries a given fraction is \emph{narrower}: the depth factor is less than one. We derive
+the field, collapse it to a one-dimensional flow fraction with two elementary integrals, and
+extract the exact small-lamina law. The glossary's canonical definition
+(Eqn~\textit{depth\_factor} there) is
+\begin{equation}
+\Kdth(\alpha)=\sqrt{\frac{3}{c_2(\alpha)}}=\lim_{x\to0}\frac{\delta_{3D}(\alpha)}{\delta_{2D}},
+\label{eq:Kdef}
+\end{equation}
+the ratio of the true lamina width to the parabolic one, at the same flow fraction, in the limit
+of a thin lamina. \texttt{ARG\_MATH} computes it as \texttt{c2} and \texttt{K\_depth}.
+
+\paragraph{The field, and how to check it.} Put the side walls at $y=0$ and $y=w$ ($w=w_c$) and
+the top and bottom at $z=\pm h/2$, and write $G=-\dd p/\dd x>0$. Then Eq.~\eqref{eq:stokes}
+is $\partial_y^2u+\partial_z^2u=-G/\mu$ with $u=0$ on all four walls. Its solution is
+\begin{equation}
+u(y,z) = \sum_{m\ \text{odd}} A_m\left[1 - \frac{\cosh(k_m z)}{\cosh(k_m h/2)}\right]\sin(k_m y),
+\qquad k_m=\frac{m\pi}{w},\quad A_m=\frac{G}{\mu}\,\frac{4w^2}{\pi^3 m^3}.
+\label{eq:duct}
+\end{equation}
+The reader can verify it in three steps, each a short calculation.
+\emph{(a) Each term vanishes on the walls.} $\sin(k_m y)=0$ at $y=0$ and at $y=w$ (since $m$ is
+an integer), and the bracket is $0$ at $z=\pm h/2$.
+\emph{(b) Each term has a simple Laplacian.} Writing $\chi_m(z)=\cosh(k_mz)/\cosh(k_mh/2)$,
+$\partial_y^2$ of the term gives $-k_m^2A_m[1-\chi_m(z)]\sin(k_my)$ and $\partial_z^2$ gives
+$-k_m^2A_m\,\chi_m(z)\sin(k_my)$; the $\chi_m$ parts cancel in the sum, leaving
+$\nabla^2(\text{term})=-k_m^2A_m\sin(k_my)$.
+\emph{(c) The terms add up to the constant forcing.} on $0<y<w$ the constant $1$ has the Fourier
+sine series
+\begin{equation}
+1=\sum_{m\ \text{odd}}\frac{4}{m\pi}\sin(k_my),\qquad\text{since}\qquad
+\frac{2}{w}\int_0^w\sin(k_my)\,\dd y=\frac{2\big(1-(-1)^m\big)}{m\pi},
+\end{equation}
+which is $4/(m\pi)$ for odd $m$ and $0$ for even $m$. With $A_m$ as given, $k_m^2A_m=\frac{G}{\mu}\frac{4}{m\pi}$, so
+$\nabla^2u=-\frac{G}{\mu}\sum_{m\ \text{odd}}\frac{4}{m\pi}\sin(k_my)=-G/\mu$. By the
+uniqueness of solutions of this boundary-value problem, Eq.~\eqref{eq:duct} is \emph{the}
+duct velocity. Brody \emph{et al.}\ give the same field expanded the other way round, cosine
+over the depth and cosh across the width, and its depth average \cite[p.~3433, eqns~12, 15]{bbrody};
+the resistance that follows from it (Result~\ref{res:resistance}) is Yang \emph{et al.}'s eqn~(3)
+\cite[p.~875]{b6} and Gifford's eqn~(5).
+
+\paragraph{Two integrals collapse it.} Integrate over the full depth; the $\cosh$ integral is
+elementary:
+\begin{equation}
+\int_{-h/2}^{h/2}\left[1 - \frac{\cosh(k_m z)}{\cosh(k_m h/2)}\right]\dd z = h - \frac{2}{k_m}\tanh\frac{k_m h}{2}
+= w\left[\alpha-\frac{2}{m\pi}\tanh\frac{m\pi\alpha}{2}\right]\equiv w\,c_m,
+\label{eq:cm}
+\end{equation}
+using $h=\alpha w$ and $k_mh/2=m\pi\alpha/2$. Integrate the width factor from the wall out to
+$\delta$:
+\begin{equation}
+\int_0^{\delta}\sin(k_m y)\,\dd y = \frac{w}{m\pi}\Big(1 - \cos\frac{m\pi\delta}{w}\Big).
+\end{equation}
+The flow in the lamina is therefore proportional to
+$\sum_{m\ \text{odd}}(c_m/m^4)(1-\cos m\pi x)$ with $x=\delta/w$, and the total flow (the
+same sum at $x=1$, where $1-\cos m\pi=2$ for odd $m$) to $2\sum_{m\ \text{odd}} c_m/m^4$. The
+fraction of the flow within a distance $\delta$ of one side wall is
+\begin{equation}
+\Flam(x,\alpha) = \frac{\displaystyle\sum_{m\ \text{odd}} \frac{c_m}{m^4}\big(1 - \cos m\pi x\big)}{\displaystyle 2\sum_{m\ \text{odd}} \frac{c_m}{m^4}},
+\qquad c_m=\alpha-\frac{2}{m\pi}\tanh\frac{m\pi\alpha}{2}.
+\label{eq:ductseries}
+\end{equation}
+This is \texttt{F\_lam} in \texttt{ARG\_MATH} and the design code; it is exact for a flat
+lamina in an undisturbed duct.
+
+\paragraph{The deep limit is exactly the cubic.} As $\alpha\to\infty$,
+$|c_m/\alpha-1|\le 2/(m\pi\alpha)\to0$ for every $m$, so
+$\Flam\to\sum_{\text{odd}}(1-\cos m\pi x)/m^4\big/\big(2\sum_{\text{odd}}1/m^4\big)$. Both sums are
+known in closed form. The cosine series of the cubic on $0\le x\le1$ has coefficients
+$2\int_0^1(3x^2-2x^3)\cos(m\pi x)\,\dd x=24\big((-1)^m-1\big)/(\pi^4m^4)$, that is
+$-48/(\pi^4m^4)$ for odd $m$ and $0$ for even $m$ (repeated integration by parts), and mean value
+$\int_0^1(3x^2-2x^3)\,\dd x=\half$; the series converges absolutely because the coefficients fall as $m^{-4}$. So
+$3x^2-2x^3=\half-\frac{48}{\pi^4}\sum_{\text{odd}}\cos(m\pi x)/m^4$. With
+$\sum_{\text{odd}}1/m^4=\pi^4/96$ this rearranges to
+\begin{equation}
+\sum_{m\ \text{odd}}\frac{1-\cos m\pi x}{m^4}=\frac{\pi^4}{48}\big(3x^2-2x^3\big),
+\qquad\text{hence}\qquad \lim_{\alpha\to\infty}\Flam(x,\alpha)=3x^2-2x^3
+\end{equation}
+exactly, not only for thin laminae. The duct field contains Result~\ref{res:skim-cubic} as its
+deep limit.
+
+\paragraph{The thin-lamina law and $c_2$.} For small $x$, $1-\cos m\pi x\approx(m\pi x)^2/2$.
+Each term of the numerator is bounded by $|c_m|\,\pi^2x^2/(2m^2)$ (because $1-\cos u\le u^2/2$),
+and $\sum|c_m|/m^2$ converges, so the limit may be taken term by term:
+\begin{equation}
+\Flam(x,\alpha)=c_2(\alpha)\,x^2+o(x^2),\qquad
+c_2(\alpha)=\frac{\pi^2}{4}\,\frac{\sum_{m\ \text{odd}} c_m/m^2}{\sum_{m\ \text{odd}} c_m/m^4}.
+\label{eq:c2}
+\end{equation}
+At the same flow fraction $f$, the duct lamina satisfies $f\approx c_2x_{3D}^2$ and the parabolic
+one $f\approx3x_{2D}^2$. Dividing, $x_{3D}/x_{2D}\to\sqrt{3/c_2}$ as $f\to0$, which is
+Eq.~\eqref{eq:Kdef}; the general invariant is $\delta=w_c\sqrt{f/c_2(\alpha)}$.
+
+\paragraph{The same $c_2$ from Brody's depth average.} Brody \emph{et al.}\ give the
+depth-averaged velocity across the width \cite[p.~3433, eqn~15]{bbrody}, with $x$ measured
+from the centreline:
+\begin{equation}
+\bar u(x)\;\propto\;\sum_{n\ \text{odd}}\frac{1}{n^{4}}\left[1-\frac{\cosh(n\pi x/h)}{\cosh(n\pi w/2h)}\right].
+\end{equation}
+Near a side wall a thin lamina carries
+$\int_0^\delta\bar u\,\dd s\approx\bar u'_{\text{wall}}\,\delta^2/2$ (with $\bar u'_{\text{wall}}$ the
+slope at the wall and $s$ the distance from it), and the whole channel carries $w\,\bar u_{\text{mean}}$,
+so $c_2=w\,\bar u'_{\text{wall}}/(2\bar u_{\text{mean}})$. Differentiating and averaging term by term,
+with $n\pi w/2h=n\pi/(2\alpha)$,
+\begin{equation}
+c_2(\alpha)=\frac{\pi}{2\alpha}\;
+\frac{\sum_{n\ \text{odd}}\tanh\!\big(\tfrac{n\pi}{2\alpha}\big)/n^3}
+{\sum_{n\ \text{odd}}\Big[\dfrac{1}{n^4}-\dfrac{2\alpha}{\pi}\,\dfrac{\tanh(n\pi/2\alpha)}{n^5}\Big]} .
+\label{eq:c2brody}
+\end{equation}
+This series converges fastest for shallow channels, Eq.~\eqref{eq:c2} for deep ones; the two agree
+to $10^{-12}$ at all five distinct aspect ratios tabulated below (Section~\ref{sec:verify}).
+
+\paragraph{The two limits.} Four odd-integer sums are needed:
+$\sum_{\text{odd}}1/m^2=\pi^2/8$, $\sum_{\text{odd}}1/m^3=7\zeta(3)/8$,
+$\sum_{\text{odd}}1/m^4=\pi^4/96$ and $\sum_{\text{odd}}1/m^5=31\zeta(5)/32$, where
+$\zeta(3)=1.2020569$ and $\zeta(5)=1.0369278$ are values of the Riemann zeta function.
+\emph{Deep ($\alpha\to\infty$).} Then $\tanh(m\pi\alpha/2)\to1$ (the error falls like
+$e^{-\pi\alpha}$), so $c_m\approx\alpha-2/(m\pi)$ in Eq.~\eqref{eq:c2}:
+\begin{equation}
+\sum_{\text{odd}}\frac{c_m}{m^2}\approx\frac{\alpha\pi^2}{8}-\frac{7\zeta(3)}{4\pi},\qquad
+\sum_{\text{odd}}\frac{c_m}{m^4}\approx\frac{\alpha\pi^4}{96}-\frac{31\zeta(5)}{16\pi},\qquad
+c_2\approx3\,\frac{1-14\zeta(3)/(\pi^3\alpha)}{1-186\zeta(5)/(\pi^5\alpha)} .
+\end{equation}
+So $c_2\to3$ and $\Kdth\to1$: the parabola is the deep limit, as it must be. To first order in
+$1/\alpha$, $c_2\approx3\big[1+(186\zeta(5)/\pi^5-14\zeta(3)/\pi^3)/\alpha\big]$, and
+$\Kdth=(c_2/3)^{-1/2}\approx1-\big(93\zeta(5)/\pi^5-7\zeta(3)/\pi^3\big)/\alpha=1-0.04375/\alpha$,
+which gives $0.99912$ at $\alpha=50$. \emph{Shallow ($\alpha\to0$).} In Eq.~\eqref{eq:c2brody}
+every $\tanh(n\pi/2\alpha)\to1$ and the second term of the denominator vanishes, so
+$c_2\approx\frac{\pi}{2\alpha}\cdot\frac{7\zeta(3)/8}{\pi^4/96}=\frac{42\zeta(3)}{\pi^3\alpha}=\frac{1.628}{\alpha}$,
+which grows without bound (the exact value at $\alpha=0.05$ is $c_2=33.6$), and
+$\Kdth\to0$. The law is still $\sqrt f$ for $\delta\ll h$; only its prefactor collapses
+(Result~\ref{res:exponents}). Between the limits, $c_2$ decreases strictly as $\alpha$ grows
+(checked from $\alpha=0.05$ to $50$), so over that range a deeper channel always gives a smaller
+depth correction.
+
+\paragraph{Values.} Evaluating Eq.~\eqref{eq:c2} (the sums converge; the tails beyond a few
+thousand terms are summed exactly, because there $\tanh=1$):
+\begin{center}
+\small
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+& $\alpha$ & $c_2(\alpha)$ & $\Kdth=\sqrt{3/c_2}$ & $\Kdcfd$ \\
+\midrule
+simulated aspect ratios & $0.80$ & $3.8054$ & $0.8879$ & $0.891$ \\
+& $1.40$ & $3.3240$ & $0.9500$ & $0.945$ \\
+& $2.69$ & $3.1273$ & $0.9794$ & $0.981$ \\
+\midrule
+calibration widths $100/125/150~\mu$m & $0.8000$ & $3.8054$ & $0.888$ & --- \\
+at the assumed depth $h=80~\mu$m & $0.6400$ & $4.1637$ & $0.849$ & --- \\
+& $0.5333$ & $4.5620$ & $0.811$ & --- \\
+\bottomrule
+\end{tabular}
+\end{center}
+The last column is the single-gap CFD measurement. The two factors differ by $0.349\%$,
+$0.530\%$ and $0.160\%$ of $\Kdcfd$; the largest, $0.5301\%$, is printed in the glossary rounded up as the bound
+$0.531\%$, inside its stated bound of
+$0.6\%$. They are distinct quantities, one computed and one measured, and must not be averaged
+or interchanged. Across the lineage's aspect ratios the analytic factor spans
+$\Kdth\in[0.81,0.98]$.
+
+\paragraph{Which depth for the calibration array.} Gifford's Fig.~3 caption reports the widths
+and nothing else, \vq{Effect of central channel width ($w_c$ = 100 $\mu$m, 125 $\mu$m, 150 $\mu$m)}~\cite[p.~4500, Fig.~3 caption]{b1},
+so the calibration array has no stated depth. The $80~\mu$m used above is the depth of the
+separate Fig.~4 device: \vq{The depth of the device was 80 $\mu$m $\pm$ 3 $\mu$m; the width of the central channel was 100 $\mu$m}~\cite[p.~4500, Fig.~4 caption]{b1}.
+The paper's other devices are deeper ($125~\mu$m in Fig.~5, and $150\pm5~\mu$m for the
+Fig.~6 platelet-enrichment device). Because $\Kdth$ increases with $\alpha$, a deeper array would give a
+smaller and more uniform correction. The $80~\mu$m is the shallowest depth the paper reports, so
+if the array is at least that deep, the $11$--$19\%$ correction at the calibration widths is an
+upper bound, not an estimate.
+
+\paragraph{Why the June 2026 edition printed 0.890/0.951/0.980.} Those are ratios of exact
+inversions at a \emph{finite} fraction, $f=10^{-4}$: $0.8898$, $0.9510$ and $0.9798$ on the
+converged series (\texttt{cif\_cutoff.py}'s \texttt{duct.K\_depth}, which sums $400$ terms, agrees
+to $10^{-5}$). They exceed the $f\to0$ limit by $0.2\%$, $0.1\%$ and $0.04\%$: at a finite
+fraction the ratio still depends weakly on $f$. The canonical
+factor is the limit, Eq.~\eqref{eq:Kdef}, and that is what the glossary and Appendix~B print.
+
+\paragraph{How the factor is used.} As stated in the parent work, $\Kdepth$ is folded into the
+apparent prefactor as a per-device interpretive factor. It is \emph{not} applied to the data,
+which collapse more tightly on the plain parabolic $\delta$, so it does not shift the fitted
+$\kapp$ and enters only the residual decomposition (Result~\ref{res:steric-two}). For the
+exponent $\beta$ this is exact, since $\Kdepth$ does not depend on $\fgap$. For the width
+exponent $\gamma$ it is not an identity: at a fixed depth, $\alpha=h/w_c$ falls as $w_c$ widens,
+so $\Kdepth$ differs between the calibration widths ($0.888$, $0.849$ and $0.811$ above).
+Appendix~B (C6, CQ3) reports what applying it to the lamina would do to the fitted $\gamma$ at
+each depth the paper reports.
+
+\paragraph{Corollary (the kernel--prefactor pairing).} A prefactor is meaningful only with the
+lamina kernel it was fitted with. If a cutoff $\dcrit$ is written as
+$\kappa_g\,\delta_g$ on the cubic branch ($\delta_g=w_c\sqrt{f/3}$) and as $\kappa_F\,\delta_F$
+on the duct kernel ($\delta_F=w_c\sqrt{f/c_2}$), then at small $f$
+\begin{equation}
+\kappa_F=\kappa_g\,\frac{\delta_g}{\delta_F}=\kappa_g\sqrt{\frac{c_2(\alpha)}{3}}
+\end{equation}
+at a single aspect ratio. For the three-width calibration array the glossary adopts the
+array-mean $\overline{c_2}=\tfrac13\sum_i c_2(\alpha_{\mathrm{cal},i})=4.177$, giving
+$\kappa_F=4.9138\sqrt{\overline{c_2}/3}=5.798$ and the effective depth factor
+$\sqrt{3/\overline{c_2}}=0.8475$. Averaging $c_2$ is the glossary's convention; averaging the three
+depth factors instead gives $5.7862$, $0.21\%$ different, because the mean of square roots is
+not the square root of the mean. Both depend on the assumed $80~\mu$m calibration depth. Use one
+kernel at all three call sites: the inversion, the schedule and the scale.
+
+% =====================================================================================
+\section{Part II --- the yield and design chain}
+\label{sec:part2}
+
+Part~I fixed \emph{which} particles leave through one gap. Part~II follows the fluid through
+the whole ladder: how much of it leaves (Results~10--11), why the selection at every gap is a
+hard threshold (Result~12), how a device is built to meet a cutoff and a filtrate target
+together (Result~13), how a channel width becomes a resistance (Result~14), and why the
+pressures across the ladder equalise (Result~15). These are the derivations behind the
+design code's march, closure and checks.
+
+% -------------------------------------------------------------------------------------
+\Result{the per-gap march: Gifford's eqns~(1)--(4) in normalised form}\label{res:march}
+
+\paragraph{Setup.} Gifford \emph{et al.}\ build the whole design on one simplifying assumption:
+\vq{we treat the gaps between the flow channels of the array as nodes which allow equalization of pressure across the width of the device}~\cite[p.~4497]{b1}
+(pressure equilibration, PE). Number the gap rows $i=1,\dots,N$ from inlet to outlet. Call the
+stretch of channel downstream of row $i$ (and upstream of row $i+1$) \emph{segment} $i$;
+segment~$0$ is the inlet stretch and segment~$N$ the outlet stretch. $Q_c(i)$ and $Q_s(i)$ are
+the flows in the central channel and in \emph{one} side channel in segment $i$, Gifford's
+flows \vq{following gap row $i$}~\cite[p.~4498]{b1}. At row $i$ each of the two side
+gaps diverts the fraction $f(i)$ of the central flow arriving at it, $f(i)\,Q_c(i-1)$. (So
+Dinh's $Q_m(i)$, the middle-channel flow at gap $i$, is $Q_c(i-1)$ here, as it is in the
+glossary.) Gifford writes one
+$\fgap$ for every row; a tapered schedule simply carries the row index. (Gifford's text also
+describes a segment as lying \vq{between gap rows $i - 1$ and $i$}~\cite[p.~4498]{b1}, and
+starts his worked procedure from $w_s(i=1)$ but his design curves from $w_s(0)$; the two
+descriptions differ by one in the row label, which is immaterial for his constant $\fgap$. This
+appendix fixes the labelling above throughout.)
+
+\paragraph{Derivation of Gifford's eqns (1)--(4).}
+\emph{Step 1 (eqn 1: side-channel bookkeeping).} Each side channel gains the flow diverted
+into it:
+\begin{equation}
+Q_s(i) = Q_s(i-1) + f(i)\,Q_c(i-1).
+\label{eq:g1}
+\end{equation}
+\emph{Step 2 (mass conservation).} Nothing is created or lost at a row, so
+$Q_c(i)+2Q_s(i)=Q_c(i-1)+2Q_s(i-1)$. Substituting~\eqref{eq:g1},
+\begin{equation}
+Q_c(i) = \big(1-2f(i)\big)\,Q_c(i-1).
+\label{eq:g3flow}
+\end{equation}
+\emph{Step 3 (PE turns flows into pressures).} If every gap row equalises the pressure across
+the width, the central and side segments between two rows see the same pressure drop
+$\Delta P(i)$, so $Q_c(i)=\Delta P(i)/R_c$ and $Q_s(i)=\Delta P(i)/R_s(i)$ (hydraulic Ohm's law,
+Result~\ref{res:decoupling}; $R_c$ constant for Gifford's constant central width). Then
+Eq.~\eqref{eq:g1} becomes Gifford's eqn~(2),
+\begin{equation}
+\frac{\Delta P(i)}{R_s(i)} = \frac{\Delta P(i-1)}{R_s(i-1)} + f\,\frac{\Delta P(i-1)}{R_c},
+\end{equation}
+and Eq.~\eqref{eq:g3flow} becomes his eqn~(3),
+\begin{equation}
+\frac{\Delta P(i)}{\Delta P(i-1)} = 1-2f ,
+\end{equation}
+which he reads as mass conservation: \vq{Because the fluid is assumed incompressible, the total volumetric flow within the device before and after each gap must be constant, yielding eqn (3)}~\cite[p.~4498]{b1}.
+\emph{Step 4 (eqn 4: the side-channel recursion).} Substitute eqn~(3) into eqn~(2), divide by
+$\Delta P(i-1)$ and solve for $R_s(i)$:
+\begin{equation}
+\frac{1-2f}{R_s(i)}=\frac{1}{R_s(i-1)}+\frac{f}{R_c}
+\quad\Longrightarrow\quad
+R_s(i) = \frac{(1-2f)\,R_c\,R_s(i-1)}{R_c + f\,R_s(i-1)} ,
+\label{eq:g4}
+\end{equation}
+which is Gifford's eqn~(4).
+
+\paragraph{The normalised march.} Divide every flow by the inlet central flow $Q_c(0)$:
+\begin{equation}
+P(i)=\frac{Q_c(i)}{Q_c(0)},\qquad S(i)=\frac{Q_s(i)}{Q_c(0)},\qquad
+P(0)=1,\quad S(0)=\sigma_0 .
+\end{equation}
+With a sealed inlet (all sample enters the central channel) $\sigma_0=0$; Gifford generates his
+design curves \vq{with the initial side channel width, $w_{\mathrm{s}}(0)$, set to zero}~\cite[p.~4499]{b1}.
+(The design code's other start mode prescribes a printable first side width; its $\sigma_0>0$
+is a fictitious inlet side flow, reported as a mass defect $2\sigma_0$.) Steps~1--2 read
+\begin{equation}
+P(i)=\big(1-2f(i)\big)P(i-1),\qquad S(i)=S(i-1)+f(i)\,P(i-1).
+\label{eq:march}
+\end{equation}
+These are pure mass bookkeeping; PE has not been used.
+
+\emph{Mass identity.} $P(i)+2S(i)=1+2\sigma_0$ for every $i$. \emph{Proof by induction:} it
+holds at $i=0$; if it holds at $i-1$, then
+$P(i)+2S(i)=(1-2f)P(i-1)+2S(i-1)+2fP(i-1)=P(i-1)+2S(i-1)=1+2\sigma_0$.
+
+\emph{Terminal fraction.} The fraction of the inlet flow removed from the central channel is
+\begin{equation}
+F = 1-P(N) = 2\big[S(N)-\sigma_0\big] = 1-\prod_{i=1}^{N}\big(1-2f(i)\big),
+\label{eq:Frec}
+\end{equation}
+the second form by the mass identity, the third by multiplying out Eq.~\eqref{eq:march}. With a
+sealed inlet $F=2S(N)$. The product form is the glossary's $F_{\mathrm{recursion}}$.
+
+\emph{The side-flow ratio.} Let $\sigma(i)=S(i)/P(i)=Q_s(i)/Q_c(i)$. Dividing the two parts of
+Eq.~\eqref{eq:march},
+\begin{equation}
+\sigma(i)=\frac{S(i-1)+f(i)P(i-1)}{\big(1-2f(i)\big)P(i-1)}=\frac{\sigma(i-1)+f(i)}{1-2f(i)} ,
+\qquad \sigma(0)=\sigma_0 .
+\label{eq:sigma}
+\end{equation}
+\emph{The PE closure.} Under PE the central and side segments of one stretch carry flows in the
+ratio of their conductances, so with equal segment lengths
+\begin{equation}
+\sigma(i)=\frac{Q_s(i)}{Q_c(i)}=\frac{R_c(i)}{R_s(i)},\qquad \rho(i)\equiv\frac{1}{\sigma(i)}=\frac{R_s(i)}{R_c(i)} .
+\label{eq:closure}
+\end{equation}
+Substituting $\sigma=R_c/R_s$ into Eq.~\eqref{eq:sigma} with constant $R_c$ gives back
+Eq.~\eqref{eq:g4}: Gifford's eqn~(4) is the $\sigma$-recursion written in resistances.
+Eq.~\eqref{eq:closure} is where the geometry enters: given $\sigma(i)$ and the central width,
+the side width follows from the resistance kernel (Result~\ref{res:resistance}). It holds for a
+tapered central channel too, since $\sigma$ is a flow ratio and each segment's $R_c(i)$ is
+evaluated at its own width.
+
+\emph{The inverse map.} Solving Eq.~\eqref{eq:sigma} for $f(i)$,
+$\sigma(i)(1-2f)=\sigma(i-1)+f$, so
+\begin{equation}
+f(i)=\frac{\sigma(i)-\sigma(i-1)}{1+2\sigma(i)} .
+\label{eq:inverse}
+\end{equation}
+Given both width schedules (hence every $\sigma(i)$ through Eq.~\eqref{eq:closure}), this
+recovers the gap fractions the design implies. It has no singular case, even at $\sigma_0=0$.
+This is the code's \texttt{invert\_widths}.
+
+\emph{Row-1 closure.} With a sealed inlet, $\sigma(1)=f(1)/(1-2f(1))$, so
+$\rho(1)=(1-2f(1))/f(1)$ and
+\begin{equation}
+f(1)\big(\rho(1)+2\big)=1 ,\qquad R_s(1)=\frac{1-2f(1)}{f(1)}\,R_c ,
+\end{equation}
+which is also the limit of Eq.~\eqref{eq:g4} as $R_s(0)\to\infty$ (a side channel of zero
+width). The first side segment is very resistive, about $1/f\sim10^4$ times $R_c$.
+
+\emph{Row count and the exponential form.} Taking logarithms of Eq.~\eqref{eq:Frec},
+\begin{equation}
+\ln(1-F)=\sum_{i=1}^{N}\ln\big(1-2f(i)\big)=-2\sum_i f(i)-2\sum_i f(i)^2-\cdots ,
+\end{equation}
+so for small fractions $F\approx1-\exp\!\big(-2\sum_i f(i)\big)$, and for a constant fraction
+$F\approx1-e^{-2Nf}$, with relative error of order $f$ in the exponent. For a constant fraction
+the exact row count to reach $F$ is
+\begin{equation}
+N=\frac{\ln(1-F)}{\ln(1-2f)} ,
+\label{eq:Nconst}
+\end{equation}
+rounded up: $F=0.5$ at $f=1.04\times10^{-4}$ needs $N=3332.1$, so $3333$ rows.
+
+\emph{Multi-variant ratio.} For two variants with constant fractions, the exponential form gives
+\begin{equation}
+\mathcal{R}=\frac{\ln(1-F_{V3})}{\ln(1-F_{V1})}=\frac{N_{V3}\,f_{V3}}{N_{V1}\,f_{V1}} ,
+\end{equation}
+the glossary's multi-variant ratio (exactly, the ratio of the two sums of $\ln(1-2f)$). A
+filtrate fraction therefore determines only the product $N\fgap$: it cannot return $\fgap$, or
+the over-extraction factor $c$ of Result~\ref{res:steric-two}, on its own (Appendix~B, C4).
+
+% -------------------------------------------------------------------------------------
+\Result{the march and the outlet identity give the same filtrate fraction}\label{res:march-outlet}
+
+\paragraph{Claim.} For a sealed inlet, with PE holding at the outlet segment, the march's
+$F=1-P(N)$ (Result~\ref{res:march}) equals the outlet identity $F=2R_c/(R_s+2R_c)$
+(Result~\ref{res:decoupling}) evaluated with the outlet resistances $R_s=R_s(N)$,
+$R_c=R_c(N)$, for \emph{every} gap schedule.
+
+\paragraph{Proof.} With $\sigma_0=0$ the mass identity gives $P(N)+2S(N)=1$, that is
+$P(N)\big(1+2\sigma(N)\big)=1$. So
+\begin{equation}
+F=1-P(N)=1-\frac{1}{1+2\sigma(N)}=\frac{2\sigma(N)}{1+2\sigma(N)} .
+\end{equation}
+The outlet closure~\eqref{eq:closure} gives $\sigma(N)=R_c/R_s$; substituting and multiplying
+top and bottom by $R_s$,
+\begin{equation}
+F=\frac{2R_c/R_s}{1+2R_c/R_s}=\frac{2R_c}{R_s+2R_c}. \qquad\blacksquare
+\end{equation}
+These are the three premises of Result~\ref{res:decoupling} in march variables: $\sigma_0=0$ is
+(P1), the mass identity is (P2), and $\sigma(N)=R_c/R_s$ is (P3).
+
+\paragraph{What it shows.} The schedule $\{f(i)\}$ and the row count $N$ only decide \emph{how}
+$\sigma$ climbs to its final value; $F$ depends on that final value alone. For example, $2000$
+rows at a constant $f=1.7\times10^{-4}$ and $3000$ rows on a ramp, scaled to reach the same
+$\sigma(N)$, both give $F=0.49344158$. This is the decoupling of Result~\ref{res:decoupling} seen
+from inside the device, and it is why the glossary calls the two representations equal for a
+self-consistent device. The product form $1-\prod(1-2f)$ shows $\fgap$ explicitly and so does
+not display the decoupling; the outlet form does. In a real network PE is not exact at the
+outlet row (Result~\ref{res:decoupling}, last paragraph, and Result~\ref{res:ladder}).
+
+% -------------------------------------------------------------------------------------
+\Result{the transport lemma: a fluid element is extracted iff $\varphi_0\le F/2$}\label{res:transport}
+
+\paragraph{Setup.} Follow one fluid element down the ladder. Its \emph{flux coordinate}
+$\varphi$ is the fraction of the central-channel flow that passes between one wall and the
+element's streamline, so $0\le\varphi\le1$ and the centreline is $\varphi=\half$. Within a
+segment the flow is unidirectional and laminar, so $\varphi$ does not change. At row $i$ the gap
+on the near wall removes the lamina $0\le\varphi\le f(i)$ (Section~\ref{sec:setup}, the lamina
+idealisation), and the gap on the far wall removes $1-f(i)\le\varphi\le1$.
+
+\paragraph{The map.} An element with $\varphi\le f(i)$ is extracted at row $i$. Otherwise the
+flow between it and the near wall is $(\varphi-f)\,Q_c(i-1)$ after the row, and the total is
+$(1-2f)\,Q_c(i-1)$, so its new coordinate is
+\begin{equation}
+\varphi'=\frac{\varphi-f(i)}{1-2f(i)}
+\qquad\Longleftrightarrow\qquad
+\varphi'-\tfrac12=\frac{\varphi-\tfrac12}{1-2f(i)} ,
+\label{eq:transport}
+\end{equation}
+the second form because $(\varphi-f)-\tfrac12(1-2f)=\varphi-\tfrac12$. The centreline is a fixed
+point, and it is \emph{repelling}: $|\dd\varphi'/\dd\varphi|=1/(1-2f)>1$. Every element off the
+centreline drifts toward its nearer wall, row after row, with no cross-streamline transport at
+all.
+
+\paragraph{The threshold.} Take $\varphi_0<\half$ (the near-wall half) and apply
+Eq.~\eqref{eq:transport} row after row. After $k$ rows, if not yet extracted,
+\begin{equation}
+\varphi_k-\tfrac12=\frac{\varphi_0-\tfrac12}{P(k)},\qquad P(k)=\prod_{i=1}^{k}\big(1-2f(i)\big).
+\end{equation}
+Extraction at row $k$ means $\varphi_{k-1}\le f(k)$, which (because $1-2f(k)>0$) is the same as
+$\big(\varphi_{k-1}-f(k)\big)/\big(1-2f(k)\big)\le0$, that is
+$\tfrac12+(\varphi_0-\tfrac12)/P(k)\le0$, that is
+\begin{equation}
+\varphi_0\le\tfrac12\big(1-P(k)\big).
+\end{equation}
+Since $P(k)$ decreases with $k$, the right side increases, so the element is extracted at some
+row $k\le N$ if and only if the condition holds at $k=N$:
+\begin{equation}
+\boxed{\,\varphi_0\le\tfrac12\big(1-P(N)\big)=\frac{F}{2}\,}
+\end{equation}
+(sealed inlet). By symmetry the far wall takes $\varphi_0\ge1-F/2$. The extracted fluid is
+exactly the outer $F/2$ of the flow on each side, total $F$, in agreement with the bookkeeping of
+Result~\ref{res:march}. The design code checks this by bisecting the map itself, requiring
+$|2\varphi_{\mathrm{crit}}-F|<10^{-6}$ (\texttt{critical\_phi}, validator M18).
+
+\paragraph{From fluid to particle.} The lemma is about fluid. The step to a rigid particle of
+radius $a$ is the exclusion premise of Result~\ref{res:steric-two}, which the lemma does not prove
+but assumes: the model carries the particle's centre on its streamline, and the centre cannot
+come within $a$ of the wall. The repelling map drives the centre's streamline toward the wall, and
+the centre can enter a lamina of width $\delta$ only if $a\le\delta$. So a particle with $a>\delta$
+is never extracted, whatever streamline it starts on, while a particle with $a\le\delta$ is carried
+like the fluid, and leaves with it if its centre starts in the outer $F/2$ of the flow on either
+side. This matches Dinh's expectation that the small particles are distributed like
+\vq{that of the fluid volume}~\cite[p.~917]{b5}. The size above which extraction is
+impossible is $\dcrit=2\delta$, so $\kster=2$: the selection is a sharp threshold in $a$, not a
+statistical position criterion. Appendix~B (C9) draws further consequences from the
+same lemma; the finite-particle displacement that the model's centre-carrying ignores is one of
+the three model gaps named in Section~\ref{sec:setup}.
+
+% -------------------------------------------------------------------------------------
+\Result{the design map: from a cutoff and a filtrate target to a geometry}\label{res:design-map}
+
+\paragraph{Setup.} A designer specifies a cutoff $D$ and a filtrate fraction $F$, together with
+the shape of the central channel, the depth, and the gap and post dimensions. The design code
+turns these into a row count and a width schedule. This result derives the three facts that
+make the map well defined.
+
+\paragraph{(a) The invariant-lamina schedule.} Choose the lamina width once, $\delta^*=D/\kappa$
+(Result~\ref{res:steric-two}, with the prefactor paired to the kernel, Result~\ref{res:depth-factor}).
+At row $i$ set
+\begin{equation}
+f(i)=\mathcal{K}\big(\delta^*/w_c(i)\big),
+\end{equation}
+where $\mathcal{K}$ is the declared kernel: the cubic $3x^2-2x^3$ (Result~\ref{res:skim-cubic})
+or the duct kernel $\Flam(x,\alpha_i)$ (Result~\ref{res:depth-factor}). Both kernels are strictly
+increasing in $x$ (the cubic by Result~\ref{res:skim-cubic}; $\Flam$ because it is the integral
+of a positive velocity), so inverting at row $i$ returns exactly $\delta^*$: the lamina is the same at every row, at any
+aspect ratio. The cutoff is too, wherever the prefactor is constant, that is on the plateau
+(Appendix~B, P-C8.1). At leading order,
+$\mathcal{K}(x)\approx c_2x^2$, so $f(i)\approx c_2(\alpha_i)\,\delta^{*2}/w_c(i)^2$; on the cubic
+branch ($c_2=3$) this is the corrected Xia rule, Eq.~\eqref{eq:r7}. This is the invariant-lamina
+schedule, called S1 in the design code (and S1$'$ at leading order).
+
+\paragraph{(b) The row count, and why it scales as $D^{-2}$.} The march (Result~\ref{res:march})
+stops at the first row where $P(i)\le1-F$. Two cases can be written in closed form.
+\emph{Constant central width} (Gifford): $f$ is the same at every row, and
+Eq.~\eqref{eq:Nconst} with $f\approx3\delta^{*2}/w_c^2$ gives, as $\delta^*/w_c\to0$,
+\begin{equation}
+N\,\delta^{*2}\;\to\;-\frac{w_c^2\ln(1-F)}{6}.
+\end{equation}
+\emph{The canonical taper} (cubic branch, leading order): narrow the central channel so that
+$w_c(i)^2=w_c(i-1)^2-6\delta^{*2}$, and take the row's fraction at the width arriving at it,
+$f(i)=3\delta^{*2}/w_c(i-1)^2$. Then $P(i)=w_c(i)^2/w_c(0)^2$ satisfies the march \emph{exactly}:
+\begin{equation}
+\big(1-2f(i)\big)P(i-1)=\Big(1-\frac{6\delta^{*2}}{w_c(i-1)^2}\Big)\frac{w_c(i-1)^2}{w_c(0)^2}
+=\frac{w_c(i-1)^2-6\delta^{*2}}{w_c(0)^2}=P(i).
+\end{equation}
+The march stops where $P(N)=1-F$, that is $w_c(N)=w_c(0)\sqrt{1-F}$, after
+\begin{equation}
+N=\frac{F\,w_c(0)^2}{6\,\delta^{*2}}\qquad\Longrightarrow\qquad N\,D^2=\frac{\kappa^2F\,w_c(0)^2}{6}.
+\end{equation}
+The design code writes the same construction for either kernel through the potential
+$\Psi(w)=w^2/c_2(h/w)$ ($\Psi=w^2/3$ on the cubic branch):
+\begin{equation}
+\Psi\big(w_c(i)\big)=\Psi\big(w_c(i-1)\big)-2\delta^{*2},\qquad
+P(i)=\frac{\Psi(w_c(i))}{\Psi(w_c(0))},\qquad
+N=\frac{F\,\Psi(w_c(0))}{2\delta^{*2}},
+\end{equation}
+by the same one-line check with $f(i)=\delta^{*2}/\Psi(w_c(i-1))$. In both cases, at fixed $F$ and fixed channel
+shape, $N\propto D^{-2}$: halving the cutoff quadruples the number of rows, because each row
+removes a fraction proportional to $\delta^{*2}$. (The schedule of~(a) evaluates the fraction at $w_c(i)$ rather than $w_c(i-1)$; that changes $N$
+only at relative order $f$. A larger difference comes from the kernel: Appendix~B, P-C8.2, reports
+the march on the exact kernel $0.26$--$0.55\%$ above this closed form, which is written for the
+leading-order schedule.)
+
+\paragraph{(c) The map is locally invertible.} On the plateau, where the prefactor is constant,
+the design variables $(\delta^*,N)$ map to the targets $(\dcrit,F)$ with
+$\dcrit=\kappa\,\delta^*$, independent of $N$, and $F=1-P(N)$. Treating $N$ as continuous
+(for a constant fraction, $F=1-(1-2f)^N$),
+\begin{equation}
+\frac{\partial F}{\partial N}=-(1-F)\ln(1-2f)>0 ,
+\qquad
+J=\begin{pmatrix}\partial\dcrit/\partial\delta^* & \partial\dcrit/\partial N\\[2pt]
+\partial F/\partial\delta^* & \partial F/\partial N\end{pmatrix}
+=\begin{pmatrix}\kappa & 0\\[2pt] \partial F/\partial\delta^* & \partial F/\partial N\end{pmatrix}.
+\end{equation}
+The Jacobian is lower-triangular with determinant $\kappa\,\partial F/\partial N\neq0$, so by the
+inverse function theorem the map has a local inverse: the cutoff fixes $\delta^*$, and the
+filtrate target then fixes $N$. This is \emph{local} invertibility and nothing more. Below the
+knee, where the prefactor depends on $\dcrit/w_c$, the zero entry fails (Appendix~B, C8).
+
+% -------------------------------------------------------------------------------------
+\Result{the resistance of a rectangular channel (Gifford's eqn~5) from the duct field}\label{res:resistance}
+
+\paragraph{Setup.} The closure~\eqref{eq:closure} needs the resistance of a channel segment of
+width $w_{\mathrm{ch}}$ ($w$ below, for brevity), depth $h$ and length $L$. Gifford \emph{et al.}\ use the rectangular-duct series, their
+eqn~(5), citing Yang \emph{et al.}\ \cite{b1,b6}. Here it is derived from the field
+of Result~\ref{res:depth-factor}.
+
+\paragraph{Derivation.} The total flow is the integral of Eq.~\eqref{eq:duct} over the section.
+The depth integral is Eq.~\eqref{eq:cm}, and across the width
+$\int_0^w\sin(k_my)\,\dd y=2w/(m\pi)$ for odd $m$, so
+\begin{equation}
+Q=\sum_{m\ \text{odd}}A_m\cdot\frac{2w}{m\pi}\cdot w\,c_m=\frac{8Gw^4}{\mu\pi^4}\sum_{m\ \text{odd}}\frac{c_m}{m^4}.
+\end{equation}
+The resistance is $R=\Delta P/Q=GL/Q$. Using $\sum_{\text{odd}}1/m^4=\pi^4/96$ to split the sum,
+$\sum_{\text{odd}}c_m/m^4=\alpha\pi^4/96-(2/\pi)\sum_{\text{odd}}\tanh(m\pi\alpha/2)/m^5$, and with
+$\alpha=h/w$,
+\begin{equation}
+R=\frac{\mu\pi^4L}{8w^4\sum_{\text{odd}}c_m/m^4}
+=\frac{12\,\mu L}{h\,w^3}\left[1-\frac{192\,w}{\pi^5h}\sum_{n\ \text{odd}}\frac{\tanh\!\big(n\pi h/2w\big)}{n^5}\right]^{-1},
+\label{eq:Rrect}
+\end{equation}
+which is Gifford's eqn~(5) with $w$ the width and $d=h$ the depth.
+
+\paragraph{Properties an implementer needs.}
+\emph{Either orientation.} The field can be expanded across either dimension (Brody expands it
+across the depth), so the same formula holds with $w$ and $h$ exchanged; Gifford \emph{et al.}\
+note that \vq{d and w can be reversed in eqn (5) without affecting its validity}~\cite[p.~4499]{b1}.
+The two orientations agree numerically, but the one with the \emph{smaller} side cubed and the
+larger side in the $\tanh$ argument converges fastest, because its $\tanh$ terms saturate. With
+$w_>=\max(w,h)$ and $w_<=\min(w,h)$:
+$R=\frac{12\mu L}{w_>\,w_<^3}\big[1-\frac{192\,w_<}{\pi^5w_>}\sum_{\text{odd}}\tanh(n\pi w_>/2w_<)/n^5\big]^{-1}$
+(the program's \texttt{R\_rect}; the design code's \texttt{r}).
+\emph{Limits.} For a thin slot ($w_<\ll w_>$) the sum is bounded while $w_</w_>\to0$, so
+$R\to12\mu L/(w_>\,w_<^3)$, the parallel-plate value. For a square duct, $R=28.4542\,\mu L/h^4$.
+\emph{Monotonicity.} At fixed depth, $R$ strictly decreases as the width grows. Proof: let
+$u_1$ and $u_2$ solve Eq.~\eqref{eq:stokes} (with $u=0$ on the walls) in a narrower section
+$\Omega_1$ inside a wider one $\Omega_2$. On $\Omega_1$ the difference $v=u_2-u_1$ satisfies
+$\nabla^2v=0$ with $v=u_2\ge0$ on the boundary of $\Omega_1$, so $v\ge0$ throughout $\Omega_1$ (the
+maximum principle for Laplace's equation). Hence
+$Q_2=\int_{\Omega_2}u_2\ge\int_{\Omega_1}u_2\ge\int_{\Omega_1}u_1=Q_1$, strictly because $u_2>0$ on
+$\Omega_2\setminus\Omega_1$. So each $R_s(i)$ corresponds to exactly one side width,
+found by bisection, as Gifford did: \vq{simply by adding a small amount to the value of $w_{\mathrm{s}}(i - 1)$ until the resultant value of $R_{\mathrm{s}}(i)$ (calculated using eqn (5)) is lowered sufficiently to satisfy eqn (4)}~\cite[p.~4498]{b1}.
+
+% -------------------------------------------------------------------------------------
+\Result{why the pressure equalises: imbalances decay geometrically along the ladder}\label{res:ladder}
+
+\paragraph{Setup.} Pressure equilibration is the premise of Results~8, 10 and~11. Gifford
+\emph{et al.}\ justify it physically: \vq{we use relatively wide ($\sim$20 $\mu$m) gaps (which present a relatively small amount of resistance to the flow of fluid that equilibrates this pressure, given main channel widths on the order of 100--150 $\mu$m)}~\cite[pp.~4497--4498]{b1}.
+This result makes the argument quantitative for a uniform ladder. Let $p_c(k)$ be the pressure at
+the central node of row $k$ and $p_s(k)$ at each side node (equal on both sides by symmetry). A
+central segment has conductance $g_c=1/R_c$, a side segment $g_s=1/R_s$, and each gap $g_g$.
+
+\paragraph{Derivation.} Kirchhoff's current law at the central and side nodes of row $k$:
+\begin{align}
+g_c\big[p_c(k-1)-2p_c(k)+p_c(k+1)\big]-2g_g\big[p_c(k)-p_s(k)\big]&=0,\\
+g_s\big[p_s(k-1)-2p_s(k)+p_s(k+1)\big]+g_g\big[p_c(k)-p_s(k)\big]&=0.
+\end{align}
+Divide the first by $g_c$ and the second by $g_s$ and subtract. The imbalance
+$d(k)=p_c(k)-p_s(k)$ obeys
+\begin{equation}
+d(k-1)-2d(k)+d(k+1)=\Gamma\,d(k),\qquad \Gamma=g_g\Big(\frac{2}{g_c}+\frac{1}{g_s}\Big)>0 .
+\end{equation}
+Try $d(k)=r^k$: $r-2+1/r=\Gamma$, that is
+\begin{equation}
+r+\frac1r=2+\Gamma,\qquad r=1+\frac{\Gamma}{2}-\sqrt{\Gamma+\frac{\Gamma^2}{4}}\in(0,1).
+\end{equation}
+The two roots multiply to $1$ and neither equals $1$ (that would need $\Gamma=0$), so one is $r<1$
+and the other $1/r$. (The remaining solutions of the full system, $r=1$ twice, are the common
+pressure field that drives the flow, with $p_c=p_s$.) An imbalance carried along the ladder
+therefore shrinks by the factor $r$ per row, and halves in
+\begin{equation}
+k_{1/2}=\frac{\ln2}{\ln(1/r)}\ \text{rows}.
+\end{equation}
+Wide gaps make $g_g$ large, hence $\Gamma$ large and $r\approx1/(\Gamma+2)$ small. For example, with
+$g_c=1$, $g_s=0.7$ and $g_g=3$, $\Gamma=10.29$, $r=0.0819$ and $k_{1/2}=0.28$ rows; a direct Kirchhoff
+solve of a $60$-row ladder decays by the same $r$.
+
+\paragraph{Scope.} This is the decay of an imbalance \emph{carried along} a uniform ladder, the
+quantity the companion preprint's half-life diagnostic measures (Appendix~B, C4, CQ2). It does
+not remove an imbalance that the outlet row itself \emph{holds}: that one is set at the boundary
+and decays upstream from it over a few $k_{1/2}$, so adding rows does not shrink it. What shrinks
+it is a smaller mismatch at the outlet, as when the same taper is spread over more rows
+(Result~\ref{res:decoupling}) or the run-outs are matched to the ladder's own split (Appendix~B,
+P-C4.3 and P-C8.3). A tapered
+ladder is not uniform, and its half-lives depend on the thickness of the wall each gap crosses,
+which the papers do not state.
+
+% =====================================================================================
+\section{How the proofs connect}
+\label{sec:connect}
+
+Every result descends from one of three first principles: Stokes flow between two walls (the
+parabola of Section~\ref{sec:setup}), Stokes flow in a rectangular duct (the field of
+Result~\ref{res:depth-factor}), and mass conservation with Kirchhoff's laws and pressure
+equilibration. Figure~\ref{fig:dag} shows
+the dependencies.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[font=\footnotesize]
+% ---- first principles (three roots) ----
+\node[root] (par)  at (-4.85,0) {\textbf{Stokes flow between two walls}\\[1pt] parabola $u=s(w-s)$};
+\node[root] (duct) at (0.2,0)   {\textbf{Stokes flow in a duct}\\[1pt] rectangular field};
+\node[root] (kir)  at (4.85,0)  {\textbf{Mass conservation,}\\[1pt] \textbf{Kirchhoff, PE} (R15)};
+% ---- cutoff chain ----
+\node[res]   (r1)  at (-6.7,-2.1) {Skim cubic (R1)\\[1pt] $f=3x^2-2x^3$};
+\node[res]   (r3)  at (-3.2,-2.1) {DLD cubic (R3)\\[1pt] $\varepsilon=3y^2-2y^3$};
+\node[res]   (r2)  at (-6.7,-4.1) {Invert (R2)\\[1pt] $\delta=w_c\sqrt{f/3}$};
+\node[res]   (r9)  at (-3.3,-4.1) {Depth factor (R9)\\[1pt] $\Kdth=\sqrt{3/c_2(\alpha)}$};
+\node[oplaw] (op)  at (-6.2,-6.3) {\textbf{Operating law} (R5)\\[1pt] $\dcrit=\kappa\,w_c\sqrt{\fgap/3}$};
+\node[res]   (r6)  at (-7.0,-8.4) {Exponents (R6)\\[1pt] $\beta=\tfrac12,\ \gamma=1$};
+\node[res]   (r7)  at (-4.0,-8.4) {Cross-width (R7)\\[1pt] $\fgap\propto w_c^{-2}$};
+% ---- yield and design chain ----
+\node[net]   (r14) at (-0.1,-2.1)  {Resistance (R14)\\[1pt] Gifford eqn (5)};
+\node[net]   (r10) at (3.5,-2.1)  {March (R10)\\[1pt] $\sigma'=\frac{\sigma+f}{1-2f}$};
+\node[net]   (r8)  at (6.4,-2.1)  {Outlet identity (R8)\\[1pt] $F=\frac{2R_c}{R_s+2R_c}$};
+\node[net]   (r12) at (0.2,-4.1)  {Transport lemma (R12)\\[1pt] extracted iff $\varphi_0\le F/2$};
+\node[net]   (r11) at (6.4,-4.1)  {Same $F$ (R11)\\[1pt] $1-P(N)=F_{\mathrm{outlet}}$};
+\node[net]   (r13) at (3.3,-6.3)  {Design map (R13)\\[1pt] $\delta^*$ fixed; $N\propto D^{-2}$};
+\node[font=\scriptsize, align=center] (dec) at (6.4,-6.3) {$\partial F/\partial\fgap=0$:\\ yield decoupled\\ from the cutoff};
+% ---- edges ----
+\draw[ed] (par) -- (r1);
+\draw[ed] (par) -- (r3);
+\draw[eq] (r1) -- node[elbl, above=1pt]{(R4)} (r3);
+\draw[ed] (r1) -- (r2);
+\draw[ed] (r2) -- node[elbl, left=2pt]{$\times\,\kster{=}2$} (op);
+\draw[ed] (duct) -- (r9);
+\draw[da] (r9) -- node[elbl, pos=0.3]{folded into $\kappa$} (op);
+\draw[ed] (op) -- (r6);
+\draw[ed] (op) -- (r7);
+\draw[ed] (duct) -- (r14);
+\draw[ed] (kir) -- (r10);
+\draw[ed] (kir) -- (r8);
+\draw[ed] (r14) -- node[elbl, above=1pt]{closure} (r10);
+\draw[ed] (r10) -- (r11);
+\draw[eq] (r8) -- (r11);
+\draw[ed] (r10) -- (r12);
+\draw[da] (r12) -- node[elbl, pos=0.25]{hard wall} (op);
+\draw[ed] (r10) -- (r13);
+\draw[ed] (r7) -- node[elbl, pos=0.5]{schedule} (r13);
+\draw[->, thick, gray] (r11) -- (dec);
+% ---- legend ----
+\begin{scope}[shift={(0.4,-7.85)}]
+  \draw[rounded corners, fill=white] (0,0) rectangle (3.9,-2.25);
+  \node[anchor=north west, font=\scriptsize\bfseries] at (0.08,-0.06) {Legend};
+  \node[root,  minimum width=5mm, minimum height=3mm, inner sep=0pt] at (0.35,-0.66) {};
+  \node[anchor=west, font=\scriptsize] at (0.62,-0.66) {first principle};
+  \node[res,   minimum width=5mm, minimum height=3mm, inner sep=0pt] at (0.35,-1.13) {};
+  \node[anchor=west, font=\scriptsize] at (0.62,-1.13) {cutoff chain};
+  \node[oplaw, minimum width=5mm, minimum height=3mm, inner sep=0pt] at (0.35,-1.60) {};
+  \node[anchor=west, font=\scriptsize] at (0.62,-1.60) {operating law};
+  \node[net,   minimum width=5mm, minimum height=3mm, inner sep=0pt] at (0.35,-2.07) {};
+  \node[anchor=west, font=\scriptsize] at (0.62,-2.07) {yield and design chain};
+\end{scope}
+\end{tikzpicture}
+\caption{Dependency structure of the fifteen results. Outline style encodes the class, so the
+figure reads in grayscale: doubled outline = first principle, thin solid = cutoff chain, heavy
+outline = operating law, dashed = yield and design chain. Solid arrows are derivations; dashed
+arrows mark a factor folded into the prefactor (R9) and the transport lemma's support for the
+steric factor (R12); double-headed arrows join identities (R4, and R8 with R11). The outlet
+identity (R8, R11) is provably independent of the gap fraction, so yield is decoupled from
+selectivity. Result~15 justifies the pressure-equilibration (PE) premise of the right-hand root.}
+\label{fig:dag}
+\end{figure}
+
+\noindent Reading the figure: the skim cubic (R1) and the DLD cubic (R3) are the same function
+(R4); inverting it (R2) gives the skim law; the steric factor (R5), backed by the transport lemma
+(R12), turns the lamina width into a particle-diameter cutoff, the operating law; its algebra
+gives the exponents (R6); holding the lamina fixed gives the cross-width rule (R7); and the
+finite-depth factor (R9), from the full duct field, is folded into the prefactor. On the right,
+mass bookkeeping gives the march (R10); the duct field's resistance (R14) closes it on geometry;
+the march and the outlet identity (R8) give the same filtrate fraction (R11); and the design map
+(R13) combines the invariant-lamina schedule with the march. The outlet identity carries no
+$\fgap$: that is the decoupling, a theorem rather than an assumption.
+
+% =====================================================================================
+\section{Provenance: first principles, literature, or both}
+\label{sec:prov}
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{@{}clp{3.7cm}p{5.0cm}@{}}
+\toprule
+\# & Result & Rests on & Published anchor \\
+\midrule
+1 & Skim cubic & integrate one parabola & form of Inglis eqn~(5) \cite{b17} \\
+2 & Skim law; exact root & series inversion; triple-angle identity & Inglis eqns~(6)--(9), checked \cite{b17} \\
+3 & DLD cubic & the same integral & Inglis eqns~(3)--(5) \cite{b17} \\
+4 & Unification & substitution (this work) & bridges \cite{b17} and \cite{b1} \\
+5 & $\kster=2$ & exclusion geometry; diameter $=2\times$ radius & Inglis $D_c=2\beta$; Davis; Yamada; Dinh main text \cite{b17,bdavis06,b15,b5} \\
+6 & Exponents; shift invariance & logarithmic differentiation & Hele-Shaw contrast: \cite{b13,bbrody} \\
+7 & Cross-width scaling & constant lamina width & Xia corrected eqn~(1) \cite{b3} \\
+8 & Outlet identity; decoupling & three premises; current divider & analogy \cite{b13}; companion \cite{bpre} \\
+9 & Depth factor & duct field (checked by substitution); a limit & field \cite{bbrody}; resistance \cite{b6} \\
+10 & March & mass conservation; PE & Gifford eqns~(1)--(4) \cite{b1} \\
+11 & Same $F$ & one line of algebra (this work) & --- \\
+12 & Transport lemma & an affine map (this work) & --- \\
+13 & Design map & Results 7, 10; inverse function theorem & Gifford's recursion; Xia's schedule \cite{b1,b3} \\
+14 & Resistance & the Result-9 field, integrated & Gifford eqn~(5); Yang eqn~(3) \cite{b1,b6} \\
+15 & PE decay & Kirchhoff; a linear recurrence & Gifford's PE rationale \cite{b1} \\
+\bottomrule
+\end{tabular}
+\caption{Provenance of each result. The middle column is what the proof uses; the right column is
+the published equation or statement each result reproduces, checks, unifies or relies on.}
+\label{tab:prov}
+\end{table}
+
+\noindent In words: every result is derived here from first principles, the integration of one
+velocity profile (Results~1, 3, 9, 14), series inversion and a trigonometric identity
+(Result~2), exclusion geometry (Result~5), logarithmic differentiation (Results~6, 7), and mass
+conservation with Kirchhoff's laws (Results~8, 10--13, 15). Eleven of them also reproduce,
+check or rest on a specific published equation or statement. Four are this work's own
+closed-form contributions: the unification of the CIF and DLD cubics (Result~4), the equality of
+the march and the outlet identity (Result~11), the transport lemma (Result~12), and the
+assembly of the design map (Result~13) from published parts. The two results that use a Fourier
+series (9 and 14) state it and check it by substitution rather than re-deriving it.
+
+% =====================================================================================
+\section{For implementers: a CIF generator from these results}
+\label{sec:implement}
+
+A device generator needs nothing beyond the results above. In outline, with every step's source:
+\begin{enumerate}
+\item \textbf{Declare one kernel pair} (Result~\ref{res:depth-factor}, corollary): the cubic
+$3x^2-2x^3$ with $\kappa_g=4.9138$, or the duct kernel $\Flam$ with $\kappa_F$. Use it at all
+three call sites below. The two are not equals: $\kappa_g$ is fitted, while $\kappa_F=5.798$ is
+transferred from it at the assumed $80~\mu$m calibration depth, and the glossary directs the cubic
+pair until that depth is measured.
+\item \textbf{Lamina target:} $\delta^*=D/\kappa$ (Result~\ref{res:steric-two}).
+\item \textbf{For each row} $i=1,2,\dots$: take $w_c(i)$ from the chosen shape and set
+$f(i)=\mathcal K(\delta^*/w_c(i))$ (Result~\ref{res:design-map}a). Stop with an error if
+$\delta^*/w_c(i)\ge\half$ (the two laminae would meet) or if $f(i)\notin(0,\half)$.
+\item \textbf{March:} $\sigma(i)=(\sigma(i-1)+f(i))/(1-2f(i))$, $P(i)=(1-2f(i))P(i-1)$,
+$S(i)=S(i-1)+f(i)P(i-1)$, starting from $\sigma(0)=S(0)=0$, $P(0)=1$ (Result~\ref{res:march}).
+\item \textbf{Closure:} $R_s(i)=R_c(i)/\sigma(i)$ with $R$ from Eq.~\eqref{eq:Rrect}, sorted
+orientation; find $w_s(i)$ by bisection, which is safe because $R$ is strictly decreasing in
+width (Result~\ref{res:resistance}).
+\item \textbf{Stop} at the first row with $P(i)\le1-F$; that row is $N$ (Result~\ref{res:march}).
+\item \textbf{Check:} $|P+2S-1|$ at round-off; $1-P(N)=2R_c/(R_s(N)+2R_c)$
+(Result~\ref{res:march-outlet}); the inverse map~\eqref{eq:inverse} returns every $f(i)$;
+bisecting the transport map gives $\varphi_{\mathrm{crit}}=F/2$ (Result~\ref{res:transport});
+the lamina at every row equals $\delta^*$; and the gap conductance makes the per-row decay $r$ of
+Result~\ref{res:ladder} small.
+\end{enumerate}
+
+\paragraph{Test values.} An implementation should reproduce these (all dimensionless):
+\begin{center}
+\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+Quantity & Input & Value \\
+\midrule
+exact root~\eqref{eq:viete} & $f=10^{-4}$ & $x=0.005784668$ \\
+ & $f=5.8\times10^{-4}$ & $x=0.013969638$ \\
+ & $f=0.1$ & $x=0.195800106$ \\
+series coefficients & --- & $a_1=0.577350$, $a_2=0.111111$, \\
+ & & $a_3=0.053458$, $a_4=0.032922$ \\
+$c_2$, $\Kdth$~\eqref{eq:c2} & $\alpha=0.8$ & $c_2=3.805429$, $\Kdth=0.887889$ \\
+ & $\alpha=80/150$ & $c_2=4.562001$, $\Kdth=0.810929$ \\
+$\Flam$~\eqref{eq:ductseries} & $\alpha=0.8$, $x=0.01$ & $3.746205\times10^{-4}$ \\
+ & $\alpha=0.8$, $x=0.2$ & $0.115055$ \\
+square duct~\eqref{eq:Rrect} & $w=h$ & $R\,h^4/(\mu L)=28.454154$ \\
+march~\eqref{eq:march} & $f=10^{-4}$, $5000$ rows & $P=0.367843$, $\sigma=0.859277$, $F=0.632157$ \\
+ladder decay (Result~\ref{res:ladder}) & $g_c=1$, $g_s=0.7$, $g_g=3$ & $r=0.081942$, $k_{1/2}=0.277$ rows \\
+\bottomrule
+\end{tabular}
+\end{center}
+For the march example, $2\sigma/(1+2\sigma)=0.632157$ as well (Result~\ref{res:march-outlet}).
+
+% =====================================================================================
+\section{How every line was checked}
+\label{sec:verify}
+
+\paragraph{Machine proofs.} The script \texttt{appA\_proofs.py}, distributed with this appendix,
+re-proves every result with three independent tools. SymPy does the exact algebra: the integrals
+of Results~1, 3, 9 and~14, the coefficient equations and their solutions in Result~2, the
+triple-angle substitution behind Eq.~\eqref{eq:viete}, the cosine coefficients of the deep limit,
+the solution of the three premises of Result~8, Gifford's eqns~(2)--(4), and the characteristic
+polynomial of Result~15. The Z3 prover establishes the polynomial and rational identities and
+inequalities over the real numbers: the monotonicity of the cubic, the outlet identity from its
+premises, the inductive step of the mass identity, the inverse map, the equality of Result~11,
+the transport map and its threshold, the canonical-taper step, and the ladder root. Forty-digit
+arithmetic evaluates the series of Result~9 with exact tails, and computes $c_2$ from two
+independent expansions of the duct field, one across the width and Brody's across the depth,
+which agree to $10^{-12}$. Randomised checks run the march, the inverse map and the transport
+lemma on hundreds of schedules. Negative controls feed deliberately wrong statements (among
+them the June 2026 edition's sub-percent claim for Inglis's worked values and its
+$0.890/0.951/0.980$ triplet as the canonical factor) through the same machinery and require
+them to fail. At this revision the script runs 88 checks, all passing, and 6 controls, all
+failing as they should.
+
+\paragraph{Quotations and numbers.} Every quotation is typeset with one macro and followed by
+its page. The companion script \texttt{appA\_check.py} extracts each one and finds it, word for
+word, on the cited page of the source PDF (the Davis thesis against its text layer). It also
+checks every printed number that the glossary or Appendix~B also prints against the generated
+value they share, and checks that the results the glossary cites by label (Results~2, 4 and~6)
+and those Appendix~B cites by number (Results~1--9) carry the content cited.
+
+\paragraph{What changed from the June 2026 edition.} Results~1--9 keep their numbers and their
+derivations. The corrections are: Inglis writes the first-streamline width as Greek $\beta$, not
+Latin $b$; the leading law is $2$--$7\%$ from Inglis's worked DLD values, not sub-percent; the
+leading-law accuracy is stated with its range; the Reynolds number is small at the gap, not in
+the channel; the finite-depth factor makes the lamina narrower, not wider, is $2$--$19\%$ rather
+than the few percent the June edition stated, and is defined as the $f\to0$ limit $\sqrt{3/c_2}$ (hence
+$0.8879/0.9500/0.9794$ rather than $0.890/0.951/0.980$); Yamada's exclusion is stated for walls,
+as Yamada states it; the Hele-Shaw remark now says when each exponent holds; the calibration
+depth is described as the shallowest the paper reports, with no claim about which depth is more
+probable; and the
+decoupling lemma is worded as Appendix~B words it (no information about the local fraction or the
+over-extraction, rather than about the cutoff). Results~10--15, the exact root, the
+shift-invariance corollary, the second expression for $c_2$ and the kernel pairing are new.
+
+% =====================================================================================
+\begin{thebibliography}{99}
+
+\bibitem{b1}
+S.~C. Gifford, A.~M. Spillane, S.~M. Vignes, and S.~S. Shevkoplyas,
+``Controlled incremental filtration: a simplified approach to design and fabrication of
+high-throughput microfluidic devices for selective enrichment of particles,''
+\emph{Lab on a Chip} \textbf{14}, 4496--4505 (2014). doi:10.1039/C4LC00785A.
+
+\bibitem{b2}
+H.~Xia, B.~C. Strachan, S.~C. Gifford, and S.~S. Shevkoplyas,
+``A high-throughput microfluidic approach for 1000-fold leukocyte reduction of platelet-rich plasma,''
+\emph{Scientific Reports} \textbf{6}, 35943 (2016). doi:10.1038/srep35943. Pages are cited in the
+PDF's own numbering.
+
+\bibitem{b3}
+H.~Xia, B.~C. Strachan, S.~C. Gifford, and S.~S. Shevkoplyas,
+``Author Correction: A high-throughput microfluidic approach for 1000-fold leukocyte reduction of
+platelet-rich plasma,'' \emph{Scientific Reports} \textbf{12}, 14689 (2022).
+doi:10.1038/s41598-022-18449-5.
+
+\bibitem{b5}
+M.~T.~P. Dinh, A.~Mukhamedshin, K.~Abhishek, F.~W. Lam, S.~C. Gifford, and S.~S. Shevkoplyas,
+``Separation of platelets by size in a microfluidic device based on controlled incremental filtration,''
+\emph{Lab on a Chip} \textbf{24}, 913--923 (2024). doi:10.1039/D3LC00842H.
+
+\bibitem{b4}
+D.~L. Lezzar \emph{et al.},
+``A high-throughput microfluidic device based on controlled incremental filtration to enable
+centrifugation-free, low extracorporeal volume leukapheresis,''
+\emph{Scientific Reports} \textbf{12}, 13798 (2022). doi:10.1038/s41598-022-16748-5. Pages are
+cited in the PDF's own numbering.
+
+\bibitem{bpre}
+A.~H. Routt,
+``A closed-form outlet identity and open-source reference implementation for controlled incremental filtration,''
+\emph{engrXiv} (2026). doi:10.31224/7152.
+
+\bibitem{b17}
+D.~W. Inglis, J.~A. Davis, R.~H. Austin, and J.~C. Sturm,
+``Critical particle size for fractionation by deterministic lateral displacement,''
+\emph{Lab on a Chip} \textbf{6}, 655--658 (2006). doi:10.1039/B515371A.
+
+\bibitem{b18}
+D.~W. Inglis and N.~Herman,
+``A scalable approach for high throughput branch flow filtration,''
+\emph{Lab on a Chip} \textbf{13}, 1724--1731 (2013). doi:10.1039/C3LC50192B.
+
+\bibitem{bdavis06}
+J.~A. Davis, D.~W. Inglis, K.~J. Morton, D.~A. Lawrence, L.~R. Huang, S.~Y. Chou, J.~C. Sturm,
+and R.~H. Austin,
+``Deterministic hydrodynamics: taking blood apart,''
+\emph{Proceedings of the National Academy of Sciences} \textbf{103}, 14779--14784 (2006).
+doi:10.1073/pnas.0605967103.
+
+\bibitem{b22}
+J.~A. Davis,
+\emph{Microfluidic Separation of Blood Components through Deterministic Lateral Displacement},
+PhD thesis, Princeton University (2008). Pages are the thesis's printed page numbers.
+
+\bibitem{b15}
+M.~Yamada and M.~Seki,
+``Hydrodynamic filtration for on-chip particle concentration and classification utilizing microfluidics,''
+\emph{Lab on a Chip} \textbf{5}, 1233--1239 (2005). doi:10.1039/B509386D.
+
+\bibitem{b13}
+K.~W. Oh, K.~Lee, B.~Ahn, and E.~P. Furlani,
+``Design of pressure-driven microfluidic networks using electric circuit analogy,''
+\emph{Lab on a Chip} \textbf{12}, 515--545 (2012). doi:10.1039/C2LC20799K.
+
+\bibitem{b6}
+S.~Yang, A.~\"Undar, and J.~D. Zahn,
+``A microfluidic device for continuous, real time blood plasma separation,''
+\emph{Lab on a Chip} \textbf{6}, 871--880 (2006). doi:10.1039/B516401J.
+
+\bibitem{bbrody}
+J.~P. Brody, P.~Yager, R.~E. Goldstein, and R.~H. Austin,
+``Biotechnology at low Reynolds numbers,''
+\emph{Biophysical Journal} \textbf{71}, 3430--3441 (1996).
+
+\end{thebibliography}
+
+\end{document}

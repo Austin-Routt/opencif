@@ -1,0 +1,18 @@
+# A leukocyte-depletion design inside the envelope: D 7 um, F 0.9, constant-shear taper 180 -> 108 um (u_min 0.039),
+# a 100 um deep process with 25 um gaps between round 40 um posts so the gaps stay sub-dominant (M13 0.035 < 0.05),
+# the packing arms head sealing gap 1 (Xia's hairpins cannot seal it at these targets), paperclip
+# legs fitted to a 25 x 75 mm slide (no leg count fits the 20 x 40 mm chip first tried: five legs need 58.8 x 18.0 mm),
+# teardrop outlet.  Strict gates.
+# (Posts are stadiums elongated ACROSS the flow, post_width >= post_length; the earlier 90 x 40 um posts along the flow
+# could not be drawn as stadiums.)
+# (The ring outlet cannot carry this device's ~1.8 mm wide filtrate lead around 1 mm ports: the build refuses it.)
+name: wbc_paperclip_teardrop
+targets: {cutoff_um: 7.0, filtrate_fraction: 0.9}
+process: {depth_um: 100, gap_um: 25, post_length_um: 40, post_width_um: 40, min_feature_um: 16}
+chip: {width_mm: 25, length_mm: 75, margin_um: 1000}
+centre_channel: {taper: constant_shear, width_in_um: 180, width_min_um: 108}
+layout: {style: paperclip, legs: auto}
+meander: {enabled: true, style: pack, wall_um: 41, seal: require}
+inlet: {style: plain, port_radius_um: 750}
+outlet: {style: teardrop, port_radius_um: 1000, centre_port_radius_um: 1000}
+gates: {mode: strict}

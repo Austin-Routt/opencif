@@ -1,0 +1,118 @@
+head width: 6600 um, the narrowest that seals gap 1 within 0.3 to 1 times the available 10000 um (+3%)
+{
+ "N": 818,
+ "NM": 72,
+ "F_design": 0.5002487410811824,
+ "sealed": true,
+ "D_um": 4.0,
+ "kernel_pair": {
+  "kernel": "cubic",
+  "f_of_x": "f = 3x^2 - 2x^3, x = delta/w_c (delta/w_c < 1/2)",
+  "cutoff": "D = kappa_g delta*",
+  "kappa_g": 4.9138,
+  "kappa_ci": [
+   4.75,
+   5.078
+  ],
+  "plateau_u": 0.035,
+  "foot_u": 0.012,
+  "hill_below_knee": {
+   "kmax": 5.568,
+   "u_half": 0.01651,
+   "n": 1.791
+  },
+  "source": "CIF_v2 v2.1.0 Pairing (byte-frozen, opencif/reference); Hill fit: glossary macros"
+ },
+ "seal_refusal": null,
+ "outlet_refusal": null,
+ "preflight_refusal": null,
+ "envelope_failures": [],
+ "notes": [
+  "head width: 6600 um, the narrowest that seals gap 1 within 0.3 to 1 times the available 10000 um (+3%)",
+  "measured on the drawing: every side segment, head unit length and width, U-turn side and centre arc, outlet lead, gap opening and centre width.  Taken from the design (not measured): the post length across the flow (gap length l_g) and so the side channels' inner edge, the radii of the head and outlet arcs (their widths are measured), the head rows' centre-path lengths, and any off-chip tubing."
+ ],
+ "gates": {
+  "M13_gap_dominance_max": 0.023994511916866877,
+  "M13_ok": true,
+  "Re_max": 5.555555555555556,
+  "Re_ok": true,
+  "Re_gap_max": 0.0026826670621512465,
+  "Re_gap_row": 805,
+  "Re_gap_row1_cifv2": 0.0025925266233216408,
+  "Re_delta_max": 0.0046806363285571365,
+  "Re_delta_row": 1,
+  "Re_delta_row1": 0.0046806363285571365,
+  "stokes_ok": true,
+  "Re_gap_planned_max": 0.0026826670621512465,
+  "Re_delta_planned_max": 0.0046806363285571365,
+  "f_design_max": 0.0006277706535873442,
+  "f_planned_max": 0.0006277706535873442,
+  "f_calibration_cap": 0.000576,
+  "f_beyond_calibration": true,
+  "f_soft": 0.0005,
+  "f_above_soft": true,
+  "lamina_over_depth": 0.008140339452155154,
+  "lamina_limit": 0.1,
+  "lamina_ok": true,
+  "lamina_over_depth_planned_max": 0.008140339452155176,
+  "lamina_all_rows_ok": true,
+  "taper_rate_max": 0.000856005823044401,
+  "taper_rate_row": 805,
+  "taper_rate_limit": 0.01,
+  "taper_ok": true,
+  "taper_pitch_um": 46.0,
+  "P8": {
+   "inlet_Re_limit": 1.0,
+   "at_auditor_flow": {
+    "flow_uL_min": 5.0,
+    "inlet_Re": 0.9259259259259259,
+    "inlet_Re_within_limit": true,
+    "naive_Le_um": 4.1152263374485605,
+    "naive_Le_over_half_pitch": 0.17892288423689393,
+    "passes": true
+   },
+   "at_design_flow": {
+    "flow_uL_min": 30.0,
+    "inlet_Re": 5.555555555555556,
+    "inlet_Re_within_limit": false,
+    "naive_Le_um": 24.69135802469136,
+    "naive_Le_over_half_pitch": 1.0735373054213635,
+    "passes": false
+   },
+   "status": "diagnostic only, not an audit and not gated (docs/LIMITATIONS.md 6): the two criteria of CIF_v2's physics auditor check P8, computed from the design (CIF_v2's auditor is not run on the exported mask; opencif's own drawn-mask checks are assessment.status.drawn_mask_assessment) at the auditor's default operating point (5 uL/min) and at the design flow; its 0.05 Re D_h is the entrance length spec v5, the glossary and CIF_v2 S16-c call wrong in this regime, and its Re limit 1.0 is CIF_v2's settable default (App. B prints no value), not the design envelope's (Re_max = 10, M14)"
+  },
+  "Re_any_channel_bound": 8.410428931875527,
+  "dean_leading_term_bound": 0.0018446971937065705,
+  "dean_note": "Dean's leading term 0.03058 (K/576)^2, K = 2 Re^2 a/R, at Re = Re_any_channel_bound and a/R = 1 (a: half-width in the plane of the bend): an order-of-magnitude screening estimate for every bend, not a validated bound (Dean's result is for a circular pipe; no per-bend a/R or 3-D solve); Re_any_channel_bound = 2 rho Q/(mu (h + F_min - 0.1 um)), every channel being at least the DRC's tested width",
+  "fluid": {
+   "rho_kg_m3": 1000.0,
+   "mu_Pa_s": 0.001,
+   "note": "water; the Reynolds gates scale with rho/mu"
+  },
+  "Le_over_Lambda_L": 1.4357546374857066,
+  "plateau_u_min": 0.05,
+  "plateau_ok": true,
+  "plateau_rows_in_knee": 0,
+  "plateau_F_share_in_knee": 0.0,
+  "cutoff_band_um": {
+   "band_um": [
+    3.8666612397736984,
+    4.133664373804388
+   ],
+   "basis": "on the plateau: the kappa_g interval x delta*",
+   "retention_side": [
+    3.8666612397736984,
+    4.133664373804388
+   ],
+   "passage_edge_below_knee": null,
+   "c7_band_constant_lamina": null,
+   "kappa_at_passage_edge": null,
+   "method": "on the plateau (u_min >= 0.035): the kappa_g interval x delta*.  Below it the record uses App. B P-C7.1 (the frozen Hill fit; glossary \\hillKmax, \\hillUhalf, \\hillN): band [kappa(u) delta*, kappa_g delta*], plateau-anchored (App. B C7 CQ3)"
+  },
+  "kappa_band_um": [
+   3.8666612397736984,
+   4.133664373804388
+  ]
+ }
+}
+[test] outlet_exp_domain called 1 times; ratios [np.float64(2.194)]

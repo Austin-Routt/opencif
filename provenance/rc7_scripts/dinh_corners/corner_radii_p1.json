@@ -1,0 +1,218 @@
+{
+ "method": "rc7 (A. H. Routt, 00:23: \"all inner corners that impact particle flow are necessarily still rounded\"): the rounding of\nevery right-angle corner of the drawn head on Dinh Fig. 2B's first panel, on the device (the image) and on the mask, on\nthe trace record's own registration (its chamfer map; nothing re-fitted).",
+ "panel": "p1",
+ "record": "provenance/rc7_traces/results/dinh/dinh_results_rc7.json",
+ "dxf": "runs/dinh2024_v1_depicted/dinh2024_v1_depicted.dxf",
+ "corners": [
+  {
+   "apex_um": [
+    41.0,
+    91.50024202550985
+   ],
+   "kind": "fluid",
+   "turn_deg": -89.99730168838171,
+   "r_mask_um": 7.012362631250649,
+   "d_mask_um": 2.904615706142302,
+   "r_image_um": 1.2867328367300792,
+   "d_image_um": 0.5329821921244043,
+   "image_apex_minus_mask_apex_um": 22.796654361079636,
+   "edge_tag": "island"
+  },
+  {
+   "apex_um": [
+    41.0,
+    -91.5
+   ],
+   "kind": "fluid",
+   "turn_deg": -90.0,
+   "r_mask_um": 7.007278823663572,
+   "d_mask_um": 2.9025099240912398,
+   "r_image_um": 17.885586430548116,
+   "d_image_um": 7.408452470529226,
+   "image_apex_minus_mask_apex_um": 6.4843775212577,
+   "edge_tag": "island"
+  },
+  {
+   "apex_um": [
+    151.0,
+    -91.5
+   ],
+   "kind": "fluid",
+   "turn_deg": -90.0,
+   "r_mask_um": 7.007278823663572,
+   "d_mask_um": 2.9025099240912398,
+   "r_image_um": 6.304990899977393,
+   "d_image_um": 2.611612741409583,
+   "image_apex_minus_mask_apex_um": 3.9265290420559187,
+   "edge_tag": "island"
+  },
+  {
+   "apex_um": [
+    -14.0,
+    -37.50295848114177
+   ],
+   "kind": "wall",
+   "turn_deg": 89.97766771078246,
+   "r_mask_um": 11.009376835855544,
+   "d_mask_um": 4.560233198687559,
+   "r_image_um": 22.517824642776404,
+   "d_image_um": 9.327188362177083,
+   "image_apex_minus_mask_apex_um": 8.464744887470797,
+   "edge_tag": "channel"
+  },
+  {
+   "apex_um": [
+    -14.0,
+    37.74468554673182
+   ],
+   "kind": "wall",
+   "turn_deg": 89.63305234248773,
+   "r_mask_um": 10.599105531317376,
+   "d_mask_um": 4.390293260095348,
+   "r_image_um": 6.948357318342433,
+   "d_image_um": 2.8781038374717856,
+   "image_apex_minus_mask_apex_um": 3.281903695754631,
+   "edge_tag": "channel"
+  },
+  {
+   "apex_um": [
+    14.0,
+    37.5
+   ],
+   "kind": "wall",
+   "turn_deg": 90.0,
+   "r_mask_um": 11.01429917338938,
+   "d_mask_um": 4.562272097652652,
+   "r_image_um": 14.025387920357876,
+   "d_image_um": 5.809505894156012,
+   "image_apex_minus_mask_apex_um": 1.3618256281215595,
+   "edge_tag": "island"
+  },
+  {
+   "apex_um": [
+    14.0,
+    -37.5
+   ],
+   "kind": "wall",
+   "turn_deg": 89.99999999999994,
+   "r_mask_um": 11.010916060834605,
+   "d_mask_um": 4.56087076654943,
+   "r_image_um": 7.849070304053489,
+   "d_image_um": 3.251191371958869,
+   "image_apex_minus_mask_apex_um": 6.7498453360165245,
+   "edge_tag": "island"
+  },
+  {
+   "apex_um": [
+    69.0,
+    119.50099657509611
+   ],
+   "kind": "wall",
+   "turn_deg": 89.97620997536339,
+   "r_mask_um": 10.012154944920972,
+   "d_mask_um": 4.147170366767116,
+   "r_image_um": 7.334377169361457,
+   "d_image_um": 3.037998495109107,
+   "image_apex_minus_mask_apex_um": 2.8945536273623675,
+   "edge_tag": "channel"
+  },
+  {
+   "apex_um": [
+    95.99967100199044,
+    37.5
+   ],
+   "kind": "wall",
+   "turn_deg": 89.9918414806985,
+   "r_mask_um": 11.012483925071338,
+   "d_mask_um": 4.561520197180244,
+   "r_image_um": 14.4114077713769,
+   "d_image_um": 5.969400551793334,
+   "image_apex_minus_mask_apex_um": 1.6870515870792722,
+   "edge_tag": "island"
+  },
+  {
+   "apex_um": [
+    96.0,
+    119.49947830260881
+   ],
+   "kind": "wall",
+   "turn_deg": 90.02379002463661,
+   "r_mask_um": 5.03889858088789,
+   "d_mask_um": 2.087180131626307,
+   "r_image_um": 4.374891644882272,
+   "d_image_um": 1.8121394532229758,
+   "image_apex_minus_mask_apex_um": 4.726795355435711,
+   "edge_tag": "channel"
+  },
+  {
+   "apex_um": [
+    96.0,
+    -91.5
+   ],
+   "kind": "wall",
+   "turn_deg": 90.0,
+   "r_mask_um": 5.029244294436643,
+   "d_mask_um": 2.0831811952431654,
+   "r_image_um": 7.463050453034465,
+   "d_image_um": 3.0912967143215475,
+   "image_apex_minus_mask_apex_um": 3.590475625956565,
+   "edge_tag": "island"
+  },
+  {
+   "apex_um": [
+    96.0,
+    -37.5
+   ],
+   "kind": "wall",
+   "turn_deg": 90.0,
+   "r_mask_um": 11.011135854755056,
+   "d_mask_um": 4.560961808172207,
+   "r_image_um": 31.52495449988697,
+   "d_image_um": 13.058063707047918,
+   "image_apex_minus_mask_apex_um": 8.206093112849494,
+   "edge_tag": "island"
+  },
+  {
+   "apex_um": [
+    96.0006125132494,
+    91.5
+   ],
+   "kind": "wall",
+   "turn_deg": 90.0081585193015,
+   "r_mask_um": 5.0200117192982985,
+   "d_mask_um": 2.0793569374052345,
+   "r_image_um": 18.142932997894132,
+   "d_image_um": 7.515048908954108,
+   "image_apex_minus_mask_apex_um": 4.118394893874091,
+   "edge_tag": "island"
+  },
+  {
+   "apex_um": [
+    124.0,
+    37.5
+   ],
+   "kind": "wall",
+   "turn_deg": 90.0,
+   "r_mask_um": 11.01429917338937,
+   "d_mask_um": 4.562272097652648,
+   "r_image_um": 14.540081055049908,
+   "d_image_um": 6.022698771005774,
+   "image_apex_minus_mask_apex_um": 1.8802567954531437,
+   "edge_tag": "island"
+  },
+  {
+   "apex_um": [
+    124.0,
+    -37.5
+   ],
+   "kind": "wall",
+   "turn_deg": 89.99999999999994,
+   "r_mask_um": 11.010916060834601,
+   "d_mask_um": 4.560870766549428,
+   "r_image_um": 21.874458224411363,
+   "d_image_um": 9.06069726611488,
+   "image_apex_minus_mask_apex_um": 3.4822630673892103,
+   "edge_tag": "island"
+  }
+ ]
+}

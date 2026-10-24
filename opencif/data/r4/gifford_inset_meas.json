@@ -1,0 +1,47 @@
+{
+ "scale_um_per_px": 2.803738317757009,
+ "angle_deg": -45.0,
+ "positions_px": {
+  "leg2_wall_out": 153.0,
+  "leg2_post_out_L": 197.0,
+  "leg2_post_in_L": 217.5,
+  "leg2_post_in_R": 254.0,
+  "leg2_post_out_R": 274.0,
+  "leg2_wall_in": 318.0,
+  "leg4_wall_in": 382.0,
+  "leg4_post_out_L": 490.0,
+  "leg4_post_out_R": 566.0,
+  "leg4_wall_out": 674.0
+ },
+ "n_windows": {
+  "leg2_wall_out": 1,
+  "leg2_post_out_L": 2,
+  "leg2_post_in_L": 2,
+  "leg2_post_in_R": 2,
+  "leg2_post_out_R": 3,
+  "leg2_wall_in": 3,
+  "leg4_wall_in": 3,
+  "leg4_post_out_L": 3,
+  "leg4_post_out_R": 3,
+  "leg4_wall_out": 1
+ },
+ "uncertainty_um": 5.6,
+ "leg2_side_L_um": 123.4,
+ "leg2_side_R_um": 123.4,
+ "leg2_centre_um": 102.3,
+ "wall_between_legs_um": 179.4,
+ "leg4_side_L_um": 302.8,
+ "leg4_side_R_um": 302.8,
+ "row_pitch_um": [
+  46.04,
+  46.04,
+  46.04,
+  46.03
+ ],
+ "row_pitch_um_mean": 46.04,
+ "post_across_flow_um_line_centres": [
+  57.5,
+  56.1
+ ],
+ "check": "leg 4 side channels at the outlet end: design 300 um"
+}

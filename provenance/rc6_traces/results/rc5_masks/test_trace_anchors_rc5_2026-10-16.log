@@ -1,0 +1,45 @@
+ok     L1 code stamp  56e1980d8a064b35 (anchors 56e1980d8a064b35)
+ok     L2 raster dinh5-000.png  a21e2e3ce0710e32
+ok     L2 raster gif5-001.png  e70a8b38b87f9639
+ok     L2 raster xia5-000.png  e9fb7fbb348567d3
+ok     L2 Dinh Fig. 2B bar rows 470-490  46.906 px (full pixels 46)
+ok     L2 Dinh Fig. 2B bar rows 952-972  46.906 px (full pixels 46)
+ok     L2 Dinh Fig. 2B bar rows 1436-1456  46.906 px (full pixels 46)
+ok     L2 Dinh Fig. 2B bar rows 1920-1940  46.906 px (full pixels 46)
+ok     L2 Gifford inset bar  107.520 px
+ok     L2 Xia panel-i bar  129.113 px (1.9363 µm/px)
+ok     L2 Xia printed-width scale  1.8028 µm/px (centre 165.66 px at 300 µm, 82.46 px at 150 µm)
+ok     L2 Xia leg spacing (Fig. 3a 901 ± 28 µm) at the printed scale  904.4 µm (at the bar: 971.4 µm)
+ok     L2 Xia scale from the loop arcs' curvature (panel d vs Fig. 3a's leg axes)  1.7868 ± 0.0045 µm/px over 7 arcs (the bar: 1.936)
+ok     L3 dinh_fig2B_p4_outlet__shipped (recorded) V5 along  0.9782 (recorded range 0.970-0.990)
+ok     L3 dinh_fig2B_p3_linear__shipped (recorded) V5 along  0.9800 (recorded range 0.970-0.990)
+ok     L3 dinh_fig2B_p2_transition__shipped (recorded) V5 along  0.9736 (recorded range 0.960-0.985)
+   (shipped: 163 s)
+ok     L3 dinh_fig2B_p4_outlet__gp26 V1 feature vs chamfer  along -0.16, across -0.09 px
+ok     L3 dinh_fig2B_p4_outlet__gp26 V2 nulls  median 0.54 µm; half pitch 1.83, 5 µm across 4.24 (both >= 2.0 x the median)
+ok     L3 dinh_fig2B_p4_outlet__gp26 median / p90  0.54 / 1.57 µm (limits 0.8 / 2.0)
+ok     L3 dinh_fig2B_p4_outlet__gp26 V5 scale  along 0.9981, across 1.0024 (limits 0.990-1.010)
+ok     L3 dinh_fig2B_p3_linear__gp26 V1 feature vs chamfer  along -0.02, across 0.10 px
+ok     L3 dinh_fig2B_p3_linear__gp26 V2 nulls  median 0.42 µm; half pitch 2.57, 5 µm across 3.82 (both >= 2.0 x the median)
+ok     L3 dinh_fig2B_p3_linear__gp26 median / p90  0.42 / 0.93 µm (limits 0.7 / 1.5)
+ok     L3 dinh_fig2B_p3_linear__gp26 V5 scale  along 1.0017, across 0.9955 (limits 0.990-1.010)
+ok     L3 dinh_fig2B_p2_transition__gp26 V1 feature vs chamfer  along 0.01, across -0.15 px
+ok     L3 dinh_fig2B_p2_transition__gp26 V2 nulls  median 0.78 µm; half pitch 2.20, 5 µm across 4.07 (both >= 2.0 x the median)
+ok     L3 dinh_fig2B_p2_transition__gp26 median / p90  0.78 / 2.52 µm (limits 1.0 / 3.0)
+ok     L3 dinh_fig2B_p2_transition__gp26 V5 scale  along 0.9884, across 1.0055 (limits 0.985-1.015)
+ok     L3 dinh_fig2B_p1_head__gp26 V1 feature vs chamfer  along -1.09, across 0.18 px
+ok     L3 dinh_fig2B_p1_head__gp26 V2 nulls  median 1.29 µm; half pitch 1.75, 5 µm across 1.82 (both >= 1.3 x the median)
+ok     L3 dinh_fig2B_p1_head__gp26 median / p90  1.29 / 2.70 µm (limits 1.6 / 3.2)
+ok     L3 dinh_fig2B_p1_head__gp26 V5 scale  along 0.9805, across 0.9878 (limits 0.970-1.030)
+   (gp26: 163 s)
+ok     L3 gifford_fig4_inset_leg4__design V1 feature vs chamfer  along -0.65, across 0.25 px
+ok     L3 gifford_fig4_inset_leg4__design V2 nulls  median 2.65 µm; half pitch 3.75, 5 µm across 4.36 (both >= 1.3 x the median)
+ok     L3 gifford_fig4_inset_leg4__design printed widths  centre 100.5 (printed 100), sides 299.9 / 298.7 µm (printed 300)
+ok     L3 gifford_fig4_inset_leg4__design median / p90  2.65 / 17.80 µm (limits 3.0 / 20.0)
+ok     L3 gifford_fig4_inset_leg4__design V5 scale  along 0.9940, across 1.0091 (limits 0.985-1.015)
+ok     L4 dinh2024_v1_depicted_gp26 differs from dinh2024_v1_depicted only in the declared fields  [(('outlet', 'flare_start_um'), 65.4), (('process', 'post_length_um'), 26)]
+ok     L4 dinh2024_v1_depicted_gp26 plans to its record  N 2702 NM 220 (record 2702 / 220)
+ok     L4 xia2016_rs7_depicted_s181 differs from xia2016_rs7_depicted only in the declared fields  [(('process', 'post_length_um'), 36.0), (('process', 'post_width_um'), 74.7)]
+ok     L4 xia2016_rs7_depicted_s181 plans to its record  N 7342 NM 31 (record 7342 / 31)
+
+41 checks, 0 failed, 0 inputs missing

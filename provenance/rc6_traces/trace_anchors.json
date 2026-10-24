@@ -1,0 +1,1163 @@
+{
+ "note": "rc6 trace anchors (2026-10-17): micrograph traces of the shipped rc6 masks and two variants on the papers' figures.  Not hashed code: provenance/rc6_traces/ (README.md there).  tests/test_trace_anchors.py repeats every registration from the rasters and the DXFs and applies the limits below (set with the results in view: regression limits).",
+ "code_stamp": {
+  "version": "1.0.0rc6",
+  "sha256": "4bbdaabef1225a24",
+  "files": 36
+ },
+ "rasters": {
+  "dinh5-000.png": {
+   "sha256": "a21e2e3ce0710e32410ba4941f348c6a1ef561b748f569e24decce1dea9fbbe6",
+   "source": "Dinh et al. 2024 Lab Chip 24, 913-923, PDF page 5 (printed p. 917), Fig. 2: pdfimages -png, image 0"
+  },
+  "gif5-001.png": {
+   "sha256": "e70a8b38b87f96393df21e404802f51159d435f163f5e55f3a3b48bc3b523a0b",
+   "source": "Gifford et al. 2014 Lab Chip 14, 4496-4505, PDF page 5 (printed p. 4500), Fig. 4: pdfimages -png, image 1"
+  },
+  "gif7-000.png": {
+   "sha256": "182826e7aaccf14ce9ad72f1c6411ad662bf96c19b5814dec242ebce81a00379",
+   "source": "Gifford et al. 2014 Lab Chip 14, 4496-4505, PDF page 7 (printed p. 4502), Fig. 6: pdfimages -png, image 0"
+  },
+  "xia5-000.png": {
+   "sha256": "e9fb7fbb348567d3ab7606479c83342bcf2f5ee3d6b4c162f7c345e5ef339991",
+   "source": "Xia et al. 2016 Sci. Rep. 6:35943, PDF page 5, Fig. 3: pdfimages -png, image 0"
+  }
+ },
+ "bars": {
+  "dinh_fig2B": {
+   "um": 50,
+   "rows": [
+    [
+     470,
+     490
+    ],
+    [
+     952,
+     972
+    ],
+    [
+     1436,
+     1456
+    ],
+    [
+     1920,
+     1940
+    ]
+   ],
+   "cols": [
+    870,
+    975
+   ],
+   "px_aa": 46.906,
+   "full_px": 46
+  },
+  "gifford_fig4_inset": {
+   "um": 300,
+   "rows": [
+    550,
+    600
+   ],
+   "cols": [
+    690,
+    829
+   ],
+   "px_aa": 107.52,
+   "full_px": 107
+  },
+  "xia_fig3_panel_i": {
+   "um": 250,
+   "rows": [
+    3085,
+    3120
+   ],
+   "cols": [
+    1860,
+    2025
+   ],
+   "px_aa": 129.11,
+   "full_px": 128,
+   "polarity": "bright",
+   "note": "panel i's bar; panels b-g are at the scale of their printed widths (1.798 \u00b5m/px)"
+  },
+  "xia_fig3a": {
+   "um": 5000,
+   "rows": [
+    2925,
+    2960
+   ],
+   "cols": [
+    1000,
+    1230
+   ],
+   "px_aa": 178.32,
+   "full_px": 177
+  },
+  "gifford_fig6": {
+   "um": 250,
+   "visible_length_px": 54.577,
+   "um_per_px_upper_bound": 4.5807,
+   "note": "cut by the raster's right edge: an upper bound on the scale only"
+  }
+ },
+ "scales": {
+  "xia": {
+   "rc6_um_per_px": 1.798,
+   "printed_widths_um_per_px": 1.8028,
+   "arc_um_per_px": 1.7922391759829739
+  },
+  "gifford_fig6": {
+   "um_per_px": 4.5248,
+   "from_": "the printed 125 \u00b5m centre between the rows' tip lines"
+  }
+ },
+ "runs": {
+  "shipped": [
+   {
+    "kind": "dinh",
+    "mask": "dinh2024_v1_depicted",
+    "tag": "rc6",
+    "label": "the shipped mask dinh2024_v1_depicted"
+   },
+   {
+    "kind": "gifford4",
+    "mask": "gifford2014_fig4_design",
+    "tag": "rc6",
+    "label": "the shipped mask gifford2014_fig4_design"
+   },
+   {
+    "kind": "gifford6",
+    "mask": "gifford2014_fig6_design",
+    "tag": "rc6",
+    "label": "the shipped mask gifford2014_fig6_design"
+   },
+   {
+    "kind": "gifford6",
+    "mask": "gifford2014_fig6_design",
+    "tag": "rc6",
+    "one_map": true,
+    "turns": true,
+    "label": "the shipped mask gifford2014_fig6_design (the micrograph's leg axes)"
+   },
+   {
+    "kind": "xia",
+    "mask": "xia2016_rs7_depicted",
+    "tag": "rc6",
+    "label": "the shipped mask xia2016_rs7_depicted"
+   }
+  ],
+  "variants": [
+   {
+    "kind": "xia",
+    "mask": "xia2016_rs7_depicted_dfill",
+    "tag": "dfill",
+    "label": "the variant mask xia2016_rs7_depicted_dfill (D 6.5315 um)"
+   },
+   {
+    "kind": "xia",
+    "mask": "xia2016_rs7_depicted_fig3",
+    "tag": "fig3",
+    "label": "the variant mask xia2016_rs7_depicted_fig3 (F 0.94072, D 6.5705 um, read off Figs. 3g and 3a)"
+   }
+  ]
+ },
+ "panels": {
+  "dinh_fig2B_p1_head__rc6": {
+   "layer": 3,
+   "role": "claim",
+   "limits": {
+    "v1": true,
+    "median_max_um": 1.6,
+    "p90_max_um": 3.2,
+    "metric_null_ratio_min": 1.3,
+    "v5_along": [
+     0.97,
+     1.0
+    ],
+    "v5_across": [
+     0.975,
+     1.0
+    ]
+   },
+   "anchored": {
+    "V1_along_px": -1.0890081832207097,
+    "V1_across_px": 0.18082243242128873,
+    "median_abs_um": 1.2934981434562864,
+    "p90_abs_um": 2.698325831397507,
+    "chamfer_best_px": 1.5278685634549487,
+    "mask_sha256": "c63abab53ed84e87796eaf885b89df5731e0dedd8f61bf01d27128eac8fc45a7",
+    "V5": [
+     0.9804597603928017,
+     0.9878401151935513
+    ]
+   }
+  },
+  "dinh_fig2B_p2_transition__rc6": {
+   "layer": 3,
+   "role": "claim",
+   "limits": {
+    "v1": true,
+    "median_max_um": 1.0,
+    "p90_max_um": 3.0,
+    "metric_null_ratio_min": 2.0,
+    "v5_along": [
+     0.98,
+     1.0
+    ],
+    "v5_across": [
+     0.995,
+     1.015
+    ]
+   },
+   "anchored": {
+    "V1_along_px": 0.009028921588879364,
+    "V1_across_px": -0.14519250802071115,
+    "median_abs_um": 0.8141364238503775,
+    "p90_abs_um": 2.5514734980690665,
+    "chamfer_best_px": 1.181106781011882,
+    "mask_sha256": "c63abab53ed84e87796eaf885b89df5731e0dedd8f61bf01d27128eac8fc45a7",
+    "V5": [
+     0.9873373536020027,
+     1.0055411809484507
+    ]
+   }
+  },
+  "dinh_fig2B_p3_linear__rc6": {
+   "layer": 3,
+   "role": "claim",
+   "limits": {
+    "v1": true,
+    "median_max_um": 0.6,
+    "p90_max_um": 1.2,
+    "metric_null_ratio_min": 2.0,
+    "v5_along": [
+     0.99,
+     1.01
+    ],
+    "v5_across": [
+     0.99,
+     1.01
+    ],
+    "measured": {
+     "centre": [
+      68.0,
+      69.5,
+      [
+       "measured",
+       "image_widths_um",
+       "centre"
+      ],
+      "centre width (mask 68.1 at its row)"
+     ]
+    }
+   },
+   "anchored": {
+    "V1_along_px": 0.00463202353483571,
+    "V1_across_px": 0.10799101190322552,
+    "median_abs_um": 0.4395115523957068,
+    "p90_abs_um": 0.8910867655425438,
+    "chamfer_best_px": 0.5709027363538883,
+    "mask_sha256": "c63abab53ed84e87796eaf885b89df5731e0dedd8f61bf01d27128eac8fc45a7",
+    "V5": [
+     0.9996564280170979,
+     0.9954793401730629
+    ]
+   }
+  },
+  "dinh_fig2B_p4_outlet__rc6": {
+   "layer": 3,
+   "role": "claim",
+   "limits": {
+    "v1": true,
+    "median_max_um": 0.7,
+    "p90_max_um": 2.0,
+    "metric_null_ratio_min": 2.0,
+    "v5_along": [
+     0.99,
+     1.01
+    ],
+    "v5_across": [
+     0.99,
+     1.01
+    ],
+    "measured": {
+     "centre": [
+      51.5,
+      53.0,
+      [
+       "measured",
+       "image_widths_um",
+       "centre"
+      ],
+      "centre width (printed 52)"
+     ],
+     "side": [
+      43.5,
+      44.5,
+      [
+       "measured",
+       "image_widths_um",
+       "side_L"
+      ],
+      "left side width (printed 44)"
+     ],
+     "pitch": [
+      44.9,
+      45.3,
+      [
+       "measured",
+       "pitch_um"
+      ],
+      "row pitch (mask 45.1)"
+     ]
+    }
+   },
+   "anchored": {
+    "V1_along_px": -0.18351381540048997,
+    "V1_across_px": -0.09403489426720966,
+    "median_abs_um": 0.563654660611665,
+    "p90_abs_um": 1.5742948553798135,
+    "chamfer_best_px": 0.953577162769992,
+    "mask_sha256": "c63abab53ed84e87796eaf885b89df5731e0dedd8f61bf01d27128eac8fc45a7",
+    "V5": [
+     0.9958045341972147,
+     1.0014244657571474
+    ]
+   }
+  },
+  "gifford_fig4_inset_leg4__rc6": {
+   "layer": 3,
+   "role": "claim",
+   "limits": {
+    "v1": true,
+    "median_max_um": 1.5,
+    "p90_max_um": 20.0,
+    "metric_null_ratio_min": 2.5,
+    "v5_along": [
+     0.99,
+     1.01
+    ],
+    "v5_across": [
+     0.99,
+     1.01
+    ],
+    "measured": {
+     "pitch": [
+      45.6,
+      46.0,
+      [
+       "measured",
+       "pitch_um",
+       "inner"
+      ],
+      "row pitch (mask 45.8)"
+     ],
+     "spacing": [
+      813.0,
+      823.0,
+      [
+       "measured",
+       "leg_centreline_separation_um",
+       "mask"
+      ],
+      "the mask's leg spacing: the inset's 817.9 \u00b5m (rc6 preset; consistency)"
+     ]
+    }
+   },
+   "anchored": {
+    "V1_along_px": -0.09423674150219158,
+    "V1_across_px": 0.04313710354937091,
+    "median_abs_um": 1.2119826411301031,
+    "p90_abs_um": 18.17276110358323,
+    "chamfer_best_px": 0.6702235974817095,
+    "mask_sha256": "09b471f909113cf6d02912c5211be1d67235128dc6a576d81f1f5e9b68ca0705",
+    "V5": [
+     1.0007039049176811,
+     1.001224519489221
+    ]
+   }
+  },
+  "gifford_fig6_leg7__rc6": {
+   "layer": 3,
+   "role": "claim",
+   "limits": {
+    "v1": true,
+    "median_max_um": 2.0,
+    "p90_max_um": 10.0,
+    "chamfer_null_ratio_min": 1.15,
+    "v5_along": [
+     0.995,
+     1.005
+    ],
+    "v5_across": [
+     1.0,
+     1.05
+    ],
+    "v5_note": "along: consistency, the pitch was measured on this image; across: the side channels read wider"
+   },
+   "anchored": {
+    "V1_along_px": -0.02129301684245509,
+    "V1_across_px": -0.3648369017524489,
+    "median_abs_um": 1.8784005296382553,
+    "p90_abs_um": 4.310870085003522,
+    "chamfer_best_px": 0.7371111095425523,
+    "mask_sha256": "e47f5ca61b3f1a28f7cdc0998896ce9327fa01918a0613fd8709a6b492032422",
+    "V5": [
+     0.9995590198461141,
+     1.018295665886893
+    ]
+   }
+  },
+  "gifford_fig6_leg5__rc6": {
+   "layer": 3,
+   "role": "claim",
+   "limits": {
+    "v1": true,
+    "median_max_um": 2.0,
+    "p90_max_um": 10.0,
+    "chamfer_null_ratio_min": 1.15,
+    "v5_along": [
+     0.995,
+     1.005
+    ],
+    "v5_across": [
+     1.0,
+     1.05
+    ],
+    "v5_note": "along: consistency, the pitch was measured on this image; across: the side channels read wider"
+   },
+   "anchored": {
+    "V1_along_px": 0.0748332742006667,
+    "V1_across_px": -0.008443970919016976,
+    "median_abs_um": 1.5503448394385386,
+    "p90_abs_um": 5.478410098861856,
+    "chamfer_best_px": 0.6921834691410166,
+    "mask_sha256": "e47f5ca61b3f1a28f7cdc0998896ce9327fa01918a0613fd8709a6b492032422",
+    "V5": [
+     0.9994662673942715,
+     1.0192595008170624
+    ]
+   }
+  },
+  "gifford_fig6_leg3__rc6": {
+   "layer": 3,
+   "role": "claim",
+   "limits": {
+    "v1": true,
+    "median_max_um": 2.0,
+    "p90_max_um": 10.0,
+    "chamfer_null_ratio_min": 1.15,
+    "v5_along": [
+     0.995,
+     1.005
+    ],
+    "v5_across": [
+     1.0,
+     1.05
+    ],
+    "v5_note": "along: consistency, the pitch was measured on this image; across: the side channels read wider"
+   },
+   "anchored": {
+    "V1_along_px": 0.04000951568674146,
+    "V1_across_px": 0.01045735564806521,
+    "median_abs_um": 1.5101426226802654,
+    "p90_abs_um": 6.6876782598438105,
+    "chamfer_best_px": 0.780997991964933,
+    "mask_sha256": "e47f5ca61b3f1a28f7cdc0998896ce9327fa01918a0613fd8709a6b492032422",
+    "V5": [
+     0.9996536020539208,
+     1.0255714956747646
+    ]
+   }
+  },
+  "gifford_fig6_leg1__rc6": {
+   "layer": 3,
+   "role": "claim",
+   "limits": {
+    "v1": true,
+    "median_max_um": 2.0,
+    "p90_max_um": 10.0,
+    "chamfer_null_ratio_min": 1.15,
+    "v5_along": [
+     0.995,
+     1.005
+    ],
+    "v5_across": [
+     1.0,
+     1.05
+    ],
+    "v5_note": "along: consistency, the pitch was measured on this image; across: the side channels read wider"
+   },
+   "anchored": {
+    "V1_along_px": -0.0009842590038931255,
+    "V1_across_px": 0.10139776503950051,
+    "median_abs_um": 1.3508652420579697,
+    "p90_abs_um": 8.745879642519998,
+    "chamfer_best_px": 0.9766336152322076,
+    "mask_sha256": "e47f5ca61b3f1a28f7cdc0998896ce9327fa01918a0613fd8709a6b492032422",
+    "V5": [
+     1.00000429687473,
+     1.0427886825737371
+    ]
+   }
+  },
+  "gifford_fig6_four_legs__rc6": {
+   "layer": 3,
+   "role": "claim",
+   "limits": {
+    "v1": true,
+    "median_max_um": 2.0,
+    "p90_max_um": 8.0,
+    "chamfer_null_ratio_min": 1.15,
+    "v5_along": [
+     0.995,
+     1.005
+    ],
+    "v5_across": [
+     0.995,
+     1.005
+    ],
+    "v5_note": "consistency: the pitch and the leg axes were read on this image",
+    "measured": {
+     "leg7": [
+      -1.0,
+      1.0,
+      [
+       "measured",
+       "leg7_own_map_minus_common_um",
+       "across"
+      ],
+      "leg 7 (not in the fit) across, from its own end's map, \u00b5m (consistency: the axes were read on this image)"
+     ],
+     "turn_med": [
+      0.0,
+      2.0,
+      [
+       "measured",
+       "turns",
+       "nearest_mask_edge_um",
+       "median"
+      ],
+      "the turns: median distance from the image's turn walls to the mask's nearest edge, \u00b5m (consistency; the first, uniform form: 23.6)"
+     ],
+     "turn_p90": [
+      0.0,
+      5.0,
+      [
+       "measured",
+       "turns",
+       "nearest_mask_edge_um",
+       "p90"
+      ],
+      "the turns: 90th percentile of that distance, \u00b5m (consistency; the first form: 59.7)"
+     ],
+     "turn_r": [
+      -2.0,
+      2.0,
+      [
+       "measured",
+       "turns",
+       "radii_about_image_centre",
+       "mean_um"
+      ],
+      "the turns: mean radius mask - image about the image's turn centre, \u00b5m (consistency)"
+     ],
+     "turn_c": [
+      -20.0,
+      20.0,
+      [
+       "measured",
+       "turns",
+       "centre_offset_mask_minus_image_um",
+       "v"
+      ],
+      "the turns: the mask's own turn centre across from the image's, \u00b5m (consistency; the first form: -1454)"
+     ],
+     "turn_u": [
+      -10.0,
+      10.0,
+      [
+       "measured",
+       "turns",
+       "centre_offset_mask_minus_image_um",
+       "u"
+      ],
+      "the turns: the mask's own turn centre along the flow from the image's, \u00b5m (+ upstream: -5.7 is 5.7 \u00b5m downstream; the image centre's SD 0.5 \u00b5m): the one independent turn result"
+     ]
+    }
+   },
+   "anchored": {
+    "V1_along_px": -0.007127994975029804,
+    "V1_across_px": -0.1032446892581692,
+    "median_abs_um": 1.4745318538402232,
+    "p90_abs_um": 5.926152194600817,
+    "chamfer_best_px": 0.7232284110616928,
+    "mask_sha256": "e47f5ca61b3f1a28f7cdc0998896ce9327fa01918a0613fd8709a6b492032422",
+    "V5": [
+     0.9994465542464852,
+     1.0007089840734238
+    ]
+   }
+  },
+  "xia_fig3g_outlet__rc6": {
+   "layer": 3,
+   "role": "claim",
+   "limits": {
+    "v1": true,
+    "median_max_um": 3.0,
+    "p90_max_um": 13.0,
+    "chamfer_null_ratio_min": 1.04,
+    "v5_along": [
+     0.99,
+     1.01
+    ],
+    "v5_across": [
+     1.02,
+     1.05
+    ]
+   },
+   "anchored": {
+    "V1_along_px": 0.5451998887997411,
+    "V1_across_px": 1.2703891399403806,
+    "median_abs_um": 2.3303946348915945,
+    "p90_abs_um": 12.231702462685545,
+    "chamfer_best_px": 2.1559040628265524,
+    "mask_sha256": "0161ab00682d354f199b0c71148d7af124b2375ae1cc181b85e42652be14c73f",
+    "V5": [
+     0.9979635085076836,
+     1.0378078440781238
+    ]
+   }
+  },
+  "xia_fig3c__rc6": {
+   "layer": 3,
+   "role": "claim",
+   "limits": {
+    "v1": true,
+    "median_max_um": 3.5,
+    "p90_max_um": 7.0,
+    "chamfer_null_ratio_min": 1.3,
+    "v5_along": [
+     0.99,
+     1.01
+    ],
+    "v5_across": [
+     0.99,
+     1.01
+    ],
+    "measured": {
+     "centre": [
+      297.0,
+      303.0,
+      [
+       "measured",
+       "legs",
+       "0",
+       "centre_um_image"
+      ],
+      "leg 1 centre at its first posts (printed 300)"
+     ]
+    }
+   },
+   "anchored": {
+    "V1_along_px": 0.12922160488365952,
+    "V1_across_px": -0.006040241569968035,
+    "median_abs_um": 3.0591685878626946,
+    "p90_abs_um": 5.963886831543251,
+    "chamfer_best_px": 1.257824381387741,
+    "mask_sha256": "0161ab00682d354f199b0c71148d7af124b2375ae1cc181b85e42652be14c73f",
+    "V5": [
+     0.9995661640306127,
+     1.0031544164417185
+    ]
+   }
+  },
+  "xia_fig3d__rc6": {
+   "layer": 3,
+   "role": "claim",
+   "limits": {
+    "v1": true,
+    "median_max_um": 3.0,
+    "p90_max_um": 10.0,
+    "chamfer_null_ratio_min": 1.3,
+    "v5_along": [
+     0.995,
+     1.015
+    ],
+    "v5_across": [
+     0.995,
+     1.015
+    ]
+   },
+   "anchored": {
+    "V1_along_px": 0.25799047679785514,
+    "V1_across_px": -1.2356873675330406,
+    "median_abs_um": 2.278854248437123,
+    "p90_abs_um": 9.05062522544856,
+    "chamfer_best_px": 1.8389411296353053,
+    "mask_sha256": "0161ab00682d354f199b0c71148d7af124b2375ae1cc181b85e42652be14c73f",
+    "V5": [
+     1.005448162864226,
+     1.00876764741837
+    ]
+   }
+  },
+  "xia_fig3e__rc6": {
+   "layer": 3,
+   "role": "recorded",
+   "limits": {
+    "v1": false,
+    "v5_along": [
+     0.99,
+     1.01
+    ],
+    "v5_across": [
+     1.0,
+     1.02
+    ],
+    "measured": {
+     "leg3": [
+      183.0,
+      189.0,
+      [
+       "measured",
+       "legs",
+       "1",
+       "centre_um_image"
+      ],
+      "leg 3 centre at Fig. 3a's box (mask 205.1)"
+     ]
+    }
+   },
+   "anchored": {
+    "V1_along_px": 0.22376629179631952,
+    "V1_across_px": -3.665391498133518,
+    "median_abs_um": 3.028272800725225,
+    "p90_abs_um": 12.932754803626661,
+    "chamfer_best_px": 1.7562078378827175,
+    "mask_sha256": "0161ab00682d354f199b0c71148d7af124b2375ae1cc181b85e42652be14c73f",
+    "V5": [
+     1.0000338019299546,
+     1.0078491259591573
+    ]
+   }
+  },
+  "xia_fig3f__rc6": {
+   "layer": 3,
+   "role": "recorded",
+   "limits": {
+    "v1": true,
+    "v5_along": [
+     0.99,
+     1.01
+    ],
+    "v5_across": [
+     0.95,
+     0.98
+    ]
+   },
+   "anchored": {
+    "V1_along_px": -0.06347238106480735,
+    "V1_across_px": 1.1762823214161588,
+    "median_abs_um": 3.7938278091159474,
+    "p90_abs_um": 11.427568693774413,
+    "chamfer_best_px": 2.4675948653573765,
+    "mask_sha256": "0161ab00682d354f199b0c71148d7af124b2375ae1cc181b85e42652be14c73f",
+    "V5": [
+     1.0034317657845964,
+     0.9627748805707681
+    ]
+   }
+  },
+  "xia_fig3g_outlet__dfill": {
+   "layer": 5,
+   "role": "recorded",
+   "limits": {
+    "v1": true
+   },
+   "anchored": {
+    "V1_along_px": 0.5454787072612396,
+    "V1_across_px": 1.2704153522335986,
+    "median_abs_um": 2.29970856305045,
+    "p90_abs_um": 12.15961080906679,
+    "chamfer_best_px": 2.155944843054772,
+    "mask_sha256": "ce8dbcf2bfa2bc36a461850b8c801f1ef5efba4d942ab6cbae2d968d0ae3b291",
+    "V5": [
+     0.9979531792856312,
+     1.0378552030024952
+    ]
+   }
+  },
+  "xia_fig3c__dfill": {
+   "layer": 5,
+   "role": "recorded",
+   "limits": {
+    "v1": true
+   },
+   "anchored": {
+    "V1_along_px": 0.12898015713692945,
+    "V1_across_px": -0.006812774634260384,
+    "median_abs_um": 3.053260435360038,
+    "p90_abs_um": 5.962674284302909,
+    "chamfer_best_px": 1.254709367037407,
+    "mask_sha256": "ce8dbcf2bfa2bc36a461850b8c801f1ef5efba4d942ab6cbae2d968d0ae3b291",
+    "V5": [
+     0.9995653678772821,
+     1.003161276739857
+    ]
+   }
+  },
+  "xia_fig3d__dfill": {
+   "layer": 5,
+   "role": "recorded",
+   "limits": {
+    "v1": true
+   },
+   "anchored": {
+    "V1_along_px": 0.19160401847897413,
+    "V1_across_px": -1.0258775394748239,
+    "median_abs_um": 2.34477796868604,
+    "p90_abs_um": 9.409546364828145,
+    "chamfer_best_px": 1.856015928283171,
+    "mask_sha256": "ce8dbcf2bfa2bc36a461850b8c801f1ef5efba4d942ab6cbae2d968d0ae3b291",
+    "V5": [
+     1.0055856069236788,
+     1.008496919872911
+    ]
+   }
+  },
+  "xia_fig3e__dfill": {
+   "layer": 5,
+   "role": "recorded",
+   "limits": {
+    "v1": false
+   },
+   "anchored": {
+    "V1_along_px": 0.21942821588942568,
+    "V1_across_px": -4.2015550834838145,
+    "median_abs_um": 3.576221589780303,
+    "p90_abs_um": 12.795983577167764,
+    "chamfer_best_px": 1.8746574920887504,
+    "mask_sha256": "ce8dbcf2bfa2bc36a461850b8c801f1ef5efba4d942ab6cbae2d968d0ae3b291",
+    "V5": [
+     1.0000157497416353,
+     1.0089116235356774
+    ]
+   }
+  },
+  "xia_fig3f__dfill": {
+   "layer": 5,
+   "role": "recorded",
+   "limits": {
+    "v1": true
+   },
+   "anchored": {
+    "V1_along_px": -0.0636467958358817,
+    "V1_across_px": 1.18403693803094,
+    "median_abs_um": 4.0884731057116035,
+    "p90_abs_um": 12.999416100212608,
+    "chamfer_best_px": 2.473248284135903,
+    "mask_sha256": "ce8dbcf2bfa2bc36a461850b8c801f1ef5efba4d942ab6cbae2d968d0ae3b291",
+    "V5": [
+     1.0031244224617042,
+     0.9727120119044366
+    ]
+   }
+  },
+  "xia_fig3g_outlet__fig3": {
+   "layer": 5,
+   "role": "recorded",
+   "limits": {
+    "v1": false
+   },
+   "anchored": {
+    "V1_along_px": 0.23231505388139034,
+    "V1_across_px": 1.844539837606817,
+    "median_abs_um": 1.3485,
+    "p90_abs_um": 12.657318576919986,
+    "chamfer_best_px": 1.3094759176814617,
+    "mask_sha256": "280a04edaa54dcf736af80de049c37329cb1db0f85e3ae0e39dd53f22f111c64",
+    "V5": [
+     0.9970963182244917,
+     1.004521804265238
+    ]
+   }
+  },
+  "xia_fig3c__fig3": {
+   "layer": 5,
+   "role": "recorded",
+   "limits": {
+    "v1": true
+   },
+   "anchored": {
+    "V1_along_px": 0.1290199164894842,
+    "V1_across_px": -0.006725767286769616,
+    "median_abs_um": 3.0524380419914916,
+    "p90_abs_um": 5.9607810043364635,
+    "chamfer_best_px": 1.2550727358059748,
+    "mask_sha256": "280a04edaa54dcf736af80de049c37329cb1db0f85e3ae0e39dd53f22f111c64",
+    "V5": [
+     0.9995655685021694,
+     1.0031604349521823
+    ]
+   }
+  },
+  "xia_fig3d__fig3": {
+   "layer": 5,
+   "role": "recorded",
+   "limits": {
+    "v1": true
+   },
+   "anchored": {
+    "V1_along_px": 0.2756804365639411,
+    "V1_across_px": -0.7137324783984584,
+    "median_abs_um": 2.8848697358611846,
+    "p90_abs_um": 9.95881187164993,
+    "chamfer_best_px": 1.9850325259491082,
+    "mask_sha256": "280a04edaa54dcf736af80de049c37329cb1db0f85e3ae0e39dd53f22f111c64",
+    "V5": [
+     1.0063207309690136,
+     1.0084420260775357
+    ]
+   }
+  },
+  "xia_fig3e__fig3": {
+   "layer": 5,
+   "role": "recorded",
+   "limits": {
+    "v1": false
+   },
+   "anchored": {
+    "V1_along_px": 0.2234406129495795,
+    "V1_across_px": -3.7267802932602705,
+    "median_abs_um": 2.976608108174839,
+    "p90_abs_um": 12.942745113070034,
+    "chamfer_best_px": 1.7513731099071013,
+    "mask_sha256": "280a04edaa54dcf736af80de049c37329cb1db0f85e3ae0e39dd53f22f111c64",
+    "V5": [
+     1.000047540686128,
+     1.007899392802723
+    ]
+   }
+  },
+  "xia_fig3f__fig3": {
+   "layer": 5,
+   "role": "recorded",
+   "limits": {
+    "v1": true
+   },
+   "anchored": {
+    "V1_along_px": -0.06410046163321875,
+    "V1_across_px": 1.1552934895107088,
+    "median_abs_um": 3.7773772965667227,
+    "p90_abs_um": 11.424416187910731,
+    "chamfer_best_px": 2.456025928122185,
+    "mask_sha256": "280a04edaa54dcf736af80de049c37329cb1db0f85e3ae0e39dd53f22f111c64",
+    "V5": [
+     1.0036876526117555,
+     0.95
+    ]
+   }
+  }
+ },
+ "fig3a": {
+  "rc6": {
+   "pose_whole_rotation_deg": -0.009509655871130875,
+   "pose_whole_chamfer_px": 1.1252445665212012,
+   "scale_free_over_bar": 1.001073674645761,
+   "group_shifts": {
+    "inlet and head": {
+     "along_um": -4.856772108484135,
+     "across_um": -28.889296089902533
+    },
+    "loops at the top": {
+     "along_um": -0.002262403846951566,
+     "across_um": 24.28773977963968
+    },
+    "leg 1": {
+     "along_um": null,
+     "across_um": 10.865441560442324
+    },
+    "leg 2": {
+     "along_um": null,
+     "across_um": -2.453486803970849
+    },
+    "leg 3": {
+     "along_um": null,
+     "across_um": 34.217378462522014
+    },
+    "leg 4": {
+     "along_um": null,
+     "across_um": 20.24126613275951
+    },
+    "leg 5": {
+     "along_um": null,
+     "across_um": 37.06517564570244
+    },
+    "leg 6": {
+     "along_um": null,
+     "across_um": 34.567876577375
+    },
+    "leg 7": {
+     "along_um": null,
+     "across_um": 21.81850764959789
+    },
+    "loops at the bottom": {
+     "along_um": 5685.157184003839,
+     "across_um": 40.18735660097207
+    },
+    "outlet ring and ports": {
+     "along_um": 5405.406780300798,
+     "across_um": 35.64911176357102
+    }
+   },
+   "V12_ok": {
+    "c": true,
+    "d": true,
+    "e": true,
+    "f": true,
+    "g": false
+   },
+   "V12_expected": "c, d, e, f inside their boxes; g outside (the drawing's outlet lies 5.4 mm beyond the mask's)",
+   "dxf_sha256": "0161ab00682d354f199b0c71148d7af124b2375ae1cc181b85e42652be14c73f"
+  },
+  "dfill": {
+   "pose_whole_rotation_deg": -0.009076823380147751,
+   "pose_whole_chamfer_px": 1.1133394749565124,
+   "scale_free_over_bar": 1.001293348657475,
+   "group_shifts": {
+    "inlet and head": {
+     "along_um": -0.679439598739393,
+     "across_um": -28.215206625482455
+    },
+    "loops at the top": {
+     "along_um": 3.3014048489580317,
+     "across_um": 25.286238050321074
+    },
+    "leg 1": {
+     "along_um": null,
+     "across_um": 12.092184977244278
+    },
+    "leg 2": {
+     "along_um": null,
+     "across_um": -2.3413274100867194
+    },
+    "leg 3": {
+     "along_um": null,
+     "across_um": 34.9621869994237
+    },
+    "leg 4": {
+     "along_um": null,
+     "across_um": 21.20513597458782
+    },
+    "leg 5": {
+     "along_um": null,
+     "across_um": 39.49675636589028
+    },
+    "leg 6": {
+     "along_um": null,
+     "across_um": 35.31268511470614
+    },
+    "leg 7": {
+     "along_um": null,
+     "across_um": 21.949944469562983
+    },
+    "loops at the bottom": {
+     "along_um": 93.65218857599115,
+     "across_um": 41.28720991695374
+    },
+    "outlet ring and ports": {
+     "along_um": -185.9624148426095,
+     "across_um": 36.10559279507684
+    }
+   },
+   "V12_ok": {
+    "c": true,
+    "d": true,
+    "e": true,
+    "f": true,
+    "g": false
+   },
+   "V12_expected": "c, d, e, f inside their boxes; g 1.08 of its box's half-size (0.46 mm of its 0.65 mm offset is panel g's own offset from its box, which the shipped mask shows)",
+   "dxf_sha256": "ce8dbcf2bfa2bc36a461850b8c801f1ef5efba4d942ab6cbae2d968d0ae3b291"
+  },
+  "fig3": {
+   "pose_whole_rotation_deg": -0.008432773736065977,
+   "pose_whole_chamfer_px": 1.1114698574633501,
+   "scale_free_over_bar": 1.0011379563106229,
+   "group_shifts": {
+    "inlet and head": {
+     "along_um": -9.394852660836918,
+     "across_um": -27.247065620671947
+    },
+    "loops at the top": {
+     "along_um": 7.688707835549014,
+     "across_um": 26.734466326394884
+    },
+    "leg 1": {
+     "along_um": null,
+     "across_um": 12.267434055955958
+    },
+    "leg 2": {
+     "along_um": null,
+     "across_um": -2.004849222859089
+    },
+    "leg 3": {
+     "along_um": null,
+     "across_um": 35.2688729108734
+    },
+    "leg 4": {
+     "along_um": null,
+     "across_um": 21.555634126894066
+    },
+    "leg 5": {
+     "along_um": null,
+     "across_um": 38.37954368934792
+    },
+    "leg 6": {
+     "along_um": null,
+     "across_um": 36.21083659731285
+    },
+    "leg 7": {
+     "along_um": null,
+     "across_um": 23.570998293229664
+    },
+    "loops at the bottom": {
+     "along_um": 87.29540953085287,
+     "across_um": 40.52938173728848
+    },
+    "outlet ring and ports": {
+     "along_um": -191.28065695713548,
+     "across_um": 37.72659035399728
+    }
+   },
+   "V12_ok": {
+    "c": true,
+    "d": true,
+    "e": true,
+    "f": true,
+    "g": false
+   },
+   "V12_expected": "as anchored (V12_ok); see the rc6_traces README",
+   "dxf_sha256": "280a04edaa54dcf736af80de049c37329cb1db0f85e3ae0e39dd53f22f111c64"
+  }
+ },
+ "variants": {
+  "xia2016_rs7_depicted_dfill": {
+   "base": "xia2016_rs7_depicted",
+   "declared": {
+    "targets.cutoff_um": 6.531498914336713
+   },
+   "N": 8106,
+   "NM": 29
+  },
+  "xia2016_rs7_depicted_fig3": {
+   "base": "xia2016_rs7_depicted",
+   "declared": {
+    "targets.cutoff_um": 6.570535180059767,
+    "targets.filtrate_fraction": 0.9407157272549905
+   },
+   "N": 8106,
+   "NM": 29
+  }
+ }
+}

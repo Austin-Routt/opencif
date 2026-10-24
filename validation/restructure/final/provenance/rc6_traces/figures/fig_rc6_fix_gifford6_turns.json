@@ -1,0 +1,43 @@
+{
+ "title": "Gifford 2014 Fig. 6, the turns",
+ "columns": 2,
+ "width_in": 7.0,
+ "panels": [
+  {
+   "results": "results/gifford/gifford6_results_fig6legs588.json",
+   "key": "four_legs",
+   "raster": "rasters/gif7-000.png",
+   "dxf": "variants_out/history588/gifford2014_fig6_design_fig6legs/gifford2014_fig6_design_fig6legs.dxf",
+   "letter": "a",
+   "title": "before: uniform legs 588 \u00b5m apart (turn radius 294 \u00b5m)",
+   "post_max": [
+    31.9,
+    71.8
+   ],
+   "lw": 0.35,
+   "extra_lines": [
+    "turns (16 walls on the image): wall to the mask's nearest edge median 23.6 \u00b5m, p90 59.7 \u00b5m",
+    "mask's turn centre 1454 \u00b5m across from the image's: not concentric"
+   ]
+  },
+  {
+   "results": "results/gifford/gifford6_results_rc6_onemap.json",
+   "key": "four_legs",
+   "raster": "rasters/gif7-000.png",
+   "dxf": "opencif_rc6/runs/gifford2014_fig6_design/gifford2014_fig6_design.dxf",
+   "letter": "b",
+   "title": "after: the preset's measured leg axes",
+   "post_max": [
+    31.9,
+    71.8
+   ],
+   "lw": 0.35,
+   "extra_lines": [
+    "turns (16 walls on the image): wall to the mask's nearest edge median 1.4 \u00b5m, p90 3.6 \u00b5m",
+    "mask's turn centre 5.7 \u00b5m downstream, +8 \u00b5m across from the image's;",
+    "about the image's centre the mask's walls at radii +0.2 \u00b1 2.6 \u00b5m from the image's"
+   ]
+  }
+ ],
+ "footer": "Gifford et al. 2014 Lab Chip 14, 4496-4505, Fig. 6 (adapted; \u00a9 The Royal Society of Chemistry: permission for reproduction to be obtained before publication, README), with every edge of (a) the first rc6 variant of gifford2014_fig6_design and (b) the shipped rc6 preset gifford2014_fig6_design, which now takes the micrograph's layout (cyan), each on one map fitted on the ends of legs 5, 3 and 1 (scale 4.5248 \u00b5m/px from the printed 125 \u00b5m centre; rows at 49.81\u00b0).  Both take the micrograph's leg positions for legs 7, 5, 3, 1 and leg 7's early end (pc_last_short 257 \u00b5m).  (a) The generator's uniform paperclip at the micrograph's 588 \u00b5m spacing: its turns are semicircles of radius d/2 about a point one half-spacing beyond leg 1 (the generator's own rule for this device: 723 \u00b5m, radius 362 \u00b5m).  (b) The leg axes read on the micrograph (reproduction.leg_Y): the 16 turn walls of legs 5, 3, 1 are concentric arcs about one centre 1745.7 \u00b5m beyond leg 1 (residual SD 0.59 \u00b5m; the centre's SD 2.2 \u00b5m in the common fit, 26 \u00b5m between the walls fitted one by one), and semicircular turns about it put legs 2, 4, 6 at 3491, 4079, 4667 \u00b5m (2 Y_c - Y, which doubles the centre's error); only 8-23\u00b0 of each turn is in the frame, so the semicircle (and legs 2, 4, 6) is an assumption.  (b) agrees with the image's turns by construction (its leg axes are read on them: consistency, not a test) except along the flow, which nothing read on the turns sets: the mask's turns start 5.7 \u00b5m downstream of the image's.  Under each panel: the nearest-outline metric of all claimed edges and, for the turns alone, the distance from each wall point followed on the image to the mask's nearest edge, and the two sets' common-centre fits (panels_gifford6.turn_compare)."
+}

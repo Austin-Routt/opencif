@@ -1,0 +1,12 @@
+# Variant matrix, no meander: sealed start on a fine process (a 4.3 um floor, below the 4.37 um sealed first side channel)
+name: m13_paperclip_const_nomeander_sealed_fine
+targets: {cutoff_um: 4.0, filtrate_fraction: 0.5}
+process: {depth_um: 100, gap_um: 19, post_length_um: 27, post_width_um: 50, min_feature_um: 4.3, fillet_um: 1.5,
+          aspect_ratio_max: 25}   # a stated process capability (4.3 um at 100 um deep is 23 : 1), not a foundry fact
+chip: {width_mm: 12, length_mm: 30, margin_um: 1000}
+centre_channel: {taper: constant, width_in_um: 80}
+layout: {style: paperclip, legs: auto}
+meander: {enabled: false}
+inlet: {style: plain, port_radius_um: 750}
+outlet: {style: separate, port_radius_um: 750, centre_port_radius_um: 750}
+gates: {mode: strict}

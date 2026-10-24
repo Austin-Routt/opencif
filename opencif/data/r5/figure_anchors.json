@@ -1,0 +1,57 @@
+{
+ "note": "rc5: local, scale-bar-calibrated anchors measured on the papers' own figures (publisher rasters), for tests/test_figure_anchors.py.  Global schematic panels carry no scale (not_to_scale).  The measurements: dinh_flare_measurement.json and dinh_pitch_gap_measurement.json (this folder, scripts in provenance/rc5_scripts/), gifford_inset_meas.json (../r4, provenance/figure_measurements/meas_gifford_inset.py).",
+ "dinh2024_fig2b_panel4": {
+  "source": "Dinh et al. 2024 Lab Chip 24, 913-923, Fig. 2B fourth panel (printed p. 917); PDF page 5 raster 982 x 1940 px",
+  "scale_um_per_px": 1.0869565217391304,
+  "scale_bar_px": 46.0,
+  "scale_bar_um": 50,
+  "flare_deg_per_side": {
+   "left": 14.5,
+   "right": 14.43,
+   "range": [
+    14.3,
+    14.56
+   ],
+   "basis": "from each wall's own straight direction (the two straight walls are tilted 0.35 and 0.70 deg in the raster); 24 fit intervals per wall; measure_dinh_flare.py v2 (the right wall's rows beside the caption's '52 um' label excluded)"
+  },
+  "flare_onset_from_last_gap_centre_um": {
+   "left": 67.2,
+   "right": 66.2,
+   "tolerance": 2.0
+  },
+  "flare_onset_from_last_post_um": {
+   "left": 77.1,
+   "right": 76.4
+  },
+  "post_pitch_um": {
+   "value": 45.98,
+   "tolerance": 1.0,
+   "basis": "pill outline centres, two post columns; the bar's +-1 px is 2 %"
+  },
+  "printed": {
+   "G_um": 19,
+   "w_c_out_um": 52,
+   "w_s_out_um": 44,
+   "depth_um": 140
+  }
+ },
+ "gifford2014_fig4_inset": {
+  "source": "Gifford et al. 2014 Lab Chip 14, 4496-4505, Fig. 4 inset (legs 2 and 4 in operation; printed p. 4500); 300 um bar",
+  "scale_um_per_px": 2.803738317757009,
+  "row_pitch_um": 46.04,
+  "centre_width_um": 102.3,
+  "final_side_width_um": 302.8,
+  "width_pick_uncertainty_um": 5.6,
+  "printed": {
+   "depth_um": 80,
+   "w_c_um": 100,
+   "w_s_final_um": 300
+  }
+ },
+ "not_to_scale": {
+  "gifford2014_fig4_left": "Gifford p. 4502: '(Fig. 4 and 6 are not drawn to scale, for clarity)': topology only",
+  "gifford2014_fig6": "the same sentence: topology only",
+  "dinh2024_fig2a_main": "the arm span read as the 3.2 mm chip width gives a 60.6 mm drawing against the printed 75.8 mm (r4/dinh_layout_meas.json): the panel's global scale is not established; values read at it (port radii) carry that uncertainty",
+  "dinh2024_fig2a_inset": "magnified (caption); its own scale from the 3.2 mm chip, cross-checked by the 2(GS + wall) unit pitch"
+ }
+}

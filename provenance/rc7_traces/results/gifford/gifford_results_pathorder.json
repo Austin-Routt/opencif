@@ -1,0 +1,604 @@
+{
+ "name": "gifford_fig4_inset_leg4__pathorder",
+ "raster": "gif5-001.png",
+ "raster_sha256": "e70a8b38b87f96393df21e404802f51159d435f163f5e55f3a3b48bc3b523a0b",
+ "mask": "gifford2014_fig4_pathorder.dxf",
+ "mask_sha256": "e8f68a394c535ec19204e2d83ae7ce8593a4f2ff8cb11fe9b7f98191a67a3920",
+ "crop": [
+  198,
+  54,
+  829,
+  553
+ ],
+ "px_per_um": 0.3583986928104575,
+ "pitch_um": 45.8,
+ "map_feature": {
+  "origin_px": [
+   -1953.535318149946,
+   -1157.0979700223481
+  ],
+  "ex_px_per_um": [
+   0.24996023768537348,
+   0.2568452892005541
+  ],
+  "ey_px_per_um": [
+   0.2568452892005541,
+   -0.24996023768537348
+  ]
+ },
+ "map_chamfer": {
+  "origin_px": [
+   -1953.618457676872,
+   -1157.1397371636326
+  ],
+  "ex_px_per_um": [
+   0.24996023768537348,
+   0.2568452892005541
+  ],
+  "ey_px_per_um": [
+   0.2568452892005541,
+   -0.24996023768537348
+  ]
+ },
+ "V1_feature_vs_chamfer_px": {
+  "along": -0.08791680892203428,
+  "across": 0.030451760827507935,
+  "agree": true
+ },
+ "V2_chamfer": {
+  "points": 7146,
+  "best_px": 0.513311511765421,
+  "one_pitch_along_px": [
+   0.6177875977305677,
+   0.5195454148002131
+  ],
+  "half_pitch_along_px": [
+   1.5064780409616867,
+   1.4834356052109388
+  ],
+  "five_um_across_px": [
+   1.219761435968373,
+   1.222430905878595
+  ],
+  "landscape_median_px": 2.9916372006266574,
+  "ratio_landscape_median_to_best": 5.8281124269697075,
+  "ratio_one_pitch_to_best": 1.012144483207384
+ },
+ "metric": {
+  "n": 7277,
+  "median_abs_um": 0.6167690401682409,
+  "p90_abs_um": 1.3959206639377757,
+  "mean_signed_um": 0.1322272871213016,
+  "n_eligible": 7281,
+  "coverage": 0.9994506249141601,
+  "median_censored_um": 0.6170818047688846,
+  "p90_censored_um": 1.398981766608188,
+  "window_um": 8.370566244187108
+ },
+ "metric_null": {
+  "half_pitch_along": {
+   "n": 5594,
+   "median_abs_um": 3.9665642882373806,
+   "p90_abs_um": 6.648127362943721,
+   "mean_signed_um": -2.6424417432943645,
+   "n_eligible": 6893,
+   "coverage": 0.8115479471928043,
+   "median_censored_um": 5.206921401502921,
+   "p90_censored_um": 8.370566244187108,
+   "window_um": 8.370566244187108
+  },
+  "5um_across": {
+   "n": 6884,
+   "median_abs_um": 3.8774878627392093,
+   "p90_abs_um": 5.758305059707602,
+   "mean_signed_um": -0.5654860615686148,
+   "n_eligible": 6895,
+   "coverage": 0.998404641044235,
+   "median_censored_um": 3.8830061209417033,
+   "p90_censored_um": 5.7645779555947,
+   "window_um": 8.370566244187108
+  },
+  "one_pitch_along": {
+   "n": 6842,
+   "median_abs_um": 0.5773751060761054,
+   "p90_abs_um": 1.369548031333224,
+   "mean_signed_um": 0.14929048111207943,
+   "n_eligible": 6895,
+   "coverage": 0.9923132704858593,
+   "median_censored_um": 0.5850328407993302,
+   "p90_censored_um": 1.3911609571572419,
+   "window_um": 8.370566244187108
+  },
+  "registered_same_points": {
+   "n": 6892,
+   "median_abs_um": 0.609375599481002,
+   "p90_abs_um": 1.3909296406120604,
+   "mean_signed_um": 0.12531828255797364,
+   "n_eligible": 6895,
+   "coverage": 0.9995649021029732,
+   "median_censored_um": 0.6098771996152214,
+   "p90_censored_um": 1.391457141023668,
+   "window_um": 8.370566244187108
+  },
+  "censored_ratios": {
+   "half_pitch_along": 8.537655457177328,
+   "5um_across": 6.366865531932555,
+   "one_pitch_along": 0.9592633421423759
+  }
+ },
+ "V3_by_class": {
+  "channel_across_C": {
+   "n": 805,
+   "total": 975,
+   "mean_signed_um": -0.3110644231011558,
+   "sd_um": 0.9648555203336575,
+   "median_abs_um": 0.7126550204935644,
+   "systematic": false
+  },
+  "channel_across_L": {
+   "n": 78,
+   "total": 78,
+   "mean_signed_um": 0.2297717098865759,
+   "sd_um": 0.25541227714198145,
+   "median_abs_um": 0.2066607050327468,
+   "systematic": false
+  },
+  "channel_across_R": {
+   "n": 348,
+   "total": 1227,
+   "mean_signed_um": 0.45454929043510256,
+   "sd_um": 0.6055057723810383,
+   "median_abs_um": 0.49517928184811116,
+   "systematic": false
+  },
+  "channel_along_C": {
+   "n": 38,
+   "total": 38,
+   "mean_signed_um": 0.16270431965127047,
+   "sd_um": 1.2332190884641707,
+   "median_abs_um": 0.9205372359875295,
+   "systematic": false
+  },
+  "post_across_C": {
+   "n": 148,
+   "total": 148,
+   "mean_signed_um": 0.1761263981187164,
+   "sd_um": 0.8013376284174434,
+   "median_abs_um": 0.6229189234438646,
+   "systematic": false
+  },
+  "post_across_R": {
+   "n": 578,
+   "total": 1196,
+   "mean_signed_um": 0.08541732569933834,
+   "sd_um": 0.8991457951028027,
+   "median_abs_um": 0.6630984423558514,
+   "systematic": false
+  },
+  "post_along_C": {
+   "n": 353,
+   "total": 353,
+   "mean_signed_um": 0.2567246201953605,
+   "sd_um": 0.9200286120099147,
+   "median_abs_um": 0.7198797600812133,
+   "systematic": false
+  },
+  "post_along_R": {
+   "n": 1368,
+   "total": 2839,
+   "mean_signed_um": 0.2866590065779228,
+   "sd_um": 0.8470652134503659,
+   "median_abs_um": 0.5963928175701999,
+   "systematic": false
+  }
+ },
+ "outline_threshold": 7.501346996547121,
+ "claim_edges": 88,
+ "other_edges": 108,
+ "region_um": [
+  7129.9,
+  9479.9,
+  1216.0,
+  2874.0
+ ],
+ "along_px": [
+  0.6974362426527244,
+  0.7166468359202112
+ ],
+ "exclude_px": [
+  [
+   735,
+   60,
+   810,
+   165
+  ],
+  [
+   390,
+   240,
+   455,
+   315
+  ]
+ ],
+ "metric_search_px": 3.0,
+ "metric_window_um": 8.370566244187108,
+ "window_rule": {
+  "gap_um": 17.2,
+  "half_gap_um": 8.6,
+  "ok": true,
+  "rule": "metric half-window <= half the drawn gap (rc7)"
+ },
+ "measured": {
+  "bar_px_aa": 107.51960784313725,
+  "bar_px_full_pixels": 107,
+  "px_per_um": 0.3583986928104575,
+  "um_per_px": 2.790188748062369,
+  "leg_direction_deg": 45.77832641311024,
+  "columns_across_px": [
+   -35.27113667710375,
+   22.01310643751654,
+   257.9605518749141,
+   315.0294319180268
+  ],
+  "posts_per_column": [
+   23,
+   29,
+   24,
+   20
+  ],
+  "feature_fit": {
+   "n": 24,
+   "along_um": [
+    -0.574018105798177,
+    -0.32066067396472414,
+    -0.3129226137003052,
+    -0.05894434984281895,
+    0.48753775796275206,
+    0.5847298542552551,
+    0.2528440587055055,
+    0.7880384772020558,
+    0.35327989225657846,
+    0.4155087972680698,
+    0.20684141685985633,
+    0.36092410093948063,
+    -0.406252702834178,
+    -0.5828953345818504,
+    -0.41376442062989993,
+    -0.6478543680569082,
+    -0.9810621572187107,
+    -0.6652822079365269,
+    -0.17597267950938006,
+    0.51068148112662,
+    0.22523501642205257,
+    0.16473590645311675,
+    0.44448776190055117,
+    0.3447850927176236
+   ],
+   "across_um": [
+    -0.15410601823981626,
+    0.09322552233209624,
+    0.057528715407112616,
+    0.20342615392662836,
+    1.009963453366403,
+    0.5183126091405672,
+    0.17819061702174355,
+    -0.5533744161781311,
+    -0.4052326733023357,
+    -0.041524350772056885,
+    0.2885742740221215,
+    -0.8214959986109936,
+    -0.565617322531977,
+    -0.7135808450566962,
+    -0.5335036046501785,
+    0.12923489905004984,
+    -0.1964513516658347,
+    -0.46583057922125437,
+    -0.33436694600124983,
+    0.3610838196926539,
+    0.2675319611253207,
+    0.6638317945014398,
+    0.49530919767290765,
+    0.5188710889853296
+   ],
+   "rms_um": 0.6689082043409657
+  },
+  "leg4": {
+   "inner": {
+    "n_image": 24,
+    "index_gaps": 0,
+    "pitch_px_fit": 16.42390522266403
+   },
+   "outer": {
+    "n_image": 20,
+    "index_gaps": 0,
+    "pitch_px_fit": 16.42935261223783
+   }
+  },
+  "post_column_separation_um": {
+   "leg4": 159.23294696081413,
+   "leg2": 159.83385057968277,
+   "mask": 159.5
+  },
+  "leg_centreline_separation_um": {
+   "image": 817.871306163735,
+   "mask": 818.0
+  },
+  "pitch_um": {
+   "inner": 45.82579555151995,
+   "outer": 45.840994796615085,
+   "mask": 45.8
+  },
+  "leg4_profile_lines_um": [
+   [
+    -409.4,
+    -301.59,
+    -109.69,
+    -49.14,
+    -27.62,
+    -8.64,
+    50.94,
+    110.19,
+    169.34,
+    276.1,
+    408.67
+   ],
+   [
+    -409.16,
+    -350.98,
+    -164.43,
+    -109.63,
+    -49.19,
+    -24.27,
+    -8.83,
+    14.86,
+    51.09,
+    110.36,
+    157.77,
+    270.25,
+    408.76
+   ],
+   [
+    -409.4,
+    -259.01,
+    -109.17,
+    -50.33,
+    -15.79,
+    14.9,
+    15.75,
+    51.24,
+    109.73,
+    130.78,
+    265.15,
+    297.92,
+    408.71
+   ],
+   [
+    -409.76,
+    -266.01,
+    -167.72,
+    -108.71,
+    -50.64,
+    -18.64,
+    -5.95,
+    10.19,
+    51.5,
+    110.17,
+    172.59,
+    179.06,
+    408.78
+   ],
+   [
+    -409.46,
+    -235.01,
+    -184.27,
+    -108.73,
+    -50.12,
+    -29.32,
+    9.27,
+    15.23,
+    50.61,
+    110.33,
+    150.51,
+    175.83,
+    278.98,
+    408.51
+   ],
+   [
+    -408.79,
+    -166.99,
+    -108.79,
+    -49.49,
+    -29.41,
+    -25.49,
+    -7.3,
+    16.06,
+    50.54,
+    109.4,
+    129.14,
+    166.07,
+    190.76,
+    247.38,
+    289.74,
+    408.12
+   ],
+   [
+    -408.0,
+    -273.04,
+    -158.31,
+    -109.6,
+    -49.52,
+    -12.97,
+    49.65,
+    109.47,
+    160.37,
+    181.73,
+    192.03,
+    408.67
+   ],
+   [
+    -408.82,
+    -274.96,
+    -109.17,
+    -49.34,
+    2.81,
+    50.21,
+    109.39,
+    210.85,
+    408.72
+   ]
+  ],
+  "leg4_widths_um": {
+   "centre": 100.44316660256388,
+   "side_inner": 299.91218688523395,
+   "side_outer": 298.7380749927896,
+   "posts": [
+    59.46561331873107,
+    59.15771789385158
+   ],
+   "outer_walls": 817.7167596931702,
+   "n_profiles": {
+    "wall_in": 8,
+    "post_out_in": 8,
+    "post_in_in": 8,
+    "post_in_out": 8,
+    "post_out_out": 8,
+    "wall_out": 8
+   },
+   "printed": {
+    "centre": 100.0,
+    "side_final": 300.0
+   },
+   "mask": {
+    "centre": 100.0,
+    "post": 59.5,
+    "outer_walls": 819.0
+   }
+  },
+  "claim_split": {
+   "rule": "leg 4 (the claim) by the fluid side of each straight edge along the legs; else the nearer leg axis",
+   "edges": 196,
+   "disagree_with_mid_line": 0,
+   "mid_line_um": 2045.0
+  },
+  "spacing_from_this_inset": true,
+  "leg2_side_walls": {
+   "rule": "leg 2's straight channel walls (y < the legs' mid line), their signed nearest-outline offsets (\u00b5m; + = the image's outline outside the mask's channel: wider) within +-14 px (39 \u00b5m), by wall",
+   "walls": {
+    "wall_y1401_across_L": {
+     "n": 267,
+     "mean_signed_um": -0.7660906280074976,
+     "sd_um": 0.8763177785061276
+    },
+    "wall_y1871_across_C": {
+     "n": 273,
+     "mean_signed_um": -0.6858221051801574,
+     "sd_um": 0.8093876284118064
+    },
+    "wall_y1871_across_L": {
+     "n": 96,
+     "mean_signed_um": 1.0419929768144887,
+     "sd_um": 0.7593835618965465
+    },
+    "wall_y1871_across_R": {
+     "n": 20,
+     "mean_signed_um": -1.397620044174875,
+     "sd_um": 0.5774189284213148
+    }
+   }
+  },
+  "neighbour_leg": 3
+ },
+ "caption": "Gifford et al. 2014 Lab Chip 14, 4496\u20134505, Fig. 4 inset (the 300 \u00b5m bar, 107.52 px; the legs at 45.78\u00b0 on the image, from the post columns) with the rejected variant gifford2014_fig4_pathorder (rc7's reading B, legs in path order): leg 4's last post rows and the leads beyond (cyan: the reproduction claim), and the neighbouring leg (leg 3) at the preset's leg spacing, read on this inset (amber: its centre line and post pitch are the image's; its side-channel walls are compared with the image's below; the claim statistic is leg 4's outline only).  Registration: scale from the bar, rotation measured on the image; translation fitted on features and, independently, by chamfer matching (they agree within 0.1 / 0.0 px along / across).  Nearest-outline offset: median 0.62 \u00b5m, 90th percentile 1.40 \u00b5m (n 7277); for comparison 3.97 \u00b5m with the mask shifted half a pitch along and 3.88 \u00b5m with it shifted 5 \u00b5m across.  Over every eligible sample: the metric found an outline for 99.9 % of the 7281 eligible samples (coverage 0.999); censored null ratios 8.54 (half a pitch) and 6.37 (5 \u00b5m across); chamfer null ratios 2.89 and 2.38.  On the image: leg 4's post columns 159.2 \u00b5m apart (mask w_c + l_g = 159.5), pitch 45.83 / 45.84 \u00b5m (mask 45.8); the legs' centrelines 818 \u00b5m apart (mask 818).  The neighbouring leg's side-channel walls read -0.8 to +1.0 \u00b5m against the mask's (+ = the image's channel wider; 3 wall classes of at least 50 samples, measured.leg2_side_walls): their mean offsets within 3 \u00b5m (a mean over the window, blind to a slope: the taper direction is V13's, taper_sign.py).",
+ "micrograph_box": [
+  198,
+  54,
+  829,
+  553
+ ],
+ "V5_scale_scan": {
+  "best_along": 1.0006361794278702,
+  "best_across": 1.0010642199406448,
+  "score_best": 0.5028677477498555,
+  "score_at_bar": 0.5028677477498555,
+  "factors": [
+   0.95,
+   0.955,
+   0.96,
+   0.965,
+   0.97,
+   0.975,
+   0.98,
+   0.985,
+   0.99,
+   0.995,
+   1.0,
+   1.005,
+   1.01,
+   1.015,
+   1.02,
+   1.025,
+   1.03,
+   1.035,
+   1.04,
+   1.045,
+   1.05
+  ],
+  "profile_along_at_across_1": [
+   1.3701243879269296,
+   1.4285816629997485,
+   1.4189559563724243,
+   1.3900273740354996,
+   1.3524458587975146,
+   1.3058626849628436,
+   1.210150342892248,
+   1.044371815289161,
+   0.8414435666147049,
+   0.6431715436944275,
+   0.5028677477498555,
+   0.5862498077511246,
+   0.7747884756460239,
+   0.9759959221656511,
+   1.1593784622887824,
+   1.2839110687858857,
+   1.36127474788138,
+   1.3905661540418517,
+   1.4233966003581813,
+   1.456640085732089,
+   1.4818631796698531
+  ],
+  "profile_across_at_along_1": [
+   2.469381379470598,
+   2.2387057790417986,
+   1.9992673333270143,
+   1.7586985066901324,
+   1.5132610065053427,
+   1.2583233476064335,
+   1.0802923454134754,
+   0.9115549502944132,
+   0.754371334003026,
+   0.624744959602724,
+   0.5028677477498555,
+   0.5519637276226683,
+   0.6947245277344044,
+   0.8414405735489475,
+   0.9964361754285826,
+   1.1536841737910175,
+   1.384369286048134,
+   1.6386929140946735,
+   1.8887697448594745,
+   2.1486272006686864,
+   2.408131372818672
+  ],
+  "on_grid_edge": false
+ },
+ "mask_record": {
+  "dxf_sha256": "e8f68a394c535ec19204e2d83ae7ce8593a4f2ff8cb11fe9b7f98191a67a3920",
+  "N": 3543,
+  "leg_Y": [
+   0,
+   818,
+   1636,
+   2454
+  ],
+  "last_row_x_um": 7579.9
+ }
+}

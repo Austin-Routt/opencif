@@ -1,0 +1,369 @@
+{
+ "name": "xia_fig3g_outlet__shipped_bar",
+ "raster": "xia5-000.png",
+ "raster_sha256": "e9fb7fbb348567d3ab7606479c83342bcf2f5ee3d6b4c162f7c345e5ef339991",
+ "mask": "xia2016_rs7_depicted.dxf",
+ "mask_sha256": "ccfb63dd947e6b5cb1c222db6d3ebaef67cafe86b1b0d6ff57ee2b066978a694",
+ "crop": [
+  1277,
+  1594,
+  2025,
+  2338
+ ],
+ "px_per_um": 0.5164518971848225,
+ "pitch_um": 56.25,
+ "map_feature": {
+  "origin_px": [
+   3770.0510960877155,
+   -27250.72962302676
+  ],
+  "ex_px_per_um": [
+   0.0018749466847443426,
+   0.5164484937345949
+  ],
+  "ey_px_per_um": [
+   0.5164484937345949,
+   -0.0018749466847443426
+  ]
+ },
+ "map_chamfer": {
+  "origin_px": [
+   3770.0278593722974,
+   -27250.458933860606
+  ],
+  "ex_px_per_um": [
+   0.0018749466847443426,
+   0.5164484937345949
+  ],
+  "ey_px_per_um": [
+   0.5164484937345949,
+   -0.0018749466847443426
+  ]
+ },
+ "V1_feature_vs_chamfer_px": {
+  "along": 0.2706030228373401,
+  "across": 0.024219282569908004,
+  "agree": true
+ },
+ "V2_chamfer": {
+  "points": 9006,
+  "best_px": 2.225994594338079,
+  "one_pitch_along_px": [
+   2.2332077317853556,
+   2.378804463827875
+  ],
+  "half_pitch_along_px": [
+   3.9493622385525433,
+   3.960676376307908
+  ],
+  "five_um_across_px": [
+   2.5772013524577,
+   2.4789508454539453
+  ],
+  "landscape_median_px": 3.7695467984510937,
+  "ratio_landscape_median_to_best": 1.6934213623155745,
+  "ratio_one_pitch_to_best": 1.00324041103497
+ },
+ "metric": {
+  "n": 3890,
+  "median_abs_um": 3.9080922061275114,
+  "p90_abs_um": 11.690188010962487,
+  "mean_signed_um": 4.1325101652805145
+ },
+ "metric_null": {
+  "half_pitch_along": {
+   "n": 3165,
+   "median_abs_um": 11.26442689282999,
+   "p90_abs_um": 14.139953852125139,
+   "mean_signed_um": -6.934693339615891
+  },
+  "5um_across": {
+   "n": 3859,
+   "median_abs_um": 3.9003563479699657,
+   "p90_abs_um": 11.734930793177124,
+   "mean_signed_um": 2.2164417291370357
+  },
+  "one_pitch_along": {
+   "n": 3484,
+   "median_abs_um": 4.228846767073488,
+   "p90_abs_um": 11.928601462443675,
+   "mean_signed_um": 4.490385024100408
+  },
+  "registered_same_points": {
+   "n": 3663,
+   "median_abs_um": 4.126721422698138,
+   "p90_abs_um": 11.743025044080415,
+   "mean_signed_um": 4.274470730430186
+  }
+ },
+ "V3_by_class": {
+  "channel_across_L": {
+   "n": 0,
+   "total": 754,
+   "mean_signed_um": null,
+   "sd_um": null,
+   "median_abs_um": null,
+   "systematic": false
+  },
+  "island_across_C": {
+   "n": 248,
+   "total": 341,
+   "mean_signed_um": 8.167585303407883,
+   "sd_um": 0.4642068687530062,
+   "median_abs_um": 8.016766051938415,
+   "systematic": true
+  },
+  "island_across_R": {
+   "n": 136,
+   "total": 1023,
+   "mean_signed_um": -1.3099018021295512,
+   "sd_um": 0.3940026005929449,
+   "median_abs_um": 1.248379709164983,
+   "systematic": false
+  },
+  "island_along_C": {
+   "n": 20,
+   "total": 20,
+   "mean_signed_um": 5.637164579994686,
+   "sd_um": 1.4523360047511351,
+   "median_abs_um": 4.9130135660804495,
+   "systematic": true
+  },
+  "island_along_R": {
+   "n": 26,
+   "total": 50,
+   "mean_signed_um": 4.5164245950593545,
+   "sd_um": 1.5728830673516796,
+   "median_abs_um": 4.841674647614891,
+   "systematic": true
+  },
+  "post_across_C": {
+   "n": 202,
+   "total": 236,
+   "mean_signed_um": 7.2094271033348685,
+   "sd_um": 1.3538386814070829,
+   "median_abs_um": 7.6096008296006765,
+   "systematic": true
+  },
+  "post_across_R": {
+   "n": 281,
+   "total": 676,
+   "mean_signed_um": -0.7122524788063629,
+   "sd_um": 2.897233549458518,
+   "median_abs_um": 1.9369194897948143,
+   "systematic": false
+  },
+  "post_along_C": {
+   "n": 264,
+   "total": 602,
+   "mean_signed_um": 6.187101148633006,
+   "sd_um": 4.847051595209548,
+   "median_abs_um": 4.6637421712400915,
+   "systematic": true
+  },
+  "post_along_R": {
+   "n": 758,
+   "total": 1398,
+   "mean_signed_um": 4.016388800810543,
+   "sd_um": 5.339148137898755,
+   "median_abs_um": 2.90519578666768,
+   "systematic": true
+  }
+ },
+ "outline_threshold": 4.0,
+ "claim_edges": 31,
+ "other_edges": 0,
+ "region_um": [
+  55798.775,
+  57258.775,
+  -4779.0,
+  -3579.0
+ ],
+ "along_px": [
+  0.003630438178201436,
+  0.9999934099376027
+ ],
+ "exclude_px": [
+  [
+   1285,
+   1600,
+   1345,
+   1680
+  ],
+  [
+   1285,
+   1870,
+   1345,
+   2010
+  ]
+ ],
+ "measured": {
+  "px_per_um": 0.5164518971848225,
+  "scale_note": "the panel-i bar, 129.11 px per 250 \u00b5m",
+  "rotation_deg": 0.20800924232560197,
+  "rotation_fit_sd_px": 0.1338172060243078,
+  "pitch_um": {
+   "image": 55.7059457408241,
+   "image_px": 28.76944136232339,
+   "mask": 56.25
+  },
+  "centre_um": 159.6632630841275,
+  "posts_um": [
+   78.80904248426786,
+   77.2459829170577
+  ],
+  "column_separation_um": 237.94373806419694,
+  "left_side_channel_um": 672.6720825685634,
+  "mask": {
+   "centre": 150.0,
+   "post": 78.1,
+   "column_separation": 228.1,
+   "side_last_row": null
+  },
+  "feature_fit_residual_um": {
+   "along": [
+    3.0174702377313634,
+    1.666452984468179,
+    1.9186054818561908,
+    1.1081930774634972,
+    0.22234696103063864,
+    -0.3781398811853328,
+    -0.4221319261324886,
+    -2.240956972639031,
+    -1.115622750321451,
+    2.2922841722989777,
+    0.7846378635648233,
+    1.104488063215333,
+    0.014398016630039404,
+    -0.5077456534481508,
+    -1.228906667852788,
+    -1.7944506283565897,
+    -2.2671045253106046,
+    -2.1738178530244956
+   ],
+   "across": [
+    5.287516156648323,
+    4.769459726181724,
+    4.508436330134452,
+    4.794089495739216,
+    4.8243362927794955,
+    4.618063557341332,
+    5.173820557412524,
+    5.000685562183218,
+    4.673805147233651,
+    -4.915253848682459,
+    -4.791437016293952,
+    -4.950255445955408,
+    -4.721127180737464,
+    -5.049027844285386,
+    -4.788764878094879,
+    -4.3745588426194715,
+    -4.652674038822778,
+    -5.407113730161736
+   ]
+  }
+ },
+ "caption": "Xia et al. 2016 Sci. Rep. 6:35943, Fig. 3g (the outlet: leg 7's last post rows and the leads) at 1.936 \u00b5m/px (the panel-i bar, 129.11 px per 250 \u00b5m; rotation 0.21\u00b0) with the shipped mask xia2016_rs7_depicted.  Registration: scale from the bar, rotation measured on the image; translation fitted on features and, independently, by chamfer matching (they agree within 0.3 / 0.0 px along / across).  Nearest-outline offset: median 3.91 \u00b5m, 90th percentile 11.69 \u00b5m (n 3890); for comparison 11.26 \u00b5m half a pitch along and 3.90 \u00b5m 5 \u00b5m across.  On the image at this scale: centre 159.7 \u00b5m (printed 150), posts 78.8 / 77.2 (mask 78.1), post columns 237.9 apart (mask 228.1), pitch 55.71 (mask 56.25), left side channel 673 \u00b5m.",
+ "micrograph_box": [
+  1277,
+  1594,
+  2025,
+  2338
+ ],
+ "V5_scale_scan": {
+  "best_along": 0.9910568533634708,
+  "best_across": 1.0308580283124316,
+  "score_best": 1.6883601575338814,
+  "score_at_bar": 2.2352545081531,
+  "factors": [
+   0.95,
+   0.955,
+   0.96,
+   0.965,
+   0.97,
+   0.975,
+   0.98,
+   0.985,
+   0.99,
+   0.995,
+   1.0,
+   1.005,
+   1.01,
+   1.015,
+   1.02,
+   1.025,
+   1.03,
+   1.035,
+   1.04,
+   1.045,
+   1.05
+  ],
+  "profile_along_at_across_1": [
+   3.0013332536865494,
+   2.905552375510348,
+   2.8172543710133944,
+   2.730835845895587,
+   2.6216148292636916,
+   2.4625807926623593,
+   2.2868093063722195,
+   2.1887417979019794,
+   2.159170829776453,
+   2.171874230414388,
+   2.2352545081531,
+   2.349902475712911,
+   2.4781231685592844,
+   2.6089926191407433,
+   2.7208209504937138,
+   2.799212871731112,
+   2.863545822347233,
+   2.932841424677435,
+   2.9940164064585484,
+   3.0716949428028806,
+   3.154705600402372
+  ],
+  "profile_across_at_along_1": [
+   2.9928512732214774,
+   2.9411466397444626,
+   2.887005359516403,
+   2.829981433965505,
+   2.772418181125365,
+   2.706811939507653,
+   2.6272150330254735,
+   2.5419204978916,
+   2.444275974421641,
+   2.3417418691273872,
+   2.2352545081531,
+   2.129381915198002,
+   2.0307444190633777,
+   1.9448115936954973,
+   1.8713258668975123,
+   1.8000696455139162,
+   1.7609286356354188,
+   1.7750687380756724,
+   1.8674466884117262,
+   2.0669089054488854,
+   2.2891958094196867
+  ],
+  "on_grid_edge": false
+ },
+ "scale_evidence": {
+  "centre_px_panel_c": 165.66118112789798,
+  "centre_px_panel_g": 82.4589385400673,
+  "rows_c": 19,
+  "rows_g": 13,
+  "px_per_um_printed": 0.5546816172522046,
+  "um_per_px_printed": 1.8028360214167987,
+  "outline_bias_px": -0.37165202388169405,
+  "panel_d_leg_axes_px": [
+   129.3069973120889,
+   630.9672214370189
+  ],
+  "panel_d_axis_separation_px": 501.66022412493,
+  "fig3a_leg_spacing_um_legs_3_5": 901.0,
+  "fig3a_leg_spacing_uncertainty_um": 28.0
+ },
+ "bar": {
+  "px_aa": 129.11297429620564,
+  "full_pixels": 128
+ }
+}

@@ -1,0 +1,6 @@
+step ratio 1.25  deep 0.1320  shallow 0.0429  conformal 0.0429  (elems 17486)
+step ratio 1.50  deep 0.2652  shallow 0.1114  conformal 0.1114  (elems 21182)
+step ratio 2.00  deep 0.4225  shallow 0.2498  conformal 0.2498  (elems 27550)
+step ratio 2.71  deep 0.5213  shallow 0.4180  conformal 0.4181  (elems 37378)
+step ratio 3.00  deep 0.5432  shallow 0.4773  conformal 0.4773  (elems 41990)
+step ratio 4.00  deep 0.5850  shallow 0.6499  conformal 0.6500  (elems 43776)

@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "opencif"
+version = "1.0.0"
+description = "Targets-to-photomask generator for Controlled Incremental Filtration (CIF) microfluidic devices, with the design code's physics auditor run on every photomask"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+authors = [{ name = "A. H. Routt" }]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "shapely>=2.0",
+    "matplotlib>=3.7",
+    "pyyaml>=6.0",
+    "ezdxf>=1.1",
+    "pillow>=9",
+]
+
+[project.urls]
+Repository = "https://github.com/Austin-Routt/opencif"
+
+[project.scripts]
+opencif = "opencif.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["opencif*"]
+
+[tool.setuptools.package-data]
+opencif = ["data/*.json", "data/*/*.json"]

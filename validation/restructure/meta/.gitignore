@@ -1,0 +1,13 @@
+# build outputs (every build writes into runs/<name>/ unless told otherwise)
+runs/
+notebooks/tutorial_out/
+notebooks/traces_out/
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.venv/
+# matplotlib's cache inside the device packages
+.mplconfig/

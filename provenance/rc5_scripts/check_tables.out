@@ -1,0 +1,20 @@
+one R 1.25  table 0.1320  solver 0.13200  |d| 0.0e+00   shallow closed form 0.04288  solver 0.04290  |d| 2.2e-05
+one R 1.50  table 0.2652  solver 0.26520  |d| 0.0e+00   shallow closed form 0.11137  solver 0.11140  |d| 2.9e-05
+one R 2.00  table 0.4225  solver 0.42250  |d| 0.0e+00   shallow closed form 0.24983  solver 0.24980  |d| 3.3e-05
+one R 2.40  table 0.4883  solver 0.48828  |d| 2.0e-05   shallow closed form 0.34893  solver 0.34892  |d| 1.3e-05
+one R 2.71  table 0.5213  solver 0.52130  |d| 0.0e+00   shallow closed form 0.41806  solver 0.41800  |d| 5.9e-05
+one R 3.00  table 0.5432  solver 0.54320  |d| 0.0e+00   shallow closed form 0.47732  solver 0.47730  |d| 2.5e-05
+one R 4.00  table 0.5850  solver 0.58500  |d| 0.0e+00   shallow closed form 0.64997  solver 0.64990  |d| 6.7e-05
+one R 6.00  table 0.6146  solver 0.61460  |d| 0.0e+00   shallow closed form 0.90066  solver 0.90060  |d| 5.8e-05
+one R 8.00  table 0.6249  solver 0.62490  |d| 0.0e+00   shallow closed form 1.08121  solver 1.08120  |d| 1.2e-05
+sym R 1.25  table 0.0763  solver 0.07630  |d| 0.0e+00   shallow closed form 0.02144  solver 0.02140  |d| 3.9e-05
+sym R 1.50  table 0.1576  solver 0.15760  |d| 0.0e+00   shallow closed form 0.05569  solver 0.05570  |d| 1.4e-05
+sym R 2.00  table 0.2591  solver 0.25910  |d| 0.0e+00   shallow closed form 0.12492  solver 0.12490  |d| 1.6e-05
+sym R 2.40  table 0.3040  solver 0.30400  |d| 0.0e+00   shallow closed form 0.17447  solver 0.17440  |d| 6.7e-05
+sym R 3.00  table 0.3429  solver 0.34290  |d| 0.0e+00   shallow closed form 0.23866  solver 0.23860  |d| 6.2e-05
+sym R 4.00  table 0.3739  solver 0.37390  |d| 0.0e+00   shallow closed form 0.32498  solver 0.32490  |d| 8.4e-05
+sym R 6.00  table 0.3972  solver 0.39720  |d| 0.0e+00   shallow closed form 0.45033  solver 0.45030  |d| 2.9e-05
+sym R 8.00  table 0.4056  solver 0.40560  |d| 0.0e+00   shallow closed form 0.54061  solver 0.54060  |d| 6.0e-06
+step tables (deep entries): largest |table - solver| 2.0e-05
+flare tables (deep and shallow entries): every entry checked; largest |table - solver| 4.9e-05
+all tables: largest |table - solver| 4.9e-05

@@ -1,0 +1,7 @@
+mesh hmin 0.0050 hmax 0.080  W 2.400 (arc centreline radius 4.80 w): step excess with a straight lead: deep 0.4885 shallow 0.3489; interaction with the arc: deep +0.0389 (+8.0 % of c) shallow +0.0914 (+26.2 % of c); elems 47376-54516 (115 s)
+mesh hmin 0.0050 hmax 0.080  W 2.900 (arc centreline radius 5.80 w): step excess with a straight lead: deep 0.5364 shallow 0.4574; interaction with the arc: deep +0.0344 (+6.4 % of c) shallow +0.1035 (+22.6 % of c); elems 59710-68208 (168 s)
+mesh hmin 0.0050 hmax 0.080  W 3.870 (arc centreline radius 7.74 w): step excess with a straight lead: deep 0.5813 shallow 0.6298; interaction with the arc: deep +0.0273 (+4.7 % of c) shallow +0.1173 (+18.6 % of c); elems 64904-73260 (189 s)
+mesh hmin 0.0025 hmax 0.060  W 2.400 (arc centreline radius 4.80 w): step excess with a straight lead: deep 0.4883 shallow 0.3489; interaction with the arc: deep +0.0389 (+8.0 % of c) shallow +0.0914 (+26.2 % of c); elems 77620-89280 (259 s)
+mesh hmin 0.0025 hmax 0.060  W 2.900 (arc centreline radius 5.80 w): step excess with a straight lead: deep 0.5361 shallow 0.4574; interaction with the arc: deep +0.0344 (+6.4 % of c) shallow +0.1035 (+22.6 % of c); elems 97444-111072 (387 s)
+mesh hmin 0.0035 hmax 0.070  W 3.870 (arc centreline radius 7.74 w): step excess with a straight lead: deep 0.5817 shallow 0.6298; interaction with the arc: deep +0.0273 (+4.7 % of c) shallow +0.1173 (+18.6 % of c); elems 83994-94452 (311 s)
+DONE

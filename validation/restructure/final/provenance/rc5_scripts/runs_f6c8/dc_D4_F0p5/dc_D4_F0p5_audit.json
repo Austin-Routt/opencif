@@ -1,0 +1,33 @@
+{
+ "file": "dc_D4_F0p5.dxf",
+ "d_um": 18.9,
+ "n_fluid": 1,
+ "n_solid": 2246,
+ "invalid_rings": 0,
+ "bulge_polylines": 0,
+ "bounds": [
+  -3192.2,
+  -2440.0,
+  60127.5,
+  2440.0
+ ],
+ "fluid_area": 25436066.2,
+ "overlap_area": 0.0,
+ "solid_layer_overlap_with_fluid": 0.0,
+ "n_components": 1,
+ "largest_component_frac": 1.0,
+ "small_components": [],
+ "n_lost_open": 0,
+ "n_lost_solid": 0,
+ "tiling_artefacts_dropped": [
+  0,
+  0
+ ],
+ "corner_artefacts_open": 57,
+ "corner_artefacts_solid": 580,
+ "lost_open_min_width": null,
+ "lost_solid_min_width": null,
+ "lost_open": [],
+ "lost_solid": [],
+ "seconds": 54.3
+}

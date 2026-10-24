@@ -1,0 +1,20 @@
+opencif 1.0.0 (code 9e4eb55a0affeef3)
+c2(beta) = the design code's c2, bit for bit, 300 aspect ratios in [0.02, 200]       ok  
+c2_exact = the design code's _c2_exact, bit for bit (beta 0.3, 1, 2.33, 10)          ok  
+c2 tends to the cubic's 3 for a wide slot (beta = 1e4: within 1e-3)                  ok  3.000026
+the transfer bias = the design code's Pairing.transfer_bias on its reference device, bit for bit ok  (1.1515716323071492, 1.1620573838527208)
+the sensitivity map = the design code's sensitivity_map (S16-e), every entry within 1e-6 ok  dln w_s(out) 1.2273, dln w_c(out) -1.2096, dln h -0.0177, dln w_c 1.0000, dln h 0.0000, dln f 0.5012, dln kappa 2.0000
+V_operating_regime = the design code's (Re, L_e, peak shear, trunk pressure drop, the four gates) ok  Re 0.8334, gdot 1303.0 1/s, dP 4.309 kPa
+V_steric = the design code's (D/G, D/h, delta*/h and the verdict)                    ok  
+fabrication tolerance at sigma 0: every draw the design network's F, yield 1         ok  F 0.500015
+fabrication tolerance (24 draws, sigma 0.25 um, seed 0): deterministic; a wider spread spreads F ok  F std 3.95e-03 (0.25 um), 1.58e-02 (1 um); yield 0.46
+reports on m15 (linear, no head): every report; the drawn network's pressure drop within 1 % of the trunk estimate; eta F; phi = G/Lambda ok  dP trunk 9.122, device 9.114 kPa; transfer bias [1.111, 1.139]
+determinism (R1): two processes and this one draw the same photomask, byte for byte  ok  7cdc0ba8626f3b83
+invariance (M9): the schedule (f, P, S, widths, closure) at 3, 30 and 300 uL/min and 1-2.5 mPa s is the same ok  N 1124
+invariance (M9, the pitch): post length 20 and 40 um instead of 27: the same N, F, f, P, S and centre widths ok  N 1124, F 0.500299336
+M19, panel A: N = ceil(i_T) and f(i) = f_gap at every row, for the six f_gap = k x 9.6e-5 ok  N [954, 1144, 1430, 1907, 2861, 5722]
+M19, panel B: Q_s(i)/Q_c(i) = [(1 - 2 f_gap)^(-i) - 1]/2 at every row (within 1e-12) ok  1.5e-13
+M19, the endpoint: the last side segment is within 0.1 um of w_c = 100 um            ok  
+M19, panels C and D: at f_gap = 1.76e-4 the six depths give one N and one flow-ratio curve, whereas the widths fan out ok  N [3121]; w_s(1000) 54.4 um at 150 um deep and 23.6 um at 5 um
+M19 against the figure: the six k x 9.6e-5 end within 2% of the digitized curves, CIF_v2's list does not ok  largest deviation 1.7% (CIF_v2's list 5.2%)
+ALL OK

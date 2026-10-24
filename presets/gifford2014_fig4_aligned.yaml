@@ -1,0 +1,59 @@
+# Gifford 2014, Fig. 4 bead device -- ALIGNED reproduction (RC8; register GIF4-1 / INV-2): the NESTED reading.
+# Supported by four lines of evidence that agree (RC8; third-party review 1 of rc7, review8, review 3):
+#   1. the caption: "The inset shows an image of the second and fourth legs of the device during operation";
+#   2. the schematic: the four legs nested (the layout's default order);
+#   3. the inset's two arrows point the same way (consecutive legs of a path-order layout flow opposite ways; Fig. 6
+#      draws one arrow per leg, all co-directional); the weakest line: their placement, symmetric about leg 4 (one
+#      between the legs, one outside leg 4), also allows both to mark leg 4;
+#   4. the neighbour's taper direction (side channels widen along the flow, Gifford Fig. 1 caption): V13, the
+#      taper-direction sign test, PASSES on this reading (the neighbour, leg 2, widens the way leg 4 flows) and FAILS on
+#      the path-order reading B (provenance/rc7_traces/variants/gifford2014_fig4_pathorder.yaml).
+# NOT REPRODUCED: leg 2's side channels.  The image's are 17.5-18.1 um per side wider than the printed single-f schedule
+#   draws them at the rows beside the inset (about 105-107 um drawn, 122-125 um on the image); the schedule reaches the
+#   image's width about 280 rows (12.8 mm of leg) further on, in leg 3, or it would have to be 1.17 x wider there.  No
+#   reading with the printed single f_gap and a start inside the beads' bracket explains it (register GIF4-1, open).  The
+#   claim statistic is leg 4's outline only.
+# The device: Gifford's printed design with every printed value (f_gap 3.34e-4 at w_c 100 um, depth 80 um, final side
+#   width 300 um, four legs), every gap from row 4 on at the cutoff D and rows 1-3 above it, declared (the frozen physics
+#   exact on the drawing; the start rule is App. A's "other start mode", A:1118-1119, a fictitious start flow 2 sigma0 =
+#   0.0022 that the sealed drawing realises as those three off-design rows; the 8 um row-1 side channel is narrower than
+#   the 10.2 um particles they pass), and the figure's measurements:
+#   layout: four nested legs 818 um apart (M, the inset's leg spacing); leg 4's array ends 2 mm before the others (the
+#     value rc6 read on the inset for the nested preset, as gifford2014_fig4_as_fabricated_8um).
+#   start: Gifford's rule (p. 4498: w_s(1) "close to or equal to zero, depending on the device production capabilities
+#     available") at an 8 um first side channel, the "10 : 1 aspect ratio limitation" he states (p. 4503, said of deep
+#     devices) at 80 um depth (A, an inference); the same lab's later limit, ~7 : 1 (Lezzar et al. 2022), gives 11.4 um,
+#     also inside the beads' bracket (register INV-2: a straight start of up to about 12 um).  Rows 1-3 extract above D
+#     (row 1 at about 2 D, 0.5 % of the filtrate), so the earliest side fluid is nearly bead-free, as the inset shows.
+#   gap 17.2 um, posts 28.6 um along the flow (row pitch 45.8 um unchanged): M, measured on the inset (register GIF4-2,
+#     GIF4-3); the gap does not enter the side-channel schedule.
+# Rejected readings (register INV-2): B, legs in path order (above; a variant); C, a 51 um start (fits leg 2 only through
+#   a start flow the beads rule out; provenance/rc7_traces/variants/gifford2014_fig4_start51.yaml); D, a larger f over
+#   legs 1-2 (contradicts the single printed f_gap).  The design-level preset (gifford2014_fig4_design: sealed, nested) is
+#   the reference.
+name: gifford2014_fig4_aligned
+description: Gifford 2014 Fig. 4 bead device, aligned with the Fig. 4 inset (printed design and start rule; legs nested; 17.2 um gap measured; leg 2's width not reproduced)
+targets:
+  cutoff_um: 5.203174831309222      # kappa_g x(f_gap 3.34e-4) w_c 100
+  filtrate_fraction: 0.90644        # outlet identity at the printed final side width 300 um
+process: {depth_um: 80, gap_um: 17.2, post_length_um: 28.6, post_width_um: 59.5, min_feature_um: 8, fillet_um: 2.5}
+centre_channel: {taper: constant, width_in_um: 100}
+layout: {style: paperclip, legs: 4, leg_spacing_um: 818}
+meander: {enabled: false}
+start: {style: floor, side_width_um: 8}
+inlet: {style: plain, port_radius_um: 300}
+outlet: {style: separate, port_radius_um: 750, centre_port_radius_um: 300}
+gates: {mode: reproduce}
+reproduction:
+  pc_last_short: 2000.0   # leg 4's array ends 2 mm before the others (rc6's reading on the inset, the nested layout)
+  stem_half: 300.0
+  W: 2400.0
+paper:
+  source: Gifford et al. 2014, Fig. 4 and pp. 4496-4500, 4503
+  source_trace: "provenance/rc7_traces/results/gifford/gifford_results_aligned.json (Fig. 4 inset)"   # rc7 (ADJ-C6, code review R10): the trace record of this mask against the figures
+  layout: "Fig. 4 caption: 'the second and fourth legs of the device'; schematic nested (not to scale). This reading:
+    nested legs, the inset's legs 2 and 4 (RC8; register GIF4-1)"
+  measured_on_figure: [leg spacing 817.9 um, G 17.2 um and posts 28.6 um along the flow, leg 4's array end 2 mm before the
+    others (rc6)]
+  assumed: ["start side width 8 um (Gifford's 10 : 1 limitation at 80 um)", port radii (schematic not to scale)]
+  not_reproduced: ["leg 2's side channels beside the inset, 17.5-18.1 um per side wider on the image than drawn (register GIF4-1, open)"]

@@ -1,0 +1,144 @@
+{
+ "D_um": 2.1741549811760246,
+ "kappa_g": 4.9138,
+ "x_star": 0.005899453189455613,
+ "f_max": 0.00021596831587030545,
+ "ln_one_minus_2fmax": -0.00043202994323822684,
+ "P_after_reconstructed_head": 0.9441936167861491,
+ "row_where_wc_reaches_52": 2495,
+ "F_at_taper_end_width": 0.5104741921653481,
+ "P_over_Pstart_at_taper_end": 0.5184591371215814,
+ "rows_above_f_max": [
+  1
+ ],
+ "largest_f_over_f_max": 10.114776970365497,
+ "rows_credited_to_this_head": 9.134747563425403,
+ "bounds": [
+  {
+   "F_reading": "outlet identity (printed 44/52 um)",
+   "F": 0.5593,
+   "counted": "every row, a head at constant D (no row above f_max)",
+   "P_start": 1.0,
+   "N_continuous": 1896.51,
+   "N_min": 1897,
+   "length_mm_at_46": 87.26,
+   "length_mm_range": [
+    85.36,
+    89.16
+   ],
+   "pitch_for_75p8_mm_um": 39.96
+  },
+  {
+   "F_reading": "outlet identity (printed 44/52 um)",
+   "F": 0.5593,
+   "counted": "every row, this design's own head",
+   "P_start": 1.0,
+   "N_continuous": 1887.38,
+   "N_min": 1888,
+   "length_mm_at_46": 86.85,
+   "length_mm_range": [
+    84.96,
+    88.74
+   ],
+   "pitch_for_75p8_mm_um": 40.15
+  },
+  {
+   "F_reading": "outlet identity (printed 44/52 um)",
+   "F": 0.5593,
+   "counted": "linear rows after the reconstructed head",
+   "P_start": 0.94419,
+   "N_continuous": 1763.59,
+   "N_min": 1764,
+   "length_mm_at_46": 81.14,
+   "length_mm_range": [
+    79.38,
+    82.91
+   ],
+   "pitch_for_75p8_mm_um": 42.97
+  },
+  {
+   "F_reading": "constant-shear taper reaching 52 um (assumed taper)",
+   "F": 0.5105,
+   "counted": "every row, a head at constant D (no row above f_max)",
+   "P_start": 1.0,
+   "N_continuous": 1653.4,
+   "N_min": 1654,
+   "length_mm_at_46": 76.08,
+   "length_mm_range": [
+    74.43,
+    77.74
+   ],
+   "pitch_for_75p8_mm_um": 45.83
+  },
+  {
+   "F_reading": "constant-shear taper reaching 52 um (assumed taper)",
+   "F": 0.5105,
+   "counted": "every row, this design's own head",
+   "P_start": 1.0,
+   "N_continuous": 1644.26,
+   "N_min": 1645,
+   "length_mm_at_46": 75.67,
+   "length_mm_range": [
+    74.03,
+    77.31
+   ],
+   "pitch_for_75p8_mm_um": 46.08
+  },
+  {
+   "F_reading": "constant-shear taper reaching 52 um (assumed taper)",
+   "F": 0.5105,
+   "counted": "linear rows after the reconstructed head",
+   "P_start": 0.94419,
+   "N_continuous": 1520.48,
+   "N_min": 1521,
+   "length_mm_at_46": 69.97,
+   "length_mm_range": [
+    68.44,
+    71.49
+   ],
+   "pitch_for_75p8_mm_um": 49.84
+  },
+  {
+   "F_reading": "measured recovery (Dinh Fig. 4)",
+   "F": 0.505,
+   "counted": "every row, a head at constant D (no row above f_max)",
+   "P_start": 1.0,
+   "N_continuous": 1627.66,
+   "N_min": 1628,
+   "length_mm_at_46": 74.89,
+   "length_mm_range": [
+    73.26,
+    76.52
+   ],
+   "pitch_for_75p8_mm_um": 46.56
+  },
+  {
+   "F_reading": "measured recovery (Dinh Fig. 4)",
+   "F": 0.505,
+   "counted": "every row, this design's own head",
+   "P_start": 1.0,
+   "N_continuous": 1618.52,
+   "N_min": 1619,
+   "length_mm_at_46": 74.47,
+   "length_mm_range": [
+    72.86,
+    76.09
+   ],
+   "pitch_for_75p8_mm_um": 46.82
+  },
+  {
+   "F_reading": "measured recovery (Dinh Fig. 4)",
+   "F": 0.505,
+   "counted": "linear rows after the reconstructed head",
+   "P_start": 0.94419,
+   "N_continuous": 1494.74,
+   "N_min": 1495,
+   "length_mm_at_46": 68.77,
+   "length_mm_range": [
+    67.28,
+    70.27
+   ],
+   "pitch_for_75p8_mm_um": 50.7
+  }
+ ]
+}

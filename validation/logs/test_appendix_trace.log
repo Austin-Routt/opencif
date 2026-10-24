@@ -1,0 +1,75 @@
+opencif 1.0.0 (code 9e4eb55a0affeef3)
+A R1 (eq. 10): f(x) = 3x^2 - 2x^3 (CIF_v2.g_cubic)                             ok  
+A R1 (eq. 10): the design kernel is the cubic (schedule.f_of)                  ok  
+A implementers step 3: delta*/w_c >= 1/2 is an error (schedule.f_of)           ok  
+A R2 (eq. 20): x(f) is the exact root (round trip)                             ok  
+A R2 (eq. 18): leading order x = sqrt(f/3) for small f                         ok  
+A implementers test values: exact roots x(1e-4), x(5.8e-4), x(0.1)             ok  4.1e-10
+A R2: exact root vs leading order <= 0.47 % up to the calibration cap 5.76e-4  ok  0.467 %
+glossary: kappa_g = 4.9138, 95 % CI [4.750, 5.078] (half-width 3.4 %)          ok  
+glossary pairing rule (A R9 corollary, eq. 59): kappa_g with the cubic, never with F_lam ok  
+App. B C8 kernel declaration: the pair (build.KERNEL_PAIR) is the code's, and build, refusal and check records carry it ok  
+glossary envelope / App. B C8 CQ7: plateau u_lo 0.035, foot u_ff 0.012 (external inputs) ok  
+App. B thesis scope / CIF_v2 M13, M14: gap dominance 0.05, Re_max 10, Re_stokes 1e-2 (build) ok  
+A R14 (eq. 88): duct resistance = the Poiseuille series (5 aspect ratios)      ok  1.9e-09
+A implementers / glossary \squareDuctR: square duct R h^4/(mu L) = 28.454154 (28.454154) ok  
+A implementers march example: f 1e-4, 5000 rows: P 0.367843, sigma 0.859277, F 0.632157 ok  P 0.367843 sigma 0.859277
+A R10 mass identity: |P + 2S - (1 + 2 sigma_0)| at every row (gifford_physics_linear) ok  4.2e-14
+A R12 (eq. 80) / App. B C9 transport lemma: 2 phi_crit = F (gifford_physics_linear) ok  1.4e-14
+A R13(a) (eq. 81) / App. B P-C8.1: the lamina at every row is delta* (gifford_physics_linear) ok  0.0e+00
+A R10 mass identity: |P + 2S - (1 + 2 sigma_0)| at every row (the same at D 4 um) ok  3.8e-14
+A R12 (eq. 80) / App. B C9 transport lemma: 2 phi_crit = F (the same at D 4 um) ok  4.9e-15
+A R13(a) (eq. 81) / App. B P-C8.1: the lamina at every row is delta* (the same at D 4 um) ok  1.1e-16
+A R13(c) (eq. 86): changing D (hence f_gap) changes N, not F                   ok  F 0.80017 / 0.80006, N 1814 / 4070
+A R13(c) (eq. 86): changing F changes N, not the cutoff                        ok  N 1814 -> 781
+A R13(b) / App. B P-C8.2: N D^2 constant to 1 % over D 3-7 um at F 0.8         ok  spread 0.51 %
+A R13(b) (eq. 82, constant w_c): N D^2 within 1.5 % of -kappa^2 w_c^2 ln(1-F)/6 ok  65205 vs 64768 (0.92 %)
+gap-drop closure (spec v5 sec. 13; gen. A R10 eq. 69): network gives every designed f (gifford_physics_linear) ok  6.3e-11
+  ... and with A R2 and R6, every gap of that network realises D (gifford_physics_linear) ok  
+outlet closure (A R8 last para.; App. B P-C4.3): the network delivers the design F (gifford_physics_linear) ok  7.2e-12
+A R11 (eq. 75): the march meets 1 - P(N) = 2 sigma/(1 + 2 sigma) to rounding (gifford_physics_linear) ok  8.3e-15
+exact outlet vs A R8 eq. 44: |F_identity - F| <= 4 f_gap, the outlet row gap drop (gifford_physics_linear) ok  3.4 f_gap
+gap-drop closure (spec v5 sec. 13; gen. A R10 eq. 69): network gives every designed f (the same at D 4 um) ok  4.1e-10
+  ... and with A R2 and R6, every gap of that network realises D (the same at D 4 um) ok  
+outlet closure (A R8 last para.; App. B P-C4.3): the network delivers the design F (the same at D 4 um) ok  3.3e-11
+A R11 (eq. 75): the march meets 1 - P(N) = 2 sigma/(1 + 2 sigma) to rounding (the same at D 4 um) ok  7.5e-15
+exact outlet vs A R8 eq. 44: |F_identity - F| <= 4 f_gap, the outlet row gap drop (the same at D 4 um) ok  3.4 f_gap
+A R10: the design F is the target within one gap fraction                      ok  
+App. B thesis: inputs are D and F; f_gap is internal (a spec giving f_gap is refused) ok  
+glossary \hillKmax, \hillUhalf, \hillN = schedule.HILL (5.568, 0.01651, 1.791) ok  
+App. B P-C7.1: Dinh band [\dinhBandLo, \dinhBandHi] = [1.25, 2.17] um          ok  [1.248, 2.170]
+App. B P-C7.1: local kappa \dinhKappaLocal = 4.08; Xia-scaled collapse edge \dinhCollapseLo = 1.80 um ok  
+glossary \kappOverRootThree = kappa_g/sqrt(3) (2.8370)                         ok  
+build.gates below the knee: passage edge = kappa_Hill(u) delta* (\dinhCollapseLo 1.80 um at Dinh V1, +-0.01) ok  1.8048 um
+build.gates below the foot (u < 0.012): no band, no passage edge               ok  
+reference/CIF_v2.py is the frozen v2.1.0 file (md5 0e0961a5..., the project copy of CIF_v2.py) ok  
+CIF_v2 M14 literal (row 1, full inlet flow) = build.gates at 25 uL/min: Re 4.630, Re_gap 3.679e-03, Re_delta 8.776e-03 ok  2.2e-16
+CIF_v2 M14 literal (row 1, full inlet flow) = build.gates at 28.5 uL/min: Re 5.278, Re_gap 4.194e-03, Re_delta 1.000e-02 ok  4.4e-16
+CIF_v2 M14 literal (row 1, full inlet flow) = build.gates at 30 uL/min: Re 5.556, Re_gap 4.414e-03, Re_delta 1.053e-02 ok  2.2e-16
+CIF_v2 E11 (march, eps_lam 0.10) = build.gates lamina_ok at delta*/h = 0.10 -+ 1e-6 (no error, error) ok  [(False, False), (True, True)]
+CIF_v2 M16 (march, |w_c(i) - w_c(i-1)|/Lambda, eps_taper 1e-2) = build.gates taper_ok and its rate (steps 0.45, 0.47 um on Lambda 46.1 um) ok  [(False, False, True, True), (True, True, True, True)]
+CIF_v2 Process.w_min = max(F_min, h/AR_max) = opencif opts w_min (AR_max default 10) at h 100, 300, 80 um ok  
+CIF_v2 validator G7 (every w_c >= w_min): a planned 15 um centre channel under w_min 16 um is refused (strict) ok  centre width w_c = 15.00 um below w_min = max(F_min, h/AR_ma
+spec v5 G7 on the straight side channels (G11 would fold them): a planned 12 um straight side channel under w_min 16 um is refused (strict); the same width as a head row (row < NM) is not a straight side channel ok  straight side channel w_s = 12.00 um (row 1) below w_min = m
+Dean term given at the edge (Re bound 2 rho Q/(mu h) = 10 to rounding: h 100 um, 30 uL/min, floor 0) and its value ok  3.687e-03
+P8 (CIF_v2 _PHYSICS_SRC): inlet Re <= Re_max = 1.0 at Q_in_uLmin = 5.0, and L_e = 0.05 Re D_h <= Lambda/2; build matches ok  
+CIF_v2 entrance_length (S16-c) itself calls 0.05 Re D_h "simply the wrong formula" (why P8's L_e is not gated) ok  
+P8 inlet Re in the record = CIF_v2 reynolds(Q, w_c0, h) at the design flow (30) and the auditor's (5 uL/min); the any-channel bound exceeds the centre-channel Re ok  5.556, 0.926
+glossary \kappVal = kappa_g (4.9138)                                           ok  
+glossary \kappCIlo, \kappCIhi = its interval to 2 d.p. (4.75, 5.08)            ok  
+glossary \plateauUwc, \footUwc = the envelope edges the gates use (0.035, 0.012) ok  
+glossary \fgapDesignCap = the calibration cap the record reports (schedule.FGAP_CAP) ok  
+glossary \dcritGGIn, \FclosedVone = the Dinh V1 preset targets D, F (2.174, 0.5592) ok  
+glossary \FclosedVthree = published V3 closed-form F (0.7189)                  ok  
+CIF_v2 Pairing: every field accounted for (9: 2 gated, 1 partly, 3 reported, 3 consumed, 0 a spec input, replaced or a named limitation) ok  unmapped []; stale []
+CIF_v2 Pairing: each disposition holds (values equal, or the named LIMITATIONS item names it) ok  []
+CIF_v2 Tolerances: every field accounted for (11: 5 gated, 0 partly, 0 reported, 0 consumed, 6 a spec input, replaced or a named limitation) ok  unmapped []; stale []
+CIF_v2 Tolerances: each disposition holds (values equal, or the named LIMITATIONS item names it) ok  []
+CIF_v2 Process: every field accounted for (19: 1 gated, 0 partly, 0 reported, 0 consumed, 18 a spec input, replaced or a named limitation) ok  unmapped []; stale []
+CIF_v2 Process: each disposition holds (values equal, or the named LIMITATIONS item names it) ok  []
+reference/glossary_values.json names the frozen v114 preamble (md5 3c075af8...) ok  
+reference_glossary/PREAMBLE_FINAL.tex is the frozen v114 preamble (md5 3c075af8...) ok  
+reference/glossary_values.json holds the preamble's own values (18 macros)     ok  
+foundation/ holds the frozen v114 A, B, glossary and preamble (md5 as FREEZE_v114) ok  {}
+docs/ALIGNMENT.md says it was audited against v114                             ok  
+ALL OK

@@ -1,0 +1,22 @@
+{
+ "name": "generic19_separate_F0p5_linear_u0p035",
+ "kwargs": {
+  "cutoff_um": 4.0,
+  "filtrate_fraction": 0.5,
+  "width_in_um": 114.28571428571428,
+  "layout": "linear"
+ },
+ "exit_code": 0,
+ "verdict": "PASS [1-D model: junction band: 3 row(s) beyond +-1% (up to 16.5% of D; rows 71-73; 0.18% of F)]",
+ "status": {
+  "hard_checks": "PASS",
+  "validity_envelope": "INSIDE",
+  "chip_area": "NOT GIVEN",
+  "aspect_ratio_of_CIF_channels": "WITHIN THE LIMIT",
+  "length_budget_G9": "NOT GIVEN (no chip)",
+  "physics_auditor_P8": "ABSENT: no independent drawn-geometry auditor; CIF_v2's P8 criteria computed from the design as diagnostics (validation.gates.P8), not gated",
+  "fabricated_or_measured": "NO: Q1 and Q2 are statements of the 1-D network on the drawn mask"
+ },
+ "failed": [],
+ "seconds": 241.4
+}

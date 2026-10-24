@@ -1,0 +1,89 @@
+# Dinh 2024 V1 -- FIGURE-ALIGNED reproduction (rc7, register INV-1; a two-cutoff reading of Dinh's figures, offered beside
+# the printed preset dinh2024_v1_depicted, which stays the reference).  Dinh's Fig. 2A, drawn to scale (its inlet disc
+# is round), and Fig. 3A's photograph put the linear section at 23-29 mm, 514-642 rows at the 45.1 um row pitch (514 with
+# Fig. 2A read at the printed 3.2 mm width its head arms span, the reading rc6's data/r4/dinh_layout_meas.json takes; 642
+# with it read at the printed 75.8 mm length).  Holding D 2.17 um (the printed f* at 75 um) at every gap, on the assumed
+# constant-shear taper (f from f* to 2.08 f*), draws 2,482 linear rows (112 mm); with any taper (f at most f_max, its
+# value at 52 um) it needs >= 1,762 (79.5 mm) at this preset's F.  Premises (codereview / foundation check 2): the closure at the printed seam (21 um) and outlet
+# (44 / 52 um) widths with the mass identity (A:1126-1132, A:1141, A:1148) fixes the linear section's total extraction
+# (sum -ln(1 - 2 f) = 0.761 at the 1-D outlet identity's F 0.5592); App. A R13(a)'s invariant lamina (A:1294-1303, the
+# rule Dinh states, B:2958-2962) with the assumed taper (A) turns a row count into a cutoff: 4.28 um (642 rows) to 4.79 um
+# (514 rows) at F 0.5592; at the measured F 0.505 (A:816-821: the 1-D identity is 10.7 % above it) the same row counts
+# give 4.04-4.52 um.  Dinh's bead data (ESI Fig. S1B; App. B P-C7.2, B:2986-2996: the cutoff in (1.0, 4.7) um) exclude
+# 4.7 um and above, with soft edges (B:3069-3070); 4.7 um beads retained at 96-98 % favour the low end:
+#   targets.cutoff_um 3.67 um: D, FITTED to the printed device length (rc7 final; A. H. Routt, 2026-10-19; register
+#     INV-1, revision): the cutoff at which the drawn device (the depicted head, the linear section, the inlet with its
+#     filter, the outlets) is the printed 75.8 mm long (75.71 mm drawn; 874 linear rows, 39.5 mm; the fit moves about
+#     0.09 um per 2 mm; provenance/rc7_scripts/postfreeze/length_vs_D.py); the linear rows extract 2.8 f* at 75 um to
+#     5.9 f* at 52 um.  The beads agree: on Gifford's measured soft edge (his Fig. 5) the 4.7 um beads' passage (3.6 /
+#     6.7 / 14.2 % of the fluid's) implies D 2.3-3.9 um, where his curves pass 11-35 % at 3.67 um and 29-50 % at
+#     4.29 um (postfreeze/softedge.py).  The figures' row counts give more: 4.28-4.79 um at F 0.5592 (rc7's first
+#     shipped reading took 4.29 um, 642 rows, 65.2 mm drawn; before it, 4.5 um, the 1-D range's middle).  Beyond
+#     calibration (convergence review 1, M2): f_gap reaches 6.13e-4 at 52 um, above kappa_g's calibration cap 5.76e-4
+#     (glossary \fgapDesignCap, Gifford's array) on the 133 linear rows narrower than 53.6 um (21 % of the section's
+#     extraction), and above spec v5's f_soft 5e-4 on 252 (validation.gates.f_beyond_calibration); a prefactor 10 % off
+#     there moves D by -0.05 to +0.02 um (postfreeze/kappa_beyond_cap.py).  Not an over-extraction factor (App. A
+#     A:809-811): a different cutoff, row by row.
+#   the head exactly as the depicted preset plans it (reproduction.f_head, 219 rows, NM_force 219, written by
+#     provenance/rc7_scripts/make_dinh_figure_aligned_head.py): its 18 rows measured on Fig. 2A's inset (f 2.8-13 f*,
+#     mostly ~3.7 f*: cutoffs about 4.2 um; derived for the square-turn head, code review R2), then 201 rows at the
+#     printed f* (2.17 um), which make the head 24.1 mm long from gap row 1, 1.3 mm (5 %) shorter than Fig. 2A's head
+#     (25.4 mm at the 3.2 mm reading, data/r4/dinh_layout_meas.json less the 1.45 mm from its top to row 1).  Two scales
+#     (convergence review 1, M1; rc7 final): the printed length is kept at the price of the figures' proportion.  The
+#     drawn linear section starts at 41.5 % of the inlet port -> middle outlet distance, against 54.2 % on Fig. 2A and
+#     46-58 % on Fig. 3A's photograph (whose bound puts the linear section at most ~36 mm, ~800 rows; this preset draws
+#     874); Fig. 2A's scale-free head : linear proportion is 1.09, this preset draws 0.65; at Fig. 2A's 75.8 mm length
+#     scale its head is 31.8 mm, 7.7 mm longer than drawn.  No single reading of the figures gives the printed length,
+#     the depicted head and their proportion together.  The head
+#     ends at the printed seam width (21 um), where the side flow reaches sigma 0.030 of the centre flow per side (5.65 %
+#     of the inlet flow in all), whatever f is: 279 rows at f*, 75 at 3.7 f*; its length is a reading of its f.  These
+#     head rows are declared departures ('head drawn as depicted') from the device's cutoff; the rows at 2.17 um lie below
+#     the kappa plateau (u 0.029), where the design tool refuses a design (B:4146-4149).
+# What it contradicts: Dinh's "to maintain the desired size cut-off throughout the device" (p. 916) and the printed f* in
+# the linear section; it weakens App. B C7's wording for Dinh (B:993-996, 2974-2975).  Under the frozen model Dinh's
+# text and figures cannot both hold at the 1-D F: D 2.17 um with any taper needs >= 1,762 linear rows (79.5 mm; 1764 rows, 79.6 mm from
+# the planned head, provenance/rc7_scripts/dinh_lengths/); at the measured F 0.505 the conflict needs one more premise,
+# the head at f* up to the printed seam (App. B's reading, B:3208-3210: >= 80.0 mm with it, 67.4 mm without).  Support
+# besides the layout (support, not proof): the 18 measured head units, and Dinh's filtrate (CIFside) platelets (mean
+# 6.8 fL against 9.1 fL in; 4.9 % of the 12 fL ones, p. 917; platelets are outside the frozen rigid-sphere scope,
+# B:4194).  Everything else as dinh2024_v1_depicted.
+name: dinh2024_v1_figure_aligned
+description: Dinh 2024 V1, figure-aligned two-cutoff reading (head as depicted at the printed f*; linear section at 3.67 um, fitted to the printed 75.8 mm device length)
+targets: {cutoff_um: 3.67, filtrate_fraction: 0.5592}   # D 3.67 um: fitted so that the drawn device is the printed 75.8 mm long (header); F: the outlet identity at the printed widths
+process: {depth_um: 140, gap_um: 19, post_length_um: 26.1, post_width_um: 54, min_feature_um: 19}
+centre_channel: {taper: constant_shear, width_in_um: 75, width_min_um: 52}
+layout: {style: linear}
+# rc7 (DINH-1): the head's quarter turns are square corners, as Fig. 2B's first panel shows them (rc6 drew arcs of
+# centreline radius 27.5 um, outer wall 41.5 um): outer corners rounded 7 um (M: 6.0 / 8.6 um left / right, read at the
+# panel's rc6 registration, provenance/rc7_scripts/measure_p1.py), inner corners (the walls' ends) 10 um (M: the best corner radius,
+# 9-11 um); each corner's excess length is the rc7 2-D value (cifsched.c_corner).  The U-turns stay semicircles (the
+# wall ends there fit them within about 2 um).  The wall corners where each unit's stem leaves the centre channel (the
+# head gaps' entrance) are rounded 11 um (M: about 7-15 um on panel 1, the reading moving a few um with the registration, register
+# DINH-7, provenance/rc7_scripts/dinh_corners/; drawing only: the gap entrance
+# term c_ent is external).
+meander: {enabled: true, style: arms, arms: 3, channel_um: 28, wall_um: 27, head_width_um: 3200, seal: allow,
+          transition: paper, rectilinear_rows: 3, seam_side_width_um: 21, seam_at: post,
+          turns: square, corner_radius_um: 7.0, inner_corner_radius_um: 10.0, junction_radius_um: 11.0}
+inlet: {style: dinh_filter, port_radius_um: 1020, stem_half_width_um: 600}
+# outlet (rc5; rc6 onset): Fig. 2B, fourth panel: each side channel's outer wall runs straight 65.4 um from the last
+# gap's centre (rc6: rc5's 67 um reading rescaled to the 50 um bar read with its anti-aliased ends, 46.91 px; rc5 46),
+# then flares at 14.5 deg per side (both walls, from their own straight direction: provenance/rc5_scripts/
+# measure_dinh_flare.py); the lead width the flare reaches is the generator's (not visible in the panel)
+outlet: {style: teardrop, port_radius_um: 980, centre_port_radius_um: 956, flare_deg: 14.5, flare_start_um: 65.4}
+gates: {mode: reproduce}
+reproduction:
+  margin: 15.0
+  R0_arms: 1281.0
+  ws_rect: 28.0
+  NM_force: 219
+  f_head: [0.0013811160719066115, 0.0004044156258947609, 0.0003847455659207298, 0.00035067154944700774, 0.0003631208391081065, 0.0003700506809111265, 0.0003726876974217313, 0.0003812655153440718, 0.0003704633310405391, 0.0003830744322479782, 0.0003857783042612674, 0.00037516717008041073, 0.000385547357317826, 0.0003905954374496497, 0.00038685176191946455, 0.0003757587565736613, 0.00040296949632720984, 0.0002964920270300366, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001, 0.00010400000000000001]   # the depicted preset's planned head (provenance/rc7_scripts/make_dinh_figure_aligned_head.py)
+paper:
+  source: Dinh et al. 2024 Lab Chip, Fig. 2 (p. 917) and p. 916; measured F (V1) 0.505 +- 0.033 (mean +- SD, Fig. 4)
+  targets_fitted: "D 3.67 um, fitted so that the drawn device (the depicted head, the linear section, the inlet with its filter and the outlets) is the printed 75.8 mm long (register INV-1, revised 2026-10-19); F from the printed outlet widths"
+  source_trace: "provenance/rc7_traces/results/dinh/dinh_results_fa.json (Fig. 2B panels 1-4)"   # rc7 (ADJ-C6, code review R10): the trace record of this mask against the figures
+  note: "rc7 (register INV-1): a two-cutoff reading of Dinh's figures; its premises, the figure lengths and the bead
+    bracket are in this file's header.  The printed device's length analysis (the every-row bound and the printed
+    schedule's lengths at the measured F) is dinh2024_v1_depicted's (its paper.note and paper.length_bound) and is not
+    repeated here: this preset's own lengths are in its build record (design and footprint)"
+# flow: Dinh 2024 runs V1 at 30 uL/min (printed)
+operation: {flow_uL_min: 30}

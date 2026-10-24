@@ -1,0 +1,77 @@
+# Dinh 2024 V1 (Fig. 2), the head AS DEPICTED (Fig. 2A inset unit lengths): reproduced from its decoupled targets.
+# D: Dinh prints f* = 1.04e-4 at the inlet width w_c = 75 um; the cutoff it implies is kappa_g x(f*) w_c = 2.1742 um.
+# F: 0.5592, the outlet identity at Dinh's printed outlet widths (measured: 0.505 +- 0.033, Dinh Fig. 4).
+name: dinh2024_v1_depicted
+description: Dinh 2024 V1 -- constant-shear taper 75 -> 52 um, three goal-post arms, two-stage filter, teardrop outlet
+targets: {cutoff_um: 2.1741549811760246, filtrate_fraction: 0.5592}
+process: {depth_um: 140, gap_um: 19, post_length_um: 26.1, post_width_um: 54, min_feature_um: 19}
+centre_channel: {taper: constant_shear, width_in_um: 75, width_min_um: 52}
+layout: {style: linear}
+# rc7 (DINH-1): the head's quarter turns are square corners, as Fig. 2B's first panel shows them (rc6 drew arcs of
+# centreline radius 27.5 um, outer wall 41.5 um): outer corners rounded 7 um (M: 6.0 / 8.6 um left / right, read at the
+# panel's rc6 registration, provenance/rc7_scripts/measure_p1.py), inner corners (the walls' ends) 10 um (M: the best corner radius,
+# 9-11 um); each corner's excess length is the rc7 2-D value (cifsched.c_corner).  The U-turns stay semicircles (the
+# wall ends there fit them within about 2 um).  The wall corners where each unit's stem leaves the centre channel (the
+# head gaps' entrance) are rounded 11 um (M: about 7-15 um on panel 1, the reading moving a few um with the registration, register
+# DINH-7, provenance/rc7_scripts/dinh_corners/; drawing only: the gap entrance
+# term c_ent is external).
+meander: {enabled: true, style: arms, arms: 3, channel_um: 28, wall_um: 27, head_width_um: 3200, seal: allow,
+          transition: paper, rectilinear_rows: 3, seam_side_width_um: 21, seam_at: post,
+          turns: square, corner_radius_um: 7.0, inner_corner_radius_um: 10.0, junction_radius_um: 11.0}
+inlet: {style: dinh_filter, port_radius_um: 1020, stem_half_width_um: 600}
+# outlet (rc5; rc6 onset): Fig. 2B, fourth panel: each side channel's outer wall runs straight 65.4 um from the last
+# gap's centre (rc6: rc5's 67 um reading rescaled to the 50 um bar read with its anti-aliased ends, 46.91 px; rc5 46),
+# then flares at 14.5 deg per side (both walls, from their own straight direction: provenance/rc5_scripts/
+# measure_dinh_flare.py); the lead width the flare reaches is the generator's (not visible in the panel)
+outlet: {style: teardrop, port_radius_um: 980, centre_port_radius_um: 956, flare_deg: 14.5, flare_start_um: 65.4}
+gates: {mode: reproduce}
+reproduction: {margin: 15.0, R0_arms: 1281.0, ws_rect: 28.0, depicted_head: dinh}
+paper:
+  source: Dinh et al. 2024 Lab Chip, Fig. 2 (p. 917) and p. 916; measured F (V1) 0.505 +- 0.033 (mean +- SD, Fig. 4)
+  source_trace: "provenance/rc7_traces/results/dinh/dinh_results_rc7.json (Fig. 2B panels 1-4)"   # rc7 (ADJ-C6, code review R10): the trace record of this mask against the figures
+  note: "length (premises: the frozen cutoff law's cubic kernel with the lamina the same at every gap, at the plateau
+    prefactor kappa_g, which is App. B's own reading of Dinh's rule ('Under the Xia-scaled reading, which is the one
+    Dinh describes, the lamina is the same at every gap', App. B :2970-2972; each gap adjusted 'to maintain the desired
+    size cut-off throughout the device', p. 916), fixed by the printed f* at 75 um, so kappa drops out of the row count;
+    every centre width >= 52 um; two gaps per row; every gap row at least the 45.1 +- 0.2 um row pitch measured on
+    Fig. 2B at its 50 um bars read with their anti-aliased ends, rc5 46.0 +- 1.0).  (1) A lower bound for any taper,
+    every row at f_max: the gap rows alone need >= 1897 rows, 85.6 mm, at the F this preset closes (0.5593, the 1-D
+    outlet identity at the printed 44 / 52 um), 74.6 mm at F 0.5104 and 73.4 mm at the measured F 0.505 (84.7 / 73.8 /
+    72.6 mm with this preset's head, whose first rows are drawn above f_max, a departure from constant D), against the
+    printed 75.8 mm of 'An assembled CIF device' (Fig. 3A), which also holds the inlet with its filter and the two
+    outlets (p. 916): the bound leaves them 2.4 mm (3.2 with the head's credit) at the measured F and 1.2 mm (2.0) at
+    0.5104, so by itself it shows no conflict at either; with App. B's reading of the head (at f* up to the printed 21 um
+    seam, B:3208-3210) the seam-anchored bound is >= 80.0 mm at the measured F, so under that premise the conflict holds
+    there too (rc7, the independent foundation check).  (2) A centre channel narrowed 'progressively' (p. 916) needs
+    more rows: this preset's own schedule needs 125.5 mm of head and rows at F 0.505 (99.9 mm of linear rows), a width
+    linear in the row index 105.8 mm of rows; the rows fit 75.8 mm only if they extract on average at least 96.9 % of
+    f_max, as a constant 52.8 um centre would (a linear narrowing then 52 um: within the first 10.2 % of the rows at the
+    measured pitch, 11.7 % at 44.9 um, 8.8 % at 45.3 um, 13.6 % with this preset's head credit).  So under these
+    premises the conflict holds at this preset's F, and at the measured mean F for a centre narrowed over more than the
+    first 10.2 % of the rows (at most 15.1 % within the pitch's tolerance and with the head's credit), this preset's
+    schedule and a width linear in the row index included (at one SD below the measured mean, F 0.472, a linear
+    narrowing within the first 39.2 % of the rows would fit); it is between the premised model and the printed
+    footprint, not among the printed numbers, and its cause (the kernel's lamina-flux relation in 140 um deep channels,
+    the constant lamina, the pitch, or a taper or design rule the paper does not print) is not known.  The cutoff law
+    below its plateau (rows wider than 62 um) does not remove it: holding D itself constant with the Hill curve there
+    either lengthens the device or does not return the printed f* (provenance/rc6_scripts/dinh_length_bound.py,
+    dinh_schedule_at_F.py, dinh_taper_alternatives.py; rc7's outputs, for the square-turn head, in provenance/rc7_scripts/
+    dinh_lengths/; rc5's at 46.0 um in provenance/rc5_scripts/)"
+  length_bound: {status: "conditional on the premises: the every-row bound conflicts at the outlet identity's F (85.6 mm
+      against 75.8) and leaves 1.2 mm (2.0 with this head's credit) at 0.5104 and 2.4 mm (3.2) at the measured F for the
+      inlet, filter and outlets; at the measured F and pitch a linear narrowing fits only within the first 10.2 % of the
+      rows (13.6 % with this head's credit), so a progressive taper, this preset's included, conflicts; at one SD below
+      the measured F a linear narrowing within the first 39.2 % of the rows fits", pitch_um: 45.1,
+    pitch_tolerance_um: 0.2, f_max: 2.1597e-4, printed_footprint_mm: 75.8,
+    min_length_mm_constant_D_head: {F_0.5593: 85.55, F_0.5104: 74.60, F_0.505: 73.42},
+    min_length_mm_this_head: {F_0.5593: 84.74, F_0.5104: 73.78, F_0.505: 72.61},
+    this_schedule_head_plus_rows_mm: {F_0.5592: 137.59, F_0.5105: 126.68, F_0.505: 125.51, F_0.472: 118.43},
+    linear_taper_rows_mm: {F_0.5593: 123.30, F_0.5105: 107.47, F_0.505: 105.80, F_0.472: 96.11},
+    mean_f_needed_over_f_max_at_F_0.505: 0.969,
+    largest_share_tapering_at_F_0.505: {pitch_44.9_um: 0.117, pitch_45.1_um: 0.102, pitch_45.3_um: 0.088,
+      pitch_45.1_um_with_this_head_credit: 0.136},
+    # (F 0.5104 is the F at the taper's end, where the bound is taken; the schedules are planned at the target 0.5105)
+    script: provenance/rc6_scripts/dinh_length_bound.py, outputs_rc7: provenance/rc7_scripts/dinh_lengths/,
+    scripts_after_rc5_reviews: [provenance/rc6_scripts/dinh_schedule_at_F.py, provenance/rc6_scripts/dinh_taper_alternatives.py]}
+# flow: Dinh 2024 runs V1 at 30 uL/min (printed)
+operation: {flow_uL_min: 30}

@@ -1,0 +1,192 @@
+[check] planned: A=8 (sealed would need 8, lateral cap 8), f1/f*=1.000, N=3546, NM=59, w_s(in) target 20.00 (1s)
+[check] drawn: bounds [-13470.3, -1112.3, 37338.1, 4663.1] (37s)
+the drawn parts collide: 'inlet and head' and 'leg 2' are 0.0 um apart (they overlap; they must keep the 20.0 um process floor).  Remedies: move 'inlet and head' and 'leg 2' apart until at least the 20.0 um floor separates them (they overlap now); the layout uses the spec's layout.leg_spacing_um = 818 as given; the generator's own rule spaces this paperclip's legs 1668 um apart (max(2 x 409, 1109 + 409) + 150 um: the widest row's half-width and the head's); give no spacing to use it, or space the legs beside the head at least that far; or change the parts themselves (a narrower head, smaller ports, another leg count or layout)
+{
+ "N": 3546,
+ "NM": 59,
+ "F_design": 0.9064743461558772,
+ "sealed": true,
+ "D_um": 5.203174831309222,
+ "kernel_pair": {
+  "kernel": "cubic",
+  "f_of_x": "f = 3x^2 - 2x^3, x = delta/w_c (delta/w_c < 1/2)",
+  "cutoff": "D = kappa_g delta*",
+  "kappa_g": 4.9138,
+  "kappa_ci": [
+   4.75,
+   5.078
+  ],
+  "plateau_u": 0.035,
+  "foot_u": 0.012,
+  "hill_below_knee": {
+   "kmax": 5.568,
+   "u_half": 0.01651,
+   "n": 1.791
+  },
+  "source": "CIF_v2 v2.1.0 Pairing (byte-frozen, opencif/reference); Hill fit: glossary macros"
+ },
+ "seal_refusal": null,
+ "outlet_refusal": null,
+ "layout_refusal": "the drawn parts collide: 'inlet and head' and 'leg 2' are 0.0 um apart (they overlap; they must keep the 20.0 um process floor).  Remedies: move 'inlet and head' and 'leg 2' apart until at least the 20.0 um floor separates them (they overlap now); the layout uses the spec's layout.leg_spacing_um = 818 as given; the generator's own rule spaces this paperclip's legs 1668 um apart (max(2 x 409, 1109 + 409) + 150 um: the widest row's half-width and the head's); give no spacing to use it, or space the legs beside the head at least that far; or change the parts themselves (a narrower head, smaller ports, another leg count or layout)",
+ "preflight_refusal": null,
+ "envelope_failures": [],
+ "layout": {
+  "layout": "paperclip",
+  "legs": 4,
+  "footprint_mm": [
+   50.80836313,
+   5.77540657
+  ],
+  "leg_Y": [
+   0,
+   818,
+   1636,
+   2454
+  ],
+  "leg_d": 818,
+  "R_turn": 409.0,
+  "outlet_stretch_extended_um": 0.0,
+  "outlet_stretch_extensions": null,
+  "pairs_below_floor": [
+   [
+    "inlet and head",
+    "leg 2"
+   ]
+  ],
+  "part_clearance": {
+   "ok": false,
+   "floor_um": 20.0,
+   "parts": [
+    "inlet and head",
+    "leg 1",
+    "U-turn 1",
+    "leg 2",
+    "U-turn 2",
+    "leg 3",
+    "U-turn 3",
+    "leg 4",
+    "outlet"
+   ],
+   "pairs_within_reach": 2,
+   "closest": [
+    {
+     "gap_um": 0.0,
+     "parts": [
+      "inlet and head",
+      "leg 2"
+     ]
+    },
+    {
+     "gap_um": 303.951,
+     "parts": [
+      "inlet and head",
+      "U-turn 2"
+     ]
+    }
+   ]
+  },
+  "collisions": [
+   "'inlet and head' and 'leg 2' are 0.0 um apart (they overlap; they must keep the 20.0 um process floor)"
+  ]
+ },
+ "notes": [
+  "measured on the drawing: every side segment, head unit length and width, U-turn side and centre arc, outlet lead, gap opening and centre width.  Taken from the design (not measured): the post length across the flow (gap length l_g) and so the side channels' inner edge, the radii of the head and outlet arcs (their widths are measured), the head rows' centre-path lengths, and any off-chip tubing."
+ ],
+ "gates": {
+  "M13_gap_dominance_max": 0.030669255790488084,
+  "M13_ok": true,
+  "Re_max": 5.555555555555556,
+  "Re_ok": true,
+  "Re_gap_max": 0.003323383084577114,
+  "Re_gap_row": 1,
+  "Re_gap_row1_cifv2": 0.003323383084577114,
+  "Re_delta_max": 0.007919937493927871,
+  "Re_delta_row": 1,
+  "Re_delta_row1": 0.007919937493927871,
+  "stokes_ok": true,
+  "Re_gap_planned_max": 0.0031906404018563973,
+  "Re_delta_planned_max": 0.007919937493927871,
+  "f_design_max": 0.000334,
+  "f_planned_max": 0.000334,
+  "f_calibration_cap": 0.000576,
+  "f_beyond_calibration": false,
+  "f_soft": 0.0005,
+  "f_above_soft": false,
+  "lamina_over_depth": 0.013236127923677251,
+  "lamina_limit": 0.1,
+  "lamina_ok": true,
+  "lamina_over_depth_planned_max": 0.013236127923677251,
+  "lamina_all_rows_ok": true,
+  "taper_rate_max": 0.0,
+  "taper_rate_row": 1,
+  "taper_rate_limit": 0.01,
+  "taper_ok": true,
+  "taper_pitch_um": 45.8,
+  "P8": {
+   "inlet_Re_limit": 1.0,
+   "at_auditor_flow": {
+    "flow_uL_min": 5.0,
+    "inlet_Re": 0.9259259259259259,
+    "inlet_Re_within_limit": true,
+    "naive_Le_um": 4.1152263374485605,
+    "naive_Le_over_half_pitch": 0.179704206875483,
+    "passes": true
+   },
+   "at_design_flow": {
+    "flow_uL_min": 30.0,
+    "inlet_Re": 5.555555555555556,
+    "inlet_Re_within_limit": false,
+    "naive_Le_um": 24.69135802469136,
+    "naive_Le_over_half_pitch": 1.0782252412528979,
+    "passes": false
+   },
+   "status": "diagnostic only, not an audit and not gated (docs/LIMITATIONS.md 6): the two criteria of CIF_v2's physics auditor check P8, computed from the design (CIF_v2's auditor is not run on the exported mask; opencif's own drawn-mask checks are assessment.status.drawn_mask_assessment) at the auditor's default operating point (5 uL/min) and at the design flow; its 0.05 Re D_h is the entrance length spec v5, the glossary and CIF_v2 S16-c call wrong in this regime, and its Re limit 1.0 is CIF_v2's settable default (App. B prints no value), not the design envelope's (Re_max = 10, M14)"
+  },
+  "Re_any_channel_bound": 10.010010010010014,
+  "dean_leading_term_bound": null,
+  "dean_note": "no bound: the channel Reynolds bound 2 rho Q/(mu (h + F_min - 0.1 um)) = 10.01 exceeds 10 (the gated centre-channel Re is Re_max)",
+  "shear_peak": {
+   "formula": "C(alpha) Q_c / (a b^2), the centre flow entering each row, on the planned centre widths at the operating flow (spec v5 S16-b, S:449)",
+   "gamma_max_per_s": 7063.498680382085,
+   "gamma_min_per_s": 661.059920536752,
+   "row1_per_s": 7063.498680382085,
+   "last_row_per_s": 661.059920536752,
+   "taper": "const",
+   "taper_shear_formula": null,
+   "note_rows": "every row's peak falls with its centre flow once the centre is at its floor (or constant)"
+  },
+  "fluid": {
+   "rho_kg_m3": 1000.0,
+   "mu_Pa_s": 0.001,
+   "rheology": "newtonian",
+   "note": "water (the default); the Reynolds gates scale with rho/mu; the schedule does not depend on the fluid (resistance ratios, Newtonian); the absolute resistances in the record (Pa s/m^3) are at water's viscosity"
+  },
+  "Le_over_Lambda_L": 1.4420243083917579,
+  "plateau_u_min": 0.05203174831309222,
+  "plateau_ok": true,
+  "plateau_u_min_all_planned_rows": 0.05203174831309222,
+  "plateau_F_share_below_all_planned_rows": 0.0,
+  "plateau_all_planned_rows_note": "rc7: planned row cutoffs over the centre width, declared rows included, over the rows extracting at least 5 % of the constant-cutoff fraction at their width; the share is of the flow all rows extract",
+  "plateau_rows_in_knee": 0,
+  "plateau_F_share_in_knee": 0.0,
+  "cutoff_band_um": {
+   "band_um": [
+    5.029728610997355,
+    5.377044607714647
+   ],
+   "basis": "on the plateau: the kappa_g interval x delta*",
+   "retention_side": [
+    5.029728610997355,
+    5.377044607714647
+   ],
+   "passage_edge_below_knee": null,
+   "c7_band_constant_lamina": null,
+   "kappa_at_passage_edge": null,
+   "method": "on the plateau (u_min >= 0.035): the kappa_g interval x delta*.  Below it the record uses App. B P-C7.1 (the frozen Hill fit; glossary \\hillKmax, \\hillUhalf, \\hillN): band [kappa(u) delta*, kappa_g delta*], plateau-anchored (App. B C7 CQ3)"
+  },
+  "kappa_band_um": [
+   5.029728610997355,
+   5.377044607714647
+  ]
+ }
+}

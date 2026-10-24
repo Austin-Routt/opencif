@@ -1,0 +1,70 @@
+opencif 1.0.0 (code 9e4eb55a0affeef3)
+cases [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] (OPENCIF_TEST_CASES)
+plan stage 00: answered (exit 0), no crash: generic19 linear, no head, floor start, plain, separate ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 00: the generator's own placement is outlined (exit 0 or 3) and never refused for colliding parts ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 00: the outlet stretch is not lengthened (no outlet meets the inlet end)              ok  
+build 00: exit 2: the check's (0), with the FAIL the case declares (Q2)                          ok  FAIL (Q2 cutoff D at every gap (undeclared rows); physics audit of the photomask file (P0-P10))
+build 00: every hard geometric check of the drawn mask passes (all but Q1, Q2 and the audit's same questions) ok  the audit fails ['P5'], as the case declares
+build 00: the outlet stretch is the check's (+0 um)                                              ok  
+build 00: the photomask is <name>_FAILED.dxf (a FAIL), and no _UNASSESSED.dxf remains            ok  
+plan stage 01: answered (exit 0), no crash: generic19 linear, pack, filter, teardrop             ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 01: the generator's own placement is outlined (exit 0 or 3) and never refused for colliding parts ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 01: the outlet stretch is not lengthened (no outlet meets the inlet end)              ok  
+plan stage 02: answered (exit 0), no crash: generic19 linear, narrow, plain, ring                ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 02: the generator's own placement is outlined (exit 0 or 3) and never refused for colliding parts ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 02: the outlet stretch is not lengthened (no outlet meets the inlet end)              ok  
+plan stage 03: answered (exit 0), no crash: generic19 linear, pack, plain, separate, flared outlet 10 de ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 03: the generator's own placement is outlined (exit 0 or 3) and never refused for colliding parts ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 03: the outlet stretch is not lengthened (no outlet meets the inlet end)              ok  
+build 03: exit 0: the check's (0)                                                                ok  PASS [1-D model: junction band: 3 row(s) beyond +-1% (up to 35.2% of D; rows 137-139; 0.34% of F)]
+build 03: every hard geometric check of the drawn mask passes (all but Q1, Q2 and the audit's same questions) ok  
+build 03: the outlet stretch is the check's (+0 um)                                              ok  
+build 03: the photomask is <name>.dxf, and no _UNASSESSED.dxf remains                            ok  
+plan stage 04: answered (exit 0), no crash: generic19 serpentine 3, pack, plain, separate        ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 04: the generator's own placement is outlined (exit 0 or 3) and never refused for colliding parts ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 04: the outlet stretch is not lengthened (no outlet meets the inlet end)              ok  
+build 04: exit 0: the check's (0)                                                                ok  PASS [1-D model: junction band: 3 row(s) beyond +-1% (up to 16.4% of D; rows 71-73; 0.3% of F)]
+build 04: every hard geometric check of the drawn mask passes (all but Q1, Q2 and the audit's same questions) ok  
+build 04: the outlet stretch is the check's (+0 um)                                              ok  
+build 04: the photomask is <name>.dxf, and no _UNASSESSED.dxf remains                            ok  
+plan stage 05: answered (exit 0), no crash: generic19 serpentine 5, hairpins, filter, teardrop   ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 05: the generator's own placement is outlined (exit 0 or 3) and never refused for colliding parts ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 05: the outlet stretch is not lengthened (no outlet meets the inlet end)              ok  
+plan stage 06: answered (exit 3), no crash: generic19 serpentine auto (25 x 75 chip), narrow, filter, te ok  planned and outlined in memory (no photomask written): outside the envelope: gap dominance M13 0.054
+plan stage 06: the generator's own placement is outlined (exit 0 or 3) and never refused for colliding parts ok  planned and outlined in memory (no photomask written): outside the envelope: gap dominance M13 0.0544 >= 0.05
+plan stage 06: the outlet stretch is not lengthened (no outlet meets the inlet end)              ok  
+plan stage 07: answered (exit 0), no crash: generic19 paperclip 2 nested, pack, plain, separate  ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 07: the generator's own placement is outlined (exit 0 or 3) and never refused for colliding parts ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 07: two nested legs: the outlet would meet the inlet; its stretch is lengthened instead ok  1803 um
+build 07: exit 0: the check's (0)                                                                ok  PASS [1-D model: junction band: 3 row(s) beyond +-1% (up to 16.4% of D; rows 71-73; 0.3% of F)]
+build 07: every hard geometric check of the drawn mask passes (all but Q1, Q2 and the audit's same questions) ok  
+build 07: the outlet stretch is the check's (+1803 um)                                           ok  
+build 07: the photomask is <name>.dxf, and no _UNASSESSED.dxf remains                            ok  
+plan stage 08: answered (exit 0), no crash: generic19 paperclip 4 nested, narrow, filter, teardrop ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 08: the generator's own placement is outlined (exit 0 or 3) and never refused for colliding parts ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 08: the outlet stretch is not lengthened (no outlet meets the inlet end)              ok  
+plan stage 09: answered (exit 0), no crash: generic19 paperclip 4 in path order, pack, plain, separate ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 09: the generator's own placement is outlined (exit 0 or 3) and never refused for colliding parts ok  planned and outlined in memory (no photomask written): inside the envelope
+plan stage 09: the outlet stretch is not lengthened (no outlet meets the inlet end)              ok  
+build 09: exit 0: the check's (0)                                                                ok  PASS [1-D model: junction band: 3 row(s) beyond +-1% (up to 16.4% of D; rows 71-73; 0.3% of F)]
+build 09: every hard geometric check of the drawn mask passes (all but Q1, Q2 and the audit's same questions) ok  
+build 09: the outlet stretch is the check's (+0 um)                                              ok  
+build 09: the photomask is <name>.dxf, and no _UNASSESSED.dxf remains                            ok  
+plan stage 10: answered (exit 3), no crash: generic19 paperclip auto (25 x 75 chip), pack, plain, separa ok  planned and outlined in memory (no photomask written): outside the envelope: gap dominance M13 0.054
+plan stage 10: the generator's own placement is outlined (exit 0 or 3) and never refused for colliding parts ok  planned and outlined in memory (no photomask written): outside the envelope: gap dominance M13 0.0544 >= 0.05
+plan stage 10: the outlet stretch is not lengthened (no outlet meets the inlet end)              ok  
+
+| # | case | check exit | refusal, or the build's failing checks | outlet stretch + um | check s | build exit | build s |
+|---|---|---|---|---|---|---|---|
+| 0 | generic19 linear, no head, floor start, plain, separate | 0 | Q2 cutoff D at every gap (undeclared rows), physics audit of the photomask file (P0-P10) |  | 11 | 2 | 42 |
+| 1 | generic19 linear, pack, filter, teardrop | 0 |  |  | 18 |  |  |
+| 2 | generic19 linear, narrow, plain, ring | 0 |  |  | 18 |  |  |
+| 3 | generic19 linear, pack, plain, separate, flared outlet 10 deg | 0 |  |  | 36 | 0 | 246 |
+| 4 | generic19 serpentine 3, pack, plain, separate | 0 |  |  | 30 | 0 | 238 |
+| 5 | generic19 serpentine 5, hairpins, filter, teardrop | 0 |  |  | 83 |  |  |
+| 6 | generic19 serpentine auto (25 x 75 chip), narrow, filter, teardrop | 3 |  |  | 45 |  |  |
+| 7 | generic19 paperclip 2 nested, pack, plain, separate | 0 |  | 1803 | 97 | 0 | 354 |
+| 8 | generic19 paperclip 4 nested, narrow, filter, teardrop | 0 |  |  | 63 |  |  |
+| 9 | generic19 paperclip 4 in path order, pack, plain, separate | 0 |  |  | 50 | 0 | 234 |
+| 10 | generic19 paperclip auto (25 x 75 chip), pack, plain, separate | 3 |  |  | 49 |  |  |
+ALL OK

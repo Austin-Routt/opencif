@@ -1,0 +1,25 @@
+| design | outlet | w_s(N) | lead | ratio | change | c (narrow w) | deep / shallow / weight | % of R_s,out | dD_N/d ln R | linearised (D) |
+|---|---|---|---|---|---|---|---|---|---|---|
+| dinh2024_v1_depicted | teardrop | 43.99 | 119.3 | 2.71 | step, one-sided | 0.513 | 0.521 / 0.418 / 0.078 | 3.49 | -168.1 | -5.86 |
+| dinh2024_v1_specified | teardrop | 43.99 | 119.3 | 2.71 | step, one-sided | 0.513 | 0.521 / 0.418 / 0.078 | 3.49 | -168.1 | -5.86 |
+| dinh_targets_sealed_head | teardrop | 43.99 | 113.7 | 2.58 | step, one-sided | 0.499 | 0.508 / 0.391 / 0.078 | 3.47 | -167.6 | -5.81 |
+| gifford2014_fig6_as_fabricated_15um | ring | 139.99 | 314.0 | 2.24 | step, one-sided | 0.417 | 0.464 / 0.311 / 0.310 | 2.77 | -166.8 | -4.61 |
+| gifford2014_fig6_design | ring | 139.99 | 314.0 | 2.24 | step, one-sided | 0.417 | 0.464 / 0.311 / 0.310 | 2.77 | -166.8 | -4.61 |
+| m02_linear_shear_arms_filter_teardrop | teardrop | 42.71 | 121.1 | 2.83 | step, one-sided | 0.521 | 0.531 / 0.444 / 0.116 | 3.42 | -50.9 | -1.74 |
+| m03_linear_const_hairpins_filter_ring | ring | 59.38 | 145.2 | 2.44 | step, one-sided | 0.469 | 0.493 / 0.359 / 0.179 | 2.74 | -72.6 | -1.99 |
+| m04_linear_shear_pack_plain_ring | ring | 42.71 | 92.7 | 2.17 | step, one-sided | 0.433 | 0.452 / 0.293 / 0.116 | 1.81 | -53.9 | -0.97 |
+| m05_serpentine_const_arms_plain_teardrop | teardrop | 59.40 | 178.9 | 3.01 | step, one-sided | 0.532 | 0.544 / 0.480 / 0.179 | 2.39 | -75.3 | -1.8 |
+| m06_serpentine_shear_pack_filter_teardrop | teardrop | 42.71 | 121.2 | 2.84 | step, one-sided | 0.521 | 0.531 / 0.445 / 0.116 | 1.90 | -54.6 | -1.04 |
+| m08_serpentine_shear_hairpins_plain_teardrop | teardrop | 42.72 | 121.2 | 2.84 | step, one-sided | 0.521 | 0.531 / 0.445 / 0.116 | 1.99 | -54.4 | -1.08 |
+| m09_paperclip_const_narrow_plain_teardrop | teardrop | 59.40 | 179.0 | 3.01 | step, one-sided | 0.532 | 0.544 / 0.480 / 0.179 | 1.59 | -78.6 | -1.25 |
+| m11_paperclip_const_pack_filter_ring | ring | 59.40 | 145.3 | 2.45 | step, one-sided | 0.469 | 0.493 / 0.360 / 0.179 | 2.50 | -73.6 | -1.84 |
+| m12_paperclip_shear_arms_plain_ring | ring | 42.71 | 92.7 | 2.17 | step, one-sided | 0.433 | 0.452 / 0.293 / 0.116 | 1.69 | -54.3 | -0.92 |
+| m15_linear_shear_nomeander_filter_teardrop | teardrop | 42.69 | 121.0 | 2.83 | step, one-sided | 0.521 | 0.531 / 0.444 / 0.116 | 3.42 | -50.9 | -1.74 |
+| m17_paperclip_shear_nomeander_filter_ring | ring | 42.69 | 92.6 | 2.17 | step, one-sided | 0.433 | 0.452 / 0.293 / 0.116 | 1.69 | -54.2 | -0.92 |
+| platelet_serpentine_chip | teardrop | 44.99 | 116.5 | 2.59 | step, one-sided | 0.499 | 0.509 / 0.392 / 0.080 | 2.01 | -135.0 | -2.72 |
+| wbc_paperclip_teardrop | teardrop | 283.73 | 1050.2 | 3.70 | step, one-sided | 0.594 | 0.574 / 0.603 / 0.680 | 2.27 | -87.1 | -1.98 |
+| xia2016_rs7_depicted | ring | 599.81 | 333.6 | 1.80 | step, centred | 0.143 | 0.222 / 0.098 / 0.632 | 0.34 | -42.5 | -0.15 |
+| xia2016_rs7_depicted_pullR | ring | 599.81 | 333.6 | 1.80 | step, centred | 0.143 | 0.222 / 0.098 / 0.632 | 0.34 | -42.5 | -0.15 |
+| xia2016_rs7_specified | ring | 599.72 | 333.6 | 1.80 | step, centred | 0.143 | 0.222 / 0.098 / 0.631 | 0.34 | -42.5 | -0.15 |
+
+21 of 46 drawn designs change width at the stretch end (every teardrop and ring outlet; no separate outlet, all with w_s(N) >= 40 um); excess 0.34-3.49 % of R_s,out

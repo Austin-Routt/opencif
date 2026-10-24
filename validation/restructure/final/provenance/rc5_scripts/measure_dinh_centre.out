@@ -1,0 +1,18 @@
+scale 46.0 px / 50 um -> 1.0870 um/px; last gap centre at row 1708.2 (post outline 1699.0, long wall outline 1717.5)
+calibration: between the post columns 53.75 +- 0.33 um (sd, 21 rows) against the printed 52 um (offset +1.75 um)
+centre channel after the last gap: rows 1730-1922 (s 23.6-232.3 um): 50.71 +- 0.20 um (sd) to s = 195.4 um, then widening 0.252 um/um (7.18 deg per side) to 60.06 um at the last row (last 5 rows 59.63); pick uncertainty +-0.77 um, scale +-2.2 %
+  edge shifts at the last row against the plateau: left -3.17 px, right +5.43 px
+left  wall: flare -14.15 deg from the image vertical; straight-part tilt +0.278 to +0.400 deg over 6 sub-ranges -> flare 14.43-14.55 deg from the wall
+      rows 1500-1585 (n 86): tilt +0.359 deg, rms 0.051 px, flare from it 14.51 deg
+      rows 1590-1640 (n 46): tilt +0.320 deg, rms 0.017 px, flare from it 14.47 deg
+      rows 1645-1689 (n 33): tilt +0.278 deg, rms 0.018 px, flare from it 14.43 deg
+      rows 1703-1750 (n 48): tilt +0.320 deg, rms 0.032 px, flare from it 14.47 deg
+      rows 1590-1750 (n 140): tilt +0.346 deg, rms 0.033 px, flare from it 14.50 deg
+      rows 1500-1750 (n 230): tilt +0.400 deg, rms 0.062 px, flare from it 14.55 deg
+right wall: flare 15.11 deg from the image vertical; straight-part tilt +0.507 to +0.728 deg over 6 sub-ranges -> flare 14.38-14.60 deg from the wall
+      rows 1500-1585 (n 86): tilt +0.507 deg, rms 0.027 px, flare from it 14.60 deg
+      rows 1590-1640 (n 51): tilt +0.659 deg, rms 0.032 px, flare from it 14.45 deg
+      rows 1645-1689 (n 45): tilt +0.728 deg, rms 0.014 px, flare from it 14.38 deg
+      rows 1703-1750 (n 48): tilt +0.663 deg, rms 0.013 px, flare from it 14.45 deg
+      rows 1590-1750 (n 148): tilt +0.696 deg, rms 0.029 px, flare from it 14.41 deg
+      rows 1500-1750 (n 238): tilt +0.618 deg, rms 0.071 px, flare from it 14.49 deg

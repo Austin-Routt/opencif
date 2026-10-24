@@ -1,0 +1,61 @@
+{
+ "name": "m13_paperclip_const_nomeander_sealed_fine_x4",
+ "element": "m13_paperclip_const_nomeander_sealed_fine",
+ "element_verdict": "PASS",
+ "element_code": {
+  "version": "1.0.0rc5",
+  "sha256": "f6c8eba91ec1f316",
+  "files": 34
+ },
+ "code": {
+  "version": "1.0.0rc5",
+  "sha256": "f6c8eba91ec1f316",
+  "files": 34
+ },
+ "count": 4,
+ "pitch_um": 5179.99954,
+ "dxf": "m13_paperclip_const_nomeander_sealed_fine_x4.dxf",
+ "dxf_sha256": "b1e309526453dae2ae9da99af86b059499658db3e1bd301a7f5a905f3aa3170f",
+ "inlet": "separate",
+ "bus_width_um": null,
+ "checks": {
+  "components": {
+   "n": 4,
+   "expected": 4,
+   "ok": true
+  },
+  "product_port_separated_in_every_element": {
+   "ok": true,
+   "per_element": [
+    true,
+    true,
+    true,
+    true
+   ]
+  },
+  "fits_chip": {
+   "ok": true,
+   "footprint_mm": [
+    23.273555220000002,
+    20.41999816
+   ],
+   "reported_only": true
+  },
+  "drc": {
+   "ok": true,
+   "n_components": 4,
+   "n_lost_open": 0,
+   "n_lost_solid": 0,
+   "d_um": 4.2,
+   "error": null
+  }
+ },
+ "notes": [
+  "the inlet port is enclosed by the element (e.g. a paperclip): each element keeps its own inlet port",
+  "each element keeps its own outlet ports and the off-chip outlet tubing it was validated with (R_ext centre 0, side 0 Pa s/m^3); different tubing changes its last rows"
+ ],
+ "over_aspect_ratio": false,
+ "over_chip_area": false,
+ "verdict": "PASS: 4 copies of the validated element (D 4.0000 um, F 0.50030 on its drawn mask), outlets per element",
+ "exit_code": 0
+}

@@ -1,0 +1,21 @@
+{
+ "title": "Gifford 2014 Fig. 4 inset",
+ "columns": 1,
+ "width_in": 3.4,
+ "panels": [
+  {
+   "results": "results/gifford/gifford_results_rc6.json",
+   "key": "-",
+   "raster": "rasters/gif5-001.png",
+   "dxf": "opencif_rc6/runs/gifford2014_fig4_design/gifford2014_fig4_design.dxf",
+   "letter": "",
+   "title": "the end of leg 4 (cyan) beside the neighbouring leg at the inset's spacing (amber)",
+   "claim_y_above": 1227.0,
+   "post_max": [
+    26.3,
+    60.5
+   ]
+  }
+ ],
+ "footer": "Gifford et al. 2014 Lab Chip 14, 4496-4505, Fig. 4 inset (adapted; \u00a9 The Royal Society of Chemistry: permission for reproduction to be obtained before publication, README), with the shipped opencif rc6 mask gifford2014_fig4_design: leg 4's last rows (cyan, the claim) and the neighbouring leg at the preset's leg spacing (amber; Gifford prints none, rc6 reads it on this inset, 818 \u00b5m, so its centre line is the image's by construction; its side channels' widths there depend on which of its rows pass the inset).  Scale: the 300 \u00b5m bar read with its anti-aliased ends (107.52 px); the legs at 45.78\u00b0 on the image."
+}

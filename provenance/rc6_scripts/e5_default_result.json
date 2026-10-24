@@ -1,0 +1,21 @@
+{
+ "code": {
+  "version": "1.0.0rc6",
+  "sha256": "4bbdaabef1225a24",
+  "files": 36
+ },
+ "exit_code": 2,
+ "verdict": "FAIL (Q1 drawing realises its design (every gap); Q2 cutoff D at every gap (undeclared rows))",
+ "failing": [
+  {
+   "check": "Q1 drawing realises its design (every gap)",
+   "detail": ""
+  },
+  {
+   "check": "Q2 cutoff D at every gap (undeclared rows)",
+   "detail": ""
+  }
+ ],
+ "features_found_ok": true,
+ "fillet_um": 3.0
+}

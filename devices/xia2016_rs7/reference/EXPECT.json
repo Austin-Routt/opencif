@@ -1,0 +1,49 @@
+{
+ "code_stamp": "9e4eb55a0affeef3",
+ "builds": {
+  "xia2016_rs7_aligned": {
+   "dxf_sha256": "5607d92b66fd4383e5246b544a5ad3fbf0de7279c901ad4aeffb2073f5ab6d0f",
+   "exit_code": 3,
+   "declared": [
+    "head drawn as depicted",
+    "loop pull-in",
+    "papers' rectilinear transition",
+    "seed: gap 1 above f*"
+   ],
+   "N": 8106,
+   "NM": 29,
+   "F": 0.9407317475222302,
+   "verdict": "REPRODUCED with declared departures (seed: gap 1 above f*, head drawn as depicted, papers' rectilinear transition, loop pull-in) -- OUTSIDE THE VALIDITY ENVELOPE (u_min 0.0214 below the kappa plateau 0.035; gap dominance M13 0.258 >= 0.05; Re 60.6 > 10: inertial (Dean) flow at bends and gap mouths is outside the Stokes model; Stokes gates: Re_gap 1.93e-02, Re_delta 3.63e-02 > 0.01: the skimming junction is not Stokes): the cutoff law is not calibrated there; cutoff band 4.463-6.416 um, App. B C7 method below the plateau (Hill kappa 3.418 at the widest centre channel) [1-D model: junction band: 8 row(s) beyond +-1% (up to 0.8% of D; rows 8042-8049; 0.024% of F); last rows depend on the outlet tubing (84 rows beyond +-1% in its scenarios)]"
+  },
+  "xia2016_rs7_depicted": {
+   "dxf_sha256": "0161ab00682d354f199b0c71148d7af124b2375ae1cc181b85e42652be14c73f",
+   "exit_code": 3,
+   "declared": [
+    "head drawn as depicted",
+    "loop pull-in",
+    "papers' rectilinear transition",
+    "seed: gap 1 above f*"
+   ],
+   "N": 7351,
+   "NM": 29,
+   "F": 0.9380192800985131,
+   "verdict": "REPRODUCED with declared departures (seed: gap 1 above f*, head drawn as depicted, papers' rectilinear transition, loop pull-in) -- OUTSIDE THE VALIDITY ENVELOPE (u_min 0.0229 below the kappa plateau 0.035; gap dominance M13 0.258 >= 0.05; Re 60.6 > 10: inertial (Dean) flow at bends and gap mouths is outside the Stokes model; Stokes gates: Re_gap 1.88e-02, Re_delta 3.55e-02 > 0.01: the skimming junction is not Stokes): the cutoff law is not calibrated there; cutoff band 4.994-6.864 um, App. B C7 method below the plateau (Hill kappa 3.575 at the widest centre channel) [1-D model: junction band: 7 row(s) beyond +-1% (up to 0.7% of D; rows 7289-7295; 0.025% of F); last rows depend on the outlet tubing (82 rows beyond +-1% in its scenarios)]"
+  }
+ },
+ "inputs_sha256": {
+  "tree/provenance/rc7_scripts/gifford_alignment.py": "0bb5cc3f7aa930829809c0316789abe3ab83034831380de8c64bd28b478339bb",
+  "tree/provenance/rc6_traces/measurements/dinh_length_at_corrected_pitch.json": "3440e7be0b5bb5b00547a13c44d985f431423ea8e238c6adab7cb9217082a1d6",
+  "tree/provenance/rc6_traces/measurements/gifford_fig6_turns.json": "aee3c50e79ceb335d8e6e5fcf3b227ae391b1c1594600030a78d8e1ffd15f0b2",
+  "tree/provenance/rc6_traces/measurements/scales.json": "f9b1ed8d323599953a6cb021750c07c73b85e00dfe63b55dfd113055096322ee",
+  "tree/provenance/rc6_traces/measurements/summary_table.md": "8222c854d707403322fc2eab118d1564df5cbd3c51d17d2b5af1fb081f940799",
+  "tree/provenance/rc6_traces/measurements/xia_fig3d_arc_scale.json": "3e60dd0b38ed9e2013a6b2109a369397ec8610eb94d26eb2334ec0504b6c73aa",
+  "tree/provenance/rc6_traces/measurements/xia_side_walls_fg.json": "bc3eccd0e9b4cf953176f6d75265b6e7059e686e878821168aa74b7a4567db6c",
+  "inputs/xia5-000.png": "e9fb7fbb348567d3ab7606479c83342bcf2f5ee3d6b4c162f7c345e5ef339991",
+  "inputs/xia2016_rs7_aligned.yaml": "0374f04f740cf87d651eb50cc5f42283d241ae43d603928e60e25b2614d53729",
+  "inputs/xia2016_rs7_depicted.yaml": "0d17c786211b514efb23aa53db30fef5018f4561880f6d0eac5092dd3eda83b9",
+  "devicekit.py": "4ff58c84231b43d3f04a0df7e20ae85e247340f29a43a6a52c6c0fdcd704e63b",
+  "make_xia2016_rs7.py": "308c5e420f9b3404a09a1b61707d178c75e8a33b034baabb8dfc71bb9979118f",
+  "inputs/SOURCE.md": "4478b8048833b21f15c346c5d8f8c221d0b0cfb7a38c0f9e9f8ad33ae3e4ece9"
+ },
+ "note": "from the frozen RC8 tree's records (runs/, provenance/rc7_traces/variants/runs/ and provenance/rc7_traces/results/), written by the package assembler; the package checks its own run against these (inputs_sha256 covers the inputs, the source note, devicekit.py and the device script)"
+}

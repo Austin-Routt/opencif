@@ -1,0 +1,47 @@
+{
+ "code_stamp": "9e4eb55a0affeef3",
+ "builds": {
+  "dinh2024_v1_depicted": {
+   "dxf_sha256": "6b5fb2a921165543210c92f4641b0948bf01913950e8e4c323717a5a8ccd23dd",
+   "exit_code": 3,
+   "declared": [
+    "head drawn as depicted",
+    "papers' rectilinear transition",
+    "seed: gap 1 above f*"
+   ],
+   "N": 2701,
+   "NM": 219,
+   "F": 0.5592246147410999,
+   "verdict": "REPRODUCED with declared departures (seed: gap 1 above f*, head drawn as depicted, papers' rectilinear transition) -- OUTSIDE THE VALIDITY ENVELOPE (u_min 0.0290 below the kappa plateau 0.035): the cutoff law is not calibrated there; cutoff band 1.805-2.174 um, App. B C7 method below the plateau (Hill kappa 4.080 at the widest centre channel) [1-D model: junction band: 121 row(s) beyond +-1% (up to 28.4% of D; rows 103-214, 2692-2701; 4.3% of F)]"
+  },
+  "dinh2024_v1_figure_aligned": {
+   "dxf_sha256": "00d405b05293b1bcbf9c57c37a6405da34dee5ec24f3014522f993a1656f5d43",
+   "exit_code": 0,
+   "declared": [
+    "head drawn as depicted",
+    "papers' rectilinear transition",
+    "seed: gap 1 above f*"
+   ],
+   "N": 1093,
+   "NM": 219,
+   "F": 0.5592662233963666,
+   "verdict": "REPRODUCED with declared departures (seed: gap 1 above f*, head drawn as depicted, papers' rectilinear transition) [1-D model: junction band: 7 row(s) beyond +-1% (up to 9.1% of D; rows 1087-1093; 0.68% of F)]"
+  }
+ },
+ "inputs_sha256": {
+  "tree/provenance/rc6_traces/measurements/dinh_length_at_corrected_pitch.json": "3440e7be0b5bb5b00547a13c44d985f431423ea8e238c6adab7cb9217082a1d6",
+  "tree/provenance/rc6_traces/measurements/gifford_fig6_turns.json": "aee3c50e79ceb335d8e6e5fcf3b227ae391b1c1594600030a78d8e1ffd15f0b2",
+  "tree/provenance/rc6_traces/measurements/scales.json": "f9b1ed8d323599953a6cb021750c07c73b85e00dfe63b55dfd113055096322ee",
+  "tree/provenance/rc6_traces/measurements/summary_table.md": "8222c854d707403322fc2eab118d1564df5cbd3c51d17d2b5af1fb081f940799",
+  "tree/provenance/rc6_traces/measurements/xia_fig3d_arc_scale.json": "3e60dd0b38ed9e2013a6b2109a369397ec8610eb94d26eb2334ec0504b6c73aa",
+  "tree/provenance/rc6_traces/measurements/xia_side_walls_fg.json": "bc3eccd0e9b4cf953176f6d75265b6e7059e686e878821168aa74b7a4567db6c",
+  "inputs/dinh5-000.png": "a21e2e3ce0710e32410ba4941f348c6a1ef561b748f569e24decce1dea9fbbe6",
+  "inputs/dinh6-000.png": "14c01a4ac50adf606a89a7a4292e67e8e70bf5babe9021dfa3d6edea86c90ed5",
+  "inputs/dinh2024_v1_depicted.yaml": "9b56ca60cfe377ec4e3ca74f0b8c9e6271ed89666009717721ecf1ed98fb0764",
+  "inputs/dinh2024_v1_figure_aligned.yaml": "eb29500f1e41cb73e75c1cc35134167d115daef7adf52c7e05d1e29884d5db06",
+  "devicekit.py": "4ff58c84231b43d3f04a0df7e20ae85e247340f29a43a6a52c6c0fdcd704e63b",
+  "make_dinh2024_v1.py": "de322c8745eddde713e84ca3c3da6518533d6ecef1ab9360cd63349cfcaebb4d",
+  "inputs/SOURCE.md": "e12d8943852cf31fc9eaf4bbee2922994875ce1b9d33a0d4fc027d98fd5b13f4"
+ },
+ "note": "from the frozen RC8 tree's records (runs/, provenance/rc7_traces/variants/runs/ and provenance/rc7_traces/results/), written by the package assembler; the package checks its own run against these (inputs_sha256 covers the inputs, the source note, devicekit.py and the device script)"
+}

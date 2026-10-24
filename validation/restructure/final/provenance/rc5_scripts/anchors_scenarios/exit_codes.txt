@@ -1,0 +1,5 @@
+no_pickles exit 4
+source_anchors_only exit 0
+source_anchors_only_no_provenance exit 4
+one_pickle_missing exit 4
+one_preset_value_changed exit 1

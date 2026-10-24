@@ -1,0 +1,479 @@
+[
+ {
+  "kind": "one",
+  "ratio": 1.25,
+  "deg": null,
+  "deep": 0.13202823047448456,
+  "shallow": 0.04286600724303824,
+  "elems": 17486,
+  "seconds": 5.3
+ },
+ {
+  "kind": "one",
+  "ratio": 1.5,
+  "deg": null,
+  "deep": 0.26523431604835324,
+  "shallow": 0.11135496161304914,
+  "elems": 21182,
+  "seconds": 7.2
+ },
+ {
+  "kind": "one",
+  "ratio": 2.0,
+  "deg": null,
+  "deep": 0.4225247978140108,
+  "shallow": 0.2498124786287459,
+  "elems": 27550,
+  "seconds": 11.9
+ },
+ {
+  "kind": "one",
+  "ratio": 2.4,
+  "deg": null,
+  "deep": 0.4882757027738194,
+  "shallow": 0.34892436800460835,
+  "elems": 53620,
+  "seconds": 36.9
+ },
+ {
+  "kind": "one",
+  "ratio": 2.71,
+  "deg": null,
+  "deep": 0.5212766392274885,
+  "shallow": 0.41803701675997473,
+  "elems": 37378,
+  "seconds": 20.7
+ },
+ {
+  "kind": "one",
+  "ratio": 3.0,
+  "deg": null,
+  "deep": 0.5432043899978218,
+  "shallow": 0.47730238099739,
+  "elems": 41990,
+  "seconds": 22.7
+ },
+ {
+  "kind": "one",
+  "ratio": 4.0,
+  "deg": null,
+  "deep": 0.585034752601981,
+  "shallow": 0.6499389342658315,
+  "elems": 43776,
+  "seconds": 27.5
+ },
+ {
+  "kind": "one",
+  "ratio": 6.0,
+  "deg": null,
+  "deep": 0.6145803293823396,
+  "shallow": 0.9006286791012048,
+  "elems": 47906,
+  "seconds": 35.2
+ },
+ {
+  "kind": "one",
+  "ratio": 8.0,
+  "deg": null,
+  "deep": 0.6248931846225183,
+  "shallow": 1.081185146317102,
+  "elems": 50676,
+  "seconds": 40.4
+ },
+ {
+  "kind": "sym",
+  "ratio": 1.25,
+  "deg": null,
+  "deep": 0.07625029753692421,
+  "shallow": 0.021421619922744384,
+  "elems": 26654,
+  "seconds": 12.4
+ },
+ {
+  "kind": "sym",
+  "ratio": 1.5,
+  "deg": null,
+  "deep": 0.15757479062066082,
+  "shallow": 0.05566244632526818,
+  "elems": 32198,
+  "seconds": 19.5
+ },
+ {
+  "kind": "sym",
+  "ratio": 2.0,
+  "deg": null,
+  "deep": 0.2590704912059903,
+  "shallow": 0.12488778263532296,
+  "elems": 42650,
+  "seconds": 30.1
+ },
+ {
+  "kind": "sym",
+  "ratio": 2.4,
+  "deg": null,
+  "deep": 0.3039969522440605,
+  "shallow": 0.1744328022823911,
+  "elems": 50650,
+  "seconds": 43.0
+ },
+ {
+  "kind": "sym",
+  "ratio": 3.0,
+  "deg": null,
+  "deep": 0.342933989382382,
+  "shallow": 0.23862829578908595,
+  "elems": 63198,
+  "seconds": 60.4
+ },
+ {
+  "kind": "sym",
+  "ratio": 4.0,
+  "deg": null,
+  "deep": 0.37389004678482846,
+  "shallow": 0.3249493553030973,
+  "elems": 66672,
+  "seconds": 67.8
+ },
+ {
+  "kind": "sym",
+  "ratio": 6.0,
+  "deg": null,
+  "deep": 0.3972021675582826,
+  "shallow": 0.4502949863081813,
+  "elems": 73010,
+  "seconds": 93.2
+ },
+ {
+  "kind": "sym",
+  "ratio": 8.0,
+  "deg": null,
+  "deep": 0.4055827166753332,
+  "shallow": 0.5405764390623062,
+  "elems": 77370,
+  "seconds": 101.6
+ },
+ {
+  "kind": "flare",
+  "ratio": 1.25,
+  "deg": 5.0,
+  "deep": 0.01233436296965825,
+  "shallow": 0.005903566292376539,
+  "elems": 18900,
+  "seconds": 4.5
+ },
+ {
+  "kind": "flare",
+  "ratio": 1.25,
+  "deg": 10.0,
+  "deep": 0.024211417004702678,
+  "shallow": 0.010675763663481774,
+  "elems": 17570,
+  "seconds": 4.1
+ },
+ {
+  "kind": "flare",
+  "ratio": 1.25,
+  "deg": 14.5,
+  "deep": 0.03439581180642056,
+  "shallow": 0.014173407283406547,
+  "elems": 17010,
+  "seconds": 3.8
+ },
+ {
+  "kind": "flare",
+  "ratio": 1.25,
+  "deg": 20.0,
+  "deep": 0.04591352701989493,
+  "shallow": 0.01771431835916104,
+  "elems": 16450,
+  "seconds": 3.5
+ },
+ {
+  "kind": "flare",
+  "ratio": 1.25,
+  "deg": 30.0,
+  "deep": 0.06407737463785068,
+  "shallow": 0.022830176269842184,
+  "elems": 15820,
+  "seconds": 3.4
+ },
+ {
+  "kind": "flare",
+  "ratio": 1.25,
+  "deg": 45.0,
+  "deep": 0.08597534111528422,
+  "shallow": 0.0287506486408855,
+  "elems": 15120,
+  "seconds": 3.4
+ },
+ {
+  "kind": "flare",
+  "ratio": 1.5,
+  "deg": 5.0,
+  "deep": 0.019191093771237178,
+  "shallow": 0.011209620175728574,
+  "elems": 22540,
+  "seconds": 5.0
+ },
+ {
+  "kind": "flare",
+  "ratio": 1.5,
+  "deg": 10.0,
+  "deep": 0.03800059729963342,
+  "shallow": 0.021270153517205515,
+  "elems": 20020,
+  "seconds": 4.8
+ },
+ {
+  "kind": "flare",
+  "ratio": 1.5,
+  "deg": 14.5,
+  "deep": 0.05462526965292961,
+  "shallow": 0.029384191195891418,
+  "elems": 19250,
+  "seconds": 4.3
+ },
+ {
+  "kind": "flare",
+  "ratio": 1.5,
+  "deg": 20.0,
+  "deep": 0.0745230388707867,
+  "shallow": 0.038223839254621694,
+  "elems": 18690,
+  "seconds": 4.4
+ },
+ {
+  "kind": "flare",
+  "ratio": 1.5,
+  "deg": 30.0,
+  "deep": 0.10897979541582004,
+  "shallow": 0.051928437648511405,
+  "elems": 17920,
+  "seconds": 4.0
+ },
+ {
+  "kind": "flare",
+  "ratio": 1.5,
+  "deg": 45.0,
+  "deep": 0.15534327577925686,
+  "shallow": 0.06880476317379447,
+  "elems": 17150,
+  "seconds": 4.2
+ },
+ {
+  "kind": "flare",
+  "ratio": 2.0,
+  "deg": 5.0,
+  "deep": 0.026008856814430697,
+  "shallow": 0.01958220241069597,
+  "elems": 29680,
+  "seconds": 7.1
+ },
+ {
+  "kind": "flare",
+  "ratio": 2.0,
+  "deg": 10.0,
+  "deep": 0.051706696259543605,
+  "shallow": 0.0380395786934713,
+  "elems": 24640,
+  "seconds": 5.8
+ },
+ {
+  "kind": "flare",
+  "ratio": 2.0,
+  "deg": 14.5,
+  "deep": 0.07460305771580049,
+  "shallow": 0.053730251528021356,
+  "elems": 23100,
+  "seconds": 5.5
+ },
+ {
+  "kind": "flare",
+  "ratio": 2.0,
+  "deg": 20.0,
+  "deep": 0.10232822597315423,
+  "shallow": 0.07178014253845078,
+  "elems": 22120,
+  "seconds": 5.7
+ },
+ {
+  "kind": "flare",
+  "ratio": 2.0,
+  "deg": 30.0,
+  "deep": 0.15208601620680776,
+  "shallow": 0.10175101492051475,
+  "elems": 21210,
+  "seconds": 4.9
+ },
+ {
+  "kind": "flare",
+  "ratio": 2.0,
+  "deg": 45.0,
+  "deep": 0.22464744543784576,
+  "shallow": 0.1414902009081196,
+  "elems": 20300,
+  "seconds": 4.9
+ },
+ {
+  "kind": "flare",
+  "ratio": 2.4,
+  "deg": 5.0,
+  "deep": 0.028687260508943286,
+  "shallow": 0.024888415536647557,
+  "elems": 35420,
+  "seconds": 7.9
+ },
+ {
+  "kind": "flare",
+  "ratio": 2.4,
+  "deg": 10.0,
+  "deep": 0.057091272871960065,
+  "shallow": 0.04866821305379254,
+  "elems": 28420,
+  "seconds": 6.4
+ },
+ {
+  "kind": "flare",
+  "ratio": 2.4,
+  "deg": 14.5,
+  "deep": 0.08245217386898673,
+  "shallow": 0.06917584620213368,
+  "elems": 26180,
+  "seconds": 5.9
+ },
+ {
+  "kind": "flare",
+  "ratio": 2.4,
+  "deg": 20.0,
+  "deep": 0.11323332953981335,
+  "shallow": 0.09315603235804559,
+  "elems": 24780,
+  "seconds": 5.7
+ },
+ {
+  "kind": "flare",
+  "ratio": 2.4,
+  "deg": 30.0,
+  "deep": 0.16873656163118037,
+  "shallow": 0.13397981793442781,
+  "elems": 23590,
+  "seconds": 6.0
+ },
+ {
+  "kind": "flare",
+  "ratio": 2.4,
+  "deg": 45.0,
+  "deep": 0.2510522281112119,
+  "shallow": 0.18991873061338893,
+  "elems": 22610,
+  "seconds": 5.2
+ },
+ {
+  "kind": "flare",
+  "ratio": 3.0,
+  "deg": 5.0,
+  "deep": 0.030878680254663966,
+  "shallow": 0.03138269453951281,
+  "elems": 44030,
+  "seconds": 10.4
+ },
+ {
+  "kind": "flare",
+  "ratio": 3.0,
+  "deg": 10.0,
+  "deep": 0.06149682984195929,
+  "shallow": 0.06167661831389992,
+  "elems": 33950,
+  "seconds": 8.0
+ },
+ {
+  "kind": "flare",
+  "ratio": 3.0,
+  "deg": 14.5,
+  "deep": 0.08887418125887218,
+  "shallow": 0.08808048752602993,
+  "elems": 30800,
+  "seconds": 7.4
+ },
+ {
+  "kind": "flare",
+  "ratio": 3.0,
+  "deg": 20.0,
+  "deep": 0.12215666934612557,
+  "shallow": 0.11933074041678182,
+  "elems": 28840,
+  "seconds": 6.9
+ },
+ {
+  "kind": "flare",
+  "ratio": 3.0,
+  "deg": 30.0,
+  "deep": 0.1823365058044845,
+  "shallow": 0.1735863451343853,
+  "elems": 27090,
+  "seconds": 6.7
+ },
+ {
+  "kind": "flare",
+  "ratio": 3.0,
+  "deg": 45.0,
+  "deep": 0.2723155468000087,
+  "shallow": 0.2501311829895112,
+  "elems": 25760,
+  "seconds": 6.0
+ },
+ {
+  "kind": "flare",
+  "ratio": 4.0,
+  "deg": 5.0,
+  "deep": 0.03258311683871066,
+  "shallow": 0.039755277508309206,
+  "elems": 58450,
+  "seconds": 14.3
+ },
+ {
+  "kind": "flare",
+  "ratio": 4.0,
+  "deg": 10.0,
+  "deep": 0.06492337257525331,
+  "shallow": 0.07844736918043438,
+  "elems": 43330,
+  "seconds": 10.5
+ },
+ {
+  "kind": "flare",
+  "ratio": 4.0,
+  "deg": 14.5,
+  "deep": 0.0938690706858362,
+  "shallow": 0.11245289990869267,
+  "elems": 38570,
+  "seconds": 8.8
+ },
+ {
+  "kind": "flare",
+  "ratio": 4.0,
+  "deg": 20.0,
+  "deep": 0.12909712546490462,
+  "shallow": 0.1530787967270406,
+  "elems": 35630,
+  "seconds": 8.6
+ },
+ {
+  "kind": "flare",
+  "ratio": 4.0,
+  "deg": 30.0,
+  "deep": 0.19291524779430347,
+  "shallow": 0.22471814275514213,
+  "elems": 32970,
+  "seconds": 7.9
+ },
+ {
+  "kind": "flare",
+  "ratio": 4.0,
+  "deg": 45.0,
+  "deep": 0.28872455853354734,
+  "shallow": 0.3283783472920234,
+  "elems": 31080,
+  "seconds": 7.6
+ }
+]

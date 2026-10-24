@@ -1,0 +1,57 @@
+{
+ "strip_um_per_px": 2.0,
+ "composite_um_per_px": 5.0,
+ "strip_max_mm": 20,
+ "devices": [
+  {
+   "name": "xia2016_rs7_depicted",
+   "dxf": "opencif_rc6/runs/xia2016_rs7_depicted/xia2016_rs7_depicted.dxf",
+   "title": "Xia 2016 RS-7 (head as depicted), opencif rc6",
+   "panels": [
+    {
+     "letter": "c",
+     "results": "results/xia/xia_results_fig3c_rc6.json",
+     "key": "-",
+     "raster": "rasters/xia5-000.png",
+     "title": "Xia Fig. 3c, leg 1: the transition's last blocks and first posts"
+    },
+    {
+     "letter": "d",
+     "results": "results/xia/xia_results_fig3d_rc6.json",
+     "key": "-",
+     "raster": "rasters/xia5-000.png",
+     "title": "Xia Fig. 3d, legs 5 and 3 leaving the top loops"
+    },
+    {
+     "letter": "e",
+     "results": "results/xia/xia_results_fig3e_rc6.json",
+     "key": "-",
+     "raster": "rasters/xia5-000.png",
+     "title": "Xia Fig. 3e, legs 5 and 3 half way down"
+    },
+    {
+     "letter": "f",
+     "results": "results/xia/xia_results_fig3f_rc6.json",
+     "key": "-",
+     "raster": "rasters/xia5-000.png",
+     "title": "Xia Fig. 3f, leg 7 a quarter of the way down"
+    },
+    {
+     "letter": "g",
+     "results": "results/xia/xia_results_rc6.json",
+     "key": "-",
+     "raster": "rasters/xia5-000.png",
+     "title": "Xia Fig. 3g, the outlet: leg 7's last rows and the leads"
+    }
+   ],
+   "underlay": {
+    "results": "results/xia/xia_fig3a_device_rc6.json",
+    "key": "underlay",
+    "raster": "rasters/xia5-000.png"
+   },
+   "note": "Every polygon of the shipped DXF over Xia's Fig. 3a (grey: the paper's whole-device drawing, registered at the device's top by xia_fig3a_device.py at its 5 mm bar read with its anti-aliased ends) with Fig. 3's panels c-g at their registered positions (rc6 scale 1.798 \u00b5m/px; panel f at its own).  The drawing's loops at the far end and its outlet ring lie 5.7 and 5.4 mm beyond the mask's: the schedule places 1079 rows per full leg against the 1190 Fig. 3a's legs hold at the pitch the micrographs show."
+  }
+ ],
+ "composite": false,
+ "pdf_dpi": 300
+}

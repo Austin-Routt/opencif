@@ -1,0 +1,44 @@
+{
+  "note": "rc6 values re-read from the papers' figures (provenance/rc6_scripts/measure_rc6.py; provenance/rc6_traces): scale bars measured with their anti-aliased ends; Xia panels b-g at the scale their printed widths and loop curvature give.  Rounded as the presets carry them. The Xia scale 1.798 um/px is the mean of three determinations (provenance/rc6_scripts/rc6_measurements.json): the printed centre widths 1.8028, the post columns centre to centre 1.7967, and the curvature of panel d's loop-4 axis arc 1.7943 um/px; the seven-arc fit of provenance/rc6_traces/measurements/xia_fig3d_arc_scale.json (1.7922 +- 0.0044) would give a mean of 1.797 (rc7, rc6-review adjudication item ADJ-C2).",
+  "dinh": {
+    "g_p_um": 26.1,
+    "flare_start_um": 65.4,
+    "row_pitch_um": 45.11
+  },
+  "gifford": {
+    "g_p_um": 25.3,
+    "l_g_um": 59.5,
+    "row_pitch_um": 45.82
+  },
+  "xia": {
+    "scale_um_per_px": 1.798,
+    "fig3a_length_factor": 1.003827,
+    "g_p_um": 35.8,
+    "l_g_um": 70.9,
+    "wall_M_um": 35.8,
+    "head_width_um": 1840.0,
+    "row_pitch_um": 51.78,
+    "layout": {
+      "leg_Y_um": [
+        0.0,
+        1332.0,
+        -1745.0,
+        2229.0,
+        -2650.0,
+        3267.0,
+        -3975.0
+      ],
+      "inlet_port_radius_um": 862,
+      "centre_port_radius_um": 1723,
+      "filtrate_port_radius_um": 1718,
+      "ring_radius_um": 4195,
+      "ring_centre_offset_um": 1191,
+      "ring_filtrate_port_offset_um": 4781,
+      "pc_inlet_offset_um": 2553,
+      "pc_out_ext_um": 3441,
+      "head_top_below_inlet_mm": 1.453,
+      "first_pill_below_inlet_mm": 13.786,
+      "inlet_port_gap_um": 591
+    }
+  }
+}

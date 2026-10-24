@@ -1,0 +1,88 @@
+{
+ "method": "Beyond the divider walls the channels of legs 5, 3 and 1 curve away (their U-turns) while leg 7's run straight on (the outlet).  Each wall line of the turns is followed on the image (the darkness ridge, step by step from just beyond the walls' straight starts, in the rows' frame of panels_gifford6.py) and all of them are fitted with circles about ONE common centre (each wall its own radius).  If the fit holds to a fraction of a pixel, the turns are concentric arcs about that centre, as opencif's paperclip draws the loops at one end (layout.py: \"every loop turning the same way ... so loops at one end are concentric\"); a semicircular turn about it then takes leg 2j - 1 at Y to leg 2j at 2 Y_c - Y.  The legs' axes 7, 5, 3, 1 are panels_gifford6's (the post rows' tip lines); legs 2, 4, 6 follow from the centre.  Gifford prints no layout dimension (the schematic is not to scale, p. 4502): these are readings of the micrograph; rc6's Fig. 6 presets take them (provenance/rc6_scripts/gifford_layout_measurement.json, apply_rc6_layout_presets.py).",
+ "raster_sha256": "182826e7aaccf14ce9ad72f1c6411ad662bf96c19b5814dec242ebce81a00379",
+ "um_per_px": 4.5248,
+ "rows_direction_deg": 49.806,
+ "walls_followed": 23,
+ "walls_straight_top_leg": 7,
+ "walls_in_the_turns": 16,
+ "points": 2675,
+ "residual_sd_px": 0.12951490597000193,
+ "residual_sd_um": 0.5860290465330648,
+ "centre_uv_px": [
+  81.09478463909704,
+  1209.2390864109082
+ ],
+ "centre_sd_px": [
+  0.1076123567177268,
+  0.48186055568473585
+ ],
+ "wall_radii_um": [
+  3166.988971922775,
+  3054.299317027512,
+  2984.2711191680933,
+  2858.363705948565,
+  2788.1249254414765,
+  2680.97016110409,
+  2553.1860926217287,
+  2466.192542380103,
+  2395.990891858418,
+  2270.381727842512,
+  2200.284328068781,
+  2117.2942241991154,
+  1937.6920291679776,
+  1879.0816071975257,
+  1808.980386376118,
+  1683.0386039397001
+ ],
+ "visible_turn_deg": [
+  23.482837407212514,
+  22.910438925981452,
+  22.525194679271678,
+  21.71887074758851,
+  21.17710687011447,
+  20.394353946703802,
+  19.398976955652984,
+  18.652968401525754,
+  17.95043457031271,
+  16.680227157178606,
+  15.875994987660476,
+  14.966806642674499,
+  12.494643236911983,
+  11.46144517824257,
+  10.293415785674199,
+  7.930264760667939
+ ],
+ "each_wall_own_centre_v_px": {
+  "min": 1194.5228589746198,
+  "max": 1216.2622171358921,
+  "sd": 5.737806436026454
+ },
+ "straight_top_leg_turned_deg": [
+  0.3557724719662314,
+  1.5684538900166527,
+  0.7113047554146309,
+  0.043029313381737135,
+  0.043029313381737135,
+  0.27789640035948365,
+  0.14008033739587536
+ ],
+ "centre_from_leg1_axis_um": 1745.7184301669563,
+ "centre_beyond_last_pills_um": 45.85605179834705,
+ "legs_axes_um": {
+  "7": -1764.258665758841,
+  "5": -1175.3605526532451,
+  "3": -587.819170003149,
+  "1": 0.0
+ },
+ "leg_Y_um": [
+  0.0,
+  3491.4,
+  -587.8,
+  4079.3,
+  -1175.4,
+  4666.8,
+  -1764.3
+ ],
+ "note": "leg_Y in opencif's convention (leg 1 at 0, +Y towards leg 2): legs 1, 3, 5, 7 from the post rows; 2, 4, 6 as 2 Y_c - Y of the leg before them (a semicircular turn about the measured centre); the mask y axis along the image's +v (the non-mirrored map of panels_gifford6.py)"
+}

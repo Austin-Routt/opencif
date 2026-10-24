@@ -1,0 +1,418 @@
+{
+ "device": "xia2016_rs7",
+ "files": {
+  "devicekit.py": {
+   "bundle": "devices/xia2016_rs7/devicekit.py",
+   "sha256": "a34580f776321152d733175088d01b6c6b7b0e85afaa46cccf38957eff0e6718"
+  },
+  "inputs/SOURCE.md": {
+   "bundle": "devices/xia2016_rs7/inputs/SOURCE.md",
+   "sha256": "8c9b4367f31eacf9f5bc43b51a5fa9f9b30becb17bfb3feb9447a4e8cb0449b6"
+  },
+  "inputs/xia2016_rs7_aligned.yaml": {
+   "sha256": "0374f04f740cf87d651eb50cc5f42283d241ae43d603928e60e25b2614d53729",
+   "tree": "presets/xia2016_rs7_aligned.yaml"
+  },
+  "inputs/xia2016_rs7_depicted.yaml": {
+   "sha256": "0d17c786211b514efb23aa53db30fef5018f4561880f6d0eac5092dd3eda83b9",
+   "tree": "presets/xia2016_rs7_depicted.yaml"
+  },
+  "inputs/xia5-000.png": {
+   "raster": "e9fb7fbb348567d3ab7606479c83342bcf2f5ee3d6b4c162f7c345e5ef339991"
+  },
+  "make_xia2016_rs7.py": {
+   "bundle": "devices/xia2016_rs7/make_xia2016_rs7.py",
+   "sha256": "a3d13066ddc717d8baa679ca432d488c39636968d02e47feb7025d2ec0dcdc63"
+  },
+  "rc8/TRACE_CODE_SHA256.txt": {
+   "bundle": "devices/_shared/rc8/TRACE_CODE_SHA256.txt",
+   "sha256": "1c94de3778d30acfebd6c7be76c9014f7a621211776bdae9f3e4f3304f7c5fb6"
+  },
+  "rc8/opencif/__init__.py": {
+   "sha256": "774347c967f0c86f340e893a95b01e311a8859588f9de205a3aaa27382f853b4",
+   "tree": "opencif/__init__.py"
+  },
+  "rc8/opencif/__main__.py": {
+   "sha256": "6e7e919b655fbaec114bc56a818429cbb7cf09de96146bc20c6029a233ca9dbf",
+   "tree": "opencif/__main__.py"
+  },
+  "rc8/opencif/api.py": {
+   "sha256": "859e442272ceadf1f0405dfdeb259e33e005b170eac4cc71e075740c0f9b7ac3",
+   "tree": "opencif/api.py"
+  },
+  "rc8/opencif/build.py": {
+   "sha256": "80c4a51292eff8282b95d3f4908461566bc33550634c3fb0489349bcc932f967",
+   "tree": "opencif/build.py"
+  },
+  "rc8/opencif/compose.py": {
+   "sha256": "0bef3f02c059639e83d5aee119c2ba9f42321687fab1e42b32e169d93b688ea1",
+   "tree": "opencif/compose.py"
+  },
+  "rc8/opencif/data/depicted.json": {
+   "sha256": "adb401c01a42b8c367e60dbcc8415992dce701b29b55289a97156881c912d49d",
+   "tree": "opencif/data/depicted.json"
+  },
+  "rc8/opencif/data/r4/dinh_filter_meas.json": {
+   "sha256": "eb5461d33f2323be506044d5f8dfdd3440f9ebb69d2d58cc33f227dc2999ea14",
+   "tree": "opencif/data/r4/dinh_filter_meas.json"
+  },
+  "rc8/opencif/data/r4/dinh_inset_meas.json": {
+   "sha256": "d962ebee250209c8aeb87c85ff5374a33d89a900a004cf6be22f59119ddf0ff8",
+   "tree": "opencif/data/r4/dinh_inset_meas.json"
+  },
+  "rc8/opencif/data/r4/dinh_layout_meas.json": {
+   "sha256": "6146f8caf0ad3444634ca93ea3d50feaa02ead4b55737946b9f72589de1a328d",
+   "tree": "opencif/data/r4/dinh_layout_meas.json"
+  },
+  "rc8/opencif/data/r4/gifford_inset_meas.json": {
+   "sha256": "e0ed27328be1d6648e5ed1666f7eb35838ce566ce341c27aa2aac2883ed3142e",
+   "tree": "opencif/data/r4/gifford_inset_meas.json"
+  },
+  "rc8/opencif/data/r4/manual_reads.json": {
+   "sha256": "c2ceb392cc4957f68e18e6cb215a60b9e009ee0ccdaadac3156a5789f1f2b6fe",
+   "tree": "opencif/data/r4/manual_reads.json"
+  },
+  "rc8/opencif/data/r4/meas_xia_fig3a.json": {
+   "sha256": "71077f25dd4367b8f48ce8ea94970dfbcfe0ff15a9d9b655889260b8aa204dc6",
+   "tree": "opencif/data/r4/meas_xia_fig3a.json"
+  },
+  "rc8/opencif/data/r4/xia_fig2a_meas.json": {
+   "sha256": "c67a62911cbcc35e44428533007200bb179e3240db893f27b145e781982c991c",
+   "tree": "opencif/data/r4/xia_fig2a_meas.json"
+  },
+  "rc8/opencif/data/r4/xia_fig3g_meas.json": {
+   "sha256": "e342ba02596d5527ae481299d98417f8e0147a091b307d83bfc8fda35edd2aac",
+   "tree": "opencif/data/r4/xia_fig3g_meas.json"
+  },
+  "rc8/opencif/data/r4/xia_head_lines.json": {
+   "sha256": "61ae2b2ef16becab5917acb00297752ae84c0128264719e3861794aab9a0b409",
+   "tree": "opencif/data/r4/xia_head_lines.json"
+  },
+  "rc8/opencif/data/r5/dinh_flare_measurement.json": {
+   "sha256": "b231da5d1f0f7df70c2beb837967e33c7a8e24b1edec431d2ac307820fc94e4d",
+   "tree": "opencif/data/r5/dinh_flare_measurement.json"
+  },
+  "rc8/opencif/data/r5/dinh_pitch_gap_measurement.json": {
+   "sha256": "85bef27c90ba939691e4a0acc29c9aa1f14026e6a8d3b0a3c77e95358a32f981",
+   "tree": "opencif/data/r5/dinh_pitch_gap_measurement.json"
+  },
+  "rc8/opencif/data/r5/figure_anchors.json": {
+   "sha256": "22730c2e5b4384a44cc723905a85dbe49008f1018e179cb22093013a3769467f",
+   "tree": "opencif/data/r5/figure_anchors.json"
+  },
+  "rc8/opencif/data/r6/figure_anchors.json": {
+   "sha256": "bf2a07deb64832f81d952f6287e81ce0b1d10798c46aa30af1582d5a3637e335",
+   "tree": "opencif/data/r6/figure_anchors.json"
+  },
+  "rc8/opencif/data/r6/rc6_values.json": {
+   "sha256": "214fe24894b45166bc10267ae752326f23f67cf52f92d1daf0560d1904323c6b",
+   "tree": "opencif/data/r6/rc6_values.json"
+  },
+  "rc8/opencif/engine/cifsched.py": {
+   "sha256": "05becb2d5f3f477095a050f8ec0ae2059b5fa75a6e0e097c452392e7cb889047",
+   "tree": "opencif/engine/cifsched.py"
+  },
+  "rc8/opencif/engine/depicted.py": {
+   "sha256": "206aa067f4f1498c3dff4df59e2e8e13fb495b9c1cb7ce15c63abeffb1bb8832",
+   "tree": "opencif/engine/depicted.py"
+  },
+  "rc8/opencif/engine/devspecs.py": {
+   "sha256": "837ee641fba34729b2b66ed49dd235cd25cb3ef4d9a2a8dc146b3641143afd1c",
+   "tree": "opencif/engine/devspecs.py"
+  },
+  "rc8/opencif/engine/dinh_inlet.py": {
+   "sha256": "a64ab7f5ad50ce6df6edc3a93f0a2c9a9f43d4347d7c2fd61f3879b514e6827a",
+   "tree": "opencif/engine/dinh_inlet.py"
+  },
+  "rc8/opencif/engine/drc_audit.py": {
+   "sha256": "f3059013ca163b662c7fab6f401db9fbd0e08672da74a00c94c16d6ccb773c08",
+   "tree": "opencif/engine/drc_audit.py"
+  },
+  "rc8/opencif/engine/geometry.py": {
+   "sha256": "3e45d936793de3be42a4be5e8ad7228a02a69d9b9df47faaf676207ea34a5299",
+   "tree": "opencif/engine/geometry.py"
+  },
+  "rc8/opencif/engine/io_dxf.py": {
+   "sha256": "b082620393947d09a163939f27c440abf05a4e7b87e652a460d501304b6a31ae",
+   "tree": "opencif/engine/io_dxf.py"
+  },
+  "rc8/opencif/engine/layout.py": {
+   "sha256": "f689ff11a38b7ad936e182d38906198af6479ae9c834396a51d314cd3120a34d",
+   "tree": "opencif/engine/layout.py"
+  },
+  "rc8/opencif/engine/measure2.py": {
+   "sha256": "86a14ec0ad33bd1994a470968c925898253ebad3f39151a230cc5046cef4ad21",
+   "tree": "opencif/engine/measure2.py"
+  },
+  "rc8/opencif/engine/network.py": {
+   "sha256": "bcaadf0fc64069228ee5004dc9f65f7fac6716a8b3dffe90cf65d9a9473a507e",
+   "tree": "opencif/engine/network.py"
+  },
+  "rc8/opencif/engine/render.py": {
+   "sha256": "7016ad0e3efd8883dd2cd1ee74e44dc6cc33ab5a5760d800ba29376b29725048",
+   "tree": "opencif/engine/render.py"
+  },
+  "rc8/opencif/engine/robust.py": {
+   "sha256": "7751a4124fe1eda1f24aa66f39ee49b0e04d49dddc7b785715f753bbdfb53cfe",
+   "tree": "opencif/engine/robust.py"
+  },
+  "rc8/opencif/pipeline.py": {
+   "sha256": "a2502c823ade409db072eeb8bac1fc8aedb88bd3c685b5b6447f9da89d191661",
+   "tree": "opencif/pipeline.py"
+  },
+  "rc8/opencif/reference/CIF_v2.py": {
+   "sha256": "4fcd4f833812cfb7f1e97dc02fbc84313da48780c3d8160a884eccc2e19a425d",
+   "tree": "opencif/reference/CIF_v2.py"
+  },
+  "rc8/opencif/renders.py": {
+   "sha256": "5404745162892feb7bcfff0226936ded53d069d582c8c1258d9680d99130e186",
+   "tree": "opencif/renders.py"
+  },
+  "rc8/opencif/spec.py": {
+   "sha256": "14629a35385d14573b78b83902032039ada840237f9bf58b5a42dbb98a77da02",
+   "tree": "opencif/spec.py"
+  },
+  "rc8/provenance/rc6_traces/measurements/dinh_length_at_corrected_pitch.json": {
+   "sha256": "3440e7be0b5bb5b00547a13c44d985f431423ea8e238c6adab7cb9217082a1d6",
+   "tree": "provenance/rc6_traces/measurements/dinh_length_at_corrected_pitch.json"
+  },
+  "rc8/provenance/rc6_traces/measurements/gifford_fig6_turns.json": {
+   "sha256": "aee3c50e79ceb335d8e6e5fcf3b227ae391b1c1594600030a78d8e1ffd15f0b2",
+   "tree": "provenance/rc6_traces/measurements/gifford_fig6_turns.json"
+  },
+  "rc8/provenance/rc6_traces/measurements/scales.json": {
+   "sha256": "f9b1ed8d323599953a6cb021750c07c73b85e00dfe63b55dfd113055096322ee",
+   "tree": "provenance/rc6_traces/measurements/scales.json"
+  },
+  "rc8/provenance/rc6_traces/measurements/summary_table.md": {
+   "sha256": "8222c854d707403322fc2eab118d1564df5cbd3c51d17d2b5af1fb081f940799",
+   "tree": "provenance/rc6_traces/measurements/summary_table.md"
+  },
+  "rc8/provenance/rc6_traces/measurements/xia_fig3d_arc_scale.json": {
+   "sha256": "3e60dd0b38ed9e2013a6b2109a369397ec8610eb94d26eb2334ec0504b6c73aa",
+   "tree": "provenance/rc6_traces/measurements/xia_fig3d_arc_scale.json"
+  },
+  "rc8/provenance/rc6_traces/measurements/xia_side_walls_fg.json": {
+   "sha256": "bc3eccd0e9b4cf953176f6d75265b6e7059e686e878821168aa74b7a4567db6c",
+   "tree": "provenance/rc6_traces/measurements/xia_side_walls_fg.json"
+  },
+  "rc8/provenance/rc7_scripts/gifford_alignment.py": {
+   "sha256": "8e2d816e521a0172dde521c034497500017b416532adf1ef5cf75899c3353b40",
+   "tree": "provenance/rc7_scripts/gifford_alignment.py"
+  },
+  "rc8/provenance/rc7_traces/code/alignment_fixes.py": {
+   "sha256": "cdeffca4ff2adc5ada6e31cab1c2ca8beed3aa15f3920ab3e136ecb399d6b7d0",
+   "tree": "provenance/rc7_traces/code/alignment_fixes.py"
+  },
+  "rc8/provenance/rc7_traces/code/apply_doc_edits.py": {
+   "sha256": "32ad5c329257183260e278de7e79519468c06293449aecbba56aa9f9d3590199",
+   "tree": "provenance/rc7_traces/code/apply_doc_edits.py"
+  },
+  "rc8/provenance/rc7_traces/code/build_variant.py": {
+   "sha256": "305600c6a639754d361167e38b1aa008fbb54938770ee7ce9aa439da5fe1cd4b",
+   "tree": "provenance/rc7_traces/code/build_variant.py"
+  },
+  "rc8/provenance/rc7_traces/code/composite.py": {
+   "sha256": "adc6f89ef21566d08a7fdd65b1bc210f506fcd7c9ae189f3ac18598150284dd3",
+   "tree": "provenance/rc7_traces/code/composite.py"
+  },
+  "rc8/provenance/rc7_traces/code/composite_from_strips.py": {
+   "sha256": "868b977dc72a9fbd36be11653c6c7d0ba473b9456deb203c7c5b2c6e1286a7a8",
+   "tree": "provenance/rc7_traces/code/composite_from_strips.py"
+  },
+  "rc8/provenance/rc7_traces/code/composites_rc6.py": {
+   "sha256": "6c0d7968595f2de5e0fb5a7cc76eefa503dd3a917292a3e6a94800c13a43acfb",
+   "tree": "provenance/rc7_traces/code/composites_rc6.py"
+  },
+  "rc8/provenance/rc7_traces/code/dinh_length_at_corrected_pitch.py": {
+   "sha256": "53ccdc8f55677e3f08a5bb6e508768b37367eea4dfcc7037a8463e68bea1615a",
+   "tree": "provenance/rc7_traces/code/dinh_length_at_corrected_pitch.py"
+  },
+  "rc8/provenance/rc7_traces/code/evidence_index.py": {
+   "sha256": "a3979e98aefb9bc1b109810a7b9585883e70d876439ea037a852691ab00499d1",
+   "tree": "provenance/rc7_traces/code/evidence_index.py"
+  },
+  "rc8/provenance/rc7_traces/code/full_device.py": {
+   "sha256": "9208e1153c3ba040d753c355304c09132802995179f29e85361197852162846d",
+   "tree": "provenance/rc7_traces/code/full_device.py"
+  },
+  "rc8/provenance/rc7_traces/code/full_device_config.py": {
+   "sha256": "60484c1a93cd38d8a6f65b77821eac2f8d894ac5c7cc3e177a4bae2289ba5748",
+   "tree": "provenance/rc7_traces/code/full_device_config.py"
+  },
+  "rc8/provenance/rc7_traces/code/gifford6_turns.py": {
+   "sha256": "3a518aa955ffda277111d24b1d90abbe1d89bdf13be227f2dc1646defe2b3713",
+   "tree": "provenance/rc7_traces/code/gifford6_turns.py"
+  },
+  "rc8/provenance/rc7_traces/code/make_anchors.py": {
+   "sha256": "b40bc061df19b4f14d9ccda0efd7525b262a0c0da7a64d7b1a542a43ef3e3eeb",
+   "tree": "provenance/rc7_traces/code/make_anchors.py"
+  },
+  "rc8/provenance/rc7_traces/code/measure_scales.py": {
+   "sha256": "5edae6cbf2cfd23c86aedcd9fcd014dd509a30a02dbdc644850edd54e6c73748",
+   "tree": "provenance/rc7_traces/code/measure_scales.py"
+  },
+  "rc8/provenance/rc7_traces/code/panel_core.py": {
+   "sha256": "d041513b363f375239809628f480b3d74cee8af0abfb8b0f70ddf9f15f42fe30",
+   "tree": "provenance/rc7_traces/code/panel_core.py"
+  },
+  "rc8/provenance/rc7_traces/code/panels_dinh.py": {
+   "sha256": "5ea526e57679bc2b0b52d465a5f4c865471158548e557c4be76659401b130670",
+   "tree": "provenance/rc7_traces/code/panels_dinh.py"
+  },
+  "rc8/provenance/rc7_traces/code/panels_dinh_v2.py": {
+   "sha256": "91313871c78f88c392d7f094cb22677903e87ffc944156e74edfd4ce4a09217d",
+   "tree": "provenance/rc7_traces/code/panels_dinh_v2.py"
+  },
+  "rc8/provenance/rc7_traces/code/panels_gifford.py": {
+   "sha256": "17bb7cbb7914286c04c120dc8df5e3d3766b8372443d1b48d49849bb0a4c79a0",
+   "tree": "provenance/rc7_traces/code/panels_gifford.py"
+  },
+  "rc8/provenance/rc7_traces/code/panels_gifford6.py": {
+   "sha256": "01a355b5817c7d706cb50ed43f3929c0bbf10a00f3ef1d5f52f8a4f489bd05de",
+   "tree": "provenance/rc7_traces/code/panels_gifford6.py"
+  },
+  "rc8/provenance/rc7_traces/code/panels_xia.py": {
+   "sha256": "4be80b4a92ad6fd8f47622365b1d2c83af4045501a5bb6351125849d624e5944",
+   "tree": "provenance/rc7_traces/code/panels_xia.py"
+  },
+  "rc8/provenance/rc7_traces/code/panels_xia_more.py": {
+   "sha256": "5e73fbb91841ebd7810536875aa30e4e38f5651d24738062ae9555fad3f8b833",
+   "tree": "provenance/rc7_traces/code/panels_xia_more.py"
+  },
+  "rc8/provenance/rc7_traces/code/readme_rc7.py": {
+   "sha256": "02530ee0ffa2219b97ea70e735c4a4e1b2f54b136ebdd98cdaf522a50132d1b7",
+   "tree": "provenance/rc7_traces/code/readme_rc7.py"
+  },
+  "rc8/provenance/rc7_traces/code/run_all_rc7.sh": {
+   "sha256": "86af67d3e95687c34922f3a6d2bff862872b5f258288d1c274622a7c0cbcd7f1",
+   "tree": "provenance/rc7_traces/code/run_all_rc7.sh"
+  },
+  "rc8/provenance/rc7_traces/code/run_dinh.py": {
+   "sha256": "3220ac2655ebf548f1cdde463b3caef8ce87f4f908773b173b4d4a0d53385f64",
+   "tree": "provenance/rc7_traces/code/run_dinh.py"
+  },
+  "rc8/provenance/rc7_traces/code/run_full_device.py": {
+   "sha256": "f3692052ca8854ec86444c55b13738c4879c602669482011b3d6fcacd3a3f92f",
+   "tree": "provenance/rc7_traces/code/run_full_device.py"
+  },
+  "rc8/provenance/rc7_traces/code/run_gifford.py": {
+   "sha256": "5ad10d0442cd255ec21dcd207ce25addd89e69dbf186f85ef71f64a0e643e5fd",
+   "tree": "provenance/rc7_traces/code/run_gifford.py"
+  },
+  "rc8/provenance/rc7_traces/code/run_gifford6.py": {
+   "sha256": "4f1defa351d0e6f8499e06a7a6a18f04a9abf2d283b8e4aa3f0e31f238a5588d",
+   "tree": "provenance/rc7_traces/code/run_gifford6.py"
+  },
+  "rc8/provenance/rc7_traces/code/run_xia.py": {
+   "sha256": "0664afcd603b51f58ccc8be6a0c9132c4588895909787eb25fa52c0d0a084cb1",
+   "tree": "provenance/rc7_traces/code/run_xia.py"
+  },
+  "rc8/provenance/rc7_traces/code/run_xia_more.py": {
+   "sha256": "dbc1a31b59b2be3561f268e50a623f32ba356ea3209be6de99166e6a7e9d686d",
+   "tree": "provenance/rc7_traces/code/run_xia_more.py"
+  },
+  "rc8/provenance/rc7_traces/code/summary_table.py": {
+   "sha256": "65f55f32f5e37231e7e41665336b163a34903d0a5126fad561e87ebe7fa85185",
+   "tree": "provenance/rc7_traces/code/summary_table.py"
+  },
+  "rc8/provenance/rc7_traces/code/taper_sign.py": {
+   "sha256": "d2e380b1e3213872f0298b4a7d1b7631a7a8dc2927907e104e59a0d388284708",
+   "tree": "provenance/rc7_traces/code/taper_sign.py"
+  },
+  "rc8/provenance/rc7_traces/code/trace_lib.py": {
+   "sha256": "f8c8550b6a90a31cb3fefa247faf502d6779db9bf8c87dd8cfd781dbb767d425",
+   "tree": "provenance/rc7_traces/code/trace_lib.py"
+  },
+  "rc8/provenance/rc7_traces/code/xia_arc_scale.py": {
+   "sha256": "30eb7fb6f7c7897151d45ae452cd3ea2ed92957e59971ea802231dccec7f2a96",
+   "tree": "provenance/rc7_traces/code/xia_arc_scale.py"
+  },
+  "rc8/provenance/rc7_traces/code/xia_fig3_fit.py": {
+   "sha256": "ccf0824fa97a5d286cf1855b48f29404dc8088db1826a54851d6500f89fc256d",
+   "tree": "provenance/rc7_traces/code/xia_fig3_fit.py"
+  },
+  "rc8/provenance/rc7_traces/code/xia_fig3a_device.py": {
+   "sha256": "de9f0fc920a67044e24b365350594a44d0206156357224cd4b2f8bc0c8695665",
+   "tree": "provenance/rc7_traces/code/xia_fig3a_device.py"
+  },
+  "rc8/provenance/rc7_traces/code/xia_leg_fill.py": {
+   "sha256": "5a10e97507a2effa73c5d6d0dff11935ca9bc54d0445e9dba227810c14ac261b",
+   "tree": "provenance/rc7_traces/code/xia_leg_fill.py"
+  },
+  "rc8/provenance/rc7_traces/code/xia_side_walls.py": {
+   "sha256": "03555b729aa63ba09a4937c3ed01c0c94fbad145126bf11005957fee168c659c",
+   "tree": "provenance/rc7_traces/code/xia_side_walls.py"
+  },
+  "rc8/provenance/rc7_traces/code/zoom.py": {
+   "sha256": "e657904d52b1ec3c30ced4f704c9e38e5a01f9331815b8cc068e3391e634d380",
+   "tree": "provenance/rc7_traces/code/zoom.py"
+  },
+  "rc8/requirements-tested.txt": {
+   "sha256": "84337f653112c037994ca14f5fa586313625c75c48fd624c858b0cdc53b66a21",
+   "tree": "requirements-tested.txt"
+  },
+  "reference/EXPECT.json": {
+   "bundle": "devices/xia2016_rs7/reference/EXPECT.json",
+   "sha256": "c2b552369ad2712e3eb29edf98be2745bbc249ed079bcf3cbfaf6b56a557976d"
+  },
+  "reference/xia2016_rs7_aligned_dxf_sha256.txt": {
+   "bundle": "devices/xia2016_rs7/reference/xia2016_rs7_aligned_dxf_sha256.txt",
+   "sha256": "a2562f7db42ac5404175dae9d9918442a7cf0b91a346e75c5e411705897cfb61"
+  },
+  "reference/xia2016_rs7_depicted_dxf_sha256.txt": {
+   "bundle": "devices/xia2016_rs7/reference/xia2016_rs7_depicted_dxf_sha256.txt",
+   "sha256": "3c6b1c783108a85dd586c1d86b1cd9bbce4fc97f3ab11426b9350e718aeea08f"
+  },
+  "reference/xia_fig3a_device_pp.json": {
+   "sha256": "1500f253f3b9e9500eea31bae1262d62c1dce726c3ae389f76c917d8cce78008",
+   "tree": "provenance/rc7_traces/results/xia/xia_fig3a_device_pp.json"
+  },
+  "reference/xia_fig3a_device_rc7.json": {
+   "sha256": "b1c45c5e01f63c6a6ca0cc20deab5e479b44d198768ccaf21c29b8cd6d079d39",
+   "tree": "provenance/rc7_traces/results/xia/xia_fig3a_device_rc7.json"
+  },
+  "reference/xia_results_fig3c_pp.json": {
+   "sha256": "bdabd6784a22348d54c438d946036a7e0fee6c8952b05b8939d704cd00162227",
+   "tree": "provenance/rc7_traces/results/xia/xia_results_fig3c_pp.json"
+  },
+  "reference/xia_results_fig3c_rc7.json": {
+   "sha256": "3158835175e2dd16d54d20cf36a65a42caef8e91371ac200525f31f85998ce11",
+   "tree": "provenance/rc7_traces/results/xia/xia_results_fig3c_rc7.json"
+  },
+  "reference/xia_results_fig3d_pp.json": {
+   "sha256": "7ba94e912ea0ed061bcb269783921e71f01855311b215066f84caf4404d9bc02",
+   "tree": "provenance/rc7_traces/results/xia/xia_results_fig3d_pp.json"
+  },
+  "reference/xia_results_fig3d_rc7.json": {
+   "sha256": "51bf490d07cdc94cf6f1338cdce4d70a1234d7f54d4b6cc3797ac1069872963d",
+   "tree": "provenance/rc7_traces/results/xia/xia_results_fig3d_rc7.json"
+  },
+  "reference/xia_results_fig3e_pp.json": {
+   "sha256": "da7b062d4af5e8645b126558a9fa1b4172bc6187e71e1ec6953a35cdaca536d5",
+   "tree": "provenance/rc7_traces/results/xia/xia_results_fig3e_pp.json"
+  },
+  "reference/xia_results_fig3e_rc7.json": {
+   "sha256": "9d0bf282a5952ad56546a1c6683c9c711119f8ede9ad9150e5867ea43a3dd10e",
+   "tree": "provenance/rc7_traces/results/xia/xia_results_fig3e_rc7.json"
+  },
+  "reference/xia_results_fig3f_pp.json": {
+   "sha256": "8c67eb633e81686e748525e4bbb771b9a5e9bec044de78d7c8be2abf06d6fecb",
+   "tree": "provenance/rc7_traces/results/xia/xia_results_fig3f_pp.json"
+  },
+  "reference/xia_results_fig3f_rc7.json": {
+   "sha256": "d6378648fd657233349e2bca60fd3b9b8f02fc01d84ff780cef180ab4732a632",
+   "tree": "provenance/rc7_traces/results/xia/xia_results_fig3f_rc7.json"
+  },
+  "reference/xia_results_pp.json": {
+   "sha256": "4879e4f4777788c3cbc5a68b91257b4dae9908603c9255f74b4ba03aa8943fd9",
+   "tree": "provenance/rc7_traces/results/xia/xia_results_pp.json"
+  },
+  "reference/xia_results_rc7.json": {
+   "sha256": "d0daf46773641607bc9a4b49b04df2e9957426a6f40492d8f50cd86503336325",
+   "tree": "provenance/rc7_traces/results/xia/xia_results_rc7.json"
+  }
+ },
+ "note": "assembled by opencif_rc8.device(): rc8/ from the frozen tree, the rest from this kit, the figures from --rasters (checked by sha256)",
+ "script": "make_xia2016_rs7.py"
+}

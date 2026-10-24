@@ -1,0 +1,30 @@
+# Gifford 2014, Fig. 4 bead device AS FABRICATED (most likely): no meander (Xia introduced it in 2016), the side channels
+# start sealed at a FINITE width set by the fabrication floor -- Gifford p. 4498: w_s(1) "may be made close to or equal to
+# zero, depending on the device production capabilities available"; Xia 2016 (lines 83-85) describes the original devices'
+# initial side width as "a small, finite value ... limited by the minimum achievable feature size".  The closure designs
+# every later row from that start (Gifford's recursion); the drawn device is sealed, so its first gaps extract more than
+# f* until the side flow catches up.  The record measures that entrance error row by row on the drawn mask.
+# Floor 8 um: the '10 : 1 aspect ratio limitation' Gifford mentions when discussing pore size against depth (p. 4503),
+# applied to his 80 um depth (an inference: he states no fabrication floor).
+# Gifford does not print w_s(1) or his floor, so this start width is an ASSUMPTION; everything else as gifford2014_fig4_design.
+name: gifford2014_fig4_as_fabricated_8um
+description: Gifford 2014 Fig. 4 as fabricated (no meander, sealed start at a 8 um side width, 4-leg nested paperclip)
+targets:
+  cutoff_um: 5.203174831309222      # kappa_g x(f_gap 3.34e-4) w_c 100
+  filtrate_fraction: 0.90644        # outlet identity at the printed final side width 300 um
+process: {depth_um: 80, gap_um: 20.5, post_length_um: 25.3, post_width_um: 59.5, min_feature_um: 8, fillet_um: 2.5}
+centre_channel: {taper: constant, width_in_um: 100}
+layout: {style: paperclip, legs: 4, leg_spacing_um: 818}   # Fig. 4 inset: legs 2 and 4 817.9 um apart (rc6; the generator's rule gave 969)
+meander: {enabled: false}
+start: {style: floor, side_width_um: 8}
+inlet: {style: plain, port_radius_um: 300}
+outlet: {style: separate, port_radius_um: 750, centre_port_radius_um: 300}
+gates: {mode: reproduce}
+reproduction:
+  pc_last_short: 2000.0   # Fig. 4 inset: leg 4's array ends ~2 mm before the others
+  stem_half: 300.0
+  W: 2400.0
+paper:
+  source: Gifford et al. 2014, Fig. 4 and pp. 4498, 4500, 4503
+  layout: "Fig. 4 caption: 'the second and fourth legs of the device'; nested 4-leg layout, three ports at the top"
+  assumed: [start side width, port radii (schematic not to scale)]   # the leg spacing: measured on the Fig. 4 inset (rc6)

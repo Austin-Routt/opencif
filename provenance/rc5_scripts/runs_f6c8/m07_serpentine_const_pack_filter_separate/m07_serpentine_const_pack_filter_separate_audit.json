@@ -1,0 +1,33 @@
+{
+ "file": "m07_serpentine_const_pack_filter_separate.dxf",
+ "d_um": 18.9,
+ "n_fluid": 1,
+ "n_solid": 2316,
+ "invalid_rings": 0,
+ "bulge_polylines": 0,
+ "bounds": [
+  -4719.9,
+  -1438.7,
+  22384.5,
+  3871.2
+ ],
+ "fluid_area": 26371549.0,
+ "overlap_area": 0.0,
+ "solid_layer_overlap_with_fluid": 0.0,
+ "n_components": 1,
+ "largest_component_frac": 1.0,
+ "small_components": [],
+ "n_lost_open": 0,
+ "n_lost_solid": 0,
+ "tiling_artefacts_dropped": [
+  0,
+  0
+ ],
+ "corner_artefacts_open": 4,
+ "corner_artefacts_solid": 580,
+ "lost_open_min_width": null,
+ "lost_solid_min_width": null,
+ "lost_open": [],
+ "lost_solid": [],
+ "seconds": 69.1
+}

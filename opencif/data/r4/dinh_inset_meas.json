@@ -1,0 +1,67 @@
+{
+ "scale_um_per_px": 9.89,
+ "axis_px": 192.6,
+ "row1_mouth_px": 599.5,
+ "note": "arm tops: outer edge of the black U-turn at the inner lane column; finger extents at threshold 160; the raster thins fluid by ~3 um per side (corrected below)",
+ "arm_top_px": [
+  453.0,
+  534.0,
+  594.0
+ ],
+ "arm_top_outer_edge_mm_above_row1": [
+  1.452,
+  0.651,
+  0.057
+ ],
+ "finger_left_px": [
+  36,
+  55,
+  70,
+  82,
+  92,
+  100,
+  107,
+  113,
+  118,
+  122,
+  126,
+  130,
+  133,
+  136,
+  138
+ ],
+ "finger_right_px": [
+  350,
+  331,
+  316,
+  304,
+  294,
+  286,
+  279,
+  273,
+  268,
+  263,
+  259,
+  256,
+  253,
+  250,
+  248
+ ],
+ "finger_reach_um": [
+  1549.7,
+  1361.8,
+  1213.5,
+  1094.8,
+  995.9,
+  916.8,
+  847.5,
+  788.2,
+  738.8,
+  694.2,
+  654.7,
+  620.1,
+  590.4,
+  560.7,
+  541.0
+ ]
+}

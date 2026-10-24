@@ -1,0 +1,32 @@
+===== rc5 46 drawn records
+dDlast_dlnRside_out range (-175.4373299318236, 'dc_D3_F0p7', -26.71460565203598, 'gifford2014_fig5D_as_fabricated_12p5um')
+outlet +-1% rows newly outside (12, 'm02_linear_shear_arms_filter_teardrop', 45, 'gifford2014_fig6_design')
+outlet +-1% max change D (0.0197239226530993, 'xia2016_rs7_specified', 1.061321373495963, 'dc_D3_F0p7')
+   without Xia (0.30863492341612797, 'gifford2014_fig5D_as_fabricated_12p5um', 1.061321373495963, 'dc_D3_F0p7')  Xia [(0.019724388776836577, 'xia2016_rs7_depicted'), (0.019724388903934797, 'xia2016_rs7_depicted_pullR'), (0.0197239226530993, 'xia2016_rs7_specified')]
+outlet +-1% share of F (0.0007686770066570518, 'gifford2014_fig5A_as_fabricated_12p5um', 0.02933437103166066, 'dc_D5_F0p3')
+within the last (12, 'm02_linear_shear_arms_filter_teardrop', 78, 'xia2016_rs7_specified')  non-Xia (12, 'm02_linear_shear_arms_filter_teardrop', 45, 'gifford2014_fig6_design')
+rows losing cutoff (0, 'dc_D5_F0p3', 10, 'gifford2014_fig6_design')
+band names last rows on 29 designs
+   last-row counts [(1, 'gifford2014_fig5D_as_fabricated_12p5um'), (4, 'gifford2014_fig4_as_fabricated_20um'), (4, 'gifford2014_fig4_as_fabricated_8um')] ... [(19, 'wbc_paperclip_teardrop'), (47, 'gifford2014_fig6_as_fabricated_15um'), (47, 'gifford2014_fig6_design')]
+AR at: {'gap opening G': 31, 'straight side channel': 15}
+AR > 10: [(14.96, 'gifford_physics_linear'), (16.47, 'gifford2014_fig4_design'), (22.86, 'm13_paperclip_const_nomeander_sealed_fine'), (22.86, 'm15_linear_shear_nomeander_filter_teardrop'), (22.86, 'm16_serpentine_shear_nomeander_plain_separate'), (22.86, 'm17_paperclip_shear_nomeander_filter_ring'), (31.97, 'gifford2014_fig6_design')]
+dinh2024_v1_depicted footprint [150.575, 3.155]
+dinh2024_v1_specified footprint [154.535, 3.176]
+dinh_targets_sealed_head footprint [169.595, 4.199]
+Re_any <= 10 on 37 of 46
+===== rc6 46 drawn records
+dDlast_dlnRside_out range (-175.4373299318236, 'dc_D3_F0p7', -26.250221055699964, 'gifford2014_fig5D_as_fabricated_12p5um')
+outlet +-1% rows newly outside (12, 'm02_linear_shear_arms_filter_teardrop', 48, 'gifford2014_fig6_design')
+outlet +-1% max change D (0.0200494334141732, 'xia2016_rs7_specified', 1.061321373495963, 'dc_D3_F0p7')
+   without Xia (0.3022052670578813, 'gifford2014_fig5D_as_fabricated_12p5um', 1.061321373495963, 'dc_D3_F0p7')  Xia [(0.020049521164570705, 'xia2016_rs7_depicted'), (0.02004952129124371, 'xia2016_rs7_depicted_pullR'), (0.0200494334141732, 'xia2016_rs7_specified')]
+outlet +-1% share of F (0.0007686771829375274, 'gifford2014_fig5A_as_fabricated_12p5um', 0.02933437103166066, 'dc_D5_F0p3')
+within the last (12, 'm02_linear_shear_arms_filter_teardrop', 78, 'xia2016_rs7_specified')  non-Xia (12, 'm02_linear_shear_arms_filter_teardrop', 48, 'gifford2014_fig6_design')
+rows losing cutoff (0, 'dc_D5_F0p3', 11, 'gifford2014_fig6_design')
+band names last rows on 29 designs
+   last-row counts [(1, 'gifford2014_fig5D_as_fabricated_12p5um'), (4, 'gifford2014_fig4_as_fabricated_20um'), (4, 'gifford2014_fig4_as_fabricated_8um')] ... [(19, 'wbc_paperclip_teardrop'), (47, 'gifford2014_fig6_as_fabricated_15um'), (47, 'gifford2014_fig6_design')]
+AR at: {'gap opening G': 32, 'straight side channel': 14}
+AR > 10: [(14.96, 'gifford_physics_linear'), (16.47, 'gifford2014_fig4_design'), (22.86, 'm13_paperclip_const_nomeander_sealed_fine'), (22.86, 'm15_linear_shear_nomeander_filter_teardrop'), (22.86, 'm16_serpentine_shear_nomeander_plain_separate'), (22.86, 'm17_paperclip_shear_nomeander_filter_ring'), (31.97, 'gifford2014_fig6_design')]
+dinh2024_v1_depicted footprint [148.342, 3.155]
+dinh2024_v1_specified footprint [152.302, 3.176]
+dinh_targets_sealed_head footprint [167.365, 4.199]
+Re_any <= 10 on 37 of 46

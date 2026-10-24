@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below, with its code stamp."
+title: "opencif: a targets-to-photomask generator for Controlled Incremental Filtration devices"
+version: "1.0.0"
+date-released: "2026-10-23"
+authors:
+  - family-names: "Routt"
+    given-names: "A. H."
+    orcid: "https://orcid.org/0000-0002-7286-2924"
+doi: "10.5281/zenodo.23620100"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23620100"
+    description: "the archived release on Zenodo"
+  - type: other
+    value: "code stamp 9e4eb55a0affeef3; tests 6340f50956101e9d"
+    description: "opencif's own hashes of its package files and its test suites (python -m opencif --version prints the first)"
+license: MIT
+repository-code: "https://github.com/Austin-Routt/opencif"

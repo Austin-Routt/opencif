@@ -1,0 +1,15 @@
+opencif 1.0.0 (code 9e4eb55a0affeef3)
+the same lamina delta* and fraction f as the generator (bit for bit)             ok  delta* 1.221051 um, f 4.436485e-04
+the same number of gaps N = ceil(ln(1-F)/ln(1-2f)) (App. A eq. Nconst)           ok  N 1814
+the same march P(i), S(i) and F = 1 - P(N) (bit for bit)                         ok  F 0.800167
+the same centre and gap resistances (bit for bit)                                ok  
+the same exact closure R_s(i), every segment (bit for bit)                       ok  
+the same side widths w_s(i), every segment (bit for bit)                         ok  w_s 5.347 -> 153.212 um
+exact closure = PE closure x (1 - 2 f M13/(1 - 2f)), every segment (the gap drop's change) ok  R_s/R_s,PE - 1 = -3.618e-05; 3.1e-08 off the identity
+the mass identity P(N) + 2 S(N) = 1 (App. A)                                     ok  
+the drawn ladder has N gaps and N - 1 posts per side                             ok  N 402
+read back: the wall, the gaps and the centre as designed                         ok  
+read back: the side widths as designed                                           ok  
+the drawn network realises D at every gap, both sides (< 1e-6)                   ok  5.1e-11
+the drawn network realises F (< 1e-9)                                            ok  F 0.300124
+ALL OK

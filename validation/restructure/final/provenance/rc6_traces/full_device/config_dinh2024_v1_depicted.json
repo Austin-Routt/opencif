@@ -1,0 +1,44 @@
+{
+ "strip_um_per_px": 2.0,
+ "composite_um_per_px": 5.0,
+ "strip_max_mm": 40,
+ "devices": [
+  {
+   "name": "dinh2024_v1_depicted",
+   "dxf": "opencif_rc6/runs/dinh2024_v1_depicted/dinh2024_v1_depicted.dxf",
+   "title": "Dinh 2024 V1 (head as depicted), opencif rc6",
+   "panels": [
+    {
+     "letter": "p1",
+     "results": "results/dinh/dinh_results_rc6.json",
+     "key": "p1",
+     "raster": "rasters/dinh5-000.png",
+     "title": "Dinh Fig. 2B panel 1"
+    },
+    {
+     "letter": "p2",
+     "results": "results/dinh/dinh_results_rc6.json",
+     "key": "p2",
+     "raster": "rasters/dinh5-000.png",
+     "title": "Dinh Fig. 2B panel 2"
+    },
+    {
+     "letter": "p3",
+     "results": "results/dinh/dinh_results_rc6.json",
+     "key": "p3",
+     "raster": "rasters/dinh5-000.png",
+     "title": "Dinh Fig. 2B panel 3"
+    },
+    {
+     "letter": "p4",
+     "results": "results/dinh/dinh_results_rc6.json",
+     "key": "p4",
+     "raster": "rasters/dinh5-000.png",
+     "title": "Dinh Fig. 2B panel 4"
+    }
+   ],
+   "note": "Every polygon of the shipped DXF; Dinh Fig. 2B's four panels at the positions their traces registered (each panel's own 50 \u00b5m bar read with its anti-aliased ends).  Dinh prints no whole-device drawing at a known scale (Fig. 2A's main panel read at the 3.2 mm width gives 60.6 mm against the printed 75.8 mm), so there is no underlay; the device's length against the printed 75.8 mm is the conditional conflict of PRESET_PROVENANCE."
+  }
+ ],
+ "composite": false
+}

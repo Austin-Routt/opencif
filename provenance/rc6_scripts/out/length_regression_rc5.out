@@ -1,0 +1,7 @@
+# rc6 ports of the rc5 Dinh length scripts run on the rc5 post-review tree (10-12) with --pitch-tol 1.0, compared
+# with rc5's own outputs (provenance/rc5_scripts/*.json / *.out); 2026-10-17 12:16 CDT
+dinh_length_bound depicted  identical (added inputs: pitch_tolerance_um, pitch_um, preset)
+dinh_length_bound specified identical (added inputs: pitch_tolerance_um, pitch_um, preset)
+dinh_taper_alternatives    identical (JSON and printed output; added input: pitch_tolerance_um)
+dinh_schedule_at_F         identical (JSON and printed output; x_top from the plan = the records' x_top)
+exit 0

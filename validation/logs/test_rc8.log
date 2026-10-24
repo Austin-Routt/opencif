@@ -1,0 +1,71 @@
+code {'version': '1.0.0', 'sha256': '9e4eb55a0affeef3', 'files': 44}
+V negative flow is a SpecError naming operation.flow_uL_min                                              ok   operation.flow_uL_min = -5.0 (must be a finite number > 0): a length, depth, flow, radius, tolerance or count the design divides by or draws
+V zero flow is a SpecError naming operation.flow_uL_min                                                  ok   operation.flow_uL_min = 0.0 (must be a finite number > 0): a length, depth, flow, radius, tolerance or count the design divides by or draws
+V infinite flow is a SpecError naming operation.flow_uL_min                                              ok   operation.flow_uL_min = inf (must be a finite number > 0): a length, depth, flow, radius, tolerance or count the design divides by or draws
+V zero gap is a SpecError naming process.gap_um                                                          ok   process.gap_um = 0.0 (must be a finite number > 0): a length, depth, flow, radius, tolerance or count the design divides by or draws
+V negative depth is a SpecError naming process.depth_um                                                  ok   process.depth_um = -80.0 (must be a finite number > 0): a length, depth, flow, radius, tolerance or count the design divides by or draws
+V chip (0, 0) is a SpecError naming chip.width_mm                                                        ok   chip.width_mm = 0.0 (must be a finite number > 0); chip.length_mm = 0.0 (must be a finite number > 0): a length, depth, flow, radius, tolerance or cou
+V negative chip is a SpecError naming chip.width_mm                                                      ok   chip.width_mm = -25.0 (must be a finite number > 0): a length, depth, flow, radius, tolerance or count the design divides by or draws
+V array count 0 is a SpecError naming array.count                                                        ok   array.count = 0 (must be a finite number > 0): a length, depth, flow, radius, tolerance or count the design divides by or draws
+V array count -2 is a SpecError naming array.count                                                       ok   array.count = -2 (must be a finite number > 0): a length, depth, flow, radius, tolerance or count the design divides by or draws
+V negative leg spacing is a SpecError naming layout.leg_spacing_um                                       ok   layout.leg_spacing_um = -818.0 (must be a finite number > 0): a length, depth, flow, radius, tolerance or count the design divides by or draws
+V negative port radius is a SpecError naming inlet.port_radius_um                                        ok   inlet.port_radius_um = -1.0 (must be a finite number > 0): a length, depth, flow, radius, tolerance or count the design divides by or draws
+V negative fillet is a SpecError naming process.fillet_um                                                ok   process.fillet_um = -1.0 (must be a finite number >= 0): a length, depth, flow, radius, tolerance or count the design divides by or draws
+V zero tubing bore is a SpecError naming outlet.tubing.centre_id_mm                                      ok   outlet.tubing.centre_id_mm = 0.0 (must be a finite number > 0): a length, depth, flow, radius, tolerance or count the design divides by or draws
+V zero arms is a SpecError naming meander.arms                                                           ok   meander.arms = 0 (must be a finite number > 0): a length, depth, flow, radius, tolerance or count the design divides by or draws
+V negative margin is a SpecError naming chip.margin_um                                                   ok   chip.margin_um = -100.0 (must be a finite number >= 0): a length, depth, flow, radius, tolerance or count the design divides by or draws
+V non-numeric flow is a SpecError naming operation.flow_uL_min                                           ok   operation.flow_uL_min must be a number, got 'fast'
+V non-numeric taper width is a SpecError naming centre_channel.width_in_um                               ok   centre_channel.width_in_um must be a number, got 'wide'
+V D = inf is a SpecError naming targets.cutoff_um                                                        ok   targets.cutoff_um must be a finite number > 0
+V D = "five" is a SpecError naming targets.cutoff_um                                                     ok   targets.cutoff_um must be a number, got 'five'
+V F = "half" is a SpecError naming targets.filtrate_fraction                                             ok   targets.filtrate_fraction must be a number, got 'half'
+V an unknown process is a SpecError                                                                      ok   process 'nosuchprocess': one of dinh2024, xia2016, gifford2014, generic19, or a dict
+V a seal without a head is a SpecError                                                                   ok   seal applies to a meander head (meander=None draws none)
+V array=True is a SpecError (not one copy)                                                               ok   array must be a copy count (an int) or a mapping, not True
+V layout.legs: true is a SpecError naming layout.legs                                                    ok   layout.legs = True (must be a number, not true/false): a length, depth, flow, radius, tolerance or count the design divides by or draws
+V generate(flow_uL_min=True) is a SpecError naming operation.flow_uL_min                                 ok   operation.flow_uL_min must be a number, not True
+V generate(width_in_um=True) is a SpecError naming centre_channel.width_in_um                            ok   centre_channel.width_in_um must be a number, not True
+V generate(chip=(25, 75, False)) is a SpecError naming chip.margin_um                                    ok   chip.margin_um must be a number, not False
+V generate(taper=('constant_shear', 120, True)) is a SpecError naming centre_channel.width_min_um        ok   centre_channel.width_min_um must be a number, not True
+V generate(flow_uL_min=numpy.True_) is a SpecError naming operation.flow_uL_min                          ok   operation.flow_uL_min must be a number, not np.True_
+V the command line's --array 0 is a spec error (exit 6) naming array.count                               ok   exit 6: SPEC ERROR: array.count = 0 (must be a finite number > 0): a length, depth, flow, radius, tolerance or count the design divides by or draws
+V fillet 0 (square corners) is accepted (only a negative value is refused)                               ok   0 planned only (no outline: check_only='plan'): inside the envelope
+V gap entrance coefficient 0 is accepted (only a negative value is refused)                              ok   0 planned only (no outline: check_only='plan'): inside the envelope
+V "auto" values and absent optional keys pass                                                            ok   
+C meander off beside reproduction.head pack: refused, naming it                                          ok   meander.enabled = False is given, but reproduction.head = 'pack' draws a head: the reproduction value would be drawn, not the spec's; give one of them
+C meander on (no style) beside reproduction.head none: refused, naming it                                ok   meander.enabled = True is given, but reproduction.head = 'none' draws none: the reproduction value would be drawn, not the spec's; give one of them
+C meander on beside reproduction.head pack (agree): not refused by the conflict rule                     ok   0 planned only (no outline: check_only='plan'): inside the envelope
+C narrow_um 19 beside reproduction.w_arm 28: refused, naming it                                          ok   meander.narrow_um = 19.0 is given (the narrow head draws its arms at it), but reproduction.w_arm = 28.0 replaces the arms' width (give the head's widt
+C narrow_um 19 beside reproduction.w_arm 19 (agree): not refused by the conflict rule                    ok   0 planned only (no outline: check_only='plan'): inside the envelope
+C channel_um 28 beside reproduction.w_arm 40 (pack): refused, naming it                                  ok   meander.channel_um = 28.0 is given (the pack head draws its arms at it), but reproduction.w_arm = 40.0 replaces the arms' width (give the head's width
+C reproduction.w_arm 40 with no explicit head width: not refused by the conflict rule                    ok   0 planned only (no outline: check_only='plan'): inside the envelope
+C a style beside reproduction.head none is refused once (the style rule; no second message for the same  ok   meander.style = 'pack' is given, but reproduction.head = 'none' replaces it: the reproduction value would be drawn, not the spec's; give one of them
+P D 0.5 um with a pack head (u 0.005) is refused before the head's sealing search                        ok   REFUSED (strict): kappa plateau (u_min 0.0050 < 0.035 at the widest centre width 100.0 um, (120 s)
+P its refusal record gives the plateau advice (the widest centre the plateau allows) and says what its g ok   strict mode refuses a design below the kappa plateau (u = D/w_c >= 0.035, App. B thesis scope), here before the head's sealing search: at D 0.5 um the
+P no photomask is written for it                                                                         ok   ['cif_D0p5_F0p5.json', 'cif_D0p5_F0p5_spec.yaml']
+P a head-less design below the plateau is refused by the post-plan gate, once                            ok   WOULD BE REFUSED: kappa plateau (u_min 0.0250 < 0.035)
+P evaluate mode is unchanged (outside the envelope, exit 3)                                              ok   planned only (no outline: check_only='plan'): outside the envelope: kappa plateau (u_min 0.0250 < 0.
+P a headed strict design on the plateau is untouched (exit 0)                                            ok   planned only (no outline: check_only='plan'): inside the envelope
+S a strict floor start notes that its entrance rows are not declared and the build FAILS Q2              ok   o the side channels' inner edge, the radii of the head and outlet arcs (their widths are measured), the head rows' centre-path lengths, and any off-ch
+S a reproduce-mode floor start does not carry that note (its rows are declared)                          ok   
+S the sealed-start refusal names the floor start's mode condition                                        ok   a sealed start without a meander head draws a 3.81 um first side channel, below the 19.0 um process floor: enable a meander head (meander.enabled: tru
+Q a plan that overshoots F beyond the tolerance notes the expected Q2 F FAIL and the remedy              ok    channels' inner edge, the radii of the head and outlet arcs (their widths are measured), the head rows' centre-path lengths, and any off-chip tubing.
+Q a plan within the tolerance carries no such note                                                       ok   
+N pass over an earlier pass: the file just assessed is named                                             ok   ('a.dxf', 'NEW')
+N FAIL over an earlier pass: the new mask is _FAILED, no deliverable name left                           ok   ('b_FAILED.dxf', 'NEWFAIL', None)
+N pass over an earlier FAIL: no stale _FAILED left beside it                                             ok   c.dxf
+N a re-assessment (no fresh file) that clears a FAIL renames it, as rc7                                  ok   e.dxf
+N a re-assessment (no fresh file) that FAILS renames it _FAILED, as rc7                                  ok   f_FAILED.dxf
+I separate inlets far from every other copy's outlets pass                                               ok   {'ok': True, 'required_um': 2000.0, 'inlet_to_other_copies_outlet_ports_min_um': 22640.4, 'closest': {'inlet_copy': 1, 'outlet_copy': 0, 'port': 'A'},
+I an inlet within 2 mm of another copy's outlet port fails, with the pair named                          ok   {'inlet_copy': 1, 'outlet_copy': 0, 'port': 'A'}
+I a shared port is checked against every copy's outlets                                                  ok   {'inlet_copy': 'shared', 'outlet_copy': 0, 'port': 'A'}
+I one copy: nothing to check, passes                                                                     ok   {'ok': True, 'required_um': 2000.0, 'inlet_to_other_copies_outlet_ports_min_um': None, 'closest': None, 'outlet_ports_of_neighbouring_copies_min_um': 
+L a given spacing whose 3-leg outline collides and whose 5-leg outline is clear fits 5 legs (as rc7)     ok   planned and outlined in memory (no photomask written): inside the enve legs 5 (134 s)
+D a build records the DRC's file and its final name                                                      ok   ('rc8_drc_name_UNASSESSED.dxf', 'rc8_drc_name.dxf')
+A m07_serpentine_const_pack_filter_separate_x3 into a used folder: the stale file is gone, the bytes are ok   bcfd02a9d860
+A m07_serpentine_const_pack_filter_separate_x3: the 2 mm rule between copies holds (26632.0 um; neighbou ok   {'inlet_copy': 'shared', 'outlet_copy': 1, 'port': 'B'}
+A m13_paperclip_const_nomeander_sealed_fine_x4 into a used folder: the stale file is gone, the bytes are ok   b1e309526453
+A m13_paperclip_const_nomeander_sealed_fine_x4: the 2 mm rule between copies holds (18502.6 um; neighbou ok   {'inlet_copy': 0, 'outlet_copy': 1, 'port': 'B'}
+
+67 checks, 0 failed
+ALL OK

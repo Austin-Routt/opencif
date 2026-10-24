@@ -1,0 +1,7 @@
+opencif 1.0.0 (code 9e4eb55a0affeef3)
+gifford2014_fig4_design  OK   spec diffs []; N 3546/3546 NM 0/0; max |df| rows 1..N-1 0.0e+00; F 0.90647435 (ref 0.90647435, target 0.90644)
+dinh2024_v1_specified    OK   spec diffs []; N 2738/2738 NM 256/256; max |df| rows 1..N-1 0.0e+00; F 0.55926054 (ref 0.55926054, target 0.55920)
+dinh2024_v1_depicted     OK   spec diffs []; N 2701/2701 NM 219/219; max |df| rows 1..N-1 0.0e+00; F 0.55922461 (ref 0.55922461, target 0.55920)
+xia2016_rs7_specified    OK   spec diffs []; N 7272/7272 NM 2/2; max |df| rows 1..N-1 2.2e-19; F 0.93801753 (ref 0.93801753, target 0.93800)
+xia2016_rs7_depicted     OK   spec diffs []; N 7351/7351 NM 29/29; max |df| rows 1..N-1 1.6e-19; F 0.93801928 (ref 0.93801928, target 0.93800)
+ALL OK

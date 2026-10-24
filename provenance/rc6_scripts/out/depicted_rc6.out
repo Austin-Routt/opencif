@@ -1,0 +1,125 @@
+Dinh 2024 Fig. 2A inset (V1) iterations 3 D* 2.174
+  row  1 A R  1281.0 L_dep   5387.8 L_closure   5380.9  f/f*  13.244  cutoff/D*  3.658
+  row  2 A R  1391.0 L_dep   4225.6 L_closure   4218.7  f/f*   3.865  cutoff/D*  1.970
+  row  3 A R  1501.0 L_dep   3478.8 L_closure   3471.9  f/f*   3.673  cutoff/D*  1.920
+  row  4 T R 1536.23 L_dep   2991.1 L_closure   2982.3  f/f*   3.417  cutoff/D*  1.852
+  row  5 T R 1348.3200000000002 L_dep   2615.2 L_closure   2606.5  f/f*   3.481  cutoff/D*  1.869
+  row  6 T R 1199.97 L_dep   2318.5 L_closure   2309.8  f/f*   3.544  cutoff/D*  1.886
+  row  7 T R 1081.29 L_dep   2081.2 L_closure   2072.4  f/f*   3.567  cutoff/D*  1.892
+  row  8 T R 982.3900000000001 L_dep   1883.4 L_closure   1874.6  f/f*   3.648  cutoff/D*  1.913
+  row  9 T R 903.2700000000001 L_dep   1725.1 L_closure   1716.4  f/f*   3.543  cutoff/D*  1.885
+  row 10 T R 834.0400000000001 L_dep   1586.7 L_closure   1577.9  f/f*   3.662  cutoff/D*  1.917
+  row 11 T R   774.7 L_dep   1468.0 L_closure   1459.2  f/f*   3.686  cutoff/D*  1.923
+  row 12 T R  725.25 L_dep   1369.1 L_closure   1360.3  f/f*   3.582  cutoff/D*  1.896
+  row 13 T R 680.745 L_dep   1280.1 L_closure   1271.3  f/f*   3.680  cutoff/D*  1.922
+  row 14 T R 641.1850000000001 L_dep   1201.0 L_closure   1192.2  f/f*   3.726  cutoff/D*  1.934
+  row 15 T R  606.57 L_dep   1131.7 L_closure   1123.0  f/f*   3.688  cutoff/D*  1.924
+  row 16 T R 576.9000000000001 L_dep   1072.4 L_closure   1063.6  f/f*   3.581  cutoff/D*  1.896
+  row 17 T R  547.23 L_dep   1013.1 L_closure   1004.3  f/f*   3.839  cutoff/D*  1.963
+  row 18 T R  527.45 L_dep    973.5 L_closure    964.7  f/f*   2.824  cutoff/D*  1.683
+Xia 2016 Figs. 3b + 3a (RS-7): measured units, extrapolated units, rectilinear rows iterations 3 D* 6.864
+  row  1 T R 824.138 L_dep   1321.7 L_closure   1313.3  f/f*   3.303  cutoff/D*  1.820
+  row  2 T R 741.4300000000001 L_dep   1156.3 L_closure   1147.9  f/f*   0.704  cutoff/D*  0.839
+  row  3 T R 682.0960000000001 L_dep   1037.7 L_closure   1029.2  f/f*   0.482  cutoff/D*  0.694
+  row  4 T R 635.3480000000001 L_dep    944.2 L_closure    935.7  f/f*   0.453  cutoff/D*  0.672
+  row  5 T R 595.792 L_dep    865.1 L_closure    856.6  f/f*   0.458  cutoff/D*  0.676
+  row  6 T R 561.6300000000001 L_dep    796.7 L_closure    788.3  f/f*   0.471  cutoff/D*  0.686
+  row  7 T R 529.2660000000001 L_dep    732.0 L_closure    723.6  f/f*   0.511  cutoff/D*  0.714
+  row  8 T R 505.89200000000005 L_dep    685.3 L_closure    676.8  f/f*   0.456  cutoff/D*  0.675
+  row  9 T R 482.518 L_dep    638.5 L_closure    630.1  f/f*   0.493  cutoff/D*  0.702
+  row 10 T R 464.538 L_dep    602.5 L_closure    594.1  f/f*   0.448  cutoff/D*  0.669
+  row 11 T R 449.24620902022264 L_dep    572.0 L_closure    563.5  f/f*   0.427  cutoff/D*  0.653  (extrapolated)
+  row 12 T R 435.2858976188622 L_dep    544.0 L_closure    535.6  f/f*   0.428  cutoff/D*  0.654  (extrapolated)
+  row 13 T R 422.443656027124 L_dep    518.4 L_closure    509.9  f/f*   0.435  cutoff/D*  0.659  (extrapolated)
+  row 14 T R 410.5535974579715 L_dep    494.6 L_closure    486.1  f/f*   0.444  cutoff/D*  0.666  (extrapolated)
+  row 15 T R 399.4842177543647 L_dep    472.4 L_closure    464.0  f/f*   0.454  cutoff/D*  0.673  (extrapolated)
+  row 16 T R 389.1295045704651 L_dep    451.7 L_closure    443.3  f/f*   0.466  cutoff/D*  0.682  (extrapolated)
+  row 17 T R 379.40274666330066 L_dep    432.3 L_closure    423.8  f/f*   0.479  cutoff/D*  0.692  (extrapolated)
+  row 18 T R 370.2321153732268 L_dep    413.9 L_closure    405.5  f/f*   0.494  cutoff/D*  0.702  (extrapolated)
+  row 19 T R 361.55744234019033 L_dep    396.6 L_closure    388.2  f/f*   0.510  cutoff/D*  0.714  (extrapolated)
+  row 20 T R 353.3278247059676 L_dep    380.1 L_closure    371.7  f/f*   0.528  cutoff/D*  0.726  (extrapolated)
+  row 21 T R 345.4998152123361 L_dep    364.5 L_closure    356.0  f/f*   0.547  cutoff/D*  0.739  (extrapolated)
+  row 22 T R 338.0360337261901 L_dep    349.5 L_closure    341.1  f/f*   0.569  cutoff/D*  0.754  (extrapolated)
+  row 23 T R 330.9040876600781 L_dep    335.3 L_closure    326.8  f/f*   0.592  cutoff/D*  0.769  (extrapolated)
+  row 24 T R 324.07572232482966 L_dep    321.6 L_closure    313.2  f/f*   0.619  cutoff/D*  0.787  (extrapolated)
+  row 25 T R 317.5261448414701 L_dep    308.5 L_closure    300.1  f/f*   0.653  cutoff/D*  0.808  (extrapolated)
+  row 26 T R 311.2334807330915 L_dep    295.9 L_closure    287.5  f/f*   0.713  cutoff/D*  0.844  (extrapolated)
+  row 27 T R 305.1783331275914 L_dep    283.8 L_closure    275.4  f/f*   0.873  cutoff/D*  0.934  (extrapolated)
+  row 28 T R 299.34342216393895 L_dep    272.2 L_closure    263.7  f/f*   1.446  cutoff/D*  1.203  (extrapolated)
+  row 29 T R 293.71328770337936 L_dep    284.9 L_closure    287.1  f/f*   3.684  cutoff/D*  1.922  (extrapolated)
+  row 30 R R    None L_dep    117.2 L_closure    117.2  f/f*  10.870  cutoff/D*  3.309
+  row 31 R R    None L_dep    117.2 L_closure    117.2  f/f*   4.044  cutoff/D*  2.014
+  row 32 R R    None L_dep    117.2 L_closure    117.2  f/f*   1.505  cutoff/D*  1.227
+  row 33 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.560  cutoff/D*  0.748
+  row 34 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.209  cutoff/D*  0.456
+  row 35 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.078  cutoff/D*  0.278
+  row 36 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.029  cutoff/D*  0.170
+  row 37 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.011  cutoff/D*  0.104
+  row 38 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.004  cutoff/D*  0.063
+  row 39 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.001  cutoff/D*  0.039
+  row 40 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.001  cutoff/D*  0.024
+  row 41 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.014
+  row 42 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.009
+  row 43 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.005
+  row 44 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.003
+  row 45 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.002
+  row 46 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.001
+  row 47 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.001
+  row 48 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.001
+  row 49 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.001
+  row 50 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 51 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 52 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 53 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 54 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 55 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 56 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 57 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 58 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 59 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 60 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 61 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 62 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 63 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 64 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 65 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 66 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 67 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 68 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 69 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 70 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 71 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 72 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 73 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 74 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 75 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 76 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 77 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 78 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 79 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 80 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 81 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 82 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 83 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 84 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 85 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 86 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 87 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.000
+  row 88 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.001
+  row 89 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.001
+  row 90 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.001
+  row 91 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.001
+  row 92 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.002
+  row 93 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.003
+  row 94 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.005
+  row 95 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.008
+  row 96 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.000  cutoff/D*  0.014
+  row 97 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.001  cutoff/D*  0.022
+  row 98 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.001  cutoff/D*  0.037
+  row 99 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.004  cutoff/D*  0.061
+  row 100 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.010  cutoff/D*  0.099
+  row 101 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.027  cutoff/D*  0.163
+  row 102 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.072  cutoff/D*  0.268
+  row 103 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.194  cutoff/D*  0.440
+  row 104 R R    None L_dep    117.2 L_closure    117.2  f/f*   0.523  cutoff/D*  0.723
+  row 105 R R    None L_dep     55.2 L_closure     55.2  f/f*   1.408  cutoff/D*  1.187

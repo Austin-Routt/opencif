@@ -1,0 +1,126 @@
+{"design": "dinh2024_v1_depicted", "style": "teardrop", "kind": "flare", "ratio": 2.404, "weight": 0.078, "c": 0.0815, "deep_rel": 0.013, "shallow_rel": -0.149, "band_rel": [-0.311, 0.316], "limits_inside_band": true, "arc_interaction": "not computed (flare)"}
+{"design": "dinh2024_v1_specified", "style": "teardrop", "kind": "flare", "ratio": 2.404, "weight": 0.078, "c": 0.0815, "deep_rel": 0.013, "shallow_rel": -0.149, "band_rel": [-0.311, 0.316], "limits_inside_band": true, "arc_interaction": "not computed (flare)"}
+{"design": "dinh_targets_sealed_head", "style": "teardrop", "kind": "step, one-sided", "ratio": 2.636, "weight": 0.078, "c": 0.5051, "deep_rel": 0.017, "shallow_rel": -0.204, "band_rel": [-0.315, 0.322], "limits_inside_band": true, "arc_interaction_deep_shallow": [0.072, 0.244], "c_with_arc_rel": 0.083, "c_with_arc_inside_band": true}
+{"design": "gifford2014_fig6_as_fabricated_15um", "style": "ring", "kind": "step, one-sided", "ratio": 2.358, "weight": 0.31, "c": 0.4377, "deep_rel": 0.101, "shallow_rel": -0.225, "band_rel": [-0.371, 0.432], "limits_inside_band": true, "arc_interaction": "not computed (ring lead: its own turn radius and angle)"}
+{"design": "gifford2014_fig6_design", "style": "ring", "kind": "step, one-sided", "ratio": 2.358, "weight": 0.31, "c": 0.4376, "deep_rel": 0.101, "shallow_rel": -0.225, "band_rel": [-0.371, 0.432], "limits_inside_band": true, "arc_interaction": "not computed (ring lead: its own turn radius and angle)"}
+{"design": "m02_linear_shear_arms_filter_teardrop", "style": "teardrop", "kind": "step, one-sided", "ratio": 2.898, "weight": 0.116, "c": 0.5266, "deep_rel": 0.017, "shallow_rel": -0.132, "band_rel": [-0.312, 0.323], "limits_inside_band": true, "arc_interaction_deep_shallow": [0.064, 0.226], "c_with_arc_rel": 0.08, "c_with_arc_inside_band": true}
+{"design": "m03_linear_const_hairpins_filter_ring", "style": "ring", "kind": "step, one-sided", "ratio": 2.498, "weight": 0.179, "c": 0.4763, "deep_rel": 0.048, "shallow_rel": -0.22, "band_rel": [-0.334, 0.362], "limits_inside_band": true, "arc_interaction": "not computed (ring lead: its own turn radius and angle)"}
+{"design": "m04_linear_shear_pack_plain_ring", "style": "ring", "kind": "step, one-sided", "ratio": 2.194, "weight": 0.116, "c": 0.4377, "deep_rel": 0.041, "shallow_rel": -0.316, "band_rel": [-0.329, 0.354], "limits_inside_band": true, "arc_interaction": "not computed (ring lead: its own turn radius and angle)"}
+{"design": "m05_serpentine_const_arms_plain_teardrop", "style": "teardrop", "kind": "step, one-sided", "ratio": 3.094, "weight": 0.179, "c": 0.5384, "deep_rel": 0.017, "shallow_rel": -0.08, "band_rel": [-0.312, 0.322], "limits_inside_band": true, "arc_interaction_deep_shallow": [0.06, 0.217], "c_with_arc_rel": 0.086, "c_with_arc_inside_band": true}
+{"design": "m06_serpentine_shear_pack_filter_teardrop", "style": "teardrop", "kind": "step, one-sided", "ratio": 2.901, "weight": 0.116, "c": 0.5269, "deep_rel": 0.017, "shallow_rel": -0.131, "band_rel": [-0.312, 0.322], "limits_inside_band": true, "arc_interaction_deep_shallow": [0.064, 0.226], "c_with_arc_rel": 0.08, "c_with_arc_inside_band": true}
+{"design": "m08_serpentine_shear_hairpins_plain_teardrop", "style": "teardrop", "kind": "step, one-sided", "ratio": 2.901, "weight": 0.116, "c": 0.5269, "deep_rel": 0.017, "shallow_rel": -0.131, "band_rel": [-0.312, 0.322], "limits_inside_band": true, "arc_interaction_deep_shallow": [0.064, 0.226], "c_with_arc_rel": 0.08, "c_with_arc_inside_band": true}
+{"design": "m09_paperclip_const_narrow_plain_teardrop", "style": "teardrop", "kind": "step, one-sided", "ratio": 3.096, "weight": 0.179, "c": 0.5385, "deep_rel": 0.017, "shallow_rel": -0.079, "band_rel": [-0.312, 0.322], "limits_inside_band": true, "arc_interaction_deep_shallow": [0.06, 0.217], "c_with_arc_rel": 0.086, "c_with_arc_inside_band": true}
+{"design": "m11_paperclip_const_pack_filter_ring", "style": "ring", "kind": "step, one-sided", "ratio": 2.498, "weight": 0.179, "c": 0.4764, "deep_rel": 0.048, "shallow_rel": -0.22, "band_rel": [-0.334, 0.362], "limits_inside_band": true, "arc_interaction": "not computed (ring lead: its own turn radius and angle)"}
+{"design": "m12_paperclip_shear_arms_plain_ring", "style": "ring", "kind": "step, one-sided", "ratio": 2.194, "weight": 0.116, "c": 0.4378, "deep_rel": 0.041, "shallow_rel": -0.316, "band_rel": [-0.329, 0.354], "limits_inside_band": true, "arc_interaction": "not computed (ring lead: its own turn radius and angle)"}
+{"design": "m15_linear_shear_nomeander_filter_teardrop", "style": "teardrop", "kind": "step, one-sided", "ratio": 2.898, "weight": 0.116, "c": 0.5266, "deep_rel": 0.017, "shallow_rel": -0.132, "band_rel": [-0.312, 0.323], "limits_inside_band": true, "arc_interaction_deep_shallow": [0.064, 0.226], "c_with_arc_rel": 0.08, "c_with_arc_inside_band": true}
+{"design": "m17_paperclip_shear_nomeander_filter_ring", "style": "ring", "kind": "step, one-sided", "ratio": 2.194, "weight": 0.116, "c": 0.4377, "deep_rel": 0.041, "shallow_rel": -0.316, "band_rel": [-0.329, 0.354], "limits_inside_band": true, "arc_interaction": "not computed (ring lead: its own turn radius and angle)"}
+{"design": "platelet_serpentine_chip", "style": "teardrop", "kind": "step, one-sided", "ratio": 2.641, "weight": 0.08, "c": 0.5053, "deep_rel": 0.018, "shallow_rel": -0.202, "band_rel": [-0.315, 0.323], "limits_inside_band": true, "arc_interaction_deep_shallow": [0.072, 0.244], "c_with_arc_rel": 0.083, "c_with_arc_inside_band": true}
+{"design": "wbc_paperclip_teardrop", "style": "teardrop", "kind": "step, one-sided", "ratio": 3.87, "weight": 0.68, "c": 0.614, "deep_rel": -0.055, "shallow_rel": 0.026, "band_rel": [-0.282, 0.228], "limits_inside_band": true, "arc_interaction_deep_shallow": [0.047, 0.186], "c_with_arc_rel": 0.144, "c_with_arc_inside_band": true}
+{"design": "xia2016_rs7_depicted", "style": "ring", "kind": "step, centred", "ratio": 1.792, "weight": 0.632, "c": 0.1423, "deep_rel": 0.549, "shallow_rel": -0.319, "band_rel": [-0.523, 1.013], "limits_inside_band": true, "arc_interaction": "not computed (ring lead: its own turn radius and angle)"}
+{"design": "xia2016_rs7_depicted_pullR", "style": "ring", "kind": "step, centred", "ratio": 1.792, "weight": 0.632, "c": 0.1423, "deep_rel": 0.549, "shallow_rel": -0.319, "band_rel": [-0.523, 1.013], "limits_inside_band": true, "arc_interaction": "not computed (ring lead: its own turn radius and angle)"}
+{"design": "xia2016_rs7_specified", "style": "ring", "kind": "step, centred", "ratio": 1.792, "weight": 0.632, "c": 0.1423, "deep_rel": 0.549, "shallow_rel": -0.319, "band_rel": [-0.523, 1.013], "limits_inside_band": true, "arc_interaction": "not computed (ring lead: its own turn radius and angle)"}
+SUMMARY {"designs": 21, "interaction_solved_at": [2.4, 2.9, 3.87], "limits_inside_band": 21, "teardrop_steps": ["dinh_targets_sealed_head", "m02_linear_shear_arms_filter_teardrop", "m05_serpentine_const_arms_plain_teardrop", "m06_serpentine_shear_pack_filter_teardrop", "m08_serpentine_shear_hairpins_plain_teardrop", "m09_paperclip_const_narrow_plain_teardrop", "m15_linear_shear_nomeander_filter_teardrop", "platelet_serpentine_chip", "wbc_paperclip_teardrop"], "c_with_arc_rel_range": [0.08, 0.144], "c_with_arc_inside_band": 9}
+GENERAL step, one-sided (ratio 1.05-8, weight 0-1 by 0.02): a limit outside the band at
+   weight 0.00: R 1.05-2.25, 4.96-8.00
+   weight 0.02: R 1.05-2.23, 4.96-8.00
+   weight 0.04: R 1.05-2.23, 4.96-8.00
+   weight 0.06: R 1.05-2.20, 4.96-8.00
+   weight 0.08: R 1.05-2.18, 4.96-8.00
+   weight 0.10: R 1.05-2.16, 4.96-8.00
+   weight 0.12: R 1.05-2.14, 4.96-8.00
+   weight 0.14: R 1.05-2.09, 4.96-8.00
+   weight 0.16: R 1.05-2.05, 4.96-8.00
+   weight 0.18: R 1.05-2.01, 4.96-8.00
+   weight 0.20: R 1.05-1.95, 4.96-8.00
+   weight 0.22: R 1.05-1.89, 4.96-8.00
+   weight 0.24: R 1.05-1.84, 4.96-8.00
+   weight 0.26: R 1.05-1.76, 4.96-8.00
+   weight 0.28: R 1.05-1.69, 4.96-8.00
+   weight 0.30: R 1.05-1.64, 4.96-8.00
+   weight 0.32: R 1.05-1.58, 4.96-8.00
+   weight 0.34: R 1.05-1.51, 4.96-8.00
+   weight 0.36: R 1.05-1.41, 4.96-8.00
+   weight 0.38: R 1.05-1.33, 4.96-8.00
+   weight 0.40: R 1.05-1.24, 4.96-8.00
+   weight 0.42: R 1.05-1.17, 4.96-8.00
+   weight 0.44: R 1.05-1.13, 4.96-8.00
+   weight 0.46: R 1.05-1.07, 4.96-8.00
+   weight 0.48: R 4.96-8.00
+   weight 0.50: R 4.96-8.00
+   weight 0.52: R 4.96-8.00
+   weight 0.54: R 4.96-8.00
+   weight 0.56: R 4.96-8.00
+   weight 0.58: R 4.96-8.00
+   weight 0.60: R 4.96-8.00
+   weight 0.62: R 4.96-8.00
+   weight 0.64: R 4.96-8.00
+   weight 0.66: R 4.96-8.00
+   weight 0.68: R 4.96-8.00
+   weight 0.70: R 4.96-8.00
+   weight 0.72: R 4.96-8.00
+   weight 0.74: R 4.96-8.00
+   weight 0.76: R 4.96-8.00
+   weight 0.78: R 4.96-8.00
+   weight 0.80: R 4.96-8.00
+   weight 0.82: R 4.96-8.00
+   weight 0.84: R 4.96-8.00
+   weight 0.86: R 4.96-8.00
+   weight 0.88: R 4.96-8.00
+   weight 0.90: R 4.96-8.00
+   weight 0.92: R 4.96-8.00
+   weight 0.94: R 4.96-8.00
+   weight 0.96: R 4.96-8.00
+   weight 0.98: R 4.96-8.00
+   weight 1.00: R 4.96-8.00
+GENERAL step, centred (ratio 1.05-8, weight 0-1 by 0.02): a limit outside the band at
+   weight 0.00: R 1.05-2.87, 7.68-8.00
+   weight 0.02: R 1.05-2.84, 7.68-8.00
+   weight 0.04: R 1.05-2.81, 7.68-8.00
+   weight 0.06: R 1.05-2.78, 7.68-8.00
+   weight 0.08: R 1.05-2.75, 7.68-8.00
+   weight 0.10: R 1.05-2.73, 7.68-8.00
+   weight 0.12: R 1.05-2.67, 7.68-8.00
+   weight 0.14: R 1.05-2.62, 7.68-8.00
+   weight 0.16: R 1.05-2.57, 7.68-8.00
+   weight 0.18: R 1.05-2.49, 7.68-8.00
+   weight 0.20: R 1.05-2.41, 7.68-8.00
+   weight 0.22: R 1.05-2.34, 7.68-8.00
+   weight 0.24: R 1.05-2.27, 7.68-8.00
+   weight 0.26: R 1.05-2.18, 7.68-8.00
+   weight 0.28: R 1.05-2.07, 7.68-8.00
+   weight 0.30: R 1.05-1.99, 7.68-8.00
+   weight 0.32: R 1.05-1.85, 7.68-8.00
+   weight 0.34: R 1.05-1.73, 7.68-8.00
+   weight 0.36: R 1.05-1.61, 7.68-8.00
+   weight 0.38: R 1.05-1.51, 7.68-8.00
+   weight 0.40: R 1.05-1.35, 7.68-8.00
+   weight 0.42: R 1.05-1.24, 7.68-8.00
+   weight 0.44: R 1.05-1.16, 7.68-8.00
+   weight 0.46: R 1.05-1.09, 7.68-8.00
+   weight 0.48: R 7.68-8.00
+   weight 0.50: R 7.68-8.00
+   weight 0.52: R 7.68-8.00
+   weight 0.54: R 7.68-8.00
+   weight 0.56: R 7.68-8.00
+   weight 0.58: R 7.68-8.00
+   weight 0.60: R 7.68-8.00
+   weight 0.62: R 7.68-8.00
+   weight 0.64: R 7.68-8.00
+   weight 0.66: R 7.68-8.00
+   weight 0.68: R 7.68-8.00
+   weight 0.70: R 7.68-8.00
+   weight 0.72: R 7.68-8.00
+   weight 0.74: R 7.68-8.00
+   weight 0.76: R 7.68-8.00
+   weight 0.78: R 7.68-8.00
+   weight 0.80: R 7.68-8.00
+   weight 0.82: R 7.68-8.00
+   weight 0.84: R 7.68-8.00
+   weight 0.86: R 7.68-8.00
+   weight 0.88: R 7.68-8.00
+   weight 0.90: R 7.68-8.00
+   weight 0.92: R 7.68-8.00
+   weight 0.94: R 7.68-8.00
+   weight 0.96: R 7.68-8.00
+   weight 0.98: R 7.68-8.00
+   weight 1.00: R 7.68-8.00

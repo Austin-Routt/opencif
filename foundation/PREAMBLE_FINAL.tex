@@ -1,0 +1,366 @@
+% =====================================================================
+% CIF Variable, Unit, and Equation Reference
+%
+% This appendix is the dissertation's NORMATIVE NOTATION LAYER. Every
+% CONSTANT is drawn from the verified derivation record rather than by
+% cross-reference, so no VALUE here depends on another appendix. It does
+% cite Appendix A for three DERIVATIONS (the skim inversion, the cubic
+% identity, the scaling exponents); those citations go through \xref and
+% degrade to a literal when the target is absent. It names Appendix B
+% twice, in plain text: for the proven status of that identity (A.1) and
+% for the corrected Xia scaling Dinh's schedule follows (A.7). So this
+% file still compiles and reads correctly on its own. (Corrected at the
+% v108 freeze: this sentence said "Appendix B once" and "those four
+% citations go through \xref"; the A.1 mention was never an \xref, and
+% the A.7 mention came with the step-2 unfreeze batch, ledger DG-24. The
+% batch's corrections to this glossary are listed item by item in
+% FREEZE_v108.md and recorded in DEFERRED_GLOSSARY_CHANGES.md.)
+%
+% (The earlier wording claimed the appendix "does not cite any other
+% appendix." That has been untrue since the skim-inversion row acquired
+% its provenance, and the claim is corrected rather than the citations
+% deleted: the derivations genuinely live in Appendix A, and a pointer to
+% them is worth more than a self-containment boast.)
+%
+% SUBSTANTIVE CHANGES IN THIS REVISION (detail in the Change Log):
+%   foot region corrected; supplied vs refit prefactor named apart; the
+%   junction campaign disambiguated from the retired common-origin claim;
+%   two factors vs three model gaps recorded, with phi/G/Lambda added;
+%   the f_eff retraction narrowed; the accuracy band defined; the
+%   aspect-ratio symbol crosswalk to the code; the kernel-prefactor
+%   pairing rule and kappa_F added; the two calibration sensitivities
+%   named apart; analytic and CFD depth factors separated; values
+%   generated rather than typed; cross-lineage framing corrected and the
+%   Davis leg added; a selectivity-axis validation section added; the
+%   +1.64 sigma closed-form distance surfaced; F split into its two
+%   identities; platelet-volume terminology corrected; a Status and Role
+%   legend added; a validity-envelope inventory added; the entrance-length
+%   convention added; the gap symbol g deprecated in favour of G with the
+%   link length ell_g added; the reduced size ratio moved off the letter u.
+%
+% HOUSE STYLE: no prose em dashes. The triple hyphen appears as an empty
+% table cell, and INSIDE A VERBATIM QUOTATION where the em dash is the
+% SOURCE's punctuation and altering it would misquote. The Lezzar anchor
+% in the source-quote index is the only such case today ("the magnitude of
+% this flow fraction---not the width of the gaps---that determines the
+% size cutoff"). texlint.py already encodes this exemption by stripping
+% quoted spans before counting; this sentence brings the stated policy
+% into line with the enforced one.
+%   The double hyphen appears in numeric and page ranges and in name
+% compounds (Hagen--Poiseuille, Zweifach--Fung, log--log), where an en
+% dash is the correct typography.
+%
+% TABLE STYLE: the variable tables are longtable, NOT table floats. A
+% float must fit on one page; these do not, and an oversized float is
+% reported as "Float too large for page" and dropped. A longtable carries
+% its own caption and label and must never be wrapped in \begin{table}.
+% Column fractions sum to about 0.92, budgeting the inner \tabcolsep
+% gutters; summing to 1.0 produces few-point overfull \hbox warnings. No
+% bare l or c column sits beside an X column WHEN ITS CONTENT IS WIDE OR
+% VARIABLE, because l takes its natural width and can squeeze X below its
+% minimum ("X Columns too narrow"). A SHORT, FIXED l is sanctioned: A.11's
+% three-family table uses {@{}lYY@{}} for labels of a few words and compiles
+% with no X-column warning. The rule was stated absolutely and the appendix
+% did not follow it; the enforced policy is the one written here.
+% =====================================================================
+\documentclass{article}
+\usepackage[margin=1in]{geometry} % wider text block: removes table/line overflow from default-article narrow column
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage{url} % for \url{} in the COMSOL bibliography entry
+\usepackage{array}
+\usepackage{tabularx} % wide tables forced to \textwidth (wrapping X columns) instead of overflowing
+% Scalable fonts where available; microtype's font EXPANSION requires them, so
+% expansion is enabled only when lmodern loads. Keeps the file portable to a
+% minimal TeX installation without silently dropping the typographic benefit.
+\IfFileExists{lmodern.sty}{%
+  \usepackage{lmodern}\usepackage[T1]{fontenc}\usepackage{microtype}%
+  % BOLD SMALL CAPS. Latin Modern has no T1/lmr/bx/sc, so any \textbf{...\textsc{...}}
+  % (A.8's "On the EXTERNAL label" heading, and any future one) raises
+  %   Font shape `T1/lmr/bx/sc' undefined ... defaults substituted
+  % and silently drops either the bold or the small caps. lmr DOES carry the b series,
+  % so substituting bx -> b gives real bold small caps instead of a fallback.
+  \DeclareFontShape{T1}{lmr}{bx}{sc}{<->ssub*lmr/b/sc}{}%
+  \DeclareFontShape{T1}{lmr}{bx}{si}{<->ssub*lmr/b/si}{}%
+}{%
+  \usepackage[expansion=false]{microtype}%
+}
+% THE SAME GAP EXISTS WITHOUT lmodern. On a minimal installation the encoding stays
+% OT1/cmr, which has no bold small caps either, so the identical warning appears as
+% `OT1/cmr/bx/sc'. Computer Modern has no bold small caps to substitute, so this falls
+% back to medium small caps: the small caps survive and only the weight is lost, which
+% is the better of the two degradations. Declared for both encodings because the file
+% must build the same on Overleaf (lmodern present) and on a bare TeX Live.
+\DeclareFontShape{OT1}{cmr}{bx}{sc}{<->ssub*cmr/m/sc}{}
+\DeclareFontShape{T1}{cmr}{bx}{sc}{<->ssub*cmr/m/sc}{}% protrusion/expansion: clears most under/overfull \hbox warnings in prose
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X} % ragged, line-wrapping X column
+\setlength{\emergencystretch}{3em} % last-resort glue so stubborn lines (DOIs etc.) do not run overfull
+
+% --- lineage shorthand ---
+\newcommand{\fgap}{f_{\mathrm{gap}}}
+% --- cutoff-law (selectivity-axis) decomposition ---
+\newcommand{\kapp}{\kappa_{\mathrm{app}}}
+\newcommand{\kster}{\kappa_{\mathrm{steric}}}
+\newcommand{\kg}{\kappa_{g}}                    % E8: prefactor paired with the CUBIC branch
+\newcommand{\kF}{\kappa_{F_{\mathrm{lam}}}}     % E8: prefactor paired with the EXACT kernel
+\newcommand{\Kin}{K_{\text{in-plane}}} % text-mode hyphen (no \text nested in \mathrm)
+\newcommand{\Kdepth}{K_{\mathrm{depth}}}
+\newcommand{\Kdth}{K_{\mathrm{depth}}^{\mathrm{th}}}    % E10: ANALYTIC depth factor
+\newcommand{\Kdcfd}{K_{\mathrm{depth}}^{\mathrm{CFD}}}  % E10: MEASURED depth factor
+\newcommand{\dcrit}{d_{\mathrm{crit}}}
+\newcommand{\Ral}{R(\alpha)}          % interpretive alias of Kdepth, see collision warning
+\newcommand{\skimw}{\delta}           % dividing-streamline (skim) width
+\newcommand{\acal}{\alpha_{\mathrm{cal}}}       % E9: calibration aspect-ratio array
+% E19: reduced size ratio d_crit/w_c.
+% WAS u_{d}. That differed from the ASME V&V-20 data uncertainty u_D by SUBSCRIPT
+% CASE ALONE. A collision note documents that trap without removing it, because a
+% reader scanning a dense table cannot see case: the sigma note works only because
+% sigma_F and sigma(i) differ by subscript CONTENT. The letter u already carries the
+% velocities u(y), u_max (standard fluid mechanics) and the V&V-20 uncertainties
+% u_val, u_num, u_input, u_D (ASME's own symbols); both are inherited notations, so
+% the reduced size ratio was the only one free to move. d-tilde is apt for a
+% normalised diameter and clashes with no other d in this appendix: the deprecated d,
+% d_crit, D=2a, D_c and D_h are all distinct.
+% The macro KEEPS ITS NAME, so no subsection body changes. symlint.py carries the
+% mapping \ud -> dtilde so it stops reporting a u-collision that no longer exists.
+% BEFORE RELYING ON THIS: grep the remaining subsections for a literal "u_d" written
+% as prose rather than through \ud; those mentions will not follow the redefinition.
+\newcommand{\ud}{\widetilde{d}}
+% --- gap geometry (see the G/g collision note) ---
+% G is the along-flow LINK WIDTH (the opening a particle passes through, Gifford's
+% "wide (~20 um) gaps"); ell_g is the LINK LENGTH (the wall thickness the fluid
+% crosses); g_p is the along-flow POST WIDTH. G and g_p are both along-flow, which is
+% why they sum to a row pitch. Lower-case g is the CUBIC KERNEL g(x)=3x^2-2x^3 and is
+% dimensionless; it is not a length, and the earlier gap row that used it is
+% deprecated in favour of G.
+% --- validation-layer (V&V-20) ---
+\newcommand{\uval}{u_{\mathrm{val}}}
+\newcommand{\unum}{u_{\mathrm{num}}}
+\newcommand{\uinput}{u_{\mathrm{input}}}
+\newcommand{\uD}{u_{D}}
+
+
+% ---------------------------------------------------------------------------
+% \xref{label}{fallback} -- a cross-reference that degrades gracefully.
+%
+%   standalone build (target not in this document)
+%       prints `fallback'. No warning, no `??', nothing to clean up later.
+%   assembled dissertation (target present)
+%       prints the live \ref, so renumbering Appendix A is still absorbed.
+%
+% The body text is written ONCE and is correct in both builds. Use it for every
+% pointer that leaves the current file -- Appendix A results, chapter sections,
+% glossary subsections not yet written.
+%
+% Two-pass note: on the FIRST pdflatex pass of an assembled build the .aux has
+% not been read, so the fallback prints; the second pass resolves it. That is
+% ordinary LaTeX behaviour and emits no warning.
+% ---------------------------------------------------------------------------
+\makeatletter
+\providecommand{\xref}[2]{\@ifundefined{r@#1}{#2}{\ref{#1}}}
+\makeatother
+
+% =====================================================================
+% VALUES ARE GENERATED, NOT TYPED.
+% The macro file loaded below is emitted from the verified derivation
+% record and pinned to its content hash. A number typed inline instead of
+% cited from a macro is a number that will be stale after the next
+% correction: the change log records three such corrections that each had
+% to be chased through four places by hand. The fallback block keeps this
+% file compilable when the generated file is absent; it is a SNAPSHOT and
+% the generated file is authoritative.
+%
+% The snapshot below was re-verified against the derivation record on this
+% revision: all 40 constants reproduce, including the three calibration
+% depth factors, which use the EXACT ratios 80/100, 80/125 and 80/150
+% rather than the rounded aspect ratios printed in the prose (0.811 at the
+% widest channel is K_depth(80/150)=0.810929, not K_depth(0.53)=0.809540).
+% =====================================================================
+\IfFileExists{tex/notation_values.tex}{\input{tex/notation_values}}{%
+  \newcommand{\kappVal}{4.9138}\newcommand{\kappFit}{4.9137}%
+  \newcommand{\kappFitFull}{4.913717814706706}%
+  \newcommand{\kappCIlo}{4.75}\newcommand{\kappCIhi}{5.08}\newcommand{\kappCV}{4.0}%
+  \newcommand{\kstericVal}{2}\newcommand{\KinVal}{1.000}%
+  \newcommand{\kappOverRootThree}{2.8370}%
+  \newcommand{\plateauKappa}{4.91}\newcommand{\footKappa}{1.34}%
+  \newcommand{\plateauN}{8}\newcommand{\footN}{3}%
+  \newcommand{\kappaSpanLo}{1.20}\newcommand{\kappaSpanHi}{5.20}%
+  \newcommand{\KdepthAnalyticShallow}{0.8879}\newcommand{\KdepthAnalyticMid}{0.9500}%
+  \newcommand{\KdepthAnalyticDeep}{0.9794}%
+  \newcommand{\KdepthCfdShallow}{0.891}\newcommand{\KdepthCfdMid}{0.945}%
+  \newcommand{\KdepthCfdDeep}{0.981}%
+  \newcommand{\KdepthCalNarrow}{0.888}\newcommand{\KdepthCalMid}{0.849}%
+  \newcommand{\KdepthCalWide}{0.811}%
+  \newcommand{\residualFolded}{2.4569}\newcommand{\residualSepShallow}{2.7574}%
+  \newcommand{\residualSepMid}{2.5999}\newcommand{\residualSepDeep}{2.5044}%
+  \newcommand{\stericFloorShallow}{1.782}%
+  \newcommand{\FclosedVone}{0.5592}\newcommand{\FclosedVthree}{0.7189}%
+  \newcommand{\FcomsolVone}{0.5070}\newcommand{\FcomsolVthree}{0.6281}%
+  \newcommand{\FexpVone}{0.505}\newcommand{\FexpVthree}{0.649}%
+  \newcommand{\FsdVone}{0.033}\newcommand{\FsdVthree}{0.036}%
+  \newcommand{\alphaThreeDVone}{0.811}\newcommand{\alphaThreeDVthree}{0.660}%
+  \newcommand{\ReWorstChannel}{5.2}\newcommand{\ReGapScale}{5.2\times10^{-3}}%
+  \newcommand{\fgapBandLo}{3.63\times10^{-5}}\newcommand{\fgapBandHi}{1.93\times10^{-3}}%
+  \newcommand{\fgapDesignCap}{5.76\times10^{-4}}%
+}
+% NOTE on \alphaThreeDVone: it is 0.811, the same three digits as
+% \KdepthCalWide. They are DIFFERENT quantities that coincide numerically --
+% the 3-D outlet resistance-ratio correction at V1, and the depth factor at
+% the widest calibration channel. Do not let one be edited into the other.
+
+% =====================================================================
+% A.4 KERNEL-PAIRING VALUES.
+% Generated by gen_kernel_pairing.py from the verified derivation record.
+% Loaded the same way as notation_values: the generated file is
+% AUTHORITATIVE, and the fallback below is a SNAPSHOT that keeps this file
+% compilable when the generated file is absent.
+%
+% Without this block, A.4 raises "Undefined control sequence" on
+% \kappSuppliedGap, \KdepthDev*, \ctwobar, \kFval and 29 others.
+% Regenerate after any change to c2(), K_depth(), F_lam() or the plateau fit:
+%   python3 gen_kernel_pairing.py tex/kernel_pairing_values.tex
+% =====================================================================
+\IfFileExists{tex/kernel_pairing_values.tex}{\input{tex/kernel_pairing_values}}{%
+  \newcommand{\ctwobar}{4.177}%
+  \newcommand{\kFval}{5.798}%
+  \newcommand{\depthEff}{0.8475}%
+  \newcommand{\kFmeanK}{5.7862}%
+  \newcommand{\kFmeanKerr}{0.21}%
+  \newcommand{\kFoneAlpha}{5.5342}%
+  \newcommand{\kFoneAlphaErr}{4.6}%
+  \newcommand{\ctwobarDecl}{4.182}%
+  \newcommand{\kFdecl}{5.802}%
+  \newcommand{\transferExact}{19.9}%
+  \newcommand{\transferDecl}{20.3}%
+  \newcommand{\dcritGGleadIn}{2.170}%
+  \newcommand{\dcritGGleadOut}{1.504}%
+  \newcommand{\choiceLeadGap}{0.2}%
+  \newcommand{\crossUp}{18.0}%
+  \newcommand{\crossDown}{-15.3}%
+  \newcommand{\alphaDIn}{1.867}%
+  \newcommand{\dcritGGIn}{2.174}%
+  \newcommand{\dcritFFIn}{2.482}%
+  \newcommand{\dcritFgIn}{2.565}%
+  \newcommand{\dcritgFIn}{2.103}%
+  \newcommand{\choiceIn}{14.1}%
+  \newcommand{\alphaDOut}{2.692}%
+  \newcommand{\dcritGGOut}{1.507}%
+  \newcommand{\dcritFFOut}{1.743}%
+  \newcommand{\dcritFgOut}{1.779}%
+  \newcommand{\dcritgFOut}{1.477}%
+  \newcommand{\choiceOut}{15.6}%
+  \newcommand{\KdepthDevShallow}{0.349}%
+  \newcommand{\KdepthDevMid}{0.530}%
+  \newcommand{\KdepthDevDeep}{0.160}%
+  \newcommand{\KdepthDevMidTh}{0.527}%
+  \newcommand{\KdepthDevMax}{0.531}%
+  \newcommand{\kappSuppliedGap}{1.7\times10^{-5}}%
+  \newcommand{\dinhBandLo}{1.25}%
+  \newcommand{\dinhBandHi}{2.17}%
+  \newcommand{\dinhKappaLocal}{4.08}%
+  \newcommand{\dinhCollapseLo}{1.80}%
+  \newcommand{\dinhKneeRatio}{1.21}%
+  \newcommand{\dinhBandWidth}{1.74}%
+  \newcommand{\kappCIhalfPct}{3.4}%
+  \newcommand{\xiaKappaA}{5.03}%
+  \newcommand{\xiaKappaB}{5.16}%
+  \newcommand{\xiaKappaC}{5.32}%
+  \newcommand{\xiaKappaMean}{5.17}%
+  \newcommand{\xiaAgreePct}{5.2}%
+  \newcommand{\depthCorrPct}{5.3}%
+  \newcommand{\chiGlobal}{30.6}%
+  \newcommand{\chiPlateau}{3.8}%
+  \newcommand{\chiRatio}{8.0}%
+  \newcommand{\etaShortfallPct}{9.7}%
+  \newcommand{\etaVal}{0.903}%
+  \newcommand{\runoutFmatched}{0.519}%
+  \newcommand{\runoutFmismatched}{0.265}%
+  \newcommand{\residPctVOne}{9.3}%
+  \newcommand{\residPctVThree}{12.6}%
+  \newcommand{\squareDuctR}{28.4542}%
+  \newcommand{\skimErrDesign}{0.47}%
+  \newcommand{\skimErrBand}{0.86}%
+  \newcommand{\DhOutlet}{75.8}%
+  \newcommand{\DhInlet}{97.7}%
+  \newcommand{\Uoutlet}{0.069}%
+  \newcommand{\ReHighFlow}{16}%
+  \newcommand{\RePRP}{2.6}%
+  \newcommand{\LeInlet}{60.5}%
+  \newcommand{\LeOverLamInlet}{1.23}%
+  \newcommand{\LeOverLamGInlet}{1.31}%
+  \newcommand{\LeOutlet}{46.9}%
+  \newcommand{\LeOverLamOutlet}{0.96}%
+  \newcommand{\LeOverLamGOutlet}{1.02}%
+  \newcommand{\aTwelveFL}{1.42}%
+  \newcommand{\DTwelveFL}{2.84}%
+  \newcommand{\QgapDinh}{3.12}%
+  \newcommand{\dldExcessLo}{1.23}%
+  \newcommand{\dldExcessHi}{1.33}%
+  \newcommand{\ihRatioA}{1.44}%
+  \newcommand{\ihRatioB}{1.48}%
+  \newcommand{\ihRatioC}{1.21}%
+  \newcommand{\ihRatioLo}{1.21}%
+  \newcommand{\ihRatioHi}{1.48}%
+  \newcommand{\ihRatioMean}{1.4}%
+  \newcommand{\davisKappaHi}{2.659}%
+  \newcommand{\davisKappaLo}{2.459}%
+  \newcommand{\inglisKappaLo}{2.040}%
+  \newcommand{\inglisKappaHi}{2.449}%
+  \newcommand{\dldKappaLo}{2.040}%
+  \newcommand{\dldKappaHi}{2.659}%
+  \newcommand{\dldConvergePct}{0.4}%
+  \newcommand{\expBeta}{0.51}%
+  \newcommand{\expGamma}{1.02}%
+  \newcommand{\plateauUwc}{0.035}%
+  \newcommand{\footUwc}{0.012}%
+  \newcommand{\betaCIlo}{0.41}%
+  \newcommand{\betaCIhi}{0.61}%
+  \newcommand{\gammaCIlo}{0.84}%
+  \newcommand{\gammaCIhi}{1.20}%
+  \newcommand{\hillKmax}{5.568}%
+  \newcommand{\hillUhalf}{0.01651}%
+  \newcommand{\hillN}{1.791}%
+  \newcommand{\dinhSaddleFgap}{1.041\times10^{-4}}%
+  \newcommand{\dinhSaddleU}{0.02894}%
+  \newcommand{\sibALo}{1.02}%
+  \newcommand{\sibAHi}{1.47}%
+  \newcommand{\sibBLo}{1.26}%
+  \newcommand{\sibBHi}{1.81}%
+  \newcommand{\dinhBracketLo}{1.0}%
+  \newcommand{\dinhBracketHi}{4.7}%
+}
+
+% =====================================================================
+% A.6 VALIDATION DISTANCES. Generated by gen_validation_values.py from the
+% same F values this preamble carries, so the document and the generator
+% cannot disagree about what F is. Fallback is a SNAPSHOT.
+% =====================================================================
+\IfFileExists{tex/validation_values.tex}{\input{tex/validation_values}}{%
+  \newcommand{\EsdClosedVOne}{+1.64}%
+  \newcommand{\EsdComsolVOne}{+0.06}%
+  \newcommand{\EsemComsolVOne}{+0.12}%
+  \newcommand{\uvalExcessVOne}{0.048}%
+  \newcommand{\EsdClosedVThree}{+1.94}%
+  \newcommand{\EsdComsolVThree}{-0.58}%
+  \newcommand{\EsemComsolVThree}{-1.16}%
+  \newcommand{\uvalExcessVThree}{0.011}%
+  \newcommand{\uDoverUnumVOne}{660}%
+  \newcommand{\uDoverUnumVThree}{720}%
+  \newcommand{\uDoverUnum}{660}%
+  \newcommand{\uvalExcessMax}{0.05}%
+  \newcommand{\FexcessPctVOne}{10.7}%
+  \newcommand{\FexcessPctVThree}{10.8}%
+  \newcommand{\dFrecurConst}{2.35\times10^{-4}}%
+  \newcommand{\dFrecurVar}{1.97\times10^{-5}}%
+  \newcommand{\peMarginMin}{48}%
+  \newcommand{\peHalfAgreeVOne}{2.3}%
+  \newcommand{\peHalfAgreeVThree}{4.7}%
+  \newcommand{\netEmergentPct}{0.12}%
+  \newcommand{\siblingSqrtcPct}{5}%
+}

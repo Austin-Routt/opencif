@@ -1,0 +1,11 @@
+m02_forced_strict_check exit 5 51 s
+m04_forced_strict_check exit 5 20 s
+m12_forced_strict_check exit 5 54 s
+m02_forced_evaluate_check exit 0 53 s
+m12_forced_evaluate_check exit 0 55 s
+m02_none_check exit 0 52 s
+m04_none_check exit 0 20 s
+m12_none_check exit 0 54 s
+m02_none_build exit 0 174 s
+m02_forced_evaluate_build exit 0 171 s
+DONE

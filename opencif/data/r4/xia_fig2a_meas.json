@@ -1,0 +1,40 @@
+{
+ "bar_px": 47.0,
+ "um_per_px": 106.38297872340425,
+ "length_px": 712.0,
+ "length_mm": 75.74468085106382,
+ "length_rel_uncertainty": 0.02127659574468085,
+ "width_px": 161.0,
+ "width_mm": 17.127659574468087,
+ "rows": [
+  29,
+  740
+ ],
+ "cols": [
+  709,
+  869
+ ],
+ "note": "overall length: the top loop's outer wall to the bottom of the lowest port (as Fig. 3a's extent); uncertainty dominated by the bar (+-1 px of 47)",
+ "body_px": 646.0,
+ "body_mm": 68.72340425531914,
+ "fig3a_body_mm": 68.8268156424581,
+ "fig3a_body_mm_at_31_25": 77.0,
+ "body_rel_to_fig3a": -0.0015024868748274578,
+ "overall_rel_to_fig3a": -0.03356191153469046,
+ "outlet": {
+  "centre_port_r_mm": 1.4561625589211717,
+  "lower_port_r_mm": 1.4810590021254884,
+  "port_spacing_mm": 3.7282707265031854,
+  "ring_centreline_r_mm": 3.5387115867790566,
+  "fig3a_centre_port_r_mm": 1.7160249444437252,
+  "fig3a_filtrate_port_r_mm": 1.7116270364187982,
+  "fig3a_port_spacing_mm": 4.762280715561046,
+  "fig3a_ring_centreline_r_mm": 4.178819859640431,
+  "rel": {
+   "centre_port_r": -0.15143275531276834,
+   "filtrate_port_r": -0.13470693637541653,
+   "port_spacing": -0.21712495562875345,
+   "ring_centreline_r": -0.153179197563317
+  }
+ }
+}

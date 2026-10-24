@@ -1,0 +1,13 @@
+# Variant matrix, no meander: Gifford's floor start at 19 um.  Built as a NEW design (evaluate mode): its entrance rows
+# over-extract, nothing is exempt, so Q2 is expected to FAIL there -- the check catching a real departure.
+name: m14_paperclip_const_nomeander_floorstart19
+targets: {cutoff_um: 4.0, filtrate_fraction: 0.5}
+process: {depth_um: 100, gap_um: 19, post_length_um: 27, post_width_um: 50, min_feature_um: 19}
+chip: {width_mm: 12, length_mm: 30, margin_um: 1000}
+centre_channel: {taper: constant, width_in_um: 80}
+layout: {style: paperclip, legs: auto}
+meander: {enabled: false}
+start: {style: floor, side_width_um: 19}
+inlet: {style: plain, port_radius_um: 750}
+outlet: {style: separate, port_radius_um: 750, centre_port_radius_um: 750}
+gates: {mode: evaluate}

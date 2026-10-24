@@ -1,0 +1,6 @@
+sym step ratio 1.25 deep 0.0763 shallow 0.0214 elems 26654
+sym step ratio 1.50 deep 0.1576 shallow 0.0557 elems 32198
+sym step ratio 2.00 deep 0.2591 shallow 0.1249 elems 42650
+sym step ratio 3.00 deep 0.3429 shallow 0.2386 elems 63198
+sym step ratio 4.00 deep 0.3739 shallow 0.3249 elems 66672
+sym step ratio 6.00 deep 0.3972 shallow 0.4503 elems 73010

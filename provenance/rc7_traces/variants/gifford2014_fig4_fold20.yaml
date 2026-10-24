@@ -1,0 +1,47 @@
+# Gifford 2014, Fig. 4 bead device -- the 20 um FOLDED-HEAD VARIANT (rc7; A. H. Routt, 2026-10-19 15:51: keep the 8 um
+# start, ship the folded head as a labelled variant): a figure, not the reproduction (RC8: that is the nested reading,
+# presets/gifford2014_fig4_aligned.yaml).  Its legs are in PATH ORDER, the layout of rc7's reading B, which RC8 rejects
+# (gifford2014_fig4_pathorder.yaml): a path-order figure.  It asks what Fig. 4's device would be if no side channel could be drawn
+# narrower than 20 um: the Shevkoplyas lab's later guideline (Lezzar et al. 2022, Sci. Rep. 12:13798: features "less than
+# 20 um are very difficult to mass produce", an aspect ratio "above ~7:1 is very limited"; at 80 um depth
+# max(20, 80/7) = 20 um).  Spec v5's FOLD start: the side channels start sealed (sigma0 = 0) and every row whose
+# design width is below 20 um is a unit of a meander head (G11: drawn at the fold width GS, its length set so that its
+# resistance is the row's), so every gap extracts at the cutoff D and the earliest side fluid carries no bead larger
+# than D, as the inset shows (register INV-2), the physics of the design-level preset.
+# What it is not: Gifford's device.  Gifford 2014 draws no head (Xia 2016 introduced it), and the inset's own gaps read
+# 17.2 um (register GIF4-3), below the 20 um guideline, so 20 um was not this device's floor.
+# Its parts: rc7's aligned preset's (reading B, now gifford2014_fig4_pathorder) printed design (f_gap 3.34e-4 at w_c 100 um, depth 80 um, final side width 300 um,
+# four legs in path order, legs 3 and 4 818 um apart as the inset shows, leg 4 ending 8.2 mm short), with:
+#   process: floor 20 um (A, the guideline); gap 20.5 um and posts 25.3 um along the flow (the design preset's: the
+#     inset's 17.2 um gap is below this floor; the row pitch is the inset's 45.8 um either way); fillet 5 um (the
+#     corner rule at a 20 um floor, as gifford2014_fig4_as_fabricated_20um).
+#   head: the packing head (G), its units at the default fold width GS = 1.45 G = 29.7 um, the seam at 20 um; 59 rows.
+#   legs 1-2 1672 um apart (G): the generator's own paperclip rule for this head, max(2 hw_max, hw_head + hw_max) +
+#     150 um = 1112 + 410 + 150 (the inset does not show legs 1-2).  At the inset's 818 um the head lies across leg 2:
+#     rc7 refuses that layout before anything is written (register BUILD-2).
+#   reproduction.pc_inlet_offset -12072.7 um (G): the legs' common end 2836.6 um downstream of gap 1 instead of at
+#     the inlet port, which puts legs 2-4 on reading B's rows (the same rows beside leg 4's end as there).
+name: gifford2014_fig4_fold20
+description: Gifford 2014 Fig. 4 bead device, the 20 um folded-head variant (a figure, not the reproduction; spec v5 FOLD start at a 20 um floor, legs 1-2 at the generator's spacing)
+targets:
+  cutoff_um: 5.203174831309222      # kappa_g x(f_gap 3.34e-4) w_c 100
+  filtrate_fraction: 0.90644        # outlet identity at the printed final side width 300 um
+process: {depth_um: 80, gap_um: 20.5, post_length_um: 25.3, post_width_um: 59.5, min_feature_um: 20, fillet_um: 5.0}
+centre_channel: {taper: constant, width_in_um: 100}
+layout: {style: paperclip, legs: 4, order: path}
+meander: {enabled: true, style: pack, seal: require, seam_side_width_um: 20}
+inlet: {style: plain, port_radius_um: 300}
+outlet: {style: separate, port_radius_um: 750, centre_port_radius_um: 300}
+gates: {mode: reproduce}
+reproduction:
+  pc_last_short: 8200.0   # as gifford2014_fig4_pathorder, rc7's reading B (D, fitted there): leg 4's array ends 8.2 mm before the others
+  stem_half: 300.0
+  W: 2400.0
+  leg_Y: [0.0, 1672.0, 2490.0, 3308.0]   # legs 1-2 at the generator's rule for this head (G); legs 2-3, 3-4 at the inset's 818 um (M)
+  pc_inlet_offset: -12072.7              # legs 2-4 on reading B's rows (G)
+paper:
+  source: Gifford et al. 2014, Fig. 4 and pp. 4496-4500, 4503; Lezzar et al. 2022 (the 20 um guideline)
+  layout: "Fig. 4 caption: 'the second and fourth legs of the device'; legs in path order, the inset's legs 3 and 4
+    (register GIF4-1, B; INV-2)"
+  measured_on_figure: [leg spacing 817.9 um (legs 3-4), the neighbour's side channels 124.5 / 124.96 um (50 profiles)]
+  assumed: ["the 20 um floor (a later guideline, not Gifford's)", the packing head, legs 1-2 spacing, port radii]

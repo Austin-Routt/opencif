@@ -1,0 +1,23 @@
+{
+ "strip_um_per_px": 2.0,
+ "composite_um_per_px": 5.0,
+ "strip_max_mm": 40,
+ "composite": false,
+ "devices": [
+  {
+   "name": "gifford2014_fig4_design",
+   "dxf": "opencif_rc6/runs/gifford2014_fig4_design/gifford2014_fig4_design.dxf",
+   "title": "Gifford 2014 Fig. 4 bead device (design level), opencif rc6",
+   "panels": [
+    {
+     "letter": "4",
+     "results": "results/gifford/gifford_results_rc6.json",
+     "key": "-",
+     "raster": "rasters/gif5-001.png",
+     "title": "Gifford Fig. 4 inset, the end of leg 4"
+    }
+   ],
+   "note": "Gifford's Fig. 4 schematic is not drawn to scale (p. 4502), so there is no underlay; the inset (leg 4's end) is placed where its trace registered.  The preset takes the inset's leg spacing (818 \u00b5m, rc6), so the neighbouring leg 2 in the inset lies where the image shows it by construction (consistency, not a test): its posts and centre line on the image's, its side walls wider on the image (recorded, not claimed; rc6_traces README)."
+  }
+ ]
+}

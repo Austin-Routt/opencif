@@ -1,0 +1,25 @@
+22 cases
+00:09:02 generic19_separate_F0p5_paperclip             0         260 s  PASS [1-D model: junction band: 3 row(s) beyond +-1% (up to 16.4% of D; rows 71-73; 0.35% of F)]
+00:12:25 generic19_teardrop_F0p5_paperclip             0         203 s  PASS [1-D model: junction band: 3 row(s) beyond +-1% (up to 16.4% of D; rows 71-73; 0.35% of F)]
+00:14:25 generic19_separate_F0p9_paperclip             0         583 s  PASS [1-D model: junction band: 3 row(s) beyond +-1% (up to 16.4% of D; rows 71-73; 0.2% of F)]
+00:17:49 generic19_ring_F0p5_paperclip                 0         205 s  PASS [1-D model: junction band: 3 row(s) beyond +-1% (up to 16.4% of D; rows 71-73; 0.35% of F)]
+00:21:54 gifford2014_separate_F0p5_paperclip           0         245 s  PASS [1-D model: junction band: 3 row(s) beyond +-1% (up to 14.4% of D; rows 63-65; 0.36% of F)]
+00:22:22 generic19_teardrop_F0p9_paperclip             0         597 s  PASS [1-D model: junction band: 3 row(s) beyond +-1% (up to 16.4% of D; rows 71-73; 0.2% of F)]
+00:25:37 gifford2014_teardrop_F0p5_paperclip           0         196 s  PASS [1-D model: junction band: 3 row(s) beyond +-1% (up to 14.4% of D; rows 63-65; 0.36% of F)]
+00:32:35 gifford2014_separate_F0p9_paperclip           0         641 s  PASS [1-D model: junction band: 3 row(s) beyond +-1% (up to 14.4% of D; rows 63-65; 0.2% of F)]
+00:38:04 gifford2014_ring_F0p5_paperclip               0         329 s  PASS [1-D model: junction band: 3 row(s) beyond +-1% (up to 14.4% of D; rows 63-65; 0.36% of F)]
+00:44:25 gifford2014_teardrop_F0p9_paperclip           0        1128 s  PASS [1-D model: junction band: 3 row(s) beyond +-1% (up to 14.4% of D; rows 63-65; 0.2% of F)]
+00:53:28 dinh2024_separate_F0p5_paperclip              0         924 s  PASS [1-D model: junction band: 5 row(s) beyond +-1% (up to 55.9% of D; rows 195-199; 0.55% of F)]
+01:01:01 dinh2024_teardrop_F0p5_paperclip              0         453 s  PASS [1-D model: junction band: 5 row(s) beyond +-1% (up to 55.9% of D; rows 195-199; 0.55% of F)]
+01:02:52 dinh2024_separate_F0p9_paperclip              0        1107 s  PASS [1-D model: junction band: 5 row(s) beyond +-1% (up to 55.9% of D; rows 195-199; 0.3% of F)]
+01:10:16 dinh2024_ring_F0p5_paperclip                  0         444 s  PASS [1-D model: junction band: 5 row(s) beyond +-1% (up to 55.9% of D; rows 195-199; 0.55% of F)]
+01:17:50 dinh2024_teardrop_F0p9_paperclip              0        1008 s  PASS [1-D model: junction band: 5 row(s) beyond +-1% (up to 55.9% of D; rows 195-199; 0.3% of F)]
+01:26:10 generic19_separate_F0p9_linear                0         501 s  PASS [1-D model: junction band: 3 row(s) beyond +-1% (up to 16.4% of D; rows 71-73; 0.2% of F)] -- OVER THE CHIP AREA (180.96 x 7.32 mm drawn; reported, not ref
+01:26:28 dinh2024_ring_F0p9_paperclip                  0         973 s  PASS [1-D model: junction band: 5 row(s) beyond +-1% (up to 55.9% of D; rows 195-199; 0.3% of F)]
+01:34:35 generic19_teardrop_F0p9_linear                0         505 s  PASS [1-D model: junction band: 3 row(s) beyond +-1% (up to 16.4% of D; rows 71-73; 0.2% of F)] -- OVER THE CHIP AREA (184.32 x 7.32 mm drawn; reported, not ref
+01:35:10 generic19_separate_F0p9_serpentine            0         522 s  PASS [1-D model: junction band: 3 row(s) beyond +-1% (up to 16.4% of D; rows 71-73; 0.2% of F)]
+01:39:12 generic19_separate_F0p5_linear_u0p035         0         241 s  PASS [1-D model: junction band: 3 row(s) beyond +-1% (up to 16.5% of D; rows 71-73; 0.18% of F)]
+01:41:09 xia2016_ring_F0p5_paperclip                   3         117 s  PASS -- OUTSIDE THE VALIDITY ENVELOPE (gap dominance M13 0.178 >= 0.05): the cutoff law is not calibrated there; cutoff band 6.767-7.234 um, on the plateau: the
+01:43:41 generic19_teardrop_F0p9_serpentine            0         546 s  PASS [1-D model: junction band: 3 row(s) beyond +-1% (up to 16.4% of D; rows 71-73; 0.2% of F)]
+BLAT_DONE
+CHAIN_DONE

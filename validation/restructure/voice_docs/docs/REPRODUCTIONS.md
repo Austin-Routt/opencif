@@ -1,0 +1,81 @@
+# What "REPRODUCED" means: printed versus reproduced
+
+A preset's verdict REPRODUCED means that the device was designed from the paper's D and F, each derived from printed
+values (`PRESET_PROVENANCE.md`), that it was drawn with the paper's parts and printed dimensions, and that the drawn
+mask realizes D at every gap not covered by a declared departure and F within the Q2 tolerance (10⁻³; the presets
+achieve ≤ 10⁻⁴), with the drawing matching its design (Q1). The aligned presets of rc7 are an exception to the first
+condition, because they fit a target to a figure where the figure contradicts the printed value. Such a target is coded D
+(fitted), which applies to the D and F of `xia2016_rs7_aligned` and to the D of `dinh2024_v1_figure_aligned`, so for
+these presets the figure that set the target gives consistency rather than a test. Every preset runs in
+`gates.mode: reproduce`, because the design tool itself (strict mode) would refuse Dinh V1 and Xia RS-7 at their
+printed targets, whose cutoffs lie below the κ plateau (u_min 0.029 and 0.023; App. B B:4146–4149 and B:4163–4165;
+0.021 for rc7's aligned Xia preset), and because the presets' declared departures are reproduce-mode options. Thus,
+REPRODUCED reports the published device and does not endorse it as a design (rc7, after the foundation check).
+
+The verdict does not mean that the drawing matches the published device in every dimension that the paper prints, nor
+that the model's F or cutoff matches the paper's measurements. The table below puts the printed quantities beside the
+reproduced ones. Where a paper prints a final side width (Gifford 300 and 450 µm, Fig. 6 140 µm, and Dinh 44 µm), the
+F target was derived from that width through the outlet identity, so the reproduced final width matches it largely by
+construction. The match therefore shows that the design closes on the printed outlet, and it is not an independent
+agreement.
+
+The reproduced values are from the records in `runs/` (code 593d977fc83ec217, RC8). Every record except the Fig. 4
+reproduction's equals rc7 final's (code 52ba91eddb3f07b8) in every number (`logs/compare_rc7_rc8.md`). In its own
+comparison with rc6 (`logs/compare_rc6_rc7.md` in the rc7 evaluation archive), rc7 found every record that rc6 also
+built equal to rc6's at code 4bbdaabef1225a24 on every compared value except `dinh2024_v1_depicted`, whose head turns
+are new in rc7, and the four rc7 presets were new in rc7. In rc6, the inputs were re-measured on the papers' figures
+(PRESET_PROVENANCE lists Dinh's pitch and flare onset, Xia's scale and Fig. 3a layout, and Gifford's post sizes and the
+layouts of Figs. 4 and 6), so the drawn sizes moved from rc5's, whereas the targets and the physics did not
+(`provenance/rc6_scripts/compare_rc5_rc6.py` lists every record's changes against rc5 with the input change behind
+each).
+
+| device | quantity | printed (source) | reproduced | note |
+|---|---|---|---|---|
+| Gifford 2014 Fig. 4 (design; as fabricated at 20 and 8 µm floors) | design point | f_gap 3.34 × 10⁻⁴ at w_c 100 µm; depth 80 µm | D 5.2032 µm (κ_g x(f) w_c); w_c 100 µm; depth 80 µm | D is derived through κ_g and is not printed |
+| | final side width | 300 µm | 299.9–300.0 µm | the floor start stops on the delivered F |
+| | layout | 4 nested legs | 4 legs, 46.7–47.4 × 5.0 mm, array 167–170 mm | Gifford's schematic is "not drawn to scale"; the legs are 818 µm apart, as read on the Fig. 4 inset (rc6; the generator's rule gave 969) |
+| | F | not printed as a number | 0.90647–0.90650 (target 0.90644, the outlet identity at the printed 300 µm final width) | |
+| Gifford 2014 Fig. 5A to 5D | design point | f_gap 2.2 / 3.5 / 6.0 / 10.0 × 10⁻⁴ at w_c 100 µm; depth 125 µm; 25 µL/min | D 4.220 / 5.327 / 6.982 / 9.027 µm | 5C and 5D are outside the envelope (M13, and for 5D also the lamina Stokes gate) |
+| | final side width; F | 450 µm; "~23 : 1", caption "24.4×" | 449.5–450.1 µm; F 0.9575 | |
+| | layout | not printed | 11 / 6 / 3 / 2 legs, fitted to a chip | the layouts are opencif's |
+| | retention at D | Coulter enrichment by bead size (caption) | at D the devices retain R(D) = 0.39–0.42 / 0.44–0.54 / 0.38–0.48 / 0.17–0.30 of the beads; d₅₀/D = 1.09–1.14 / 0.98–1.03 / 1.01–1.04 / ≥ 1.10 (three interpolants × three enrichment ceilings, `provenance/gifford_fig5_d50.py`) | This is this project's reading and new evidence, which is in neither App. A/B nor the glossary. κ_g was fitted on an onset-of-loss threshold in several-centimeter arrays, so the retention is cumulative loss in a long device rather than a test of κ_g at ±3.4%. |
+| Gifford 2014 Fig. 6 (design; as fabricated at 15 µm) | design point | f_gap 1.04 × 10⁻⁴ at w_c 125 µm; depth 150 µm; 55 µL/min | D 3.624 µm | below the plateau (u 0.029), with a cutoff band of 3.008–3.624 µm by App. B C7's method |
+| | length; area | ~40 cm; < 6 cm² | array 358–359 mm; footprint 53.5–53.8 × 8.3 mm (4.4–4.5 cm²) | 7 nested legs with a ring-like outlet, at the leg axes read on the Fig. 6 micrograph (in rc6, legs 1, 3, 5, and 7 on its rows, and legs 2, 4, and 6 placed by assumed semicircular turns about the turns' measured center) |
+| | measured outcome | platelet yield 83.2% (80–85%), ~3× enrichment | model F 0.7177 | Platelet yield is particle recovery rather than F, whereas in App. B yield means F. Platelets are outside the rigid-sphere scope. |
+| Dinh 2024 V1 (as specified; head as depicted) | design point | f\* 1.04 × 10⁻⁴ at w_c 75 µm; w_c 75 → 52 µm; G 19, GS 28, w_S(in) 21 µm; depth 140 µm; 30 µL/min | D 2.1742 µm (glossary `\dcritGGIn`); w_c 75.0 → 52.0 µm | below the plateau (u 0.029), with a band of 1.805–2.174 µm (App. B C7) |
+| | size | 3.2 mm wide, 75.8 mm long ("∼3.2 mm × 75.8 mm", p. 916, and the Fig. 3A caption, p. 918) | 3.2 mm wide, 148.2–152.3 mm long | The length is a conflict conditional on the model's premises (in the rc5 wording, corrected after the two reviews of rc5 and independent checks of that verification, with rc6 numbers at the re-measured pitch, `provenance/rc6_scripts/`). The premises are the frozen cutoff law's cubic kernel with the lamina the same at every gap, at the plateau prefactor (App. B's own reading of Dinh's rule), fixed by the printed f\*; every center width at or above the printed 52 µm; two gaps per row; and every gap row at least the 45.1 ± 0.2 µm pitch measured on Fig. 2B's second, third, and fourth panels (six post-column readings, 45.05–45.17 µm, mean 45.11, SD 0.04; each panel's 50 µm bar read with its anti-aliased ends, 46.91 px, to about ± 0.3%; rc5 read 46 px and 46.0 ± 1.0 µm). The gap rows alone need at least 1,897 rows, or 85.6 mm, at the presets' F 0.5593 (the outlet identity at the printed 44 / 52 µm, a model value), 74.6 mm at F 0.5105, and 73.4 mm at the measured F 0.505 (72.6–73.0 mm crediting the presets' heads, whose first rows are drawn above f_max). This is a lower bound for any taper, and at the measured F the printed "assembled CIF device" (Fig. 3A), which also holds the inlet with its filter and the two outlets (p. 916), exceeds it by only 2.4 mm (up to 3.2 mm). A center channel narrowed "progressively" from 75 to 52 µm (p. 916; Fig. 2 caption) needs more. At F 0.505, it needs 105.8 mm of rows for a width linear in the row index, and 125.5–128.6 mm of head and rows (99.9 mm of linear rows) for the presets' own schedules. The rows fit 75.8 mm only if they extract on average at least 96.9% of f_max, as a constant 52.8 µm center would, and a linear narrowing followed by 52 µm fits only if it ends within the first 10.2% of the rows at the measured pitch (8.8–11.7% over its ± 0.2 µm, and 11.9–13.6% crediting the presets' heads). Thus, for a progressive taper the conflict holds at the measured F as well, at the measured pitch (at one SD below the measured mean, 0.472, a narrowing over the first 39% of the rows would fit). The conflict lies between the premised model and the printed footprint rather than among the printed numbers, and its cause is not known (PRESET_PROVENANCE lists the candidates and shows that neither the outlet identity's F nor the cutoff law below its plateau removes it). Fig. 2A's main panel cannot settle it, because its global scale is not established (PRESET_PROVENANCE). |
+| | final side width | 44 µm (V1) | 44.0 µm | |
+| | outlet end | Fig. 2B (fourth panel; measured, M). Each side channel's outer wall runs straight to 65.4 ± 2 µm from the last gap's center (where the fitted straight and flared lines meet, at the 50 µm bar read with its anti-aliased ends, rc6; rc5 read 67 µm at 46 px) and then flares at 14.50° (left) and 14.43° (right) per side (14.43–14.55° and 14.38–14.60° over the straight walls' fitted directions), whereas the inner wall is straight. The center channel, 49.7 µm outline to outline after the last gap, begins to widen 191 µm after the last gap's center (to 58.5–58.9 µm at the panel's edge, 228 µm after it). | Since rc5 (at the rc6 onset), the outer wall runs straight to the flare's virtual corner at 65.4 µm (its 25 µm arc runs 62.2–68.6 µm) and then flares at 14.5° per side to a 105.75 µm lead (the lead width is the generator's, A, because the panel does not show it). The center stretch stays at 52 µm to its end. `tests/test_figure_anchors.py` measures the drawn walls (the corner, the angle, and the wall against the designed profile) on both side channels of both V1 masks. | The side channels' outer walls are reproduced, whereas rc4 drew a 200 µm straight run and a right-angle step into a 119 µm lead, which did not reproduce them. The center channel's widening is not drawn (the center lead is the generator's, A). The flare's resistance is integrated along the drawn wall, and its excess over that integral is in the closure (LIMITATIONS 15a, 15b). |
+| | F | measured 0.505 ± 0.033 | model 0.5593 (target 0.5592 = `\FclosedVone`) | 10.7% above the measurement by construction of the outlet identity (App. A R8; App. B P-C4.2); 3-D outlet flow or unstated tubing may account for the difference |
+| Xia 2016 RS-7 (as specified; head as depicted; depicted with pull-in) | design point | f_ref 5.8 × 10⁻⁴ at w_c(ref) 100 µm (corrected eqn 1); w_c 300 → 150 µm; G 16 µm; depth 135–150 µm; ~1 mL/min | D 6.864 µm; w_c 300 → 150 µm; depth 140 µm; 800 µL/min | outside the envelope on the plateau (u 0.023), M13 (0.17–0.26), Re (61), and both Stokes gates, with a band of 4.994–6.864 µm |
+| | F | ~15 : 1 filtrate : retentate | 0.93801–0.93802 (target 0.938) | |
+| | loop 1 (Fig. 1e(ii)) | 69.5 µm at the end of leg 1; loop 1 inner 57.6, outer 77.4 µm | `xia2016_rs7_depicted`: 68.2 → 55.7 / 75.8 µm, planned and laid out (outer − inner 20.1 against 19.8 µm) | a printed test independent of the micrographs (rc6 adjudication A8) |
+| | layout | 7 legs, ring outlet (Fig. 3a) | 7 legs, 71.8–73.3 × 12.1 mm, ring outlet | The leg axes and ports were measured on Fig. 3a (at its 5 mm bar read with its anti-aliased ends). The drawing itself is 78.7 mm long, because its legs hold more rows than the schedule places (LIMITATIONS 24 d). |
+
+The second table gives rc7's aligned presets and the square-turn Dinh head, as rc7's records at code 52ba91eddb3f07b8
+give them. The RC8 records in `runs/` (code 593d977fc83ec217) equal them in every number except the Fig. 4 reading's
+(`logs/compare_rc7_rc8.md`). Each of these presets is a reading of the paper's figures where they contradict a printed
+value or where the paper prints nothing, with its departures declared. `PRESET_PROVENANCE.md` codes every value, and
+the register `RC8_DISCREPANCIES.md` (rc7's, with the RC8 entries) gives the evidence.
+
+| preset | what it reads | printed | reproduced (rc7 record) | note |
+|---|---|---|---|---|
+| `dinh2024_v1_depicted` (rc7: square head turns) | Fig. 2B's square, rounded quarter turns (outer 7, inner 10 µm) and gap-entrance corners (11 µm, drawing only) | as rc6 | N 2,701 (219 in the head), F 0.55923, 148.2 × 3.16 mm (array 136.1 mm, head 25.6 mm); 96.5% of F within 1% of D; exit 3 (u 0.029) | the head's capacity counts a square turn's computed corner term (LIMITATIONS 8, 20, 27) |
+| `dinh2024_v1_figure_aligned` | the printed 75.8 mm device length, read as a linear section at the cutoff that gives it, after the depicted head | f\* 1.04 × 10⁻⁴ (D 2.17 µm) "throughout the device" | D 3.67 µm (D, fitted, rc7 final; rc7's first reading, 4.29 µm from the figures' row count, drew 65.2 mm) in the linear section, with the depicted head (219 rows at its planned f) before it; N 1,093 (874 linear), F 0.55927, 75.7 × 3.16 mm (array 63.6 mm); 88.7% of F within 1% of D (the head's rows declared); exit 0 (the linear section on the plateau, u 0.049, and the head's rows below it, reported); Dinh's 4.7 µm beads' passage implies D 2.3–3.9 µm on Gifford's measured soft edge | The preset contradicts the printed cutoff "throughout", and Fig. 2B cannot tell the readings apart (INV-1). The printed length is kept at the price of the figures' proportion, because the linear section starts at 41.5% of the inlet → middle-outlet distance, where Figs. 2A and 3A put it at 46–58%. The narrowest linear rows also run beyond κ_g's calibration (f up to 6.13 × 10⁻⁴, 21% of the section's extraction; PRESET_PROVENANCE, DISSERTATION_NOTES § 3 item 7). |
+| `gifford2014_fig4_aligned` (RC8: the nested reading) | the inset's legs 2 and 4, nested as the caption, the schematic, and the inset's taper direction say (and as the arrows say, the weakest line); Gifford's start rule at 8 µm; G 17.2 µm; leg 4's array 2 mm short (the inset's leads) | four legs, "the second and fourth legs" (caption), nested schematic | N 3,543, F 0.90650, 47.4 × 5.0 mm; rows 1–3 above D (declared); 99.5% of F within 1% of D; exit 0 (RC8 record) | Leg 2's side channels are not reproduced, because they are 17.5–18.1 µm per side wider on the image than the printed schedule draws them (GIF4-1, open). In rc7, reading B was shipped (the legs in path order, which fits those widths through a fitted leg 4 end). The inset's taper direction rejects that reading (V13), and it is kept as the variant `gifford2014_fig4_pathorder`, a figure (D1 of the adjudication of the rc7 reviews). |
+| `gifford2014_fig6_aligned` | the leg ends' widths, with Gifford's start rule at 40 µm (D, fitted on leg 1), the text's 144 µm, and G 17.1 µm | 140 µm (caption), 144 µm (text) | N 5,783, F 0.72926, 51.5 × 8.3 mm (array 344 mm); 85.5% of F within 1% of D (the start's rows declared); exit 3 (u 0.029) | legs 3 and 5 are a partial test of the start (GIF6-1, GIF6-2) |
+| `xia2016_rs7_aligned` | Fig. 3's panels d and e, read as the parallel-plate taper (a reproduce-mode departure from spec v5 S16-b); F and D fitted to Figs. 3g and 3a | f_ref 5.8 × 10⁻⁴ (D 6.864 µm); ~15 : 1 | D 6.4159 µm, F 0.94073 (D, fitted; 15.9 : 1); N 8,106, 78.9 × 12.2 mm; 69.0% of F within 1% of D; exit 3 (u 0.021) | Xia's text does not state the shear coefficient, and the true peak shear varies 17.4% along the taper (`gates.shear_peak`). Panel f is open (INV-4; its outer walls lie 39.9 / 36.0 µm inside the mask's). |
+
+For these presets, REPRODUCED keeps its meaning for the drawing (every gap at its target cutoff outside the declared
+departures, and F within Q2). However, a target fitted to a figure makes that figure a check of consistency rather than
+a test, and the record's `assessment.status.reproduction` names the fitted targets (`paper.targets_fitted`).
+
+Every value in the "printed" column is coded P, M, D, or A in `PRESET_PROVENANCE.md`, and where the paper prints
+nothing the table says so. "As fabricated" in a preset's name means drawn at an assumed fabrication floor (code A,
+because the papers print no floor) rather than at a measured one. Since rc4, each reproduction's record says what the
+label covers in `assessment.status.reproduction`
+("DESIGN-LEVEL ... not a full-mask match, not a measured-performance match"), and `validation.drawn_parameters` (in
+rc3, `validation.published`) holds the drawn values of the quantities that the papers print, for comparison with this
+table. These are generated values rather than printed ones. The
+reproductions are design-level. They show that the framework, given the paper's targets and parts, draws a device with
+the paper's printed geometry where the paper prints it, and they report where the paper's own numbers disagree.

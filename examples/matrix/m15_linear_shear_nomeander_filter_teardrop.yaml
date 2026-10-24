@@ -1,0 +1,13 @@
+# Variant matrix, no meander (sealed start on a fine process, as m13): linear layout, constant-shear taper, filter inlet,
+# teardrop outlet.  (m15-m18 complete the pairwise covering of layout x taper x head x inlet x outlet.)
+name: m15_linear_shear_nomeander_filter_teardrop
+targets: {cutoff_um: 4.0, filtrate_fraction: 0.5}
+process: {depth_um: 100, gap_um: 19, post_length_um: 27, post_width_um: 50, min_feature_um: 4.3, fillet_um: 1.5,
+          aspect_ratio_max: 25}   # a stated process capability (4.3 um at 100 um deep is 23 : 1), not a foundry fact
+chip: {width_mm: 12, length_mm: 75, margin_um: 1000}  # linear: a 75 mm strip
+centre_channel: {taper: constant_shear, width_in_um: 80, width_min_um: 56}
+layout: {style: linear, legs: 1}
+meander: {enabled: false}
+inlet: {style: filter, port_radius_um: 750}
+outlet: {style: teardrop, port_radius_um: 750, centre_port_radius_um: 750}
+gates: {mode: strict}

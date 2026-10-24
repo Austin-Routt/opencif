@@ -1,0 +1,33 @@
+{
+ "file": "gifford2014_fig4_as_fabricated_20um.dxf",
+ "d_um": 19.9,
+ "n_fluid": 1,
+ "n_solid": 6972,
+ "invalid_rings": 0,
+ "bulge_polylines": 0,
+ "bounds": [
+  -5381.8,
+  -1251.3,
+  42027.1,
+  4133.2
+ ],
+ "fluid_area": 77574084.3,
+ "overlap_area": 0.0,
+ "solid_layer_overlap_with_fluid": 0.0,
+ "n_components": 1,
+ "largest_component_frac": 1.0,
+ "small_components": [],
+ "n_lost_open": 0,
+ "n_lost_solid": 0,
+ "tiling_artefacts_dropped": [
+  1,
+  0
+ ],
+ "corner_artefacts_open": 3,
+ "corner_artefacts_solid": 13,
+ "lost_open_min_width": null,
+ "lost_solid_min_width": null,
+ "lost_open": [],
+ "lost_solid": [],
+ "seconds": 104.9
+}

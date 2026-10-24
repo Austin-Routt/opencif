@@ -1,0 +1,15 @@
+dinh2024_v1_specified.yaml: pitch 45.10 +- 0.20 um; D 2.174155 um, x* 0.00589945, f_max 0.000215968
+P_after_reconstructed_head 0.9441936167861491
+row_where_wc_reaches_52 2495
+F_at_taper_end_width 0.5104741921653481
+P_over_Pstart_at_taper_end 0.5184591371215814
+rows_credited_to_this_head 9.134747563425403
+outlet identity (printed 44/52 um)                   F 0.5593 | every row, a head at constant D (no row above f_max) P0 1.00000 | N >= 1896.51 -> 1897 rows | 85.55 mm at 45.1 um (85.18-85.93) | 75.8 mm needs pitch <= 39.96 um
+outlet identity (printed 44/52 um)                   F 0.5593 | every row, this design's own head                    P0 1.00000 | N >= 1887.38 -> 1888 rows | 85.15 mm at 45.1 um (84.77-85.53) | 75.8 mm needs pitch <= 40.15 um
+outlet identity (printed 44/52 um)                   F 0.5593 | linear rows after the reconstructed head             P0 0.94419 | N >= 1763.59 -> 1764 rows | 79.56 mm at 45.1 um (79.20-79.91) | 75.8 mm needs pitch <= 42.97 um
+constant-shear taper reaching 52 um (assumed taper)  F 0.5105 | every row, a head at constant D (no row above f_max) P0 1.00000 | N >= 1653.40 -> 1654 rows | 74.60 mm at 45.1 um (74.26-74.93) | 75.8 mm needs pitch <= 45.83 um
+constant-shear taper reaching 52 um (assumed taper)  F 0.5105 | every row, this design's own head                    P0 1.00000 | N >= 1644.26 -> 1645 rows | 74.19 mm at 45.1 um (73.86-74.52) | 75.8 mm needs pitch <= 46.08 um
+constant-shear taper reaching 52 um (assumed taper)  F 0.5105 | linear rows after the reconstructed head             P0 0.94419 | N >= 1520.48 -> 1521 rows | 68.60 mm at 45.1 um (68.29-68.90) | 75.8 mm needs pitch <= 49.84 um
+measured recovery (Dinh Fig. 4)                      F 0.5050 | every row, a head at constant D (no row above f_max) P0 1.00000 | N >= 1627.66 -> 1628 rows | 73.42 mm at 45.1 um (73.10-73.75) | 75.8 mm needs pitch <= 46.56 um
+measured recovery (Dinh Fig. 4)                      F 0.5050 | every row, this design's own head                    P0 1.00000 | N >= 1618.52 -> 1619 rows | 73.02 mm at 45.1 um (72.69-73.34) | 75.8 mm needs pitch <= 46.82 um
+measured recovery (Dinh Fig. 4)                      F 0.5050 | linear rows after the reconstructed head             P0 0.94419 | N >= 1494.74 -> 1495 rows | 67.42 mm at 45.1 um (67.13-67.72) | 75.8 mm needs pitch <= 50.70 um
